@@ -20,7 +20,9 @@ Toribash Learning Environment
     - Seems to hang for a moment every now and then, even not between
       episodes
 - Running code on server without screen (e.g. csdeepen over SSH)
-	- Even with ' xvfb-run -s "-screen 0 1400x900x24" bash ' there are errors
+    - Even with ' xvfb-run -s "-screen 0 1400x900x24" bash ' there are 
+errors
+    - Maybe try " wine explorer /desktop=Halo,1400x1050 " trick?     
 ### Feature/soon-to-be-done TODOs:
 
 - Add rotations to the state representation?
