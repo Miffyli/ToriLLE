@@ -196,35 +196,48 @@ def create_random_actions():
         ret[plridx].append(r.randint(0,1))
     return ret
     
-def test_control(verbose=False):
+def test_control(toribash_exe, num_instances, verbose=False):
     from time import time
+    import subprocess
     verbose_print = lambda s: print(s) if verbose else None
     
+    verbose_print("Creating listener socket...")
     s = socket.socket()
     s.bind(("",7777))
-    s.listen(1)
-    verbose_print("Waiting for connections...")
-    conn, addr = s.accept()
-    verbose_print("Connected. Creating ToribashControl...")
-    controller = ToribashControl(conn)
+    s.listen()
+    verbose_print("Launching %d Toribash instances..." % num_instances)
+    toribashes = []
+    for i in range(num_instances):
+        p = subprocess.Popen((toribash_exe,), stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        toribashes.append(p)
+    controllers = []
+    verbose_print("Waiting connections from toribashes...")
+    for i in range(num_instances):
+        conn, addr = s.accept()
+        controller = ToribashControl(conn)
+        controllers.append(controller)
+
     last_time = time()
     n_steps = 0
     while 1:
-        s,terminal = controller.get_state()
-        verbose_print("Got state")
-        if terminal:
-            verbose_print("Got terminal state. Resetting")
-            s = controller.reset()
-        actions = create_random_actions()
-        verbose_print("Sending actions")
-        controller.make_actions(actions)
-        n_steps += 1
-        if n_steps == 1000:
+        states = []
+        # Wait for state from all instances
+        for i in range(num_instances):
+            s,terminal = controllers[i].get_state()
+            if terminal: 
+                s = controllers[i].reset()
+            states.append(s)
+        verbose_print("Got states")
+        for i in range(num_instances):
+            actions = create_random_actions()
+            controllers[i].make_actions(actions)
+        verbose_print("Sent actions")
+        n_steps += num_instances
+        if n_steps >= 1000:
             print("FPS: %.2f" % (n_steps/(time()-last_time)))
             last_time = time()
             n_steps = 0
     
     
 if __name__ == '__main__':
-	test_control()
-
+	test_control("/home/anssk/.wine/drive_c/Games/Toribash-5.2/toribash.exe", 4)
