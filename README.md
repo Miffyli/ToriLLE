@@ -19,7 +19,8 @@ Toribash Learning Environment
         - 16 instances: 1000 FPS
     - Seems to hang for a moment every now and then, even not between
       episodes
-
+- Running code on server without screen (e.g. csdeepen over SSH)
+	- Even with ' xvfb-run -s "-screen 0 1400x900x24" bash ' there are errors
 ### Feature/soon-to-be-done TODOs:
 
 - Add rotations to the state representation?
