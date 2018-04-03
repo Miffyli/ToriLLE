@@ -233,11 +233,11 @@ def test_control(toribash_exe, num_instances, verbose=False):
             controllers[i].make_actions(actions)
         verbose_print("Sent actions")
         n_steps += num_instances
-        if n_steps >= 1000:
+        if n_steps >= 5000:
             print("FPS: %.2f" % (n_steps/(time()-last_time)))
             last_time = time()
             n_steps = 0
     
     
 if __name__ == '__main__':
-	test_control("/home/anssk/.wine/drive_c/Games/Toribash-5.2/toribash.exe", 4)
+	test_control(r"R:\Toribash-5.2\toribash.exe", 4)
