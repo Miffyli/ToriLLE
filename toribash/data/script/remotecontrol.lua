@@ -224,6 +224,7 @@ end
 function menu_closer_drawer() 
     close_menu()
     run_cmd("loadmod classic")
+    run_cmd("set turnframes 1")
     remove_hooks("menu_closer")
 end
 
