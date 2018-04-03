@@ -76,16 +76,45 @@ local s = nil
 local NUM_JOINTS = 20
 local NUM_LIMBS = 21
 
--- Default options from evolver code
-local set_options = { 
+-- Options for not rendering anything
+local options_no_rendering = { 
     fixedframerate = 0,
     antialiasing = 0,
     blood = 0,
     trails = 0,
-    hud = 1,
+    hud = 0,
     tori = 0,
-    uke = 0
+    uke = 0,
+    money = 0,
+    score = 0,
+    timer = 0,
+    name = 0, 
+    autoupdate = 0,
+    smoothcam = 0,
+    reflection = 0,
+    particles = 0,
 }
+-- Resolution for no rendering
+local resolution_no_rendering = {10,10}
+
+-- Options for rendering / watching
+local options_rendering = { 
+    fixedframerate = 1,
+    antialiasing = 1,
+    blood = 1,
+    trails = 1,
+    hud = 1,
+    tori = 1,
+    uke = 1,
+    money = 1,
+    score = 1,
+    timer = 1,
+    name = 1, 
+    autoupdate = 0,
+    smoothcam = 1
+}
+-- Resolution for rendering
+local resolution_rendering = {1280,720}
 
 -- Sleep function based on socket.select function
 -- From Stackoverflow #17987618
@@ -189,10 +218,6 @@ local function make_move(actions)
     set_grip_info(1, BODYPARTS.R_HAND, actions[NUM_JOINTS+1+offset])
 end
 
---[[
-toribash hooks
-]]--
-
 -- During simulation, make moves and advance the turn
 local function simulation_next_turn()
     local state = build_state()
@@ -218,13 +243,27 @@ local function finish_game(winType)
     start_new_game()
 end
 
+-- Initialize the game for running as fast as possible 
+-- (minimize rendering etc)
+function initialize_and_start()
+    -- TODO make these changeable via settings
+    for opt, val in pairs(options_no_rendering) do
+        set_option(opt, val)
+    end
+    run_cmd("re "..resolution_no_rendering[1].." "..resolution_no_rendering[2])
+    -- Start the game by loading mod
+    run_cmd("loadmod classic")
+    -- Set rules
+    run_cmd("set turnframes 1")
+    run_cmd("set matchframes 1000")
+end
+
 -- Temporary drawing hook for closing menu
 -- This is used to close main menu while booting straight to the script
 -- Credits: hampa & Dranix
 function menu_closer_drawer() 
     close_menu()
-    run_cmd("loadmod classic")
-    run_cmd("set turnframes 1")
+    initialize_and_start()
     remove_hooks("menu_closer")
 end
 
@@ -261,14 +300,7 @@ local function run_controlled(configuration)
     -- script is launched from profile.tbs
     add_hook("draw3d", "menu_closer", menu_closer_drawer)
     
-    -- TODO set rules, set options, etc   
-    for opt, val in pairs(set_options) do
-        set_option(opt, val)
-    end
-
-    -- Start game
-    run_cmd("loadmod classic")
-    run_cmd("set turnframes 1")
+    initialize_and_start()
 end
 
 run_controlled()
