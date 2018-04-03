@@ -15,6 +15,8 @@ Overview (pseudo-codes)
 ### Toribash
 ```python
 connection = connect_to_server()
+settings = recv_settings()
+apply_settings()
 while connection_alive:
     send_state()
     actions = recv_actions()
@@ -32,6 +34,7 @@ while connection_alive:
 ### Server
 ```python
 connection = wait_for_connection()
+send_settings([some settings])
 while connection_alive:
     state = recv_state()
     if state == "end"
