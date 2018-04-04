@@ -17,12 +17,13 @@ Toribash Learning Environment
     - Seems to hang for a moment every now and then, even not between episodes
     - Benchmarking: Calculate time it took to get 5000 steps
     - Note: Synchronous
+    - Minimizing window helps
     - FPS = Frames per Second, but here "Frame" = Taking one action
     - With "set matchframes 1000" and "set turnframes 1":
         - 16-core Ubuntu (2.1Ghz, Titan XP)
-            - 1 instance:   FPS
-            - 4 instances:  FPS
-            - 8 instances:  FPS
+            - 1 instance:   200 FPS
+            - 4 instances:  400 FPS
+            - 8 instances:  500 FPS
             - 16 instances:  FPS
         - 4-core Windows 10 (4.5Ghz, RX 480)
             - 1 instance:   300 FPS
@@ -43,8 +44,9 @@ Toribash Learning Environment
             - 16 instances: Crash
     - With "set matchframes 1000" and "set turnframes 10":
         - 16-core Ubuntu (2.1Ghz, Titan XP)
-            - 4 instances: 
-            - 8 instances: 
+            - 1 instance:   50 FPS
+            - 4 instances:  100 FPS
+            - 8 instances:  120 FPS
             - 16 instances: 
         - 4-core Windows 10 (4.5Ghz, RX 480)
             - 1 instance:   75  FPS
@@ -53,10 +55,6 @@ Toribash Learning Environment
             - 12 instances:  FPS
             - 16 instances: Crash
     - With "set matchframes 100" and "set turnframes 1". RAM-disk:
-        - 16-core Ubuntu (2.1Ghz, Titan XP)
-            - 4 instances: 
-            - 8 instances: 
-            - 16 instances: 
         - 4-core Windows 10 (4.5Ghz, RX 480)
             - 1 instance:   250 FPS
             - 4 instances:  430 FPS
