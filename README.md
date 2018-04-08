@@ -7,10 +7,32 @@ Toribash Learning Environment
 - "Daily reward" blocks the game on startup 
     - Does not prevent running the code, but code runs slow
     - Maybe could be closed with another close_manu()?
+- Running code on server without screen (e.g. csdeepen over SSH)
+    - Even with ' xvfb-run -s "-screen 0 1400x900x24" bash ' there are errors
+    - Maybe try " wine explorer /desktop=Halo,1400x1050 " trick?     
+- Toribash instances do not close on Windows when Python script exits. Manually terminate processes.
+- Start by sending settings
+- Add sanity checking for sending actions (game jams without any errors if wrong type of actions are sent)
+
+### Feature/soon-to-be-done TODOs:
+
+- Consider moving hand joint thing to somewhere else?
+    - Causes confusion when it is {0,1} while others are {1,2,3,4}
+    - Maybe normalize these somehow?
 - Move all settings in the drawer hook
     - Create new function for these
-- Episode restart is rather slow, especially if all instances reboot at once
-    - Could this be better if e.g. we move all files to ram?
+- Add rotations to the state representation?
+- Specify settings set at the beginning of the episode 
+    - Define settings structure
+    - engagement distance
+    - game mode?
+    - gravity? 
+- Add more options (via make_cmd etc). 
+    - Could make game lighter etc
+    - Resolution ("/res w h")
+- Make changing gamemod possible
+    - E.g. sumo
+    - Is this really needed?
 - Something else seems to be slowing down things too
     - "/opt autoupdate 0" seems to help with this issue
     - There still seems to be some sort of disk I/O every now and then
@@ -61,27 +83,9 @@ Toribash Learning Environment
             - 8 instances:   FPS
             - 12 instances:  FPS
             - 16 instances: Crash
-- Running code on server without screen (e.g. csdeepen over SSH)
-    - Even with ' xvfb-run -s "-screen 0 1400x900x24" bash ' there are errors
-    - Maybe try " wine explorer /desktop=Halo,1400x1050 " trick?     
-- Toribash instances do not close on Windows when Python script exits. Manually terminate processes.
-- Start by sending settings
+- Episode restart is rather slow, especially if all instances reboot at once
+    - Could this be better if e.g. we move all files to ram?
 
-### Feature/soon-to-be-done TODOs:
-
-- Add rotations to the state representation?
-- Specify settings set at the beginning of the episode 
-    - Define settings structure
-    - engagement distance
-    - game mode?
-    - gravity? 
-- Add more options (via make_cmd etc). 
-    - Could make game lighter etc
-    - Resolution ("/res w h")
-- Make changing gamemod possible
-    - E.g. sumo
-    - Is this really needed?
-    
 ### Future TODOs:
 
 - Add swords and other items
