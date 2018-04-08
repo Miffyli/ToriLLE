@@ -44,7 +44,8 @@ MESSAGE_END = "\n".encode()
 NUM_LIMBS = 21
 NUM_JOINTS = 20
 # Add hand_grips
-NUM_ACTIONS = NUM_JOINTS+2
+NUM_CONTROLLABLES = NUM_JOINTS+2
+NUM_JOINT_STATES = 4
 
 # Bodypart x,y,z + Joint states + hand grips + injuries
 STATE_LENGTH = (NUM_LIMBS*3*2) + NUM_JOINTS*2 + 4 + 2
@@ -101,7 +102,11 @@ class ToribashControl:
         self.executable_path = executable
         self.process = None
         self.connection = None
-        
+    
+    def _check_if_initialized(self):
+        if self.process is None:
+            raise ValueError("Controlled not initialized with init()")
+    
     def init(self):
         """ Actual init: Launch the game and wait for connection to be 
             made
@@ -180,6 +185,8 @@ class ToribashControl:
             state: ToribashState representing the received state
             terminal: If the ToribashState is terminal state
         """
+        self._check_if_initialized()
+        
         s, terminal = self._recv_state()
         s = ToribashState(s)
         return s, terminal
@@ -189,6 +196,8 @@ class ToribashControl:
         Returns:
             state: ToribashState representing the state of new game
         """
+        self._check_if_initialized()
+        
         # TODO implement proper sending of settings
         self.connection.sendall("\n".encode())
         s,terminal = self.get_state()
@@ -200,15 +209,28 @@ class ToribashControl:
             actions: List of shape 2 x (NUM_JOINTS+2), specifying joint states 
                      and hand gripping for both players.
         """
+        self._check_if_initialized()
+        
+        # Make sure we have lists
         if type(actions) != list and type(actions) != tuple:
             raise ValueError("Actions should be a list (e.g. not numpy array)")
+        
+        # TODO add sanity checking that all actions are in {1,2,3,4}
+        # (Game just jams if feeded forward)
+        
+        # Make sure hand states are {0,1}
+        if (actions[0][-1] > 1 or actions[0][-2] > 1 or actions[1][-1] > 1 or
+                    actions[0][-2] > 1):
+            raise ValueError("Hand joint received state above 1 (last two "+
+                             "states per player)")
         try:
             actions = actions[0]+actions[1]
-            if len(actions) != 2*NUM_ACTIONS:
+            if len(actions) != 2*NUM_CONTROLLABLES:
                 raise ValueError()
         except Exception as e:
-            raise ValueError("Actions should be list of shape 2 x %d " % 
-                             NUM_ACTIONS)
+            raise ValueError("Actions should be a List of shape 2 x %d " % 
+                             NUM_CONTROLLABLES)
+
         self._send_comma_list(actions)
     
     def step(self, actions):
@@ -224,10 +246,24 @@ class ToribashControl:
             terminal: Boolean indicating if provided state is final
             info: None (for OpenAI-Gym compatability)
         """
+        self._check_if_initialized()
+        
         self.make_actions(actions)
         s, terminal = self.get_state()
         return s, None, terminal, None
-        
+    
+    def get_state_dim(self):
+        """ Return size of state space per character """
+        return NUM_LIMBS*3
+    
+    def get_num_joints(self):
+        """ Return number of controllable joints """
+        return NUM_CONTROLLABLES
+    
+    def get_num_joint_states(self):
+        """ Return number of states each joint can have """
+        return NUM_JOINT_STATES
+    
 def create_random_actions():
     """ Return random actions """
     ret = [[],[]]
@@ -263,9 +299,11 @@ def test_control(toribash_exe, num_instances, verbose=False):
                 s = controllers[i].reset()
                 num_rounds += 1
             states.append(s)
+        print(states[0].limb_positions)
         verbose_print("Got states")
         for i in range(num_instances):
             actions = create_random_actions()
+            print(actions)
             controllers[i].make_actions(actions)
         verbose_print("Sent actions")
         n_steps += num_instances
@@ -277,5 +315,5 @@ def test_control(toribash_exe, num_instances, verbose=False):
         controller.close()
     
 if __name__ == '__main__':
-	test_control(r"D:\Games\Toribash-5.2\toribash.exe", 3)
+	test_control(r"D:\Games\Toribash-5.2\toribash.exe", 1)
     #test_control("/home/anssk/.wine/drive_c/Games/Toribash-5.2/toribash.exe", 8)
