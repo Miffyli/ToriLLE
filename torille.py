@@ -24,11 +24,17 @@
 import socket
 import numpy as np
 import random as r
+import subprocess
+from multiprocessing import Lock
+import sys
+
+# Platform we are running on
+PLATFORM = sys.platform
 
 # Port where Toribashes connect to
 PORT = 7788
 # Global timeout (in seconds) for connections
-TIMEOUT = 10
+TIMEOUT = 30
 # Buffer size (for recv)
 BUFFER_SIZE = 8096
 # Line ending character
@@ -42,6 +48,11 @@ NUM_ACTIONS = NUM_JOINTS+2
 
 # Bodypart x,y,z + Joint states + hand grips + injuries
 STATE_LENGTH = (NUM_LIMBS*3*2) + NUM_JOINTS*2 + 4 + 2
+
+# This lock is used to avoid overlapping listening of incoming 
+# connections
+# TODO Wait... does this actually work with processes tho?
+toribash_launch_lock = Lock()
 
 class ToribashState:
     """ Class for storing and processing the state representations
@@ -82,15 +93,44 @@ class ToribashState:
         
 class ToribashControl:
     """ Main class controlling one instance of Toribash """
-    def __init__(self, connection):
+    def __init__(self, executable):
         """ 
         Parameters:
-            connection: Socket object representing TCP connection with Toribash
-                        instance
+            executable: String of path to the toribash.exe launching the game
         """
-        self.connection = connection
-        # Set the timeout time for connections
-        self.connection.settimeout(TIMEOUT)
+        self.executable_path = executable
+        self.process = None
+        self.connection = None
+        
+    def init(self):
+        """ Actual init: Launch the game and wait for connection to be 
+            made
+        """
+        # Make sure we are not listening for overlapping connections
+        with toribash_launch_lock:
+            # TODO processes won't die on Windows when Python exits,
+            # even with tricks from Stackoverflow #12843903
+            self.process = subprocess.Popen((self.executable_path,), 
+                                             stdout=subprocess.DEVNULL, 
+                                             stderr=subprocess.DEVNULL)
+            # Create socket for waiting for Toribash to connect
+            s = socket.socket()
+            s.bind(("",PORT))
+            s.settimeout(TIMEOUT)
+            s.listen(1)
+            conn, addr = s.accept()
+            # Close the listener socket
+            s.close()
+            
+            # Set the timeout for connection 
+            conn.settimeout(TIMEOUT)
+            self.connection = conn
+    
+    def close(self):
+        """ Close the running Toribash instance and clean up """
+        self.connection.close()
+        # No need to be gentle here
+        self.process.kill()
     
     def _recv_line(self, s):
         """ Call recv till data ends with "\n"
@@ -203,31 +243,25 @@ def test_control(toribash_exe, num_instances, verbose=False):
     import subprocess
     verbose_print = lambda s: print(s) if verbose else None
     
-    verbose_print("Creating listener socket...")
-    s = socket.socket()
-    s.bind(("",7777))
-    s.listen()
-    verbose_print("Launching %d Toribash instances..." % num_instances)
-    toribashes = []
-    for i in range(num_instances):
-        p = subprocess.Popen((toribash_exe,), stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        toribashes.append(p)
     controllers = []
+    
     verbose_print("Waiting connections from toribashes...")
     for i in range(num_instances):
-        conn, addr = s.accept()
-        controller = ToribashControl(conn)
+        controller = ToribashControl(toribash_exe)
+        controller.init()
         controllers.append(controller)
 
     last_time = time()
     n_steps = 0
-    while 1:
+    num_rounds = 0
+    while num_rounds < 100:
         states = []
         # Wait for state from all instances
         for i in range(num_instances):
             s,terminal = controllers[i].get_state()
             if terminal: 
                 s = controllers[i].reset()
+                num_rounds += 1
             states.append(s)
         verbose_print("Got states")
         for i in range(num_instances):
@@ -239,8 +273,9 @@ def test_control(toribash_exe, num_instances, verbose=False):
             print("FPS: %.2f" % (n_steps/(time()-last_time)))
             last_time = time()
             n_steps = 0
-    
+    for controller in controllers:
+        controller.close()
     
 if __name__ == '__main__':
-	test_control(r"R:\Toribash-5.2\toribash.exe", 4)
+	test_control(r"D:\Games\Toribash-5.2\toribash.exe", 3)
     #test_control("/home/anssk/.wine/drive_c/Games/Toribash-5.2/toribash.exe", 8)
