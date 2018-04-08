@@ -18,13 +18,17 @@
 import numpy as np
 import tensorflow as tf
 
+# Default beta value for entropy regularization
+DEFAULT_BETA = 1e-5
+
 class ToribashA2C:
     """ Simple A2C implementation for Toribash
     
     One key difference is that there are N joints, each of which can be
     in M different states. So we need something different for this.
     Pi is matrix NxM, where it is softmaxed over M"""
-    def __init__(self, num_input, num_joints, num_joint_states, load_model=None):
+    def __init__(self, num_input, num_joints, num_joint_states, 
+                 beta=DEFAULT_BETA, load_model=None):
         self.num_input = num_input
         self.num_joints = num_joints
         self.num_joint_states = num_joint_states
@@ -47,14 +51,19 @@ class ToribashA2C:
         self.loss_pi = None
         self.loss = None
         
-        self.build_network()
-        
-        # Either loaded or defined in training
         self.session = None
+        self.beta = beta
         self.optimizer = None
         self.train_op = None
-        self.first_train = True
         
+        self.build_network()
+        
+    def _initialize_session(self):
+        """ Create TF session and initialize network with random parameters """
+        self.session = tf.Session()
+        self.session.run(tf.global_variables_initializer())
+        self.session.run(tf.local_variables_initializer())
+    
     def build_network(self):
         # Create some head 
         self.dense1 = tf.layers.dense(inputs=self.input_s,
@@ -104,20 +113,32 @@ class ToribashA2C:
         # (Wouldn't have thought of this without [3])
         advantage = tf.stop_gradient(advantage)
         
+        # Clip for numerical stability and log
+        log_pi = tf.log(tf.clip_by_value(self.pi, 1e-10, 1))
+        
         # Only select pis that were selected as an action
         # TODO this needs checking if this went correctly
         action_one_hot = tf.one_hot(self.input_a, depth=self.num_joint_states,
                                     axis=-1)
-        selected_pi = tf.boolean_mask(self.pi, action_one_hot)
+        selected_pi = tf.boolean_mask(log_pi, action_one_hot)
         selected_pi = tf.reshape(selected_pi, (-1,self.num_joints))
         
-        # Clip for numerical stability and log
-        log_pi = tf.log(tf.clip_by_value(selected_pi, 1e-10, 1))
         # Negative because optimizer attempts to minimize this
-        self.loss_pi = -tf.reduce_sum(tf.multiply(log_pi,advantage[:,None]))
+        self.loss_pi = -tf.reduce_sum(tf.multiply(selected_pi,
+                                                  advantage[:,None]))
         
-        # TODO add entropy for exploration
-        self.loss = self.loss_pi + self.loss_v
+        # Entropy term
+        # H(X) = - \sum{P(X) * log P(X)}
+        entropy = -tf.reduce_sum(self.pi * log_pi)
+        
+        # We want to maximize entropy, hence neg
+        # TODO add linear annealing to the entropy term
+        self.loss = self.loss_pi + self.loss_v - self.beta*entropy
+        
+        # Now just create vanilla TF optimizer and training op
+        
+        self.optimizer = tf.train.AdamOptimizer()
+        self.train_op = self.optimizer.minimize(self.loss)
     
     def train_on_batch(self, states, state_primes, actions, returns):
         """ Run train ops on given batch of states, followup states, actions and
@@ -132,25 +153,13 @@ class ToribashA2C:
             loss: The loss from training update
         """
         
-        # Check if this is first train operation. If yes, init 
-        # session and network and such
-        if self.first_train:
-            # Good ol' vanilla Adam. Can't go wrong with it (Right?... Right?!)
-            self.optimizer = tf.train.AdamOptimizer()
-            
-            self.train_op = self.optimizer.minimize(self.loss)
-            
-            if self.session is None:
-                self.session = tf.Session()
-                # Re-init network only if session wasn't available
-                # (i.e. we did not load a model)
-                # Note that due to adaptive nature of Adam, first 
-                # update iterations could probably wreck whatever
-                # loaded model had stored
-                self.session.run(tf.global_variables_initializer())
-                self.session.run(tf.local_variables_initializer())
-            self.first_train = False
-
+        # TODO add handling of terminal state (target_v = return, not 
+        # based on the state_primes)
+        
+        # Check if we have a session. If not, init to random
+        if not self.session:
+            self._initialize_session()
+        
         # Target values for V
         vs = self.predict_v(state_primes)
         target_vs = returns + vs
@@ -169,6 +178,9 @@ class ToribashA2C:
         Returns:
             values: [None,] representing the values of the states
         """
+        # Check if we have a session. If not, init to random
+        if not self.session:
+            self._initialize_session()
         return self.session.run([self.v], 
                                  feed_dict = {self.input_s: states})[0]
     
@@ -180,6 +192,9 @@ class ToribashA2C:
             values: [None,num_joints,num_joint_states] representing the 
                     probabilities of selecting joint states per joint 
         """
+        # Check if we have a session. If not, init to random
+        if not self.session:
+            self._initialize_session()
         return self.session.run([self.pi], 
                                  feed_dict = {self.input_s: states})[0]
     
@@ -197,9 +212,9 @@ class ToribashA2C:
 if __name__ == '__main__':
     # Testing with random values to see if code even runs correctly
     from tqdm import tqdm
-    num_inputs = 10
-    num_joints = 5
-    num_joint_states = 2
+    num_inputs = 63
+    num_joints = 22
+    num_joint_states = 4
     batch_size = 32
     num_batches = 1000
     num_epochs = 1
@@ -207,7 +222,7 @@ if __name__ == '__main__':
     state = np.random.random((num_inputs,))
     state_prime = np.random.random((num_inputs,))
     action = np.random.randint(0, num_joint_states, size=(num_joints,))
-    reward = np.random.random((1,))[0]-1.0
+    reward = np.random.random((1,))[0]-0.5
     
     print("Action: "+str(action))
     print("Reward: "+str(reward))
