@@ -66,8 +66,8 @@ These are sent over communication as comma-separated lists
 
 
 local CONNECT_IP = "127.0.0.1"
-local CONNECT_PORT = 7777
-local TIMEOUT = 10
+local CONNECT_PORT = 7788
+local TIMEOUT = 30
 
 -- This will be the TCP connection object
 
