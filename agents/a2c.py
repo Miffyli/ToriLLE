@@ -21,7 +21,7 @@ import tensorflow as tf
 # Default beta value for entropy regularization
 DEFAULT_BETA = 1e-5
 # Default learning rate
-LEARNING_RATE = 0.001
+LEARNING_RATE = 0.005
 # Gamma for RL
 GAMMA = 0.99
 
