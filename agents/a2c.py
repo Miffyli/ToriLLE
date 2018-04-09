@@ -20,6 +20,10 @@ import tensorflow as tf
 
 # Default beta value for entropy regularization
 DEFAULT_BETA = 1e-5
+# Default learning rate
+LEARNING_RATE = 0.001
+# Gamma for RL
+GAMMA = 0.99
 
 class ToribashA2C:
     """ Simple A2C implementation for Toribash
@@ -107,14 +111,14 @@ class ToribashA2C:
         advantage = self.target_v - self.v
         
         # Update value function (much like in [3])
-        self.loss_v = 0.5 * tf.reduce_sum(advantage**2)
+        self.loss_v = 0.5 * tf.reduce_sum(tf.square(advantage))
         
         # Stop gradient to prevent pi_loss from affecting value function
         # (Wouldn't have thought of this without [3])
         advantage = tf.stop_gradient(advantage)
         
         # Clip for numerical stability and log
-        log_pi = tf.log(tf.clip_by_value(self.pi, 1e-10, 1))
+        log_pi = tf.log(tf.clip_by_value(self.pi, 1e-7, 1))
         
         # Only select pis that were selected as an action
         # TODO this needs checking if this went correctly
@@ -130,14 +134,14 @@ class ToribashA2C:
         # Entropy term
         # H(X) = - \sum{P(X) * log P(X)}
         entropy = -tf.reduce_sum(self.pi * log_pi)
-        
         # We want to maximize entropy, hence neg
+        self.loss_entropy = -self.beta*entropy
+        
         # TODO add linear annealing to the entropy term
-        self.loss = self.loss_pi + self.loss_v - self.beta*entropy
+        self.loss = self.loss_pi + self.loss_v + self.loss_entropy
         
         # Now just create vanilla TF optimizer and training op
-        
-        self.optimizer = tf.train.AdamOptimizer()
+        self.optimizer = tf.train.RMSPropOptimizer(LEARNING_RATE)
         self.train_op = self.optimizer.minimize(self.loss)
     
     def train_on_batch(self, states, state_primes, actions, returns):
@@ -150,7 +154,7 @@ class ToribashA2C:
                      [0,num_joint_states]. Represents joint states.
             returns: Either rewards or N-step returns
         Returns:
-            loss: The loss from training update
+            loss_pi, loss_v, loss_H: Losses from training 
         """
         
         # TODO add handling of terminal state (target_v = return, not 
@@ -162,14 +166,16 @@ class ToribashA2C:
         
         # Target values for V
         vs = self.predict_v(state_primes)
-        target_vs = returns + vs
+        target_vs = returns + vs*GAMMA
         
-        loss, _ = self.session.run([self.loss, self.train_op],
+        loss_pi, loss_v, loss_H, _ = self.session.run([self.loss_pi, 
+                                    self.loss_v, self.loss_entropy, 
+                                    self.train_op],
                                    feed_dict = {self.input_s: states,
                                                 self.input_a: actions,
                                                 self.input_r: returns,
                                                 self.target_v: target_vs})
-        return loss
+        return loss_pi, loss_v, loss_H
 
     def predict_v(self, states):
         """ Predict values for given states. Used in training 
@@ -197,6 +203,15 @@ class ToribashA2C:
             self._initialize_session()
         return self.session.run([self.pi], 
                                  feed_dict = {self.input_s: states})[0]
+        
+    def predict_pi_and_v(self, states):
+        """ Predict policies and values for given states. 
+        """
+        # Check if we have a session. If not, init to random
+        if not self.session:
+            self._initialize_session()
+        return self.session.run([self.pi, self.v], 
+                                 feed_dict = {self.input_s: states})
     
     def save(self, filename):
         if self.session is None:
@@ -236,11 +251,11 @@ if __name__ == '__main__':
     for epoch in range(num_epochs):
         losses = []
         for i in tqdm(range(num_batches)):
-            losses.append(a2c.train_on_batch(
+            losses.append(sum(a2c.train_on_batch(
                                states,
                                state_primes,
                                actions,
-                               rewards))
+                               rewards)))
         print("Avrg loss: %f" % (sum(losses)/len(losses)))
         print("Pi: "+str(a2c.predict_pi(np.expand_dims(state,0))))
     
