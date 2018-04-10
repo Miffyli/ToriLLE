@@ -299,11 +299,9 @@ def test_control(toribash_exe, num_instances, verbose=False):
                 s = controllers[i].reset()
                 num_rounds += 1
             states.append(s)
-        print(states[0].limb_positions)
         verbose_print("Got states")
         for i in range(num_instances):
             actions = create_random_actions()
-            print(actions)
             controllers[i].make_actions(actions)
         verbose_print("Sent actions")
         n_steps += num_instances

@@ -13,6 +13,7 @@ Toribash Learning Environment
 - Toribash instances do not close on Windows when Python script exits. Manually terminate processes.
 - Start by sending settings
 - Add sanity checking for sending actions (game jams without any errors if wrong type of actions are sent)
+- Even with locking, trying to run multiple processes on Ubuntu throws "socket in use"
 
 ### Feature/soon-to-be-done TODOs:
 
@@ -53,6 +54,8 @@ Toribash Learning Environment
             - 8 instances:  850 FPS
             - 12 instances: 800-1000 FPS
             - 16 instances: Crash
+        - 4-core Ubuntu (3.5Ghz, headless / software rendering)
+            - 1 instance:   150 FPS (180 FPS with resolution 80x60x24 )
     - With "set matchframes 100" and "set turnframes 1":
         - 16-core Ubuntu (2.1Ghz, Titan XP)
             - 4 instances: 
@@ -83,6 +86,7 @@ Toribash Learning Environment
             - 8 instances:   FPS
             - 12 instances:  FPS
             - 16 instances: Crash
+     
 - Episode restart is rather slow, especially if all instances reboot at once
     - Could this be better if e.g. we move all files to ram?
 
