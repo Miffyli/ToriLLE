@@ -91,3 +91,22 @@ Toribash Learning Environment
 - Add swords and other items
 - Add description of the environment
 - Add possibility to use rendered images?
+
+# Running on Linux (tested Ubuntu 16.04)
+Windows binaries run well with Wine.
+
+## Headless on Linux
+Game won't launch without a display (requires OpenGL).
+Using Xvfb you can create a virtual display, e.g.
+
+`xvfb-run -s "-screen 0 800x600x24" path_to_toribash_exe`
+
+### Troubleshooting for headless
+- Nvidia drivers do not work well with Xvfb. You will likely get some errors about GLX.
+    - But fear not, you "only" have to reinstall drivers/CUDA without OpenGL files if you need the drivers:
+    - This gist covers the reinstallation: https://gist.github.com/8enmann/931ec2a9dc45fde871d2139a7d1f2d78
+        - **However** on Ubunutu 16.04 you may get "pre-install script failed" or "build error" messages:
+            - Download other version of drivers than suggested 384.59. For me version 387.34 installed correctly.
+            - (Possibly optional) Check if you have `/usr/lib/nvidia/pre-install` file. If it only has `exit 1`, rename/remove this file.
+
+## 
