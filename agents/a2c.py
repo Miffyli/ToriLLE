@@ -25,6 +25,9 @@ LEARNING_RATE = 0.005
 # Gamma for RL
 GAMMA = 0.99
 
+# Default weight for forward-model loss
+DEFAULT_FORWARD_MODEL_LOSS = 1.0
+
 class ToribashA2C:
     """ Simple A2C implementation for Toribash
     
@@ -32,7 +35,8 @@ class ToribashA2C:
     in M different states. So we need something different for this.
     Pi is matrix NxM, where it is softmaxed over M"""
     def __init__(self, num_input, num_joints, num_joint_states, 
-                 beta=DEFAULT_BETA, load_model=None):
+                 beta=DEFAULT_BETA, fm_weight=DEFAULT_FORWARD_MODEL_LOSS,
+                 load_model=None):
         self.num_input = num_input
         self.num_joints = num_joints
         self.num_joint_states = num_joint_states
@@ -42,6 +46,10 @@ class ToribashA2C:
         # Integer values in range [0, num_joint_states]
         self.input_a = tf.placeholder(np.int32, [None, num_joints],
                                        name="input_a")
+        # Will be used in the network
+        self.input_a_onehot = tf.one_hot(self.input_a, 
+                                         depth=self.num_joint_states,
+                                         axis=-1)
         self.input_r = tf.placeholder(np.float32, [None,],
                                        name="input_r")
         
@@ -54,9 +62,14 @@ class ToribashA2C:
         self.loss_v = None
         self.loss_pi = None
         self.loss = None
+        # This will be final layer of common network head
+        self.network_head = None
+        
+        self.fm_loss_weight = fm_weight
+        # Entropy weight
+        self.beta = beta
         
         self.session = None
-        self.beta = beta
         self.optimizer = None
         self.train_op = None
         
@@ -64,7 +77,10 @@ class ToribashA2C:
         
     def _initialize_session(self):
         """ Create TF session and initialize network with random parameters """
-        self.session = tf.Session()
+        # Without this we may have fun rendering the game...
+        config = tf.ConfigProto()
+        config.gpu_options.allow_growth = True
+        self.session = tf.Session(config=config)
         self.session.run(tf.global_variables_initializer())
         self.session.run(tf.local_variables_initializer())
     
@@ -84,15 +100,15 @@ class ToribashA2C:
                               name="dense3")
         
         # In case we will modify the network till this point
-        network = self.dense3
+        self.network_head = self.dense3
         
         # Split to v and pi
-        self.v = tf.layers.dense(inputs=network,
+        self.v = tf.layers.dense(inputs=self.network_head,
                                         units=1,
                                         activation=None)
         self.v = tf.reshape(self.v, (-1,),name="output_v")
         
-        self.pi = tf.layers.dense(inputs=network,
+        self.pi = tf.layers.dense(inputs=self.network_head,
                              units=self.num_joints*
                                    self.num_joint_states,
                              activation=None)
@@ -122,9 +138,7 @@ class ToribashA2C:
         
         # Only select pis that were selected as an action
         # TODO this needs checking if this went correctly
-        action_one_hot = tf.one_hot(self.input_a, depth=self.num_joint_states,
-                                    axis=-1)
-        selected_pi = tf.boolean_mask(log_pi, action_one_hot)
+        selected_pi = tf.boolean_mask(log_pi, self.input_a_onehot)
         selected_pi = tf.reshape(selected_pi, (-1,self.num_joints))
         
         # Negative because optimizer attempts to minimize this
@@ -142,6 +156,36 @@ class ToribashA2C:
         
         # Now just create vanilla TF optimizer and training op
         self.optimizer = tf.train.RMSPropOptimizer(LEARNING_RATE)
+        self.train_op = self.optimizer.minimize(self.loss)
+    
+    def add_forward_model(self):
+        """ Add forward model (and loss) for the training 
+        Forward model: given s_t and a_t, predict s_t+1
+        """
+        # Continue building from network head
+        # Rather small network here to 
+        self.flat_actions = tf.reshape(self.input_a_onehot, 
+                                      (tf.shape(self.input_a_onehot),-1))
+        self.fm_dense1 = tf.layers.dense(
+                              inputs=[self.network_head, self.flat_actions],
+                              units=64,
+                              activation=tf.nn.relu,
+                              name="fm_dense1")
+        self.fm_out = tf.layers.dense(
+                              inputs=self.fm_dense1,
+                              units=self.num_input,
+                              activation=None,
+                              name="fm_out")
+        
+        # Add forward model loss. Basic MSE
+        fm_loss = tf.reduce_mean(
+                    tf.reduce_sum(tf.square(self.input_s-self.fm_out)*0.5, 
+                                  axis=1)
+                  )
+        self.loss = self.loss + fm_loss*self.fm_loss_weight
+        
+        # Update train op
+        # TODO is this legit?
         self.train_op = self.optimizer.minimize(self.loss)
     
     def train_on_batch(self, states, state_primes, actions, returns):
