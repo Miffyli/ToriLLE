@@ -19,7 +19,7 @@ import numpy as np
 import tensorflow as tf
 
 # Default beta value for entropy regularization
-DEFAULT_BETA = 1e-5
+DEFAULT_BETA = 1e-3
 # Default learning rate
 LEARNING_RATE = 0.005
 # Gamma for RL
@@ -111,7 +111,7 @@ class ToribashA2C:
         advantage = self.target_v - self.v
         
         # Update value function (much like in [3])
-        self.loss_v = 0.5 * tf.reduce_sum(tf.square(advantage))
+        self.loss_v = tf.reduce_mean(tf.square(advantage)*0.5)
         
         # Stop gradient to prevent pi_loss from affecting value function
         # (Wouldn't have thought of this without [3])
