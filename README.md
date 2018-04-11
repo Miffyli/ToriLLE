@@ -109,8 +109,10 @@ Using Xvfb you can create a virtual display, e.g.
 - Nvidia drivers do not work well with Xvfb. You will likely get some errors about GLX.
     - But fear not, you "only" have to reinstall drivers/CUDA without OpenGL files if you need the drivers:
     - This gist covers the reinstallation: https://gist.github.com/8enmann/931ec2a9dc45fde871d2139a7d1f2d78
-        - **However** on Ubunutu 16.04 you may get "pre-install script failed" or "build error" messages:
+        - **However** on Ubuntu 16.04 you may get "pre-install script failed" or "build error" messages:
             - Download other version of drivers than suggested 384.59. For me version 387.34 installed correctly.
             - (Possibly optional) Check if you have `/usr/lib/nvidia/pre-install` file. If it only has `exit 1`, rename/remove this file.
 
-## 
+# Related projects
+
+- Similar control structure (game <-> lua <-> sockets <-> Python/etc) is used in (MarioFlow)[https://docs.google.com/document/d/1p4ZOtziLmhf0jPbZTTaFxSKdYqE91dYcTNqTVdd6es4/edit#] by SethBling for controlling player in Super Mario Kart.
