@@ -50,8 +50,11 @@ class ToribashA2C:
         # Will be used in the network
         self.input_a_onehot = tf.one_hot(self.input_a, 
                                          depth=self.num_joint_states,
-                                         axis=-1,
-                                         dtype=tf.bool)
+                                         axis=-1)
+        # To make this work on older Tensorflows
+        self.input_a_onehot = tf.cast(self.input_a_onehot,
+                                      tf.bool)
+
         self.input_r = tf.placeholder(np.float32, [None,],
                                        name="input_r")
         

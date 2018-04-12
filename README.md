@@ -56,6 +56,8 @@ Toribash Learning Environment
             - 16 instances: Crash
         - 4-core Ubuntu (3.5Ghz, headless / software rendering)
             - 1 instance:   150 FPS (180 FPS with resolution 80x60x24 )
+            - 4 instances:  280 FPS (300 FPS with resolution 80x60x24)
+            
     - With "set matchframes 100" and "set turnframes 1":
         - 16-core Ubuntu (2.1Ghz, Titan XP)
             - 4 instances: 
