@@ -120,6 +120,9 @@ class ToribashControl:
                                              stderr=subprocess.DEVNULL)
             # Create socket for waiting for Toribash to connect
             s = socket.socket()
+            # This allows rebinding to same address multiple times on *nix
+            # From Stackoverflow #6380057
+            s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             s.bind(("",PORT))
             s.settimeout(TIMEOUT)
             s.listen(1)
