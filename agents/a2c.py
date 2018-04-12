@@ -46,10 +46,12 @@ class ToribashA2C:
         # Integer values in range [0, num_joint_states]
         self.input_a = tf.placeholder(np.int32, [None, num_joints],
                                        name="input_a")
+        
         # Will be used in the network
         self.input_a_onehot = tf.one_hot(self.input_a, 
                                          depth=self.num_joint_states,
-                                         axis=-1)
+                                         axis=-1,
+                                         dtype=tf.bool)
         self.input_r = tf.placeholder(np.float32, [None,],
                                        name="input_r")
         
