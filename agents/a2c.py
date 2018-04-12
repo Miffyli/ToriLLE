@@ -103,9 +103,13 @@ class ToribashA2C:
                               units=512,
                               activation=tf.nn.relu,
                               name="dense3")
+        self.dense4 = tf.layers.dense(inputs=self.dense3,
+                              units=512,
+                              activation=tf.nn.relu,
+                              name="dense4")
         
         # In case we will modify the network till this point
-        self.network_head = self.dense3
+        self.network_head = self.dense4
         
         # Split to v and pi
         self.v = tf.layers.dense(inputs=self.network_head,
