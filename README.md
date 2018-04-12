@@ -117,4 +117,4 @@ Using Xvfb you can create a virtual display, e.g.
 
 # Related projects
 
-- Similar control structure (game <-> lua <-> sockets <-> Python/etc) is used in (MarioFlow)[https://docs.google.com/document/d/1p4ZOtziLmhf0jPbZTTaFxSKdYqE91dYcTNqTVdd6es4/edit#] by SethBling for controlling player in Super Mario Kart.
+- Similar control structure (game <-> lua <-> sockets <-> Python/etc) is used in [MarioFlow](https://docs.google.com/document/d/1p4ZOtziLmhf0jPbZTTaFxSKdYqE91dYcTNqTVdd6es4) by SethBling for controlling player in Super Mario Kart.
