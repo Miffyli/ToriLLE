@@ -7,9 +7,9 @@ Elements in the action list ([index] = [description]).
 ```
 0 = matchframes (int, game default: 500. How long the match is in terms of frames)
 1 = turnframes (int, game default: 10. How many frames each action is repeated for (in DRL, this would be "frame skip"/"action repeat"))
-2 = engagement distance (float, game default: 100.0. Starting distance between players)
-3 = engagement height (float, game default: 0.0. Starting height of players)
-4 = engagement rotation (float, game default: 0.0. Starting rotation of players)
+2 = engagement distance (int, game default: 100. Starting distance between players)
+3 = engagement height (int, game default: 0. Starting height of players)
+4 = engagement rotation (int, game default: 0. Starting rotation of players (in deg))
 5 = gravity (float3, x,y,z, game default: 0.0 0.0 -9.81. Direction of gravity)
 8 = damage (int, one of {0,1,2}, game default: 0. See source below for further info)
 9 = dismemberment (bool, {0,1}, game default: 1. Enable/disable dismemberment)

@@ -9,6 +9,8 @@ Terms
 -----
 * Toribash: One running instance of Toribash game
 * Server: The software/piece of code which will control Toribash
+* Player1: One of the players. This one is referred as "player" in Toribash documentation.
+* Player2: One of the players. This one is referred as "uke" in Toribash documentation.
 
 Overview (pseudo-codes)
 -----------------------
@@ -88,3 +90,8 @@ Error situations
 ----------------
 * As of writing, Toribash **does not** sanity check for wrong type of data structures (e.g. too many / not enough items in state, actions outside of {1,2,3,4})
     * If such information is sent, Toribash LUA script will crash and won't proceed, and socket TIMEOUT will eventually be triggered.
+    
+Notes
+-----
+* Always read till `\n` character is received at the end of message! LUA socket send 
+seems to split the packet into multiple chunks often.
