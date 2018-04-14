@@ -8,73 +8,17 @@ Specifically designed machine/reinforcement learning in mind.
 Core loop: Send players' states (body parts etc), receive joint states, progress a step
 ]]
 
---[[Setup (25.3.2018)
-1. Move "socket" directory and "socket.lua" to Toribash root
-2. Replace "/data/script/startup.lua" with provided "startup.lua"
-3. Place "remotecontrol.lua" under "/data/script" directory and launch it from game (Options->Utils->Scripts)]]
-
---[[
-Toribash notes:
-
-some options: http://forum.toribash.com/showthread.php?t=317900
-functions: https://github.com/trittimo/ToriScriptAPI/blob/master/docs/toribash_docs.txt
-Bodypart list: http://forum.toribash.com/showthread.php?t=9391
-Previous attempt at NEAT: http://forum.toribash.com/showthread.php?t=170100
-                          http://forum.toribash.com/showthread.php?t=167355
-                          http://forum.toribash.com/showthread.php?t=25263
-
-- Use "run_cmd(...)" to set rules (see "some options"). E.g. "run_cmd('set engagedistance 100')" sets engagement distance to 100 (default)
-- Use "get_body_info(plr_index, body_index)" to get body info (pos, side?, rot?). 
-- Use "get_joint_info(plr_index, joint_index)" to get get joint info (state)
-- Use "set_joint_state(plr_index, joint_index, state)" to set joint state
-- Use "get_player_info(plr_index).injury" to get the amount of injury (= score for the __OTHER__ player)
-    - Stuff like ripping limbs apart does not seem to cause too much injury. Adjust to like in GA?
-- File "profile.tbs" is executed on Toribash launch, can be used to load script ("ls remotecontrol.lua")
-
-/re 10 10 -- lower resolution
-/opt fixedframerate -- run as fast as possible
-
-
-]]--
-
-
--- Joint states: 1,2,3,4
--- Grip states: 0,1
--- Limbs: 0-20 (N: 21)
--- Joints: 0-19 (N: 20)
-
---[[
-State is a table that should contain following:
-    - plr0 limbs (pos x,y,z) (NUM_LIMBS*3)
-    - plr0 joints (states) (NUM_JOINTS)
-    - plr0 injury 
-    - plr1 limbs (pos x,y,z) (NUM_LIMBS*3)                    
-    - plr1 joints (states) (NUM_JOINTS)
-    - plr0 injury
-Action is a table that contains following:
-    - plr0 joint states (NUM_JOINTS)
-    - plr0 left hand grip
-    - plr0 right hand grip
-    - plr1 joint states (NUM_JOINTS)
-    - plr1 left hand grip
-    - plr1 right hand grip
-When game ends (in finish_game), send:
-    - "end"
-And then wait for settings from server,
-These are sent over communication as comma-separated lists
-]]--
-
 
 local CONNECT_IP = "127.0.0.1"
 local CONNECT_PORT = 7788
 local TIMEOUT = 30
 
 -- This will be the TCP connection object
-
 local s = nil
 
 local NUM_JOINTS = 20
 local NUM_LIMBS = 21
+local NUM_SETTINGS = 18
 
 -- Options for not rendering anything
 local options_no_rendering = { 
@@ -173,12 +117,36 @@ end
 local function send_state_recv_actions(state)
     -- Send state
 	local send_amount = s:send(state.."\n")
-	echo("sent "..send_amount)
     
 	-- Wait for actions
 	local actions = wait_for_data(s)
 	actions = split_comma_and_numerize(actions)
     return actions
+end
+
+-- Receive settings and apply them
+-- Note that many of these settings apply on _next_ round
+local function recv_settings_and_apply()
+    local settings = wait_for_data()
+    settings = split_comma_and_numerize(settings)
+    -- Not very pretty, could be done in some neat list
+    -- But at least it is modifiable/readable ^^'
+    run_cmd("set matchframes "..settings[1])
+    run_cmd("set turnframes "..settings[2])
+    run_cmd("set engagedistance "..settings[3])
+    run_cmd("set engageheight "..settings[4])
+    run_cmd("set engagerotation "..settings[5])
+    run_cmd("set gravity "..settings[6].." "..settings[7].." "..settings[8])
+    run_cmd("set damage "..settings[9])
+    run_cmd("set dismemberment "..settings[10])
+    run_cmd("set dismemberthreshold "..settings[11])
+    run_cmd("set fracture "..settings[12])
+    run_cmd("set fracturethreshold "..settings[13])
+    run_cmd("set disqualification "..settings[14])
+    run_cmd("set dqflag "..settings[15])
+    run_cmd("set dqtimeout "..settings[16])
+    run_cmd("set dojotype "..settings[17])
+    run_cmd("set dojosize "..settings[18]) 
 end
 
 -- Send message indicating end of episode, and receive
@@ -189,11 +157,8 @@ local function send_end_recv_settings()
     -- Add indicator of end state
     state = "end,"..state
 	s:send(state.."\n")
-	-- Receive new settings
-	local settings = wait_for_data()
-    settings = split_comma_and_numerize(settings)
-    -- TODO apply settings
-    run_cmd("set ed "..math.random(10,1000))
+    -- Receive new settings and apply them
+    recv_settings_and_apply()
 end
 
 -- Set joins according to given action
@@ -229,18 +194,35 @@ local function simulation_next_turn()
     step_game()
 end
 
--- Start a single game
-local function start_game()
-    add_hook("enter_freeze", "remotecontrol_freeze", simulation_next_turn)
-    -- make the first turn
-    simulation_next_turn()
-end
-
 -- Executed after round is over (just start a new one)
 local function finish_game(winType)
     send_end_recv_settings()
     remove_hook("enter_freeze", "remotecontrol_freeze")
     start_new_game()
+end
+
+-- Used to detect first game, which is used to 
+-- get new settings.
+-- Setting rules/settings require game to be running (mod loaded),
+-- which is why we are doing the settings stuff here
+local first_game = true
+
+-- Start a single game
+local function start_game()
+    if (first_game == true) then
+        first_game = false
+        -- Receive settings and apply them
+        recv_settings_and_apply()
+        -- Reset game to apply settings
+        run_cmd("reset")
+        -- Define hook for end game here, because otherwise
+        -- 'reset' above will trigger it
+        add_hook("end_game", "remotecontrol", finish_game)
+    end
+    -- Check if we should receive settings instead of playing game
+    add_hook("enter_freeze", "remotecontrol_freeze", simulation_next_turn)
+    -- make the first turn
+    simulation_next_turn()
 end
 
 -- Initialize the game for running as fast as possible 
@@ -251,11 +233,8 @@ function initialize_and_start()
         set_option(opt, val)
     end
     run_cmd("re "..resolution_no_rendering[1].." "..resolution_no_rendering[2])
-    -- Start the game by loading mod
+    -- Start the game by loading the mod
     run_cmd("loadmod classic")
-    -- Set rules
-    run_cmd("set turnframes 1")
-    run_cmd("set matchframes 1000")
 end
 
 -- Temporary drawing hook for closing menu
@@ -263,8 +242,8 @@ end
 -- Credits: hampa & Dranix
 function menu_closer_drawer() 
     close_menu()
-    initialize_and_start()
     remove_hooks("menu_closer")
+    initialize_and_start()
 end
 
 --Starup
@@ -293,14 +272,12 @@ local function run_controlled(configuration)
     remove_hook("enter_freeze", "remotecontrol_freeze")
     remove_hook("draw3d", "menu_closer")
     
-    add_hook("end_game", "remotecontrol", finish_game)
+    -- Finish hook will be created later
     add_hook("new_game", "remotecontrol", start_game)
     -- This hook is to close main manu
     -- It can prevent playing the game, especially if this 
     -- script is launched from profile.tbs
     add_hook("draw3d", "menu_closer", menu_closer_drawer)
-    
-    initialize_and_start()
 end
 
 run_controlled()
