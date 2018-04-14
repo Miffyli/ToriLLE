@@ -8,7 +8,7 @@
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
-#  the Free Software Foundation; either version 2 of the License, or
+#  the Free Software Foundation; either version 3 of the License, or
 #  (at your option) any later version.
 #  
 #  This program is distributed in the hope that it will be useful,
@@ -27,6 +27,8 @@ import random as r
 import subprocess
 from multiprocessing import Lock
 import sys
+from collections import OrderedDict
+import pprint
 
 # Platform we are running on
 PLATFORM = sys.platform
@@ -46,6 +48,8 @@ NUM_JOINTS = 20
 # Add hand_grips
 NUM_CONTROLLABLES = NUM_JOINTS+2
 NUM_JOINT_STATES = 4
+# Number of setting variables
+NUM_SETTINGS = 18
 
 # Bodypart x,y,z + Joint states + hand grips + injuries
 STATE_LENGTH = (NUM_LIMBS*3*2) + NUM_JOINTS*2 + 4 + 2
@@ -91,25 +95,80 @@ class ToribashState:
         # Injuries
         self.plr0_injury = state_list[85]
         self.plr1_injury = state_list[170]
+
+class ToribashSettings:
+    """ Class for storing and processing settings for Toribash """
+    
+    # Default settings
+    DEFAULT_SETTINGS = OrderedDict([
+        ("matchframes", 500),
+        ("turnframes", 10), 
+        ("engagement_distance", 100),
+        ("engagement_height", 0),
+        ("engagement_rotation", 0),
+        ("gravity_x", 0.0),
+        ("gravity_y", 0.0),
+        ("gravity_z", -9.81),
+        ("damage", 0),
+        ("dismemberment_enable", 1),
+        ("dismemberment_threshold", 100),
+        ("fractures_enable", 0),
+        ("fractures_threshold", 0),
+        ("disqualification_enabled", 0), 
+        ("disqualification_flags", 0),           
+        ("disqualification_timeout", 0),  
+        ("dojo_type", 0),
+        ("dojo_size", 0)
+    ])
+    
+    def __init__(self, **kwargs):
+        """ Create new settings, kwargs can be used to define settings """
+        self.settings = []
         
+        # Get settings from function call, otherwise get them from 
+        # default settings
+        for k,v in ToribashSettings.DEFAULT_SETTINGS.items():
+            self.settings.append(kwargs.get(k,v))
+    
+    def set(self, key, value):
+        """ Set given setting to value """
+        self.settings[list(ToribashSettings.DEFAULT_SETTINGS.keys()
+                           ).index(key)] = value
+        
+    def get(self, key):
+        """ Get current value of the setting """
+        return self.settings[list(ToribashSettings.DEFAULT_SETTINGS.keys()
+                                  ).index(key)]
+    
+    def __str__(self):
+        return pprint.pformat(dict([(k,v) for k,v in zip(
+                                    ToribashSettings.DEFAULT_SETTINGS.keys(),
+                                    self.settings)]))
+    
 class ToribashControl:
     """ Main class controlling one instance of Toribash """
-    def __init__(self, executable):
+    def __init__(self, executable, settings=None):
         """ 
         Parameters:
             executable: String of path to the toribash.exe launching the game
+            settings: ToribashSettings instance. Uses these settings if 
+                      provided, else defaults to default settings.
         """
         self.executable_path = executable
         self.process = None
         self.connection = None
+        
+        self.settings = settings
+        if self.settings is None:
+            self.settings = ToribashSettings()
     
     def _check_if_initialized(self):
         if self.process is None:
             raise ValueError("Controlled not initialized with init()")
     
     def init(self):
-        """ Actual init: Launch the game and wait for connection to be 
-            made
+        """ Actual init: Launch the game process, wait for connection and
+            and settings for the first game
         """
         # Make sure we are not listening for overlapping connections
         with toribash_launch_lock:
@@ -121,6 +180,8 @@ class ToribashControl:
             # Create socket for waiting for Toribash to connect
             s = socket.socket()
             # This allows rebinding to same address multiple times on *nix
+            # Otherwise you will get "address in use" if you launch multiple
+            # Toribash instances on same computer
             # From Stackoverflow #6380057
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             s.bind(("",PORT))
@@ -133,7 +194,10 @@ class ToribashControl:
             # Set the timeout for connection 
             conn.settimeout(TIMEOUT)
             self.connection = conn
-    
+        
+        # Send initial settings
+        self._send_comma_list(self.settings.settings)
+
     def close(self):
         """ Close the running Toribash instance and clean up """
         self.connection.close()
@@ -173,8 +237,7 @@ class ToribashControl:
     def _send_comma_list(self, data):
         """ Send given list to Toribash as comma-separated list
         Parameters:
-            actions: List of length 44 (22 limbs per player) representing the 
-                     actions players should take
+            data: List of values to be sent
         """
         # We need to add end of line for the luasocket "*l"
         data = ",".join(map(str, data)) + "\n"
@@ -192,15 +255,14 @@ class ToribashControl:
         s = ToribashState(s)
         return s, terminal
     
-    def reset(self):
+    def reset(self, settings=None):
         """ Reset the game by sending settings for next round
         Returns:
             state: ToribashState representing the state of new game
         """
         self._check_if_initialized()
         
-        # TODO implement proper sending of settings
-        self.connection.sendall("\n".encode())
+        self._send_comma_list(self.settings.settings)
         s,terminal = self.get_state()
         return s
     
@@ -277,7 +339,6 @@ def create_random_actions():
     
 def test_control(toribash_exe, num_instances, verbose=False):
     from time import time
-    import subprocess
     verbose_print = lambda s: print(s) if verbose else None
     
     controllers = []
@@ -285,6 +346,9 @@ def test_control(toribash_exe, num_instances, verbose=False):
     verbose_print("Waiting connections from toribashes...")
     for i in range(num_instances):
         controller = ToribashControl(toribash_exe)
+        controller.settings.set("matchframes", 1000)
+        controller.settings.set("turnframes", 1)
+        controller.settings.set("engagement_distance", 1000)
         controller.init()
         controllers.append(controller)
 
