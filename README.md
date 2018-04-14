@@ -1,17 +1,30 @@
 # ToriLLE
 Toribash Learning Environment
 
+# Setup (14.4.2018)
+**This will override `data/scripts/startup.lua` file in Toribash.**
+1. Copy contents of `toribash` directory into Toribash game folder (`profile.tbs` should be next to `toribash.exe`)
+2. Launch the game. It should stay stuck in white screen for a period of time (attempts to connect to controller).
+   This will also set up some settings for faster execution.
+
+# Useful links
+
+* Some options: http://forum.toribash.com/showthread.php?t=317900
+* LUA functions: https://github.com/trittimo/ToriScriptAPI/blob/master/docs/toribash_docs.txt
+* Bodypart list: http://forum.toribash.com/showthread.php?t=9391
+* Previous attempts at machine learning on Toribash: 
+  * http://forum.toribash.com/showthread.php?t=170100
+  * http://forum.toribash.com/showthread.php?t=167355
+  * http://forum.toribash.com/showthread.php?t=25263
+  * https://www.researchgate.net/profile/Jonathan_Byrne/publication/228848637_Optimising_offensive_moves_in_toribash_using_a_genetic_algorithm/links/0046351420d5001396000000.pdf
+
 # Todos
 ### Fixes/Problems/Bugs:
 
 - "Daily reward" blocks the game on startup 
     - Does not prevent running the code, but code runs slow
     - Maybe could be closed with another close_manu()?
-- Running code on server without screen (e.g. csdeepen over SSH)
-    - Even with ' xvfb-run -s "-screen 0 1400x900x24" bash ' there are errors
-    - Maybe try " wine explorer /desktop=Halo,1400x1050 " trick?     
 - Toribash instances do not close on Windows when Python script exits. Manually terminate processes.
-- Start by sending settings
 - Add sanity checking for sending actions (game jams without any errors if wrong type of actions are sent)
 - Even with locking, trying to run multiple processes on Ubuntu throws "socket in use"
 
@@ -20,20 +33,8 @@ Toribash Learning Environment
 - Consider moving hand joint thing to somewhere else?
     - Causes confusion when it is {0,1} while others are {1,2,3,4}
     - Maybe normalize these somehow?
-- Move all settings in the drawer hook
-    - Create new function for these
 - Add rotations to the state representation?
-- Specify settings set at the beginning of the episode 
-    - Define settings structure
-    - engagement distance
-    - game mode?
-    - gravity? 
-- Add more options (via make_cmd etc). 
-    - Could make game lighter etc
-    - Resolution ("/res w h")
 - Make changing gamemod possible
-    - E.g. sumo
-    - Is this really needed?
 - Something else seems to be slowing down things too
     - "/opt autoupdate 0" seems to help with this issue
     - There still seems to be some sort of disk I/O every now and then
@@ -88,12 +89,12 @@ Toribash Learning Environment
             - 8 instances:   FPS
             - 12 instances:  FPS
             - 16 instances: Crash
-     
 - Episode restart is rather slow, especially if all instances reboot at once
     - Could this be better if e.g. we move all files to ram?
+- A2C does not seem to work, at least in this environment  
+- Add possibility to "display window" and run the game at reasonable speed
 
 ### Future TODOs:
-
 - Add swords and other items
 - Add description of the environment
 - Add possibility to use rendered images?
@@ -107,7 +108,7 @@ Using Xvfb you can create a virtual display, e.g.
 
 `xvfb-run -s "-screen 0 800x600x24" path_to_toribash_exe`
 
-### Troubleshooting for headless
+## Troubleshooting for headless
 - Nvidia drivers do not work well with Xvfb. You will likely get some errors about GLX.
     - But fear not, you "only" have to reinstall drivers/CUDA without OpenGL files if you need the drivers:
     - This gist covers the reinstallation: https://gist.github.com/8enmann/931ec2a9dc45fde871d2139a7d1f2d78
