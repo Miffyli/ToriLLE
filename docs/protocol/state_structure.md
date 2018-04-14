@@ -2,6 +2,9 @@ Elements in state list used for communication
 =============================================
 
 Elements in the state list ([index] = [description])
+
+Coordinates (x,y,z) are floats (decimals separated with a dot).
+
 ```
 0   = plr0 head x,y,z
 3   = plr0 breast x,y,z
@@ -93,8 +96,6 @@ Elements in the state list ([index] = [description])
 169 = plr1 grip right hand state
 170 = plr1 injury
 ```
-
-Coordinates (x,y,z) are floats (decimals separated with a dot).
 
 States are one of {1,2,3,4} representing the state of joint, where:
 ```
