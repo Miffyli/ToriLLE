@@ -4,7 +4,7 @@
 #  toribash_control.py
 #  Provides Python API to Toribash (i.e. can control the characters)
 #
-#  Copyright 2018 Anssi "Miffyli" Kanervisto
+#  Author: Anssi "Miffyli" Kanervisto, 2018
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -157,7 +157,6 @@ class ToribashControl:
             State: List of floats representing the state of the game 
             Terminal: Boolean indicating if this is the final state of game
         """
-        #s = self.connection.recv(BUFFER_SIZE).decode()
         s = self._recv_line(self.connection).decode()
         terminal = s.startswith("end")
         if terminal:
@@ -166,7 +165,6 @@ class ToribashControl:
         s = list(map(float, s.split(",")))
         # Make sure we got list of correct length
         if len(s) != STATE_LENGTH:
-            print("Recv: "+str(self.connection.recv(BUFFER_SIZE)))
             raise ValueError(("Got state of invalid size. Expected %d, got %d"+
                              "\nState: %s") %
                              (STATE_LENGTH, len(s), s))
