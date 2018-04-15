@@ -54,11 +54,6 @@ NUM_SETTINGS = 18
 # Bodypart x,y,z + Joint states + hand grips + injuries
 STATE_LENGTH = (NUM_LIMBS*3*2) + NUM_JOINTS*2 + 4 + 2
 
-# This lock is used to avoid overlapping listening of incoming 
-# connections
-# TODO Wait... does this actually work with processes tho?
-toribash_launch_lock = Lock()
-
 class ToribashState:
     """ Class for storing and processing the state representations
     from Toribash """
@@ -166,12 +161,15 @@ class ToribashControl:
         if self.process is None:
             raise ValueError("Controlled not initialized with init()")
     
-    def init(self):
+    def init(self, launch_lock):
         """ Actual init: Launch the game process, wait for connection and
             and settings for the first game
+        Parameters:
+            launch_lock: A Lock object used to block overlapping creations of
+                Toribash (all controllers listen to same socket)
         """
         # Make sure we are not listening for overlapping connections
-        with toribash_launch_lock:
+        with launch_lock:
             # TODO processes won't die on Windows when Python exits,
             # even with tricks from Stackoverflow #12843903
             self.process = subprocess.Popen((self.executable_path,), 
@@ -371,9 +369,13 @@ def create_random_actions():
     
 def test_control(toribash_exe, num_instances, verbose=False):
     from time import time
+    from threading import Lock
+    
     verbose_print = lambda s: print(s) if verbose else None
     
     controllers = []
+    
+    launch_lock = Lock()
     
     verbose_print("Waiting connections from toribashes...")
     for i in range(num_instances):
@@ -381,7 +383,7 @@ def test_control(toribash_exe, num_instances, verbose=False):
         controller.settings.set("matchframes", 1000)
         controller.settings.set("turnframes", 1)
         controller.settings.set("engagement_distance", 1000)
-        controller.init()
+        controller.init(launch_lock)
         controllers.append(controller)
 
     last_time = time()
