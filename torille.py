@@ -279,11 +279,22 @@ class ToribashControl:
         if type(actions) != list and type(actions) != tuple:
             raise ValueError("Actions should be a List (e.g. not numpy array)")
         
+        # Check we have actions for both players
+        # Should probably check types of the elements too..
+        if len(actions) != 2:
+            raise ValueError("Actions should be a List of two lists")
+        
+        # Check that we have correct number of states
+        if (len(actions[0]) != NUM_CONTROLLABLES or 
+                len(actions[1]) != NUM_CONTROLLABLES):
+            raise ValueError("Actions should be a List of shape 2 x %d"%
+                             NUM_CONTROLLABLES)
+        
         # Make sure hand states are {0,1}
-        if (0 > actions[0][-1] > 1 or 
-            0 > actions[0][-2] > 1 or  
-            0 > actions[1][-1] > 1 or
-            0 > actions[0][-2] > 1):
+        if (actions[0][-1] < 0 or actions[0][-1] > 1 or 
+            actions[0][-2] < 0 or actions[0][-2] > 1 or  
+            actions[1][-1] < 0 or actions[1][-1] > 1 or
+            actions[1][-2] < 0 or actions[1][-2] > 1):
             raise ValueError("Hand joint states (last two elements) should be"+
                              " in {0,1}")
         
@@ -293,13 +304,6 @@ class ToribashControl:
             if (actions[0][i] > 4 or actions[0][i] < 1 or actions[1][i] > 4 or
                     actions[1][i] < 1):
                 raise ValueError("Joint states should be in {1,2,3,4}")
-        
-        try:
-            if (len(actions[0]) + len(actions[1])) != 2*NUM_CONTROLLABLES:
-                raise ValueError()
-        except Exception as e:
-            raise ValueError("Actions should be a List of shape 2 x %d " % 
-                             NUM_CONTROLLABLES)
         
     
     def make_actions(self, actions):
@@ -355,6 +359,7 @@ def create_random_actions():
     for plridx in range(2):
         for jointidx in range(NUM_JOINTS):
             ret[plridx].append(r.randint(1,4))
+        ret[plridx].append(r.randint(0,1))
         ret[plridx].append(r.randint(0,1))
         ret[plridx].append(r.randint(0,1))
     return ret
