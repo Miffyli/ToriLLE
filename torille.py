@@ -266,6 +266,42 @@ class ToribashControl:
         s,terminal = self.get_state()
         return s
     
+    def validate_actions(self, actions):
+        """ Check the validity of given actions (correct shape, correct range, 
+        etc) and throw errors accordingly
+        Parameters:
+            actions: List of shape 2 x (NUM_JOINTS+2), specifying joint states 
+                     and hand gripping for both players.
+        Returns:
+            None. Raises an error if action is not valid
+        """
+        # Make sure we have lists
+        if type(actions) != list and type(actions) != tuple:
+            raise ValueError("Actions should be a List (e.g. not numpy array)")
+        
+        # Make sure hand states are {0,1}
+        if (0 > actions[0][-1] > 1 or 
+            0 > actions[0][-2] > 1 or  
+            0 > actions[1][-1] > 1 or
+            0 > actions[0][-2] > 1):
+            raise ValueError("Hand joint states (last two elements) should be"+
+                             " in {0,1}")
+        
+        # Check that all joint states are in {1,2,3,4}
+        for i in range(NUM_JOINTS):
+            # Check both players at the same time
+            if (actions[0][i] > 4 or actions[0][i] < 1 or actions[1][i] > 4 or
+                    actions[1][i] < 1):
+                raise ValueError("Joint states should be in {1,2,3,4}")
+        
+        try:
+            if (len(actions[0]) + len(actions[1])) != 2*NUM_CONTROLLABLES:
+                raise ValueError()
+        except Exception as e:
+            raise ValueError("Actions should be a List of shape 2 x %d " % 
+                             NUM_CONTROLLABLES)
+        
+    
     def make_actions(self, actions):
         """ Send given list of actions to the server.
         Parameters:
@@ -274,25 +310,11 @@ class ToribashControl:
         """
         self._check_if_initialized()
         
-        # Make sure we have lists
-        if type(actions) != list and type(actions) != tuple:
-            raise ValueError("Actions should be a list (e.g. not numpy array)")
+        # Validate actions, let it throw errors
+        self.validate_actions(actions)
         
-        # TODO add sanity checking that all actions are in {1,2,3,4}
-        # (Game just jams if feeded forward)
-        
-        # Make sure hand states are {0,1}
-        if (actions[0][-1] > 1 or actions[0][-2] > 1 or actions[1][-1] > 1 or
-                    actions[0][-2] > 1):
-            raise ValueError("Hand joint received state above 1 (last two "+
-                             "states per player)")
-        try:
-            actions = actions[0]+actions[1]
-            if len(actions) != 2*NUM_CONTROLLABLES:
-                raise ValueError()
-        except Exception as e:
-            raise ValueError("Actions should be a List of shape 2 x %d " % 
-                             NUM_CONTROLLABLES)
+        # Concat lists into one 
+        actions = actions[0]+actions[1]
 
         self._send_comma_list(actions)
     

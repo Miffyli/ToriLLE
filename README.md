@@ -25,8 +25,6 @@ Toribash Learning Environment
     - Does not prevent running the code, but code runs slow
     - Maybe could be closed with another close_manu()?
 - Toribash instances do not close on Windows when Python script exits. Manually terminate processes.
-- Add sanity checking for sending actions (game jams without any errors if wrong type of actions are sent)
-- Even with locking, trying to run multiple processes on Ubuntu throws "socket in use"
 
 ### Feature/soon-to-be-done TODOs:
 
