@@ -353,13 +353,18 @@ class ToribashControl:
         """ Return number of states each joint can have """
         return NUM_JOINT_STATES
     
+    def __del__(self):
+        """ Destructor to close running Toribash process.
+        There is no point in keeping Toribash alive without the controller..."""
+        if self.process is not None:
+            self.close()
+    
 def create_random_actions():
     """ Return random actions """
     ret = [[],[]]
     for plridx in range(2):
         for jointidx in range(NUM_JOINTS):
             ret[plridx].append(r.randint(1,4))
-        ret[plridx].append(r.randint(0,1))
         ret[plridx].append(r.randint(0,1))
         ret[plridx].append(r.randint(0,1))
     return ret
@@ -382,7 +387,7 @@ def test_control(toribash_exe, num_instances, verbose=False):
     last_time = time()
     n_steps = 0
     num_rounds = 0
-    while num_rounds < 100:
+    while num_rounds < 2:
         states = []
         # Wait for state from all instances
         for i in range(num_instances):
