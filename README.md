@@ -85,7 +85,7 @@ Windows binaries run well with Wine.
 Game won't launch without a display (requires OpenGL).
 Using Xvfb you can create a virtual display, e.g.
 
-`xvfb-run -s "-screen 0 800x600x24" path_to_toribash_exe`
+`xvfb-run -s "-screen 0 80x60x24" path_to_toribash_exe`
 
 or by separately running the Xvfb server
 

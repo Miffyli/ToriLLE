@@ -65,8 +65,10 @@ class ToribashState:
         # For both players
         self.joint_states = np.zeros((2,NUM_JOINTS))
         # Hand grips for both players
+        # TODO rename "hand_states"?
         self.hand_grips = np.zeros((2,2))
         # Amount of injury of players
+        # TODO make as a list and rename to just "injuries"?
         self.plr0_injury = None
         self.plr1_injury = None
         
@@ -169,6 +171,8 @@ class ToribashControl:
                 Toribash (all controllers listen to same socket)
         """
         # Make sure we are not listening for overlapping connections
+        # TODO actually this will buck up if we try to launch same script
+        # TODO multiple times on same computer...
         with launch_lock:
             # TODO processes won't die on Windows when Python exits,
             # even with tricks from Stackoverflow #12843903
