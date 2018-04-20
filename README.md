@@ -38,6 +38,16 @@ hence booting up multiple Toribashes at same time will take time!
 - Add rotations to the state representation?
 - Make changing gamemod possible
 - Make Torille pip-installable (maybe even include Toribash binary?)
+    - Permission from hampa to share it
+    - Contents of following directories can be removed:
+        - "custom"
+        - "replay"
+        - "Extra Content"
+        - "data/script/torishop"
+        - "data/script/atmo"
+        - "data/script/clans"
+        - "data/sounds"
+    - (500MB -> 40MB)
 - Something else seems to be slowing down things too
     - Asynchronous processes, windows minimized. Measured in chunks of 10s
     - Engagement distance 1000 (no contact)
@@ -107,3 +117,8 @@ This will run the game with software OpenGL renderer, reducing the FPS with ~25%
 ## Related projects
 
 - Similar control structure (game <-> lua <-> sockets <-> Python/etc) is used in [MarioFlow](https://docs.google.com/document/d/1p4ZOtziLmhf0jPbZTTaFxSKdYqE91dYcTNqTVdd6es4) by SethBling for controlling player in Super Mario Kart.
+
+## Special thanks / Acknowledgements
+- hampa and Dranix for invaluable help with configuring Toribash and lua scripts (also for developing the game in the first place!)
+- Siim Põder (user "windo" on GitHub) for original [toribash-evolver](https://github.com/windo/toribash-evolver) code
+- box (Toribash user) for comments during inception of this project
