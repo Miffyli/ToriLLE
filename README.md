@@ -32,6 +32,7 @@ hence booting up multiple Toribashes at same time will take time!
     - Does not prevent running the code, but code runs slow
     - Maybe could be closed with another close_manu()?
 - Toribash instances do not close on Windows when Python script exits. Manually terminate processes.
+- Remove blood with settings
 
 ### Feature/soon-to-be-done TODOs:
 
