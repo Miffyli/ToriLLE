@@ -280,4 +280,5 @@ local function run_controlled(configuration)
     add_hook("draw3d", "menu_closer", menu_closer_drawer)
 end
 
+close_menu()
 run_controlled()

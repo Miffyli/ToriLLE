@@ -27,8 +27,9 @@ hence booting up multiple Toribashes at same time will take time!
 ## Todos
 ### Fixes/Problems/Bugs:
 
-- Login screen blocks game on startup
-- "Daily reward" blocks the game on startup 
+- Settings are not applied (at least on Steam version)
+- Login screen blocks game on startup (fixed in 5.22)
+- "Daily reward" blocks the game on startup (fixed in 5.22)
     - Does not prevent running the code, but code runs slow
     - Maybe could be closed with another close_manu()?
 - Toribash instances do not close on Windows when Python script exits. Manually terminate processes.

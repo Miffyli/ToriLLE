@@ -416,5 +416,5 @@ def test_control(toribash_exe, num_instances, verbose=False):
         controller.close()
     
 if __name__ == '__main__':
-	test_control(r"D:\Games\Toribash-5.2\toribash.exe", 1)
+	test_control(r"D:\Games\Toribash-5.22\toribash.exe", 1)
     #test_control("/home/anssk/.wine/drive_c/Games/Toribash-5.2/toribash.exe", 8)
