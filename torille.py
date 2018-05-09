@@ -176,9 +176,15 @@ class ToribashControl:
         with launch_lock:
             # TODO processes won't die on Windows when Python exits,
             # even with tricks from Stackoverflow #12843903
-            self.process = subprocess.Popen((self.executable_path,), 
+            if sys.platform == "linux":
+                # Add wine command explicitly for running on Linux
+                self.process = subprocess.Popen(("wine", self.executable_path), 
                                              stdout=subprocess.DEVNULL, 
                                              stderr=subprocess.DEVNULL)
+            else:
+                self.process = subprocess.Popen((self.executable_path,), 
+                                                stdout=subprocess.DEVNULL, 
+                                                stderr=subprocess.DEVNULL)
             # Create socket for waiting for Toribash to connect
             s = socket.socket()
             # This allows rebinding to same address multiple times on *nix
