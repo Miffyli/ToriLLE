@@ -39,7 +39,7 @@ local options_no_rendering = {
     particles = 0,
 }
 -- Resolution for no rendering
-local resolution_no_rendering = {10,10}
+local resolution_no_rendering = {400,300}
 
 -- Options for rendering / watching
 local options_rendering = { 
