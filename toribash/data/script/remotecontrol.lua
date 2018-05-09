@@ -37,6 +37,9 @@ local options_no_rendering = {
     smoothcam = 0,
     reflection = 0,
     particles = 0,
+    bloodstains = 0,
+    avatar = 0,
+    floortexture = 0,
 }
 -- Resolution for no rendering
 local resolution_no_rendering = {400,300}
@@ -55,7 +58,10 @@ local options_rendering = {
     timer = 1,
     name = 1, 
     autoupdate = 0,
-    smoothcam = 1
+    smoothcam = 1,
+    bloodstains = 1,
+    avatar = 1,
+    floortexture = 1,
 }
 -- Resolution for rendering
 local resolution_rendering = {1280,720}
