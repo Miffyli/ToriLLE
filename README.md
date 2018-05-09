@@ -91,7 +91,8 @@ hence booting up multiple Toribashes at same time will take time!
 - Add possibility to use rendered images?
 
 ## Running on Linux (tested Ubuntu 16.04)
-Windows binaries run well with Wine.
+Windows binaries tested to work on Wine 3.0. **Note that distribution's own version may be outdated!**
+Follow installation instrunctions [here](https://wiki.winehq.org/Download) to install appropiate version.
 
 ### Headless on Linux
 Game won't launch without a display (requires OpenGL).
