@@ -30,6 +30,8 @@ hence booting up multiple Toribashes at same time will take time!
 - Toribash instances do not close on Windows when Python script exits. Manually terminate processes.
 - Some settings do not seem to be adjustable from commands (e.g. shaders). Provide appropiate config file?
 - Make Toribash windows go minimized on launch (increases fps)
+- Add possibility to get default options (torille.get_default.settings)
+- Add gym-like calls? (make, get action space, etc)
 
 ### Feature/soon-to-be-done TODOs:
 
