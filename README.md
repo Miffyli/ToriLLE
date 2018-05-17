@@ -32,9 +32,11 @@ hence booting up multiple Toribashes at same time will take time!
 - Make Toribash windows go minimized on launch (increases fps)
 - Add possibility to get default options (torille.get_default.settings)
 - Add gym-like calls? (make, get action space, etc)
+- Consider increasing TIMEOUT time (some agents may take long time to boot)
 
 ### Feature/soon-to-be-done TODOs:
 
+- Make gym-env
 - Add rotations to the state representation?
 - Make changing gamemod possible
 - Make Torille pip-installable (maybe even include Toribash binary?)
