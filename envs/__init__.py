@@ -1,17 +1,12 @@
 from gym.envs.registration import register
-
-
-# Env registration
-# ==========================
+from .gym_env import TestToriEnv
 
 register(
-    id='{}/meta-Doom-v0'.format(USERNAME),
-    entry_point='{}_gym_doom:MetaDoomEnv'.format(USERNAME),
-    max_episode_steps=999999,
-    reward_threshold=9000.0,
+    id='torille/test-Toribash-v0',
+    entry_point='envs:TestToriEnv',
     kwargs={
-        'average_over': 3,
-        'passing_grade': 600,
-        'min_tries_for_avg': 3
+        'toribash_exe': r"D:\Games\Toribash-5.22\toribash.exe",
+        'matchframes': 1000,
+        'turnframes': 1,
     },
 )

@@ -25,44 +25,36 @@
 
 import gym 
 from gym import spaces
+import torille
+import numpy as np
+import sys
 
 # TODO how to organize directory structure?
-# TODO how to give settings?
-
-# TODO how does this work? Can this share lock across processes?
-class DoomLock:
-    class __DoomLock:
-        def __init__(self):
-            self.lock = multiprocessing.Lock()
-
-    instance = None
-
-    def __init__(self):
-        if not DoomLock.instance:
-            DoomLock.instance = DoomLock.__DoomLock()
-
-    def get_lock(self):
-        return DoomLock.instance.lock
 
 class ToriEnv(gym.Env):
-    metadata = {}
-
-    def __init__(self):
-        # TODO this will be the TorilleController
-        self.game = None
+    def __init__(self, **kwargs):
+        self.toribash_exe = kwargs["toribash_exe"]
+        self.settings = torille.ToribashSettings(**kwargs)
+        self.game = torille.ToribashControl(self.toribash_exe, self.settings)
 
         # Previous state (ToribashState)
         # Used for reward function
         self.old_state = None
 
-        # TODO remnant
-        self.lock = (DoomLock()).get_ock()
-        # TODO define spaces correctly
-        self.action_space = spaces.MultiDiscrete([[0, 1]] * 38 + [[-10, 10]] * 2 + [[-100, 100]] * 3)
-        self.observation_space = spaces.Box(low=0, high=255, shape=(self.screen_height, self.screen_width, 3))
-    
-    def init(self):
-        """ Initialize game here (e.g. game.init ) """
+        # {1,2,3,4} for joints, {0,1} for hands. For both players
+        if sys.platform == "win32":
+            # For some reason Gym has completely different implementations for 
+            # spaces.MultiDiscrete on Windows vs. Linux...
+            # Windows wants [[1,4],[1,4], ... , [0,1], [0,1]]
+            # We make it [[0,3], [0,3], ... [0,1], [0,1]] to stay similar 
+            self.action_space = spaces.MultiDiscrete(([[0,torille.NUM_JOINT_STATES-1]]*torille.NUM_JOINTS + [[0,1]]*2)*2)
+        else:
+            self.action_space = spaces.MultiDiscrete(([torille.NUM_JOINT_STATES]*torille.NUM_JOINTS + [1]*2)*2)
+
+        # For both players, position of all joints
+        self.observation_space = spaces.Box(low=-10, high=10, shape=(2,torille.NUM_LIMBS*3))
+
+        self.game.init()
 
     def _preprocess_observation(self, state):
         """ 
@@ -95,16 +87,11 @@ class ToriEnv(gym.Env):
         """
         raise NotImplementedError
 
-    def _configure(self, lock=None, **kwargs):
-        # TODO this is just a remnant from gym doom
-        # Curious to know how the locking works
-        # Multiprocessing lock
-        if lock is not None:
-            self.lock = lock
-
     def _step(self, action):
-        action = self._preprocess_action(action)
-        state, _, terminal, _ = self.game.step(action)
+        if action is not None:
+            action = self._preprocess_action(action)
+            self.game.make_actions(action)
+        state, terminal = self.game.get_state()
         reward = self._reward_function(self.old_state, state)
         obs = self._preprocess_observation(state)
         return obs, reward, terminal, None
@@ -115,14 +102,47 @@ class ToriEnv(gym.Env):
         self.old_state = state
         return obs
 
-    def _render(self):
+    def _render(self, close=None):
+        # TODO what is the close param? Some windows thing?
         # TODO can this be done in some way?
-        raise NotImplementedError
+        return None
 
-    def _close(self):
+    def _close(self, close=None):
         self.game.close()
 
     def _seed(self, seed=None):
         # Can't set the seed in Toribash
         raise NotImplementedError
 
+class TestToriEnv(ToriEnv):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        # {1,2,3,4} for joints, {0,1} for hands
+        if sys.platform == "win32":
+            # For some reason Gym has completely different implementations for 
+            # spaces.MultiDiscrete on Windows vs. Linux...
+            # Windows wants [[1,4],[1,4], ... , [0,1], [0,1]]
+            # We make it [[0,3], [0,3], ... [0,1], [0,1]] to stay similar 
+            self.action_space = spaces.MultiDiscrete(([[0,torille.NUM_JOINT_STATES-1]]*torille.NUM_JOINTS + [[0,1]]*2))
+        else:
+            # Linux wants [[4,4,4, ..., 1, 1]]
+            self.action_space = spaces.MultiDiscrete(([torille.NUM_JOINT_STATES]*torille.NUM_JOINTS + [1]*2))
+        # Only one player
+        self.observation_space = spaces.Box(low=-20, high=20, shape=(torille.NUM_LIMBS*3))
+
+    def _preprocess_observation(self, state):
+        obs = state.limb_positions[0].ravel()
+        return obs
+
+    def _preprocess_action(self, action):
+        # Add +1 to limb actions (to make [0,3] -> [1,4])
+        for i in range(torille.NUM_JOINTS):
+            action[i] += 1
+        action = [action, [1]*torille.NUM_CONTROLLABLES]
+        print(action)
+        return action
+
+    def _reward_function(self, old_state, new_state):
+        return 0
+        
