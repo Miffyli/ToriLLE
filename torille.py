@@ -37,7 +37,7 @@ PLATFORM = sys.platform
 # Port where Toribashes connect to
 PORT = 7788
 # Global timeout (in seconds) for connections
-TIMEOUT = 30
+TIMEOUT = 300
 # Buffer size (for recv)
 BUFFER_SIZE = 8096
 # Line ending character
@@ -262,6 +262,7 @@ class ToribashControl:
             state: ToribashState representing the received state
             terminal: If the ToribashState is terminal state
         """
+        print("get state")
         self._check_if_initialized()
         
         s, terminal = self._recv_state()
@@ -273,6 +274,7 @@ class ToribashControl:
         Returns:
             state: ToribashState representing the state of new game
         """
+        print("reset")
         self._check_if_initialized()
         
         self._send_comma_list(self.settings.settings)
@@ -325,6 +327,7 @@ class ToribashControl:
             actions: List of shape 2 x (NUM_JOINTS+2), specifying joint states 
                      and hand gripping for both players.
         """
+        print("Make actions")
         self._check_if_initialized()
         
         # Validate actions, let it throw errors
@@ -350,7 +353,8 @@ class ToribashControl:
         """
         self._check_if_initialized()
         
-        self.make_actions(actions)
+        if not actions is None:
+            self.make_actions(actions)
         s, terminal = self.get_state()
         return s, None, terminal, None
     

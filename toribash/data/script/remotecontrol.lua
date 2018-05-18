@@ -11,7 +11,7 @@ Core loop: Send players' states (body parts etc), receive joint states, progress
 
 local CONNECT_IP = "127.0.0.1"
 local CONNECT_PORT = 7788
-local TIMEOUT = 30
+local TIMEOUT = 300
 
 -- This will be the TCP connection object
 local s = nil
