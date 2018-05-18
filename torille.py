@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 #
 #  toribash_control.py
 #  Provides Python API to Toribash (i.e. can control the characters)
@@ -27,8 +26,10 @@ import random as r
 import subprocess
 from multiprocessing import Lock
 import sys
+import os
 from collections import OrderedDict
 import pprint
+from filelock import FileLock
 
 # Platform we are running on
 PLATFORM = sys.platform
@@ -53,6 +54,9 @@ NUM_SETTINGS = 18
 
 # Bodypart x,y,z + Joint states + hand grips + injuries
 STATE_LENGTH = (NUM_LIMBS*3*2) + NUM_JOINTS*2 + 4 + 2
+
+# Use files as a lock for initing Toribash
+LOCK_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)),".torilock")
 
 class ToribashState:
     """ Class for storing and processing the state representations
@@ -154,7 +158,9 @@ class ToribashControl:
         self.executable_path = executable
         self.process = None
         self.connection = None
-        
+
+        self.init_lock = FileLock(LOCK_FILE, timeout=TIMEOUT)
+
         self.settings = settings
         if self.settings is None:
             self.settings = ToribashSettings()
@@ -163,7 +169,7 @@ class ToribashControl:
         if self.process is None:
             raise ValueError("Controlled not initialized with init()")
     
-    def init(self, launch_lock):
+    def init(self):
         """ Actual init: Launch the game process, wait for connection and
             and settings for the first game
         Parameters:
@@ -173,7 +179,7 @@ class ToribashControl:
         # Make sure we are not listening for overlapping connections
         # TODO actually this will buck up if we try to launch same script
         # TODO multiple times on same computer...
-        with launch_lock:
+        with self.init_lock:
             # TODO processes won't die on Windows when Python exits,
             # even with tricks from Stackoverflow #12843903
             if sys.platform == "linux":
@@ -202,7 +208,6 @@ class ToribashControl:
             # Set the timeout for connection 
             conn.settimeout(TIMEOUT)
             self.connection = conn
-        
         # Send initial settings
         self._send_comma_list(self.settings.settings)
 
@@ -422,5 +427,5 @@ def test_control(toribash_exe, num_instances, verbose=False):
         controller.close()
     
 if __name__ == '__main__':
-	test_control(r"D:\Games\Toribash-5.22\toribash.exe", 1)
+    test_control(r"D:\Games\Toribash-5.22\toribash.exe", 1)
     #test_control("/home/anssk/.wine/drive_c/Games/Toribash-5.2/toribash.exe", 8)

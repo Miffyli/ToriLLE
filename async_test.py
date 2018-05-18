@@ -18,13 +18,13 @@ def create_random_actions():
         ret[plridx].append(r.randint(0,1))
     return ret
     
-def run_async_torille(toribash_exe, launch_lock, tick_counter, quit_flag):
+def run_async_torille(toribash_exe, tick_counter, quit_flag):
     # Runs Toribash and increments the Value tick_counter on every frame
     controller = ToribashControl(toribash_exe)
     controller.settings.set("matchframes", 100)
     controller.settings.set("turnframes", 10)
     controller.settings.set("engagement_distance", 1000)
-    controller.init(launch_lock)
+    controller.init()
     while quit_flag.value == 0:
         s,terminal = controller.get_state()
         if terminal: 
@@ -44,7 +44,6 @@ def test_async(toribash_exe, num_instances, print_every_seconds,
     runners = []
     for i in range(num_instances):
         process = Process(target=run_async_torille, args=(toribash_exe,
-                                                          launch_lock,
                                                           tick_ctrs[i],
                                                           quit_flags[i]))
         process.start()
@@ -67,7 +66,7 @@ def test_async(toribash_exe, num_instances, print_every_seconds,
     
 if __name__ == '__main__':
 	test_async(toribash_exe=r"D:\Games\Toribash-5.2\toribash.exe",
-               num_instances=8,
+               num_instances=4,
                print_every_seconds=10.0,
                run_for_seconds=120.0)
 
