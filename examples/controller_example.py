@@ -5,14 +5,14 @@
 #  A minimalistic example running ToribashController
 #
 #  Author: Anssi "Miffyli" Kanervisto, 2018
-from torille import ToribashControl
+from ..controller.torille import ToribashControl
 from threading import Lock
 import random as r
 
 # Path to the toribash.exe executable.
 # Note: Remember add required Toribash files to the game path
 # On Windows use r"..." strings to 'fix' the issues with backslashes
-GAME_EXECUTABLE = r"D:\Games\Toribash-5.2\toribash.exe"
+GAME_EXECUTABLE = r"D:\Games\Toribash-5.22\toribash.exe"
 
 # How many games will be played
 NUM_EPISODES = 5
@@ -46,13 +46,8 @@ controller.settings.set("engagement_distance", 1000)
 # Print the settings
 print("--- Settings ---\n"+str(controller.settings))
 
-# Create a Lock object used for initializing the game.
-# Technically this is not required when launching one instance in a script,
-# but is still required by the code for consistency sake
-launch_lock = Lock()
-
 # This will launch the game (takes bit of time)
-controller.init(launch_lock)
+controller.init()
 
 # Main loop
 number_of_episodes = 0
