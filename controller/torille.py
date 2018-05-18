@@ -262,7 +262,6 @@ class ToribashControl:
             state: ToribashState representing the received state
             terminal: If the ToribashState is terminal state
         """
-        print("get state")
         self._check_if_initialized()
         
         s, terminal = self._recv_state()
@@ -274,7 +273,6 @@ class ToribashControl:
         Returns:
             state: ToribashState representing the state of new game
         """
-        print("reset")
         self._check_if_initialized()
         
         self._send_comma_list(self.settings.settings)
@@ -327,7 +325,6 @@ class ToribashControl:
             actions: List of shape 2 x (NUM_JOINTS+2), specifying joint states 
                      and hand gripping for both players.
         """
-        print("Make actions")
         self._check_if_initialized()
         
         # Validate actions, let it throw errors

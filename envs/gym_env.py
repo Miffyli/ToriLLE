@@ -25,11 +25,9 @@
 
 import gym 
 from gym import spaces
-from ..controller.torille import ToribashControl 
+from controller import torille
 import numpy as np
 import sys
-
-# TODO how to organize directory structure?
 
 class ToriEnv(gym.Env):
     def __init__(self, **kwargs):
@@ -40,6 +38,11 @@ class ToriEnv(gym.Env):
         # Previous state (ToribashState)
         # Used for reward function
         self.old_state = None
+
+        # True if this object was created and there has been no calls to
+        # ´step´ function.
+        # This is to make sure first call to controller will be get_state()
+        self.just_created = True
 
         # {1,2,3,4} for joints, {0,1} for hands. For both players
         if sys.platform == "win32":
@@ -52,7 +55,7 @@ class ToriEnv(gym.Env):
             self.action_space = spaces.MultiDiscrete(([torille.NUM_JOINT_STATES]*torille.NUM_JOINTS + [1]*2)*2)
 
         # For both players, position of all joints
-        self.observation_space = spaces.Box(low=-10, high=10, shape=(2,torille.NUM_LIMBS*3))
+        self.observation_space = spaces.Box(low=-30, high=30, shape=(2,torille.NUM_LIMBS*3))
 
         self.game.init()
 
@@ -88,23 +91,47 @@ class ToriEnv(gym.Env):
         raise NotImplementedError
 
     def _step(self, action):
-        if action is not None:
-            action = self._preprocess_action(action)
-            self.game.make_actions(action)
+        if self.just_created:
+            # We cannot send action as a first call to controller
+            # We should instead call `reset`.
+            # Inform and fail
+            raise Exception("`step` function was called "+
+                "before calling `reset`. Call `reset` after creating "+
+                "environment to get the first observation.")
+        action = self._preprocess_action(action)
+        self.game.make_actions(action)
+        # Get new state
         state, terminal = self.game.get_state()
+        # Compute reward (something we will define in other classes)
         reward = self._reward_function(self.old_state, state)
+        # Remember to update the old state
+        self.old_state = state
+        # "obs" here is in the Gym format. "state" is ToribashState
         obs = self._preprocess_observation(state)
         return obs, reward, terminal, None
 
     def _reset(self):
-        state = self.game.reset()
-        obs = self._preprocess_observation(state)
-        self.old_state = state
+        obs = None
+        if self.just_created:
+            # The env was just created and we need to start 
+            # by returning an observation.
+            state, terminal = self.game.get_state()
+            obs = self._preprocess_observation(state)
+            # Remember to update the state here as well
+            self.old_state = state
+            self.just_created = False
+        else:
+            # Reset episode
+            state = self.game.reset()
+            # Get the state and return it 
+            obs = self._preprocess_observation(state)
+            self.old_state = state
         return obs
 
     def _render(self, close=None):
         # TODO what is the close param? Some windows thing?
         # TODO can this be done in some way?
+        print("ToriEnv._render not implemented")
         return None
 
     def _close(self, close=None):
@@ -115,6 +142,7 @@ class ToriEnv(gym.Env):
         raise NotImplementedError
 
 class TestToriEnv(ToriEnv):
+    """ A testing environment. Not to be used with anything useful """
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
@@ -129,7 +157,7 @@ class TestToriEnv(ToriEnv):
             # Linux wants [[4,4,4, ..., 1, 1]]
             self.action_space = spaces.MultiDiscrete(([torille.NUM_JOINT_STATES]*torille.NUM_JOINTS + [1]*2))
         # Only one player
-        self.observation_space = spaces.Box(low=-20, high=20, shape=(torille.NUM_LIMBS*3))
+        self.observation_space = spaces.Box(low=-30, high=30, shape=(torille.NUM_LIMBS*3))
 
     def _preprocess_observation(self, state):
         obs = state.limb_positions[0].ravel()
@@ -140,7 +168,6 @@ class TestToriEnv(ToriEnv):
         for i in range(torille.NUM_JOINTS):
             action[i] += 1
         action = [action, [1]*torille.NUM_CONTROLLABLES]
-        print(action)
         return action
 
     def _reward_function(self, old_state, new_state):

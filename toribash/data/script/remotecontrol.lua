@@ -1,6 +1,6 @@
 --[[
 Based on the code by Siim Põder (2010): https://github.com/windo/toribash-evolver
-Author: Anssi Kanervisto <anssi.kanervisto@uef.fi>, 2018
+Author: Anssi "Miffyli" Kanervisto, 2018
 
 Toribash script to allow controlling of the character over pipes/TCP (e.g. from Python).
 Specifically designed machine/reinforcement learning in mind.
