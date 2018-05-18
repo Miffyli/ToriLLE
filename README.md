@@ -1,6 +1,10 @@
 # ToriLLE
 Toribash Learning Environment
 
+## Requirements
+* Numpy
+* FileLock
+
 ## Setup (14.4.2018)
 **This will override `data/scripts/startup.lua` file in Toribash.**
 1. Copy contents of `toribash` directory into Toribash game folder (`profile.tbs` should be next to `toribash.exe`)
@@ -33,9 +37,12 @@ hence booting up multiple Toribashes at same time will take time!
 - Add possibility to get default options (torille.get_default.settings)
 - Add gym-like calls? (make, get action space, etc)
 - Consider increasing TIMEOUT time (some agents may take long time to boot)
+- Consider using simple filelocking for locking
+- Add possibility to change the port and listening address
 
 ### Feature/soon-to-be-done TODOs:
 
+- Add state-machine-like checking for better error reporting
 - Make gym-env
 - Add rotations to the state representation?
 - Make changing gamemod possible
