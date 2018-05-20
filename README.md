@@ -35,10 +35,8 @@ hence booting up multiple Toribashes at same time will take time!
 - Some settings do not seem to be adjustable from commands (e.g. shaders). Provide appropiate config file?
 - Make Toribash windows go minimized on launch (increases fps)
 - Add possibility to get default options (torille.get_default.settings)
-- Add gym-like calls? (make, get action space, etc)
-- Consider increasing TIMEOUT time (some agents may take long time to boot)
-- Consider using simple filelocking for locking
 - Add possibility to change the port and listening address
+- Change FileLock to something more global? (Or will this be fixed with pip-installable script?)
 
 ### Feature/soon-to-be-done TODOs:
 
