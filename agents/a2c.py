@@ -19,9 +19,9 @@ import numpy as np
 import tensorflow as tf
 
 # Default beta value for entropy regularization
-DEFAULT_BETA = 1e-3
+DEFAULT_BETA = 0.01
 # Default learning rate
-LEARNING_RATE = 0.005
+LEARNING_RATE = 7e-4
 # Gamma for RL
 GAMMA = 0.99
 
@@ -92,24 +92,16 @@ class ToribashA2C:
     def build_network(self):
         # Create some head 
         self.dense1 = tf.layers.dense(inputs=self.input_s,
-                              units=512,
-                              activation=tf.nn.relu,
+                              units=128,
+                              activation=tf.nn.tanh,
                               name="dense1")
         self.dense2 = tf.layers.dense(inputs=self.dense1,
-                              units=512,
-                              activation=tf.nn.relu,
+                              units=128,
+                              activation=tf.nn.tanh,
                               name="dense2")
-        self.dense3 = tf.layers.dense(inputs=self.dense2,
-                              units=512,
-                              activation=tf.nn.relu,
-                              name="dense3")
-        self.dense4 = tf.layers.dense(inputs=self.dense3,
-                              units=512,
-                              activation=tf.nn.relu,
-                              name="dense4")
         
         # In case we will modify the network till this point
-        self.network_head = self.dense4
+        self.network_head = self.dense2
         
         # Split to v and pi
         self.v = tf.layers.dense(inputs=self.network_head,
@@ -151,12 +143,12 @@ class ToribashA2C:
         selected_pi = tf.reshape(selected_pi, (-1,self.num_joints))
         
         # Negative because optimizer attempts to minimize this
-        self.loss_pi = -tf.reduce_sum(tf.multiply(selected_pi,
-                                                  advantage[:,None]))
+        self.loss_pi = -tf.reduce_mean(tf.multiply(selected_pi,
+                                                   advantage[:,None]))
         
         # Entropy term
         # H(X) = - \sum{P(X) * log P(X)}
-        entropy = -tf.reduce_sum(self.pi * log_pi)
+        entropy = tf.reduce_mean(-tf.reduce_sum(self.pi * log_pi, axis=1))
         # We want to maximize entropy, hence neg
         self.loss_entropy = -self.beta*entropy
         

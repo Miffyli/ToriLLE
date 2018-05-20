@@ -18,10 +18,13 @@ parser.add_argument('modelfile', type=str,
                 help="Location where model should be stored")
 parser.add_argument('--batchsize', type=int, default=32,
                 help="Size of a single batch for training (default: 32)")
-parser.add_argument('--trainops', type=int, default=100000,
-                help="Number of training ops to run (default: 1e5)")
+parser.add_argument('--timesteps', type=int, default=1000000,
+                help="Number of timesteps to run (default: 1e6)")
 parser.add_argument('--reportrate', type=int, default=100,
                 help="How many trains ops between printing stats (default: 100)"
+                )
+parser.add_argument('--numframes', type=int, default=3,
+                help="How many successive frames will be fed to network (default: 3)"
                 )
 parser.add_argument('--saverate', type=int, default=1000,
                 help="How often model should be saved (default: 1000)")
@@ -69,7 +72,7 @@ def get_player_states(state):
 def get_plr1_refined_state(state):
     """ Return more refined state for player1 (normalized, clipped) """
     s = get_player_states(state)[0] / 10.0
-    s = np.clip(s, -1.0, 1.0)
+    s = np.clip(s, -3.0, 3.0)
     return s
 
 def print_and_log(s,logfile):
@@ -79,25 +82,30 @@ def print_and_log(s,logfile):
     with open(logfile, "a") as f:
         f.write(s+"\n")
 
-def simple_training(executable, batch_size, num_train_ops, 
+def simple_training(executable, batch_size, num_steps, 
                         report_every_trains, reward_function,
-                        logfile, save_every_trains, save_file):
+                        logfile, save_every_trains, save_file,
+                        num_frames):
     """ An example training code on Toribash
         Player 0 is controlled, player 1 just relaxes to the ground"""
-    
-    # Num successive frames stacked
-    NUM_FRAMES = 3
-    
+
     controller = ToribashControl(executable)
     
+    controller.settings.set("matchframes", 1000)
+    controller.settings.set("turnframes", 5)
+    controller.settings.set("engagement_distance", 1000)
+
     num_joints = controller.get_num_joints()
     num_joint_states = controller.get_num_joint_states()
     num_inputs = controller.get_state_dim()
     
-    a2c = ToribashA2C(num_inputs*NUM_FRAMES,
-                      num_joints, num_joint_states, beta=0.001)   
+    a2c = ToribashA2C(num_inputs*num_frames,
+                      num_joints, num_joint_states, 
+                      beta=0.01,
+                      )   
     
     train_op_ctr = 0
+    step_ctr = 0
     batch_states = []
     batch_stateprimes = []
     batch_actions = []
@@ -113,15 +121,15 @@ def simple_training(executable, batch_size, num_train_ops,
     h_losses = []
     vs = []
     rewards = []
-    stacker = deque([np.zeros(num_inputs,) for i in range(NUM_FRAMES)], 
-                    maxlen=NUM_FRAMES)
+    stacker = deque([np.zeros(num_inputs,) for i in range(num_frames)], 
+                    maxlen=num_frames)
     
     controller.init()
     
     print_and_log("--- Training starts ---", logfile)
     start_time = time()
     
-    while train_op_ctr < num_train_ops:
+    while step_ctr < num_steps:
         orig_s,terminal = controller.get_state()
         # We are only concerned about player 1
         s = get_plr1_refined_state(orig_s)
@@ -153,7 +161,7 @@ def simple_training(executable, batch_size, num_train_ops,
                 batch_stateprimes.clear()
                 batch_actions.clear()
                 batch_rewards.clear()
-        
+        step_ctr += 1
         # TODO ToribashA2C does not support terminal states yet
         # Lets just skip terminal state for now (can be really bad idea)
         if terminal: 
@@ -162,8 +170,8 @@ def simple_training(executable, batch_size, num_train_ops,
             last_r = None
             last_orig_s = None
             # Reset stacker by putting zeros in
-            stacker = deque([np.zeros(num_inputs,) for i in range(NUM_FRAMES)], 
-                             maxlen=NUM_FRAMES)
+            stacker = deque([np.zeros(num_inputs,) for i in range(num_frames)], 
+                             maxlen=num_frames)
             orig_s = controller.reset()
             s = get_plr1_refined_state(orig_s)
             stacker.append(s)
@@ -188,7 +196,7 @@ def simple_training(executable, batch_size, num_train_ops,
         
         last_s = s
         last_a = action[0]
-        # Log10 to make it bit more suitable  for training
+
         if last_orig_s is not None:
             last_r = reward_function(last_orig_s, orig_s)
         else:
@@ -197,10 +205,10 @@ def simple_training(executable, batch_size, num_train_ops,
         last_orig_s = orig_s
         
         if len(pi_losses) == report_every_trains:
-            print_and_log(("Ops: %d\tTime: %d\tPloss: %.4f\tVloss: %.4f\t"+
+            print_and_log(("Steps: %d\tTime: %d\tPloss: %.4f\tVloss: %.4f\t"+
                            "Hloss: %.4f"+
                            "\tSumR: %.4f\tMaxR: %.4f\tMinR: %.4f\tAvrgV: %.4f")%
-                    (train_op_ctr,
+                    (step_ctr,
                      int(time()-start_time),
                      sum(pi_losses)/len(pi_losses),
                      sum(v_losses)/len(v_losses),
@@ -222,9 +230,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
     simple_training(executable=args.executable,
                     batch_size=args.batchsize, 
-                    num_train_ops=args.trainops,
+                    num_steps=args.timesteps,
                     report_every_trains=args.reportrate,
                     save_every_trains=args.saverate,
                     save_file=args.modelfile,
                     reward_function=REWARD_FUNCS[args.rewardfunc],
-                    logfile=args.logfile)
+                    logfile=args.logfile,
+                    num_frames=args.numframes)
