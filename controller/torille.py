@@ -184,7 +184,7 @@ class ToribashControl:
             # even with tricks from Stackoverflow #12843903
             if sys.platform == "linux":
                 # Add wine command explicitly for running on Linux
-                self.process = subprocess.Popen(("wine", self.executable_path), 
+                self.process = subprocess.Popen(("nohup", "wine", self.executable_path), 
                                              stdout=subprocess.DEVNULL, 
                                              stderr=subprocess.DEVNULL)
             else:
