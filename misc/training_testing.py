@@ -198,8 +198,8 @@ def simple_training(executable, batch_size, num_steps,
         a.append(min(1,np.random.choice(num_joint_states, p=pi[-2])))
         a.append(min(1,np.random.choice(num_joint_states, p=pi[-1])))
         
-        # Add in player1's actions (needed. Set all to "hold")
-        action = [a, [3 for i in range(num_joints)]]
+        # Add in player1's actions (needed. Set all to "hold", excepts hands)
+        action = [a, [3 for i in range(num_joints-2)]+[0,0]]
         
         controller.make_actions(action)
         
