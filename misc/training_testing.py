@@ -56,11 +56,19 @@ def reward_run_away(old_state, new_state):
     # (we want further away to be positive)
     moved = np.sqrt(np.sum(new_pos**2)) - np.sqrt(np.sum(old_pos**2))
     return moved
-    
+
+def reward_destroy_uke(old_state, new_state):
+    """ Returns reward on damaging the other player (Uke)"""
+    reward = new_state.plr1_injury - old_state.plr1_injury
+    if reward > 1:
+        reward = log10(reward) / 4
+    return reward
+
 REWARD_FUNCS = {
     "self-destruct": reward_self_destruct,
     "stay-safe": reward_stay_safe,
-    "run-away": reward_run_away
+    "run-away": reward_run_away,
+    "destroy-uke": reward_destroy_uke,
 }
 
 def get_player_states(state):
@@ -94,14 +102,15 @@ def simple_training(executable, batch_size, num_steps,
     controller.settings.set("matchframes", 1000)
     controller.settings.set("turnframes", 5)
     controller.settings.set("engagement_distance", 1000)
-
+    if reward_function == reward_destroy_uke:
+        controller.settings.set("engagement_distance", 100)
+    
     num_joints = controller.get_num_joints()
     num_joint_states = controller.get_num_joint_states()
     num_inputs = controller.get_state_dim()
     
     a2c = ToribashA2C(num_inputs*num_frames,
                       num_joints, num_joint_states, 
-                      beta=0.01,
                       )   
     
     train_op_ctr = 0
@@ -189,8 +198,8 @@ def simple_training(executable, batch_size, num_steps,
         a.append(min(1,np.random.choice(num_joint_states, p=pi[-2])))
         a.append(min(1,np.random.choice(num_joint_states, p=pi[-1])))
         
-        # Add in player1's actions (needed, but we just set them to zero)
-        action = [a, [1 for i in range(num_joints)]]
+        # Add in player1's actions (needed. Set all to "hold")
+        action = [a, [3 for i in range(num_joints)]]
         
         controller.make_actions(action)
         
