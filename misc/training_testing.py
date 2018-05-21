@@ -77,10 +77,15 @@ def get_player_states(state):
     p2 = state.limb_positions[1].ravel()
     return p1, p2
 
-def get_plr1_refined_state(state):
-    """ Return more refined state for player1 (normalized, clipped) """
-    s = get_player_states(state)[0] / 10.0
-    s = np.clip(s, -3.0, 3.0)
+def get_refined_state(state, num_players):
+    """ Return more refined state for one or two players (normalized, clipped) """
+    s = get_player_states(state)
+    if num_players == 1:
+        s = s[0]
+    else:
+        s = np.concatenate(s)
+    # Normalize and clip
+    s = np.clip(s/10.0, -3.0, 3.0)
     return s
 
 def print_and_log(s,logfile):
@@ -96,9 +101,11 @@ def simple_training(executable, batch_size, num_steps,
                         num_frames):
     """ An example training code on Toribash
         Player 0 is controlled, player 1 just relaxes to the ground"""
-
+        
     controller = ToribashControl(executable)
     
+    num_players = 2 if reward_function == reward_destroy_uke else 1
+
     controller.settings.set("matchframes", 1000)
     controller.settings.set("turnframes", 5)
     controller.settings.set("engagement_distance", 1000)
@@ -107,7 +114,7 @@ def simple_training(executable, batch_size, num_steps,
     
     num_joints = controller.get_num_joints()
     num_joint_states = controller.get_num_joint_states()
-    num_inputs = controller.get_state_dim()
+    num_inputs = controller.get_state_dim()*num_players
     
     a2c = ToribashA2C(num_inputs*num_frames,
                       num_joints, num_joint_states, 
@@ -140,8 +147,7 @@ def simple_training(executable, batch_size, num_steps,
     
     while step_ctr < num_steps:
         orig_s,terminal = controller.get_state()
-        # We are only concerned about player 1
-        s = get_plr1_refined_state(orig_s)
+        s = get_refined_state(orig_s, num_players)
         # Create "correct" state right away
         stacker.append(s)
         s = np.concatenate(stacker)
@@ -182,7 +188,7 @@ def simple_training(executable, batch_size, num_steps,
             stacker = deque([np.zeros(num_inputs,) for i in range(num_frames)], 
                              maxlen=num_frames)
             orig_s = controller.reset()
-            s = get_plr1_refined_state(orig_s)
+            s = get_refined_state(orig_s, num_players)
             stacker.append(s)
             s = np.concatenate(stacker)
         

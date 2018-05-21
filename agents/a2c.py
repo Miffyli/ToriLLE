@@ -19,7 +19,7 @@ import numpy as np
 import tensorflow as tf
 
 # Default beta value for entropy regularization
-DEFAULT_BETA = 0.01
+DEFAULT_BETA = 0.002
 # Default learning rate
 LEARNING_RATE = 7e-4
 # Gamma for RL
@@ -35,7 +35,8 @@ class ToribashA2C:
     in M different states. So we need something different for this.
     Pi is matrix NxM, where it is softmaxed over M"""
     def __init__(self, num_input, num_joints, num_joint_states, 
-                 beta=DEFAULT_BETA, fm_weight=DEFAULT_FORWARD_MODEL_LOSS,
+                 beta=DEFAULT_BETA, value_weight=0.5,
+                 fm_weight=DEFAULT_FORWARD_MODEL_LOSS,
                  load_model=None):
         self.num_input = num_input
         self.num_joints = num_joints
@@ -73,11 +74,15 @@ class ToribashA2C:
         self.fm_loss_weight = fm_weight
         # Entropy weight
         self.beta = beta
+        # Value loss weight
+        self.value_weight = value_weight
         
         self.session = None
         self.optimizer = None
         self.train_op = None
         
+        self.saver = None
+
         self.build_network()
         
     def _initialize_session(self):
@@ -128,7 +133,7 @@ class ToribashA2C:
         advantage = self.target_v - self.v
         
         # Update value function (much like in [3])
-        self.loss_v = tf.reduce_mean(tf.square(advantage)*0.5)
+        self.loss_v = tf.reduce_mean(tf.square(advantage)*0.5) * self.value_weight
         
         # Stop gradient to prevent pi_loss from affecting value function
         # (Wouldn't have thought of this without [3])
@@ -261,13 +266,15 @@ class ToribashA2C:
     def save(self, filename):
         if self.session is None:
             raise ValueError("TensorFlow session not initialized")
-        saver = tf.train.Saver()
-        saver.save(self.session, filename)
+        if self.saver is None:
+            self.saver = tf.train.Saver()
+        self.saver.save(self.session, filename)
 
     def load(self, filename):
-        saver = tf.train.Saver()
+        if self.saver is None:
+            self.saver = tf.train.Saver()
         self.session = tf.Session()
-        saver.restore(self.session, filename)
+        self.saver.restore(self.session, filename)
         
 if __name__ == '__main__':
     # Testing with random values to see if code even runs correctly
