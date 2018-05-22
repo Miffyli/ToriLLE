@@ -89,13 +89,13 @@ class ToribashState:
                                                             (NUM_LIMBS,3))
         # Joint states
         self.joint_states[0] = np.array(state_list[63:83], dtype=np.int)
-        self.joint_states[1] = np.array(state_list[148:168], dtype=np.int)
+        self.joint_states[1] = np.array(state_list[149:169], dtype=np.int)
         # Hand grips
         self.hand_grips[0] = np.array(state_list[83:85], dtype=np.int)
-        self.hand_grips[1] = np.array(state_list[168:170], dtype=np.int)
+        self.hand_grips[1] = np.array(state_list[169:171], dtype=np.int)
         # Injuries
         self.plr0_injury = state_list[85]
-        self.plr1_injury = state_list[170]
+        self.plr1_injury = state_list[171]
 
 class ToribashSettings:
     """ Class for storing and processing settings for Toribash """
