@@ -71,10 +71,20 @@ REWARD_FUNCS = {
     "destroy-uke": reward_destroy_uke,
 }
 
-def get_player_states(state):
-    """ Get 1D state-arrays for both players """
-    p1 = state.limb_positions[0].ravel()
-    p2 = state.limb_positions[1].ravel()
+def get_player_states(state, normalize_by_idx=12):
+    """
+    Get 1D state-arrays for both players 
+    Parameters:
+        normalize_by_idx: Make positions relative to body part indexed
+                          by this number (from player0)
+    """
+    positions = state.limb_positions
+    center_bone = positions[0][normalize_by_idx]
+    positions = positions-center_bone
+    # Set the center-bone to have the original position to keep that information
+    positions[0][normalize_by_idx] = center_bone
+    p1 = positions[0].ravel()
+    p2 = positions[1].ravel()
     return p1, p2
 
 def get_refined_state(state, num_players):
