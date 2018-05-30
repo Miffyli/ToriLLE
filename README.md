@@ -58,6 +58,7 @@ hence booting up multiple Toribashes at same time will take time!
         - "custom"
         - "replay"
         - "Extra Content"
+        - "customise"
         - "data/script/torishop"
         - "data/script/atmo"
         - "data/script/clans"
