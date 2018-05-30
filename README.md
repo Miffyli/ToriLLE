@@ -19,8 +19,8 @@ hence booting up multiple Toribashes at same time will take time!
 
 ## Project structure
 - **`./torille/`**: Python codes for the learning environment (inc. Gym environment)
-- **`./toribash/`**: Files required for Toribash to make this learning environment work 
-  - Note: This directory will also contain stripped version of Toribash when installed with `pip install torille`
+  - **`./torille/toribash`**: This will include stripped version of the game when installed from python package
+- **`./toribash-codes/`**: Files required for Toribash to make this learning environment work 
 - **`./examples/`**: Python examples on how to use this library (inc. Gym environment example)
 - **`./docs/`**: Detailed documentation of the inner workings (Python code reference, details of protocol between Python and Toribash)
 
@@ -45,6 +45,7 @@ hence booting up multiple Toribashes at same time will take time!
 - Add possibility to get default options (torille.get_default.settings)
 - Add possibility to change the port and listening address
 - Change FileLock to something more global? (Or will this be fixed with pip-installable script?)
+- Add check that correct version of Wine is installed (at least 3.0?)
 
 ### Feature/soon-to-be-done TODOs:
 

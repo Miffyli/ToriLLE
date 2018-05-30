@@ -31,32 +31,33 @@ from collections import OrderedDict
 import pprint
 from filelock import FileLock
 
-# Platform we are running on
-PLATFORM = sys.platform
+class ToribashConstants:
+    """ Class for holding general constants """
+    # Port where Toribashes connect to
+    PORT = 7788
+    # Global timeout (in seconds) for connections
+    TIMEOUT = 300
+    # Buffer size (for recv)
+    BUFFER_SIZE = 8096
+    # Line ending character
+    MESSAGE_END = "\n".encode()
 
-# Port where Toribashes connect to
-PORT = 7788
-# Global timeout (in seconds) for connections
-TIMEOUT = 300
-# Buffer size (for recv)
-BUFFER_SIZE = 8096
-# Line ending character
-MESSAGE_END = "\n".encode()
+    # "Limb" or "Bodypart"
+    NUM_LIMBS = 21
+    NUM_JOINTS = 20
+    # Add hand_grips
+    NUM_CONTROLLABLES = NUM_JOINTS+2
+    NUM_JOINT_STATES = 4
+    # Number of setting variables
+    NUM_SETTINGS = 18
 
-# "Limb" or "Bodypart"
-NUM_LIMBS = 21
-NUM_JOINTS = 20
-# Add hand_grips
-NUM_CONTROLLABLES = NUM_JOINTS+2
-NUM_JOINT_STATES = 4
-# Number of setting variables
-NUM_SETTINGS = 18
+    # Bodypart x,y,z + Joint states + hand grips + injuries
+    STATE_LENGTH = (NUM_LIMBS*3*2) + NUM_JOINTS*2 + 4 + 2
 
-# Bodypart x,y,z + Joint states + hand grips + injuries
-STATE_LENGTH = (NUM_LIMBS*3*2) + NUM_JOINTS*2 + 4 + 2
-
-# Use files as a lock for initing Toribash
-LOCK_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)),".torilock")
+    # Path to Toribash supplied with the wheel package
+    # This should be {this file}/toribash/toribash.exe
+    my_dir = os.path.dirname(os.path.realpath(__file__))
+    TORIBASH_EXE = os.path.join(my_dir, "toribash", "toribash.exe")
 
 class ToribashState:
     """ Class for storing and processing the state representations
@@ -64,10 +65,10 @@ class ToribashState:
     def __init__(self, state):
         # Limb locations
         # For both players, for all limbs, x,y,z coordinates
-        self.limb_positions = np.zeros((2,NUM_LIMBS,3))
+        self.limb_positions = np.zeros((2,ToribashConstants.NUM_LIMBS,3))
         # Joint states
         # For both players
-        self.joint_states = np.zeros((2,NUM_JOINTS))
+        self.joint_states = np.zeros((2,ToribashConstants.NUM_JOINTS))
         # Hand grips for both players
         # TODO rename "hand_states"?
         self.hand_grips = np.zeros((2,2))
@@ -84,9 +85,9 @@ class ToribashState:
         # Indexes from  state_structure.md
         # Limbs
         self.limb_positions[0] = np.array(state_list[:63]).reshape(
-                                                            (NUM_LIMBS,3))
+                                        (ToribashConstants.NUM_LIMBS,3))
         self.limb_positions[1] = np.array(state_list[86:149]).reshape(
-                                                            (NUM_LIMBS,3))
+                                        (ToribashConstants.NUM_LIMBS,3))
         # Joint states
         self.joint_states[0] = np.array(state_list[63:83], dtype=np.int)
         self.joint_states[1] = np.array(state_list[149:169], dtype=np.int)
@@ -148,7 +149,8 @@ class ToribashSettings:
     
 class ToribashControl:
     """ Main class controlling one instance of Toribash """
-    def __init__(self, executable, settings=None):
+    def __init__(self, executable=ToribashConstants.TORIBASH_EXE, 
+                 settings=None):
         """ 
         Parameters:
             executable: String of path to the toribash.exe launching the game
@@ -159,7 +161,10 @@ class ToribashControl:
         self.process = None
         self.connection = None
 
-        self.init_lock = FileLock(LOCK_FILE, timeout=TIMEOUT)
+        # Lets create FileLock file next to toribash.exe
+        self.lock_file = os.path.join(os.path.dirname(executable), ".launchlock")
+        self.init_lock = FileLock(self.lock_file, 
+                                  timeout=ToribashConstants.TIMEOUT)
 
         self.settings = settings
         if self.settings is None:
@@ -177,8 +182,6 @@ class ToribashControl:
                 Toribash (all controllers listen to same socket)
         """
         # Make sure we are not listening for overlapping connections
-        # TODO actually this will buck up if we try to launch same script
-        # TODO multiple times on same computer...
         with self.init_lock:
             # TODO processes won't die on Windows when Python exits,
             # even with tricks from Stackoverflow #12843903
@@ -198,15 +201,15 @@ class ToribashControl:
             # Toribash instances on same computer
             # From Stackoverflow #6380057
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-            s.bind(("",PORT))
-            s.settimeout(TIMEOUT)
+            s.bind(("",ToribashConstants.PORT))
+            s.settimeout(ToribashConstants.TIMEOUT)
             s.listen(1)
             conn, addr = s.accept()
             # Close the listener socket
             s.close()
             
             # Set the timeout for connection 
-            conn.settimeout(TIMEOUT)
+            conn.settimeout(ToribashConstants.TIMEOUT)
             self.connection = conn
         # Send initial settings
         self._send_comma_list(self.settings.settings)
@@ -222,10 +225,10 @@ class ToribashControl:
         NOTE: This only expects "\n" to be at the end of message
         """
         # First wait till there is something to read
-        ret = s.recv(BUFFER_SIZE)
+        ret = s.recv(ToribashConstants.BUFFER_SIZE)
         # Now check if we had "\n", and continue reading till we have it
-        while ret[-1:] != MESSAGE_END:
-            ret += s.recv(BUFFER_SIZE)
+        while ret[-1:] != ToribashConstants.MESSAGE_END:
+            ret += s.recv(ToribashConstants.BUFFER_SIZE)
         return ret
     
     def _recv_state(self):
@@ -241,10 +244,10 @@ class ToribashControl:
             s = s[4:]
         s = list(map(float, s.split(",")))
         # Make sure we got list of correct length
-        if len(s) != STATE_LENGTH:
+        if len(s) != ToribashConstants.STATE_LENGTH:
             raise ValueError(("Got state of invalid size. Expected %d, got %d"+
                              "\nState: %s") %
-                             (STATE_LENGTH, len(s), s))
+                             (ToribashConstants.STATE_LENGTH, len(s), s))
         return s, terminal
         
     def _send_comma_list(self, data):
@@ -298,8 +301,8 @@ class ToribashControl:
             raise ValueError("Actions should be a List of two lists")
         
         # Check that we have correct number of states
-        if (len(actions[0]) != NUM_CONTROLLABLES or 
-                len(actions[1]) != NUM_CONTROLLABLES):
+        if (len(actions[0]) != ToribashConstants.NUM_CONTROLLABLES or 
+                len(actions[1]) != ToribashConstants.NUM_CONTROLLABLES):
             raise ValueError("Actions should be a List of shape 2 x %d"%
                              NUM_CONTROLLABLES)
         
@@ -312,7 +315,7 @@ class ToribashControl:
                              " in {0,1}")
         
         # Check that all joint states are in {1,2,3,4}
-        for i in range(NUM_JOINTS):
+        for i in range(ToribashConstants.NUM_JOINTS):
             # Check both players at the same time
             if (actions[0][i] > 4 or actions[0][i] < 1 or actions[1][i] > 4 or
                     actions[1][i] < 1):
@@ -357,15 +360,15 @@ class ToribashControl:
     
     def get_state_dim(self):
         """ Return size of state space per character """
-        return NUM_LIMBS*3
+        return ToribashConstants.NUM_LIMBS*3
     
     def get_num_joints(self):
         """ Return number of controllable joints """
-        return NUM_CONTROLLABLES
+        return ToribashConstants.NUM_CONTROLLABLES
     
     def get_num_joint_states(self):
         """ Return number of states each joint can have """
-        return NUM_JOINT_STATES
+        return ToribashConstants.NUM_JOINT_STATES
     
     def __del__(self):
         """ Destructor to close running Toribash process.
@@ -377,13 +380,13 @@ def create_random_actions():
     """ Return random actions """
     ret = [[],[]]
     for plridx in range(2):
-        for jointidx in range(NUM_JOINTS):
+        for jointidx in range(ToribashConstants.NUM_JOINTS):
             ret[plridx].append(r.randint(1,4))
         ret[plridx].append(r.randint(0,1))
         ret[plridx].append(r.randint(0,1))
     return ret
     
-def test_control(toribash_exe, num_instances, verbose=False):
+def test_control(num_instances, verbose=False):
     from time import time
     from threading import Lock
     
@@ -391,15 +394,13 @@ def test_control(toribash_exe, num_instances, verbose=False):
     
     controllers = []
     
-    launch_lock = Lock()
-    
     verbose_print("Waiting connections from toribashes...")
     for i in range(num_instances):
-        controller = ToribashControl(toribash_exe)
+        controller = ToribashControl()
         controller.settings.set("matchframes", 1000)
         controller.settings.set("turnframes", 1)
         controller.settings.set("engagement_distance", 1000)
-        controller.init(launch_lock)
+        controller.init()
         controllers.append(controller)
 
     last_time = time()
@@ -428,5 +429,5 @@ def test_control(toribash_exe, num_instances, verbose=False):
         controller.close()
     
 if __name__ == '__main__':
-    test_control(r"D:\Games\Toribash-5.22\toribash.exe", 1)
+    test_control(1)
     #test_control("/home/anssk/.wine/drive_c/Games/Toribash-5.2/toribash.exe", 8)
