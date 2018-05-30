@@ -25,7 +25,7 @@
 
 import gym 
 from gym import spaces
-from controller import torille
+from .. import torille
 import numpy as np
 import sys
 

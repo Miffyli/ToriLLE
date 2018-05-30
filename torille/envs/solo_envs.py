@@ -26,7 +26,6 @@
 import gym 
 from gym import spaces
 from .gym_env import ToriEnv
-from controller import torille
 from math import log10
 import numpy as np
 import sys

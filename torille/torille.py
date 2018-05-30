@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-#  toribash_control.py
+#  torille.py
 #  Provides Python API to Toribash (i.e. can control the characters)
 #
 #  Author: Anssi "Miffyli" Kanervisto, 2018

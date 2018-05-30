@@ -17,6 +17,13 @@ Minimizing the Toribash game speeds up execution.
 - Launching a Toribash instance requires a lock to avoid mixing up connections with controller,
 hence booting up multiple Toribashes at same time will take time!
 
+## Project structure
+- **`./torille/`**: Python codes for the learning environment (inc. Gym environment)
+- **`./toribash/`**: Files required for Toribash to make this learning environment work 
+  - Note: This directory will also contain stripped version of Toribash when installed with `pip install torille`
+- **`./examples/`**: Python examples on how to use this library (inc. Gym environment example)
+- **`./docs/`**: Detailed documentation of the inner workings (Python code reference, details of protocol between Python and Toribash)
+
 ## Useful links
 
 * Some options: http://forum.toribash.com/showthread.php?t=317900
