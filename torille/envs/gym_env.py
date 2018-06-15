@@ -31,9 +31,8 @@ import sys
 
 class ToriEnv(gym.Env):
     def __init__(self, **kwargs):
-        self.toribash_exe = kwargs["toribash_exe"]
         self.settings = torille.ToribashSettings(**kwargs)
-        self.game = torille.ToribashControl(self.toribash_exe, self.settings)
+        self.game = torille.ToribashControl(settings=self.settings)
 
         # Previous state (ToribashState)
         # Used for reward function
@@ -50,12 +49,18 @@ class ToriEnv(gym.Env):
             # spaces.MultiDiscrete on Windows vs. Linux...
             # Windows wants [[1,4],[1,4], ... , [0,1], [0,1]]
             # We make it [[0,3], [0,3], ... [0,1], [0,1]] to stay similar 
-            self.action_space = spaces.MultiDiscrete(([[0,torille.NUM_JOINT_STATES-1]]*torille.NUM_JOINTS + [[0,1]]*2)*2)
+            self.action_space = spaces.MultiDiscrete((
+                    [[0,torille.ToribashConstants.NUM_JOINT_STATES-1]]*
+                    torille.ToribashConstants.NUM_JOINTS + [[0,1]]*2)*2
+            )
         else:
-            self.action_space = spaces.MultiDiscrete(([torille.NUM_JOINT_STATES]*torille.NUM_JOINTS + [1]*2)*2)
+            self.action_space = spaces.MultiDiscrete((
+                    [torille.ToribashConstants.NUM_JOINT_STATES]*
+                    torille.ToribashConstants.NUM_JOINTS + [1]*2)*2
+            )
 
         # For both players, position of all joints
-        self.observation_space = spaces.Box(low=-30, high=30, shape=(2,torille.NUM_LIMBS*3))
+        self.observation_space = spaces.Box(low=-30, high=30, shape=(2,torille.ToribashConstants.NUM_LIMBS*3))
 
         self.game.init()
 
@@ -90,7 +95,7 @@ class ToriEnv(gym.Env):
         """
         raise NotImplementedError
 
-    def _step(self, action):
+    def step(self, action):
         if self.just_created:
             # We cannot send action as a first call to controller
             # We should instead call `reset`.
@@ -110,7 +115,7 @@ class ToriEnv(gym.Env):
         obs = self._preprocess_observation(state)
         return obs, reward, terminal, None
 
-    def _reset(self):
+    def reset(self):
         obs = None
         if self.just_created:
             # The env was just created and we need to start 
@@ -128,16 +133,16 @@ class ToriEnv(gym.Env):
             self.old_state = state
         return obs
 
-    def _render(self, close=None):
+    def render(self, **kwargs):
         # TODO what is the close param? Some windows thing?
         # TODO can this be done in some way?
         print("ToriEnv._render not implemented")
         return None
 
-    def _close(self, close=None):
+    def close(self, **kwargs):
         self.game.close()
 
-    def _seed(self, seed=None):
+    def seed(self, seed=None):
         # Can't set the seed in Toribash
         raise NotImplementedError
 
@@ -152,12 +157,18 @@ class TestToriEnv(ToriEnv):
             # spaces.MultiDiscrete on Windows vs. Linux...
             # Windows wants [[1,4],[1,4], ... , [0,1], [0,1]]
             # We make it [[0,3], [0,3], ... [0,1], [0,1]] to stay similar 
-            self.action_space = spaces.MultiDiscrete(([[0,torille.NUM_JOINT_STATES-1]]*torille.NUM_JOINTS + [[0,1]]*2))
+            self.action_space = spaces.MultiDiscrete((
+                [[0,torille.ToribashConstants.NUM_JOINT_STATES-1]]*
+                torille.ToribashConstants.NUM_JOINTS + [[0,1]]*2)
+            )
         else:
             # Linux wants [[4,4,4, ..., 1, 1]]
-            self.action_space = spaces.MultiDiscrete(([torille.NUM_JOINT_STATES]*torille.NUM_JOINTS + [1]*2))
+            self.action_space = spaces.MultiDiscrete((
+                [torille.ToribashConstants.NUM_JOINT_STATES]*
+                torille.ToribashConstants.NUM_JOINTS + [1]*2)
+            )
         # Only one player
-        self.observation_space = spaces.Box(low=-30, high=30, shape=(torille.NUM_LIMBS*3))
+        self.observation_space = spaces.Box(low=-30, high=30, shape=(torille.ToribashConstants.NUM_LIMBS*3,))
 
     def _preprocess_observation(self, state):
         obs = state.limb_positions[0].ravel()
@@ -165,9 +176,9 @@ class TestToriEnv(ToriEnv):
 
     def _preprocess_action(self, action):
         # Add +1 to limb actions (to make [0,3] -> [1,4])
-        for i in range(torille.NUM_JOINTS):
+        for i in range(torille.ToribashConstants.NUM_JOINTS):
             action[i] += 1
-        action = [action, [1]*torille.NUM_CONTROLLABLES]
+        action = [action, [1]*torille.ToribashConstants.NUM_CONTROLLABLES]
         return action
 
     def _reward_function(self, old_state, new_state):

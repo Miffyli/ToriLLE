@@ -6,9 +6,8 @@ from .solo_envs import (SoloToriEnv, reward_run_away,
 # A testing environment
 register(
     id='Toribash-test-v0',
-    entry_point='envs:TestToriEnv',
+    entry_point='torille.envs:TestToriEnv',
     kwargs={
-        'toribash_exe': r"D:\Games\Toribash-5.22\toribash.exe",
         'matchframes': 1000,
         'turnframes': 1,
     },
@@ -18,9 +17,8 @@ register(
 #                    as possible (plus reward on damage)
 register(
     id='Toribash-SelfDestruct-v0',
-    entry_point='envs:SoloToriEnv',
+    entry_point='torille.envs:SoloToriEnv',
     kwargs={
-        'toribash_exe': r"D:\Games\Toribash-5.22\toribash.exe",
         'reward_func': reward_self_destruct,
         'matchframes': 1000,
         'turnframes': 1,
@@ -33,9 +31,8 @@ register(
 #                to yourself (minus reward on damage)
 register(
     id='Toribash-StaySafe-v0',
-    entry_point='envs:SoloToriEnv',
+    entry_point='torille.envs:SoloToriEnv',
     kwargs={
-        'toribash_exe': r"D:\Games\Toribash-5.22\toribash.exe",
         'reward_func': reward_stay_safe,
         'matchframes': 1000,
         'turnframes': 1,
@@ -49,9 +46,8 @@ register(
 #               Center is located between two players.
 register(
     id='Toribash-RunAway-v0',
-    entry_point='envs:SoloToriEnv',
+    entry_point='torille.envs:SoloToriEnv',
     kwargs={
-        'toribash_exe': r"D:\Games\Toribash-5.22\toribash.exe",
         'reward_func': reward_run_away,
         'matchframes': 1000,
         'turnframes': 1,

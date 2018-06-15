@@ -221,8 +221,8 @@ class ToribashControl:
         self.process.kill()
     
     def _recv_line(self, s):
-        """ Call recv till data ends with "\n"
-        NOTE: This only expects "\n" to be at the end of message
+        """ 
+        Call recv till data ends with ToribashConstant.MESSAGE_END
         """
         # First wait till there is something to read
         ret = s.recv(ToribashConstants.BUFFER_SIZE)

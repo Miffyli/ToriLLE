@@ -26,6 +26,7 @@
 import gym 
 from gym import spaces
 from .gym_env import ToriEnv
+from .. import torille
 from math import log10
 import numpy as np
 import sys
@@ -67,11 +68,17 @@ class SoloToriEnv(ToriEnv):
 
         # Create spaces only for the first player
         if sys.platform == "win32":
-            self.action_space = spaces.MultiDiscrete(([[0,torille.NUM_JOINT_STATES-1]]*torille.NUM_JOINTS + [[0,1]]*2))
+            self.action_space = spaces.MultiDiscrete((
+                [[0,torille.ToribashConstants.NUM_JOINT_STATES-1]]*
+                torille.ToribashConstants.NUM_JOINTS + [[0,1]]*2
+            ))
         else:
-            self.action_space = spaces.MultiDiscrete(([torille.NUM_JOINT_STATES]*torille.NUM_JOINTS + [1]*2))
+            self.action_space = spaces.MultiDiscrete((
+                [torille.ToribashConstants.NUM_JOINT_STATES]*
+                torille.ToribashConstants.NUM_JOINTS + [1]*2
+            ))
         # Only one player
-        self.observation_space = spaces.Box(low=-30, high=30, shape=(torille.NUM_LIMBS*3))
+        self.observation_space = spaces.Box(low=-30, high=30, shape=(torille.ToribashConstants.NUM_LIMBS*3,))
 
     def _preprocess_observation(self, state):
         # Only give player1 positions as observation
@@ -80,9 +87,9 @@ class SoloToriEnv(ToriEnv):
 
     def _preprocess_action(self, action):
         # Add +1 to limb actions (to make [0,3] -> [1,4])
-        for i in range(torille.NUM_JOINTS):
+        for i in range(torille.ToribashConstants.NUM_JOINTS):
             action[i] += 1
-        action = [action, [1]*torille.NUM_CONTROLLABLES]
+        action = [action, [1]*torille.ToribashConstants.NUM_CONTROLLABLES]
         return action
 
     def _reward_function(self, old_state, new_state):
