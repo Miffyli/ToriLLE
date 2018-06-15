@@ -62,8 +62,6 @@ class ToriEnv(gym.Env):
         # For both players, position of all joints
         self.observation_space = spaces.Box(low=-30, high=30, shape=(2,torille.ToribashConstants.NUM_LIMBS*3))
 
-        self.game.init()
-
     def _preprocess_observation(self, state):
         """ 
         Preprocess ToribashState into more Numpyish
@@ -118,6 +116,8 @@ class ToriEnv(gym.Env):
     def reset(self):
         obs = None
         if self.just_created:
+            # Initialize game here to make it pickable before init
+            self.game.init()
             # The env was just created and we need to start 
             # by returning an observation.
             state, terminal = self.game.get_state()

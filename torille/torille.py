@@ -163,8 +163,6 @@ class ToribashControl:
 
         # Lets create FileLock file next to toribash.exe
         self.lock_file = os.path.join(os.path.dirname(executable), ".launchlock")
-        self.init_lock = FileLock(self.lock_file, 
-                                  timeout=ToribashConstants.TIMEOUT)
 
         self.settings = settings
         if self.settings is None:
@@ -181,8 +179,12 @@ class ToribashControl:
             launch_lock: A Lock object used to block overlapping creations of
                 Toribash (all controllers listen to same socket)
         """
-        # Make sure we are not listening for overlapping connections
-        with self.init_lock:
+        # Use global filelock to avoid mixing up Toribash instances with 
+        # corresponding Python scripts if we have multiple Toribashes running
+        # Create lock here to make code pick-able before call to init.
+        init_lock = FileLock(self.lock_file, 
+                             timeout=ToribashConstants.TIMEOUT)
+        with init_lock:
             # TODO processes won't die on Windows when Python exits,
             # even with tricks from Stackoverflow #12843903
             if sys.platform == "linux":
