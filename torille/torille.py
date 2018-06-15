@@ -30,6 +30,7 @@ import os
 from collections import OrderedDict
 import pprint
 from filelock import FileLock
+import warnings
 
 class ToribashConstants:
     """ Class for holding general constants """
@@ -173,15 +174,13 @@ class ToribashControl:
             raise ValueError("Controlled not initialized with init()")
     
     def init(self):
-        """ Actual init: Launch the game process, wait for connection and
-            and settings for the first game
-        Parameters:
-            launch_lock: A Lock object used to block overlapping creations of
-                Toribash (all controllers listen to same socket)
+        """ 
+        Actual init: Launch the game process, wait for connection and
+        and settings for the first game
         """
         # Use global filelock to avoid mixing up Toribash instances with 
         # corresponding Python scripts if we have multiple Toribashes running
-        # Create lock here to make code pick-able before call to init.
+        # Create lock here to make code pickle-able before call to init.
         init_lock = FileLock(self.lock_file, 
                              timeout=ToribashConstants.TIMEOUT)
         with init_lock:
@@ -377,7 +376,7 @@ class ToribashControl:
         There is no point in keeping Toribash alive without the controller..."""
         if self.process is not None:
             self.close()
-    
+
 def create_random_actions():
     """ Return random actions """
     ret = [[],[]]
