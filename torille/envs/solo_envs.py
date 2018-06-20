@@ -87,8 +87,46 @@ class SoloToriEnv(ToriEnv):
 
     def _preprocess_action(self, action):
         # Add +1 to limb actions (to make [0,3] -> [1,4])
+        if type(action) != list:
+            action = list(action)
         for i in range(torille.ToribashConstants.NUM_JOINTS):
             action[i] += 1
+        # Add "hold" actions for the (immobile) opponent
+        action = [action, [1]*torille.ToribashConstants.NUM_CONTROLLABLES]
+        return action
+
+    def _reward_function(self, old_state, new_state):
+        return self.reward_func(old_state, new_state)
+
+class SoloContToriEnv(ToriEnv):
+    """ A dummy solo environment that pretends to be continious (while it is not, kek) """
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        self.reward_func = kwargs["reward_func"]
+
+        # Create spaces only for the first player
+        # We really have discrete thing, but lets make it continious
+        # Note: This is just for testing if this environment works, not expecting this to actually work
+        self.action_space = spaces.Box(low=0.0, high=3.9, shape=(torille.ToribashConstants.NUM_CONTROLLABLES,))
+
+        # Only one player
+        self.observation_space = spaces.Box(low=-30, high=30, shape=(torille.ToribashConstants.NUM_LIMBS*3,))
+
+    def _preprocess_observation(self, state):
+        # Only give player1 positions as observation
+        obs = state.limb_positions[0].ravel()
+        return obs
+
+    def _preprocess_action(self, action):
+        # +1 to turn [0,3] to [0,4]
+        action += 1
+        # Turn continious values into actions
+        action[:-2] = np.floor(np.clip(action[:-2], 0, 4.9))
+        action[-2] =  np.floor(np.clip(action[-2]-1,  0, 1.9))
+        action[-1] =  np.floor(np.clip(action[-1]-1,  0, 1.9))
+        action = action.astype(np.int32)
+        action = list(action)
         action = [action, [1]*torille.ToribashConstants.NUM_CONTROLLABLES]
         return action
 
