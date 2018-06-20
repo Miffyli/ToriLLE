@@ -46,6 +46,7 @@ hence booting up multiple Toribashes at same time will take time!
 - Add possibility to change the port and listening address
 - Change FileLock to something more global? (Or will this be fixed with pip-installable script?)
 - Add check that correct version of Wine is installed (at least 3.0?)
+- Make hand actions to be 1,2 (not 0,1)
 
 ### Feature/soon-to-be-done TODOs:
 

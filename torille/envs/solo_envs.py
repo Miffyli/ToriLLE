@@ -122,9 +122,22 @@ class SoloContToriEnv(ToriEnv):
         # +1 to turn [0,3] to [0,4]
         action += 1
         # Turn continious values into actions
-        action[:-2] = np.floor(np.clip(action[:-2], 0, 4.9))
-        action[-2] =  np.floor(np.clip(action[-2]-1,  0, 1.9))
-        action[-1] =  np.floor(np.clip(action[-1]-1,  0, 1.9))
+
+        # Floor to closest action
+        #action[:-2] = np.floor(np.clip(action[:-2], 0, 4.9))
+        #action[-2] =  np.floor(np.clip(action[-2]-1,  0, 1.9))
+        #action[-1] =  np.floor(np.clip(action[-1]-1,  0, 1.9))
+        
+        # Sample action according to distance to closest actions
+        action[:-2] = np.clip(action[:-2], 0, 4.9)    
+        action[-2] =  np.clip(action[-2]-1,  0, 1.9)
+        action[-1] =  np.clip(action[-1]-1,  0, 1.9)
+        action = np.floor(action) + (np.random.random(size=action.shape) > (action % 1))
+        # Clip once more
+        action[:-2] = np.clip(action[:-2], 1, 4)    
+        action[-2] =  np.clip(action[-2]-1,  0, 1)
+        action[-1] =  np.clip(action[-1]-1,  0, 1)
+
         action = action.astype(np.int32)
         action = list(action)
         action = [action, [1]*torille.ToribashConstants.NUM_CONTROLLABLES]
