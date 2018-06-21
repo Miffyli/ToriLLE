@@ -9,11 +9,8 @@ import sys
 
 NUM_JOINTS = 20
 
-MATCH_FRAMES = 100
-TURN_FRAMES = 10
-
-WARM_UP_SECONDS = 120
-BENCHMARK_SECONDS = 60
+WARM_UP_SECONDS = 10
+BENCHMARK_SECONDS = 10
 
 def create_random_actions():
     """ Return random actions """
@@ -25,11 +22,11 @@ def create_random_actions():
         ret[plridx].append(r.randint(0,1))
     return ret
     
-def run_async_torille(tick_counter, quit_flag):
+def run_async_torille(tick_counter, quit_flag, match_frames, turn_frames):
     # Runs Toribash and increments the Value tick_counter on every frame
     controller = ToribashControl()
-    controller.settings.set("matchframes", MATCH_FRAMES)
-    controller.settings.set("turnframes", TURN_FRAMES)
+    controller.settings.set("matchframes", match_frames)
+    controller.settings.set("turnframes", turn_frames)
     controller.settings.set("engagement_distance", 1500)
     controller.init()
     while quit_flag.value == 0:
@@ -42,19 +39,21 @@ def run_async_torille(tick_counter, quit_flag):
         tick_counter.value += 1
     controller.close()
     
-def test_async(num_instances, warmup_seconds, benchmark_seconds):
+def test_async(num_instances, warm_up_seconds, benchmark_seconds, match_frames,
+               turn_frames):
     last_ticks = [0 for i in range(num_instances)]
     tick_ctrs = [Value("i") for i in range(num_instances)]
     quit_flags = [Value("i") for i in range(num_instances)]
     runners = []
     for i in range(num_instances):
-        process = Process(target=run_async_torille, args=(toribash_exe,
-                                                          tick_ctrs[i],
-                                                          quit_flags[i]))
+        process = Process(target=run_async_torille, args=(tick_ctrs[i],
+                                                          quit_flags[i],
+                                                          match_frames,
+                                                          turn_frames))
         process.start()
         runners.append(process)
     
-    sleep(warmup_seconds)
+    sleep(warm_up_seconds)
     
     # Get current number of frames
     start_ticks = [tick_ctrs[i].value for i in range(num_instances)]
@@ -68,26 +67,30 @@ def test_async(num_instances, warmup_seconds, benchmark_seconds):
     # Calculate FPS
     ticks_progressed = 0
     for i in range(num_instances):
-        ticks_progressed += new_ticks[i]-last_ticks[i]
-    fps = ticks_progressed / print_every_seconds
+        ticks_progressed += ticks[i]-start_ticks[i]
+    pps = ticks_progressed / benchmark_seconds
     
-    print("FPS: %.2f" % fps)
+    print("PPS: %.2f" % pps)
+    print("FPS: %.2f\n" % (pps*turn_frames))
     
     for i in range(num_instances):
         quit_flags[i].value = 1
         runners[i].join()
     
 if __name__ == '__main__':
-    if len(sys.argv) != 2:
-        print("Usage: python3 async_test.py num_instances")
+    if len(sys.argv) != 4:
+        print("Usage: python3 async_test.py num_instances match_frames turn_frames")
     else:
         num_instances = int(sys.argv[1])
-        print(("\tInstances: %d\n\tWarmup: %d s\n\tBenchmark: %d s" +
-              "\n\tMatchlength: %d\n\tTurnframes: %d") %
+        match_frames = int(sys.argv[2])
+        turn_frames = int(sys.argv[3])
+        print(("Instances: %d\nWarmup: %d s\nBenchmark: %d s" +
+              "\nMatchframes: %d\nTurnframes: %d") %
               (num_instances, WARM_UP_SECONDS, BENCHMARK_SECONDS, 
-               MATCH_FRAMES, TURN_FRAMES))
-        test_async(toribash_exe=r"D:\Games\Toribash-5.2\toribash.exe",
-                num_instances=num_instances,
-                warm_up_seconds=WARM_UP_SECONDS,
-                benchmark_seconds=BENCHMARK_SECONDS)
+               match_frames, turn_frames))
+        test_async(num_instances=num_instances,
+                   warm_up_seconds=WARM_UP_SECONDS,
+                   benchmark_seconds=BENCHMARK_SECONDS,
+                   match_frames=match_frames,
+                   turn_frames=turn_frames)
 
