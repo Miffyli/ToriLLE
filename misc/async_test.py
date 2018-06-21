@@ -10,7 +10,7 @@ import sys
 NUM_JOINTS = 20
 
 WARM_UP_SECONDS = 10
-BENCHMARK_SECONDS = 10
+BENCHMARK_SECONDS = 60
 
 def create_random_actions():
     """ Return random actions """
