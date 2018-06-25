@@ -99,7 +99,7 @@ class SoloToriEnv(ToriEnv):
         for i in range(torille.ToribashConstants.NUM_JOINTS):
             action[i] += 1
         # Add "hold" actions for the (immobile) opponent
-        action = [action, [3]*torille.ToribashConstants.NUM_CONTROLLABLES]
+        action = [action, [3]*torille.ToribashConstants.NUM_JOINTS + [0]*2]
         return action
 
     def _reward_function(self, old_state, new_state):

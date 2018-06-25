@@ -145,42 +145,4 @@ class ToriEnv(gym.Env):
     def seed(self, seed=None):
         # Can't set the seed in Toribash
         raise NotImplementedError
-
-class TestToriEnv(ToriEnv):
-    """ A testing environment. Not to be used with anything useful """
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-
-        # {1,2,3,4} for joints, {0,1} for hands
-        if sys.platform == "win32":
-            # For some reason Gym has completely different implementations for 
-            # spaces.MultiDiscrete on Windows vs. Linux...
-            # Windows wants [[1,4],[1,4], ... , [0,1], [0,1]]
-            # We make it [[0,3], [0,3], ... [0,1], [0,1]] to stay similar 
-            self.action_space = spaces.MultiDiscrete((
-                [[0,torille.ToribashConstants.NUM_JOINT_STATES-1]]*
-                torille.ToribashConstants.NUM_JOINTS + [[0,1]]*2)
-            )
-        else:
-            # Linux wants [[4,4,4, ..., 1, 1]]
-            self.action_space = spaces.MultiDiscrete((
-                [torille.ToribashConstants.NUM_JOINT_STATES]*
-                torille.ToribashConstants.NUM_JOINTS + [1]*2)
-            )
-        # Only one player
-        self.observation_space = spaces.Box(low=-30, high=30, shape=(torille.ToribashConstants.NUM_LIMBS*3,))
-
-    def _preprocess_observation(self, state):
-        obs = state.limb_positions[0].ravel()
-        return obs
-
-    def _preprocess_action(self, action):
-        # Add +1 to limb actions (to make [0,3] -> [1,4])
-        for i in range(torille.ToribashConstants.NUM_JOINTS):
-            action[i] += 1
-        action = [action, [1]*torille.ToribashConstants.NUM_CONTROLLABLES]
-        return action
-
-    def _reward_function(self, old_state, new_state):
-        return 0
         
