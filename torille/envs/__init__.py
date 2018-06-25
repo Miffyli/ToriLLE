@@ -1,5 +1,4 @@
 from gym.envs.registration import register
-from .gym_env import TestToriEnv
 from .solo_envs import (SoloToriEnv, reward_run_away, 
                         reward_self_destruct, reward_stay_safe,
                         reward_destroy_uke)
