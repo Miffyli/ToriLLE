@@ -59,6 +59,13 @@ def reward_run_away(old_state, new_state):
     moved = np.sqrt(np.sum(new_pos**2)) - np.sqrt(np.sum(old_pos**2))
     return moved
 
+def reward_destroy_uke(old_state, new_state):
+    """ Returns reward on damaging the other player (Uke)"""
+    reward = new_state.plr1_injury - old_state.plr1_injury
+    if reward > 1:
+        reward = log10(reward) / 4
+    return reward
+
 class SoloToriEnv(ToriEnv):
     """ An extension to ToriEnv designed for controlling only one body """
     def __init__(self, **kwargs):
@@ -92,7 +99,7 @@ class SoloToriEnv(ToriEnv):
         for i in range(torille.ToribashConstants.NUM_JOINTS):
             action[i] += 1
         # Add "hold" actions for the (immobile) opponent
-        action = [action, [1]*torille.ToribashConstants.NUM_CONTROLLABLES]
+        action = [action, [3]*torille.ToribashConstants.NUM_CONTROLLABLES]
         return action
 
     def _reward_function(self, old_state, new_state):
