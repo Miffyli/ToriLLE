@@ -97,11 +97,11 @@ class ToribashA2C:
     def build_network(self):
         # Create some head 
         self.dense1 = tf.layers.dense(inputs=self.input_s,
-                              units=128,
+                              units=64,
                               activation=tf.nn.tanh,
                               name="dense1")
         self.dense2 = tf.layers.dense(inputs=self.dense1,
-                              units=128,
+                              units=64,
                               activation=tf.nn.tanh,
                               name="dense2")
         

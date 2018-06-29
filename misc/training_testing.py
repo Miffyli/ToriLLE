@@ -10,8 +10,6 @@ import argparse
 from collections import deque
 
 parser = argparse.ArgumentParser(description="Train A2C on Toribash")
-parser.add_argument('executable', type=str,
-                help="Executable file for Toribash")
 parser.add_argument('rewardfunc', type=str,
                 help="Reward function to be used for training")
 parser.add_argument('modelfile', type=str,
@@ -20,11 +18,11 @@ parser.add_argument('--batchsize', type=int, default=32,
                 help="Size of a single batch for training (default: 32)")
 parser.add_argument('--timesteps', type=int, default=1000000,
                 help="Number of timesteps to run (default: 1e6)")
-parser.add_argument('--reportrate', type=int, default=100,
-                help="How many trains ops between printing stats (default: 100)"
+parser.add_argument('--reportep', type=int, default=10,
+                help="How many episodes between reporting stats (default: 10)"
                 )
-parser.add_argument('--numframes', type=int, default=3,
-                help="How many successive frames will be fed to network (default: 3)"
+parser.add_argument('--numframes', type=int, default=1,
+                help="How many successive frames will be fed to network (default: 1)"
                 )
 parser.add_argument('--saverate', type=int, default=1000,
                 help="How often model should be saved (default: 1000)")
@@ -71,7 +69,7 @@ REWARD_FUNCS = {
     "destroy-uke": reward_destroy_uke,
 }
 
-def get_player_states(state, normalize_by_idx=12):
+def get_player_states(state, normalize_by_idx=None):
     """
     Get 1D state-arrays for both players 
     Parameters:
@@ -79,10 +77,11 @@ def get_player_states(state, normalize_by_idx=12):
                           by this number (from player0)
     """
     positions = state.limb_positions
-    center_bone = positions[0][normalize_by_idx]
-    positions = positions-center_bone
-    # Set the center-bone to have the original position to keep that information
-    positions[0][normalize_by_idx] = center_bone
+    if normalize_by_idx is not None:
+        center_bone = positions[0][normalize_by_idx]
+        positions = positions-center_bone
+        # Set the center-bone to have the original position to keep that information
+        positions[0][normalize_by_idx] = center_bone
     p1 = positions[0].ravel()
     p2 = positions[1].ravel()
     return p1, p2
@@ -105,22 +104,21 @@ def print_and_log(s,logfile):
     with open(logfile, "a") as f:
         f.write(s+"\n")
 
-def simple_training(executable, batch_size, num_steps, 
-                        report_every_trains, reward_function,
+def simple_training(batch_size, num_steps, 
+                        report_every_episodes, reward_function,
                         logfile, save_every_trains, save_file,
                         num_frames):
     """ An example training code on Toribash
         Player 0 is controlled, player 1 just relaxes to the ground"""
         
-    controller = ToribashControl(executable)
+    controller = ToribashControl()
     
     num_players = 2 if reward_function == reward_destroy_uke else 1
 
     controller.settings.set("matchframes", 1000)
     controller.settings.set("turnframes", 5)
-    controller.settings.set("engagement_distance", 1000)
-    if reward_function == reward_destroy_uke:
-        controller.settings.set("engagement_distance", 100)
+    if reward_function != reward_destroy_uke:
+        controller.settings.set("engagement_distance", 1500)
     
     num_joints = controller.get_num_joints()
     num_joint_states = controller.get_num_joint_states()
@@ -132,6 +130,7 @@ def simple_training(executable, batch_size, num_steps,
     
     train_op_ctr = 0
     step_ctr = 0
+    episode_ctr = 0
     batch_states = []
     batch_stateprimes = []
     batch_actions = []
@@ -146,7 +145,9 @@ def simple_training(executable, batch_size, num_steps,
     v_losses = []
     h_losses = []
     vs = []
-    rewards = []
+    # List of lists, one for each episode
+    last_episode_rewards = []
+    episode_reward = 0
     stacker = deque([np.zeros(num_inputs,) for i in range(num_frames)], 
                     maxlen=num_frames)
     
@@ -198,9 +199,31 @@ def simple_training(executable, batch_size, num_steps,
             stacker = deque([np.zeros(num_inputs,) for i in range(num_frames)], 
                              maxlen=num_frames)
             orig_s = controller.reset()
+            episode_ctr += 1
+            last_episode_rewards.append(episode_reward)
+            episode_reward = 0
             s = get_refined_state(orig_s, num_players)
             stacker.append(s)
             s = np.concatenate(stacker)
+
+            if (episode_ctr % report_every_episodes) == 0:
+                print_and_log(("Steps: %d\tTime: %d\tPloss: %.4f\tVloss: %.4f\t"+
+                               "Hloss: %.4f"+
+                               "\tSumR: %.4f\tAvgR: %.4f\tMinR: %.4f\tAvrgV: %.4f")%
+                        (step_ctr,
+                         int(time()-start_time),
+                         sum(pi_losses)/len(pi_losses),
+                         sum(v_losses)/len(v_losses),
+                         sum(h_losses)/len(h_losses),
+                         sum(last_episode_rewards) / len(last_episode_rewards),
+                         max(last_episode_rewards),
+                         min(last_episode_rewards),
+                         sum(vs)/len(vs)), logfile)
+                pi_losses.clear()
+                v_losses.clear()
+                h_losses.clear()
+                last_episode_rewards.clear()
+                vs.clear()
         
         pi, v = a2c.predict_pi_and_v(np.expand_dims(s,0))
         pi = pi[0]
@@ -226,37 +249,17 @@ def simple_training(executable, batch_size, num_steps,
             last_r = reward_function(last_orig_s, orig_s)
         else:
             last_r = 0
-        rewards.append(last_r)
+        episode_reward += last_r
         last_orig_s = orig_s
-        
-        if len(pi_losses) == report_every_trains:
-            print_and_log(("Steps: %d\tTime: %d\tPloss: %.4f\tVloss: %.4f\t"+
-                           "Hloss: %.4f"+
-                           "\tSumR: %.4f\tMaxR: %.4f\tMinR: %.4f\tAvrgV: %.4f")%
-                    (step_ctr,
-                     int(time()-start_time),
-                     sum(pi_losses)/len(pi_losses),
-                     sum(v_losses)/len(v_losses),
-                     sum(h_losses)/len(h_losses),
-                     sum(rewards),
-                     max(rewards),
-                     min(rewards),
-                     sum(vs)/len(vs)), logfile)
-            pi_losses.clear()
-            v_losses.clear()
-            h_losses.clear()
-            rewards.clear()
-            vs.clear()
 
         if ((train_op_ctr+1) % save_every_trains) == 0:
             a2c.save(save_file)
 
 if __name__ == '__main__':
     args = parser.parse_args()
-    simple_training(executable=args.executable,
-                    batch_size=args.batchsize, 
+    simple_training(batch_size=args.batchsize, 
                     num_steps=args.timesteps,
-                    report_every_trains=args.reportrate,
+                    report_every_episodes=args.reportep,
                     save_every_trains=args.saverate,
                     save_file=args.modelfile,
                     reward_function=REWARD_FUNCS[args.rewardfunc],
