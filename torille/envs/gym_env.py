@@ -30,6 +30,9 @@ import numpy as np
 import sys
 
 class ToriEnv(gym.Env):
+    """ 
+    A base (abstract) environment for Toribash environments.
+    """
     def __init__(self, **kwargs):
         self.settings = torille.ToribashSettings(**kwargs)
         self.game = torille.ToribashControl(settings=self.settings)
@@ -47,8 +50,8 @@ class ToriEnv(gym.Env):
         if sys.platform == "win32":
             # For some reason Gym has completely different implementations for 
             # spaces.MultiDiscrete on Windows vs. Linux...
-            # Windows wants [[1,4],[1,4], ...
-            # We make it [[0,3], [0,3], ... to stay similar 
+            # Windows wants [[1,4],[1,4], ...]
+            # We make it [[0,3], [0,3], ...] for consistency
             self.action_space = spaces.MultiDiscrete((
                     [[0,torille.ToribashConstants.NUM_JOINT_STATES-1]]*
                     torille.ToribashConstants.NUM_CONTROLLABLES)*2
@@ -133,10 +136,20 @@ class ToriEnv(gym.Env):
             self.old_state = state
         return obs
 
+    def set_draw_game(self, visibility):
+        """ 
+        Sets flag for drawing the game. Must be called before first reset()
+        (drawing = render characters, limit FPS)
+        Parameters:
+            visibility: True = game will be drawn. 
+        """
+        if not self.just_created:
+            raise Exception("Can't change rendering after first `reset()`")
+        else:
+            self.game.draw_game = visibility
+
     def render(self, **kwargs):
-        # TODO what is the close param? Some windows thing?
-        # TODO can this be done in some way?
-        raise NotImplementedError
+        raise NotImplementedError("See `set_draw_game` for displaying game")
 
     def close(self, **kwargs):
         self.game.close()
