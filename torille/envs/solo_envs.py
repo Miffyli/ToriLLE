@@ -3,7 +3,7 @@
 #  solo_envs.py
 #  ToriLLE Gym environments with solo tasks (e.g. run-away, self-destruct)
 #
-#  Shoutout to GitHub user "ppaquette" for Gym-Doom, which was used 
+#  Shout-out to GitHub user "ppaquette" for Gym-Doom, which was used 
 #  as a base here.
 #
 #  Author: Anssi "Miffyli" Kanervisto, 2018

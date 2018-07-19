@@ -33,6 +33,41 @@ import pprint
 from filelock import FileLock
 import warnings
 
+def check_linux_sanity():
+    """ 
+    A helper function that checks Linux environment
+    for requirements, and warns/throws accordingly
+    """
+
+    # Check that we have a valid display to render into.
+    # We rather avoid running over SSH
+    display = os.getenv("DISPLAY")
+    if display is not None and display[0] != ":":
+        warnings.warn(
+            "Looks like you have X-forwarding enabled. "+
+            "This makes Toribash very slow and sad. "+
+            "Consider using virtual screen buffer like Xvfb. "+
+            "More info at the Github page https://github.com/Miffyli/ToriLLE"
+        )
+
+    # Check Wine version: We need recent enough version, otherwise
+    # game won't run
+    wine_version = None
+    try:
+        wine_version = subprocess.check_output(("wine", "--version")).decode()[:-1]
+    except FileNotFoundError:
+        raise Exception("Recent version of Wine is required to run Toribash. "+
+                        "Tested to work on Wine versions 3.0.x")
+    if wine_version is not None:
+        wine_version = (int(wine_version[-3]),int(wine_version[-3]),
+                        int(wine_version[-1]))
+        if wine_version[0] == 1:
+            raise Exception(
+                "Detected Wine version 1.x. "+
+                "Toribash does not run on old versions of Wine. "+
+                "Toribash is tested to work on Wine versions 3.0.x"
+            )
+
 class ToribashConstants:
     """ Class for holding general constants """
     # Port where Toribashes connect to
@@ -62,8 +97,10 @@ class ToribashConstants:
     TORIBASH_EXE = os.path.join(my_dir, "toribash", "toribash.exe")
 
 class ToribashState:
-    """ Class for storing and processing the state representations
-    from Toribash """
+    """ 
+    Class for storing and processing the state representations
+    from Toribash 
+    """
     def __init__(self, state):
         # Limb locations
         # For both players, for all limbs, x,y,z coordinates
@@ -180,10 +217,15 @@ class ToribashControl:
         self.settings = settings
         if self.settings is None:
             self.settings = ToribashSettings()
+
+        # Used as a watchdog to make sure 
+        # anybody calling using this interface
+        # calls `reset` at appropiate times
+        self.requires_reset = False
     
     def _check_if_initialized(self):
         if self.process is None:
-            raise ValueError("Controlled not initialized with init()")
+            raise ValueError("Controlled not initialized with `init()`")
     
     def init(self):
         """ 
@@ -199,6 +241,8 @@ class ToribashControl:
             # TODO processes won't die on Windows when Python exits,
             # even with tricks from Stackoverflow #12843903
             if sys.platform == "linux":
+                # Sanity check launching on Linux
+                check_linux_sanity()
                 # Add wine command explicitly for running on Linux
                 self.process = subprocess.Popen(("nohup", "wine", self.executable_path), 
                                              stdout=subprocess.DEVNULL, 
@@ -257,6 +301,8 @@ class ToribashControl:
         if terminal:
             # Remove first three characters + comma to parse the state
             s = s[4:]
+            # Allow calling reset next
+            self.requires_reset = True
         s = list(map(float, s.split(",")))
         # Make sure we got list of correct length
         if len(s) != ToribashConstants.STATE_LENGTH:
@@ -292,9 +338,15 @@ class ToribashControl:
             state: ToribashState representing the state of new game
         """
         self._check_if_initialized()
+
+        # Make sure we are allowed to do a reset
+        if not self.requires_reset:
+            raise Exception("Calling `reset` is only allowed "+
+                            "after terminal states")
         
         self._send_comma_list(self.settings.settings)
         s,terminal = self.get_state()
+        self.requires_reset = False
         return s
     
     def validate_actions(self, actions):
@@ -342,6 +394,10 @@ class ToribashControl:
                      and hand gripping for both players.
         """
         self._check_if_initialized()
+
+        # Make sure we are allowed to make actions
+        if self.requires_reset:
+            raise Exception("`reset()` must called after terminal state")
         
         # Validate actions, let it throw errors
         self.validate_actions(actions)
