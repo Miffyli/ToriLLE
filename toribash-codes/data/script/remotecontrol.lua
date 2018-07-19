@@ -8,7 +8,8 @@ Specifically designed machine/reinforcement learning in mind.
 Core loop: Send players' states (body parts etc), receive joint states, progress a step
 ]]
 
-
+-- Toribash attempts to find remote controller at this address+port.
+-- Change if needed
 local CONNECT_IP = "127.0.0.1"
 local CONNECT_PORT = 7788
 local TIMEOUT = 300
@@ -53,7 +54,7 @@ local options_rendering = {
     hud = 1,
     tori = 1,
     uke = 1,
-    money = 1,
+    money = 0,
     score = 1,
     timer = 1,
     name = 1, 
@@ -65,6 +66,11 @@ local options_rendering = {
 }
 -- Resolution for rendering
 local resolution_rendering = {1280,720}
+
+-- Determines if the game should be shown
+-- If false: Training mode, i.e. as fast as possible, no drawing
+-- If true: "enjoy" mode, i.e. draw game, limit fps
+local draw_game = false;
 
 -- Sleep function based on socket.select function
 -- From Stackoverflow #17987618
@@ -234,11 +240,18 @@ end
 -- Initialize the game for running as fast as possible 
 -- (minimize rendering etc)
 function initialize_and_start()
-    -- TODO make these changeable via settings
-    for opt, val in pairs(options_no_rendering) do
-        set_option(opt, val)
+    if (draw_game == true) then
+        -- Enjoy mode: Draw game
+        for opt, val in pairs(options_rendering) do
+            set_option(opt, val)
+        end
+        run_cmd("re "..resolution_rendering[1].." "..resolution_rendering[2])
+    else 
+        for opt, val in pairs(options_no_rendering) do
+            set_option(opt, val)
+        end
+        run_cmd("re "..resolution_no_rendering[1].." "..resolution_no_rendering[2])
     end
-    run_cmd("re "..resolution_no_rendering[1].." "..resolution_no_rendering[2])
     -- Start the game by loading the mod
     run_cmd("loadmod classic")
 end
@@ -271,6 +284,12 @@ local function run_controlled(configuration)
 	end
 	
     s:settimeout(TIMEOUT)
+    
+    -- Receive initial handshake, which determines 
+    -- if we should display game or not
+    local handshake = wait_for_data()
+    handshake = split_comma_and_numerize(handshake)
+    draw_game = handshake[1] == 1
     
     -- Make sure there are no hooks with these names
     remove_hook("end_game", "remotecontrol")

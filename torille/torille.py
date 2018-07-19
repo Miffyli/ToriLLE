@@ -144,13 +144,17 @@ class ToribashSettings:
     
 class ToribashControl:
     """ Main class controlling one instance of Toribash """
-    def __init__(self, settings=None, 
+    def __init__(self, 
+                 settings=None, 
+                 draw_game=False,
                  executable=ToribashConstants.TORIBASH_EXE, 
                  port=ToribashConstants.PORT):
         """ 
         Parameters:
             settings: ToribashSettings instance. Uses these settings if 
                       provided, else defaults to default settings.
+            draw_game: If True, will render the game and limit the FPS.
+                       Defaults to False.
             executable: String of path to the toribash.exe launching the game.
                         Defaults to path used with pip-installed package.
             port: Port used to listen for connections from Toribash.
@@ -165,12 +169,14 @@ class ToribashControl:
                              self.executable_path)
         self.process = None
         self.connection = None
+        self.port = port
 
         # Lets create FileLock file next to toribash.exe
         # Actual FileLock will be done in init() to keep
         # this object pickleable (serializable)
         self.lock_file = os.path.join(os.path.dirname(executable), ".launchlock")
 
+        self.draw_game = draw_game
         self.settings = settings
         if self.settings is None:
             self.settings = ToribashSettings()
@@ -218,6 +224,8 @@ class ToribashControl:
             # Set the timeout for connection 
             conn.settimeout(ToribashConstants.TIMEOUT)
             self.connection = conn
+        # Send handshake 
+        self._send_comma_list([int(self.draw_game)])
         # Send initial settings
         self._send_comma_list(self.settings.settings)
 
@@ -399,7 +407,7 @@ def test_control(num_instances, verbose=False):
     
     verbose_print("Waiting connections from toribashes...")
     for i in range(num_instances):
-        controller = ToribashControl()
+        controller = ToribashControl(draw_game=False)
         controller.settings.set("matchframes", 1000)
         controller.settings.set("turnframes", 1)
         controller.settings.set("engagement_distance", 1000)
