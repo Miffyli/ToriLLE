@@ -47,16 +47,16 @@ class ToriEnv(gym.Env):
         if sys.platform == "win32":
             # For some reason Gym has completely different implementations for 
             # spaces.MultiDiscrete on Windows vs. Linux...
-            # Windows wants [[1,4],[1,4], ... , [0,1], [0,1]]
-            # We make it [[0,3], [0,3], ... [0,1], [0,1]] to stay similar 
+            # Windows wants [[1,4],[1,4], ...
+            # We make it [[0,3], [0,3], ... to stay similar 
             self.action_space = spaces.MultiDiscrete((
                     [[0,torille.ToribashConstants.NUM_JOINT_STATES-1]]*
-                    torille.ToribashConstants.NUM_JOINTS + [[0,1]]*2)*2
+                    torille.ToribashConstants.NUM_CONTROLLABLES)*2
             )
         else:
             self.action_space = spaces.MultiDiscrete((
                     [torille.ToribashConstants.NUM_JOINT_STATES]*
-                    torille.ToribashConstants.NUM_JOINTS + [1]*2)*2
+                    torille.ToribashConstants.NUM_CONTROLLABLES)*2
             )
 
         # For both players, position of all joints
@@ -136,8 +136,7 @@ class ToriEnv(gym.Env):
     def render(self, **kwargs):
         # TODO what is the close param? Some windows thing?
         # TODO can this be done in some way?
-        print("ToriEnv._render not implemented")
-        return None
+        raise NotImplementedError
 
     def close(self, **kwargs):
         self.game.close()
