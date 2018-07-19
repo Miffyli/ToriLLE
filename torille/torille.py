@@ -21,6 +21,7 @@
 #  MA 02110-1301, USA.
 #  
 import socket
+import math
 import numpy as np
 import random as r
 import subprocess
@@ -67,12 +68,9 @@ class ToribashState:
         # Limb locations
         # For both players, for all limbs, x,y,z coordinates
         self.limb_positions = np.zeros((2,ToribashConstants.NUM_LIMBS,3))
-        # Joint states
+        # Joint states (including hands)
         # For both players
-        self.joint_states = np.zeros((2,ToribashConstants.NUM_JOINTS))
-        # Hand grips for both players
-        # TODO rename "hand_states"?
-        self.hand_grips = np.zeros((2,2))
+        self.joint_states = np.zeros((2,ToribashConstants.NUM_CONTROLLABLES))
         # Amount of injury of players
         # TODO make as a list and rename to just "injuries"?
         self.plr0_injury = None
@@ -89,12 +87,9 @@ class ToribashState:
                                         (ToribashConstants.NUM_LIMBS,3))
         self.limb_positions[1] = np.array(state_list[86:149]).reshape(
                                         (ToribashConstants.NUM_LIMBS,3))
-        # Joint states
-        self.joint_states[0] = np.array(state_list[63:83], dtype=np.int)
-        self.joint_states[1] = np.array(state_list[149:169], dtype=np.int)
-        # Hand grips
-        self.hand_grips[0] = np.array(state_list[83:85], dtype=np.int)
-        self.hand_grips[1] = np.array(state_list[169:171], dtype=np.int)
+        # Joint states (inc. hand grips)
+        self.joint_states[0] = np.array(state_list[63:85], dtype=np.int)
+        self.joint_states[1] = np.array(state_list[149:171], dtype=np.int)
         # Injuries
         self.plr0_injury = state_list[85]
         self.plr1_injury = state_list[171]
@@ -307,21 +302,19 @@ class ToribashControl:
             raise ValueError("Actions should be a List of shape 2 x %d"%
                              NUM_CONTROLLABLES)
         
-        # Make sure hand states are {0,1}
-        if (actions[0][-1] < 0 or actions[0][-1] > 1 or 
-            actions[0][-2] < 0 or actions[0][-2] > 1 or  
-            actions[1][-1] < 0 or actions[1][-1] > 1 or
-            actions[1][-2] < 0 or actions[1][-2] > 1):
-            raise ValueError("Hand joint states (last two elements) should be"+
-                             " in {0,1}")
-        
         # Check that all joint states are in {1,2,3,4}
-        for i in range(ToribashConstants.NUM_JOINTS):
+        for i in range(ToribashConstants.NUM_CONTROLLABLES):
             # Check both players at the same time
             if (actions[0][i] > 4 or actions[0][i] < 1 or actions[1][i] > 4 or
                     actions[1][i] < 1):
                 raise ValueError("Joint states should be in {1,2,3,4}")
         
+        # Modify hand grips to be {0,1} rather than {1,2,3,4}
+        # Map {1,2} -> 0 , {3,4} -> 1
+        actions[0][-2] = 0 if actions[0][-1] < 3 else 1 
+        actions[1][-1] = 0 if actions[0][-2] < 3 else 1 
+        actions[0][-2] = 0 if actions[1][-1] < 3 else 1 
+        actions[1][-1] = 0 if actions[1][-2] < 3 else 1 
     
     def make_actions(self, actions):
         """ Send given list of actions to the server.
@@ -381,10 +374,8 @@ def create_random_actions():
     """ Return random actions """
     ret = [[],[]]
     for plridx in range(2):
-        for jointidx in range(ToribashConstants.NUM_JOINTS):
+        for jointidx in range(ToribashConstants.NUM_CONTROLLABLES):
             ret[plridx].append(r.randint(1,4))
-        ret[plridx].append(r.randint(0,1))
-        ret[plridx].append(r.randint(0,1))
     return ret
     
 def test_control(num_instances, verbose=False):
