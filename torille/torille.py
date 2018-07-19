@@ -144,19 +144,31 @@ class ToribashSettings:
     
 class ToribashControl:
     """ Main class controlling one instance of Toribash """
-    def __init__(self, executable=ToribashConstants.TORIBASH_EXE, 
-                 settings=None):
+    def __init__(self, settings=None, 
+                 executable=ToribashConstants.TORIBASH_EXE, 
+                 port=ToribashConstants.PORT):
         """ 
         Parameters:
-            executable: String of path to the toribash.exe launching the game
             settings: ToribashSettings instance. Uses these settings if 
                       provided, else defaults to default settings.
+            executable: String of path to the toribash.exe launching the game.
+                        Defaults to path used with pip-installed package.
+            port: Port used to listen for connections from Toribash.
+                  Defaults to ToribashConstants.PORT.
+                  NOTE: You have to change port in Toribash Lua script as well!
+                        (in {toribash dir}/data/script/remotecontrol.lua )
         """
         self.executable_path = executable
+        # Make sure exe exists
+        if not os.path.isfile(self.executable_path):
+            raise ValueError("Toribash executable path is not a file: %s" % 
+                             self.executable_path)
         self.process = None
         self.connection = None
 
         # Lets create FileLock file next to toribash.exe
+        # Actual FileLock will be done in init() to keep
+        # this object pickleable (serializable)
         self.lock_file = os.path.join(os.path.dirname(executable), ".launchlock")
 
         self.settings = settings
@@ -173,7 +185,7 @@ class ToribashControl:
         and settings for the first game
         """
         # Use global filelock to avoid mixing up Toribash instances with 
-        # corresponding Python scripts if we have multiple Toribashes running
+        # corresponding Python scripts if we have multiple Toribashes running.
         # Create lock here to make code pickle-able before call to init.
         init_lock = FileLock(self.lock_file, 
                              timeout=ToribashConstants.TIMEOUT)
@@ -196,7 +208,7 @@ class ToribashControl:
             # Toribash instances on same computer
             # From Stackoverflow #6380057
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-            s.bind(("",ToribashConstants.PORT))
+            s.bind(("",self.port))
             s.settimeout(ToribashConstants.TIMEOUT)
             s.listen(1)
             conn, addr = s.accept()
