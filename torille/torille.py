@@ -71,10 +71,9 @@ class ToribashState:
         # Joint states (including hands)
         # For both players
         self.joint_states = np.zeros((2,ToribashConstants.NUM_CONTROLLABLES))
-        # Amount of injury of players
-        # TODO make as a list and rename to just "injuries"?
-        self.plr0_injury = None
-        self.plr1_injury = None
+        # Amount of injury of players 
+        # For both players
+        self.injuries = np.zeros((2,))
         
         self.process_list(state)
         
@@ -91,8 +90,8 @@ class ToribashState:
         self.joint_states[0] = np.array(state_list[63:85], dtype=np.int)
         self.joint_states[1] = np.array(state_list[149:171], dtype=np.int)
         # Injuries
-        self.plr0_injury = state_list[85]
-        self.plr1_injury = state_list[171]
+        self.injuries[0] = state_list[85]
+        self.injuries[1] = state_list[171]
 
 class ToribashSettings:
     """ Class for storing and processing settings for Toribash """
@@ -422,4 +421,3 @@ def test_control(num_instances, verbose=False):
     
 if __name__ == '__main__':
     test_control(1)
-    #test_control("/home/anssk/.wine/drive_c/Games/Toribash-5.2/toribash.exe", 8)

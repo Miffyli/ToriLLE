@@ -33,7 +33,7 @@ import sys
 
 def reward_self_destruct(old_state, new_state):
     """ Returns reward for plr0 receiving damage """
-    reward = new_state.plr0_injury - old_state.plr0_injury
+    reward = new_state.injuries[0] - old_state.injuries[0]
     if reward > 1:
         reward = log10(reward) / 4
     return reward
@@ -41,7 +41,7 @@ def reward_self_destruct(old_state, new_state):
 def reward_stay_safe(old_state, new_state):
     """ Returns reward for plr0 NOT receiving damage """
     # Injury can only increase
-    reward = -(old_state.plr0_injury - new_state.plr0_injury)
+    reward = -(old_state.injuries[0] - new_state.injuries[0])
     if reward > 1:
         reward = log10(reward) / 4
     return -reward
@@ -61,7 +61,7 @@ def reward_run_away(old_state, new_state):
 
 def reward_destroy_uke(old_state, new_state):
     """ Returns reward on damaging the other player (Uke)"""
-    reward = new_state.plr1_injury - old_state.plr1_injury
+    reward = new_state.injuries[1] - old_state.injuries[1]
     if reward > 1:
         reward = log10(reward) / 4
     return reward
@@ -96,10 +96,10 @@ class SoloToriEnv(ToriEnv):
         # Add +1 to limb actions (to make [0,3] -> [1,4])
         if type(action) != list:
             action = list(action)
-        for i in range(torille.ToribashConstants.NUM_JOINTS):
+        for i in range(torille.ToribashConstants.NUM_CONTROLLABLES):
             action[i] += 1
         # Add "hold" actions for the (immobile) opponent
-        action = [action, [3]*torille.ToribashConstants.NUM_CONTROLLABLES
+        action = [action, [3]*torille.ToribashConstants.NUM_CONTROLLABLES]
         return action
 
     def _reward_function(self, old_state, new_state):
