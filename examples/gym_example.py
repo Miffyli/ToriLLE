@@ -17,13 +17,18 @@ GAME_EXECUTABLE = r"D:\Games\Toribash-5.22\toribash.exe"
 # How many games will be played
 NUM_EPISODES = 5
 
+# If game should be shown (also limits FPS)
+DRAW_GAME = True
+
 # Create and initialize environment
 env = gym.make("Toribash-RunAway-v0")
+# Set visibility/drawing
+env.set_draw_game(DRAW_GAME)
 
 # You can change the settings from the ones set by environment
 # BUT: These only apply on next call to "reset()", and you
 # may not call reset whenever you please!
-# env.settings.set("matchframes", 1000)
+env.settings.set("matchframes", 1000)
 
 # Print the settings
 print("--- Settings ---\n"+str(env.settings))

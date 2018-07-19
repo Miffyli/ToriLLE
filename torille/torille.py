@@ -341,7 +341,7 @@ class ToribashControl:
 
         # Make sure we are allowed to do a reset
         if not self.requires_reset:
-            raise Exception("Calling `reset` is only allowed "+
+            raise Exception("Calling `reset()` is only allowed "+
                             "after terminal states")
         
         self._send_comma_list(self.settings.settings)

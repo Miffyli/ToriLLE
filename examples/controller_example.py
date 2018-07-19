@@ -9,13 +9,11 @@ from ..controller.torille import ToribashControl
 from threading import Lock
 import random as r
 
-# Path to the toribash.exe executable.
-# Note: Remember add required Toribash files to the game path
-# On Windows use r"..." strings to 'fix' the issues with backslashes
-GAME_EXECUTABLE = r"D:\Games\Toribash-5.22\toribash.exe"
-
 # How many games will be played
 NUM_EPISODES = 5
+
+# If game should be rendered or not
+DRAW_GAME = True
 
 # This function will be used to create random actions
 def create_random_actions():
@@ -23,16 +21,13 @@ def create_random_actions():
     ret = [[],[]]
     # Actions for both players
     for plridx in range(2):
-        # There are 20 joints which require action from {1,2,3,4}
-        for jointidx in range(20):
+        # There are 22 joints which require action from {1,2,3,4}
+        for jointidx in range(22):
             ret[plridx].append(r.randint(1,4))
-        # There are also 2 special actions for hand grips, which are {0,1}
-        ret[plridx].append(r.randint(0,1))
-        ret[plridx].append(r.randint(0,1))
     return ret    
     
 # Create ToribashController. This won't launch the game yet
-controller = ToribashControl(executable=GAME_EXECUTABLE)
+controller = ToribashControl(draw_game = DRAW_GAME)
 
 # Set some settings. You can find more info on these from Toribash forums / game
 # How long one game is
@@ -79,8 +74,7 @@ while number_of_episodes < NUM_EPISODES:
     print("\n--- Turn %d, Episode %d ---" % (turn_number, number_of_episodes))
     print("Player 1 limb positions: "+str(state.limb_positions[0]))
     print("Player 1 joint states: "+str(state.joint_states[0]))
-    print("Player 1 hand states: "+str(state.hand_grips[0]))
-    print("Player 1 injury: "+str(state.plr0_injury))
+    print("Player 1 injury: "+str(state.injuries[0]))
 
     turn_number += 1
 

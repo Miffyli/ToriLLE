@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 from multiprocessing import Process, Value, Lock
 import random as r
@@ -7,7 +6,7 @@ from time import sleep,time
 from torille import ToribashControl
 import sys
 
-NUM_JOINTS = 20
+NUM_JOINTS = 22
 
 WARM_UP_SECONDS = 10
 BENCHMARK_SECONDS = 60
@@ -18,8 +17,6 @@ def create_random_actions():
     for plridx in range(2):
         for jointidx in range(NUM_JOINTS):
             ret[plridx].append(r.randint(1,4))
-        ret[plridx].append(r.randint(0,1))
-        ret[plridx].append(r.randint(0,1))
     return ret
     
 def run_async_torille(tick_counter, quit_flag, match_frames, turn_frames):
