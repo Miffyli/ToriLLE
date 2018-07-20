@@ -1,3 +1,4 @@
+![Mating-ritual of two random agents](https://github.com/Miffyli/ToriLLE/raw/master/images/toribash.gif)
 # ToriLLE
 Toribash Learning Environment
 
@@ -44,6 +45,7 @@ hence booting up multiple Toribashes at same time will take time!
 - Check/refine examples
 - Refine directory structure
 - Remove "v0" from env names? (Also remember to update the paper)
+- Remove whitespaces
 
 ### Feature/soon-to-be-done TODOs:
 
