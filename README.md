@@ -1,4 +1,7 @@
-![Mating-ritual of two random agents](https://github.com/Miffyli/ToriLLE/raw/master/images/toribash.gif)
+<p align="center">
+  <img width="460" height="300" alt="Mating-ritual of two random agents" src="https://github.com/Miffyli/ToriLLE/raw/master/images/toribash.gif">
+</p>
+
 # ToriLLE
 Toribash Learning Environment
 
