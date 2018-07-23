@@ -144,4 +144,9 @@ Parameters:
 * key: String of the setting name.
 * value: Value of the setting
 
+### `validate_settings()`
+Used internally to validate settings (correct type, no illegal characters (",") in strings).
+
+Throws errors and warnings accordingly.
+
 ---

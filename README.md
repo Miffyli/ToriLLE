@@ -50,6 +50,8 @@ hence booting up multiple Toribashes at same time will take time!
 - Remove "v0" from env names? (Also remember to update the paper)
 - Remove whitelines and check for PEP8
 
+- Add "replay" folder to pregiven Toribash folder
+- Add documentation about doing replays (about 2.8MB for 1000 steps)
 
 ### Feature/soon-to-be-done TODOs:
 

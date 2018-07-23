@@ -19,7 +19,7 @@ local s = nil
 
 local NUM_JOINTS = 20
 local NUM_LIMBS = 21
-local NUM_SETTINGS = 18
+local NUM_SETTINGS = 19
 
 -- Options for not rendering anything
 local options_no_rendering = { 
@@ -72,6 +72,10 @@ local resolution_rendering = {1280,720}
 -- If true: "enjoy" mode, i.e. draw game, limit fps
 local draw_game = false;
 
+-- If != "None", will save replay into this file
+-- Given in settings.
+local replay_file = "None";
+
 -- Sleep function based on socket.select function
 -- From Stackoverflow #17987618
 function sleep(sec)
@@ -93,6 +97,15 @@ function split_comma_and_numerize(str)
 	local ret = {}
 	for v in string.gmatch(str, "([^,]+)") do
 		table.insert(ret, tonumber(v))
+	end
+	return ret
+end
+
+-- Split string by comma 
+function split_comma(str)
+	local ret = {}
+	for v in string.gmatch(str, "([^,]+)") do
+		table.insert(ret, v)
 	end
 	return ret
 end
@@ -140,7 +153,7 @@ end
 -- Note that many of these settings apply on _next_ round
 local function recv_settings_and_apply()
     local settings = wait_for_data()
-    settings = split_comma_and_numerize(settings)
+    settings = split_comma(settings)
     -- Not very pretty, could be done in some neat list
     -- But at least it is modifiable/readable ^^'
     run_cmd("set matchframes "..settings[1])
@@ -158,7 +171,8 @@ local function recv_settings_and_apply()
     run_cmd("set dqflag "..settings[15])
     run_cmd("set dqtimeout "..settings[16])
     run_cmd("set dojotype "..settings[17])
-    run_cmd("set dojosize "..settings[18]) 
+    run_cmd("set dojosize "..settings[18])
+    replay_file = settings[19]
 end
 
 -- Send message indicating end of episode, and receive
@@ -208,7 +222,12 @@ end
 
 -- Executed after round is over (just start a new one)
 local function finish_game(winType)
+    -- Check if we should save replay
+    if (replay_file ~= "None") then
+        run_cmd("savereplay "..replay_file)
+    end
     send_end_recv_settings()
+    -- We need to redo hooks
     remove_hook("enter_freeze", "remotecontrol_freeze")
     start_new_game()
 end
