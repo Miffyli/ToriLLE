@@ -33,6 +33,14 @@ import pprint
 from filelock import FileLock
 import warnings
 
+def create_random_actions():
+    """ Return random actions for ToribashControl """
+    ret = [[],[]]
+    for plridx in range(2):
+        for jointidx in range(ToribashConstants.NUM_CONTROLLABLES):
+            ret[plridx].append(r.randint(1,4))
+    return ret
+
 def check_linux_sanity():
     """ 
     A helper function that checks Linux environment
@@ -69,7 +77,10 @@ def check_linux_sanity():
             )
 
 class ToribashConstants:
-    """ Class for holding general constants """
+    """ 
+    Class for holding general constants.
+    These are not designed to be modified during runtime
+    """
     # Port where Toribashes connect to
     PORT = 7788
     # Global timeout (in seconds) for connections
@@ -275,10 +286,11 @@ class ToribashControl:
 
     def close(self):
         """ Close the running Toribash instance and clean up """
+        self._check_if_initialized()
         self.connection.close()
         # No need to be gentle here
         self.process.kill()
-    
+
     def _recv_line(self, s):
         """ 
         Call recv till data ends with ToribashConstant.MESSAGE_END
@@ -291,7 +303,8 @@ class ToribashControl:
         return ret
     
     def _recv_state(self):
-        """ Read state from Toribash
+        """ 
+        Read state from Toribash
         Returns:
             State: List of floats representing the state of the game 
             Terminal: Boolean indicating if this is the final state of game
@@ -312,7 +325,8 @@ class ToribashControl:
         return s, terminal
         
     def _send_comma_list(self, data):
-        """ Send given list to Toribash as comma-separated list
+        """ 
+        Send given list to Toribash as comma-separated list
         Parameters:
             data: List of values to be sent
         """
@@ -321,7 +335,8 @@ class ToribashControl:
         self.connection.sendall(data.encode())
         
     def get_state(self):
-        """ Return state of the game (in prettier format)
+        """ 
+        Return state of the game (in prettier format)
         Returns:
             state: ToribashState representing the received state
             terminal: If the ToribashState is terminal state
@@ -333,7 +348,8 @@ class ToribashControl:
         return s, terminal
     
     def reset(self, settings=None):
-        """ Reset the game by sending settings for next round
+        """ 
+        Reset the game by sending settings for next round
         Returns:
             state: ToribashState representing the state of new game
         """
@@ -350,7 +366,8 @@ class ToribashControl:
         return s
     
     def validate_actions(self, actions):
-        """ Check the validity of given actions (correct shape, correct range, 
+        """ 
+        Check the validity of given actions (correct shape, correct range, 
         etc) and throw errors accordingly
         Parameters:
             actions: List of shape 2 x (NUM_JOINTS+2), specifying joint states 
@@ -379,18 +396,12 @@ class ToribashControl:
             if (actions[0][i] > 4 or actions[0][i] < 1 or actions[1][i] > 4 or
                     actions[1][i] < 1):
                 raise ValueError("Joint states should be in {1,2,3,4}")
-        
-        # Modify hand grips to be {0,1} rather than {1,2,3,4}
-        # Map {1,2} -> 0 , {3,4} -> 1
-        actions[0][-2] = 0 if actions[0][-1] < 3 else 1 
-        actions[1][-1] = 0 if actions[0][-2] < 3 else 1 
-        actions[0][-2] = 0 if actions[1][-1] < 3 else 1 
-        actions[1][-1] = 0 if actions[1][-2] < 3 else 1 
     
     def make_actions(self, actions):
-        """ Send given list of actions to the server.
+        """ 
+        Send given list of actions to the server.
         Parameters:
-            actions: List of shape 2 x (NUM_JOINTS+2), specifying joint states 
+            actions: List of shape 2 x NUM_CONTROLLABLES, specifying joint states 
                      and hand gripping for both players.
         """
         self._check_if_initialized()
@@ -402,30 +413,17 @@ class ToribashControl:
         # Validate actions, let it throw errors
         self.validate_actions(actions)
         
+        # Modify hand grips to be {0,1} rather than {1,2,3,4}
+        # Map {1,2} -> 0 , {3,4} -> 1
+        actions[0][-2] = 0 if actions[0][-1] < 3 else 1 
+        actions[1][-1] = 0 if actions[0][-2] < 3 else 1 
+        actions[0][-2] = 0 if actions[1][-1] < 3 else 1 
+        actions[1][-1] = 0 if actions[1][-2] < 3 else 1 
+
         # Concat lists into one 
         actions = actions[0]+actions[1]
 
         self._send_comma_list(actions)
-    
-    def step(self, actions):
-        """ OpenAI-Gym-like step function. Executes actions and returns 
-        new state and if state is terminal
-        Parameters:
-            actions: List of shape 2 x (NUM_JOINTS+2), specifying joint states 
-                     and hand gripping for both players.
-                     If None, do not attempt sending actions.
-        Returns:
-            state: ToribashState representing the state of game
-            reward: None (for OpenAI-gym compatability) 
-            terminal: Boolean indicating if provided state is final
-            info: None (for OpenAI-Gym compatability)
-        """
-        self._check_if_initialized()
-        
-        if not actions is None:
-            self.make_actions(actions)
-        s, terminal = self.get_state()
-        return s, None, terminal, None
     
     def get_state_dim(self):
         """ Return size of state space per character """
@@ -444,14 +442,6 @@ class ToribashControl:
         There is no point in keeping Toribash alive without the controller..."""
         if self.process is not None:
             self.close()
-
-def create_random_actions():
-    """ Return random actions """
-    ret = [[],[]]
-    for plridx in range(2):
-        for jointidx in range(ToribashConstants.NUM_CONTROLLABLES):
-            ret[plridx].append(r.randint(1,4))
-    return ret
     
 def test_control(num_instances, verbose=False):
     from time import time
