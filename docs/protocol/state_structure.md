@@ -107,7 +107,7 @@ States are one of {1,2,3,4} representing the state of joint, where:
 
 Grip-states are one of {0,1} representing if hand is gripping (1 = grip).
 
-Injury specifies the injury aflicted to player's body. This is the score
+Injury specifies the injury inflicted to player's body. This is the score
 of the opponent (e.g. Plr0 injury of 2000 means Plr1 has score of 2000).
 
 Sources used:

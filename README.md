@@ -44,11 +44,12 @@ hence booting up multiple Toribashes at same time will take time!
 
 - Update documentation
 - Update/check license stuff
-- Add .gif intro page
 - Check/refine examples
+- Clean up A2C/experiment code and include baselines 
 - Refine directory structure
 - Remove "v0" from env names? (Also remember to update the paper)
-- Remove whitespaces
+- Remove whitelines and check for PEP8
+
 
 ### Feature/soon-to-be-done TODOs:
 

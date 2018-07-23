@@ -17,6 +17,8 @@ Overview (pseudo-codes)
 ### Toribash
 ```python
 connection = connect_to_server()
+render_settings = recv_render_settings()
+apply_render_settings()
 settings = recv_settings()
 apply_settings()
 while connection_alive:
@@ -36,6 +38,7 @@ while connection_alive:
 ### Server
 ```python
 connection = wait_for_connection()
+send_render_settings([1 or 0])
 send_settings([some settings])
 while connection_alive:
     state = recv_state()
@@ -49,8 +52,11 @@ Establishing connection
 -----------------------
 * Toribash must launch `remotecontrol.lua` script. This is done on launching Toribash if provided `profile.tbs` is present next to ´toribash.exe`
 * Toribash will TCP connect to `CONNECT_IP` at port `CONNECT_PORT` (specified in `remotecontrol.lua`)
-* Server listens for TCP connections at port `CONNECT_PORT`
-* If connection is made, this is considered handshake and start of remote control
+* Server listens for TCP connections at port `CONNECT_PORT` for `TIMEOUT` seconds (specified in `remotecontrol.lua`)
+* If connection is made:
+* Toribash waits for data from server
+* Toribash attempts to parse received data as decimal 1 or 0
+* Toribash applies rendering settings accordingly (1 = render game, 0 = no rendering)
 * Toribash moves to "Receive settings"
 
 Receive settings
