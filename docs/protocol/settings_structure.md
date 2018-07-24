@@ -21,6 +21,7 @@ Elements in the action list ([index] = [description]).
 15 = disqual timeout (int, game default: 0. Number of frames one can touch ground before loosing)
 16 = dojotype (bool, {0,1}, game default: 0, Type of the dojo (square or round))
 17 = dojosize (int, game default: 0, Size of the dojo)
+18 = replay_file (str, default: "None", Replay file where to store rounds (only stored if doesn't match with "None"))
 ```
 
 Floats have decimals separated with dot ".".

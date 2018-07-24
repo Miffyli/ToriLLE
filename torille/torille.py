@@ -97,7 +97,7 @@ class ToribashConstants:
     NUM_CONTROLLABLES = NUM_JOINTS+2
     NUM_JOINT_STATES = 4
     # Number of setting variables
-    NUM_SETTINGS = 18
+    NUM_SETTINGS = 19
 
     # Bodypart x,y,z + Joint states + hand grips + injuries
     STATE_LENGTH = (NUM_LIMBS*3*2) + NUM_JOINTS*2 + 4 + 2
@@ -163,7 +163,8 @@ class ToribashSettings:
         ("disqualification_flags", 0),           
         ("disqualification_timeout", 0),  
         ("dojo_type", 0),
-        ("dojo_size", 0)
+        ("dojo_size", 0),
+        ("replay_file", None)
     ])
     
     def __init__(self, **kwargs):
@@ -174,6 +175,34 @@ class ToribashSettings:
         # default settings
         for k,v in ToribashSettings.DEFAULT_SETTINGS.items():
             self.settings.append(kwargs.get(k,v))
+    
+    def validate_settings(self):
+        """ 
+        Checks that current given settings are valid for Toribash.
+        Otherwise Toribash will go quiet, pout and then disappear :(
+        """
+        # First 18 should be numbers
+        for i,value in enumerate(self.settings[:18]):
+            if not type(value) in (float, int): 
+                raise ValueError(("Setting {} was not of correct type: "+
+                    "Expected float/int, got {}").format(
+                        list(ToribashSettings.DEFAULT_SETTINGS.keys())[i], 
+                        type(value)
+                    )
+                )
+        
+        # 19th value should be a string or None
+        if self.settings[18] is not None: 
+            if type(self.settings[18]) != str:
+                raise ValueError("Setting 'replay_file' should be str or None,"+
+                                 " got %s" % type(self.settings[18])
+                )
+            
+            # Remove commas from 19th value
+            if "," in self.settings[18]:
+                warnings.warn("Commas ',' are not supported in settings. "+
+                              "Removing.")
+                self.settings[18] = self.settings[18].replace(",", "")
     
     def set(self, key, value):
         """ Set given setting to value """
@@ -282,6 +311,7 @@ class ToribashControl:
         # Send handshake 
         self._send_comma_list([int(self.draw_game)])
         # Send initial settings
+        self.settings.validate_settings()
         self._send_comma_list(self.settings.settings)
 
     def close(self):
@@ -360,6 +390,9 @@ class ToribashControl:
             raise Exception("Calling `reset()` is only allowed "+
                             "after terminal states")
         
+        # Validate settings
+        self.settings.validate_settings()
+
         self._send_comma_list(self.settings.settings)
         s,terminal = self.get_state()
         self.requires_reset = False
@@ -455,8 +488,9 @@ def test_control(num_instances, verbose=False):
     for i in range(num_instances):
         controller = ToribashControl(draw_game=False)
         controller.settings.set("matchframes", 1000)
-        controller.settings.set("turnframes", 1)
+        controller.settings.set("turnframes", "asd")
         controller.settings.set("engagement_distance", 1000)
+        controller.settings.set("replay_file", 12)
         controller.init()
         controllers.append(controller)
 
