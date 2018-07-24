@@ -377,7 +377,7 @@ class ToribashControl:
         s = ToribashState(s)
         return s, terminal
     
-    def reset(self, settings=None):
+    def reset(self):
         """ 
         Reset the game by sending settings for next round
         Returns:
@@ -389,7 +389,7 @@ class ToribashControl:
         if not self.requires_reset:
             raise Exception("Calling `reset()` is only allowed "+
                             "after terminal states")
-        
+
         # Validate settings
         self.settings.validate_settings()
 
@@ -486,11 +486,12 @@ def test_control(num_instances, verbose=False):
     
     verbose_print("Waiting connections from toribashes...")
     for i in range(num_instances):
-        controller = ToribashControl(draw_game=False)
+        controller = ToribashControl(draw_game=True)
         controller.settings.set("matchframes", 1000)
         controller.settings.set("turnframes", 1)
         controller.settings.set("engagement_distance", 1000)
-        controller.settings.set("replay_file", "test")
+        controller.settings.set("engagement_rotation", 90)
+        controller.settings.set("replay_file", None)
         controller.init()
         controllers.append(controller)
 
