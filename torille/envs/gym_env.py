@@ -35,7 +35,7 @@ class ToriEnv(gym.Env):
     """
     def __init__(self, **kwargs):
         self.settings = torille.ToribashSettings(**kwargs)
-        self.game = torille.ToribashControl(settings=self.settings, **kwargs)
+        self.game = torille.ToribashControl(settings=self.settings)
 
         # Previous state (ToribashState)
         # Used for reward function
