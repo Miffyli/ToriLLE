@@ -490,7 +490,7 @@ def test_control(num_instances, verbose=False):
         controller.settings.set("matchframes", 1000)
         controller.settings.set("turnframes", 1)
         controller.settings.set("engagement_distance", 1000)
-        controller.settings.set("replay_file", 12)
+        controller.settings.set("replay_file", "test")
         controller.init()
         controllers.append(controller)
 
