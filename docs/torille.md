@@ -116,7 +116,33 @@ to modify the game's mechanics.
 **Note: ** New settings can only be applied at `ToribashControl.reset(settings)`.
 
 #### `DEFAULT_SETTINGS` (class-variable)
-OrderedDict defining the default settings of Toribash game.
+OrderedDict defining the default settings of Toribash game:
+
+#### Possible settings
+
+Name | Description | Type | Default
+---- | ----------- | ---- | -------
+matchframes | Length of an episode in frames | Integer | 500|
+turnframes | Number of frames per turn (aka frame-skip) | Integer | 10| 
+engagement_distance | Starting distance between characters | Integer | 100|
+engagement_height | Starting height of characters | Integer  | 0|
+engagement_rotation | Starting rotation (degrees, anti-clockwise) of characters | Integer | 0|
+gravity_x | Strength of gravity in X axis | Float | 0.0|
+gravity_y | Strength of gravity in Y axis | Float | 0.0|
+gravity_z | Strength of gravity in Z axis | Float | -9.81|
+damage | Is damaging enabled | {0,1} | 0 |
+dismemberment_enable | Is dismemberment enabled | {0,1} | 1|
+dismemberment_threshold | Force required to dismemberment to happen | Integer | 100|
+fractures_enable | Enable fractures (disables joints) | {0,1} | 0|
+fractures_threshold | Force required for fractures | Integer | 0|
+disqualification_enabled | Enable disqualification (see link below for more info) | {0,1} | 0| 
+disqualification_flags | Settings for disqualification (see link below for more info) | Integer | 0 |
+disqualification_timeout | How long one can touch ground before disqualified | Integer | 0|
+dojo_type | How battle arena works (see link below for more info) | Integer | 0|
+dojo_size | How large the arena is | Integer | 0|
+replay_file | If doesn't match with "None", Toribash will save replay of the played in `replay/[replay_file]` at end of the episode | String | "None"
+
+See (this)[http://forum.toribash.com/showthread.php?t=317900] Toribash topic for more info on settings.
 
 #### `__init__(**kwargs)`
 Creates new `ToribashSettings` object using `ToribashSettings.DEFAULT_SETTINGS` as a base
@@ -143,7 +169,7 @@ Parameters:
 * key: String of the setting name.
 * value: Value of the setting
 
-### `validate_settings()`
+#### `validate_settings()`
 Used internally to validate settings (correct type, no illegal characters (",") in strings).
 
 Throws errors and warnings accordingly.
