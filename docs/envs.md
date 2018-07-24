@@ -7,14 +7,18 @@ Limitations:
 * `seed()` function is not implemented (can't change seed of Toribash)
 * `render()` function is not implemented (only one type of state available)
 
-Additional functions for all environments:
+Additional functions/modifications for all environments:
 * `set_game_draw(draw)`: Enables/Disables rendering of the game according to boolean parameter.
+* `reset(settings=None)` takes in ToribashState `settings` parameter for changing settings of game on reset.
 
 ### Pre-made environments
 
 Register these environments by importing `torille.envs`.
 
-#### `Toribash-RunAway`
+#### `Toribash-RunAway-v0`
+
+State: Body-part positions of both players
+Action: Joint-states for player 1. Player 2 is immobile
 
 Settings:
 
@@ -26,7 +30,10 @@ engagement_distance | 1500
 
 Reward function: Positive reward for head body-part moving away from the center. See `torille.envs.solo_envs.reward_run_away`
 
-#### `Toribash-DestroyUke`
+#### `Toribash-DestroyUke-v0`
+
+State: Body-part positions of both players
+Action: Joint-states for player 1. Player 2 is immobile
 
 Custom settings:
 
@@ -37,7 +44,10 @@ turnframes | 5
 
 Reward function: Positive reward for damaging (immobile) opponent. See `torille.envs.solo_envs.reward_destroy_uke`
 
-#### `Toribash-SelfDestruct`
+#### `Toribash-SelfDestruct-v0`
+
+State: Body-part positions of both players
+Action: Joint-states for player 1. Player 2 is immobile
 
 Custom settings:
 
@@ -49,7 +59,10 @@ engagement_distance | 1500
 
 Reward function: Positive reward for damaging the player itself (not the opponent). See `torille.envs.solo_envs.reward_self_destruct`
 
-#### `Toribash-StaySafe`
+#### `Toribash-StaySafe-v0`
+
+State: Body-part positions of both players
+Action: Joint-states for player 1. Player 2 is immobile
 
 Custom settings:
 

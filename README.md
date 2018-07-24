@@ -42,6 +42,7 @@ hence booting up multiple Toribashes at same time will take time!
 ## Todos
 ### Fixes/Problems/Bugs:
 
+- Check if starting rotation works
 - Update documentation
 - Update/check license stuff
 - Check/refine examples
@@ -50,29 +51,19 @@ hence booting up multiple Toribashes at same time will take time!
 - Remove "v0" from env names? (Also remember to update the paper)
 - Remove whitelines and check for PEP8
 
-- Add "replay" folder to pregiven Toribash folder
 - Add documentation about doing replays (about 2.8MB for 1000 steps)
+- Add replay saving for envs
 
-### Feature/soon-to-be-done TODOs:
+- Check whitepaper experiments 
+
+### Feature TODOs:
 
 - Make Toribash windows go minimized on launch (increases fps)
 - More gym envs (especially one-v-one combat)
 - Non-deterministic envs: Random starts, no-op starts, etc
-- Add support for making replay?
 - Add rotations to the state representation?
 - Make changing gamemod possible
-- Make Torille pip-installable (maybe even include Toribash binary?)
-    - Permission from hampa to share it
-    - Contents of following directories can be removed:
-        - "custom"
-        - "replay"
-        - "Extra Content"
-        - "customise"
-        - "data/script/torishop"
-        - "data/script/atmo"
-        - "data/script/clans"
-        - "data/sounds"
-    - (500MB -> 40MB)
+- Add possibility to play replays
 
 ### Some ideas for future features:
 - Add support for custom levels and items (e.g. swords)
