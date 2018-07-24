@@ -18,6 +18,8 @@ Register these environments by importing `torille.envs`.
 
 Settings:
 
+Setting | Value
+------- | -----
 matchframes | 1000
 turnframes | 5
 engagement_distance | 1500
@@ -28,6 +30,8 @@ Reward function: Positive reward for head body-part moving away from the center.
 
 Custom settings:
 
+Setting | Value
+------- | -----
 matchframes | 1000
 turnframes | 5
 
@@ -37,6 +41,8 @@ Reward function: Positive reward for damaging (immobile) opponent. See `torille.
 
 Custom settings:
 
+Setting | Value
+------- | -----
 matchframes | 1000
 turnframes | 5
 engagement_distance | 1500
@@ -47,13 +53,15 @@ Reward function: Positive reward for damaging the player itself (not the opponen
 
 Custom settings:
 
+Setting | Value
+------- | -----
 matchframes | 1000
 turnframes | 5
 engagement_distance | 1500
 
 Reward function: Negative reward for damaging the player itself (not the opponent). See `torille.envs.solo_envs.reward_stay_safe`
 
-### Environment objects
+### Environment classes
 
 #### `torille.envs.solo_envs.SoloToriEnv`
 

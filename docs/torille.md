@@ -140,9 +140,9 @@ disqualification_flags | Settings for disqualification (see link below for more 
 disqualification_timeout | How long one can touch ground before disqualified | Integer | 0|
 dojo_type | How battle arena works (see link below for more info) | Integer | 0|
 dojo_size | How large the arena is | Integer | 0|
-replay_file | If doesn't match with "None", Toribash will save replay of the played in `replay/[replay_file]` at end of the episode | String | "None"
+replay_file | If not equal to "None", Toribash will save replay of the played episode in `replay/[replay_file]` at end of the episode | String | "None"
 
-See (this)[http://forum.toribash.com/showthread.php?t=317900] Toribash topic for more info on settings.
+See [this](http://forum.toribash.com/showthread.php?t=317900) Toribash topic for more info on settings.
 
 #### `__init__(**kwargs)`
 Creates new `ToribashSettings` object using `ToribashSettings.DEFAULT_SETTINGS` as a base
