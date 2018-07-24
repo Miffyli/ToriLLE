@@ -1,12 +1,11 @@
 # torille
 
----
 
 ## ToribashControl
 
 Main class which controls Toribash process and handles communication.
 
-### `__init__(settings=None, draw_game=False, executable=ToribashConstants.TORIBASH_EXE, port=ToribashConstants.PORT)`
+#### `__init__(settings=None, draw_game=False, executable=ToribashConstants.TORIBASH_EXE, port=ToribashConstants.PORT)`
 Creates a new Toribash controller, but does not launch Toribash instance. 
 `ToribashControl` instance can be serialized (pickled) at this point.
 
@@ -17,16 +16,16 @@ Parameters:
   `toribash` directory next to `torille.py`, which is the case is installed via pip.
 * port: Integer which specifies port where Toribash Lua attempts to connect to.
 
-### `init()`
+#### `init()`
 Launches Toribash instance and begins to control it. Uses `FileLock` to prevent multiple parallel instances from
 mixing Toribash instances with each other.
 
 ToribashControl object is **not** serializable after calling this.
 
-### `close()`
+#### `close()`
 Closes the connection with Toribash and kills the process. Can be called at any point after `init()`
 
-### `get_state()`
+#### `get_state()`
 Returns current state of the game as a `ToribashState` object.
 
 Throws exceptions if game has not been initialized, connection is broken or connection times out.
@@ -37,7 +36,7 @@ Returns:
 * state: `ToribashState` of the current state of the game
 * terminal: Boolean indicating if state was terminal 
 
-### `make_actions(actions)`
+#### `make_actions(actions)`
 Sends given actions to Toribash and proceeds the game by set amount of frames (given in settings).
 
 Throws exceptions if game has not been initialized, connection is broken/times out or actions are wrong.
@@ -51,7 +50,7 @@ Parameters:
   **Note: ** Toribash character hands only take {0,1}, but for simplicity controller maps
              {1,2} => 0 and {3,4} => 4. 
 
-### `reset(settings=None)`
+#### `reset(settings=None)`
 Resets the game to initial state, sets new settings (if given) and returns initial state. 
 
 **Note: ** Must be followed by `get_state()` which returned `terminal=True`.
@@ -62,7 +61,7 @@ Parameters:
 Returns
 * state: `ToribashState` of the initial state of the game
 
-### `validate_actions(actions)`
+#### `validate_actions(actions)`
 Used to validate actions internally to avoid Toribash crashing without errors. 
 
 Throws an exception if action is invalid.
@@ -70,19 +69,19 @@ Throws an exception if action is invalid.
 Parameters:
 * actions: List of two lists with `ToribashConstants.NUM_CONTROLLABLES` integers.
 
-### `get_state_dim()`
+#### `get_state_dim()`
 Returns number of variables in state per player
 
 Returns:
 * state_dim: Number of elements in state vector per player
 
-### `get_num_joints()`
+#### `get_num_joints()`
 Returns number of joints per player (number of controllables)
 
 Returns:
 * action_dim: Number of joints per player
 
-### `get_num_joint_states()`
+#### `get_num_joint_states()`
 Returns number of states a joint can be in 
 
 Returns:
@@ -95,15 +94,15 @@ Returns:
 Class used to refine and represent state
 from Toribash. Returned by `ToribashControl.get_state()` and `ToribashControl.reset()`. 
 
-### `limb_positions`
+#### `limb_positions`
 A Numpy array of shape (2, `ToribashConstants.NUM_LIMBS`, 3) containing positions of 
 body parts of both players.
 
-### `joint_states`
+#### `joint_states`
 A Numpy array of shape (2, `ToribashConstants.NUM_CONTROLLABLES`) containing current
 states of the joints of both players
 
-## `injuries`
+#### `injuries`
 A Numpy array of shape (2,) containing current injury of both players (value seen
 in game at the top-left and top-right.)
 
@@ -116,10 +115,10 @@ to modify the game's mechanics.
 
 **Note: ** New settings can only be applied at `ToribashControl.reset(settings)`.
 
-### `DEFAULT_SETTINGS` (class-variable)
+#### `DEFAULT_SETTINGS` (class-variable)
 OrderedDict defining the default settings of Toribash game.
 
-### `__init__(**kwargs)`
+#### `__init__(**kwargs)`
 Creates new `ToribashSettings` object using `ToribashSettings.DEFAULT_SETTINGS` as a base
 and overriding values based on `kwargs`.
 
@@ -128,7 +127,7 @@ Parameters:
           E.g. `ToribashSettings(matchframes=1000)` creates new settings object where match length
                is set to 1000 frames, rather than default 500.
 
-### `get(key)`
+#### `get(key)`
 Return the value of given setting name.
 
 Parameters:
@@ -137,7 +136,7 @@ Parameters:
 Returns:
 * value: Value of the setting given
 
-### `set(key,value)`
+#### `set(key,value)`
 Set given setting to a given value.
 
 Parameters:
