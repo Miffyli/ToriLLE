@@ -32,6 +32,7 @@ from collections import OrderedDict
 import pprint
 from filelock import FileLock
 import warnings
+from copy import deepcopy
 
 def create_random_actions():
     """ Return random actions for ToribashControl """
@@ -446,11 +447,15 @@ class ToribashControl:
         # Validate actions, let it throw errors
         self.validate_actions(actions)
         
+        # Create deepcopy of the actions list 
+        # because we are about to modify it
+        actions = deepcopy(actions)
+
         # Modify hand grips to be {0,1} rather than {1,2,3,4}
         # Map {1,2} -> 0 , {3,4} -> 1
         actions[0][-2] = 0 if actions[0][-1] < 3 else 1 
-        actions[1][-1] = 0 if actions[0][-2] < 3 else 1 
-        actions[0][-2] = 0 if actions[1][-1] < 3 else 1 
+        actions[0][-1] = 0 if actions[0][-2] < 3 else 1 
+        actions[1][-2] = 0 if actions[1][-1] < 3 else 1 
         actions[1][-1] = 0 if actions[1][-2] < 3 else 1 
 
         # Concat lists into one 
