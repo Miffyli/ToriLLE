@@ -8,7 +8,7 @@ Protocol for Toribash remote controlling
 Terms
 -----
 * Toribash: One running instance of Toribash game
-* Server: The software/piece of code which will control Toribash
+* Controller: The software/piece of code which will control Toribash
 * Player1: One of the players. This one is referred as "player" in Toribash documentation.
 * Player2: One of the players. This one is referred as "uke" in Toribash documentation.
 
@@ -16,7 +16,7 @@ Overview (pseudo-codes)
 -----------------------
 ### Toribash
 ```python
-connection = connect_to_server()
+connection = connect_to_controller()
 render_settings = recv_render_settings()
 apply_render_settings()
 settings = recv_settings()
@@ -35,7 +35,7 @@ while connection_alive:
         new_game()
 ```
 
-### Server
+### Controller
 ```python
 connection = wait_for_connection()
 send_render_settings([1 or 0])
@@ -52,16 +52,16 @@ Establishing connection
 -----------------------
 * Toribash must launch `remotecontrol.lua` script. This is done on launching Toribash if provided `profile.tbs` is present next to ´toribash.exe`
 * Toribash will TCP connect to `CONNECT_IP` at port `CONNECT_PORT` (specified in `remotecontrol.lua`)
-* Server listens for TCP connections at port `CONNECT_PORT` for `TIMEOUT` seconds (specified in `remotecontrol.lua`)
+* Controller listens for TCP connections at port `CONNECT_PORT` for `TIMEOUT` seconds (specified in `remotecontrol.lua`)
 * If connection is made:
-* Toribash waits for data from server
+* Toribash waits for data from controller
 * Toribash attempts to parse received data as decimal 1 or 0
 * Toribash applies rendering settings accordingly (1 = render game, 0 = no rendering)
 * Toribash moves to "Receive settings"
 
 Receive settings
 ----------------
-* Toribash waits for data from server
+* Toribash waits for data from controller
 * Toribash attempts to parse received data as settings (`settings_structure.md`)
 * Toribash applies settings
 * Toribash starts a new game and proceeds to "Sharing state" 
@@ -69,12 +69,12 @@ Receive settings
 Sharing state
 -------------
 * At start of new turn, Toribash builds comma-separated string of state (`state_structure.md`)
-* Toribash sends this string to server
+* Toribash sends this string to controller
 * Toribash proceeds to "receive action"
 
 Receive action
 --------------
-* Toribash waits for `TIMEOUT` seconds for data from server (specified in `remotecontrol.lua`) 
+* Toribash waits for `TIMEOUT` seconds for data from controller (specified in `remotecontrol.lua`) 
 * If data is read from connection, Toribash attempts to parse actions according to specifications (`action_structure.md`)
 * Toribash updates joint states according to received actions
 * Toribash proceeds to next state (i.e. presses [SPACEBAR] to proceed specified amount of time)

@@ -9,7 +9,6 @@ Limitations:
 
 Additional functions/modifications for all environments:
 * `set_game_draw(draw)`: Enables/Disables rendering of the game according to boolean parameter.
-* `reset(settings=None)` takes in ToribashState `settings` parameter for changing settings of game on reset.
 
 ### Pre-made environments
 
@@ -17,8 +16,9 @@ Register these environments by importing `torille.envs`.
 
 #### `Toribash-RunAway-v0`
 
-State: Body-part positions of both players
-Action: Joint-states for player 1. Player 2 is immobile
+State: Body-part positions of both players (`gym.spaces.box.Box`)
+
+Action: Joint-states for player 1. Player 2 is immobile (`gym.spaces.multi_discrete.MultiDiscrete`)
 
 Settings:
 
@@ -32,8 +32,9 @@ Reward function: Positive reward for head body-part moving away from the center.
 
 #### `Toribash-DestroyUke-v0`
 
-State: Body-part positions of both players
-Action: Joint-states for player 1. Player 2 is immobile
+State: Body-part positions of both players (`gym.spaces.box.Box`)
+
+Action: Joint-states for player 1. Player 2 is immobile (`gym.spaces.multi_discrete.MultiDiscrete`)
 
 Custom settings:
 
@@ -46,8 +47,9 @@ Reward function: Positive reward for damaging (immobile) opponent. See `torille.
 
 #### `Toribash-SelfDestruct-v0`
 
-State: Body-part positions of both players
-Action: Joint-states for player 1. Player 2 is immobile
+State: Body-part positions of both players (`gym.spaces.box.Box`)
+
+Action: Joint-states for player 1. Player 2 is immobile (`gym.spaces.multi_discrete.MultiDiscrete`)
 
 Custom settings:
 
@@ -61,8 +63,9 @@ Reward function: Positive reward for damaging the player itself (not the opponen
 
 #### `Toribash-StaySafe-v0`
 
-State: Body-part positions of both players
-Action: Joint-states for player 1. Player 2 is immobile
+State: Body-part positions of both players (`gym.spaces.box.Box`)
+
+Action: Joint-states for player 1. Player 2 is immobile (`gym.spaces.multi_discrete.MultiDiscrete`)
 
 Custom settings:
 
@@ -86,4 +89,4 @@ Second player "holds" all the joints.
 Parameters:
 * `reward_func`: A function that takes in previous and current `ToribashState` to calculate reward. 
                  See `torille.envs.solo_envs.reward_*` functions for examples.
-* `**kwargs`: Rest of the keywords are fed to `ToribashController.__init__`. Can be used to e.g. set settings.
+* `**kwargs`: Rest of the keywords are fed to `ToribashSettings.__init__`. Can be used to set settings.

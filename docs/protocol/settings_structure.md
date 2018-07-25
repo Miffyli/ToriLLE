@@ -1,4 +1,4 @@
-Elements in action list used for communication
+Elements in settings list used for communication
 ==============================================
 
 **Check source for more information about each of these settings**

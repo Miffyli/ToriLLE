@@ -60,8 +60,7 @@ one of following:
 ```
 
 More detailed list of what each action does for each joint 
-available [in this paper](https://www.researchgate.net/profile/Jonathan_Byrne/publication/228848637_Optimising_offensive_moves_in_toribash_using_a_genetic_algorithm/links/0046351420d5001396000000.pdf) 
-by Jonathan Byrne and Anthony Brabazon.
+available [in Table 1 of this paper](https://www.researchgate.net/profile/Jonathan_Byrne/publication/228848637_Optimising_offensive_moves_in_toribash_using_a_genetic_algorithm/links/0046351420d5001396000000.pdf).
 
 Elements for hand gripping (20, 21, 42 and 45) are integers,
 and one of the following:
