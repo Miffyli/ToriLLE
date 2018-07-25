@@ -85,7 +85,8 @@ class SoloToriEnv(ToriEnv):
                 torille.ToribashConstants.NUM_CONTROLLABLES
             ))
         # Only one player
-        self.observation_space = spaces.Box(low=-30, high=30, shape=(torille.ToribashConstants.NUM_LIMBS*3,))
+        self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
+                                shape=(torille.ToribashConstants.NUM_LIMBS*3,))
 
     def _preprocess_observation(self, state):
         # Only give player1 positions as observation
