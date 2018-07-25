@@ -1,30 +1,17 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 #
-#  basic_example.py
+#  controller_example.py
 #  A minimalistic example running ToribashController
 #
 #  Author: Anssi "Miffyli" Kanervisto, 2018
-from ..controller.torille import ToribashControl
-from threading import Lock
+from torille import ToribashControl
 import random as r
 
 # How many games will be played
 NUM_EPISODES = 5
 
 # If game should be rendered or not
-DRAW_GAME = True
-
-# This function will be used to create random actions
-def create_random_actions():
-    """ Return random actions """
-    ret = [[],[]]
-    # Actions for both players
-    for plridx in range(2):
-        # There are 22 joints which require action from {1,2,3,4}
-        for jointidx in range(22):
-            ret[plridx].append(r.randint(1,4))
-    return ret    
+DRAW_GAME = True  
     
 # Create ToribashController. This won't launch the game yet
 controller = ToribashControl(draw_game = DRAW_GAME)
@@ -37,9 +24,27 @@ controller.settings.set("matchframes", 1000)
 controller.settings.set("turnframes", 1)
 # How far two players will spawn
 controller.settings.set("engagement_distance", 1000)
+# Record replay file of the game for later playback
+# by setting this to something else than "None"/None.
+# This will record replay file under [toribash directory]/replay
+# at the end of the episode.
+# Note: Remember to change this setting between episodes!
+#       Otherwise your replays will be overwritten!
+#controller.settings.set("replay_file", "replay_filename")
 
 # Print the settings
 print("--- Settings ---\n"+str(controller.settings))
+
+# This function will be used to create random actions
+def create_random_actions():
+    """ Return random actions """
+    ret = [[],[]]
+    # Actions for both players
+    for plridx in range(2):
+        # Get number of controllable joints from Toribash
+        for jointidx in range(controller.get_num_joints()):
+            ret[plridx].append(r.randint(1,4))
+    return ret  
 
 # This will launch the game (takes bit of time)
 controller.init()

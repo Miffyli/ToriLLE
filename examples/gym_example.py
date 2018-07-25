@@ -1,18 +1,12 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 #
 #  gym_example.py
 #  A minimalistic example running ToriLLE OpenAI Gym Environment 
 #
 #  Author: Anssi "Miffyli" Kanervisto, 2018
 import gym
-from envs import SoloToriEnv
+import torille.envs
 import random as r
-
-# Path to the toribash.exe executable.
-# Note: Remember add required Toribash files to the game path
-# On Windows use r"..." strings to 'fix' the issues with backslashes
-GAME_EXECUTABLE = r"D:\Games\Toribash-5.22\toribash.exe"
 
 # How many games will be played
 NUM_EPISODES = 5
@@ -29,6 +23,14 @@ env.set_draw_game(DRAW_GAME)
 # BUT: These only apply on next call to "reset()", and you
 # may not call reset whenever you please!
 env.settings.set("matchframes", 1000)
+
+# Record replay file of the game for later playback
+# by setting this to something else than "None"/None.
+# This will record replay file under [toribash directory]/replay
+# at the end of the episode.
+# Note: Remember to change this setting between episodes!
+#       Otherwise your replays will be overwritten!
+#env.settings.set("replay_file", "replay_filename")
 
 # Print the settings
 print("--- Settings ---\n"+str(env.settings))
