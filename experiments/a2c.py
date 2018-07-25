@@ -9,8 +9,9 @@
 #  [1] https://arxiv.org/pdf/1602.01783.pdf
 #  Easier-to-digest version here (Berkeley DRL course):
 #  [2] http://rll.berkeley.edu/deeprlcourse/f17docs/lecture_5_actor_critic_pdf.pdf
-#  Guidance from Kempka's A3C code here:
+#  Guidance from following codes:
 #  [3] https://github.com/mihahauke/deep_rl_vizdoom/blob/master/networks/a3c.py
+#  [4] https://github.com/openai/baselines/tree/master/baselines/a2c
 
 #  Note that this may not be the most effecient (or correct) implementation
 #  of the method, but hopefully learns something.

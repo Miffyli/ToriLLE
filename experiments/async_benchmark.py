@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from multiprocessing import Process, Value, Lock
+from multiprocessing import Process, Value
 import random as r
 from time import sleep,time
 from torille import ToribashControl

@@ -1,0 +1,71 @@
+Instances: 1
+Warmup: 10 s
+Benchmark: 60 s
+Matchframes: 100
+Turnframes: 10
+PPS: 69.32
+FPS: 693.17
+
+Instances: 2
+Warmup: 10 s
+Benchmark: 60 s
+Matchframes: 100
+Turnframes: 10
+PPS: 128.50
+FPS: 1285.00
+
+Instances: 4
+Warmup: 10 s
+Benchmark: 60 s
+Matchframes: 100
+Turnframes: 10
+PPS: 182.45
+FPS: 1824.50
+
+Instances: 1
+Warmup: 10 s
+Benchmark: 60 s
+Matchframes: 1000
+Turnframes: 10
+PPS: 99.52
+FPS: 995.17
+
+Instances: 2
+Warmup: 10 s
+Benchmark: 60 s
+Matchframes: 1000
+Turnframes: 10
+PPS: 188.73
+FPS: 1887.33
+
+Instances: 4
+Warmup: 10 s
+Benchmark: 60 s
+Matchframes: 1000
+Turnframes: 10
+PPS: 369.57
+FPS: 3695.67
+
+Instances: 1
+Warmup: 10 s
+Benchmark: 60 s
+Matchframes: 1000
+Turnframes: 1
+PPS: 406.13
+FPS: 406.13
+
+Instances: 2
+Warmup: 10 s
+Benchmark: 60 s
+Matchframes: 1000
+Turnframes: 1
+PPS: 785.28
+FPS: 785.28
+
+Instances: 4
+Warmup: 10 s
+Benchmark: 60 s
+Matchframes: 1000
+Turnframes: 1
+PPS: 1531.37
+FPS: 1531.37
