@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+#
+#  async_benchmark.py
+#  FPS benchmarking. Runs multiple instances of Toribash
+#  in parallel (asynchronously)
+#
+#  Author: Anssi "Miffyli" Kanervisto, 2018
 
 from multiprocessing import Process, Value
 import random as r
@@ -8,7 +14,10 @@ import sys
 
 NUM_JOINTS = 22
 
+# How many seconds after all instances have booted up
 WARM_UP_SECONDS = 10
+
+# How many seconds will benchmark last
 BENCHMARK_SECONDS = 60
 
 def create_random_actions():
@@ -76,7 +85,7 @@ def test_async(num_instances, warm_up_seconds, benchmark_seconds, match_frames,
     
 if __name__ == '__main__':
     if len(sys.argv) != 4:
-        print("Usage: python3 async_test.py num_instances match_frames turn_frames")
+        print("Usage: python3 async_benchmark.py num_instances match_frames turn_frames")
     else:
         num_instances = int(sys.argv[1])
         match_frames = int(sys.argv[2])
