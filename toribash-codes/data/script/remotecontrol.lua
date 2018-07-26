@@ -264,12 +264,16 @@ function initialize_and_start()
         for opt, val in pairs(options_rendering) do
             set_option(opt, val)
         end
-        run_cmd("re "..resolution_rendering[1].." "..resolution_rendering[2])
+        -- Update 27.7.2018: Removing resolution change for now. This 
+        -- may be crashing Toribash occasionally
+        -- run_cmd("re "..resolution_rendering[1].." "..resolution_rendering[2])
     else 
         for opt, val in pairs(options_no_rendering) do
             set_option(opt, val)
         end
-        run_cmd("re "..resolution_no_rendering[1].." "..resolution_no_rendering[2])
+        -- Update 27.7.2018: Removing resolution change for now. This 
+        -- may be crashing Toribash occasionally
+        -- run_cmd("re "..resolution_no_rendering[1].." "..resolution_no_rendering[2])
     end
     -- Start the game by loading the mod
     run_cmd("loadmod classic")

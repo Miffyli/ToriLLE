@@ -11,8 +11,8 @@ import random as r
 NUM_EPISODES = 5
 
 # If game should be rendered or not
-DRAW_GAME = True  
-    
+DRAW_GAME = True
+
 # Create ToribashController. This won't launch the game yet
 controller = ToribashControl(draw_game = DRAW_GAME)
 
