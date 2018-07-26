@@ -68,8 +68,7 @@ def check_linux_sanity():
         raise Exception("Recent version of Wine is required to run Toribash. "+
                         "Tested to work on Wine versions 3.0.x")
     if wine_version is not None:
-        wine_version = (int(wine_version[-3]),int(wine_version[-3]),
-                        int(wine_version[-1]))
+        major_version = int(wine_version[5])
         if wine_version[0] == 1:
             raise Exception(
                 "Detected Wine version 1.x. "+
