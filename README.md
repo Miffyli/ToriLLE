@@ -23,7 +23,7 @@ We wouldn't mind a citation if you find ToriLLE useful in your work. It also hel
 ```
 
 ## Requirements
-Tested to work on Windows 10 and Ubuntu 16.04. 
+Tested to work on Windows 10 and Ubuntu 16.04. Tested on Python versions 3.5 and 3.6, and will likely not work on 2.7. 
 
 * Numpy (Python)
 * FileLock (Python)
