@@ -1,5 +1,3 @@
--- TODO why does this have to be here?
--- Otherwise socket.lua has nil socket at line 18
 local socket = nil 
 
 -- Startup script
