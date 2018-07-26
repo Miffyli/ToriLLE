@@ -38,6 +38,7 @@ pip install torille
 Random agent:
 ```python
 from torille import ToribashControl, create_random_actions
+
 toribash = ToribashControl()
 # Show gameplay
 toribash.init(draw_game=True)
@@ -54,8 +55,8 @@ OpenAI Gym environments:
 ```python
 import gym
 import torille.envs
-env = gym.make("Toribash-DestroyUke-v0")
 
+env = gym.make("Toribash-DestroyUke-v0")
 # Show gameplay
 env.set_draw_game(True)
 
@@ -69,13 +70,27 @@ env.close()
 
 ## Manual installation 
 
-You can install ToriLLE without PyPi/pip with the following:
+You can install ToriLLE without PyPI/pip with the following:
 
 * Install [Toribash](www.toribash.com/)
 * Copy contents of `toribash-codes` to Toribash installation directory. Overwrite files
-  * **Note: ** This will prevent using that specific installation as a regular game. Remove/rename `profile.tbs` file 
+  * **Note:** This will prevent using that specific installation as a regular game. Remove/rename `profile.tbs` file 
                to revert most of the changes and use game normally again.
 * Provide path the installed `toribash.exe` when creating `ToribashControl` objects (if you use provided Python library)
+
+## Documentation
+
+Examples in `examples` provide quickstart to how to use ToriLLE, and also show how to apply settings or 
+record replays.
+
+For references see:
+
+* [Python library](docs/torille.md)
+* [Gym environments](docs/envs.md)
+
+For troubleshooting, see the [FAQ](docs/faq.md).
+
+If you wish to modify ToriLLE or use other language to control Toribash instance, see [hacking](docs/hacking.md) and [documentation on protocol](docs/protocol).
 
 ## Repository structure
 - `./torille/`: Python codes for the learning environment (inc. Gym environment)
@@ -103,4 +118,4 @@ You can install ToriLLE without PyPi/pip with the following:
 - box (Toribash user) for comments during inception of this project
 
 ## License 
-Code original to ToriLLE is licensed under GNU GPL 3.0. Toribash is property of Nabistudios. Toribash binary in PyPi package is shared with the permission of main developer "hampa".
+Code original to ToriLLE is licensed under GNU GPL 3.0. Toribash is property of Nabistudios. Toribash binary in PyPI package is shared with the permission of main developer "hampa".
