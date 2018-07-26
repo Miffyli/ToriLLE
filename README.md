@@ -27,9 +27,11 @@ Tested to work on Windows 10 and Ubuntu 16.04. Tested on Python versions 3.5 and
 
 * Numpy (Python)
 * FileLock (Python)
-* Wine (For Linux. **Requires modern version. Tested on 3.0.x**)
+* [Wine](https://wiki.winehq.org/Download) (For Linux. **Requires modern version. Tested on 3.0.x**)
 
 ## Quickstart
+Remember to install [Wine](https://wiki.winehq.org/Download) if you are on Linux.
+
 Following will download ToriLLE with stripped down version of Toribash:
 ```
 pip install torille

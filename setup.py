@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="torille",
-    version="0.9",
+    version="0.9.0",
     author="Anssi 'Miffyli' Kanervisto",
     author_email="anssk@cs.uef.fi",
     description="Toribash as an agent learning environment",
@@ -17,7 +17,6 @@ setuptools.setup(
         'numpy',
         'filelock'
     ],
-    # TODO add license
     classifiers=(
         "Programming Language :: Python :: 3",
         "Development Status :: 5 - Production/Stable",
