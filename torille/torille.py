@@ -66,14 +66,14 @@ def check_linux_sanity():
         wine_version = subprocess.check_output(("wine", "--version")).decode()[:-1]
     except FileNotFoundError:
         raise Exception("Recent version of Wine is required to run Toribash. "+
-                        "Tested to work on Wine versions 3.0.x")
+                        "Tested to work on Wine version 3.0.3")
     if wine_version is not None:
         major_version = int(wine_version[5])
         if wine_version[0] == 1:
             raise Exception(
                 "Detected Wine version 1.x. "+
                 "Toribash does not run on old versions of Wine. "+
-                "Toribash is tested to work on Wine versions 3.0.x"
+                "Toribash is tested to work on Wine versions 3.0.3"
             )
 
 class ToribashConstants:
