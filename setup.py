@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="torille",
-    version="0.0.1",
+    version="0.9",
     author="Anssi 'Miffyli' Kanervisto",
     author_email="anssk@cs.uef.fi",
     description="Toribash as an agent learning environment",
@@ -20,11 +20,12 @@ setuptools.setup(
     # TODO add license
     classifiers=(
         "Programming Language :: Python :: 3",
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Operating System :: Unix",
         "Operating System :: Microsoft :: Windows",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
-        "Intended Audience :: Science/Research"
+        "Intended Audience :: Science/Research",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
     ),
     packages=setuptools.find_packages(),
     include_package_data=True,
