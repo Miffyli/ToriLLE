@@ -65,4 +65,9 @@ Replays take around 2.8MB with `matchframes=1000` and `turnframes=1`, and 1MB wi
 Under the hood ToriLLE takes two kinds of joint states: Normal joint states {1,2,3,4} and hand-grip states {0,1}. 
 To streamline things Python library takes in integer in {1,2,3,4} for hand-grips as well, but maps {1,2} => 0 and {3,4} => 1.
 
+## Why does launching multiple `ToribashControl` instances take time?
 
+To avoid mixing Toribash processes with corresponding `ToribashControl` instances, launching instances 
+uses FileLock to prevent multiple instances being launched together.
+
+This can fail if `ToribashControl` instances are using different Toribash executables.

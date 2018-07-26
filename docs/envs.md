@@ -9,6 +9,7 @@ Limitations:
 
 Additional functions/modifications for all environments:
 * `set_game_draw(draw)`: Enables/Disables rendering of the game according to boolean parameter.
+* `settings` variable: This is `ToribashState` object used to set Toribash's settings on each reset. 
 
 ### Pre-made environments
 
@@ -16,7 +17,7 @@ Register these environments by importing `torille.envs`.
 
 #### `Toribash-RunAway-v0`
 
-State: Body-part positions of both players (`gym.spaces.box.Box`)
+State: Body-part positions of player 1 (`gym.spaces.box.Box`)
 
 Action: Joint-states for player 1. Player 2 is immobile (`gym.spaces.multi_discrete.MultiDiscrete`)
 
@@ -32,7 +33,7 @@ Reward function: Positive reward for head body-part moving away from the center.
 
 #### `Toribash-DestroyUke-v0`
 
-State: Body-part positions of both players (`gym.spaces.box.Box`)
+State: Body-part positions of player 1 (`gym.spaces.box.Box`)
 
 Action: Joint-states for player 1. Player 2 is immobile (`gym.spaces.multi_discrete.MultiDiscrete`)
 
@@ -45,9 +46,12 @@ turnframes | 5
 
 Reward function: Positive reward for damaging (immobile) opponent. See `torille.envs.solo_envs.reward_destroy_uke`
 
+Note: In this task agent has to attack uke blind, because no information of player 2 is provided.
+This is similar to setup used in previous attempts at machine learning in Toribash (see "Useful links" in `README.md`).
+
 #### `Toribash-SelfDestruct-v0`
 
-State: Body-part positions of both players (`gym.spaces.box.Box`)
+State: Body-part positions of player 1 (`gym.spaces.box.Box`)
 
 Action: Joint-states for player 1. Player 2 is immobile (`gym.spaces.multi_discrete.MultiDiscrete`)
 
@@ -63,7 +67,7 @@ Reward function: Positive reward for damaging the player itself (not the opponen
 
 #### `Toribash-StaySafe-v0`
 
-State: Body-part positions of both players (`gym.spaces.box.Box`)
+State: Body-part positions of player 1  (`gym.spaces.box.Box`)
 
 Action: Joint-states for player 1. Player 2 is immobile (`gym.spaces.multi_discrete.MultiDiscrete`)
 
