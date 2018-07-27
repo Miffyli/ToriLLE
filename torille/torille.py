@@ -278,8 +278,6 @@ class ToribashControl:
         init_lock = FileLock(self.lock_file, 
                              timeout=ToribashConstants.TIMEOUT)
         with init_lock:
-            # TODO processes won't die on Windows when Python exits,
-            # even with tricks from Stackoverflow #12843903
             if sys.platform == "linux":
                 # Sanity check launching on Linux
                 check_linux_sanity()
@@ -475,7 +473,9 @@ class ToribashControl:
         return ToribashConstants.NUM_JOINT_STATES
     
     def __del__(self):
-        """ Destructor to close running Toribash process.
-        There is no point in keeping Toribash alive without the controller..."""
+        """ 
+        Destructor to close running Toribash process.
+        There is no point in keeping Toribash alive without the controller...
+        """
         if self.process is not None:
             self.close()
