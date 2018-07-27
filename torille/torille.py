@@ -53,7 +53,9 @@ def check_linux_sanity():
     display = os.getenv("DISPLAY")
     if display is None:
         raise Exception("No display detected. "+
-            "Toribash won't launch without active display")
+            "Toribash won't launch without active display. "+
+            "If you have a monitor attached, set environment variable "+
+            "DISPLAY to point at it (e.g. `export DISPLAY=:0`)")
     if display[0] != ":":
         warnings.warn(
             "Looks like you have X-forwarding enabled. "+
