@@ -51,7 +51,10 @@ def check_linux_sanity():
     # Check that we have a valid display to render into.
     # We rather avoid running over SSH
     display = os.getenv("DISPLAY")
-    if display is not None and display[0] != ":":
+    if display is None:
+        raise Exception("No display detected. "+
+            "Toribash won't launch without active display")
+    if display[0] != ":":
         warnings.warn(
             "Looks like you have X-forwarding enabled. "+
             "This makes Toribash very slow and sad. "+
