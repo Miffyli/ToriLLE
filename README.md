@@ -5,22 +5,11 @@
 # ToriLLE
 Toribash Learning Environment. Extra "L" to make words more memorable for Finns ("Torille" = "To the marketplace").
 
-ToriLLE provides learning/software agents an interface to video-game [Toribash](http://www.toribash.com/), a humanoid fighting game.
-Toribash provides environment for MuJoCo-like humanoid control, specifically aimed for competitive nature. This makes
+ToriLLE provides learning agents an interface to video-game [Toribash](http://www.toribash.com/), a humanoid fighting game.
+Toribash provides environment for MuJoCo-like humanoid control, specifically aimed for competitive gameplay. This makes
 ToriLLE suitable for e.g. self-play experiments. 
 
-ToriLLE comes with a Python interface and pre-made OpenAI Gym environments. Following white-paper includes baseline experiments and benchmarks conducted using ToriLLE: **TBA**
-
-We wouldn't mind a citation if you find ToriLLE useful in your work. It also helps us to see what people have been up to!
-
-```
-@misc{kanervisto2018torille,
-  Author = {Anssi Kanervisto and Ville Hautam{\"a}ki},
-  Title = {ToriLLE: Learning Environment for Hand-to-Hand Combat},
-  Year = {2018},
-  Eprint = {TBA},
-}
-```
+ToriLLE comes with a Python interface and pre-made OpenAI Gym environments. Following white-paper includes baseline experiments and benchmarks conducted using ToriLLE: [https://arxiv.org/abs/1807.10110](https://arxiv.org/abs/1807.10110)
 
 ## Requirements
 Tested to work on Windows 10 and Ubuntu 16.04. Tested on Python versions 3.5 and 3.6, and will likely not work on 2.7. 
@@ -113,6 +102,19 @@ If you wish to modify ToriLLE or use other language to control Toribash instance
   * http://forum.toribash.com/showthread.php?t=167355
   * http://forum.toribash.com/showthread.php?t=25263
   * https://www.researchgate.net/profile/Jonathan_Byrne/publication/228848637_Optimising_offensive_moves_in_toribash_using_a_genetic_algorithm/links/0046351420d5001396000000.pdf
+
+## Citing
+
+We wouldn't mind a citation if you find ToriLLE useful in your work. It also helps us to see what people have been up to!
+
+```
+@article{kanervisto2018torille,
+  author = {Anssi Kanervisto and Ville Hautam{\"a}ki},
+  title = {ToriLLE: Learning Environment for Hand-to-Hand Combat},
+  year = {2018},
+  journal = {arXiv preprint arXiv:1807.10110},
+}
+```
 
 ## Special thanks & Acknowledgements
 - hampa and Dranix for invaluable help with configuring Toribash and lua scripts (also for developing the game in the first place!)
