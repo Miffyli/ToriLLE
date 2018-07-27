@@ -1,6 +1,6 @@
 # envs
 
-ToriLLE comes with several pre-defined OpenAI Gym environments, which can be used
+ToriLLE comes with OpenAI Gym environment and several pre-defined tasks, which can be used
 as a (almost) drop-in replacements to e.g. Atari environments.
 
 Limitations: 

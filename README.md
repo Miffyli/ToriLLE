@@ -9,7 +9,7 @@ ToriLLE provides learning agents an interface to video-game [Toribash](http://ww
 Toribash provides environment for MuJoCo-like humanoid control, specifically aimed for competitive gameplay. This makes
 ToriLLE suitable for e.g. self-play experiments. 
 
-ToriLLE comes with a Python interface and pre-made OpenAI Gym environments. Following white-paper includes baseline experiments and benchmarks conducted using ToriLLE: [https://arxiv.org/abs/1807.10110](https://arxiv.org/abs/1807.10110)
+ToriLLE comes with a Python interface and pre-made OpenAI Gym environment with various tasks. Following white-paper includes baseline experiments and benchmarks conducted using ToriLLE: [https://arxiv.org/abs/1807.10110](https://arxiv.org/abs/1807.10110)
 
 ## Requirements
 Tested to work on Windows 10 and Ubuntu 16.04. Tested on Python versions 3.5 and 3.6, and will likely not work on 2.7. 
@@ -42,7 +42,7 @@ while 1:
 toribash.close()
 ```
 
-OpenAI Gym environments:
+OpenAI Gym environment:
 ```python
 import gym
 import torille.envs
@@ -77,7 +77,7 @@ record replays.
 For references see:
 
 * [Python library](docs/torille.md)
-* [Gym environments](docs/envs.md)
+* [Gym environment](docs/envs.md)
 
 For troubleshooting, see the [FAQ](docs/faq.md).
 
