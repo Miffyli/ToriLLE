@@ -87,7 +87,7 @@ class DuoToriEnv(ToriEnv):
             )
             # For both players, position of all joints
             self.observation_space = spaces.Box(low=-30, high=30, 
-                        shape=(torille.ToribashConstants.NUM_LIMBS*3*2))
+                        shape=(torille.ToribashConstants.NUM_LIMBS*3*2,))
         else:
             self.action_space = spaces.MultiDiscrete((
                     [torille.ToribashConstants.NUM_JOINT_STATES]*
@@ -95,7 +95,7 @@ class DuoToriEnv(ToriEnv):
             )
             # For both players, position of all joints
             self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
-                        shape=(torille.ToribashConstants.NUM_LIMBS*3*2))
+                        shape=(torille.ToribashConstants.NUM_LIMBS*3*2,))
 
         
 

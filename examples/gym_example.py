@@ -62,7 +62,8 @@ while number_of_episodes < NUM_EPISODES:
     
     # Print out some info
     print("\n--- Turn %d, Episode %d ---" % (turn_number, number_of_episodes))
-    print("Player 1 limb positions: "+str(state))
+    print("State: "+str(state))
+    print("Action: "+str(actions))
     print("Reward: "+str(reward))
 
     turn_number += 1
