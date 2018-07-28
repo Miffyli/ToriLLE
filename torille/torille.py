@@ -455,10 +455,10 @@ class ToribashControl:
 
         # Modify hand grips to be {0,1} rather than {1,2,3,4}
         # Map {1,2} -> 0 , {3,4} -> 1
-        actions[0][-2] = 0 if actions[0][-1] < 3 else 1 
-        actions[0][-1] = 0 if actions[0][-2] < 3 else 1 
-        actions[1][-2] = 0 if actions[1][-1] < 3 else 1 
-        actions[1][-1] = 0 if actions[1][-2] < 3 else 1 
+        actions[0][-2] = 0 if actions[0][-2] < 3 else 1 
+        actions[0][-1] = 0 if actions[0][-1] < 3 else 1 
+        actions[1][-2] = 0 if actions[1][-2] < 3 else 1 
+        actions[1][-1] = 0 if actions[1][-1] < 3 else 1 
 
         # Concat lists into one 
         actions = actions[0]+actions[1]
