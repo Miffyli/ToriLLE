@@ -196,6 +196,11 @@ class ToribashSettings:
                     )
                 )
         
+        # 2nd value (turnframes) should be from interval [2,matchframes]
+        if self.settings[1] < 2 or self.settings[1] > self.settings[0]:
+            raise ValueError("Setting 'turnframes' should be from interval "+
+                          "[2,matchframes].")
+
         # 19th value should be a string or None
         if self.settings[18] is not None: 
             if type(self.settings[18]) != str:
