@@ -1,5 +1,8 @@
 <p align="center">
   <img alt="Mating-ritual of two random agents" src="https://github.com/Miffyli/ToriLLE/raw/master/images/toribash.gif">
+  <a href="http://www.youtube.com/watch?feature=player_embedded&v=_oxx28PbfdI
+    " target="_blank"><img src="http://img.youtube.com/vi/_oxx28PbfdI/0.jpg" 
+    alt="PPO ripping a Uke a new one, and feeling the scene" width="320" height="240" border="0" /></a>
 </p>
 
 # ToriLLE
