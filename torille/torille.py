@@ -51,7 +51,12 @@ def check_linux_sanity():
     # Check that we have a valid display to render into.
     # We rather avoid running over SSH
     display = os.getenv("DISPLAY")
-    if display is not None and display[0] != ":":
+    if display is None:
+        raise Exception("No display detected. "+
+            "Toribash won't launch without active display. "+
+            "If you have a monitor attached, set environment variable "+
+            "DISPLAY to point at it (e.g. `export DISPLAY=:0`)")
+    if display[0] != ":":
         warnings.warn(
             "Looks like you have X-forwarding enabled. "+
             "This makes Toribash very slow and sad. "+
@@ -191,6 +196,11 @@ class ToribashSettings:
                     )
                 )
         
+        # 2nd value (turnframes) should be from interval [2,matchframes]
+        if self.settings[1] < 2 or self.settings[1] > self.settings[0]:
+            raise ValueError("Setting 'turnframes' should be from interval "+
+                          "[2,matchframes].")
+
         # 19th value should be a string or None
         if self.settings[18] is not None: 
             if type(self.settings[18]) != str:
@@ -278,8 +288,6 @@ class ToribashControl:
         init_lock = FileLock(self.lock_file, 
                              timeout=ToribashConstants.TIMEOUT)
         with init_lock:
-            # TODO processes won't die on Windows when Python exits,
-            # even with tricks from Stackoverflow #12843903
             if sys.platform == "linux":
                 # Sanity check launching on Linux
                 check_linux_sanity()
@@ -452,10 +460,10 @@ class ToribashControl:
 
         # Modify hand grips to be {0,1} rather than {1,2,3,4}
         # Map {1,2} -> 0 , {3,4} -> 1
-        actions[0][-2] = 0 if actions[0][-1] < 3 else 1 
-        actions[0][-1] = 0 if actions[0][-2] < 3 else 1 
-        actions[1][-2] = 0 if actions[1][-1] < 3 else 1 
-        actions[1][-1] = 0 if actions[1][-2] < 3 else 1 
+        actions[0][-2] = 0 if actions[0][-2] < 3 else 1 
+        actions[0][-1] = 0 if actions[0][-1] < 3 else 1 
+        actions[1][-2] = 0 if actions[1][-2] < 3 else 1 
+        actions[1][-1] = 0 if actions[1][-1] < 3 else 1 
 
         # Concat lists into one 
         actions = actions[0]+actions[1]
@@ -475,7 +483,9 @@ class ToribashControl:
         return ToribashConstants.NUM_JOINT_STATES
     
     def __del__(self):
-        """ Destructor to close running Toribash process.
-        There is no point in keeping Toribash alive without the controller..."""
+        """ 
+        Destructor to close running Toribash process.
+        There is no point in keeping Toribash alive without the controller...
+        """
         if self.process is not None:
             self.close()

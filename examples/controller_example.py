@@ -21,7 +21,7 @@ controller = ToribashControl(draw_game = DRAW_GAME)
 controller.settings.set("matchframes", 1000)
 # How many frames one action will be repeated for
 # AKA "frame skip", "action repeat"
-controller.settings.set("turnframes", 1)
+controller.settings.set("turnframes", 2)
 # How far two players will spawn
 controller.settings.set("engagement_distance", 1000)
 # Record replay file of the game for later playback
@@ -80,7 +80,6 @@ while number_of_episodes < NUM_EPISODES:
     print("Player 1 limb positions: "+str(state.limb_positions[0]))
     print("Player 1 joint states: "+str(state.joint_states[0]))
     print("Player 1 injury: "+str(state.injuries[0]))
-
     turn_number += 1
 
 # Close the environment

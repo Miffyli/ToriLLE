@@ -63,7 +63,6 @@ def test_async(num_instances, warm_up_seconds, benchmark_seconds, match_frames,
     
     # Get current number of frames
     start_ticks = [tick_ctrs[i].value for i in range(num_instances)]
-    
     # Wait for benchmark time
     sleep(benchmark_seconds)
     

@@ -5,7 +5,19 @@
 This is not possible (currently) to do via Lua commands. This could be doable 
 with access to the game's source by setting window hidden on creation.
 
-## How do I run Toribash on remote servers (e.g. over SSH)?
+## Hot do I run Toribash on remote Linux computers with display (e.g. over SSH)?
+
+Set `DISPLAY` variable to point at attached display (usually `:0`). E.g:
+
+`export DISPLAY=:0`
+
+On Linux the environment variable `DISPLAY` specifies which screen buffer
+should be used. When connecting over SSH this may be empty (no display) 
+or something with `localhost`, indicating X-forwarding. Toribash
+requires a valid display to create buffers. First case will prevent
+Toribash from launching, while second one slows down Toribash considerably.
+
+## How do I run Toribash on headless Linux servers (e.g. over SSH)?
 
 Running on headless servers require virtual buffer like Xvfb.
 After installing Xvfb you can create virtual buffer with following:

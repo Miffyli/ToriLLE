@@ -28,6 +28,7 @@ local options_no_rendering = {
     blood = 0,
     trails = 0,
     hud = 0,
+    text = 0,
     tori = 0,
     uke = 0,
     money = 0,
@@ -52,6 +53,7 @@ local options_rendering = {
     blood = 1,
     trails = 1,
     hud = 1,
+    text = 0,
     tori = 1,
     uke = 1,
     money = 0,
@@ -157,7 +159,9 @@ local function recv_settings_and_apply()
     -- Not very pretty, could be done in some neat list
     -- But at least it is modifiable/readable ^^'
     run_cmd("set matchframes "..settings[1])
-    run_cmd("set turnframes "..settings[2])
+    -- We substract turnframes by one, because 
+    -- calling step_game causes one extra step
+    run_cmd("set turnframes "..settings[2]-1)
     run_cmd("set engagedistance "..settings[3])
     run_cmd("set engageheight "..settings[4])
     run_cmd("set engagerotation "..settings[5])
@@ -209,14 +213,14 @@ local function make_move(actions)
     set_grip_info(1, BODYPARTS.R_HAND, actions[NUM_JOINTS+1+offset])
 end
 
--- During simulation, make moves and advance the turn
+-- Send state, get actions and set characters accordingly
 local function simulation_next_turn()
     local state = build_state()
     
     local actions = send_state_recv_actions(state)
     make_move(actions)
 
-    -- continue simulation
+    -- Proceed game
     step_game()
 end
 
@@ -249,11 +253,12 @@ local function start_game()
         -- Define hook for end game here, because otherwise
         -- 'reset' above will trigger it
         add_hook("end_game", "remotecontrol", finish_game)
+    else
+        -- Check if we should receive settings instead of playing game
+        add_hook("enter_freeze", "remotecontrol_freeze", simulation_next_turn)
+        -- make the first turn
+        simulation_next_turn()
     end
-    -- Check if we should receive settings instead of playing game
-    add_hook("enter_freeze", "remotecontrol_freeze", simulation_next_turn)
-    -- make the first turn
-    simulation_next_turn()
 end
 
 -- Initialize the game for running as fast as possible 
@@ -275,6 +280,8 @@ function initialize_and_start()
         -- may be crashing Toribash occasionally
         -- run_cmd("re "..resolution_no_rendering[1].." "..resolution_no_rendering[2])
     end
+    -- Hook start new game
+    add_hook("new_game", "remotecontrol", start_game)
     -- Start the game by loading the mod
     run_cmd("loadmod classic")
 end
@@ -320,8 +327,6 @@ local function run_controlled(configuration)
     remove_hook("enter_freeze", "remotecontrol_freeze")
     remove_hook("draw3d", "menu_closer")
     
-    -- Finish hook will be created later
-    add_hook("new_game", "remotecontrol", start_game)
     -- This hook is to close main manu
     -- It can prevent playing the game, especially if this 
     -- script is launched from profile.tbs

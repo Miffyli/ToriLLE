@@ -123,7 +123,7 @@ OrderedDict defining the default settings of Toribash game:
 Name | Description | Type | Default
 ---- | ----------- | ---- | -------
 matchframes | Length of an episode in frames | Integer | 500|
-turnframes | Number of frames per turn (aka frame-skip) | Integer | 10| 
+turnframes | Number of frames per turn (aka frame-skip) | Integer (interval [2,matchframes]) | 10| 
 engagement_distance | Starting distance between characters | Integer | 100|
 engagement_height | Starting height of characters | Integer  | 0|
 engagement_rotation | Starting rotation (degrees, anti-clockwise) of characters | Integer | 0|
