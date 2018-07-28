@@ -47,6 +47,7 @@ class ToriEnv(gym.Env):
         self.just_created = True
 
         # {1,2,3,4} for joints, {0,1} for hands. For both players
+        # Also space does not accept dtype on Windows...
         if sys.platform == "win32":
             # For some reason Gym has completely different implementations for 
             # spaces.MultiDiscrete on Windows vs. Linux...
@@ -56,14 +57,17 @@ class ToriEnv(gym.Env):
                     [[0,torille.ToribashConstants.NUM_JOINT_STATES-1]]*
                     torille.ToribashConstants.NUM_CONTROLLABLES)*2
             )
+            # For both players, position of all joints
+            self.observation_space = spaces.Box(low=-30, high=30, 
+                        shape=(2,torille.ToribashConstants.NUM_LIMBS*3))
         else:
             self.action_space = spaces.MultiDiscrete((
                     [torille.ToribashConstants.NUM_JOINT_STATES]*
                     torille.ToribashConstants.NUM_CONTROLLABLES)*2
             )
-
-        # For both players, position of all joints
-        self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, shape=(2,torille.ToribashConstants.NUM_LIMBS*3))
+            # For both players, position of all joints
+            self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
+                        shape=(2,torille.ToribashConstants.NUM_LIMBS*3))
 
     def _preprocess_observation(self, state):
         """ 
@@ -81,7 +85,8 @@ class ToriEnv(gym.Env):
         Parameters:
             action: Action according to action space
         Returns: 
-            action: An appropiate action object for Torille (List of two Lists)"""
+            action: An appropiate action object for Torille (List of two Lists)
+        """
         raise NotImplementedError
 
     def _reward_function(self, old_state, new_state):
