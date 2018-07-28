@@ -209,15 +209,34 @@ local function make_move(actions)
     set_grip_info(1, BODYPARTS.R_HAND, actions[NUM_JOINTS+1+offset])
 end
 
--- During simulation, make moves and advance the turn
+-- Boolean used to communicate between hooks
+-- if enter_draw_hook() should move game by 
+-- one turn
+local do_step = false
+
+-- During simulation, make moves and sets do_step
+-- to True to move to next step
 local function simulation_next_turn()
     local state = build_state()
     
     local actions = send_state_recv_actions(state)
     make_move(actions)
 
-    -- continue simulation
-    step_game()
+    -- Tell drawing hook to move game forward by 
+    -- one step
+    do_step = true
+end
+
+-- Hooked to draw2d
+-- Used to check if we should move to next step
+-- step_game() is called in separate hook from freeze,
+-- because calling it there causes game to advance
+-- by extra frames (we won't want that)
+local function enter_draw_hook()
+    if (do_step) then
+        do_step = false
+        step_game()
+    end
 end
 
 -- Executed after round is over (just start a new one)
@@ -229,6 +248,7 @@ local function finish_game(winType)
     send_end_recv_settings()
     -- We need to redo hooks
     remove_hook("enter_freeze", "remotecontrol_freeze")
+    remove_hook("draw2d", "remotecontrol_frame")
     start_new_game()
 end
 
@@ -252,6 +272,7 @@ local function start_game()
     end
     -- Check if we should receive settings instead of playing game
     add_hook("enter_freeze", "remotecontrol_freeze", simulation_next_turn)
+    add_hook("draw2d", "remotecontrol_frame", enter_draw_hook)
     -- make the first turn
     simulation_next_turn()
 end
@@ -318,6 +339,7 @@ local function run_controlled(configuration)
     remove_hook("end_game", "remotecontrol")
     remove_hook("new_game", "remotecontrol")
     remove_hook("enter_freeze", "remotecontrol_freeze")
+    remove_hook("draw2d", "remotecontrol_frame")
     remove_hook("draw3d", "menu_closer")
     
     -- Finish hook will be created later
