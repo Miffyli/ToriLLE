@@ -3,6 +3,9 @@
   <a href="http://www.youtube.com/watch?feature=player_embedded&v=_oxx28PbfdI
     " target="_blank"><img src="http://img.youtube.com/vi/_oxx28PbfdI/0.jpg" 
     alt="PPO ripping a Uke a new one, and feeling the scene" width="320" height="240" border="0" /></a>
+  <a href="https://www.youtube.com/watch?v=oWxVb4YcU1w
+    " target="_blank"><img src="http://img.youtube.com/vi/oWxVb4YcU1w/0.jpg" 
+    alt="Another PPO attacking Uke in more random situations" width="320" height="240" border="0" /></a>
 </p>
 
 # ToriLLE
