@@ -1,3 +1,7 @@
+### 20.8.2018 v0.9.3 and v0.9.4
+
+* Fixed Gym environments on Windows
+
 ### 28.7.2018 v0.9.2
 
 * Restructured Gym environments and added some more
