@@ -83,3 +83,11 @@ To avoid mixing Toribash processes with corresponding `ToribashControl` instance
 uses FileLock to prevent multiple instances being launched together.
 
 This can fail if `ToribashControl` instances are using different Toribash executables.
+
+## I installed Wine on MacOS but ToriLLE can't find it.
+
+Installing Wine on MacOS may not add `wine` to `PATH`. Since different ways of installing
+Wine may put it under different directories, you have to manually add appropiate path 
+to `PATH`. Here is one example (note that directory may be different for you):
+
+`export PATH=$PATH:"/Applications/Wine Stable.app/Contents/Resources/wine/bin/"`

@@ -18,14 +18,14 @@ ToriLLE suitable for e.g. self-play experiments.
 ToriLLE comes with a Python interface and pre-made OpenAI Gym environment with various tasks. Following white-paper includes baseline experiments and benchmarks conducted using ToriLLE: [https://arxiv.org/abs/1807.10110](https://arxiv.org/abs/1807.10110)
 
 ## Requirements
-Tested to work on Windows 10 and Ubuntu 16.04. Tested on Python versions 3.5 and 3.6, and will likely not work on 2.7. 
+Tested to work on Windows 10, Ubuntu 16.04 and MacOS 10.13. Tested on Python versions 3.5 and 3.6, and will likely not work on 2.7. 
 
 * Numpy (Python)
 * FileLock (Python)
-* [Wine](https://wiki.winehq.org/Download) (For Linux. **Requires modern version. Tested on 3.0.3**)
+* [Wine](https://wiki.winehq.org/Download) (For Linux/MacOS. **Requires modern version. Tested on 3.0.3**)
 
 ## Quickstart
-Remember to install [Wine](https://wiki.winehq.org/Download) if you are on Linux.
+Remember to install [Wine](https://wiki.winehq.org/Download) if you are on Linux or MacOS. Make sure `wine` command is defined.
 
 Following will download ToriLLE with stripped down version of Toribash:
 ```
