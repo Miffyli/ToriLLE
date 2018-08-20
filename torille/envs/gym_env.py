@@ -46,28 +46,13 @@ class ToriEnv(gym.Env):
         # This is to make sure first call to controller will be get_state()
         self.just_created = True
 
-        # {1,2,3,4} for joints, {0,1} for hands. For both players
-        # Also space does not accept dtype on Windows...
-        if sys.platform == "win32":
-            # For some reason Gym has completely different implementations for 
-            # spaces.MultiDiscrete on Windows vs. Linux...
-            # Windows wants [[1,4],[1,4], ...]
-            # We make it [[0,3], [0,3], ...] for consistency
-            self.action_space = spaces.MultiDiscrete((
-                    [[0,torille.ToribashConstants.NUM_JOINT_STATES-1]]*
-                    torille.ToribashConstants.NUM_CONTROLLABLES)*2
-            )
-            # For both players, position of all joints
-            self.observation_space = spaces.Box(low=-30, high=30, 
-                        shape=(2,torille.ToribashConstants.NUM_LIMBS*3))
-        else:
-            self.action_space = spaces.MultiDiscrete((
-                    [torille.ToribashConstants.NUM_JOINT_STATES]*
-                    torille.ToribashConstants.NUM_CONTROLLABLES)*2
-            )
-            # For both players, position of all joints
-            self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
-                        shape=(2,torille.ToribashConstants.NUM_LIMBS*3))
+        self.action_space = spaces.MultiDiscrete((
+                [torille.ToribashConstants.NUM_JOINT_STATES]*
+                torille.ToribashConstants.NUM_CONTROLLABLES)*2
+        )
+        # For both players, position of all joints
+        self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
+                    shape=(2,torille.ToribashConstants.NUM_LIMBS*3))
 
     def _preprocess_observation(self, state):
         """ 

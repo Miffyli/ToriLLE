@@ -65,22 +65,13 @@ class UkeToriEnv(ToriEnv):
         self.random_uke = kwargs["random_uke"]
 
         # Create action space only for the first player
-        if sys.platform == "win32":
-            self.action_space = spaces.MultiDiscrete((
-                [[0,torille.ToribashConstants.NUM_JOINT_STATES-1]]*
-                torille.ToribashConstants.NUM_CONTROLLABLES
-            ))
-            # observation space for both players
-            self.observation_space = spaces.Box(low=-30, high=30, 
-                                shape=(torille.ToribashConstants.NUM_LIMBS*3*2,))
-        else:
-            self.action_space = spaces.MultiDiscrete((
-                [torille.ToribashConstants.NUM_JOINT_STATES]*
-                torille.ToribashConstants.NUM_CONTROLLABLES
-            ))
-            # observation space for both players
-            self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
-                                shape=(torille.ToribashConstants.NUM_LIMBS*3*2,))
+        self.action_space = spaces.MultiDiscrete((
+            [torille.ToribashConstants.NUM_JOINT_STATES]*
+            torille.ToribashConstants.NUM_CONTROLLABLES
+        ))
+        # observation space for both players
+        self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
+                            shape=(torille.ToribashConstants.NUM_LIMBS*3*2,))
 
     def _preprocess_observation(self, state):
         # Give observation for both players
