@@ -66,23 +66,13 @@ class SoloToriEnv(ToriEnv):
 
         self.reward_func = kwargs["reward_func"]
 
-        # Create spaces only for the first player
-        if sys.platform == "win32":
-            self.action_space = spaces.MultiDiscrete((
-                [[0,torille.ToribashConstants.NUM_JOINT_STATES-1]]*
-                torille.ToribashConstants.NUM_CONTROLLABLES
-            ))
-            # Only one player
-            self.observation_space = spaces.Box(low=-30, high=30,
-                                shape=(torille.ToribashConstants.NUM_LIMBS*3,))
-        else:
-            self.action_space = spaces.MultiDiscrete((
-                [torille.ToribashConstants.NUM_JOINT_STATES]*
-                torille.ToribashConstants.NUM_CONTROLLABLES
-            ))
-            # Only one player
-            self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
-                                shape=(torille.ToribashConstants.NUM_LIMBS*3,))
+        self.action_space = spaces.MultiDiscrete((
+            [torille.ToribashConstants.NUM_JOINT_STATES]*
+            torille.ToribashConstants.NUM_CONTROLLABLES
+        ))
+        # Only one player
+        self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
+                            shape=(torille.ToribashConstants.NUM_LIMBS*3,))
         
 
     def _preprocess_observation(self, state):

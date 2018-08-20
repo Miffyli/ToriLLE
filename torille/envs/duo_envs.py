@@ -79,25 +79,13 @@ class DuoToriEnv(ToriEnv):
         self.reward_func = kwargs["reward_func"]
 
         # Create action/observation space again, but this time ravel'd
-
-        if sys.platform == "win32":
-            self.action_space = spaces.MultiDiscrete((
-                    [[0,torille.ToribashConstants.NUM_JOINT_STATES-1]]*
-                    torille.ToribashConstants.NUM_CONTROLLABLES*2)
-            )
-            # For both players, position of all joints
-            self.observation_space = spaces.Box(low=-30, high=30, 
-                        shape=(torille.ToribashConstants.NUM_LIMBS*3*2,))
-        else:
-            self.action_space = spaces.MultiDiscrete((
-                    [torille.ToribashConstants.NUM_JOINT_STATES]*
-                    torille.ToribashConstants.NUM_CONTROLLABLES*2)
-            )
-            # For both players, position of all joints
-            self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
-                        shape=(torille.ToribashConstants.NUM_LIMBS*3*2,))
-
-        
+        self.action_space = spaces.MultiDiscrete((
+                [torille.ToribashConstants.NUM_JOINT_STATES]*
+                torille.ToribashConstants.NUM_CONTROLLABLES*2)
+        )
+        # For both players, position of all joints
+        self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
+                    shape=(torille.ToribashConstants.NUM_LIMBS*3*2,))
 
     def _preprocess_observation(self, state):
         # Give positions of both players
