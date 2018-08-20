@@ -1,3 +1,7 @@
+### 20.8.2018 v0.9.5
+
+* Added support for Mac/OSX (with Windows binaries, *durr*)
+
 ### 20.8.2018 v0.9.3 and v0.9.4
 
 * Fixed Gym environments on Windows

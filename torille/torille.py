@@ -42,6 +42,33 @@ def create_random_actions():
             ret[plridx].append(r.randint(1,4))
     return ret
 
+def check_darwin_sanity():
+    """ 
+    A helper function that checks OSX/Mac/Darwin environment
+    for requirements, and warns/throws accordingly
+    """
+
+    # Check Wine version: We need recent enough version, otherwise
+    # game won't run
+    wine_version = None
+    try:
+        wine_version = subprocess.check_output(("wine", "--version")).decode()[:-1]
+    except FileNotFoundError:
+        raise Exception("Recent version of Wine is required to run Toribash. "+
+            "Tested to work on Wine version 3.0.3.\n\n"+
+            "NOTE: On OSX Wine may not be added to PATH during installation. "+
+            "Add Wine binaries to the PATH manually. "+ 
+            "One location for Wine binaries is "+
+            "'/Applications/Wine Stable.app/Contents/Resources/wine/bin/'")
+    if wine_version is not None:
+        major_version = int(wine_version[5])
+        if wine_version[0] == 1:
+            raise Exception(
+                "Detected Wine version 1.x. "+
+                "Toribash does not run on old versions of Wine. "+
+                "Toribash is tested to work on Wine versions 3.0.3"
+            )
+
 def check_linux_sanity():
     """ 
     A helper function that checks Linux environment
@@ -295,7 +322,16 @@ class ToribashControl:
                 self.process = subprocess.Popen(("nohup", "wine", self.executable_path), 
                                              stdout=subprocess.DEVNULL, 
                                              stderr=subprocess.DEVNULL)
+            elif sys.platform == "darwin":
+                # Sanity check launching on OSX
+                check_darwin_sanity()
+                # Add wine command for running on osx
+                self.process = subprocess.Popen(("wine %s" % self.executable_path), 
+                                             stdout=subprocess.DEVNULL, 
+                                             stderr=subprocess.DEVNULL,
+                                             shell=True)
             else:
+                # Launch on Windows (just call the .exe)
                 self.process = subprocess.Popen((self.executable_path,), 
                                                 stdout=subprocess.DEVNULL, 
                                                 stderr=subprocess.DEVNULL)
