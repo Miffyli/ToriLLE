@@ -472,7 +472,8 @@ class ToribashControl:
             # Check both players at the same time
             if (actions[0][i] > 4 or actions[0][i] < 1 or actions[1][i] > 4 or
                     actions[1][i] < 1):
-                raise ValueError("Joint states should be in {1,2,3,4}")
+                raise ValueError("Joint states should be in {1,2,3,4}. "+
+                    "Note: Gym environments take in {0,1,2,3}")
     
     def make_actions(self, actions):
         """ 
