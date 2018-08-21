@@ -1,3 +1,7 @@
+### ?? v0.9.6
+
+* Fixed Gym environments changing actions list in-place during call to `step`
+
 ### 20.8.2018 v0.9.5
 
 * Added support for Mac/OSX (with Windows binaries, *durr*)
