@@ -41,9 +41,7 @@ def reward_player1_pov(old_state, new_state):
     plr2_injury_delta = new_state.injuries[1] - old_state.injuries[1]
     plr1_injury_delta = new_state.injuries[0] - old_state.injuries[0]
     reward = plr2_injury_delta - plr1_injury_delta
-    if reward != 0:
-        # Make it log scale, even for negative values
-        reward = ((1 if reward > 0 else -1) * log10(abs(reward))) / 4
+    reward = reward / 5000
     return reward
 
 def reward_cuddles(old_state, new_state):
@@ -66,8 +64,7 @@ def reward_cuddles(old_state, new_state):
     plr2_injury_delta = new_state.injuries[1] - old_state.injuries[1]
     plr1_injury_delta = new_state.injuries[0] - old_state.injuries[0]
     penalty = plr1_injury_delta + plr2_injury_delta
-    if penalty > 0: 
-        penalty = log10(penalty) / 4
+    penalty = penalty / 5000
     reward -= penalty
 
     return reward

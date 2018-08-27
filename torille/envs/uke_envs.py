@@ -35,8 +35,7 @@ import random as r
 def reward_destroy_uke(old_state, new_state):
     """ Returns reward on damaging the other player (Uke) """
     reward = new_state.injuries[1] - old_state.injuries[1]
-    if reward > 1:
-        reward = log10(reward) / 4
+    reward = reward / 5000
     return reward
 
 def reward_destroy_uke_with_penalty(old_state, new_state):
@@ -48,9 +47,7 @@ def reward_destroy_uke_with_penalty(old_state, new_state):
     reward = new_state.injuries[1] - old_state.injuries[1]
     penalty = new_state.injuries[0] - old_state.injuries[0]
     reward = reward - penalty
-    if reward != 0:
-        # Make it log scale, even for negative values
-        reward = ((1 if reward > 0 else -1) * log10(abs(reward))) / 4
+    reward = reward / 5000
     return reward
 
 class UkeToriEnv(ToriEnv):

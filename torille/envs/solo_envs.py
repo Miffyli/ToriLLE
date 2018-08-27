@@ -34,16 +34,14 @@ import sys
 def reward_self_destruct(old_state, new_state):
     """ Returns reward for plr0 receiving damage """
     reward = new_state.injuries[0] - old_state.injuries[0]
-    if reward > 1:
-        reward = log10(reward) / 4
+    reward = reward / 5000
     return reward
     
 def reward_stay_safe(old_state, new_state):
     """ Returns reward for plr0 NOT receiving damage """
     # Injury can only increase
     reward = -(old_state.injuries[0] - new_state.injuries[0])
-    if reward > 1:
-        reward = log10(reward) / 4
+    reward = reward / 5000
     return -reward
     
 def reward_run_away(old_state, new_state):
