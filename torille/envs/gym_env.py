@@ -28,6 +28,7 @@ from gym import spaces
 from .. import torille
 import numpy as np
 import sys
+from copy import deepcopy
 
 class ToriEnv(gym.Env):
     """ 
@@ -94,6 +95,11 @@ class ToriEnv(gym.Env):
             raise Exception("`step` function was called "+
                 "before calling `reset`. Call `reset` after creating "+
                 "environment to get the first observation.")
+        
+        # Take copy of actions so we won't accidentally modify
+        # it in place
+        action = deepcopy(action)
+
         action = self._preprocess_action(action)
         self.game.make_actions(action)
         # Get new state
