@@ -353,10 +353,10 @@ class ToribashControl:
             conn.settimeout(ToribashConstants.TIMEOUT)
             self.connection = conn
         # Send handshake 
-        self._send_comma_list([int(self.draw_game)])
+        self._send_comma_list(self.connection, [int(self.draw_game)])
         # Send initial settings
         self.settings.validate_settings()
-        self._send_comma_list(self.settings.settings)
+        self._send_comma_list(self.connection, self.settings.settings)
 
     def close(self):
         """ Close the running Toribash instance and clean up """
@@ -398,15 +398,16 @@ class ToribashControl:
                              (ToribashConstants.STATE_LENGTH, len(s), s))
         return s, terminal
         
-    def _send_comma_list(self, data):
+    def _send_comma_list(self, s, data):
         """ 
         Send given list to Toribash as comma-separated list
         Parameters:
+            s: The socket where to send the data
             data: List of values to be sent
         """
         # We need to add end of line for the luasocket "*l"
         data = ",".join(map(str, data)) + "\n"
-        self.connection.sendall(data.encode())
+        self.s.sendall(data.encode())
         
     def get_state(self):
         """ 
@@ -437,7 +438,7 @@ class ToribashControl:
         # Validate settings
         self.settings.validate_settings()
 
-        self._send_comma_list(self.settings.settings)
+        self._send_comma_list(self.connection, self.settings.settings)
         s,terminal = self.get_state()
         self.requires_reset = False
         return s
@@ -505,7 +506,7 @@ class ToribashControl:
         # Concat lists into one 
         actions = actions[0]+actions[1]
 
-        self._send_comma_list(actions)
+        self._send_comma_list(self.connection, actions)
     
     def get_state_dim(self):
         """ Return size of state space per character """
