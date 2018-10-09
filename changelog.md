@@ -2,6 +2,7 @@
 
 * Fixed Gym environments changing actions list in-place during call to `step`
 * Added info on game winner to ending state
+* Added rotation matrix of players' groins to game state
 
 ### 20.8.2018 v0.9.5
 

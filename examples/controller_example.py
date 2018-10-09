@@ -62,7 +62,7 @@ while number_of_episodes < NUM_EPISODES:
     # playing for 'matchframes' number of frames
     if terminal: 
         # Print the winner of the game
-        input("Game over. Winner: %d" % state.winner)
+        print("Game over. Winner: %d" % state.winner)
         # Begin a new game and receive the initial state
         state = controller.reset()
         # Keep count of played episodes
@@ -79,7 +79,8 @@ while number_of_episodes < NUM_EPISODES:
     
     # Print out some info
     print("\n--- Turn %d, Episode %d ---" % (turn_number, number_of_episodes))
-    print("Player 1 limb positions: "+str(state.limb_positions[0]))
+    print("Player 1 limb positions:\n"+str(state.limb_positions[0]))
+    print("Player 1 groin rotations:\n"+str(state.groin_rotations[0]))
     print("Player 1 joint states: "+str(state.joint_states[0]))
     print("Player 1 injury: "+str(state.injuries[0]))
     turn_number += 1

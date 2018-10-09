@@ -98,6 +98,10 @@ from Toribash. Returned by `ToribashControl.get_state()` and `ToribashControl.re
 A Numpy array of shape (2, `ToribashConstants.NUM_LIMBS`, 3) containing positions of 
 body parts of both players.
 
+#### `groin_rotations`
+A Numpy array of shape (2, 4, 4) containing the rotation matrix of the groin (hip) 
+of both players.
+
 #### `joint_states`
 A Numpy array of shape (2, `ToribashConstants.NUM_CONTROLLABLES`) containing current
 states of the joints of both players
