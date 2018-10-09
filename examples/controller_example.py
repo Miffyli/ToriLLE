@@ -61,6 +61,8 @@ while number_of_episodes < NUM_EPISODES:
     # With default settings (no disqualification), this corresponds to 
     # playing for 'matchframes' number of frames
     if terminal: 
+        # Print the winner of the game
+        input("Game over. Winner: %d" % state.winner)
         # Begin a new game and receive the initial state
         state = controller.reset()
         # Keep count of played episodes

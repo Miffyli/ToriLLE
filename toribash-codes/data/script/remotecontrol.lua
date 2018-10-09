@@ -184,8 +184,13 @@ end
 local function send_end_recv_settings()
     -- Send info that episode was terminated
     local state = build_state()
+    local world_state = get_world_state()
     -- Add indicator of end state
-    state = "end,"..state
+    -- and add the winner of the game
+    -- 0 = tie, 1 = red wins, 2 = blue wins
+    -- (blue is uke, red is player)
+    winner = world_state["winner"]+1
+    state = "end:"..winner..","..state
 	s:send(state.."\n")
     -- Receive new settings and apply them
     recv_settings_and_apply()

@@ -1,6 +1,7 @@
 ### ?? v0.9.6
 
 * Fixed Gym environments changing actions list in-place during call to `step`
+* Added info on game winner to ending state
 
 ### 20.8.2018 v0.9.5
 

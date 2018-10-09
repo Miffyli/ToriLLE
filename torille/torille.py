@@ -144,7 +144,7 @@ class ToribashState:
     Class for storing and processing the state representations
     from Toribash 
     """
-    def __init__(self, state):
+    def __init__(self, state, winner=None):
         # Limb locations
         # For both players, for all limbs, x,y,z coordinates
         self.limb_positions = np.zeros((2,ToribashConstants.NUM_LIMBS,3))
@@ -154,6 +154,9 @@ class ToribashState:
         # Amount of injury of players 
         # For both players
         self.injuries = np.zeros((2,))
+        # Winner of the game (only defined at end of the games)
+        # 0 = tie, 1 = player 1 won, 2 = player 2 won
+        self.winner = winner
         
         self.process_list(state)
         
@@ -385,9 +388,14 @@ class ToribashControl:
         """
         s = self._recv_line(self.connection).decode()
         terminal = s.startswith("end")
+        winner = None
         if terminal:
-            # Remove first three characters + comma to parse the state
-            s = s[4:]
+            # After 'end' comes ':#' where # specifies the winner
+            # (one-digit integer) 
+            # Read the winner
+            winner = int(s[4])
+            # Remove first three characters + double-dots + integer + comma
+            s = s[6:]
             # Allow calling reset next
             self.requires_reset = True
         s = list(map(float, s.split(",")))
@@ -396,7 +404,7 @@ class ToribashControl:
             raise ValueError(("Got state of invalid size. Expected %d, got %d"+
                              "\nState: %s") %
                              (ToribashConstants.STATE_LENGTH, len(s), s))
-        return s, terminal
+        return s, terminal, winner
         
     def _send_comma_list(self, s, data):
         """ 
@@ -407,7 +415,7 @@ class ToribashControl:
         """
         # We need to add end of line for the luasocket "*l"
         data = ",".join(map(str, data)) + "\n"
-        self.s.sendall(data.encode())
+        s.sendall(data.encode())
         
     def get_state(self):
         """ 
@@ -418,8 +426,8 @@ class ToribashControl:
         """
         self._check_if_initialized()
         
-        s, terminal = self._recv_state()
-        s = ToribashState(s)
+        s, terminal, winner = self._recv_state()
+        s = ToribashState(s, winner)
         return s, terminal
     
     def reset(self):

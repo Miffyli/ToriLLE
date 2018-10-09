@@ -106,6 +106,11 @@ states of the joints of both players
 A Numpy array of shape (2,) containing current injury of both players (value seen
 in game at the top-left and top-right.)
 
+#### `winner`
+A single integer or None, specifying the winner of the game.
+Only defined at the end of the game (state which was received at terminal state).
+0 = game was tie. 1 = player 1 won. 2 = player 2 won. None = Game didn't end.
+
 ---
 
 ## ToribashSettings
