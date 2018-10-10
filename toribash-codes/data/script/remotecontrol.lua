@@ -116,6 +116,9 @@ end
 local function build_state()
     local state = {}
     local info = nil
+    local x = nil
+    local y = nil
+    local z = nil
     for plridx = 0,1 do
         -- Bodypart positions
         for bodyidx = 0,NUM_LIMBS-1 do
@@ -123,6 +126,13 @@ local function build_state()
             table.insert(state, info.pos.x)
             table.insert(state, info.pos.y)
             table.insert(state, info.pos.z)
+        end
+        -- Bodypart velocities
+        for bodyidx = 0,NUM_LIMBS-1 do
+            x, y, z = get_body_linear_vel(plridx, bodyidx)
+            table.insert(state, x)
+            table.insert(state, y)
+            table.insert(state, z)
         end
         -- Rotation of groin (4x4 matrix)
         info = get_body_info(plridx, 4)

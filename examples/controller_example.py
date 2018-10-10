@@ -80,6 +80,7 @@ while number_of_episodes < NUM_EPISODES:
     # Print out some info
     print("\n--- Turn %d, Episode %d ---" % (turn_number, number_of_episodes))
     print("Player 1 limb positions:\n"+str(state.limb_positions[0]))
+    print("Player 1 limb velocities:\n"+str(state.limb_velocities[0]))
     print("Player 1 groin rotations:\n"+str(state.groin_rotations[0]))
     print("Player 1 joint states: "+str(state.joint_states[0]))
     print("Player 1 injury: "+str(state.injuries[0]))

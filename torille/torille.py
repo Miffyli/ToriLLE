@@ -131,8 +131,9 @@ class ToribashConstants:
     # Number of setting variables
     NUM_SETTINGS = 19
 
-    # Bodypart x,y,z + groin rotation + Joint states + hand grips + injuries
-    STATE_LENGTH = (NUM_LIMBS*3*2) + 16*2 + NUM_JOINTS*2 + 4 + 2
+    # Bodypart x,y,z + Bodypart x,y,z velocities + 
+    # groin rotation + Joint states + hand grips + injuries
+    STATE_LENGTH = (NUM_LIMBS*3*2)*2 + 16*2 + NUM_JOINTS*2 + 4 + 2
 
     # Path to Toribash supplied with the wheel package
     # This should be {this file}/toribash/toribash.exe
@@ -148,6 +149,9 @@ class ToribashState:
         # Limb locations
         # For both players, for all limbs, x,y,z coordinates
         self.limb_positions = np.zeros((2,ToribashConstants.NUM_LIMBS,3))
+        # Limb velocities
+        # For both players, for all limbs, x,y,z velocities
+        self.limb_velocities = np.zeros((2,ToribashConstants.NUM_LIMBS,3))
         # Groin rotations of both players
         # Rotation is defined as 4x4 rotation matrix
         self.groin_rotations = np.zeros((2, 4, 4))
@@ -170,17 +174,22 @@ class ToribashState:
         # Limbs
         self.limb_positions[0] = np.array(state_list[:63]).reshape(
                                         (ToribashConstants.NUM_LIMBS,3))
-        self.groin_rotations[0] = np.array(state_list[63:79]).reshape(4,4)
-        self.limb_positions[1] = np.array(state_list[102:165]).reshape(
+        self.limb_velocities[0] = np.array(state_list[63:126]).reshape(
                                         (ToribashConstants.NUM_LIMBS,3))
-        self.groin_rotations[1] = np.array(state_list[165:181]).reshape(4,4)
+        self.groin_rotations[0] = np.array(state_list[126:142]).reshape(4,4)
+        
+        self.limb_positions[1] = np.array(state_list[165:228]).reshape(
+                                        (ToribashConstants.NUM_LIMBS,3))
+        self.limb_velocities[1] = np.array(state_list[228:291]).reshape(
+                                        (ToribashConstants.NUM_LIMBS,3))
+        self.groin_rotations[1] = np.array(state_list[291:307]).reshape(4,4)
         
         # Joint states (inc. hand grips)
-        self.joint_states[0] = np.array(state_list[79:101], dtype=np.int)
-        self.joint_states[1] = np.array(state_list[181:203], dtype=np.int)
+        self.joint_states[0] = np.array(state_list[142:164], dtype=np.int)
+        self.joint_states[1] = np.array(state_list[307:329], dtype=np.int)
         # Injuries
-        self.injuries[0] = state_list[101]
-        self.injuries[1] = state_list[203]
+        self.injuries[0] = state_list[164]
+        self.injuries[1] = state_list[329]
 
 class ToribashSettings:
     """ Class for storing and processing settings for Toribash """
