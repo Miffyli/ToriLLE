@@ -4,6 +4,7 @@
 * Added info on game winner to ending state
 * Added rotation matrix of players' groins to game state
 * Added velocities of body parts to game state
+* Added "get_normalized_locations" function to game state
 
 * FPS decreased by 10-20% on Linux workstation with 1000 mathframes and 2 turnframes.
 

@@ -168,8 +168,10 @@ class ToribashState:
         self.process_list(state)
         
     def process_list(self, state_list):
-        """ Updates state representations according to given list of 
-        variables from Toribash """
+        """ 
+        Updates state representations according to given list of 
+        variables from Toribash
+        """
         # Indexes from  state_structure.md
         # Limbs
         self.limb_positions[0] = np.array(state_list[:63]).reshape(
@@ -190,6 +192,40 @@ class ToribashState:
         # Injuries
         self.injuries[0] = state_list[164]
         self.injuries[1] = state_list[329]
+
+    def get_normalized_locations(self):
+        """
+        Normalizes and returns limb locations which are centered
+        around respective player's groin, and applies groin's 
+        rotation to the locations.
+
+        Applies following operations in order:
+            - limb_locations - location of player's groin
+            - Apply rotation player's groin to centered coordinates
+
+        E.g. at the start of game both players will have same 
+             coordinates from their point of view.
+
+        Returns:
+            normalized_limb_positions: A (2, 2, NUM_LIMBS, 3) array
+                                       of normalized locations, from the
+                                       point-of-view of both players.
+        """
+
+        # Body-part 4 is "groin"
+        # Center around the local-player's groin
+        player1_obs = self.limb_positions - self.limb_positions[0,4]
+        player2_obs = self.limb_positions - self.limb_positions[1,4]
+        
+        # Apply rotation of the groin, otherwise
+        # player2 will have "mirrored" coordinates
+        rotations = self.groin_rotations[:, :3, :3]
+        player1_obs = np.dot(player1_obs.reshape((-1, 3)), rotations[0]).reshape((2, ToribashConstants.NUM_LIMBS, 3))
+        player2_obs = np.dot(player2_obs.reshape((-1, 3)), rotations[1]).reshape((2, ToribashConstants.NUM_LIMBS, 3))
+
+        return np.array((player1_obs, player2_obs))
+
+
 
 class ToribashSettings:
     """ Class for storing and processing settings for Toribash """
