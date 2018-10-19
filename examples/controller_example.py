@@ -23,7 +23,7 @@ controller.settings.set("matchframes", 1000)
 # AKA "frame skip", "action repeat"
 controller.settings.set("turnframes", 2)
 # How far two players will spawn
-controller.settings.set("engagement_distance", 1000)
+controller.settings.set("engagement_distance", 200)
 # Record replay file of the game for later playback
 # by setting this to something else than "None"/None.
 # This will record replay file under [toribash directory]/replay
@@ -85,6 +85,6 @@ while number_of_episodes < NUM_EPISODES:
     print("Player 1 joint states: "+str(state.joint_states[0]))
     print("Player 1 injury: "+str(state.injuries[0]))
     turn_number += 1
-
+    
 # Close the environment
 controller.close()

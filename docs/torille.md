@@ -119,6 +119,15 @@ A single integer or None, specifying the winner of the game.
 Only defined at the end of the game (state which was received at terminal state).
 0 = game was tie. 1 = player 1 won. 2 = player 2 won. None = Game didn't end.
 
+#### `get_normalized_locations()`
+Returns a (2, 2, NUM_LIMBS, 3) array, representing location of both players' 
+body parts, with respect to both players (first dimension).
+
+The locations are centered around respective players' groin (close to hip), and
+rotated according to groin's rotation. E.g. at the start of the game, both
+players will have exactly the same coordinates for their and their opponent's 
+body parts.
+
 ---
 
 ## ToribashSettings
