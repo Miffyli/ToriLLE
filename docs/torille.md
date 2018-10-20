@@ -98,6 +98,14 @@ from Toribash. Returned by `ToribashControl.get_state()` and `ToribashControl.re
 A Numpy array of shape (2, `ToribashConstants.NUM_LIMBS`, 3) containing positions of 
 body parts of both players.
 
+#### `limb_velocities`
+A Numpy array of shape (2, `ToribashConstants.NUM_LIMBS`, 3) containing velocities of 
+body parts of both players.
+
+#### `groin_rotations`
+A Numpy array of shape (2, 4, 4) containing the rotation matrix of the groin (hip) 
+of both players.
+
 #### `joint_states`
 A Numpy array of shape (2, `ToribashConstants.NUM_CONTROLLABLES`) containing current
 states of the joints of both players
@@ -105,6 +113,20 @@ states of the joints of both players
 #### `injuries`
 A Numpy array of shape (2,) containing current injury of both players (value seen
 in game at the top-left and top-right.)
+
+#### `winner`
+A single integer or None, specifying the winner of the game.
+Only defined at the end of the game (state which was received at terminal state).
+0 = game was tie. 1 = player 1 won. 2 = player 2 won. None = Game didn't end.
+
+#### `get_normalized_locations()`
+Returns a (2, 2, NUM_LIMBS, 3) array, representing location of both players' 
+body parts, with respect to both players (first dimension).
+
+The locations are centered around respective players' groin (close to hip), and
+rotated according to groin's rotation. E.g. at the start of the game, both
+players will have exactly the same coordinates for their and their opponent's 
+body parts.
 
 ---
 

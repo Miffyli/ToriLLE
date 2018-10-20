@@ -23,7 +23,7 @@ controller.settings.set("matchframes", 1000)
 # AKA "frame skip", "action repeat"
 controller.settings.set("turnframes", 2)
 # How far two players will spawn
-controller.settings.set("engagement_distance", 1000)
+controller.settings.set("engagement_distance", 200)
 # Record replay file of the game for later playback
 # by setting this to something else than "None"/None.
 # This will record replay file under [toribash directory]/replay
@@ -61,6 +61,8 @@ while number_of_episodes < NUM_EPISODES:
     # With default settings (no disqualification), this corresponds to 
     # playing for 'matchframes' number of frames
     if terminal: 
+        # Print the winner of the game
+        print("Game over. Winner: %d" % state.winner)
         # Begin a new game and receive the initial state
         state = controller.reset()
         # Keep count of played episodes
@@ -77,10 +79,12 @@ while number_of_episodes < NUM_EPISODES:
     
     # Print out some info
     print("\n--- Turn %d, Episode %d ---" % (turn_number, number_of_episodes))
-    print("Player 1 limb positions: "+str(state.limb_positions[0]))
+    print("Player 1 limb positions:\n"+str(state.limb_positions[0]))
+    print("Player 1 limb velocities:\n"+str(state.limb_velocities[0]))
+    print("Player 1 groin rotations:\n"+str(state.groin_rotations[0]))
     print("Player 1 joint states: "+str(state.joint_states[0]))
     print("Player 1 injury: "+str(state.injuries[0]))
     turn_number += 1
-
+    
 # Close the environment
 controller.close()

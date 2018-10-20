@@ -36,8 +36,8 @@ Random agent:
 ```python
 from torille import ToribashControl, create_random_actions
 
-toribash = ToribashControl(draw_game=True)
 # Show gameplay
+toribash = ToribashControl(draw_game=True)
 toribash.init()
 
 # Random agent

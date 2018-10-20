@@ -116,6 +116,9 @@ end
 local function build_state()
     local state = {}
     local info = nil
+    local x = nil
+    local y = nil
+    local z = nil
     for plridx = 0,1 do
         -- Bodypart positions
         for bodyidx = 0,NUM_LIMBS-1 do
@@ -124,6 +127,31 @@ local function build_state()
             table.insert(state, info.pos.y)
             table.insert(state, info.pos.z)
         end
+        -- Bodypart velocities
+        for bodyidx = 0,NUM_LIMBS-1 do
+            x, y, z = get_body_linear_vel(plridx, bodyidx)
+            table.insert(state, x)
+            table.insert(state, y)
+            table.insert(state, z)
+        end
+        -- Rotation of groin (4x4 matrix)
+        info = get_body_info(plridx, 4)
+        table.insert(state, info.rot.r0)
+        table.insert(state, info.rot.r1)
+        table.insert(state, info.rot.r2)
+        table.insert(state, info.rot.r3)
+        table.insert(state, info.rot.r4)
+        table.insert(state, info.rot.r5)
+        table.insert(state, info.rot.r6)
+        table.insert(state, info.rot.r7)
+        table.insert(state, info.rot.r8)
+        table.insert(state, info.rot.r9)
+        table.insert(state, info.rot.r10)
+        table.insert(state, info.rot.r11)
+        table.insert(state, info.rot.r12)
+        table.insert(state, info.rot.r13)
+        table.insert(state, info.rot.r14)
+        table.insert(state, info.rot.r15)
         -- Joint states
         for jointidx = 0,NUM_JOINTS-1 do
             info = get_joint_info(plridx, jointidx)
@@ -184,8 +212,13 @@ end
 local function send_end_recv_settings()
     -- Send info that episode was terminated
     local state = build_state()
+    local world_state = get_world_state()
     -- Add indicator of end state
-    state = "end,"..state
+    -- and add the winner of the game
+    -- 0 = tie, 1 = red wins, 2 = blue wins
+    -- (blue is uke, red is player)
+    winner = world_state["winner"]+1
+    state = "end:"..winner..","..state
 	s:send(state.."\n")
     -- Receive new settings and apply them
     recv_settings_and_apply()

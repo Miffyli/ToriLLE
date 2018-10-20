@@ -131,8 +131,9 @@ class ToribashConstants:
     # Number of setting variables
     NUM_SETTINGS = 19
 
-    # Bodypart x,y,z + Joint states + hand grips + injuries
-    STATE_LENGTH = (NUM_LIMBS*3*2) + NUM_JOINTS*2 + 4 + 2
+    # Bodypart x,y,z + Bodypart x,y,z velocities + 
+    # groin rotation + Joint states + hand grips + injuries
+    STATE_LENGTH = (NUM_LIMBS*3*2)*2 + 16*2 + NUM_JOINTS*2 + 4 + 2
 
     # Path to Toribash supplied with the wheel package
     # This should be {this file}/toribash/toribash.exe
@@ -144,34 +145,87 @@ class ToribashState:
     Class for storing and processing the state representations
     from Toribash 
     """
-    def __init__(self, state):
+    def __init__(self, state, winner=None):
         # Limb locations
         # For both players, for all limbs, x,y,z coordinates
         self.limb_positions = np.zeros((2,ToribashConstants.NUM_LIMBS,3))
+        # Limb velocities
+        # For both players, for all limbs, x,y,z velocities
+        self.limb_velocities = np.zeros((2,ToribashConstants.NUM_LIMBS,3))
+        # Groin rotations of both players
+        # Rotation is defined as 4x4 rotation matrix
+        self.groin_rotations = np.zeros((2, 4, 4))
         # Joint states (including hands)
         # For both players
         self.joint_states = np.zeros((2,ToribashConstants.NUM_CONTROLLABLES))
         # Amount of injury of players 
         # For both players
         self.injuries = np.zeros((2,))
+        # Winner of the game (only defined at end of the games)
+        # 0 = tie, 1 = player 1 won, 2 = player 2 won
+        self.winner = winner
         
         self.process_list(state)
         
     def process_list(self, state_list):
-        """ Updates state representations according to given list of 
-        variables from Toribash """
+        """ 
+        Updates state representations according to given list of 
+        variables from Toribash
+        """
         # Indexes from  state_structure.md
         # Limbs
         self.limb_positions[0] = np.array(state_list[:63]).reshape(
                                         (ToribashConstants.NUM_LIMBS,3))
-        self.limb_positions[1] = np.array(state_list[86:149]).reshape(
+        self.limb_velocities[0] = np.array(state_list[63:126]).reshape(
                                         (ToribashConstants.NUM_LIMBS,3))
+        self.groin_rotations[0] = np.array(state_list[126:142]).reshape(4,4)
+        
+        self.limb_positions[1] = np.array(state_list[165:228]).reshape(
+                                        (ToribashConstants.NUM_LIMBS,3))
+        self.limb_velocities[1] = np.array(state_list[228:291]).reshape(
+                                        (ToribashConstants.NUM_LIMBS,3))
+        self.groin_rotations[1] = np.array(state_list[291:307]).reshape(4,4)
+        
         # Joint states (inc. hand grips)
-        self.joint_states[0] = np.array(state_list[63:85], dtype=np.int)
-        self.joint_states[1] = np.array(state_list[149:171], dtype=np.int)
+        self.joint_states[0] = np.array(state_list[142:164], dtype=np.int)
+        self.joint_states[1] = np.array(state_list[307:329], dtype=np.int)
         # Injuries
-        self.injuries[0] = state_list[85]
-        self.injuries[1] = state_list[171]
+        self.injuries[0] = state_list[164]
+        self.injuries[1] = state_list[329]
+
+    def get_normalized_locations(self):
+        """
+        Normalizes and returns limb locations which are centered
+        around respective player's groin, and applies groin's 
+        rotation to the locations.
+
+        Applies following operations in order:
+            - limb_locations - location of player's groin
+            - Apply rotation player's groin to centered coordinates
+
+        E.g. at the start of game both players will have same 
+             coordinates from their point of view.
+
+        Returns:
+            normalized_limb_positions: A (2, 2, NUM_LIMBS, 3) array
+                                       of normalized locations, from the
+                                       point-of-view of both players.
+        """
+
+        # Body-part 4 is "groin"
+        # Center around the local-player's groin
+        player1_obs = self.limb_positions - self.limb_positions[0,4]
+        player2_obs = self.limb_positions - self.limb_positions[1,4]
+        
+        # Apply rotation of the groin, otherwise
+        # player2 will have "mirrored" coordinates
+        rotations = self.groin_rotations[:, :3, :3]
+        player1_obs = np.dot(player1_obs.reshape((-1, 3)), rotations[0]).reshape((2, ToribashConstants.NUM_LIMBS, 3))
+        player2_obs = np.dot(player2_obs.reshape((-1, 3)), rotations[1]).reshape((2, ToribashConstants.NUM_LIMBS, 3))
+
+        return np.array((player1_obs, player2_obs))
+
+
 
 class ToribashSettings:
     """ Class for storing and processing settings for Toribash """
@@ -385,9 +439,14 @@ class ToribashControl:
         """
         s = self._recv_line(self.connection).decode()
         terminal = s.startswith("end")
+        winner = None
         if terminal:
-            # Remove first three characters + comma to parse the state
-            s = s[4:]
+            # After 'end' comes ':#' where # specifies the winner
+            # (one-digit integer) 
+            # Read the winner
+            winner = int(s[4])
+            # Remove first three characters + double-dots + integer + comma
+            s = s[6:]
             # Allow calling reset next
             self.requires_reset = True
         s = list(map(float, s.split(",")))
@@ -396,7 +455,7 @@ class ToribashControl:
             raise ValueError(("Got state of invalid size. Expected %d, got %d"+
                              "\nState: %s") %
                              (ToribashConstants.STATE_LENGTH, len(s), s))
-        return s, terminal
+        return s, terminal, winner
         
     def _send_comma_list(self, s, data):
         """ 
@@ -407,7 +466,7 @@ class ToribashControl:
         """
         # We need to add end of line for the luasocket "*l"
         data = ",".join(map(str, data)) + "\n"
-        self.s.sendall(data.encode())
+        s.sendall(data.encode())
         
     def get_state(self):
         """ 
@@ -418,8 +477,8 @@ class ToribashControl:
         """
         self._check_if_initialized()
         
-        s, terminal = self._recv_state()
-        s = ToribashState(s)
+        s, terminal, winner = self._recv_state()
+        s = ToribashState(s, winner)
         return s, terminal
     
     def reset(self):
