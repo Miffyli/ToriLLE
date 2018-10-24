@@ -110,10 +110,10 @@ class DuoToriEnv(ToriEnv):
     def _preprocess_observation(self, state):
         # Give positions of both players
         obs = state.get_normalized_locations()
-        # Replace the groin "y" with original "y", so
+        # Replace the groin "z" with original "z", so
         # players know how high above ground they are
-        obs[0, 0, 4, 1] = state.limb_positions[0, 4, 1]
-        obs[1, 1, 4, 1] = state.limb_positions[1, 4, 1]
+        obs[0, 0, 4, 2] = state.limb_positions[0, 4, 2]
+        obs[1, 1, 4, 2] = state.limb_positions[1, 4, 2]
 
         obs = state.limb_positions.ravel()
         return obs
