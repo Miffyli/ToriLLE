@@ -32,7 +32,11 @@ from copy import deepcopy
 
 class ToriEnv(gym.Env):
     """ 
-    A base (abstract) environment for Toribash environments.
+    An (abstract) environment for Toribash environments.
+    Needs implementations for:
+        _preprocess_observation
+        _preprocess_action
+        _reward_function
     """
     def __init__(self, **kwargs):
         self.settings = torille.ToribashSettings(**kwargs)

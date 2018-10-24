@@ -72,7 +72,12 @@ class UkeToriEnv(ToriEnv):
 
     def _preprocess_observation(self, state):
         # Give observation for both players
-        obs = state.limb_positions.ravel()
+        # Both player's positions positions w.r.t player1
+        obs = state.get_normalized_locations()[0]
+        # Add "y" to the groin so player1 knows the absolute
+        # height it is at
+        obs[0, 4, 1] = state.limb_positions[0, 4, 1]
+        obs = obs.ravel()
         return obs
 
     def _preprocess_action(self, action):

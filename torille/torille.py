@@ -225,8 +225,6 @@ class ToribashState:
 
         return np.array((player1_obs, player2_obs))
 
-
-
 class ToribashSettings:
     """ Class for storing and processing settings for Toribash """
     

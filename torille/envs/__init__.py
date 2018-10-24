@@ -3,8 +3,8 @@ from .solo_envs import (SoloToriEnv, reward_run_away,
                         reward_self_destruct, reward_stay_safe)
 from .uke_envs import (UkeToriEnv, reward_destroy_uke_with_penalty, 
                         reward_destroy_uke)
-from .duo_envs import (DuoToriEnv, reward_player1_pov, 
-                        reward_cuddles)
+from .duo_envs import (DuoToriEnv, reward_injury_player1_pov,
+                       reward_win_player1_pov, reward_cuddles)
 
 # ---------------------------------------------------------------
 # Solo envs -----------------------------------------------------
@@ -110,7 +110,7 @@ register(
     id='Toribash-DuoCombat-v0',
     entry_point='torille.envs:DuoToriEnv',
     kwargs={
-        'reward_func': reward_player1_pov,
+        'reward_func': reward_injury_player1_pov,
         'matchframes': 1000,
         'turnframes': 5,
     },

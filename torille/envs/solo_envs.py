@@ -75,7 +75,9 @@ class SoloToriEnv(ToriEnv):
 
     def _preprocess_observation(self, state):
         # Only give player1 positions as observation
-        obs = state.limb_positions[0].ravel()
+        # Player1's positions w.r.t player1
+        obs = state.get_normalized_locations()[0,0]
+        obs = obs.ravel()
         return obs
 
     def _preprocess_action(self, action):
