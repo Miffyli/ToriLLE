@@ -102,15 +102,30 @@ register(
 # Duo envs ------------------------------------------------------
 # ---------------------------------------------------------------
 
-# DuoCombat-v0: Control both players. Receive reward from the
-#               point of view of player 1: 
-#                   + reward for player 2 receiving damage
-#                   - reward for player 1 receiving damage
+# DuoInjuryCombat-v0: Control both players. Receive reward from the
+#                     point of view of player 1: 
+#                      + reward for player 2 receiving damage
+#                      - reward for player 1 receiving damage
 register(
-    id='Toribash-DuoCombat-v0',
+    id='Toribash-DuoInjuryCombat-v0',
     entry_point='torille.envs:DuoToriEnv',
     kwargs={
         'reward_func': reward_injury_player1_pov,
+        'matchframes': 1000,
+        'turnframes': 5,
+    },
+)
+
+# DuoWinCombat-v0: Control both players. Receive reward from the
+#                  point of view of player 1: 
+#                    +1 reward if player 1 won the game
+#                    -1 reward if player 2 won the game
+#                     0 reward if game was tie
+register(
+    id='Toribash-DuoWinCombat-v0',
+    entry_point='torille.envs:DuoToriEnv',
+    kwargs={
+        'reward_func': reward_win_player1_pov,
         'matchframes': 1000,
         'turnframes': 5,
     },
