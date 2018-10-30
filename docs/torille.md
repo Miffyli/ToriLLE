@@ -30,7 +30,7 @@ Returns current state of the game as a `ToribashState` object.
 
 Throws exceptions if game has not been initialized, connection is broken or connection times out.
 
-**Note: ** This function can't be called twice in row: It has to be followed by `make_actions()` or `reset()`
+**Note:** This function can't be called twice in row: It has to be followed by `make_actions()` or `reset()`
 
 Returns:
 * state: `ToribashState` of the current state of the game
@@ -41,7 +41,7 @@ Sends given actions to Toribash and proceeds the game by set amount of frames (g
 
 Throws exceptions if game has not been initialized, connection is broken/times out or actions are wrong.
 
-**Note: ** This function can't be called twice in row: It has to be followed by `get_state()` or `reset()`
+**Note:** This function can't be called twice in row: It has to be followed by `get_state()` or `reset()`
 
 Parameters:
 * actions: List of two lists with `ToribashConstants.NUM_CONTROLLABLES` elements.
@@ -53,7 +53,7 @@ Parameters:
 #### `reset(settings=None)`
 Resets the game to initial state, sets new settings (if given) and returns initial state. 
 
-**Note: ** Must be followed by `get_state()` which returned `terminal=True`.
+**Note:** Must be followed by `get_state()` which returned `terminal=True`.
 
 Parameters:
 * settings: `ToribashSettings` used to define initial settings of the game. 
@@ -135,7 +135,7 @@ body parts.
 Class used to represent and contain rules for Toribash. These can be used
 to modify the game's mechanics.
 
-**Note: ** New settings can only be applied at `ToribashControl.reset(settings)`.
+**Note:** New settings can only be applied at `ToribashControl.reset(settings)`.
 
 #### `DEFAULT_SETTINGS` (class-variable)
 OrderedDict defining the default settings of Toribash game:
