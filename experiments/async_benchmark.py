@@ -39,12 +39,12 @@ def create_random_actions():
             ret[plridx].append(r.randint(1,4))
     return ret
     
-def run_async_torille(tick_counter, quit_flag, match_frames, turn_frames):
+def run_async_torille(tick_counter, quit_flag, match_frames, turn_frames, engagement_distance):
     # Runs Toribash and increments the Value tick_counter on every frame
     controller = ToribashControl()
     controller.settings.set("matchframes", match_frames)
     controller.settings.set("turnframes", turn_frames)
-    controller.settings.set("engagement_distance", 1500)
+    controller.settings.set("engagement_distance", engagement_distance)
     controller.init()
     while quit_flag.value == 0:
         s,terminal = controller.get_state()
@@ -69,7 +69,8 @@ def test_async(num_instances, warm_up_seconds, benchmark_seconds, match_frames,
         process = Process(target=run_async_torille, args=(tick_ctrs[i],
                                                           quit_flags[i],
                                                           match_frames,
-                                                          turn_frames))
+                                                          turn_frames, 
+                                                          engagement_distance))
         process.start()
         runners.append(process)
     
@@ -102,15 +103,15 @@ if __name__ == '__main__':
     assert args.turn_frames < args.match_frames
     assert args.engagement_distance > 0 
 
-    print(("Instances: %d\nWarmup: %d s\nBenchmark: %d s" +
-              "\nMatchframes: %d\nTurnframes: %d\nEngagement distance: %d") %
-              (args.num_instances, args.warmup_time, args.benchmark_time, 
-               args.match_frames, args.turn_frames, args.engagement_distance))
     [pps, fps] = test_async(num_instances=args.num_instances,
                             warm_up_seconds=args.warmup_time,
                             benchmark_seconds=args.benchmark_time,
                             match_frames=args.match_frames,
                             turn_frames=args.turn_frames,
                             engagement_distance=args.engagement_distance)
+    print(("Instances: %d\nWarmup: %d s\nBenchmark: %d s" +
+              "\nMatchframes: %d\nTurnframes: %d\nEngagement distance: %d") %
+              (args.num_instances, args.warmup_time, args.benchmark_time, 
+               args.match_frames, args.turn_frames, args.engagement_distance))
     print("PPS: %.2f" % pps)
-    print("FPS: %.2f" % fps)
+    print("FPS: %.2f\n" % fps)
