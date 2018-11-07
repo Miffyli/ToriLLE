@@ -9,6 +9,8 @@
 * Added new duo-combat environment with winning reward (rather than injury reward)
 * Torille now attempts to make stderr.txt file read-only to avoid huge files. 
 
+* Added code of new experiments to `experiments` folder
+
 
 ### 20.8.2018 v0.9.5
 
