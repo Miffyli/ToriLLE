@@ -7,8 +7,8 @@
 * Added "get_normalized_locations" function to game state
 * Added normalization to Gym environments
 * Added new duo-combat environment with winning reward (rather than injury reward)
+* Torille now attempts to make stderr.txt file read-only to avoid huge files. 
 
-* FPS decreased by 10-20% on Linux workstation with 1000 mathframes and 2 turnframes.
 
 ### 20.8.2018 v0.9.5
 
