@@ -33,6 +33,7 @@ import pprint
 from filelock import FileLock
 import warnings
 from copy import deepcopy
+from stat import S_IREAD, S_IRGRP, S_IROTH
 
 def create_random_actions():
     """ Return random actions for ToribashControl """
@@ -139,6 +140,10 @@ class ToribashConstants:
     # This should be {this file}/toribash/toribash.exe
     my_dir = os.path.dirname(os.path.realpath(__file__))
     TORIBASH_EXE = os.path.join(my_dir, "toribash", "toribash.exe")
+
+    # Path to Toribash's stderr.txt file, which
+    # will be filled with bunch of errors unless handled separately
+    TORIBASH_STDERR_FILE = os.path.join(my_dir, "toribash", "stderr.txt")
 
 class ToribashState:
     """ 
@@ -313,7 +318,7 @@ class ToribashControl:
     def __init__(self, 
                  settings=None, 
                  draw_game=False,
-                 executable=ToribashConstants.TORIBASH_EXE, 
+                 executable=ToribashConstants.TORIBASH_EXE,
                  port=ToribashConstants.PORT):
         """ 
         Parameters:
@@ -333,6 +338,12 @@ class ToribashControl:
         if not os.path.isfile(self.executable_path):
             raise ValueError("Toribash executable path is not a file: %s" % 
                              self.executable_path)
+        # Create path to stderr.txt file which is created by the 
+        # Toribash executable (next to it)
+        self.toribash_stderr_file = os.path.join(
+            os.path.dirname(executable), "stderr.txt"
+        )
+
         self.process = None
         self.connection = None
         self.port = port
@@ -367,6 +378,21 @@ class ToribashControl:
         init_lock = FileLock(self.lock_file, 
                              timeout=ToribashConstants.TIMEOUT)
         with init_lock:
+
+            # TODO How to give proper permissions back? 
+            #      Causes problems with updating
+            # Make sure stderr is set to read-only.
+            # Otherwise it will be filled with all kinds of errors
+            if os.path.isfile(self.toribash_stderr_file):
+                # Set to read only (for user, group and all)
+                # Windows ignores other flags than "user"
+                try:
+                    os.chmod(self.toribash_stderr_file, S_IREAD | S_IRGRP | S_IROTH)
+                except Exception as e:
+                    warnings.warn("Couldn't make stderr.txt read-only. \
+                                   This file grows on every game start. \
+                                   Exception: "+str(e))
+
             if sys.platform == "linux":
                 # Sanity check launching on Linux
                 check_linux_sanity()

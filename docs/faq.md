@@ -83,3 +83,10 @@ To avoid mixing Toribash processes with corresponding `ToribashControl` instance
 uses FileLock to prevent multiple instances being launched together.
 
 This can fail if `ToribashControl` instances are using different Toribash executables.
+
+## What is this "stderr.txt" and why should I worry about it?
+
+Toribash dumps errors to "stderr.txt" file next to the main executable. This also includes some debug logging that 
+happens between rounds. If Toribash is ran for days and thousands games in row, this file size increases to gigabytes.
+
+ToriLLE Python code attempts to set this file read-only to prevent Toribash from writing to the file.
