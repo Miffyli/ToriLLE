@@ -19,7 +19,8 @@ These are tasks where only one character exists (observations/actions only inclu
 
 Player 2 is set to be immobile and engagement distance is set high to avoid contact between players.
 
-**States**: 1D vector of player 1 body part positions w.r.t player 1's groin (`gym.spaces.box.Box`).
+**States**: 1D vector of player 1 body part positions w.r.t player 1's groin. The `z` coordinate
+is replaced with absoluate `z` to inform agent how far from the ground it is. (`gym.spaces.box.Box`).
 
 **Actions**: Joint states for player 1 (`gym.spaces.multi_discrete.MultiDiscrete`).
 

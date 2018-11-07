@@ -77,6 +77,9 @@ class SoloToriEnv(ToriEnv):
         # Only give player1 positions as observation
         # Player1's positions w.r.t player1
         obs = state.get_normalized_locations()[0,0]
+        # Replaced groin's "z" with absolute "z" (height from ground),
+        # so that agent knows how much above the ground it is
+        obs[4, 2] = state.limb_positions[0, 4, 2]
         obs = obs.ravel()
         return obs
 
