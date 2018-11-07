@@ -1,6 +1,6 @@
 # Experiments
 
-This directory holds codes used for experiments and benchmarks in white paper [https://arxiv.org/abs/1807.10110](https://arxiv.org/abs/1807.10110)
+This directory holds codes used for experiments and benchmarks in **version 1** of white paper [https://arxiv.org/abs/1807.10110](https://arxiv.org/abs/1807.10110)
 
 ## `async_benchmark.py`
 

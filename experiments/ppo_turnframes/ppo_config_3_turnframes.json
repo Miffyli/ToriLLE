@@ -1,0 +1,40 @@
+{
+    "type": "ppo_agent",
+
+    "update_mode": {
+        "unit": "episodes",
+        "batch_size":15,
+        "frequency": 15
+    },
+
+    "step_optimizer": {
+        "type": "adam",
+        "learning_rate": 1e-4
+    },
+    "subsampling_fraction": 1.0,
+    "optimization_steps": 15,
+
+    "discount": 0.99,
+    "entropy_regularization": 0.0,
+    "gae_lambda": 0.95,
+    "likelihood_ratio_clipping": 0.2,
+
+    "baseline_mode": "states",
+    "baseline": {
+        "type": "mlp",
+        "sizes": [64, 64]
+    },
+    "baseline_optimizer": {
+        "type": "multi_step",
+        "optimizer": {
+            "type": "adam",
+            "learning_rate": 1e-4
+        },
+        "num_steps": 50
+    },
+    "execution": {
+        "type": "single",
+        "session_config": null,
+        "distributed_spec": null
+    }
+}
