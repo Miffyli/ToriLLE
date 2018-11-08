@@ -3,8 +3,8 @@ from .solo_envs import (SoloToriEnv, reward_run_away,
                         reward_self_destruct, reward_stay_safe)
 from .uke_envs import (UkeToriEnv, reward_destroy_uke_with_penalty, 
                         reward_destroy_uke)
-from .duo_envs import (DuoToriEnv, reward_player1_pov, 
-                        reward_cuddles)
+from .duo_envs import (DuoToriEnv, reward_injury_player1_pov,
+                       reward_win_player1_pov, reward_cuddles)
 
 # ---------------------------------------------------------------
 # Solo envs -----------------------------------------------------
@@ -102,15 +102,30 @@ register(
 # Duo envs ------------------------------------------------------
 # ---------------------------------------------------------------
 
-# DuoCombat-v0: Control both players. Receive reward from the
-#               point of view of player 1: 
-#                   + reward for player 2 receiving damage
-#                   - reward for player 1 receiving damage
+# DuoInjuryCombat-v0: Control both players. Receive reward from the
+#                     point of view of player 1: 
+#                      + reward for player 2 receiving damage
+#                      - reward for player 1 receiving damage
 register(
-    id='Toribash-DuoCombat-v0',
+    id='Toribash-DuoInjuryCombat-v0',
     entry_point='torille.envs:DuoToriEnv',
     kwargs={
-        'reward_func': reward_player1_pov,
+        'reward_func': reward_injury_player1_pov,
+        'matchframes': 1000,
+        'turnframes': 5,
+    },
+)
+
+# DuoWinCombat-v0: Control both players. Receive reward from the
+#                  point of view of player 1: 
+#                    +1 reward if player 1 won the game
+#                    -1 reward if player 2 won the game
+#                     0 reward if game was tie
+register(
+    id='Toribash-DuoWinCombat-v0',
+    entry_point='torille.envs:DuoToriEnv',
+    kwargs={
+        'reward_func': reward_win_player1_pov,
         'matchframes': 1000,
         'turnframes': 5,
     },

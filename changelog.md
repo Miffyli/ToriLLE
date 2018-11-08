@@ -1,3 +1,17 @@
+### ?? v0.9.6
+
+* Fixed Gym environments changing actions list in-place during call to `step`
+* Added info on game winner to ending state
+* Added rotation matrix of players' groins to game state
+* Added velocities of body parts to game state
+* Added "get_normalized_locations" function to game state
+* Added normalization to Gym environments
+* Added new duo-combat environment with winning reward (rather than injury reward)
+* Torille now attempts to make stderr.txt file read-only to avoid huge files (on Linux/Darwin)
+
+* Added code of new experiments to `experiments` folder
+
+
 ### 20.8.2018 v0.9.5
 
 * Added support for Mac/OSX (with Windows binaries, *durr*)

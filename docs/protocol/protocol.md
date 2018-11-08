@@ -29,7 +29,7 @@ while connection_alive:
     proceed_to_next_state()
     
     if end_of_round:
-        send_state_and_end()
+        send_winner_and_state_and_end()
         settings = recv_settings()
         apply_settings(settings)
         new_game()
@@ -43,6 +43,7 @@ send_settings([some settings])
 while connection_alive:
     state = recv_state()
     if state == "end"
+        read_winner()
         send_settings([some settings])
     else:
         send_actions([some actions])
@@ -83,7 +84,10 @@ Receive action
 
 Game finished
 -------------
-* Toribash sends message and state to signal end of game ("end" as the first item in the list).
+* Toribash sends message a message, winner and state to signal end of game:
+  * Message begins with "end:"
+  * Next one-digit integer specifies winner (0 = tie, 1 = player1 won, 2 = player2 won)
+  * Rest of the message is standard state
 * Toribash moves to "Receive settings"
 
 Quitting

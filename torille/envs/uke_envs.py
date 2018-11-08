@@ -35,8 +35,7 @@ import random as r
 def reward_destroy_uke(old_state, new_state):
     """ Returns reward on damaging the other player (Uke) """
     reward = new_state.injuries[1] - old_state.injuries[1]
-    if reward > 1:
-        reward = log10(reward) / 4
+    reward = reward / 5000
     return reward
 
 def reward_destroy_uke_with_penalty(old_state, new_state):
@@ -48,9 +47,7 @@ def reward_destroy_uke_with_penalty(old_state, new_state):
     reward = new_state.injuries[1] - old_state.injuries[1]
     penalty = new_state.injuries[0] - old_state.injuries[0]
     reward = reward - penalty
-    if reward != 0:
-        # Make it log scale, even for negative values
-        reward = ((1 if reward > 0 else -1) * log10(abs(reward))) / 4
+    reward = reward / 5000
     return reward
 
 class UkeToriEnv(ToriEnv):
@@ -75,7 +72,12 @@ class UkeToriEnv(ToriEnv):
 
     def _preprocess_observation(self, state):
         # Give observation for both players
-        obs = state.limb_positions.ravel()
+        # Both player's positions positions w.r.t player1
+        obs = state.get_normalized_locations()[0]
+        # Add "z" to the groin so player1 knows the absolute
+        # height it is at
+        obs[0, 4, 2] = state.limb_positions[0, 4, 2]
+        obs = obs.ravel()
         return obs
 
     def _preprocess_action(self, action):

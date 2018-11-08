@@ -22,7 +22,7 @@ Lua functions, and then using opened socket `s` to send/receive data to/from rem
 
 Useful links:
 * [Chat options/settings](http://forum.toribash.com/showthread.php?t=317900) 
-* [Raw list of (older) Toribash Lua functions](http://forum.toribash.com/showthread.php?t=317900)
+* [Raw list of (older) Toribash Lua functions](https://github.com/trittimo/ToriScriptAPI/blob/master/docs/toribash_docs.txt)
 * Check `[toribash folder]/data/scripts/sdk` for examples on different Lua functions Toribash has.
 
 ## Communication

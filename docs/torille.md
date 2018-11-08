@@ -30,7 +30,7 @@ Returns current state of the game as a `ToribashState` object.
 
 Throws exceptions if game has not been initialized, connection is broken or connection times out.
 
-**Note: ** This function can't be called twice in row: It has to be followed by `make_actions()` or `reset()`
+**Note:** This function can't be called twice in row: It has to be followed by `make_actions()` or `reset()`
 
 Returns:
 * state: `ToribashState` of the current state of the game
@@ -41,7 +41,7 @@ Sends given actions to Toribash and proceeds the game by set amount of frames (g
 
 Throws exceptions if game has not been initialized, connection is broken/times out or actions are wrong.
 
-**Note: ** This function can't be called twice in row: It has to be followed by `get_state()` or `reset()`
+**Note:** This function can't be called twice in row: It has to be followed by `get_state()` or `reset()`
 
 Parameters:
 * actions: List of two lists with `ToribashConstants.NUM_CONTROLLABLES` elements.
@@ -53,7 +53,7 @@ Parameters:
 #### `reset(settings=None)`
 Resets the game to initial state, sets new settings (if given) and returns initial state. 
 
-**Note: ** Must be followed by `get_state()` which returned `terminal=True`.
+**Note:** Must be followed by `get_state()` which returned `terminal=True`.
 
 Parameters:
 * settings: `ToribashSettings` used to define initial settings of the game. 
@@ -98,6 +98,14 @@ from Toribash. Returned by `ToribashControl.get_state()` and `ToribashControl.re
 A Numpy array of shape (2, `ToribashConstants.NUM_LIMBS`, 3) containing positions of 
 body parts of both players.
 
+#### `limb_velocities`
+A Numpy array of shape (2, `ToribashConstants.NUM_LIMBS`, 3) containing velocities of 
+body parts of both players.
+
+#### `groin_rotations`
+A Numpy array of shape (2, 4, 4) containing the rotation matrix of the groin (hip) 
+of both players.
+
 #### `joint_states`
 A Numpy array of shape (2, `ToribashConstants.NUM_CONTROLLABLES`) containing current
 states of the joints of both players
@@ -106,6 +114,20 @@ states of the joints of both players
 A Numpy array of shape (2,) containing current injury of both players (value seen
 in game at the top-left and top-right.)
 
+#### `winner`
+A single integer or None, specifying the winner of the game.
+Only defined at the end of the game (state which was received at terminal state).
+0 = game was tie. 1 = player 1 won. 2 = player 2 won. None = Game didn't end.
+
+#### `get_normalized_locations()`
+Returns a (2, 2, NUM_LIMBS, 3) array, representing location of both players' 
+body parts, with respect to both players (first dimension).
+
+The locations are centered around respective players' groin (close to hip), and
+rotated according to groin's rotation. E.g. at the start of the game, both
+players will have exactly the same coordinates for their and their opponent's 
+body parts.
+
 ---
 
 ## ToribashSettings
@@ -113,7 +135,7 @@ in game at the top-left and top-right.)
 Class used to represent and contain rules for Toribash. These can be used
 to modify the game's mechanics.
 
-**Note: ** New settings can only be applied at `ToribashControl.reset(settings)`.
+**Note:** New settings can only be applied at `ToribashControl.reset(settings)`.
 
 #### `DEFAULT_SETTINGS` (class-variable)
 OrderedDict defining the default settings of Toribash game:

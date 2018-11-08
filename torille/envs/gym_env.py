@@ -28,10 +28,15 @@ from gym import spaces
 from .. import torille
 import numpy as np
 import sys
+from copy import deepcopy
 
 class ToriEnv(gym.Env):
     """ 
-    A base (abstract) environment for Toribash environments.
+    An (abstract) environment for Toribash environments.
+    Needs implementations for:
+        _preprocess_observation
+        _preprocess_action
+        _reward_function
     """
     def __init__(self, **kwargs):
         self.settings = torille.ToribashSettings(**kwargs)
@@ -94,6 +99,11 @@ class ToriEnv(gym.Env):
             raise Exception("`step` function was called "+
                 "before calling `reset`. Call `reset` after creating "+
                 "environment to get the first observation.")
+        
+        # Take copy of actions so we won't accidentally modify
+        # it in place
+        action = deepcopy(action)
+
         action = self._preprocess_action(action)
         self.game.make_actions(action)
         # Get new state

@@ -34,16 +34,14 @@ import sys
 def reward_self_destruct(old_state, new_state):
     """ Returns reward for plr0 receiving damage """
     reward = new_state.injuries[0] - old_state.injuries[0]
-    if reward > 1:
-        reward = log10(reward) / 4
+    reward = reward / 5000
     return reward
     
 def reward_stay_safe(old_state, new_state):
     """ Returns reward for plr0 NOT receiving damage """
     # Injury can only increase
     reward = -(old_state.injuries[0] - new_state.injuries[0])
-    if reward > 1:
-        reward = log10(reward) / 4
+    reward = reward / 5000
     return -reward
     
 def reward_run_away(old_state, new_state):
@@ -77,7 +75,12 @@ class SoloToriEnv(ToriEnv):
 
     def _preprocess_observation(self, state):
         # Only give player1 positions as observation
-        obs = state.limb_positions[0].ravel()
+        # Player1's positions w.r.t player1
+        obs = state.get_normalized_locations()[0,0]
+        # Replaced groin's "z" with absolute "z" (height from ground),
+        # so that agent knows how much above the ground it is
+        obs[4, 2] = state.limb_positions[0, 4, 2]
+        obs = obs.ravel()
         return obs
 
     def _preprocess_action(self, action):

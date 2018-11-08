@@ -31,9 +31,9 @@ from math import log10, log
 import numpy as np
 import sys
 
-def reward_player1_pov(old_state, new_state):
+def reward_injury_player1_pov(old_state, new_state):
     """ 
-    Reward function from the point-of-view of the player 1:
+    Reward function from POV of player 1, based on injury/score:
         + reward for damaging player 2
         - reward for receiving damage
     Negate of this is reward for plr2
@@ -41,10 +41,30 @@ def reward_player1_pov(old_state, new_state):
     plr2_injury_delta = new_state.injuries[1] - old_state.injuries[1]
     plr1_injury_delta = new_state.injuries[0] - old_state.injuries[0]
     reward = plr2_injury_delta - plr1_injury_delta
-    if reward != 0:
-        # Make it log scale, even for negative values
-        reward = ((1 if reward > 0 else -1) * log10(abs(reward))) / 4
+    reward = reward / 5000
     return reward
+
+def reward_win_player1_pov(old_state, new_state):
+    """ 
+    +1/-1 reward based on who won the game, from the POV of player1:
+        +1 if player1 won the game
+        -1 if player1 lost the game
+        0 if game was tie or game has not ended
+    """
+    if new_state.winner is not None:
+        if new_state.winner == 1:
+            # Player1 won the game
+            return 1
+        elif new_state.winner == 2:
+            # Player2 won the game
+            return -1
+        elif new_state.winner == 0:
+            # Game was tie
+            return 0
+        else:
+            raise ValueError("state.winner was %d" % new_state.winner)
+    # Game has not ended yet
+    return 0
 
 def reward_cuddles(old_state, new_state):
     """ 
@@ -66,8 +86,7 @@ def reward_cuddles(old_state, new_state):
     plr2_injury_delta = new_state.injuries[1] - old_state.injuries[1]
     plr1_injury_delta = new_state.injuries[0] - old_state.injuries[0]
     penalty = plr1_injury_delta + plr2_injury_delta
-    if penalty > 0: 
-        penalty = log10(penalty) / 4
+    penalty = penalty / 5000
     reward -= penalty
 
     return reward
@@ -83,12 +102,19 @@ class DuoToriEnv(ToriEnv):
                 [torille.ToribashConstants.NUM_JOINT_STATES]*
                 torille.ToribashConstants.NUM_CONTROLLABLES*2)
         )
-        # For both players, position of all joints
+        # For both players, relative position of both players
+        # (Two perspectives, two players -> 4 * number of limbs)
         self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
-                    shape=(torille.ToribashConstants.NUM_LIMBS*3*2,))
+                    shape=(torille.ToribashConstants.NUM_LIMBS*3*2*2,))
 
     def _preprocess_observation(self, state):
         # Give positions of both players
+        obs = state.get_normalized_locations()
+        # Replace the groin "z" with original "z", so
+        # players know how high above ground they are
+        obs[0, 0, 4, 2] = state.limb_positions[0, 4, 2]
+        obs[1, 1, 4, 2] = state.limb_positions[1, 4, 2]
+
         obs = state.limb_positions.ravel()
         return obs
 
