@@ -43,6 +43,26 @@ def create_random_actions():
             ret[plridx].append(r.randint(1,4))
     return ret
 
+def set_file_readonly(filepath):
+    """
+    Attempt to set given file read-only, and
+    return True on success.
+
+    Parameters:
+        filepath: Path to file to be set read-only
+    Returns:
+        success: True if file was set read only, otherwise False
+    """
+    if os.path.isfile(filepath):
+        # Set to read only (for user, group and all)
+        try:
+            os.chmod(self.toribash_stderr_file, S_IREAD | S_IRGRP | S_IROTH)
+        except Exception as e:
+            return False
+        return True
+    else:
+        return False
+
 def check_darwin_sanity():
     """ 
     A helper function that checks OSX/Mac/Darwin environment
@@ -378,24 +398,12 @@ class ToribashControl:
         init_lock = FileLock(self.lock_file, 
                              timeout=ToribashConstants.TIMEOUT)
         with init_lock:
-
-            # TODO How to give proper permissions back? 
-            #      Causes problems with updating
-            # Make sure stderr is set to read-only.
-            # Otherwise it will be filled with all kinds of errors
-            if os.path.isfile(self.toribash_stderr_file):
-                # Set to read only (for user, group and all)
-                # Windows ignores other flags than "user"
-                try:
-                    os.chmod(self.toribash_stderr_file, S_IREAD | S_IRGRP | S_IROTH)
-                except Exception as e:
-                    warnings.warn("Couldn't make stderr.txt read-only. \
-                                   This file grows on every game start. \
-                                   Exception: "+str(e))
-
             if sys.platform == "linux":
                 # Sanity check launching on Linux
                 check_linux_sanity()
+                # Attempt to make stderr.txt read-only
+                # TODO this will cause headache when trying to remove torille
+                _ = set_file_readonly(self.toribash_stderr_file)
                 # Add wine command explicitly for running on Linux
                 self.process = subprocess.Popen(("nohup", "wine", self.executable_path), 
                                              stdout=subprocess.DEVNULL, 
@@ -403,6 +411,8 @@ class ToribashControl:
             elif sys.platform == "darwin":
                 # Sanity check launching on OSX
                 check_darwin_sanity()
+                # Attempt to make stderr.txt read-only
+                _ = set_file_readonly(self.toribash_stderr_file)
                 # Add wine command for running on osx
                 self.process = subprocess.Popen(("wine %s" % self.executable_path), 
                                              stdout=subprocess.DEVNULL, 
@@ -410,6 +420,8 @@ class ToribashControl:
                                              shell=True)
             else:
                 # Launch on Windows (just call the .exe)
+                # Don't try to set stderr.txt to read-only: This will
+                # cause Toribash to crash on Windows
                 self.process = subprocess.Popen((self.executable_path,), 
                                                 stdout=subprocess.DEVNULL, 
                                                 stderr=subprocess.DEVNULL)

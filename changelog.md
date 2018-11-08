@@ -7,7 +7,7 @@
 * Added "get_normalized_locations" function to game state
 * Added normalization to Gym environments
 * Added new duo-combat environment with winning reward (rather than injury reward)
-* Torille now attempts to make stderr.txt file read-only to avoid huge files. 
+* Torille now attempts to make stderr.txt file read-only to avoid huge files (on Linux/Darwin)
 
 * Added code of new experiments to `experiments` folder
 
