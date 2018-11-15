@@ -2,12 +2,6 @@
 
 This directory holds codes used for experiments and benchmarks in **version 1** of white paper [https://arxiv.org/abs/1807.10110](https://arxiv.org/abs/1807.10110)
 
-## `async_benchmark.py`
-
-Used to benchmark Toribash's performance with one or several asynchronous instances.
-
-Run with `python3 async_benchmark.py num_instances match_frames turn_frames`.
-
 ## `a2c/`
 
 Implementation of A2C and training code used to do A2C experiments in the white paper. 
