@@ -34,7 +34,8 @@ pip install torille
 
 Random agent:
 ```python
-from torille import ToribashControl, create_random_actions
+from torille import ToribashControl
+from torille.utils import create_random_actions
 
 # Show gameplay
 toribash = ToribashControl(draw_game=True)

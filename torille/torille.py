@@ -36,100 +36,7 @@ from copy import deepcopy
 from stat import S_IREAD, S_IRGRP, S_IROTH
 
 from . import constants
-
-def create_random_actions():
-    """ Return random actions for ToribashControl """
-    ret = [[],[]]
-    for plridx in range(2):
-        for jointidx in range(constants.NUM_CONTROLLABLES):
-            ret[plridx].append(r.randint(1,4))
-    return ret
-
-def set_file_readonly(filepath):
-    """
-    Attempt to set given file read-only, and
-    return True on success.
-
-    Parameters:
-        filepath: Path to file to be set read-only
-    Returns:
-        success: True if file was set read only, otherwise False
-    """
-    if os.path.isfile(filepath):
-        # Set to read only (for user, group and all)
-        try:
-            os.chmod(self.toribash_stderr_file, S_IREAD | S_IRGRP | S_IROTH)
-        except Exception as e:
-            return False
-        return True
-    else:
-        return False
-
-def check_darwin_sanity():
-    """ 
-    A helper function that checks OSX/Mac/Darwin environment
-    for requirements, and warns/throws accordingly
-    """
-
-    # Check Wine version: We need recent enough version, otherwise
-    # game won't run
-    wine_version = None
-    try:
-        wine_version = subprocess.check_output(("wine", "--version")).decode()[:-1]
-    except FileNotFoundError:
-        raise Exception("Recent version of Wine is required to run Toribash. "+
-            "Tested to work on Wine version 3.0.3.\n\n"+
-            "NOTE: On OSX Wine may not be added to PATH during installation. "+
-            "Add Wine binaries to the PATH manually. "+ 
-            "One location for Wine binaries is "+
-            "'/Applications/Wine Stable.app/Contents/Resources/wine/bin/'")
-    if wine_version is not None:
-        major_version = int(wine_version[5])
-        if wine_version[0] == 1:
-            raise Exception(
-                "Detected Wine version 1.x. "+
-                "Toribash does not run on old versions of Wine. "+
-                "Toribash is tested to work on Wine versions 3.0.3"
-            )
-
-def check_linux_sanity():
-    """ 
-    A helper function that checks Linux environment
-    for requirements, and warns/throws accordingly
-    """
-
-    # Check that we have a valid display to render into.
-    # We rather avoid running over SSH
-    display = os.getenv("DISPLAY")
-    if display is None:
-        raise Exception("No display detected. "+
-            "Toribash won't launch without active display. "+
-            "If you have a monitor attached, set environment variable "+
-            "DISPLAY to point at it (e.g. `export DISPLAY=:0`)")
-    if display[0] != ":":
-        warnings.warn(
-            "Looks like you have X-forwarding enabled. "+
-            "This makes Toribash very slow and sad. "+
-            "Consider using virtual screen buffer like Xvfb. "+
-            "More info at the Github page https://github.com/Miffyli/ToriLLE"
-        )
-
-    # Check Wine version: We need recent enough version, otherwise
-    # game won't run
-    wine_version = None
-    try:
-        wine_version = subprocess.check_output(("wine", "--version")).decode()[:-1]
-    except FileNotFoundError:
-        raise Exception("Recent version of Wine is required to run Toribash. "+
-                        "Tested to work on Wine version 3.0.3")
-    if wine_version is not None:
-        major_version = int(wine_version[5])
-        if wine_version[0] == 1:
-            raise Exception(
-                "Detected Wine version 1.x. "+
-                "Toribash does not run on old versions of Wine. "+
-                "Toribash is tested to work on Wine versions 3.0.3"
-            )
+from . import utils
 
 class ToribashState:
     """ 
@@ -366,19 +273,19 @@ class ToribashControl:
         with init_lock:
             if sys.platform == "linux":
                 # Sanity check launching on Linux
-                check_linux_sanity()
+                utils.check_linux_sanity()
                 # Attempt to make stderr.txt read-only
                 # TODO this will cause headache when trying to remove torille
-                _ = set_file_readonly(self.toribash_stderr_file)
+                _ = utils.set_file_readonly(self.toribash_stderr_file)
                 # Add wine command explicitly for running on Linux
                 self.process = subprocess.Popen(("nohup", "wine", self.executable_path), 
                                              stdout=subprocess.DEVNULL, 
                                              stderr=subprocess.DEVNULL)
             elif sys.platform == "darwin":
                 # Sanity check launching on OSX
-                check_darwin_sanity()
+                utils.check_darwin_sanity()
                 # Attempt to make stderr.txt read-only
-                _ = set_file_readonly(self.toribash_stderr_file)
+                _ = utils.set_file_readonly(self.toribash_stderr_file)
                 # Add wine command for running on osx
                 self.process = subprocess.Popen(("wine %s" % self.executable_path), 
                                              stdout=subprocess.DEVNULL, 
