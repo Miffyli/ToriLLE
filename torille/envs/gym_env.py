@@ -52,12 +52,12 @@ class ToriEnv(gym.Env):
         self.just_created = True
 
         self.action_space = spaces.MultiDiscrete((
-                [torille.ToribashConstants.NUM_JOINT_STATES]*
-                torille.ToribashConstants.NUM_CONTROLLABLES)*2
+                [torille.constants.NUM_JOINT_STATES]*
+                torille.constants.NUM_CONTROLLABLES)*2
         )
         # For both players, position of all joints
         self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
-                    shape=(2,torille.ToribashConstants.NUM_LIMBS*3))
+                    shape=(2,torille.constants.NUM_LIMBS*3))
 
     def _preprocess_observation(self, state):
         """ 

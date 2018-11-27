@@ -99,13 +99,13 @@ class DuoToriEnv(ToriEnv):
 
         # Create action/observation space again, but this time ravel'd
         self.action_space = spaces.MultiDiscrete((
-                [torille.ToribashConstants.NUM_JOINT_STATES]*
-                torille.ToribashConstants.NUM_CONTROLLABLES*2)
+                [torille.constants.NUM_JOINT_STATES]*
+                torille.constants.NUM_CONTROLLABLES*2)
         )
         # For both players, relative position of both players
         # (Two perspectives, two players -> 4 * number of limbs)
         self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
-                    shape=(torille.ToribashConstants.NUM_LIMBS*3*2*2,))
+                    shape=(torille.constants.NUM_LIMBS*3*2*2,))
 
     def _preprocess_observation(self, state):
         # Give positions of both players
@@ -122,11 +122,11 @@ class DuoToriEnv(ToriEnv):
         # Add +1 to limb actions (to make [0,3] -> [1,4])
         if type(action) != list:
             action = list(action)
-        for i in range(torille.ToribashConstants.NUM_CONTROLLABLES*2):
+        for i in range(torille.constants.NUM_CONTROLLABLES*2):
             action[i] += 1
         # Split into two lists
-        action = [action[:torille.ToribashConstants.NUM_CONTROLLABLES],
-                  action[torille.ToribashConstants.NUM_CONTROLLABLES:]]
+        action = [action[:torille.constants.NUM_CONTROLLABLES],
+                  action[torille.constants.NUM_CONTROLLABLES:]]
         return action
 
     def _reward_function(self, old_state, new_state):

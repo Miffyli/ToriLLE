@@ -35,11 +35,13 @@ import warnings
 from copy import deepcopy
 from stat import S_IREAD, S_IRGRP, S_IROTH
 
+from . import constants
+
 def create_random_actions():
     """ Return random actions for ToribashControl """
     ret = [[],[]]
     for plridx in range(2):
-        for jointidx in range(ToribashConstants.NUM_CONTROLLABLES):
+        for jointidx in range(constants.NUM_CONTROLLABLES):
             ret[plridx].append(r.randint(1,4))
     return ret
 
@@ -129,42 +131,6 @@ def check_linux_sanity():
                 "Toribash is tested to work on Wine versions 3.0.3"
             )
 
-class ToribashConstants:
-    """ 
-    Class for holding general constants.
-    These are not designed to be modified during runtime
-    """
-    # Port where Toribashes connect to
-    PORT = 7788
-    # Global timeout (in seconds) for connections
-    TIMEOUT = 300
-    # Buffer size (for recv)
-    BUFFER_SIZE = 8096
-    # Line ending character
-    MESSAGE_END = "\n".encode()
-
-    # "Limb" or "Bodypart"
-    NUM_LIMBS = 21
-    NUM_JOINTS = 20
-    # Add hand_grips
-    NUM_CONTROLLABLES = NUM_JOINTS+2
-    NUM_JOINT_STATES = 4
-    # Number of setting variables
-    NUM_SETTINGS = 19
-
-    # Bodypart x,y,z + Bodypart x,y,z velocities + 
-    # groin rotation + Joint states + hand grips + injuries
-    STATE_LENGTH = (NUM_LIMBS*3*2)*2 + 16*2 + NUM_JOINTS*2 + 4 + 2
-
-    # Path to Toribash supplied with the wheel package
-    # This should be {this file}/toribash/toribash.exe
-    my_dir = os.path.dirname(os.path.realpath(__file__))
-    TORIBASH_EXE = os.path.join(my_dir, "toribash", "toribash.exe")
-
-    # Path to Toribash's stderr.txt file, which
-    # will be filled with bunch of errors unless handled separately
-    TORIBASH_STDERR_FILE = os.path.join(my_dir, "toribash", "stderr.txt")
-
 class ToribashState:
     """ 
     Class for storing and processing the state representations
@@ -173,16 +139,16 @@ class ToribashState:
     def __init__(self, state, winner=None):
         # Limb locations
         # For both players, for all limbs, x,y,z coordinates
-        self.limb_positions = np.zeros((2,ToribashConstants.NUM_LIMBS,3))
+        self.limb_positions = np.zeros((2,constants.NUM_LIMBS,3))
         # Limb velocities
         # For both players, for all limbs, x,y,z velocities
-        self.limb_velocities = np.zeros((2,ToribashConstants.NUM_LIMBS,3))
+        self.limb_velocities = np.zeros((2,constants.NUM_LIMBS,3))
         # Groin rotations of both players
         # Rotation is defined as 4x4 rotation matrix
         self.groin_rotations = np.zeros((2, 4, 4))
         # Joint states (including hands)
         # For both players
-        self.joint_states = np.zeros((2,ToribashConstants.NUM_CONTROLLABLES))
+        self.joint_states = np.zeros((2,constants.NUM_CONTROLLABLES))
         # Amount of injury of players 
         # For both players
         self.injuries = np.zeros((2,))
@@ -200,15 +166,15 @@ class ToribashState:
         # Indexes from  state_structure.md
         # Limbs
         self.limb_positions[0] = np.array(state_list[:63]).reshape(
-                                        (ToribashConstants.NUM_LIMBS,3))
+                                        (constants.NUM_LIMBS,3))
         self.limb_velocities[0] = np.array(state_list[63:126]).reshape(
-                                        (ToribashConstants.NUM_LIMBS,3))
+                                        (constants.NUM_LIMBS,3))
         self.groin_rotations[0] = np.array(state_list[126:142]).reshape(4,4)
         
         self.limb_positions[1] = np.array(state_list[165:228]).reshape(
-                                        (ToribashConstants.NUM_LIMBS,3))
+                                        (constants.NUM_LIMBS,3))
         self.limb_velocities[1] = np.array(state_list[228:291]).reshape(
-                                        (ToribashConstants.NUM_LIMBS,3))
+                                        (constants.NUM_LIMBS,3))
         self.groin_rotations[1] = np.array(state_list[291:307]).reshape(4,4)
         
         # Joint states (inc. hand grips)
@@ -245,8 +211,8 @@ class ToribashState:
         # Apply rotation of the groin, otherwise
         # player2 will have "mirrored" coordinates
         rotations = self.groin_rotations[:, :3, :3]
-        player1_obs = np.dot(player1_obs.reshape((-1, 3)), rotations[0]).reshape((2, ToribashConstants.NUM_LIMBS, 3))
-        player2_obs = np.dot(player2_obs.reshape((-1, 3)), rotations[1]).reshape((2, ToribashConstants.NUM_LIMBS, 3))
+        player1_obs = np.dot(player1_obs.reshape((-1, 3)), rotations[0]).reshape((2, constants.NUM_LIMBS, 3))
+        player2_obs = np.dot(player2_obs.reshape((-1, 3)), rotations[1]).reshape((2, constants.NUM_LIMBS, 3))
 
         return np.array((player1_obs, player2_obs))
 
@@ -338,8 +304,8 @@ class ToribashControl:
     def __init__(self, 
                  settings=None, 
                  draw_game=False,
-                 executable=ToribashConstants.TORIBASH_EXE,
-                 port=ToribashConstants.PORT):
+                 executable=constants.TORIBASH_EXE,
+                 port=constants.PORT):
         """ 
         Parameters:
             settings: ToribashSettings instance. Uses these settings if 
@@ -349,7 +315,7 @@ class ToribashControl:
             executable: String of path to the toribash.exe launching the game.
                         Defaults to path used with pip-installed package.
             port: Port used to listen for connections from Toribash.
-                  Defaults to ToribashConstants.PORT.
+                  Defaults to constants.PORT.
                   NOTE: You have to change port in Toribash Lua script as well!
                         (in {toribash dir}/data/script/remotecontrol.lua )
         """
@@ -396,7 +362,7 @@ class ToribashControl:
         # corresponding Python scripts if we have multiple Toribashes running.
         # Create lock here to make code pickle-able before call to init.
         init_lock = FileLock(self.lock_file, 
-                             timeout=ToribashConstants.TIMEOUT)
+                             timeout=constants.TIMEOUT)
         with init_lock:
             if sys.platform == "linux":
                 # Sanity check launching on Linux
@@ -433,14 +399,14 @@ class ToribashControl:
             # From Stackoverflow #6380057
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             s.bind(("",self.port))
-            s.settimeout(ToribashConstants.TIMEOUT)
+            s.settimeout(constants.TIMEOUT)
             s.listen(1)
             conn, addr = s.accept()
             # Close the listener socket
             s.close()
             
             # Set the timeout for connection 
-            conn.settimeout(ToribashConstants.TIMEOUT)
+            conn.settimeout(constants.TIMEOUT)
             self.connection = conn
         # Send handshake 
         self._send_comma_list(self.connection, [int(self.draw_game)])
@@ -460,10 +426,10 @@ class ToribashControl:
         Call recv till data ends with ToribashConstant.MESSAGE_END
         """
         # First wait till there is something to read
-        ret = s.recv(ToribashConstants.BUFFER_SIZE)
+        ret = s.recv(constants.BUFFER_SIZE)
         # Now check if we had "\n", and continue reading till we have it
-        while ret[-1:] != ToribashConstants.MESSAGE_END:
-            ret += s.recv(ToribashConstants.BUFFER_SIZE)
+        while ret[-1:] != constants.MESSAGE_END:
+            ret += s.recv(constants.BUFFER_SIZE)
         return ret
     
     def _recv_state(self):
@@ -487,10 +453,10 @@ class ToribashControl:
             self.requires_reset = True
         s = list(map(float, s.split(",")))
         # Make sure we got list of correct length
-        if len(s) != ToribashConstants.STATE_LENGTH:
+        if len(s) != constants.STATE_LENGTH:
             raise ValueError(("Got state of invalid size. Expected %d, got %d"+
                              "\nState: %s") %
-                             (ToribashConstants.STATE_LENGTH, len(s), s))
+                             (constants.STATE_LENGTH, len(s), s))
         return s, terminal, winner
         
     def _send_comma_list(self, s, data):
@@ -558,13 +524,13 @@ class ToribashControl:
             raise ValueError("Actions should be a List of two lists")
         
         # Check that we have correct number of states
-        if (len(actions[0]) != ToribashConstants.NUM_CONTROLLABLES or 
-                len(actions[1]) != ToribashConstants.NUM_CONTROLLABLES):
+        if (len(actions[0]) != constants.NUM_CONTROLLABLES or 
+                len(actions[1]) != constants.NUM_CONTROLLABLES):
             raise ValueError("Actions should be a List of shape 2 x %d"%
                              NUM_CONTROLLABLES)
         
         # Check that all joint states are in {1,2,3,4}
-        for i in range(ToribashConstants.NUM_CONTROLLABLES):
+        for i in range(constants.NUM_CONTROLLABLES):
             # Check both players at the same time
             if (actions[0][i] > 4 or actions[0][i] < 1 or actions[1][i] > 4 or
                     actions[1][i] < 1):
@@ -605,15 +571,15 @@ class ToribashControl:
     
     def get_state_dim(self):
         """ Return size of state space per character """
-        return ToribashConstants.NUM_LIMBS*3
+        return constants.NUM_LIMBS*3
     
     def get_num_joints(self):
         """ Return number of controllable joints """
-        return ToribashConstants.NUM_CONTROLLABLES
+        return constants.NUM_CONTROLLABLES
     
     def get_num_joint_states(self):
         """ Return number of states each joint can have """
-        return ToribashConstants.NUM_JOINT_STATES
+        return constants.NUM_JOINT_STATES
     
     def __del__(self):
         """ 

@@ -65,12 +65,12 @@ class SoloToriEnv(ToriEnv):
         self.reward_func = kwargs["reward_func"]
 
         self.action_space = spaces.MultiDiscrete((
-            [torille.ToribashConstants.NUM_JOINT_STATES]*
-            torille.ToribashConstants.NUM_CONTROLLABLES
+            [torille.constants.NUM_JOINT_STATES]*
+            torille.constants.NUM_CONTROLLABLES
         ))
         # Only one player
         self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
-                            shape=(torille.ToribashConstants.NUM_LIMBS*3,))
+                            shape=(torille.constants.NUM_LIMBS*3,))
         
 
     def _preprocess_observation(self, state):
@@ -87,10 +87,10 @@ class SoloToriEnv(ToriEnv):
         # Add +1 to limb actions (to make [0,3] -> [1,4])
         if type(action) != list:
             action = list(action)
-        for i in range(torille.ToribashConstants.NUM_CONTROLLABLES):
+        for i in range(torille.constants.NUM_CONTROLLABLES):
             action[i] += 1
         # Add "hold" actions for the (immobile) opponent
-        action = [action, [3]*torille.ToribashConstants.NUM_CONTROLLABLES]
+        action = [action, [3]*torille.constants.NUM_CONTROLLABLES]
         # Make hand grip actions for uke to be 0 (no grip)
         # Otherwise he will be stickier than tar
         action[1][-2] = 1

@@ -5,7 +5,7 @@
 
 Main class which controls Toribash process and handles communication.
 
-#### `__init__(settings=None, draw_game=False, executable=ToribashConstants.TORIBASH_EXE, port=ToribashConstants.PORT)`
+#### `__init__(settings=None, draw_game=False, executable=constants.TORIBASH_EXE, port=constants.PORT)`
 Creates a new Toribash controller, but does not launch Toribash instance. 
 `ToribashControl` instance can be serialized (pickled) at this point.
 
@@ -44,7 +44,7 @@ Throws exceptions if game has not been initialized, connection is broken/times o
 **Note:** This function can't be called twice in row: It has to be followed by `get_state()` or `reset()`
 
 Parameters:
-* actions: List of two lists with `ToribashConstants.NUM_CONTROLLABLES` elements.
+* actions: List of two lists with `constants.NUM_CONTROLLABLES` elements.
   Each element is integer from range {1,2,3,4}. 
   These represent joint states for both Toribash characters. 
   **Note: ** Toribash character hands only take {0,1}, but for simplicity controller maps
@@ -67,7 +67,7 @@ Used to validate actions internally to avoid Toribash crashing without errors.
 Throws an exception if action is invalid.
 
 Parameters:
-* actions: List of two lists with `ToribashConstants.NUM_CONTROLLABLES` integers.
+* actions: List of two lists with `constants.NUM_CONTROLLABLES` integers.
 
 #### `get_state_dim()`
 Returns number of variables in state per player
@@ -95,11 +95,11 @@ Class used to refine and represent state
 from Toribash. Returned by `ToribashControl.get_state()` and `ToribashControl.reset()`. 
 
 #### `limb_positions`
-A Numpy array of shape (2, `ToribashConstants.NUM_LIMBS`, 3) containing positions of 
+A Numpy array of shape (2, `constants.NUM_LIMBS`, 3) containing positions of 
 body parts of both players.
 
 #### `limb_velocities`
-A Numpy array of shape (2, `ToribashConstants.NUM_LIMBS`, 3) containing velocities of 
+A Numpy array of shape (2, `constants.NUM_LIMBS`, 3) containing velocities of 
 body parts of both players.
 
 #### `groin_rotations`
@@ -107,7 +107,7 @@ A Numpy array of shape (2, 4, 4) containing the rotation matrix of the groin (hi
 of both players.
 
 #### `joint_states`
-A Numpy array of shape (2, `ToribashConstants.NUM_CONTROLLABLES`) containing current
+A Numpy array of shape (2, `constants.NUM_CONTROLLABLES`) containing current
 states of the joints of both players
 
 #### `injuries`

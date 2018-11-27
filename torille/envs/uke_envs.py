@@ -63,12 +63,12 @@ class UkeToriEnv(ToriEnv):
 
         # Create action space only for the first player
         self.action_space = spaces.MultiDiscrete((
-            [torille.ToribashConstants.NUM_JOINT_STATES]*
-            torille.ToribashConstants.NUM_CONTROLLABLES
+            [torille.constants.NUM_JOINT_STATES]*
+            torille.constants.NUM_CONTROLLABLES
         ))
         # observation space for both players
         self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
-                            shape=(torille.ToribashConstants.NUM_LIMBS*3*2,))
+                            shape=(torille.constants.NUM_LIMBS*3*2,))
 
     def _preprocess_observation(self, state):
         # Give observation for both players
@@ -84,12 +84,12 @@ class UkeToriEnv(ToriEnv):
         # Add +1 to limb actions (to make [0,3] -> [1,4])
         if type(action) != list:
             action = list(action)
-        for i in range(torille.ToribashConstants.NUM_CONTROLLABLES):
+        for i in range(torille.constants.NUM_CONTROLLABLES):
             action[i] += 1
 
         if not self.random_uke:
             # Add "hold" actions for the (immobile) opponent
-            action = [action, [3]*torille.ToribashConstants.NUM_CONTROLLABLES]
+            action = [action, [3]*torille.constants.NUM_CONTROLLABLES]
             # Make hand grip actions for uke to be 0 (no grip)
             # Otherwise he will be stickier than tar
             action[1][-2] = 1
@@ -97,7 +97,7 @@ class UkeToriEnv(ToriEnv):
         else:
             # Add random actions for uke
             action = [action, [r.randint(1,4) for i in 
-                        range(torille.ToribashConstants.NUM_CONTROLLABLES)]]
+                        range(torille.constants.NUM_CONTROLLABLES)]]
         return action
 
     def _reward_function(self, old_state, new_state):
