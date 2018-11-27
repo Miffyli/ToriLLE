@@ -446,7 +446,7 @@ class ToribashControl:
     
     def make_actions(self, actions):
         """ 
-        Send given list of actions to the server.
+        Send given list of actions to Toribash.
         Parameters:
             actions: List of shape 2 x NUM_CONTROLLABLES, specifying joint states 
                      and hand gripping for both players.

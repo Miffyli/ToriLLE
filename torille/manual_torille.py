@@ -31,9 +31,11 @@ class ManualToribashControl(ToribashControl):
     Main class for playing Toribash manually.
 
     "Manually", meaning we launch the control script
-    manually in a legit Toribash game, it connects
+    manually in a Toribash game, it connects
     to this class and this class then controls main player.
-    Not to be used for training.
+    After game ends this class will kill the connection.
+
+
     """
     def __init__(self, port):
         """ 
@@ -44,11 +46,23 @@ class ManualToribashControl(ToribashControl):
         self.port = port
         self.connection = None
 
+        # Only included for compatibility with ToribashControl
+        self.requires_reset = False
+
     def _check_if_initialized(self):
         if self.connection is None:
             raise Exception("Not connected to Toribash instance")
 
     def init(self):
+        """
+        Override original init from ToribashControl, not
+        needed here
+        """
+        raise NotImplementedError("Not used with manual control. "+
+                                  "Use `wait_for_toribash()` instead")
+
+
+    def wait_for_toribash(self):
         """
         Actual init: Listen for incoming connection from 
         Toribash we start to control
@@ -81,12 +95,67 @@ class ManualToribashControl(ToribashControl):
         self._check_if_initialized()
         self.connection.close()
 
-    def make_actions(actions):
-        super().make_actions(actions)
+    def get_state(self):
+        """ 
+        Return state of the game (in prettier format)
+        Returns:
+            state: ToribashState representing the received state
+            terminal: If the ToribashState is terminal state
+        """
+        self._check_if_initialized()
+        
+        s, terminal, winner = self._recv_state()
+        s = ToribashState(s, winner)
+        return s, terminal
 
-        # TODO how does this work? We probably only send 
-        #      actions for one player. Take in actions 
-        #      for only one player 
+    def validate_actions(self, actions):
+        """ 
+        Check the validity of given actions (correct shape, correct range, 
+        etc) and throw errors accordingly
+        Parameters:
+            actions: List of length NUM_JOINTS+2, specifying joint states 
+                     and hand gripping for player 0.
+        Returns:
+            None. Raises an error if action is not valid
+        """
+        # Make sure we have list
+        if type(actions) != list and type(actions) != tuple:
+            raise ValueError("Actions should be a List (e.g. not numpy array)")
+        
+        # Check that we have correct number of states
+        if len(actions) != constants.NUM_CONTROLLABLES or 
+            raise ValueError("Actions should be a List of length %d"%
+                             NUM_CONTROLLABLES)
+        
+        # Check that all joint states are in {1,2,3,4}
+        for i in range(constants.NUM_CONTROLLABLES):
+            # Check both players at the same time
+            if (actions[i] > 4 or actions[i] < 1):
+                raise ValueError("Joint states should be in {1,2,3,4}. "+
+                    "Note: Gym environments take in {0,1,2,3}")
+
+    def make_actions(self, actions):
+        """ 
+        Send given actions to Toribash for player 0 (not Uke)
+        Parameters:
+            actions: List of NUM_CONTROLLABLES, specifying joint states 
+                     and hand gripping for player 0.
+        """
+        self._check_if_initialized()
+
+        # Validate actions, let it throw errors
+        self.validate_actions(actions)
+        
+        # Create deepcopy of the actions list 
+        # because we are about to modify it
+        actions = deepcopy(actions)
+
+        # Modify hand grips to be {0,1} rather than {1,2,3,4}
+        # Map {1,2} -> 0 , {3,4} -> 1
+        actions[-2] = 0 if actions[-2] < 3 else 1 
+        actions[-1] = 0 if actions[-1] < 3 else 1 
+
+        self._send_comma_list(self.connection, actions)
 
     def reset(self):
         raise Exception("Manual Toribash control can not be reset")
