@@ -28,7 +28,12 @@ from .torille import (ToribashControl, ToribashState,
 
 class ManualToribashControl(ToribashControl):
     """ 
-    Main class for playing Toribash manually
+    Main class for playing Toribash manually.
+
+    "Manually", meaning we launch the control script
+    manually in a legit Toribash game, it connects
+    to this class and this class then controls main player.
+    Not to be used for training.
     """
     def __init__(self, port):
         """ 
@@ -37,22 +42,44 @@ class ManualToribashControl(ToribashControl):
                   from Toribash
         """
         self.port = port
+        self.connection = None
 
-        super().__init__(**kwargs)
+    def _check_if_initialized(self):
+        if self.connection is None:
+            raise Exception("Not connected to Toribash instance")
 
     def init(self):
-        super().init()
+        """
+        Actual init: Listen for incoming connection from 
+        Toribash we start to control
+        """
 
-        # Login to the network
-        # TODO game complains that \login is only available
-        #      in multiplayer mode. Do we have to login through
-        #      tb_login.dat file? (it just is plain-text file...)
-        # TODO make sure "not-rendering" works (unlocked fps).
-        #      We could also consider using 
-        # TODO how to make sure we have logged in / room is valid /
-        #      we had permission to play
-        # TODO how do we know when it is our turn to play (the queue,
-        #      system in Toribash)
+        # Create socket for waiting for Toribash to connect
+        s = socket.socket()
+
+        # This allows rebinding to same address multiple times on *nix
+        # Otherwise you will get "address in use" if you launch multiple
+        # Toribash instances on same computer
+        # From Stackoverflow #6380057
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
+        s.bind(("",self.port))
+        s.settimeout(constants.TIMEOUT)
+        s.listen(1)
+        conn, addr = s.accept()
+        # Close the listener socket
+        s.close()
+        
+        # Set the timeout for connection 
+        conn.settimeout(constants.TIMEOUT)
+        self.connection = conn
+
+    def close(self):
+        """ 
+        Close connection to the controlled Toribash instance
+        """
+        self._check_if_initialized()
+        self.connection.close()
 
     def make_actions(actions):
         super().make_actions(actions)
@@ -62,8 +89,4 @@ class ManualToribashControl(ToribashControl):
         #      for only one player 
 
     def reset(self):
-        super().reset()
-
-        # TODO not available AFAIK, not even to op of the room.
-        #      Have reset instead to wait till next round starts?
-        #      Needs some work on the Lua side
+        raise Exception("Manual Toribash control can not be reset")

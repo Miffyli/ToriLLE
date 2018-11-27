@@ -258,7 +258,7 @@ class ToribashControl:
     
     def _check_if_initialized(self):
         if self.process is None:
-            raise ValueError("Controlled not initialized with `init()`")
+            raise Exception("Controlled not initialized with `init()`")
     
     def init(self):
         """ 
