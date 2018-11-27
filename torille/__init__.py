@@ -1,2 +1,2 @@
 from .torille import *
-from .multiplayer_torille import *
+from .manual_torille import *

@@ -26,27 +26,17 @@ from . import utils
 from .torille import (ToribashControl, ToribashState, 
                       ToribashSettings)
 
-class MultiplayerToribashControl(ToribashControl):
+class ManualToribashControl(ToribashControl):
     """ 
-    Main class for playing Toribash in multiplayer mode.
-
-    Toribash multiplayer _requires_ up-to-date-ish version
-    and login info (i.e. it has to call home), hence this has
-    been split into separate class rather than 
-    directly extending `ToribashControl`
+    Main class for playing Toribash manually
     """
-    def __init__(self, 
-                 username, 
-                 password,
-                 **kwargs):
+    def __init__(self, port):
         """ 
         Parameters:
-            username: Username used to login to Toribash network
-            password: Password used to login to Toribash network
-            **kwargs: Parameters fed to `ToribashControl.__init__`
+            port: Port to be listened for incoming connection
+                  from Toribash
         """
-        self.username = username
-        self.password = password
+        self.port = port
 
         super().__init__(**kwargs)
 
