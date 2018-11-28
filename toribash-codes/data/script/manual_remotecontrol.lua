@@ -1,10 +1,20 @@
 --[[
 A stripped-down version of remotecontrol.lua: Connects to a remote controller
 (via TCP), and starts sending observations and receiving commands for the local player 
-(not uke). Quits at the end of the game. 
+(not uke). Turns are ended manually by human player pressing SPACE.
+This allows more fine-tuned control of the character as well as helps
+with issues with step_game()
 
-This is meant to be used for e.g. multiplayer games where you manually launch your
-controller and this script to let the code play a game of multiplayer.
+This script is mainly designed to make it possible to play
+multiplayer games from Python
+
+Usage:
+    - Launch the remote controller that listens to connections 
+      to port specified below
+    - Launch this lua script in Toribash
+    - The remote end now receives states and sends back actions
+    - Press SPACE to continue to next turn
+    - Both scripts end once round finishes
 ]]
 
 -- Toribash attempts to find remote controller at this address+port.
@@ -12,7 +22,7 @@ controller and this script to let the code play a game of multiplayer.
 -- You remote control script has to listen connections to this port
 local CONNECT_IP = "127.0.0.1"
 local CONNECT_PORT = 7788
-local TIMEOUT = 100
+local TIMEOUT = 30
 
 -- This will be the TCP connection object
 local s = nil
@@ -166,9 +176,6 @@ local function simulation_next_turn()
     
     local actions = send_state_recv_actions(state)
     make_move(actions)
-
-    -- Proceed game
-    step_game()
 end
 
 --Starup
@@ -190,9 +197,6 @@ local function run_controlled()
 	end
 	
     s:settimeout(TIMEOUT)
-    
-    -- Receive handshake that we should start
-    local handshake = wait_for_data()
        
     -- Make sure there are no hooks with these names
     remove_hook("end_game", "remotecontrol")

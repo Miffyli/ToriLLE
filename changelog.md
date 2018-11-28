@@ -1,3 +1,11 @@
+###  ??? v1.0.0
+
+* Added possibility to "remote control" in multiplayer games
+  * Done via "manual_torille.py", where human player must manually 
+    launch the script in Toribash, which then connects to the remote 
+    controller
+* Refactoring code to avoid one huge file
+
 ### 8.11.2018 v0.9.9
 
 * Fixed Gym environments changing actions list in-place during call to `step`

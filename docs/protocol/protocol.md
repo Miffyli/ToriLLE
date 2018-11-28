@@ -42,7 +42,7 @@ send_render_settings([1 or 0])
 send_settings([some settings])
 while connection_alive:
     state = recv_state()
-    if state == "end"
+    if state == "end":
         read_winner()
         send_settings([some settings])
     else:

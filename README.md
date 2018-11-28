@@ -76,6 +76,13 @@ You can install ToriLLE without PyPI/pip with the following:
                to revert most of the changes and use game normally again.
 * Provide path the installed `toribash.exe` when creating `ToribashControl` objects (if you use provided Python library)
 
+## Playing in multiplayer
+
+**Note: Multiplayer does not work on Linux Wine!**
+
+Want to try your agents against human players in multiplayer? Check how [manual remote control](docs/manual_control.md) works.
+
+
 ## Documentation
 
 Examples in `examples` provide quickstart to how to use ToriLLE, and also show how to apply settings or 

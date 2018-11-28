@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 #
-#  torille_multiplayer.py
-#  Similar to torille.py (Python API to play Toribash), but specifically
-#  for multiplayer games which require additional care.
+#  manual_torille.py
+#  Similar to torille.py (Python API to play Toribash), but for stripped down,
+#  manual control: Human must launch the corresponding script in Toribash and 
+#  end turns manually, this part only receives states and sends actions.
 #
 #  Author: Anssi "Miffyli" Kanervisto, 2018
 #  
@@ -21,6 +22,9 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 #  
+import socket
+from copy import deepcopy
+
 from . import constants
 from . import utils
 from .torille import (ToribashControl, ToribashState, 
@@ -34,14 +38,12 @@ class ManualToribashControl(ToribashControl):
     manually in a Toribash game, it connects
     to this class and this class then controls main player.
     After game ends this class will kill the connection.
-
-
     """
-    def __init__(self, port):
+    def __init__(self, port=constants.PORT):
         """ 
         Parameters:
             port: Port to be listened for incoming connection
-                  from Toribash
+                  from Toribash (default: constants.py)
         """
         self.port = port
         self.connection = None
@@ -59,10 +61,10 @@ class ManualToribashControl(ToribashControl):
         needed here
         """
         raise NotImplementedError("Not used with manual control. "+
-                                  "Use `wait_for_toribash()` instead")
+                                  "Use `connect_to_toribash()` instead")
 
 
-    def wait_for_toribash(self):
+    def connect_to_toribash(self):
         """
         Actual init: Listen for incoming connection from 
         Toribash we start to control
@@ -92,8 +94,9 @@ class ManualToribashControl(ToribashControl):
         """ 
         Close connection to the controlled Toribash instance
         """
-        self._check_if_initialized()
-        self.connection.close()
+        if self.connection is not None:
+            self.connection.close()
+            self.connection = None
 
     def get_state(self):
         """ 
@@ -106,6 +109,11 @@ class ManualToribashControl(ToribashControl):
         
         s, terminal, winner = self._recv_state()
         s = ToribashState(s, winner)
+
+        # If game ended to this state, close connection
+        if terminal: 
+            self.close()
+
         return s, terminal
 
     def validate_actions(self, actions):
@@ -123,7 +131,7 @@ class ManualToribashControl(ToribashControl):
             raise ValueError("Actions should be a List (e.g. not numpy array)")
         
         # Check that we have correct number of states
-        if len(actions) != constants.NUM_CONTROLLABLES or 
+        if len(actions) != constants.NUM_CONTROLLABLES:
             raise ValueError("Actions should be a List of length %d"%
                              NUM_CONTROLLABLES)
         
@@ -159,3 +167,11 @@ class ManualToribashControl(ToribashControl):
 
     def reset(self):
         raise Exception("Manual Toribash control can not be reset")
+
+    def __del__(self):
+        """ 
+        Override destructor for ToribashControl (we do not have
+        process to control)
+        """
+        if self.connection is not None:
+            self.close()
