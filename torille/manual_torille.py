@@ -30,6 +30,11 @@ from . import utils
 from .torille import (ToribashControl, ToribashState, 
                       ToribashSettings)
 
+# TODO detect which player is the local player in multiplayer.
+#      (we could be controlling the "uke")
+# TODO Add "local player" to state (or change the first player to be 
+#      the local player)
+
 class ManualToribashControl(ToribashControl):
     """ 
     Main class for playing Toribash manually.
