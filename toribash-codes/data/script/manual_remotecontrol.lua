@@ -116,6 +116,8 @@ local function build_state()
         -- Injury
         table.insert(state, get_player_info(plridx).injury)
     end
+    -- Add current selected player
+    table.insert(state, get_world_state().selected_player)
     state = table.concat(state, ",")
     return state
 end

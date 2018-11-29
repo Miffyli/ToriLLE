@@ -62,6 +62,11 @@ class ToribashState:
         # Winner of the game (only defined at end of the games)
         # 0 = tie, 1 = player 1 won, 2 = player 2 won
         self.winner = winner
+        # Current selected/controlled player
+        # Not used in local play, since both characters can be controlled,
+        # but required in multiplayer to know which of the characters
+        # is the one we control
+        self.selected_player = None
         
         self.process_list(state)
         
@@ -90,6 +95,8 @@ class ToribashState:
         # Injuries
         self.injuries[0] = state_list[164]
         self.injuries[1] = state_list[329]
+        # Selected player
+        self.selected_player = state_list[330]
 
     def get_normalized_locations(self):
         """

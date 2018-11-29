@@ -54,6 +54,7 @@ while True:
     print("Player 1 groin rotations:\n"+str(state.groin_rotations[0]))
     print("Player 1 joint states: "+str(state.joint_states[0]))
     print("Player 1 injury: "+str(state.injuries[0]))
+    print("Selected player: %d" % state.selected_player)
     turn_number += 1
 
 # Close the connection.

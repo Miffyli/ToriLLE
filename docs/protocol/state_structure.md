@@ -139,6 +139,8 @@ Coordinates (x,y,z) are floats (decimals separated with a dot).
 327	=	 plr1 grip left hand state 
 328	=	 plr1 grip right hand state
 329	=	 plr1 injury
+
+330 =    selected player (from get_world_state() )
 ```
 
 States are one of {1,2,3,4} representing the state of joint, where:
