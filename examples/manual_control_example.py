@@ -14,7 +14,6 @@ def create_random_actions():
     Returns random actions for one player
     """
     ret = []
-    # Actions for both players
     for jointidx in range(NUM_CONTROLLABLES):
         ret.append(r.randint(1,4))
     return ret  

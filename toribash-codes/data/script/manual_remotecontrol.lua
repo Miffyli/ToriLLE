@@ -157,19 +157,20 @@ local function send_end_and_quit()
     s:close()
 end
 
--- Set joins according to given action
--- Actions is a list of joint states for plr0
+-- Set joins according to given action.
+-- We only receive actions for one player (the selected one)
 local function make_move(actions)
+    local selected_player = get_world_state().selected_player
     local offset = 1 -- +1 to make [0,...n] -> [1, ...n+1] for table indexing
     -- plr0 joint states
     for jointIdx = 0,NUM_JOINTS-1 do
-        set_joint_state(0, jointIdx, actions[jointIdx+offset])
+        set_joint_state(selected_player, jointIdx, actions[jointIdx+offset])
     end
     -- Hand grips
-    set_grip_info(0, BODYPARTS.L_HAND, actions[NUM_JOINTS+offset])
-    set_grip_info(0, BODYPARTS.R_HAND, actions[NUM_JOINTS+1+offset])
+    set_grip_info(selected_player, BODYPARTS.L_HAND, actions[NUM_JOINTS+offset])
+    set_grip_info(selected_player, BODYPARTS.R_HAND, actions[NUM_JOINTS+1+offset])
     
-    -- Note: No control of player 1 here, only player 2
+    -- Note: Only controlling one player here
 end
 
 -- Send state, get actions and set characters accordingly

@@ -26,6 +26,9 @@ as well as an account (only requires an username and password).
 The manual remote control has protocol similar to regular remote control.
 except only one player is controlled (hence takes actions only for one player).
 
+The controlled player is defined by `selected_player` in returned state, which is
+fixed in the multiplayer game (can be either one of the players).
+
 To play one game of Toribash with the remote control:
 
 1) Launch Toribash, enter a game (multiplayer or not) and launch `manual_remotecontrol.lua` script in Toribash
