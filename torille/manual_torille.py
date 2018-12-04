@@ -48,9 +48,6 @@ class ManualToribashControl(ToribashControl):
         self.port = port
         self.connection = None
 
-        # Only included for compatibility with ToribashControl
-        self.requires_reset = False
-
     def _check_if_initialized(self):
         if self.connection is None:
             raise Exception("Not connected to Toribash instance")
@@ -63,11 +60,14 @@ class ManualToribashControl(ToribashControl):
         raise NotImplementedError("Not used with manual control. "+
                                   "Use `connect_to_toribash()` instead")
 
-
-    def connect_to_toribash(self):
+    def connect_to_toribash(self, timeout=constants.TIMEOUT):
         """
         Actual init: Listen for incoming connection from 
         Toribash we start to control
+
+        Parameters:
+            timout: Seconds to wait for Toribash before throwing
+                    an exception. Default: constants.TIMEOUT
         """
 
         # Create socket for waiting for Toribash to connect

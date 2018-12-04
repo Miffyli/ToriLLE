@@ -96,7 +96,7 @@ class ToribashState:
         self.injuries[0] = state_list[164]
         self.injuries[1] = state_list[329]
         # Selected player
-        self.selected_player = state_list[330]
+        self.selected_player = int(state_list[330])
 
     def get_normalized_locations(self):
         """
