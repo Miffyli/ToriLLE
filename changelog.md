@@ -6,6 +6,7 @@
     controller
 * Refactoring code to avoid one huge file
 * Added match length, current frame and frames next turn to state
+* Added possibility to change game mod 
 
 ### 8.11.2018 v0.9.9
 

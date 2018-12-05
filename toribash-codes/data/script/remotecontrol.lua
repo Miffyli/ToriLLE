@@ -76,7 +76,10 @@ local draw_game = false;
 
 -- If != "None", will save replay into this file
 -- Given in settings.
-local replay_file = "None";
+local replay_file = "None"
+
+-- Defines the currently played mode
+local game_mod = "classic"
 
 -- Sleep function based on socket.select function
 -- From Stackoverflow #17987618
@@ -192,27 +195,38 @@ end
 local function recv_settings_and_apply()
     local settings = wait_for_data()
     settings = split_comma(settings)
-    -- Not very pretty, could be done in some neat list
-    -- But at least it is modifiable/readable ^^'
-    run_cmd("set matchframes "..settings[1])
-    -- We substract turnframes by one, because 
-    -- calling step_game causes one extra step
-    run_cmd("set turnframes "..settings[2]-1)
-    run_cmd("set engagedistance "..settings[3])
-    run_cmd("set engageheight "..settings[4])
-    run_cmd("set engagerotation "..settings[5])
-    run_cmd("set gravity "..settings[6].." "..settings[7].." "..settings[8])
-    run_cmd("set damage "..settings[9])
-    run_cmd("set dismemberment "..settings[10])
-    run_cmd("set dismemberthreshold "..settings[11])
-    run_cmd("set fracture "..settings[12])
-    run_cmd("set fracturethreshold "..settings[13])
-    run_cmd("set disqualification "..settings[14])
-    run_cmd("set dqflag "..settings[15])
-    run_cmd("set dqtimeout "..settings[16])
-    run_cmd("set dojotype "..settings[17])
-    run_cmd("set dojosize "..settings[18])
-    replay_file = settings[19]
+    
+    -- Set mode if it is different from current one
+    if (settings[21] ~= game_mod) then
+        game_mod = settings[21]
+        run_cmd("set mod "..game_mod)
+    end
+    
+    -- First check if we should change settings
+    if (settings[1] ~= "0") then
+        -- Not very pretty, could be done in some neat list
+        -- But at least it is modifiable/readable ^^'
+        run_cmd("set matchframes "..settings[2])
+        -- We substract turnframes by one, because 
+        -- calling step_game causes one extra step
+        run_cmd("set turnframes "..settings[3]-1)
+        run_cmd("set engagedistance "..settings[4])
+        run_cmd("set engageheight "..settings[5])
+        run_cmd("set engagerotation "..settings[6])
+        run_cmd("set gravity "..settings[7].." "..settings[8].." "..settings[9])
+        run_cmd("set damage "..settings[10])
+        run_cmd("set dismemberment "..settings[11])
+        run_cmd("set dismemberthreshold "..settings[12])
+        run_cmd("set fracture "..settings[13])
+        run_cmd("set fracturethreshold "..settings[14])
+        run_cmd("set disqualification "..settings[15])
+        run_cmd("set dqflag "..settings[16])
+        run_cmd("set dqtimeout "..settings[17])
+        run_cmd("set dojotype "..settings[18])
+        run_cmd("set dojosize "..settings[19])
+    end
+    -- Set replay file
+    replay_file = settings[20]
 end
 
 -- Send message indicating end of episode, and receive

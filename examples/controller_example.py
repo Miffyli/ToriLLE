@@ -17,7 +17,9 @@ DRAW_GAME = True
 controller = ToribashControl(draw_game = DRAW_GAME)
 
 # Set some settings. You can find more info on these from Toribash forums / game
-# How long one game is
+# First, we need to enable custom settings
+controller.settings.set("custom_settings", 1)
+# How long one game is 
 controller.settings.set("matchframes", 1000)
 # How many frames one action will be repeated for
 # AKA "frame skip", "action repeat"

@@ -147,6 +147,7 @@ class ToribashSettings:
     
     # Default settings
     DEFAULT_SETTINGS = OrderedDict([
+        ("custom_settings", 0),
         ("matchframes", 500),
         ("turnframes", 10), 
         ("engagement_distance", 100),
@@ -165,13 +166,18 @@ class ToribashSettings:
         ("disqualification_timeout", 0),  
         ("dojo_type", 0),
         ("dojo_size", 0),
-        ("replay_file", None)
+        ("replay_file", None),
+        ("mod", "classic")
     ])
     
     def __init__(self, **kwargs):
-        """ Create new settings, kwargs can be used to define settings """
+        """ 
+        Create new settings, kwargs can be used to define settings.
+        Parameters:
+            mod: The name of the mod to be loaded (default: "classic")
+            **kwargs: Custom settings
+        """
         self.settings = []
-        
         # Get settings from function call, otherwise get them from 
         # default settings
         for k,v in ToribashSettings.DEFAULT_SETTINGS.items():
@@ -182,8 +188,8 @@ class ToribashSettings:
         Checks that current given settings are valid for Toribash.
         Otherwise Toribash will go quiet, pout and then disappear :(
         """
-        # First 18 should be numbers
-        for i,value in enumerate(self.settings[:18]):
+        # 1-19 should be numbers
+        for i,value in enumerate(self.settings[1:19]):
             if not type(value) in (float, int): 
                 raise ValueError(("Setting {} was not of correct type: "+
                     "Expected float/int, got {}").format(
@@ -192,23 +198,23 @@ class ToribashSettings:
                     )
                 )
         
-        # 2nd value (turnframes) should be from interval [2,matchframes]
-        if self.settings[1] < 2 or self.settings[1] > self.settings[0]:
+        # 3rd value (turnframes) should be from interval [2,matchframes]
+        if self.settings[2] < 2 or self.settings[2] > self.settings[1]:
             raise ValueError("Setting 'turnframes' should be from interval "+
                           "[2,matchframes].")
 
-        # 19th value should be a string or None
-        if self.settings[18] is not None: 
-            if type(self.settings[18]) != str:
+        # 20th value should be a string or None
+        if self.settings[19] is not None: 
+            if type(self.settings[19]) != str:
                 raise ValueError("Setting 'replay_file' should be str or None,"+
-                                 " got %s" % type(self.settings[18])
+                                 " got %s" % type(self.settings[19])
                 )
             
-            # Remove commas from 19th value
-            if "," in self.settings[18]:
+            # Remove commas from 20th value
+            if "," in self.settings[19]:
                 warnings.warn("Commas ',' are not supported in settings. "+
                               "Removing.")
-                self.settings[18] = self.settings[18].replace(",", "")
+                self.settings[19] = self.settings[19].replace(",", "")
     
     def set(self, key, value):
         """ Set given setting to value """
@@ -219,7 +225,7 @@ class ToribashSettings:
         """ Get current value of the setting """
         return self.settings[list(ToribashSettings.DEFAULT_SETTINGS.keys()
                                   ).index(key)]
-    
+
     def __str__(self):
         return pprint.pformat(dict([(k,v) for k,v in zip(
                                     ToribashSettings.DEFAULT_SETTINGS.keys(),
@@ -278,7 +284,7 @@ class ToribashControl:
     def _check_if_initialized(self):
         if self.process is None:
             raise Exception("Controlled not initialized with `init()`")
-    
+
     def init(self):
         """ 
         Actual init: Launch the game process, wait for connection and
@@ -336,9 +342,7 @@ class ToribashControl:
             self.connection = conn
         # Send handshake 
         self._send_comma_list(self.connection, [int(self.draw_game)])
-        # Send initial settings
-        self.settings.validate_settings()
-        self._send_comma_list(self.connection, self.settings.settings)
+        self._send_settings()
 
     def close(self):
         """ Close the running Toribash instance and clean up """
@@ -395,7 +399,15 @@ class ToribashControl:
         # We need to add end of line for the luasocket "*l"
         data = ",".join(map(str, data)) + "\n"
         s.sendall(data.encode())
-        
+    
+    def _send_settings(self):
+        """ 
+        Send settings required upon new game
+        """
+        # Validate settings
+        self.settings.validate_settings()
+        self._send_comma_list(self.connection, self.settings.settings)
+
     def get_state(self):
         """ 
         Return state of the game (in prettier format)
@@ -422,10 +434,8 @@ class ToribashControl:
             raise Exception("Calling `reset()` is only allowed "+
                             "after terminal states")
 
-        # Validate settings
-        self.settings.validate_settings()
+        self._send_settings()
 
-        self._send_comma_list(self.connection, self.settings.settings)
         s,terminal = self.get_state()
         self.requires_reset = False
         return s

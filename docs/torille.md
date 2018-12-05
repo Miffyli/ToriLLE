@@ -119,6 +119,14 @@ A single integer or None, specifying the winner of the game.
 Only defined at the end of the game (state which was received at terminal state).
 0 = game was tie. 1 = player 1 won. 2 = player 2 won. None = Game didn't end.
 
+#### `selected_player`
+0 or 1, indicating which of the players is currently active.
+This is fixed in multiplayer game, and local player can be either one.
+
+#### `match_length`, `match_frame`, `frames_next_turn`
+Length of the game (in frames), number of frames played already and
+how many frames next turn will last.
+
 #### `get_normalized_locations()`
 Returns a (2, 2, NUM_LIMBS, 3) array, representing location of both players' 
 body parts, with respect to both players (first dimension).
@@ -144,6 +152,7 @@ OrderedDict defining the default settings of Toribash game:
 
 Name | Description | Type | Default
 ---- | ----------- | ---- | -------
+custom_settings | If following custom settings should be applied | {0,1} | 0 |
 matchframes | Length of an episode in frames | Integer | 500|
 turnframes | Number of frames per turn (aka frame-skip) | Integer (interval [2,matchframes]) | 10| 
 engagement_distance | Starting distance between characters | Integer | 100|
@@ -163,6 +172,8 @@ disqualification_timeout | How long one can touch ground before disqualified | I
 dojo_type | How battle arena works (see link below for more info) | Integer | 0|
 dojo_size | How large the arena is | Integer | 0|
 replay_file | If not equal to "None", Toribash will save replay of the played episode in `replay/[replay_file]` at end of the episode | String | "None"
+mod | Game mod to be played. Above settings will override mod's settings if `custom_settings` = 1 | String | "classic"
+
 
 See [this](http://forum.toribash.com/showthread.php?t=317900) Toribash topic for more info on settings.
 

@@ -64,7 +64,7 @@ Receive settings
 ----------------
 * Toribash waits for data from controller
 * Toribash attempts to parse received data as settings (`settings_structure.md`)
-* Toribash applies settings
+* Toribash applies settings and changes mod if necessary
 * Toribash starts a new game and proceeds to "Sharing state" 
 
 Sharing state
