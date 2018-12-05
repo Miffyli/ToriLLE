@@ -5,6 +5,7 @@
     launch the script in Toribash, which then connects to the remote 
     controller
 * Refactoring code to avoid one huge file
+* Added match length, current frame and frames next turn to state
 
 ### 8.11.2018 v0.9.9
 

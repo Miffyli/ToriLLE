@@ -141,6 +141,9 @@ Coordinates (x,y,z) are floats (decimals separated with a dot).
 329	=	 plr1 injury
 
 330 =    selected player (from get_world_state() )
+331 =    Match length in number of frames
+332 =    Number of frames played so far
+333 =    Number of frames in next turn
 ```
 
 States are one of {1,2,3,4} representing the state of joint, where:

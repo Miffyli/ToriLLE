@@ -163,8 +163,14 @@ local function build_state()
         -- Injury
         table.insert(state, get_player_info(plridx).injury)
     end
+    local worldstate = get_world_state()
     -- Add selected player to the state.
-    table.insert(state, get_world_state().selected_player)
+    table.insert(state, worldstate.selected_player)
+    -- Add number of frames in the game, frames passed 
+    -- and number of frames of next turn
+    table.insert(state, worldstate.game_frame)
+    table.insert(state, worldstate.match_frame)
+    table.insert(state, worldstate.match_turn_frame)
     state = table.concat(state, ",")
     return state
 end

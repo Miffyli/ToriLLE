@@ -84,7 +84,11 @@ while number_of_episodes < NUM_EPISODES:
     print("Player 1 groin rotations:\n"+str(state.groin_rotations[0]))
     print("Player 1 joint states: "+str(state.joint_states[0]))
     print("Player 1 injury: "+str(state.injuries[0]))
+    print("Match length: "+str(state.match_length))
+    print("Frames played: "+str(state.match_frame))
+    print("Frames next turn: "+str(state.frames_next_turn))
     turn_number += 1
+    input()
     
 # Close the environment
 controller.close()

@@ -42,7 +42,8 @@ NUM_SETTINGS = 19
 
 # Bodypart x,y,z + Bodypart x,y,z velocities + 
 # groin rotation + Joint states + hand grips + injuries + selected player
-STATE_LENGTH = (NUM_LIMBS*3*2)*2 + 16*2 + NUM_JOINTS*2 + 4 + 2 + 1
+# + frame info (x3)
+STATE_LENGTH = (NUM_LIMBS*3*2)*2 + 16*2 + NUM_JOINTS*2 + 4 + 2 + 1 + 3
 
 # Path to Toribash supplied with the wheel package
 # This should be {this file}/toribash/toribash.exe

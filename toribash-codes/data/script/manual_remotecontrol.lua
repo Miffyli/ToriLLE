@@ -118,6 +118,11 @@ local function build_state()
     end
     -- Add current selected player
     table.insert(state, get_world_state().selected_player)
+    -- Add number of frames in the game, frames passed 
+    -- and number of frames of next turn
+    table.insert(state, worldstate.game_frame)
+    table.insert(state, worldstate.match_frame)
+    table.insert(state, worldstate.match_turn_frame)
     state = table.concat(state, ",")
     return state
 end

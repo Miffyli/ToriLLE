@@ -67,7 +67,15 @@ class ToribashState:
         # but required in multiplayer to know which of the characters
         # is the one we control
         self.selected_player = None
-        
+
+        # Length of the game in number of frames
+        self.match_length = None
+        # Number of frames that have been played
+        self.match_frame = None
+        # Number of frames next turn will last
+        # (E.g. aikido mod defines varying number of turnframes)
+        self.frames_next_turn = None
+
         self.process_list(state)
         
     def process_list(self, state_list):
@@ -97,6 +105,10 @@ class ToribashState:
         self.injuries[1] = state_list[329]
         # Selected player
         self.selected_player = int(state_list[330])
+        # Frame info
+        self.match_length = int(state_list[331])
+        self.match_frame = int(state_list[332])
+        self.frames_next_turn = int(state_list[333])
 
     def get_normalized_locations(self):
         """
