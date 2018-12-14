@@ -209,7 +209,7 @@ local function recv_settings_and_apply()
         run_cmd("set matchframes "..settings[2])
         -- We substract turnframes by one, because 
         -- calling step_game causes one extra step
-        run_cmd("set turnframes "..settings[3]-1)
+        run_cmd("set turnframes "..settings[3])
         run_cmd("set engagedistance "..settings[4])
         run_cmd("set engageheight "..settings[5])
         run_cmd("set engagerotation "..settings[6])
@@ -268,6 +268,13 @@ local function make_move(actions)
     set_grip_info(1, BODYPARTS.R_HAND, actions[NUM_JOINTS+1+offset])
 end
 
+-- This is used to communicate between
+-- simulation_next_turn and check_if_should_step
+-- when game should be step forward.
+-- If we do this in simulation_next_turn, this causes
+-- extra frames per turn
+local should_step = false
+
 -- Send state, get actions and set characters accordingly
 local function simulation_next_turn()
     local state = build_state()
@@ -276,7 +283,14 @@ local function simulation_next_turn()
     make_move(actions)
 
     -- Proceed game
-    step_game()
+    should_step = true
+end
+
+local function check_if_should_step() 
+   if (should_step == true) then
+       should_step = false
+       step_game()
+   end
 end
 
 -- Executed after round is over (just start a new one)
@@ -288,6 +302,7 @@ local function finish_game(winType)
     send_end_recv_settings()
     -- We need to redo hooks
     remove_hook("enter_freeze", "remotecontrol_freeze")
+    remove_hook("draw3d", "remotecontrol")
     start_new_game()
 end
 
@@ -299,6 +314,7 @@ local first_game = true
 
 -- Start a single game
 local function start_game()
+    -- Check if we should receive settings instead of playing game
     if (first_game == true) then
         first_game = false
         -- Receive settings and apply them
@@ -309,8 +325,8 @@ local function start_game()
         -- 'reset' above will trigger it
         add_hook("end_game", "remotecontrol", finish_game)
     else
-        -- Check if we should receive settings instead of playing game
         add_hook("enter_freeze", "remotecontrol_freeze", simulation_next_turn)
+        add_hook("draw3d", "remotecontrol", check_if_should_step)
         -- make the first turn
         simulation_next_turn()
     end
@@ -381,6 +397,7 @@ local function run_controlled(configuration)
     remove_hook("new_game", "remotecontrol")
     remove_hook("enter_freeze", "remotecontrol_freeze")
     remove_hook("draw3d", "menu_closer")
+    remove_hook("draw3d", "remotecontrol")
     
     -- This hook is to close main manu
     -- It can prevent playing the game, especially if this 

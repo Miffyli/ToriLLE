@@ -7,7 +7,7 @@ Elements in the action list ([index] = [description]).
 ```
 0 = custom_settings (bool, {0,1}, if following settings should be applied)
 1 = matchframes (int, game default: 500. How long the match is in terms of frames)
-2 = turnframes (int from interval [2,matchframes], game default: 10. How many frames each action is repeated for (in DRL, this would be "frame skip"/"action repeat"))
+2 = turnframes (int from interval [1,matchframes], game default: 10. How many frames each action is repeated for (in DRL, this would be "frame skip"/"action repeat"))
 3 = engagement distance (int, game default: 100. Starting distance between players)
 4 = engagement height (int, game default: 0. Starting height of players)
 5 = engagement rotation (int, game default: 0. Starting rotation of players (in deg))

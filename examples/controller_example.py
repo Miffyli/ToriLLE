@@ -23,7 +23,7 @@ controller.settings.set("custom_settings", 1)
 controller.settings.set("matchframes", 1000)
 # How many frames one action will be repeated for
 # AKA "frame skip", "action repeat"
-controller.settings.set("turnframes", 2)
+controller.settings.set("turnframes", 1)
 # How far two players will spawn
 controller.settings.set("engagement_distance", 200)
 # Record replay file of the game for later playback

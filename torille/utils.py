@@ -49,7 +49,7 @@ def set_file_readonly(filepath):
         # Set to read only (for user, group and all)
         try:
             os.chmod(filepath, S_IREAD | S_IRGRP | S_IROTH)
-        except PermissionError as e:
+        except PermissionError:
             return False
         return True
     else:
