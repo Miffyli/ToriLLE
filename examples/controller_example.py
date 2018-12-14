@@ -90,7 +90,6 @@ while number_of_episodes < NUM_EPISODES:
     print("Frames played: "+str(state.match_frame))
     print("Frames next turn: "+str(state.frames_next_turn))
     turn_number += 1
-    input()
     
 # Close the environment
 controller.close()
