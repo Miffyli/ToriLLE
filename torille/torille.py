@@ -33,7 +33,6 @@ import pprint
 from filelock import FileLock
 import warnings
 from copy import deepcopy
-from stat import S_IREAD, S_IRGRP, S_IROTH
 
 from . import constants
 from . import utils

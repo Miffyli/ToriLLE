@@ -23,6 +23,7 @@
 import os
 import subprocess
 import random as r
+from stat import S_IREAD, S_IRGRP, S_IROTH
 
 from . import constants
 
@@ -47,8 +48,8 @@ def set_file_readonly(filepath):
     if os.path.isfile(filepath):
         # Set to read only (for user, group and all)
         try:
-            os.chmod(self.toribash_stderr_file, S_IREAD | S_IRGRP | S_IROTH)
-        except Exception as e:
+            os.chmod(filepath, S_IREAD | S_IRGRP | S_IROTH)
+        except PermissionError as e:
             return False
         return True
     else:
