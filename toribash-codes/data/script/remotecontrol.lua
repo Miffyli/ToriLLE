@@ -385,6 +385,10 @@ local function run_controlled(configuration)
 	end
 	
     s:settimeout(TIMEOUT)
+    -- Set TCP_NODELAY, which potentially could speed things up
+    -- (Disables Nagle's algorithm, which bunches up multiple packets 
+    -- before sending)
+    s:setoption("tcp-nodelay", true);
     
     -- Receive initial handshake, which determines 
     -- if we should display game or not
