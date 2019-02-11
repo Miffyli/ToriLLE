@@ -3,41 +3,42 @@
 #  gym_env.py
 #  ToriLLE available as OpenAI Gym Environment
 #
-#  Shoutout to GitHub user "ppaquette" for Gym-Doom, which was used 
+#  Shoutout to GitHub user "ppaquette" for Gym-Doom, which was used
 #  as a base here.
 #
 #  Author: Anssi "Miffyli" Kanervisto, 2018
-#  
+#
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 3 of the License, or
 #  (at your option) any later version.
-#  
+#
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-#  
+#
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-import gym 
+import gym
 from gym import spaces
 from .. import torille
 import numpy as np
-import sys
 from copy import deepcopy
 
+
 class ToriEnv(gym.Env):
-    """ 
+    """
     An (abstract) environment for Toribash environments.
     Needs implementations for:
         _preprocess_observation
         _preprocess_action
         _reward_function
     """
+
     def __init__(self, **kwargs):
         self.settings = torille.ToribashSettings(**kwargs)
         self.game = torille.ToribashControl(settings=self.settings)
@@ -52,15 +53,17 @@ class ToriEnv(gym.Env):
         self.just_created = True
 
         self.action_space = spaces.MultiDiscrete((
-                [torille.constants.NUM_JOINT_STATES]*
-                torille.constants.NUM_CONTROLLABLES)*2
+            [torille.constants.NUM_JOINT_STATES] *
+            torille.constants.NUM_CONTROLLABLES) * 2
         )
         # For both players, position of all joints
-        self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
-                    shape=(2,torille.constants.NUM_LIMBS*3))
+        self.observation_space = spaces.Box(
+            low=-30, high=30, dtype=np.float32,
+            shape=(2, torille.constants.NUM_LIMBS * 3)
+        )
 
     def _preprocess_observation(self, state):
-        """ 
+        """
         Preprocess ToribashState into more Numpyish
         Parameters:
             state: ToribashState
@@ -70,20 +73,20 @@ class ToriEnv(gym.Env):
         raise NotImplementedError
 
     def _preprocess_action(self, action):
-        """ 
+        """
         Preprocess actions from agents into appropiate actions for Toribash
         Parameters:
             action: Action according to action space
-        Returns: 
+        Returns:
             action: An appropiate action object for Torille (List of two Lists)
         """
         raise NotImplementedError
 
     def _reward_function(self, old_state, new_state):
-        """ 
-        Calculates reward 
+        """
+        Calculates reward
         Parameters:
-            old_state: Old (previous) observation. None if `new_obs` is 
+            old_state: Old (previous) observation. None if `new_obs` is
                        first observation
             new_state: Current observation
         Returns:
@@ -96,10 +99,12 @@ class ToriEnv(gym.Env):
             # We cannot send action as a first call to controller
             # We should instead call `reset`.
             # Inform and fail
-            raise Exception("`step` function was called "+
-                "before calling `reset`. Call `reset` after creating "+
-                "environment to get the first observation.")
-        
+            raise Exception(
+                "`step` function was called " +
+                "before calling `reset`. Call `reset` after creating " +
+                "environment to get the first observation."
+            )
+
         # Take copy of actions so we won't accidentally modify
         # it in place
         action = deepcopy(action)
@@ -121,7 +126,7 @@ class ToriEnv(gym.Env):
         if self.just_created:
             # Initialize game here to make it pickable before init
             self.game.init()
-            # The env was just created and we need to start 
+            # The env was just created and we need to start
             # by returning an observation.
             state, terminal = self.game.get_state()
             obs = self._preprocess_observation(state)
@@ -131,17 +136,17 @@ class ToriEnv(gym.Env):
         else:
             # Reset episode
             state = self.game.reset()
-            # Get the state and return it 
+            # Get the state and return it
             obs = self._preprocess_observation(state)
             self.old_state = state
         return obs
 
     def set_draw_game(self, visibility):
-        """ 
+        """
         Sets flag for drawing the game. Must be called before first reset()
         (drawing = render characters, limit FPS)
         Parameters:
-            visibility: True = game will be drawn. 
+            visibility: True = game will be drawn.
         """
         if not self.just_created:
             raise Exception("Can't change rendering after first `reset()`")
@@ -157,4 +162,3 @@ class ToriEnv(gym.Env):
     def seed(self, seed=None):
         # Can't set the seed in Toribash
         raise NotImplementedError
-        

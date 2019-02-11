@@ -1,10 +1,16 @@
 from gym.envs.registration import register
-from .solo_envs import (SoloToriEnv, reward_run_away, 
-                        reward_self_destruct, reward_stay_safe)
-from .uke_envs import (UkeToriEnv, reward_destroy_uke_with_penalty, 
-                        reward_destroy_uke)
-from .duo_envs import (DuoToriEnv, reward_injury_player1_pov,
-                       reward_win_player1_pov, reward_cuddles)
+from .solo_envs import (
+    SoloToriEnv, reward_run_away,
+    reward_self_destruct, reward_stay_safe
+)
+from .uke_envs import (
+    UkeToriEnv, reward_destroy_uke_with_penalty,
+    reward_destroy_uke
+)
+from .duo_envs import (
+    DuoToriEnv, reward_injury_player1_pov,
+    reward_win_player1_pov, reward_cuddles
+)
 
 # ---------------------------------------------------------------
 # Solo envs -----------------------------------------------------
@@ -57,7 +63,7 @@ register(
 # Uke envs ------------------------------------------------------
 # ---------------------------------------------------------------
 
-# DestroyUke-v0: Attack an immobile Uke, try to inflict as much 
+# DestroyUke-v0: Attack an immobile Uke, try to inflict as much
 #                damage as possible to it. Damage = Reward.
 register(
     id='Toribash-DestroyUke-v0',
@@ -70,7 +76,7 @@ register(
     },
 )
 
-# DestroyUke-v1: Attack an immobile Uke, try to inflict as much 
+# DestroyUke-v1: Attack an immobile Uke, try to inflict as much
 #                damage as possible to it. Damage = Reward.
 #                Reward penalty if player takes damage.
 register(
@@ -84,7 +90,7 @@ register(
     },
 )
 
-# DestroyUke-v2: Attack a _random_ Uke, try to inflict as much 
+# DestroyUke-v2: Attack a _random_ Uke, try to inflict as much
 #                damage as possible to it. Damage = Reward.
 #                Reward penalty if player takes damage.
 register(
@@ -103,7 +109,7 @@ register(
 # ---------------------------------------------------------------
 
 # DuoInjuryCombat-v0: Control both players. Receive reward from the
-#                     point of view of player 1: 
+#                     point of view of player 1:
 #                      + reward for player 2 receiving damage
 #                      - reward for player 1 receiving damage
 register(
@@ -117,7 +123,7 @@ register(
 )
 
 # DuoWinCombat-v0: Control both players. Receive reward from the
-#                  point of view of player 1: 
+#                  point of view of player 1:
 #                    +1 reward if player 1 won the game
 #                    -1 reward if player 2 won the game
 #                     0 reward if game was tie

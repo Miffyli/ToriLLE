@@ -3,36 +3,36 @@
 #  duo_envs.py
 #  ToriLLE Gym environments with duo tasks (e.g. combat )
 #
-#  Shout-out to GitHub user "ppaquette" for Gym-Doom, which was used 
+#  Shout-out to GitHub user "ppaquette" for Gym-Doom, which was used
 #  as a base here.
 #
 #  Author: Anssi "Miffyli" Kanervisto, 2018
-#  
+#
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 3 of the License, or
 #  (at your option) any later version.
-#  
+#
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-#  
+#
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
 
-import gym 
+import gym
 from gym import spaces
 from .gym_env import ToriEnv
 from .. import torille
-from math import log10, log
 import numpy as np
-import sys
+import math
+
 
 def reward_injury_player1_pov(old_state, new_state):
-    """ 
+    """
     Reward function from POV of player 1, based on injury/score:
         + reward for damaging player 2
         - reward for receiving damage
@@ -44,8 +44,9 @@ def reward_injury_player1_pov(old_state, new_state):
     reward = reward / 5000
     return reward
 
+
 def reward_win_player1_pov(old_state, new_state):
-    """ 
+    """
     +1/-1 reward based on who won the game, from the POV of player1:
         +1 if player1 won the game
         -1 if player1 lost the game
@@ -66,8 +67,9 @@ def reward_win_player1_pov(old_state, new_state):
     # Game has not ended yet
     return 0
 
+
 def reward_cuddles(old_state, new_state):
-    """ 
+    """
     Reward for players being close to each other (distance between
     center-of-masses are close to each other).
     Add penalty for damage caused to either side.
@@ -77,10 +79,10 @@ def reward_cuddles(old_state, new_state):
     reward = 0
     # Distance between center of masses
     coms = new_state.limb_positions.mean(axis=1)
-    coms_dist = np.sqrt(np.sum((coms[1]-coms[0])**2))
-    # Give reward relative to inverse of 
+    coms_dist = np.sqrt(np.sum((coms[1] - coms[0]) ** 2))
+    # Give reward relative to inverse of
     # coms_distance, scaled properly
-    reward += log10(1/coms_dist)
+    reward += math.log10(1 / coms_dist)
 
     # Penalty for injury
     plr2_injury_delta = new_state.injuries[1] - old_state.injuries[1]
@@ -91,21 +93,25 @@ def reward_cuddles(old_state, new_state):
 
     return reward
 
+
 class DuoToriEnv(ToriEnv):
     """ An extension to ToriEnv designed for controlling both players"""
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.reward_func = kwargs["reward_func"]
 
         # Create action/observation space again, but this time ravel'd
         self.action_space = spaces.MultiDiscrete((
-                [torille.constants.NUM_JOINT_STATES]*
-                torille.constants.NUM_CONTROLLABLES*2)
+            [torille.constants.NUM_JOINT_STATES] *
+            torille.constants.NUM_CONTROLLABLES * 2)
         )
         # For both players, relative position of both players
         # (Two perspectives, two players -> 4 * number of limbs)
-        self.observation_space = spaces.Box(low=-30, high=30, dtype=np.float32, 
-                    shape=(torille.constants.NUM_LIMBS*3*2*2,))
+        self.observation_space = spaces.Box(
+            low=-30, high=30, dtype=np.float32,
+            shape=(torille.constants.NUM_LIMBS * 3 * 2 * 2,)
+        )
 
     def _preprocess_observation(self, state):
         # Give positions of both players
@@ -122,7 +128,7 @@ class DuoToriEnv(ToriEnv):
         # Add +1 to limb actions (to make [0,3] -> [1,4])
         if type(action) != list:
             action = list(action)
-        for i in range(torille.constants.NUM_CONTROLLABLES*2):
+        for i in range(torille.constants.NUM_CONTROLLABLES * 2):
             action[i] += 1
         # Split into two lists
         action = [action[:torille.constants.NUM_CONTROLLABLES],

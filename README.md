@@ -83,7 +83,7 @@ You can install ToriLLE without PyPI/pip with the following:
 
 **Note: Multiplayer does not work on Linux Wine!**
 
-Want to try your agents against human players in multiplayer? Check how [manual remote control](docs/manual_control.md) works.
+Want to try your agents against human players in multiplayer? Check how [manual remote control](docs/manual_torille.md) works.
 
 
 ## Documentation
