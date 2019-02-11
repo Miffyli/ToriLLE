@@ -19,6 +19,7 @@ local events = {
 	"player_select",
 	"joint_select",
 	"body_select",
+	"spec_select_player",
 	"draw2d",
 	"draw3d",
 	"play", --Part of torishop.
@@ -34,6 +35,10 @@ local events = {
 	"spec_mouse_outside",
 	"command", --Called when an unused /command is entered.
 	"unload",
+	"draw_viewport",
+	"key_hold",
+	"pre_draw",
+	"new_game_mp"
 }
 
 function call_hook(event, ...)
@@ -82,7 +87,7 @@ end
 -- Replace some of the default functions --
 if (startup == nil) then
     socket = require("socket")
-
+    
 	local old_dofile = dofile
 	dofile = function (filename, datadir)
 		local dir = "./"
@@ -128,7 +133,6 @@ if (startup == nil) then
 	os.rename = nil
 	os.setlocale = nil
 	io.popen = nil
-	
+
 	startup = true
 end
-
