@@ -99,3 +99,11 @@ happens between rounds. If Toribash is ran for days and thousands games in row, 
 
 ToriLLE Python code attempts to set this file read-only to prevent Toribash from writing to the file.
 
+## Toribash launches with large window / limited FPS, or trying to launch vanilla Toribash has weird settings?
+
+With Steam version of Toribash / Toribash 5.4, settings file of for Toribash is stored in user's home directory under
+`Saved Games/Toribash/custom.cfg`. If this file exists, Toribash loads it instead of the local custom/default.cfg file.
+
+You have to manually reset this file according to your needs.
+
+

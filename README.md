@@ -74,6 +74,9 @@ You can install ToriLLE without PyPI/pip with the following:
 * Copy contents of `toribash-codes` to Toribash installation directory. Overwrite files
   * **Note:** This will prevent using that specific installation as a regular game. Remove/rename `profile.tbs` file 
                to revert most of the changes and use game normally again.
+  * **Note2:** Starting with Toribash 5.4 / Steam version of Toribash, settings file is stored in under user's directory at
+               `Saved Games/Toribash/custom.cfg`. Toribash loads this file by default if it finds it, which may cause 
+               ToriLLE to run in wrong settings.
 * Provide path the installed `toribash.exe` when creating `ToribashControl` objects (if you use provided Python library)
 
 ## Playing in multiplayer
