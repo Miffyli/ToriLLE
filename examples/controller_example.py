@@ -25,7 +25,7 @@ controller.settings.set("matchframes", 1000)
 # AKA "frame skip", "action repeat"
 controller.settings.set("turnframes", 1)
 # How far two players will spawn
-controller.settings.set("engagement_distance", 200)
+controller.settings.set("engagement_distance", 500)
 # Record replay file of the game for later playback
 # by setting this to something else than "None"/None.
 # This will record replay file under [toribash directory]/replay
