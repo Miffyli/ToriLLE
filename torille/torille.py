@@ -146,7 +146,7 @@ class ToribashSettings:
     
     # Default settings
     DEFAULT_SETTINGS = OrderedDict([
-        ("custom_settings", 0),
+        ("custom_settings", 1),
         ("matchframes", 500),
         ("turnframes", 10), 
         ("engagement_distance", 100),
@@ -214,6 +214,16 @@ class ToribashSettings:
                 warnings.warn("Commas ',' are not supported in settings. "+
                               "Removing.")
                 self.settings[19] = self.settings[19].replace(",", "")
+
+        # Mod should be a string
+        if type(self.settings[20]) != str: 
+            raise ValueError("Setting `mod` should be a str")
+
+        # custom_settings with non-default mod may cause 
+        # unwanted behaviour
+        if self.settings[0] != 0 and self.settings[20] != "classic":
+            warnings.warn("Using custom settings with non-classic mod "+
+                          "may cause unwanted behaviour.")
     
     def set(self, key, value):
         """ Set given setting to value """

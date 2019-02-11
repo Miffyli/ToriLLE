@@ -145,6 +145,9 @@ to modify the game's mechanics.
 
 **Note:** New settings can only be applied at `ToribashControl.reset(settings)`.
 
+**Note2:** If `custom_settings` is enabled, the game will set all the following settings
+to provided values. **This will override any settings from any loaded mod!**.
+
 #### `DEFAULT_SETTINGS` (class-variable)
 OrderedDict defining the default settings of Toribash game:
 
@@ -152,7 +155,7 @@ OrderedDict defining the default settings of Toribash game:
 
 Name | Description | Type | Default
 ---- | ----------- | ---- | -------
-custom_settings | If following custom settings should be applied | {0,1} | 0 |
+custom_settings | If following custom settings should be applied | {0,1} | 1 |
 matchframes | Length of an episode in frames | Integer | 500|
 turnframes | Number of frames per turn (aka frame-skip) | Integer (interval [1,matchframes]) | 10| 
 engagement_distance | Starting distance between characters | Integer | 100|
