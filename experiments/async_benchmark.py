@@ -99,7 +99,7 @@ def test_async(num_instances, warm_up_seconds, benchmark_seconds, match_frames,
 if __name__ == '__main__':
     args = parser.parse_args()
     
-    assert args.turn_frames > 1
+    assert args.turn_frames > 0
     assert args.turn_frames < args.match_frames
     assert args.engagement_distance > 0 
 
