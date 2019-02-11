@@ -302,7 +302,7 @@ local function finish_game(winType)
     send_end_recv_settings()
     -- We need to redo hooks
     remove_hook("enter_freeze", "remotecontrol_freeze")
-    remove_hook("draw3d", "remotecontrol")
+    remove_hook("pre_draw", "remotecontrol")
     start_new_game()
 end
 
@@ -326,7 +326,7 @@ local function start_game()
         add_hook("end_game", "remotecontrol", finish_game)
     else
         add_hook("enter_freeze", "remotecontrol_freeze", simulation_next_turn)
-        add_hook("draw3d", "remotecontrol", check_if_should_step)
+        add_hook("pre_draw", "remotecontrol", check_if_should_step)
         -- make the first turn
         simulation_next_turn()
     end
@@ -400,13 +400,13 @@ local function run_controlled(configuration)
     remove_hook("end_game", "remotecontrol")
     remove_hook("new_game", "remotecontrol")
     remove_hook("enter_freeze", "remotecontrol_freeze")
-    remove_hook("draw3d", "menu_closer")
-    remove_hook("draw3d", "remotecontrol")
+    remove_hook("pre_draw", "menu_closer")
+    remove_hook("pre_draw", "remotecontrol")
     
     -- This hook is to close main manu
     -- It can prevent playing the game, especially if this 
     -- script is launched from profile.tbs
-    add_hook("draw3d", "menu_closer", menu_closer_drawer)
+    add_hook("pre_draw", "menu_closer", menu_closer_drawer)
 end
 
 close_menu()
