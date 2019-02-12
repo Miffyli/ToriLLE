@@ -251,7 +251,7 @@ local function send_end_recv_settings()
     winner = world_state["winner"]+1
     state = "end:"..winner..","..state
 	
-    s:send(state.."\n")
+    local send_amount = s:send(state.."\n")
     if send_amount == nil then
         echo("Server error on send")
         run_cmd("quit")
