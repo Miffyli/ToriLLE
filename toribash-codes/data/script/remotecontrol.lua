@@ -93,7 +93,12 @@ function wait_for_data()
 	if result ~= nil then
 		return result
 	else 
-        echo("Server error: Timeout. ")
+        echo("Server error on receive.")
+        -- Using "/quit" command instead of os.exit
+        -- because os.exit seems to be overwritten/blocked
+        -- somewhere in the binary (does not work, even with
+        -- adjustement in startup.lua)
+        run_cmd("quit")
 	end
 end
 
@@ -183,6 +188,10 @@ end
 local function send_state_recv_actions(state)
     -- Send state
 	local send_amount = s:send(state.."\n")
+    if send_amount == nil then
+        echo("Server error on send.")
+        run_cmd("quit")
+	end
     
 	-- Wait for actions
 	local actions = wait_for_data(s)
@@ -241,7 +250,13 @@ local function send_end_recv_settings()
     -- (blue is uke, red is player)
     winner = world_state["winner"]+1
     state = "end:"..winner..","..state
-	s:send(state.."\n")
+	
+    s:send(state.."\n")
+    if send_amount == nil then
+        echo("Server error on send")
+        run_cmd("quit")
+	end
+    
     -- Receive new settings and apply them
     recv_settings_and_apply()
 end
