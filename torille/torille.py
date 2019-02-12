@@ -362,11 +362,6 @@ class ToribashControl:
 
             # Set the timeout for connection
             conn.settimeout(constants.TIMEOUT)
-            # Disable Nagle's algorithm (TCP_NODELAY), which
-            # potentially speeds up communication.
-            # May not have effect in our case, since we send everything in
-            # rather large buffers already
-            conn.setsockopt(socket.SOL_TCP, socket.TCP_NODELAY, 1)
 
             self.connection = conn
         # Send handshake
