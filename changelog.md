@@ -1,4 +1,4 @@
-###  ??? v1.0.0
+### 18.2.2019 v1.0.0
 
 * Added possibility to "remote control" in multiplayer games
   * Done via "manual_torille.py", where human player must manually 
