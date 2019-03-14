@@ -69,6 +69,21 @@ Throws an exception if action is invalid.
 Parameters:
 * actions: List of two lists with `constants.NUM_CONTROLLABLES` integers.
 
+#### `finish_game()`
+Finishes the current game by playing dummy actions until terminal state.
+
+NOTE: This has to be after `get_state()`
+
+#### `read_replay(replay_file)`
+Reads a replay file and runs it through Toribash, returning list of `ToribashState`s
+for each **frame** in the replay.
+
+Parameters:
+* replay_file: Path to replay file to be read inside Toribash replay directory "replay"
+
+Returns:
+* states: List of `ToribashState`s, one for each frame in the replay
+
 #### `get_state_dim()`
 Returns number of variables in state per player
 

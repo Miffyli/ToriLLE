@@ -24,6 +24,7 @@ Elements in the action list ([index] = [description]).
 18 = dojosize (int, game default: 0, Size of the dojo)
 19 = replay_file (str, default: "None", Replay file where to store rounds (only stored if doesn't match with string "None"))
 20 = mod (str, default: "classic", Name of the mod to be played. Note that settings above override mod's settings if custom_settings is 1)
+20 = replayed_file (str, default: "None", Name of the replay file to be played. If set, this will override other settings and load a replay instead)
 ```
 
 Floats have decimals separated with dot ".".

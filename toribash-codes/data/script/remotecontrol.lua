@@ -19,7 +19,7 @@ local s = nil
 
 local NUM_JOINTS = 20
 local NUM_LIMBS = 21
-local NUM_SETTINGS = 19
+local NUM_SETTINGS = 21
 
 -- Options for not rendering anything
 local options_no_rendering = { 
@@ -77,6 +77,11 @@ local draw_game = false;
 -- If != "None", will save replay into this file
 -- Given in settings.
 local replay_file = "None"
+
+-- If != false, indicates that we are replaying 
+-- a replay file, and string in this replay_file 
+-- defines the name of replay file we want to replay
+local replaying_replay = false;
 
 -- Defines the currently played mode
 local game_mod = "classic"
@@ -195,7 +200,13 @@ local function send_state_recv_actions(state)
     
 	-- Wait for actions
 	local actions = wait_for_data(s)
-	actions = split_comma_and_numerize(actions)
+    
+    -- If we are replaying a replay, do not try to 
+    -- split the "action" we received
+	if (replaying_replay == false) then
+        actions = split_comma_and_numerize(actions)
+    end
+    
     return actions
 end
 
@@ -204,6 +215,17 @@ end
 local function recv_settings_and_apply()
     local settings = wait_for_data()
     settings = split_comma(settings)
+    
+    -- Check if we have replay file we want to 
+    -- play through
+    if (settings[22] ~= "None") then
+        replaying_replay = settings[22]
+        -- Premature return: Rest of the settings should not affect
+        -- replays
+        do return end
+    else 
+        replaying_replay = false
+    end
     
     -- Set mode if it is different from current one
     if (settings[21] ~= game_mod) then
@@ -283,6 +305,17 @@ local function make_move(actions)
     set_grip_info(1, BODYPARTS.R_HAND, actions[NUM_JOINTS+1+offset])
 end
 
+-- This function is hooked with "enter_frame" when
+-- a replay is being played.
+local function replay_reading()
+    -- This will provide per-frame states
+    local state = build_state()
+    
+    local actions = send_state_recv_actions(state)
+    -- Do nothing with the actions
+    -- Replay is being played on its own
+end
+
 -- This is used to communicate between
 -- simulation_next_turn and check_if_should_step
 -- when game should be step forward.
@@ -314,10 +347,29 @@ local function finish_game(winType)
     if (replay_file ~= "None") then
         run_cmd("savereplay "..replay_file)
     end
-    send_end_recv_settings()
+    
     -- We need to redo hooks
-    remove_hook("enter_freeze", "remotecontrol_freeze")
-    remove_hook("pre_draw", "remotecontrol")
+    if (replaying_replay ~= false) then
+        remove_hook("enter_frame", "remotecontrol_replays")
+    else
+        remove_hook("enter_freeze", "remotecontrol_freeze")
+        remove_hook("pre_draw", "remotecontrol")
+    end
+    
+    -- Tell controller game ended, and request for new 
+    -- settings
+    send_end_recv_settings()
+    start_new_game()
+end
+
+-- Executed after replay finishes
+local function finish_replay() 
+    -- Redo hooks
+    remove_hook("enter_frame", "remotecontrol_replays")
+    remove_hook("leave_game",  "remotecontrol_replays")
+    -- Tell controller game ended, and request for new 
+    -- settings
+    send_end_recv_settings()
     start_new_game()
 end
 
@@ -329,21 +381,33 @@ local first_game = true
 
 -- Start a single game
 local function start_game()
-    -- Check if we should receive settings instead of playing game
-    if (first_game == true) then
-        first_game = false
-        -- Receive settings and apply them
-        recv_settings_and_apply()
-        -- Reset game to apply settings
-        run_cmd("reset")
-        -- Define hook for end game here, because otherwise
-        -- 'reset' above will trigger it
-        add_hook("end_game", "remotecontrol", finish_game)
-    else
-        add_hook("enter_freeze", "remotecontrol_freeze", simulation_next_turn)
-        add_hook("pre_draw", "remotecontrol", check_if_should_step)
-        -- make the first turn
-        simulation_next_turn()
+    -- Check if we analyzing a replay (requires different hooks)
+    if (replaying_replay ~= false) then
+        -- Hook enter-turns
+        add_hook("enter_frame", "remotecontrol_replays", replay_reading)
+        -- Load up replay
+        run_cmd("lr "..replaying_replay)
+        -- Hook end game here, otherwise it will trigger from the previous
+        add_hook("leave_game", "remotecontrol_replays", finish_replay)
+        -- No need to step game. Game begins already from starting the replay
+    else 
+        -- Proceed with standard playing
+        -- Check if we should receive settings instead of playing game
+        if (first_game == true) then
+            first_game = false
+            -- Receive settings and apply them
+            recv_settings_and_apply()
+            -- Reset game to apply settings
+            run_cmd("reset")
+            -- Define hook for end game here, because otherwise
+            -- 'reset' above will trigger it
+            add_hook("end_game", "remotecontrol", finish_game)
+        else
+            add_hook("enter_freeze", "remotecontrol_freeze", simulation_next_turn)
+            add_hook("pre_draw", "remotecontrol", check_if_should_step)
+            -- make the first turn
+            simulation_next_turn()
+        end
     end
 end
 

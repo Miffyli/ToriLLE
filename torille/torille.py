@@ -168,7 +168,8 @@ class ToribashSettings:
         ("dojo_type", 0),
         ("dojo_size", 0),
         ("replay_file", None),
-        ("mod", "classic")
+        ("mod", "classic"),
+        ("replayed_replay", None)
     ])
 
     def __init__(self, **kwargs):
@@ -219,6 +220,21 @@ class ToribashSettings:
                     "Commas ',' are not supported in settings. " +
                     "Removing.")
                 self.settings[19] = self.settings[19].replace(",", "")
+
+        # 22th value (replayed_replay) should be a string or None
+        if self.settings[21] is not None:
+            if type(self.settings[21]) != str:
+                raise ValueError(
+                    "Setting 'replayed_replay' should be str or None," +
+                    " got %s" % type(self.settings[21])
+                )
+
+            # Remove commas from 20th value
+            if "," in self.settings[21]:
+                warnings.warn(
+                    "Commas ',' are not supported in settings. " +
+                    "Removing.")
+                self.settings[21] = self.settings[21].replace(",", "")
 
         # Mod should be a string
         if type(self.settings[20]) != str:
@@ -304,7 +320,7 @@ class ToribashControl:
 
     def _check_if_initialized(self):
         if self.process is None:
-            raise Exception("Controlled not initialized with `init()`")
+            raise RuntimeError("Controlled not initialized with `init()`")
 
     def init(self):
         """
@@ -456,7 +472,7 @@ class ToribashControl:
 
         # Make sure we are allowed to do a reset
         if not self.requires_reset:
-            raise Exception("Calling `reset()` is only allowed " +
+            raise RuntimeError("Calling `reset()` is only allowed " +
                             "after terminal states")
 
         self._send_settings()
@@ -514,7 +530,7 @@ class ToribashControl:
 
         # Make sure we are allowed to make actions
         if self.requires_reset:
-            raise Exception("`reset()` must called after terminal state")
+            raise RuntimeError("`reset()` must called after terminal state")
 
         # Validate actions, let it throw errors
         self.validate_actions(actions)
@@ -534,6 +550,79 @@ class ToribashControl:
         actions = actions[0] + actions[1]
 
         self._send_comma_list(self.connection, actions)
+
+    def finish_game(self):
+        """
+        Finish the current game by doing dummy steps
+        until end of the game. 
+        Note: This should be after "get_state"
+        """
+        self._check_if_initialized()
+
+        # Check that we are not already in the end
+        if self.requires_reset: 
+            return
+
+        dummy_action = [[3] * constants.NUM_CONTROLLABLES,
+                        [3] * constants.NUM_CONTROLLABLES]
+
+        terminal = False
+        while not terminal:
+            self.make_actions(dummy_action)
+            _, terminal = self.get_state()
+
+    def read_replay(self, replay_file):
+        """
+        Go through given replay file in Toribash and get
+        the contained states/actions. Note that this will
+        reset current episode.
+
+        Parameters:
+            replay_file: String pointing at the replay file to be
+                         played (NOTE: This should be inside
+                         "replay" folder)
+        Returns:
+            states: List of ToribashStates, one per each frame
+                    in the game
+        """
+        self._check_if_initialized()
+
+        if not self.requires_reset:
+            raise RuntimeError("Reading replays is only allowed " +
+                               "between games (requires call to reset")
+
+        # Check that replay file actually exists
+        full_replay_path = os.path.join(
+            os.path.dirname(self.executable_path), "replay", replay_file
+        )
+
+        if not os.path.isfile(full_replay_path):
+            raise RuntimeError("Replay file %s does not exist" % replay_file)
+
+        # Change settings
+        self.settings.set("replayed_replay", replay_file)
+
+        states = []
+
+        # Begin playing episode
+        # These dummy actions are not actually being executed,
+        # but we send them to signal we received the state
+        dummy_action = [[3] * constants.NUM_CONTROLLABLES,
+                        [3] * constants.NUM_CONTROLLABLES]
+
+        # Reset and go through the episode till terminal states
+        states.append(self.reset())
+        terminal = False
+        while not terminal:
+            self.make_actions(dummy_action)
+            state, terminal = self.get_state()
+            states.append(state)
+
+        # Remove the replayed_replay setting
+        self.settings.set("replayed_replay", None)
+
+        # Return gathered states
+        return states
 
     def get_state_dim(self):
         """ Return size of state space per character """
