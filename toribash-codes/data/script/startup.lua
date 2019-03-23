@@ -118,6 +118,8 @@ if (startup == nil) then
 	
 	local old_require = require
 	require = function(path)
+        --package.cpath = "" --no loading of c modules. Removed for ToriLLE (we want to load socket)
+		package.path = "./data/script/?.lua;./data/script/modules/?.lua;./data/script/modules/?/init.lua"
 		old_require(path)
 	end
 
