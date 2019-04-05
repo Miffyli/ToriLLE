@@ -1,6 +1,6 @@
 # stable_baselines experiemnts
 
-Experiment code for running PPO and TRPO experiments on ToriLLE Gym environments with (stable_baselines)[https://github.com/hill-a/stable-baselines]
+Experiment code for running PPO and TRPO experiments on ToriLLE Gym environments with [stable_baselines](https://github.com/hill-a/stable-baselines)
 
 Requires `stable_baselines` installed and available with `import stable_baselines`. 
 
