@@ -1,10 +1,14 @@
 # Experiments
 
-This directory holds codes used for experiments and benchmarks in **version 1** of white paper [https://arxiv.org/abs/1807.10110](https://arxiv.org/abs/1807.10110)
+This directory holds codes used for experiments and benchmarks in **version 1 and 2** of white paper [https://arxiv.org/abs/1807.10110](https://arxiv.org/abs/1807.10110)
+
+## `ppo_turnframes/`
+
+Code used to study effect of different number of frames between turns (with Tensorforce PPO agents)
 
 ## `a2c/`
 
-Implementation of A2C and training code used to do A2C experiments in the white paper. 
+Implementation of A2C and training code used to do A2C experiments in the white paper version 1. 
 
 See `python3 a2c_training.py -h` for arguments.
 
