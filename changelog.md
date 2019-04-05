@@ -1,3 +1,8 @@
+### ?.?.2019 v1.0.1
+
+* Added (experimental) code for going through replay files
+* Added new experiment codes (stable_baselines and rlkit experiments)
+
 ### 18.2.2019 v1.0.0
 
 * Added possibility to "remote control" in multiplayer games
