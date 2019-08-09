@@ -317,6 +317,10 @@ class ToribashControl:
         # anybody calling using this interface
         # calls `reset` at appropiate times
         self.requires_reset = False
+        # Same for get_state/make_actions loop.
+        # If False, make_actions should be next call. 
+        # If True, get_state should be next call.
+        self.requires_get_state = False
 
     def _check_if_initialized(self):
         if self.process is None:
@@ -380,6 +384,9 @@ class ToribashControl:
             conn.settimeout(constants.TIMEOUT)
 
             self.connection = conn
+        # Set get_state to be first call
+        self.requires_get_state = True
+
         # Send handshake
         self._send_comma_list(self.connection, [int(self.draw_game)])
         self._send_settings()
@@ -458,6 +465,12 @@ class ToribashControl:
         """
         self._check_if_initialized()
 
+        if not self.requires_get_state:
+            raise RuntimeError(
+                "`get_state()` or `reset()` must be followed by `make_actions`"
+            )
+        self.requires_get_state = False
+
         s, terminal, winner = self._recv_state()
         s = ToribashState(s, winner)
         return s, terminal
@@ -479,6 +492,10 @@ class ToribashControl:
 
         s, terminal = self.get_state()
         self.requires_reset = False
+
+        # Make action to be next call
+        self.requires_get_state = False
+
         return s
 
     def validate_actions(self, actions):
@@ -530,7 +547,12 @@ class ToribashControl:
 
         # Make sure we are allowed to make actions
         if self.requires_reset:
-            raise RuntimeError("`reset()` must called after terminal state")
+            raise RuntimeError("`reset()` must be called after terminal state")
+        if self.requires_get_state:
+            raise RuntimeError(
+                "`get_states()` must be called after reset or making actions"
+            )
+        self.requires_get_state = True
 
         # Validate actions, let it throw errors
         self.validate_actions(actions)
