@@ -1,3 +1,7 @@
+### v1.0.2
+
+* Added state-machine to make sure actions/states are handled in right order.
+
 ### 5.4.2019 v1.0.1
 
 * Added (experimental) code for going through replay files

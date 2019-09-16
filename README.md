@@ -70,7 +70,7 @@ env.close()
 
 You can install ToriLLE without PyPI/pip with the following:
 
-* Install [Toribash](www.toribash.com/)
+* Install [Toribash](http://toribash.com/) (note: Only Steam version may be up to date)
 * Copy contents of `toribash-codes` to Toribash installation directory. Overwrite files
   * **Note:** This will prevent using that specific installation as a regular game. Remove/rename `profile.tbs` file 
                to revert most of the changes and use game normally again.
