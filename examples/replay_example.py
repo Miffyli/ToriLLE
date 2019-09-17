@@ -21,7 +21,6 @@ controller.init()
 
 # `init()` begins a new game, and we need to reach end
 # of the episode to be able to start with a replay
-_ = controller.get_state()
 controller.finish_game()
 
 # Read the replay file and go through it.

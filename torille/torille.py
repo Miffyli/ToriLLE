@@ -318,7 +318,7 @@ class ToribashControl:
         # calls `reset` at appropiate times
         self.requires_reset = False
         # Same for get_state/make_actions loop.
-        # If False, make_actions should be next call. 
+        # If False, make_actions should be next call.
         # If True, get_state should be next call.
         self.requires_get_state = False
 
@@ -486,15 +486,14 @@ class ToribashControl:
         # Make sure we are allowed to do a reset
         if not self.requires_reset:
             raise RuntimeError("Calling `reset()` is only allowed " +
-                            "after terminal states")
+                               "after terminal states")
 
         self._send_settings()
 
+        self.requires_get_state = True
+
         s, terminal = self.get_state()
         self.requires_reset = False
-
-        # Make action to be next call
-        self.requires_get_state = False
 
         return s
 
@@ -576,19 +575,22 @@ class ToribashControl:
     def finish_game(self):
         """
         Finish the current game by doing dummy steps
-        until end of the game. 
-        Note: This should be after "get_state"
+        until end of the game.
         """
         self._check_if_initialized()
 
         # Check that we are not already in the end
-        if self.requires_reset: 
+        if self.requires_reset:
             return
 
         dummy_action = [[3] * constants.NUM_CONTROLLABLES,
                         [3] * constants.NUM_CONTROLLABLES]
 
         terminal = False
+        # Start with get_state if we need it
+        if self.requires_get_state:
+            _, terminal = self.get_state()
+
         while not terminal:
             self.make_actions(dummy_action)
             _, terminal = self.get_state()
