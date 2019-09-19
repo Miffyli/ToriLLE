@@ -1,4 +1,4 @@
-### v1.0.2
+### 19.9.2019 v1.0.2
 
 * Added state-machine to make sure actions/states are handled in right order.
 

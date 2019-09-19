@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="torille",
-    version="1.0.1",
+    version="1.0.2",
     author="Anssi 'Miffyli' Kanervisto",
     author_email="anssk@cs.uef.fi",
     description="Toribash as an agent learning environment",
