@@ -125,11 +125,11 @@ If you wish to modify ToriLLE or use other language to control Toribash instance
 We wouldn't mind a citation if you find ToriLLE useful in your work. It also helps us to see what people have been up to!
 
 ```
-@article{kanervisto2018torille,
-  author = {Anssi Kanervisto and Ville Hautam{\"a}ki},
-  title = {ToriLLE: Learning Environment for Hand-to-Hand Combat},
-  year = {2018},
-  journal = {arXiv preprint arXiv:1807.10110},
+@inproceedings{kanervisto2019torille,
+  title={ToriLLE: Learning Environment for Hand-to-Hand Combat},
+  author={Kanervisto, Anssi and Hautam{\"a}ki, Ville},
+  booktitle={2019 IEEE Conference on Games (CoG)},
+  year={2019},
 }
 ```
 
