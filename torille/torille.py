@@ -96,8 +96,8 @@ class ToribashState:
         self.groin_rotations[1] = np.array(state_list[291:307]).reshape(4, 4)
 
         # Joint states (inc. hand grips)
-        self.joint_states[0] = np.array(state_list[142:164], dtype=np.int)
-        self.joint_states[1] = np.array(state_list[307:329], dtype=np.int)
+        self.joint_states[0] = np.array(state_list[142:164], dtype=int)
+        self.joint_states[1] = np.array(state_list[307:329], dtype=int)
         # Injuries
         self.injuries[0] = state_list[164]
         self.injuries[1] = state_list[329]

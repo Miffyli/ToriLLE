@@ -45,7 +45,7 @@ class ToribashA2C:
         self.input_s = tf.placeholder(np.float32, [None, self.num_input],
                                        name="input_s")
         # Integer values in range [0, num_joint_states]
-        self.input_a = tf.placeholder(np.int32, [None, num_joints],
+        self.input_a = tf.placeholder(int32, [None, num_joints],
                                        name="input_a")
         
         # Will be used in the network
