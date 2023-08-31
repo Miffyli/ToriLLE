@@ -1,0 +1,23 @@
+gamerule
+   matchframes 560
+   turnframes 40
+   flags 7
+   dismemberment 1
+   fracture 0
+   disqualification 1
+   dqtimeout 40
+   dqflag 1
+   dismemberthreshold 200
+   fracturethreshold 150
+   dojotype 1
+   dojosize 450
+   engagedistance 200
+   engageheight 0
+   engagerotation 0
+   engagespace 0
+   engageplayerpos 
+   engageplayerrot 0,0,0,0,0,0
+   damage 0
+   gravity 0.00 0.00 -20.00
+   sumo 1
+   rpg 0

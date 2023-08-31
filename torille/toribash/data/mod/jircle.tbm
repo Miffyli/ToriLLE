@@ -1,0 +1,31 @@
+#!/usr/bin/toribash
+#### Created with ModEditor by DeFransen ####
+
+
+gamerule
+engageplayerpos 0
+   damage 0
+   dismemberment 1
+   dismemberthreshold 100
+   disqualification 0
+   dojosize 200
+   dojotype 1
+   dqflag 0
+   dqtimeout 0
+   engagedistance 80
+   engageheight 0
+   engagerotation 0
+   engagespace 0
+   flags 2
+   fracture 0
+   gravity 0 0 -9.82
+   matchframes 1000
+   rpg 0
+   sumo 1
+   turnframes 70
+
+
+# for all players
+
+
+

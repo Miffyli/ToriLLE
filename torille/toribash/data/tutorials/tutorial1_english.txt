@@ -1,0 +1,35 @@
+#PLAYER MESSAGES
+INTROSENSEI1	... And that is how you become a great fighter.
+INTROSENSEI2	Through training and hard work, you can achieve truly amazing results!
+INTROPLAYER1	But Sensei, how would you know anything about fighting - you can barely walk on your own!
+INTROSENSEI3	Huh, young one, I haven't always been old.
+INTROSENSEI4	There was a  time, not so long ago, when I was just as young and naive as you are now...
+INTROFIGHTSENSEI1	My last fight, that was big.
+INTROFIGHTSENSEI2	Following my master's guidance, I stayed concentrated during the whole fight.
+INTROFIGHTSENSEI3	I kept an eye out for my opponent's weak spots - and I saw every one of them.
+INTROFIGHTSENSEI4	I was swift like a wild animal.
+INTROFIGHTSENSEI5	He couldn't see my attacks coming, and it seemed like an easy win.
+INTROFIGHTSENSEI6	My movements were perfect and I was going to win, but then something completely unexpected happened...
+INTROFIGHTSENSEI7	Just as I was about to defeat my opponent, my knee broke, ruining my chances.
+INTROENDPLAYER1	I'd rage and call that guy a lucker and then tell him I'd beat him next time I face him!
+INTROENDPLAYER2	I would also tell him that his mommy is a-
+INTROENDSENSEI1	No-no-no, my young student. Your defeats teach you just as much of a lesson as your victories do.
+INTROENDPLAYER3	So is that why you're using a stick, master? Your leg, does it still hurt?
+INTROENDSENSEI2	Oh no, you are actually healed after every fight.
+INTROENDSENSEI3	It's just that, I uh, I look more respectable with a stick-
+INTROENDSENSEI4	eeh, why are you even asking? ...Doesn't matter! We've been slacking for too long now!
+INTROENDSENSEI5	If you want to become a truly good fighter, you need to train; Not sit on a bench all the time!
+#
+#HINT MESSAGES
+CAMERAHINT1	Move your CAMERA using ~W~ ~A~ ~S~ ~D~ keys.
+CAMERAHINT2	To adjust camera height, hold ~SHIFT~ while moving your camera.
+CAMERAHINT3	You can also control the camera by right-clicking anywhere with your mouse.
+CONTROLSHINT1	In Toribash, you control your character by modifying joint states on its body.
+CONTROLSHINT2	There are four joint states - HOLD, RELAX, CONTRACT and EXTEND.\nCombining them results in unique moves that make each fight special.
+CONTROLSHINT3	Click on Sensei's knee to change its state to EXTENDING and kick the opponent.
+CONTROLSHINT4	You can also control your joints quicker by using keyboard hotkeys.
+CONTROLSHINT5	To change all joints' states at once to either HOLD or RELAX, press ~C~
+CONTROLSHINT6	Hover over any joint and press ~X~ to toggle between its HOLD and RELAX states.
+CONTROLSHINT7	To switch between CONTRACTING and EXTENDING states, press ~Z~ while hovering over a joint.
+QIHINT1	Your Toribash experience is measured in QI. For every fight you play, you get 1 QI.
+QIHINT2	The more Qi you get, the better BELT you receive and the more customization items will become available for purchase.

@@ -1,0 +1,67 @@
+#Mod by Hucota7
+#############
+
+gamerule
+engageplayerpos 0
+ed 4100
+eh 870
+matchframes 800
+turnframes 30
+dq 1
+friction 0
+
+env_obj 1
+    shape box
+    pos 1 6.25 3
+    color 0 0 1 1
+    rot -20 0 0
+    sides 3.25 33.75 0.25
+    material steel
+    mass 0.1
+    flag 8
+#END 1
+
+env_obj 2
+    shape box
+    pos 1 -6.25 3
+    color 1 0 0 1
+    rot 20 0 0
+    sides 3.25 33.75 0.25
+    material steel
+    mass 0.1
+    flag 8
+#END 2
+
+env_obj 3
+#Uke's sled
+    shape box
+    pos 1 -20.75 8.75
+    color 0 0 1 1
+    rot 20 0 0
+    sides 2 2.25 0.10
+    material steel
+    mass 0.1
+    flag 0
+#END 3
+
+env_obj 4
+#Tori's sled
+    shape box
+    pos 1 20.75 8.75
+    color 1 0 0 1
+    rot -20 0 0
+    sides 2 2.25 0.10
+    material steel
+    mass 0.1
+    flag 0
+#END 4
+
+env_obj 5
+    shape box
+    pos 1 0 1.25
+    color 1 1 1 1
+    rot 0 0 0
+    sides 4.25 21.5 2.5
+    material steel
+    mass 0.1
+    flag 8

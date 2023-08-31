@@ -1,0 +1,149 @@
+gamerule
+engageplayerpos 0
+engagedistance 1800
+dismemberthreshold 200
+dismember 1
+fracture 0
+turnframes 10,10,20,20,30,50,50,50,60,100
+matchframes 300
+sumo 1
+gravity 0 0 -17
+disqualification 0
+
+
+env_obj 9
+    shape sphere
+    pos 1 -11.988 13
+    color 0 0 0
+    rot 0 0 0
+    sides 0.98 0.98 0.98
+    material steel
+    mass 0.7
+    flag 0
+
+env_obj 8
+    shape sphere
+    pos 3.2 -11.95 13
+    color 0 0 0
+    rot 0 0 0
+    sides 0.9 0.9 0.9
+    material steel
+    mass 0.5
+    flag 0
+
+env_obj 6
+    shape box
+    pos 1 -13 1.7
+    color 0.8 0.7 07
+    rot 0 0 0
+    sides 6.6 0.03 3.4
+    material flesh
+    mass 0.002
+    flag 8
+
+env_obj 7
+    shape sphere
+    pos -1 -11.988 13
+    color 0 0 0
+    rot 0 0 0
+    sides 0.9 0.9 0.9
+    material steel
+    mass 0.5
+    flag 0
+	
+env_obj 5
+    shape box
+    pos 1 -10.99 1.95
+    color 0.5 0.5 0.5
+    rot 0 0 0
+    sides 6.7 0.005 3.9
+    material flesh
+    mass 0.002
+    flag 3
+
+
+env_obj 4
+    shape box
+    pos 1 -10.615 3.85
+    color 0.1 0.3 0.8
+    rot 0 0 0
+    sides 6.7 0.73 0.1
+    material steel
+    mass 0.005
+    flag 8
+	
+
+	
+env_obj 3
+    shape box
+    pos -2.3 -10.615 1.9
+    color 0.1 0.3 0.8
+    rot 0 0 0
+    sides 0.1 0.73 3.8
+    material steel
+    mass 0.005
+    flag 8
+
+
+env_obj 2
+    shape box
+    pos 4.3 -10.615 1.9
+    color 0.1 0.3 0.8
+    rot 0 0 0
+    sides 0.1 0.73 3.8
+    material steel
+    mass 0.005
+    flag 8
+
+env_obj 1
+    shape sphere
+    pos 1 5.80 0.9
+    color 0.4 0.4 0.5
+    rot 0 0 0
+    sides 0.26 0.2 1.0
+    material flesh
+    mass 0.001
+    flag 0
+	
+
+
+
+player 0
+
+body stomach
+force 0 10 1
+
+body breast
+force 0 10 1
+
+body chest
+force 0 10 1
+
+body groin
+force 0 10 1
+
+body r_pecs
+force 0 10 1
+
+body l_pecs
+force 0 10 1
+
+body r_biceps
+force 0 20 1
+
+body l_biceps
+force 0 20 1
+
+body r_thigh
+force 0 20 1
+
+body l_thigh
+force 0 20 1
+
+body l_leg
+force 0 30 1
+
+body r_leg
+force 0 30 1
+
+

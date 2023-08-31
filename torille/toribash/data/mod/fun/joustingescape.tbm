@@ -1,0 +1,190 @@
+gamerule
+engageplayerpos 0
+engagedistance 1000
+dismember 0
+dismemberthreshold 200
+fracture 1
+fracturethreshold 200
+turnframes 30
+matchframes 300
+sumo 1
+dojosize 855
+dojotype 1
+dq 0
+timeout 100
+blood
+	color 0 0 1
+body stomach 
+	force 0 10 1
+body breast
+	force 0 10 1
+body chest
+	force 0 10 1
+body groin
+	force 0 10 1
+body r_pecs
+	force 0 20 1
+body l_pecs
+	force 0 20 1
+body r_thigh
+	force 0 20 1
+body l_thigh
+	force 0 20 1
+body l_leg
+	force 0 30 00
+body r_leg
+	force 0 30 00
+
+
+
+env_obj 1
+    shape sphere
+    pos 1 -0.125 5.125
+    color 0 2 0 0.5
+    rot 0 0 0
+    sides 1.5 1 0
+    thrust 1 0 0 2.6
+    friction 0
+    mass 0.1
+    flag 16
+
+env_obj 2
+    shape cylinder
+    pos 1 -0.125 3.4375
+    color 0 0 0 1
+    rot 0 0 0
+    sides 0.0625 0.1875 0.125
+    material steel
+    mass 0.01
+    flag 0
+
+env_obj 3
+    shape cylinder
+    pos 1 -0.125 3.0625
+    color 0 0 0 1
+    rot 0 0 0
+    sides 0.0625 0.1875 0.125
+    material steel
+    mass 0.01
+    flag 0
+
+env_obj 4
+    shape cylinder
+    pos 1 -0.125 2.6875
+    color 0 0 0 1
+    rot 0 0 0
+    sides 0.0625 0.1875 0.125
+    material steel
+    mass 0.01
+    flag 0
+
+env_obj 5
+    shape cylinder
+    pos 1 -0.125 2.3125
+    color 0 0 0 1
+    rot 0 0 0
+    sides 0.0625 0.1875 0.125
+    material steel
+    mass 0.01
+    flag 0
+
+env_obj 6
+    shape cylinder
+    pos 1 -0.125 1.9375
+    color 0 0 0 1
+    rot 0 0 0
+    sides 0.0625 0.1875 0.125
+    material steel
+    mass 0.01
+    flag 0
+
+env_obj 7
+    shape box
+    pos 1 -0.125 0.4
+    color 3 3 3 1
+    rot 0 0 0
+    sides 0.25 0.25 0.7
+    material steel
+friction 0
+bounce 0
+    mass 0.1
+    flag 8
+
+env_obj 8
+    shape box
+    pos 1 -0.125 0.75
+    color 0 0 0 1
+    rot 0 0 0
+    sides 7 0.25 0
+    material steel
+friction 0
+bounce 0
+    mass 10
+    flag 20
+
+env_obj 9
+    shape box
+    pos 4.25 0.25 1.5
+    color  0 0 2 0.5
+    rot 0 0 0
+    sides 0.5 0.5 3
+    material steel
+    mass 60000
+    flag 0
+
+env_obj 10
+    shape box
+    pos -2.25 -0.5 1.5
+    color 2 0 0 0.5
+    rot 0 0 0
+    sides 0.5 0.5 3
+    material steel
+    mass 60000
+    flag 0
+
+env_obj_joint 1 1 2
+pos 1 -0.125 3.61
+axis 1 1 1
+range 5 -5
+strength 0
+velocity 0
+visible 0
+
+env_obj_joint 2 2 3
+pos 1 -0.125 3.23
+axis 1 1 1
+range 5 -5
+strength 0
+velocity 0
+visible 0
+
+env_obj_joint 3 3 4
+pos 1 -0.125 2.85
+axis 1 1 1
+range 5 -5
+strength 0
+velocity 0
+visible 0
+
+env_obj_joint 4 4 5
+pos 1 -0.125 2.47
+axis 1 1 1
+range 5 -5
+strength 0
+velocity 0
+visible 0
+
+env_obj_joint 5 5 6
+pos 1 -0.125 2.09
+axis 1 1 1
+range 5 -5
+strength 0
+velocity 0
+visible 0
+
+env_obj_joint 6 8 7
+pos 1 -0.125 0.4
+axis 0 0 1
+range 5 -5
+strength 1000
+velocity 1000

@@ -1,0 +1,114 @@
+# Mod By RicH :P
+
+gamerule
+engageplayerpos 0
+engageheight 2597
+
+env_obj 1
+shape box
+pos 1 4.2 25.8
+color 0 0 0
+rot 0 0 0
+sides 0.7 2.5 0.3
+material steel
+flag 24
+
+env_obj 2
+shape box
+pos 1 -0.1 13
+color 0.5 0.5 0.5
+rot 0 0 0
+sides 6 6 25.95
+material steel
+flag 8
+
+env_obj 3
+shape box
+pos 1 -0.1 13
+color 0.5 0.5 0.5
+rot 0 0 45
+sides 6 6 25.95
+material steel
+flag 8
+
+env_obj 4
+shape box
+pos 3.5 -2.5 27.85
+color 0 0 0
+rot 0 0 0
+sides 0.4 0.4 5
+material steel
+flag 8
+
+env_obj 5
+shape box
+pos -1.5 -2.5 27.85
+color 0 0 0
+rot 0 0 0
+sides 0.4 0.4 5
+material steel
+flag 8
+
+env_obj 6
+shape box
+pos -1.5 2.3 27.85
+color 0 0 0
+rot 0 0 0
+sides 0.4 0.4 5
+material steel
+flag 8
+
+env_obj 7
+shape box
+pos 3.5 2.3 27.85
+color 0 0 0
+rot 0 0 0
+sides 0.4 0.4 5
+material steel
+flag 8
+
+env_obj 8
+shape box
+pos 1 -0.1 30.5
+color 0.5 0.5 0.5
+rot 0 0 0
+sides 6 6 0.6
+material steel
+flag 8
+
+env_obj 9
+shape box
+pos 1 -0.1 30.5
+color 0.5 0.5 0.5
+rot 0 0 45
+sides 6 6 0.6
+material steel
+flag 8
+
+env_obj 10
+shape box
+pos 5.25 -0.1 25.8
+color 0.5 0 0
+rot 0 0 90
+sides 0.7 2.5 0.3
+material steel
+flag 24
+
+env_obj 11
+shape box
+pos -3.2 -0.1 25.8
+color 0 0.4 0
+rot 0 0 90
+sides 0.7 2.5 0.3
+material steel
+flag 24
+
+env_obj 12
+shape box
+pos 1 -4.4 25.8
+color 1 1 1
+rot 0 0 0
+sides 0.7 2.5 0.3
+material steel
+flag 24
+

@@ -1,0 +1,208 @@
+﻿#Localization file.
+
+FreePlay Free Play
+Multiplayer Multiplayer
+FightSchool Fight School
+ToriShop ToriShop
+Setup Setup
+BuyToriCredits Buy ToriCredits
+ChatNetwork Chat Network
+Quit Quit
+Options Options
+Mods Mods
+Utils Utils
+Replays Replays
+GameRules Game Rules
+Login Login
+Back Back
+ToribashTutorial Toribash Tutorial
+BasicTraining Basic Training
+AdvancedMoves Advanced Moves
+ChallengeUke Challenge Uke
+FlameForge Flame Forge
+FlameBrowser Flame Browser
+ModMaker Mod Maker
+Scripts Scripts
+Sounds Sounds
+Credits Credits
+Cancel Cancel
+OK OK
+Advanced Advanced
+Graphics Graphics
+LanguageSteam Use Steam's Language
+Language Language
+MouseButtons Mouse Buttons
+BackgroundClick Background Click
+EffectsVolume Effects Volume
+MusicVolume Music Volume
+VoiceChatVolume Voice Chat Volume
+ChatToggle Chat Toggle
+VoiceChatToggle Voice Chat Toggle
+Fullscreen Fullscreen
+Autosavereplays Autosave replays
+RememberGameRules Remember Game Rules
+LowerFrameRateCap Lower Frame Rate Cap
+Shaders Shaders
+FluidBlood Fluid Blood
+Reflections Reflections
+SoftShadows Soft Shadows
+AmbientOcclusion Ambient Occlusion
+Bumpmapping Bump-mapping
+RayTracing Ray Tracing
+Particles Particles
+Trails Trails
+Hair Hair
+ShaderHair Shader Hair
+ObjModel Obj Model
+BodyTextures Body Textures
+DisableGraphicsReloading Disable Graphics Reloading
+WindowWidth Window Width
+WindowHeight Window Height
+FixedFramerate Fixed Framerate
+Basic Basic
+Minimum Minimum
+Low Low
+Medium Medium
+High High
+Maximum Maximum
+Register Register
+Create Create
+Username Username
+Password Password
+Email Email
+Email(optional) Email (optional)
+RemindMe Remind Me
+RememberMe Remember me
+Show Show
+ForgotYourPassword? Forgot your password?
+Don'tHaveAnAccount? Don't have an account?
+Close Close
+UPGRADED! UPGRADED!
+NumGamesToBelt games to
+DRAW! DRAW !
+MatchWonBelowMin Match won below minimum turns.
+WINS! WINS !
+STREAK STREAK
+DRAW2! DRAW!
+DISQUALIFIED! DISQUALIFIED!
+KeyframesCleared! Keyframes cleared!
+KeyframeSaved! Keyframe saved!
+DefaultCameraEnabled Default Camera enabled
+FreeOrbitalCameraEnabled Free Orbital Camera enabled, use W/S/A/D/Q/E + SHIFT to control
+FreeCameraEnabled Free Camera enabled, use W/S/A/D/Q/E + SHIFT to control
+ToriCameraEnabled Tori Camera enabled
+UkeCameraEnabled Uke Camera enabled
+RecordingNextRewind Recording will start next rewind
+RecordingCameraMovements Recording camera movements
+PlayingCameraMovements Playing camera movements
+FreeCamDisabled Free-cam disabled
+Desc Description
+Room Room
+Mod Mod
+MinBelt Min Belt
+MaxBelt Max Belt
+Players Players
+Connect Connect
+LoadingServerList Loading server list
+BeltRestriction Belt Restriction
+RankRestriction Rank Restriction
+OfficialServers Official Servers
+AutoTournaments Auto Tournaments
+Elo Elo
+Rank Rank
+RoomName: Name:
+Password: Password:
+MaxPlayer: Max Player:
+MinBelt: Min Belt:
+MaxBelt: Max Belt:
+Desc: Desc:
+Option Option
+CreateRoom New Room
+SPECTATOR SPECTATOR
+WaitingForOtherPlayer Waiting For Other Player
+SPACEBARNewGameFSaveReplay SPACEBAR - New Game   ;   F - Save Replay
+PressTheSPACEBARToPlay Press the SPACEBAR to Play!
+PressTheSPACEBARForREPLAY Press the SPACEBAR for REPLAY
+WaitingForYourTurn Waiting for your turn: #
+InQueue in queue
+WaitingForOpponent Waiting for Opponent
+ClickToSelectPlayer Click to Select Player
+HitSPACEWhenReadyWithMove Hit SPACE when ready with move
+PleaseEnterAValidEmailAddress Please enter a valid email address
+PleaseEnterYourUsername Please enter your username!
+PleaseEnterYourPassword Please enter your password
+PleaseRetypeYourPassword Please retype your password
+UsernameLesserThan4Characters Your username is lesser than 4 characters!
+UsernameMoreThan10Characters Your username is more than 10 characters!
+MismatchingPasswords Mismatching passwords
+UsernameMustBeAlphaNumeric Username must be alpha numeric
+Error! Error!
+CreateAccountFromToribash Please create your account from
+#ToribashFromCreateAccount Not used for english
+NetworkError! Network Error!
+UsernameUsedOrSubstandard That username is already in use or does not meet the administrator's standards
+ModsCtrlM Mods (Ctrl + M)
+Load Load
+Open Open
+NewGame New game
+TypeHere Type here
+QuickLoad Quick Load
+ShadersCtrlH Shaders (Ctrl + H)
+AutoLoad Auto load
+SoundsCtrlY Sounds (Ctrl + Y)
+UsernameIsEmpty username is empty
+Neck NECK
+Chest CHEST
+Lumbar LUMBAR
+Abs Abs
+RightPecs RIGHT PECS
+RightShoulder RIGHT SHOULDER
+RightElbow RIGHT ELBOW
+LeftPecs LEFT PECS
+LeftShoulder LEFT SHOULDER
+LeftElbow LEFT ELBOW
+RightWrist RIGHT WRIST
+LeftWrist LEFT WRIST
+RightGlute RIGHT GLUTE
+LeftGlute LEFT GLUTE
+RightHip RIGHT HIP
+LeftHip LEFT HIP
+RightKnee RIGHT KNEE
+LeftKnee LEFT KNEE
+RightAnkle RIGHT ANKLE
+LeftAnkle LEFT ANKLE
+RightRotating RIGHT ROTATING
+RightBending RIGHT BENDING
+LeftRotating LEFT ROTATING
+LeftBending LEFT BENDING
+Lowering LOWERING
+Extending EXTENDING
+Raising RAISING
+Contracting CONTRACTING
+Holding HOLDING
+Relaxing RELAXING
+Effects Effects
+AlwaysOff Always Off
+OnlyOnReplays Only On Replays
+AlwaysOn Always On
+Default Default
+PleaseEnableSteamOverlay Please enable the steam overlay and restart the game
+PleaseWaitForSteamPurchaseOverlay Please wait for the steam purchase overlay
+PleaseLogonSteam Please log on to steam to buy ToriCredits
+Refresh Refresh
+Delete Delete
+Rename Rename
+New New
+EnterNewReplayName Enter New Replay Name
+Grappling Grappling
+Kicking Kicking
+Striking Striking
+Matchmaking Matchmaking
+(Paused) (Paused)
+(Searching) (Searching)
+ModGroups Mod Groups
+Search Search
+Unranked Unranked
+RankedPreferred Ranked Preferred
+RankedOnly Ranked Only
+MatchmakeAgain Matchmake Again

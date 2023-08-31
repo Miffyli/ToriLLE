@@ -1,0 +1,269 @@
+#!/usr/bin/toribash
+# boxshu_mushu_v3.tbm, based on boxshu_fixed.tbm
+# Original mod and bugfixes made by ynvaser (2014)
+# Credit to chuji for the original box design, and to snake for the wushu3/brushu ruleset we all play and love.
+version 12
+gamerule
+   matchframes 1000
+   turnframes 50
+   flags 3
+   dismemberment 1
+   fracture 1
+   disqualification 1
+   dqtimeout 0
+   dqflag 0
+   dismemberthreshold 300
+   fracturethreshold 180
+   pointthreshold 0
+   dojotype 0
+   dojosize 1005
+   engagedistance 300
+   engageheight 0
+   engagerotation 0
+   engagespace 0
+   engageplayerpos 
+   engageplayerrot 0,0,0,0,0,0
+   damage 0
+   gravity 0.00 0.00 -9.82
+   sumo 1
+   reactiontime 18
+   drawwinner 0
+   maxcontacts 8
+env_obj 1
+   shape box
+   pos 6.85 0.06 10.09
+   mass 0.0001
+   color 0.50 0.50 0.50 0.75
+   visible 0
+   rot 0.00 0.00 0.00
+   sides 1.50 10.00 20.00
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 2
+   shape box
+   pos -4.75 -0.10 10.01
+   mass 0.0001
+   color 0.50 0.50 0.50 0.75
+   visible 0
+   rot 0.00 0.00 0.00
+   sides 1.50 10.00 20.00
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 3
+   shape box
+   pos 1.00 5.65 10.01
+   mass 0.0001
+   color 0.50 0.50 0.50 0.75
+   visible 0
+   rot 0.00 0.00 0.00
+   sides 13.00 1.50 20.00
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 4
+   shape box
+   pos 1.00 -5.85 10.01
+   mass 0.0001
+   color 0.50 0.50 0.50 0.75
+   visible 0
+   rot 0.00 0.00 0.00
+   sides 13.00 1.50 20.00
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 5
+   shape box
+   pos 6.00 -5.10 2.02
+   mass 0.0001
+   color 0.00 0.00 0.00 1.00
+   rot 0.00 0.00 0.00
+   sides 0.01 0.01 4.00
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 6
+   shape box
+   pos -4.00 -5.10 2.02
+   mass 0.0001
+   color 0.00 0.00 0.00 1.00
+   rot 0.00 0.00 0.00
+   sides 0.01 0.01 4.00
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 7
+   shape box
+   pos 6.00 4.90 2.02
+   mass 0.0001
+   color 0.00 0.00 0.00 1.00
+   rot 0.00 0.00 0.00
+   sides 0.01 0.01 4.00
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 8
+   shape box
+   pos -4.00 4.90 2.02
+   mass 0.0001
+   color 0.00 0.00 0.00 1.00
+   rot 0.00 0.00 0.00
+   sides 0.01 0.01 4.00
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 9
+   shape box
+   pos 1.00 4.90 4.02
+   mass 0.0001
+   color 0.00 0.00 0.00 1.00
+   rot 0.00 0.00 0.00
+   sides 10.00 0.01 0.01
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 10
+   shape box
+   pos 1.00 -5.10 4.02
+   mass 0.0001
+   color 0.00 0.00 0.00 1.00
+   rot 0.00 0.00 0.00
+   sides 10.00 0.01 0.01
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 11
+   shape box
+   pos -4.00 -0.10 4.02
+   mass 0.0001
+   color 0.00 0.00 0.00 1.00
+   rot 0.00 0.00 0.00
+   sides 0.01 10.00 0.01
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 12
+   shape box
+   pos 6.00 -0.10 4.02
+   mass 0.0001
+   color 0.00 0.00 0.00 1.00
+   rot 0.00 0.00 0.00
+   sides 0.01 10.00 0.01
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 13
+   shape box
+   pos 1.00 -0.10 6.57
+   mass 0.0001
+   color 0.00 0.00 0.00 1.00
+   visible 0
+   rot 0.00 0.00 0.00
+   sides 10.00 10.00 5.00
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 14
+   shape box
+   pos -4.00 -4.10 1.77
+   mass 0.0001
+   color 0.00 0.00 0.00 1.00
+   rot 0.00 0.00 0.00
+   sides 0.01 0.01 3.50
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 15
+   shape box
+   pos -4.00 -2.10 1.77
+   mass 0.0001
+   color 0.00 0.00 0.00 1.00
+   rot 0.00 0.00 0.00
+   sides 0.01 0.01 3.50
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 16
+   shape box
+   pos -4.00 -3.10 3.52
+   mass 0.0001
+   color 0.00 0.00 0.00 1.00
+   rot 0.00 0.00 0.00
+   sides 0.01 2.00 0.01
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+
+# for all players
+
+   body head
+      flag 36
+      material steel
+
+   body l_biceps
+      flag 2
+      material steel
+
+   body l_foot
+      flag 38
+      material steel
+
+   body l_hand
+      flag 38
+      material steel
+
+   body l_leg
+      flag 2
+      material steel
+
+   body l_thigh
+      flag 2
+      material steel
+
+   body l_triceps
+      flag 2
+      material steel
+
+   body r_biceps
+      flag 2
+      material steel
+
+   body r_foot
+      flag 38
+      material steel
+
+   body r_hand
+      flag 38
+      material steel
+
+   body r_leg
+      flag 2
+      material steel
+
+   body r_thigh
+      flag 2
+      material steel
+
+   body r_triceps
+      flag 2
+      material steel
+	  
+# mirins4lyf
+# fin

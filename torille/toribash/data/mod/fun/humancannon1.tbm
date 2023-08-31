@@ -1,0 +1,179 @@
+#!/usr/bin/toribash
+
+###human cannon ball######
+
+###hand crafted by clockworkmonkeys####
+
+gamerule
+engageplayerpos 0
+ed 5900
+eh 400
+mf 600
+tf 80,100,200,200,200
+
+env_obj 1
+    shape box
+    pos 1 31.05 3.375
+    color 0.2 0.2 0.2 1
+    rot -35 0 0
+    sides 3.25 3.25 3.8125
+thrust 1 0 -15 15
+    material steel
+    mass 0.1
+friction 0
+    flag 0
+#END 1
+
+env_obj 2
+    shape box
+    pos 2.75 27.9375 8.0625
+    color 0.2 0.2 0.2 1
+    rot -35 0 0
+    sides 0.125 0.5 20.125
+    material steel
+    mass 0.1
+friction 0
+    flag 24
+#END 2
+
+env_obj 3
+    shape box
+    pos -0.75 27.9375 8.0625
+    color 0.2 0.2 0.2 1
+    rot -35 0 0
+    sides 0.125 0.5 20.125
+    material steel
+    mass 0.1
+friction 0
+    flag 24
+#END 3
+
+env_obj 4
+    shape box
+    pos 0.9375 29.4375 8.875
+    color 0.2 0.2 0.2 1
+    rot -35 0 0
+    sides 0.5 0.125 20.125
+    material steel
+    mass 0.1
+friction 0
+    flag 24
+#END 4
+
+env_obj 5
+    shape box
+    pos 0.9375 26.3125 7.125
+    color 0.2 0.2 0.2 1
+    rot -35 0 0
+    sides 0.5 0.125 20.125
+    material steel
+    mass 0.1
+friction 0
+    flag 24
+#END 5
+
+env_obj 6
+    shape box
+    pos 0.9375 20.3125 15.8125
+    color 0.2 0.2 0.2 1
+    rot -35 0 0
+   sides 4.375 0.3375 0.3375
+    material steel
+    mass 0.1
+    flag 24
+#END 6
+
+env_obj 7
+    shape box
+    pos 0.9375 23.3125 17.6875
+    color 0.2 0.2 0.2 1
+    rot -35 0 0
+    sides 4.375 0.3375 0.3375
+    material steel
+    mass 0.1
+    flag 24
+#END 7
+
+env_obj 8
+    shape box
+    pos 1 -31.05 3.375
+    color 0.2 0.2 0.2 1
+    rot 35 0 0
+    sides 3.25 3.25 3.8125
+thrust 1 0 15 15
+    material steel
+    mass 0.1
+friction 0
+    flag 0
+#END 1
+
+env_obj 9
+    shape box
+    pos 2.75 -27.9375 8.0625
+    color 0.2 0.2 0.2 1
+    rot 35 0 0
+    sides 0.125 0.5 20.125
+    material steel
+    mass 0.1
+friction 0
+    flag 24
+#END 2
+
+env_obj 10
+    shape box
+    pos -0.75 -27.9375 8.0625
+    color 0.2 0.2 0.2 1
+    rot 35 0 0
+    sides 0.125 0.5 20.125
+    material steel
+    mass 0.1
+friction 0
+    flag 24
+#END 3
+
+env_obj 11
+    shape box
+    pos 0.9375 -29.4375 8.875
+    color 0.2 0.2 0.2 1
+    rot 35 0 0
+    sides 0.5 0.125 20.125
+    material steel
+    mass 0.1
+friction 0
+    flag 24
+#END 4
+
+env_obj 12
+    shape box
+    pos 0.9375 -26.3125 7.125
+    color 0.2 0.2 0.2 1
+    rot 35 0 0
+    sides 0.5 0.125 20.125
+    material steel
+    mass 0.1
+friction 0
+    flag 24
+#END 5
+
+env_obj 13
+    shape box
+    pos 0.9375 -20.3125 15.8125
+    color 0.2 0.2 0.2 1
+    rot 35 0 0
+   sides 4.375 0.3375 0.3375
+    material steel
+    mass 0.1
+    flag 24
+#END 6
+
+env_obj 14
+    shape box
+    pos 0.9375 -23.3125 17.6875
+    color 0.2 0.2 0.2 1
+    rot 35 0 0
+    sides 4.375 0.3375 0.3375
+    material steel
+    mass 0.1
+    flag 24
+#END 7
+

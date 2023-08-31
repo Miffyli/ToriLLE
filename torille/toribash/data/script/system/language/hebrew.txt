@@ -1,0 +1,169 @@
+NAVBUTTONHOME	בית	
+NAVBUTTONPLAY	שחק	
+NAVBUTTONPRACTICE	תרגול	
+NAVBUTTONMODS	תוספות	
+NAVBUTTONTOOLS	כלים	
+NAVBUTTONTOMAIN	למסך הראשי	
+NAVBUTTONBACK	חזור	
+MAINMENUTORISHOPNAME	חנות טורי	
+MAINMENUTORISHOPDESC	נסה וקנה חפצים בשביל הטורי שלך	
+MAINMENUCLANSNAME	שבטים	
+MAINMENUCLANSDESC	חפש שבטי טוריבאש	
+MAINMENUREPLAYSNAME	שידורים חוזרים	
+MAINMENUREPLAYSDESC	צפה בשידורים החוזרים שהורדת	
+MAINMENUFREEPLAYNAME	משחק חופשי	
+MAINMENUFREEPLAYDESC	התאמן על היכולות שלך וייצר שידורים חוזרים במצב שחקן יחיד	
+MAINMENUMATCHMAKINGNAME	מציאת דו קרב	
+MAINMENUMATCHMAKINGDESC	דרך מהירה להתמקם בקרבות אחד-על-אחד	
+MAINMENUROOMLISTNAME	רשימת חדרים	
+MAINMENUROOMLISTDESC	צור חדר רשת משלך 	
+MAINMENUBEGINNERTUTNAME	הדרכה למתחילים	
+MAINMENUBEGINNERTUTDESC	למד את יסודות הטוריבאש: מקשי משחק, משחקיות ועוד	
+MAINMENUADVMOVESNAME	מהלכים מורכבים	
+MAINMENUADVMOVESDESC	גלה מהלכים מורכבים לשימוש במשחק רב משתתפים	
+MAINMENUFIGHTUKENAME	הילחם באוק	
+MAINMENUFIGHTUKEDESC	נסה את יכולותיך כנגד האויב האולטימטיבי של הטורי	
+MAINMENUCOMEBACKNAME	תרגול התאוששות	
+MAINMENUCOMEBACKDESC	המשך להחזיק את אוק מבלי להיפסל	
+MAINMENUGAMERULESNAME	חוקי המשחק	
+MAINMENUGAMERULESDESC	התאם אישית כוח משיכה ועוד איפיוני תוספות	
+MAINMENUMODLISTNAME	רשימת תוספות	
+MAINMENUMODLISTDESC	טען אחת מהתוספות שהורדו	
+MAINMENUMODMAKERNAME	מייצר התוספות	
+MAINMENUMODMAKERDESC	צור תוספת משלך לטוריבאש	
+MAINMENUMODSDISCOVERNAME	גלה	
+MAINMENUMODSDISCOVERDESC	חפש תוספות חדשות מידי שחקנים אחרים 	
+MAINMENUSHADERSNAME	הצללות ואווירה	
+MAINMENUSHADERSDESC	התאם אישית תאורה וסביבת טוריבאש	
+MAINMENUSCRIPTSNAME	תסריטי תוכנה	
+MAINMENUSCRIPTSDESC	טען תסריטי תוכנה שהורדו מראש או שתוכננו על ידי צד שלישי בשביל טוריבאש	
+MAINMENUSOUNDSNAME	צלילים	
+MAINMENUSOUNDSDESC	החלף בין צלילים מותאמים אישית פועל/כבוי	
+DOWNLOADINGFILESWAIT	מוריד קבצים, אנא המתן...	
+STORESETEMPTY	ריק	
+STOREITEM	חפץ יחיד	
+STOREITEMS	חפצים	
+STOREFLAMEBODYPART	להבת חלקיקים בשביל	
+STOREFLAMEID	תעודת זהות של להבה	
+STOREFLAMEFORGEDBY	חושל על ידי	
+STOREITEMINSIDESET	פנים האוסף	
+STOREOBJITEMBODYPART	מודל תלת-מימד מותאם אישית בשביל	
+STOREITEMNODESCRIPTION	לחפץ הזה אין תיאור	
+STOREITEMGOTOSET	לך לאוסף	
+STORESETITEMNAME	אוסף	
+STOREITEMADDTOSET	הוסף לאוסף	
+STOREITEMREMOVEFROMSET	הסר מהאוסף	
+STOREVIEWSETITEMS	הצג חפצים באוסף	
+STOREITEMSINSET	חפצים בתוך האוסף	
+STORESELLMARKET	מכר בשוק	
+STOREDIALOGMARKETSELL1	האם אתה בטוח רוצה לשים	
+STOREDIALOGMARKETSELL2	בשוק?	
+STOREITEMDEACTIVATE	נטרל	
+STOREDIALOGDEACTIVATE	האם אתה בטוח רוצה לנטרל	
+STOREITEMACTIVATE	הפעל	
+STOREDIALOGACTIVATE	האם אתה בטוח רוצה להפעיל	
+STOREDIALOGCONFLICTSDEACTIVATE	כל חפץ סותר ינוטרל.	
+STOREITEMUNPACK	רוקן	
+STOREDIALOGUNPACK	האם אתה בטוח רוצה לרוקן	
+STOREDIALOGUNPACKINFO	חפצים שרוקנו יאוכסנו באוסף וימוקמו במלאי המנוטרל שלך.	
+STOREACTIVATEDINVENTORY	מלאי פעיל	
+STOREDEACTIVATEDINVENTORY	מלאי מנוטרל	
+STOREMARKETINVENTORY	מלאי שוק	
+STOREINVENTORYALLITEMS	כל חפצי המלאי	
+PAGINATIONPAGE	דף	
+PAGINATIONPAGEOF	של	
+STOREINVENTORYLOADING	טוען מידע מיקום הטורי	
+STOREGOTOSHOP	פתח את חנות הטורי	
+STOREGOTOINVENTORY	פתח את המלאי	
+STORESTEAMPURCHASELOADING	עובד	
+STORESTEAMPURCHASEERROR	משהו השתבש	
+CLANSMYCLAN	השבט שלי	
+CLANSCLANLEADER	מנהיג השבט	
+CLANSCLANMEMBER	חבר שבט	
+CLANSTOGETHERWITH	ביחד עם	
+CLANSVIEWCLAN	הצג שבט	
+GENERALSTRINGAND	ו	
+CLANFILTERSRANK	דרגה	
+CLANFILTERSCLANNAME	שם	
+CLANFILTERSCLANTAG	תג	
+CLANFILTERSCLANID	תעודת זהות	
+CLANFILTERSOFFICIALSTATUS	מצב	
+CLANFILTERSJOINMODE	אופן הצטרפות	
+CLANFILTERSDEAD	מת	
+CLANFILTERSINACTIVE	לא פעיל	
+CLANFILTERSACTIVE	פעיל	
+SORTORDERASCENDING	עולה	
+SORTORDERDESCENDING	יורד	
+CLANFILTERSACTIVITYSTATE	מצב פעילות	
+CLANFILTERSACTIVITYSTATEDESC	שבטים נחשבים כפעילים כשיש בהם לפחות 5 חברים. שבטים ללא חברים נחשבים כמתים.	
+CLANFILTERSFFAONLY	רק שבטי חופשי לכולם	
+CLANFILTERSFFAONLYDESC	אתה יכול להצטרף לשבטי חופשי לכולם בלחיצת כפתור אחת. בשביל שבטי הזמנה בלבד, נדרש תהליך בקשה מותאם אישית.	
+CLANFILTERSOFFICIALONLY	רק שבטים רשמיים	
+CLANFILTERSOFFICIALONLYDESC	לשבטים רשמיים יש לוח משלהם בפרומים של טוריבאש ובתוך משחק יש להם סוגריים מרובעים.	
+SORTBYNAME	מיין לפי	
+SORTORDERNAME	סדר מיון	
+CLANSSEARCHFILTERS	מסנני חיפוש	
+CLANSSEARCH	חפש שבטים	
+CLANSCLANLIST	רשימת שבטים	
+CLANSLEGENDRANK	דרגה	
+CLANSLEGENDLEVEL	רמה	
+CLANSLEGENDXP	נקודות ניסיון	
+CLANSLEGENDTAGNAME	תג ושם	
+CLANSLEGENDSTATUS	מצב	
+CLANSLEGENDJOINMODE	אופן הצטרפות	
+CLANSTATEOFFICIAL	רשמי	
+CLANSTATEUNOFFICIAL	לא רשמי	
+CLANSTATEFREEFORALL	חופשי בשביל כולם	
+CLANSTATEINVITEONLY	הזמנה בלבד	
+CLANSLISTEMPTYMSG	אין שבטים להציג	
+CLANSJOINCLAN	הצטרף לשבט	
+CLANSRELOADLOGO	טען מחדש סמל	
+CLANSUPDATINGLOGO	מעדכן	
+CLANSTATEUNRANKED	לא מדורג	
+CLANSVIEWWARSFORUM	הצג מלחמות בפורום	
+CLANSTOPACHMISSING	שבט זה לא בחר הישג להציג	
+CLANSLEGENDROSTER	רשימת תפקידים	
+CLANLEADERS	מנהיגים	
+CLANLEADER	מנהיג	
+CLANMEMBERS	חברים	
+CLANMEMBER	חבר	
+REWARDSDAILYTITLE	פרס התחברות יומי	
+REWARDSCLAIM	תבע פרס	
+REWARDSCLAIMNETWORKERROR	תקלה בתקשורת עם שרתי טוריבאש, אנא נסה שוב מאוחר יותר	
+REWARDSCLAIMINPROGRESS	תביעת פרס	
+REWARDSCLAIMSUCCESS	פרס נתבע	
+REWARDSCLAIMNOREWARD	אין פרס זמין, נסה מאוחר יותר	
+REWARDSCLAIMTIMEOUT	שגיאת פסק-זמן, אתחל מחדש את המשחק או התחבר לרשת	
+REWARDSCLAIMERROROTHER	בעיה בתביעת פרס	
+REWARDSNOAVAILABLE	אין פרס זמין	
+REWARDSAVAILABLERESTART	פרס יהיה זמין בפתיחת המשחק הבאה	
+REWARDSEXPIRED	פג-תוקפו של הפרס! :(	
+REWARDSTIMEHOURS	שעות	
+REWARDSTIMEHOUR	שעה	
+REWARDSTIMEMINUTES	דקות	
+REWARDSTIMEMINUTE	דקה	
+REWARDSTIMESECONDS	שניות	
+REWARDSNEXTREWARD	פרס הבא ב	
+REWARDSTIMELEFT	נשאר בכדי לתבוע את הפרס	
+MATCHMAKEMODGRAPPLING	האבקות	
+MATCHMAKEMODKICKING	בעיטות	
+MATCHMAKEMODSTRIKING	התקפה	
+MATCHMAKEMODFUN	כיף	
+MATCHMAKERANKEDBELT	מציאת דו קרב מדורג זמינה בחגורה חומה	
+MATCHMAKERANKEDMODE	מצב מדורג	
+MATCHMAKERANK	דרגה	
+MATCHMAKEFIGHTSTOTAL	סכום קרבות	
+MATCHMAKEWINRATE	קצב ניצחון	
+MATCHMAKENOPLAYERS	אין שחקנים שמחפשים כרגע	
+MATCHMAKEPLAYERSEARCHING	חיפוש שחקן	
+MATCHMAKEPLAYERSSEARCHING	חיפוש שחקנים	
+MATCHMAKESEARCHING	חפש דו קרב	
+MATCHMAKESEARCH	חפש	
+MATCHMAKESTOPSEARCH	עצור חיפוש	
+MATCHMAKEUNRANKEDMODE	משחק מזדמן	
+MATCHMAKEFINDBESTMATCH1	מצא	
+MATCHMAKEFINDBESTMATCH2	ההתאמה הטובה ביותר	
+MATCHMAKESEARCHSETTINGS1	חפש	
+MATCHMAKESEARCHSETTINGS2	עם הגדרות	
+MATCHMAKESEARCHCUSTOM	מותאם אישית	
+MATCHMAKEUPDATINGRANK	מעדכן סטטיסטיקות דירוג...	

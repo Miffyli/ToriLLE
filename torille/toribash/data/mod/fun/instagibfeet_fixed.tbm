@@ -1,0 +1,29 @@
+#Thanks to all people who play instagibfeet.
+
+body r_foot
+   color 0 0 0
+   flag 6
+   material steel
+
+body l_foot
+   color 0 0 0
+   flag 6
+   material steel
+
+body r_leg
+   color 0 0 0
+   flag 6
+   material steel
+
+body l_leg
+   color 0 0 0
+   flag 6
+   material steel
+
+gamerule
+engageplayerpos 0
+engagedistance 250
+turnframes 50
+matchframes 500
+dismemberment 1
+dismember threshold 100

@@ -1,0 +1,121 @@
+env_obj 1
+shape cylinder
+pos 1 -5 3
+color 0.8 0.8 0.8
+rot 0 0 1
+sides .1 6 1
+material steel
+mass 0.1
+flag 24  
+
+env_obj 2
+shape box
+pos 1 -4.8 5
+color 0.8 0.8 0.8
+rot 0  0
+sides 2 .005 1.5
+material steel
+mass 0.1
+flag 24 
+
+env_obj 3
+shape box
+pos 1.5 -4.3 4.5
+color 0.7 0.7 0.7
+rot 0 0 0
+sides .005 1 .25
+material steel
+mass 0.1
+flag 24 
+
+env_obj 4
+shape box
+pos .5 -4.3 4.5
+color 0.7 0.7 0.7
+rot 0 0 0
+sides .005 1 .25
+material steel
+mass 0.1
+flag 24 
+
+env_obj 5
+shape box
+pos 1 -3.8 4.5
+color 0.7 0.7 0.7
+rot 0 0 90
+sides .005 1 .25
+material steel
+mass 0.1
+flag 24 
+
+env_obj 6
+shape sphere
+pos 1 1 4
+color .766 .42 0.113
+rot 0 0 0
+sides .35 .35 .35
+material steel
+mass 0.01
+flag 1 
+
+gamerule
+engageplayerpos 0
+
+engageheight 0
+engagedistance 650
+dismemberment 1
+dismemberthreshold 100
+fracture 0
+matchframes 500
+turnframes 50
+dojotype 0
+dojosize 0
+
+# Tori
+player 0
+
+body head
+force 0 9 9
+body stomach
+force 0 8 9
+body breast
+force 0 8 9
+body chest
+force 0 8 9
+body groin
+force 0 8 9
+body r_pecs
+force 0 8 9
+body l_pecs
+force 0 8 9
+body r_thigh
+force 0 8 9
+body l_thigh
+force 0 8 9
+body l_leg
+force 0 8 9
+
+# Uke
+player 1
+
+body head
+force 0 0 7
+body stomach
+force 0 0 7
+body breast
+force 0 0 7
+body chest
+force 0 0 7
+body groin
+force 0 0 7
+body r_pecs
+force 0 0 7
+body l_pecs
+force 0 0 7
+body r_thigh
+force 0 0 7
+body l_thigh
+force 0 0 7
+body l_leg
+force 0 0 7
+body r_leg

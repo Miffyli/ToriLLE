@@ -1,0 +1,473 @@
+# Environment exported by WorldBuilder-Mod made by dengue and cars made by Rukeepers.Enjoy
+######################################
+
+
+world
+friction 3
+
+gamerule
+fracture 0
+dismemberthreshold 400
+engagedistance 7500
+engageheight 580
+disqualification 0
+flags 6
+matchframes 1201
+turnframes 1,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30
+engageplayerpos 0
+dojosize 8000
+gravity 0 0 -9.82
+
+body r_thigh
+shape box
+pos 1 1.7 0.45
+sides 0.4 0.5 0.3
+density 0.001
+material steel
+
+body l_thigh
+shape box
+pos 1 2.2 0.475
+sides 0.45 0.5 0.35
+density 0.001
+material steel
+
+body r_pecs
+density 0.001
+pos 0.7 3.2 0.6
+material steel
+
+body l_pecs
+density 0.001
+pos 1.3 3.2 0.6
+material steel
+
+body r_biceps
+density 0.001
+pos 0.7 3.2 0.8
+material steel
+
+body l_biceps
+density 0.001
+pos 1.3 3.2 0.8
+material steel
+
+body r_butt
+shape sphere
+density 0.001
+pos 0.7 2.9 1.1
+material steel
+
+body l_butt
+shape sphere
+density 0.001
+pos 1.3 2.9 1.1
+material steel
+
+body r_leg
+pos 1
+shape box
+sides 0.3 0.5 0.2
+pos 1 1.35 0.425
+density 0.001
+material steel
+
+body l_leg
+pos 1 1 0.425
+shape box
+sides 0.2 0.7 0.2
+density 0.001
+material steel
+
+body head
+pos 1 2.5 0.9
+density 0.001
+material steel
+
+body breast
+pos 1 0.2 0.4
+sides 0.5 0.2 0.2
+density 0.001
+material steel
+
+body chest
+pos 1 1.7 0.4
+sides 0.15 3.0 0.15
+density 0.001
+material steel
+
+body stomach
+pos 1 3.2 0.4
+sides 0.75 0.2 0.2
+density 0.001
+material steel
+
+body l_foot
+shape sphere
+radius 0.2
+pos 1.5 2.9 0.25
+density 0.2
+thrust 1 0 0 -2.5
+material steel
+
+body r_foot
+shape sphere
+radius 0.2
+pos 0.5 2.9 0.25
+density 0.2
+thrust 1 0 0 -2.5
+material steel
+
+body r_hand
+shape sphere
+radius 0.15
+pos 1.4 0.4 0.2
+density 0.2
+thrust 1 0 0 -5
+material steel
+
+body l_hand
+shape sphere
+radius 0.15
+pos 0.6 0.4 0.2
+density 0.2
+thrust 1 0 0 -5
+material steel
+
+body r_triceps
+sides 0.2 0.1 0.1
+pos 1.15 0.4 0.2
+density 0.001
+material steel
+
+body l_triceps
+sides 0.2 0.1 0.1
+pos 0.85 0.4 0.2
+density 0.001
+material steel
+
+body groin
+sides 0.6 0.4 0.4
+pos 1 2.6 0.5
+density 0.001
+material steel
+
+joint r_elbow
+radius 0.11
+pos 1.1 0.4 0.2
+range 0.2 -0.2
+velocity 1
+strenght 50
+density 0.001
+
+joint l_elbow
+radius 0.11
+pos 0.9 0.4 0.2
+range 0.2 -0.2
+velocity 1
+strenght 50
+density 0.001
+
+joint r_wrist
+pos 1.4 0.4 0.2
+range 4 -4
+velocity 600
+axis 1 0 0
+density 0.001
+strength 1
+
+joint l_wrist
+pos 0.6 0.4 0.2
+range 4 -4
+velocity 600
+axis -1 0 0
+density 0.001
+strength 1
+
+joint l_ankle
+pos 1.5 2.9 0.25
+velocity 600
+range 4 -4
+density 0.001
+strength 1
+
+joint r_ankle
+pos 0.5 2.9 0.25
+velocity 600
+range 4 -4
+density 0.001
+strength 1
+
+joint r_knee
+range 0 -0
+pos 1 0.4 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint l_knee
+range 0 -0
+pos 1 0.5 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint r_hip
+range 0 -0
+pos 1 0.6 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint l_hip
+range 0 -0
+pos 1 0.7 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint r_glute
+range 0 -0
+pos 1 0.8 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint l_glute
+range 0 -0
+pos 1 0.9 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint abs
+range 0 -0
+pos 1 1 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint lumbar
+range 0 -0
+pos 1 1.1 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint chest
+range 0 -0
+pos 1 1.2 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint r_pecs
+range 0 -0
+pos 1 1.3 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint l_pecs
+range 0 -0
+pos 1 1.4 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint l_shoulder
+range 0 -0
+pos 1 1.5 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint r_shoulder
+range 0 -0
+pos 1 1.6 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint neck
+pos 1 2.55 0.75
+density 0.001
+velocity 0.5
+
+
+env_obj 1
+    shape box
+    pos 1 52.25 18
+    color 0.69803921568627450980392156862745 1 0.10196078431372549019607843137255 1
+    rot 45 0 0
+    sides 80.375 0.0625 35
+    material steel
+    mass 0.1
+    flag 8
+#END 1
+
+env_obj 2
+    shape box
+    pos 1 -52.375 18
+    color 0.69803921568627450980392156862745 1 0.10196078431372549019607843137255 1
+    rot -45 0 0
+    sides 80.375 0.0625 35
+    material steel
+    mass 0.1
+    flag 8
+#END 2
+
+env_obj 3
+    shape box
+    pos 53.3125 -0.875 18
+    color 0.69803921568627450980392156862745 1 0.10196078431372549019607843137255 1
+    rot 0 -45 0
+    sides 0.125 78.875 35
+    material steel
+    mass 0.1
+    flag 8
+#END 3
+
+env_obj 4
+    shape box
+    pos -51.3125 -0.875 18
+    color 0.69803921568627450980392156862745 1 0.10196078431372549019607843137255 1
+    rot 0 45 0
+    sides 0.125 78.875 35
+    material steel
+    mass 0.1
+    flag 8
+#END 4
+
+env_obj 5
+    shape box
+    pos 48.125 45.875 20.125
+    color 0.69803921568627450980392156862745 1 0.10196078431372549019607843137255 1
+    rot -90 137 50
+    sides 38 0.0625 30.125
+    material steel
+    mass 0.1
+    flag 8
+#END 5
+
+env_obj 6
+    shape box
+    pos -45.25 -46.9375 20.125
+    color 0.69803921568627450980392156862745 1 0.10196078431372549019607843137255 1
+    rot -90 314 50
+    sides 38 0.0625 30.125
+    material steel
+    mass 0.1
+    flag 8
+#END 6
+
+env_obj 7
+    shape box
+    pos -45.3125 45.9375 20.125
+    color 0.69803921568627450980392156862745 1 0.10196078431372549019607843137255 1
+    rot -90 43 50
+    sides 38 0.0625 30.125
+    material steel
+    mass 0.1
+    flag 8
+#END 7
+
+env_obj 8
+    shape box
+    pos 48.125 -46.375 20.125
+    color 0.69803921568627450980392156862745 1 0.10196078431372549019607843137255 1
+    rot -90 225 50
+    sides 38 0.0625 30.125
+    material steel
+    mass 0.1
+    flag 8
+#END 8
+
+env_obj 9
+    shape box
+    pos 14.8125 0.1875 5.25
+    color 1 0 0 1
+    rot 0 38 0
+    sides 1 28.5 0.0625
+    material steel
+    mass 0.1
+    flag 8
+#END 9
+
+env_obj 10
+    shape box
+    pos -12.8125 0.1875 5.25
+    color 1 0 0 1
+    rot 0 -38 0
+    sides 1 28.5 0.0625
+    material steel
+    mass 0.1
+    flag 8
+#END 10
+
+env_obj 11
+    shape box
+    pos 1 14.125 5.25
+    color 1 0 0 1
+    rot 38 0 0
+    sides 28.5 0.0625 1
+    material steel
+    mass 0.1
+    flag 8
+#END 11
+
+env_obj 12
+    shape box
+    pos 1 -13.75 5.25
+    color 1 0 0 1
+    rot -38 0 0
+    sides 28.5 0.0625 1
+    material steel
+    mass 0.1
+    flag 8
+#END 12
+
+env_obj 13
+    shape box
+    pos 28.0625 -1 -0.375
+    color 1 0 0 1
+    rot 0 0 0
+    sides 25.75 81.6875 12
+    material steel
+    mass 0.1
+    flag 8
+#END 13
+
+env_obj 14
+    shape box
+    pos -26.25 -1 -0.375
+    color 1 0 0 1
+    rot 0 0 0
+    sides 26.125 81.6875 12
+    material steel
+    mass 0.1
+    flag 8
+#END 14
+
+env_obj 15
+    shape box
+    pos 0.9375 27.125 -0.375
+    color 1 0 0 1
+    rot 0 0 0
+    sides 28.875 25.5 12
+    material steel
+    mass 0.1
+    flag 8
+#END 15
+
+env_obj 16
+    shape box
+    pos 0.9375 -28 -0.375
+    color 1 0 0 1
+    rot 0 0 0
+    sides 28.875 28 12
+    material steel
+    mass 0.1
+    flag 8
+#END 16
+

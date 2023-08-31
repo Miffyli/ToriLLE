@@ -1,0 +1,617 @@
+# ladies.tbm, cause baby girl got all the right weaponry
+engageplayerpos 0
+player 0
+body head
+sides 0.2 0.0 0.0
+pos 1.0 0.85 2.65
+rot 0.0 0.0 0.0
+density 0.25
+
+body breast
+shape cylinder
+sides 0.14 0.3 0.3
+pos 0.95 0.75 2.15
+rot 0.0 90.0 0.0
+density 0.25
+
+body chest
+sides 0.35 0.125 0.2
+pos 1.0 0.9 1.95
+rot 0.0 0.0 0.0
+density 0.25
+
+body stomach
+sides 0.25 0.125 0.2
+pos 1.0 0.95 1.75
+rot 0.0 0.0 0.0
+density 0.25
+
+body groin
+sides 0.15 0.15 0.2
+pos 1.0 0.965000 1.575
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_pecs
+sides 0.15 0.15 0.2
+pos 0.85 0.9 2.15
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_biceps
+sides 0.4 0.14 0.14
+pos 0.45 0.9 2.3
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_triceps
+sides 0.4 0.1 0.1
+pos 0.05 0.9 2.3
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_pecs
+sides 0.15 0.15 0.2
+pos 1.15 0.9 2.15
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_biceps
+sides 0.4 0.14 0.14
+pos 1.55 0.9 2.3
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_triceps
+sides 0.4 0.1 0.1
+pos 1.95 0.9 2.3
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_hand
+sides 0.22 0.22 0.22
+pos -0.35 0.85 2.3
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_hand
+sides 0.22 0.22 0.22
+pos 2.35 0.85 2.3
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_butt
+sides 0.1 0.1 0.1
+pos 0.8 1.0 1.45
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_butt
+sides 0.1 0.1 0.1
+pos 1.2 1.0 1.45
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_thigh
+sides 0.13 0.31 0.0
+pos 0.8 1.0 1.175
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_thigh
+sides 0.13 0.31 0.2
+pos 1.2 1.0 1.175
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_leg
+sides 0.11 0.35 0.0
+pos 1.19 0.98 0.525
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_leg
+sides 0.11 0.35 0.0
+pos 0.81 0.98 0.525
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_foot
+sides 0.175 0.41 0.08
+pos 0.8 0.9 0.1
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_foot
+sides 0.175 0.41 0.08
+pos 1.2 0.9 0.1
+rot 0.0 0.0 0.0
+density 0.25
+
+joint neck
+radius 0.1
+pos 1.0 0.9 2.5
+axis 1.0 0.0 0.0
+range 0.5 -0.5
+strength 1.0
+velocity 50.0
+dm_threshold -1
+
+joint chest
+radius 0.19000
+pos 1.0 0.9 2.15
+axis 0.0 0.0 1.0
+range 1.0 -1.0
+strength 4.0
+velocity 20.0
+dm_threshold -1
+
+joint lumbar
+radius 0.14
+pos 1.0 0.925 1.975
+axis 0.0 1.0 0.0
+range 0.5 -0.5
+strength 3.0
+velocity 5.0
+dm_threshold -1
+
+joint abs
+radius 0.125
+pos 1.0 0.975 1.8
+axis 1.0 0.0 0.0
+range 0.4 -0.6
+strength 3.0
+velocity 5.0
+dm_threshold -1
+
+joint r_pecs
+radius 0.16
+pos 0.85 0.9 2.2
+axis 0.0 0.0 1.0
+range 1.5 -0.7
+strength 3.0
+velocity 15.0
+dm_threshold -1
+
+joint r_shoulder
+radius 0.14
+pos 0.65 0.9 2.3
+axis 0.0 1.0 0.0
+range 1.2 -1.2
+strength 4.0
+velocity 20.0
+dm_threshold -1
+
+joint r_elbow
+radius 0.13
+pos 0.25 0.9 2.3
+axis 0.0 0.0 1.0
+range 2.3 0.05
+strength 2.0
+velocity 40.0
+dm_threshold -1
+
+joint l_pecs
+radius 0.16
+pos 1.15 0.9 2.2
+axis 0.0 0.0 1.0
+range 1.5 -0.7
+strength 3.0
+velocity 15.0
+dm_threshold -1
+
+joint l_shoulder
+radius 0.14
+pos 1.35 0.9 2.3
+axis 0.0 1.0 0.0
+range 1.2 -1.2
+strength 4.0
+velocity 20.0
+dm_threshold -1
+
+joint l_elbow
+radius 0.13
+pos 1.75 0.9 2.3
+axis 0.0 0.0 1.0
+range 2.3 0.05
+strength 2.0
+velocity 40.0
+dm_threshold -1
+
+joint r_wrist
+radius 0.11
+pos -0.2 0.9 2.3
+axis 0.0 0.0 1.0
+range 2.0 -0.3
+strength 2.0
+velocity 60.0
+dm_threshold -1
+
+joint l_wrist
+radius 0.11
+pos 2.2 0.9 2.3
+axis 0.0 0.0 1.0
+range 2.0 -0.3
+strength 2.0
+velocity 60.0
+dm_threshold -1
+
+joint r_glute
+radius 0.185
+pos 0.9 1.075 1.61
+axis 0.0 1.0 0.0
+range 1.2 -0.2
+strength 4.0
+velocity 10.0
+dm_threshold -1
+
+joint l_glute
+radius 0.185
+pos 1.1 1.075 1.61
+axis 0.0 1.0 0.0
+range 1.2 -0.2
+strength 4.0
+velocity 10.0
+dm_threshold -1
+
+joint r_hip
+radius 0.15
+pos 0.79 1.0 1.5
+axis 1.0 0.0 0.0
+range 1.0 -1.8
+strength 2.0
+velocity 12.0
+dm_threshold -1
+
+joint l_hip
+radius 0.15
+pos 1.21 1.0 1.5
+axis 1.0 0.0 0.0
+range 1.0 -1.8
+strength 2.0
+velocity 12.0
+dm_threshold -1
+
+joint r_knee
+radius 0.12
+pos 0.81 0.98 0.85
+axis 1.0 0.0 0.0
+range 2.3 0.0
+strength 4.0
+velocity 40.0
+dm_threshold -1
+
+joint l_knee
+radius 0.12
+pos 1.19 0.98 0.85
+axis 1.0 0.0 0.0
+range 2.3 0.0
+strength 4.0
+velocity 40.0
+dm_threshold -1
+
+joint r_ankle
+radius 0.1
+pos 0.8 1.03 0.25
+axis 1.0 0.0 0.0
+range 1.1 -0.3
+strength 1.0
+velocity 8.0
+dm_threshold -1
+
+joint l_ankle
+radius 0.1
+pos 1.2 1.03 0.25
+axis 1.0 0.0 0.0
+range 1.1 -0.3
+strength 1.0
+velocity 8.0
+dm_threshold -1
+
+player 1
+body head
+sides 0.2 0.0 0.0
+pos 1.0 0.85 2.6
+rot 0.0 0.0 0.0
+density 0.25
+
+body breast
+shape cylinder
+sides 0.14 0.3 0.3
+pos 0.95 0.75 2.1
+rot 0.0 90.0 0.0
+density 0.25
+
+body chest
+sides 0.35 0.125 0.2
+pos 1.0 0.9 1.9
+rot 0.0 0.0 0.0
+density 0.25
+
+body stomach
+sides 0.25 0.125 0.2
+pos 1.0 0.95 1.7
+rot 0.0 0.0 0.0
+density 0.25
+
+body groin
+sides 0.15 0.15 0.2
+pos 1.0 0.965000 1.575
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_pecs
+sides 0.15 0.15 0.2
+pos 0.85 0.9 2.1
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_biceps
+sides 0.4 0.14 0.14
+pos 0.45 0.9 2.25
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_triceps
+sides 0.4 0.1 0.1
+pos 0.05 0.9 2.25
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_pecs
+sides 0.15 0.15 0.2
+pos 1.15 0.9 2.1
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_biceps
+sides 0.4 0.14 0.14
+pos 1.55 0.9 2.25
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_triceps
+sides 0.4 0.1 0.1
+pos 1.95 0.9 2.25
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_hand
+sides 0.22 0.22 0.22
+pos -0.35 0.85 2.25
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_hand
+sides 0.22 0.22 0.22
+pos 2.35 0.85 2.25
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_butt
+sides 0.1 0.1 0.1
+pos 0.8 1.0 1.4
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_butt
+sides 0.1 0.1 0.1
+pos 1.2 1.0 1.4
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_thigh
+sides 0.13 0.31 0.0
+pos 0.8 1.0 1.125
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_thigh
+sides 0.13 0.31 0.2
+pos 1.2 1.0 1.125
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_leg
+sides 0.11 0.35 0.0
+pos 1.19 0.98 0.475
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_leg
+sides 0.11 0.35 0.0
+pos 0.81 0.98 0.475
+rot 0.0 0.0 0.0
+density 0.25
+
+body r_foot
+sides 0.175 0.41 0.08
+pos 0.8 0.9 0.05
+rot 0.0 0.0 0.0
+density 0.25
+
+body l_foot
+sides 0.175 0.41 0.08
+pos 1.2 0.9 0.05
+rot 0.0 0.0 0.0
+density 0.25
+
+joint neck
+radius 0.1
+pos 1.0 0.9 2.45
+axis 1.0 0.0 0.0
+range 0.5 -0.5
+strength 1.0
+velocity 50.0
+dm_threshold -1
+
+joint chest
+radius 0.19000
+pos 1.0 0.9 2.1
+axis 0.0 0.0 1.0
+range 1.0 -1.0
+strength 4.0
+velocity 20.0
+dm_threshold -1
+
+joint lumbar
+radius 0.14
+pos 1.0 0.925 1.925
+axis 0.0 1.0 0.0
+range 0.5 -0.5
+strength 3.0
+velocity 5.0
+dm_threshold -1
+
+joint abs
+radius 0.125
+pos 1.0 0.975 1.75
+axis 1.0 0.0 0.0
+range 0.4 -0.6
+strength 3.0
+velocity 5.0
+dm_threshold -1
+
+joint r_pecs
+radius 0.16
+pos 0.85 0.9 2.15
+axis 0.0 0.0 1.0
+range 1.5 -0.7
+strength 3.0
+velocity 15.0
+dm_threshold -1
+
+joint r_shoulder
+radius 0.14
+pos 0.65 0.9 2.25
+axis 0.0 1.0 0.0
+range 1.2 -1.2
+strength 4.0
+velocity 20.0
+dm_threshold -1
+
+joint r_elbow
+radius 0.13
+pos 0.25 0.9 2.25
+axis 0.0 0.0 1.0
+range 2.3 0.05
+strength 2.0
+velocity 40.0
+dm_threshold -1
+
+joint l_pecs
+radius 0.16
+pos 1.15 0.9 2.15
+axis 0.0 0.0 1.0
+range 1.5 -0.7
+strength 3.0
+velocity 15.0
+dm_threshold -1
+
+joint l_shoulder
+radius 0.14
+pos 1.35 0.9 2.25
+axis 0.0 1.0 0.0
+range 1.2 -1.2
+strength 4.0
+velocity 20.0
+dm_threshold -1
+
+joint l_elbow
+radius 0.13
+pos 1.75 0.9 2.25
+axis 0.0 0.0 1.0
+range 2.3 0.05
+strength 2.0
+velocity 40.0
+dm_threshold -1
+
+joint r_wrist
+radius 0.11
+pos -0.2 0.9 2.25
+axis 0.0 0.0 1.0
+range 2.0 -0.3
+strength 2.0
+velocity 60.0
+dm_threshold -1
+
+joint l_wrist
+radius 0.11
+pos 2.2 0.9 2.25
+axis 0.0 0.0 1.0
+range 2.0 -0.3
+strength 2.0
+velocity 60.0
+dm_threshold -1
+
+joint r_glute
+radius 0.185
+pos 0.9 1.075 1.56
+axis 0.0 1.0 0.0
+range 1.2 -0.2
+strength 4.0
+velocity 10.0
+dm_threshold -1
+
+joint l_glute
+radius 0.185
+pos 1.1 1.075 1.56
+axis 0.0 1.0 0.0
+range 1.2 -0.2
+strength 4.0
+velocity 10.0
+dm_threshold -1
+
+joint r_hip
+radius 0.15
+pos 0.79 1.0 1.45
+axis 1.0 0.0 0.0
+range 1.0 -1.8
+strength 2.0
+velocity 12.0
+dm_threshold -1
+
+joint l_hip
+radius 0.15
+pos 1.21 1.0 1.45
+axis 1.0 0.0 0.0
+range 1.0 -1.8
+strength 2.0
+velocity 12.0
+dm_threshold -1
+
+joint r_knee
+radius 0.12
+pos 0.81 0.98 0.8
+axis 1.0 0.0 0.0
+range 2.3 0.0
+strength 4.0
+velocity 40.0
+dm_threshold -1
+
+joint l_knee
+radius 0.12
+pos 1.19 0.98 0.8
+axis 1.0 0.0 0.0
+range 2.3 0.0
+strength 4.0
+velocity 40.0
+dm_threshold -1
+
+joint r_ankle
+radius 0.1
+pos 0.8 1.03 0.2
+axis 1.0 0.0 0.0
+range 1.1 -0.3
+strength 1.0
+velocity 8.0
+dm_threshold -1
+
+joint l_ankle
+radius 0.1
+pos 1.2 1.03 0.2
+axis 1.0 0.0 0.0
+range 1.1 -0.3
+strength 1.0
+velocity 8.0
+dm_threshold -1

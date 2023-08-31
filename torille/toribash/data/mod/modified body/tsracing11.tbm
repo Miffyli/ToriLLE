@@ -1,0 +1,532 @@
+#!/usr/bin/toribash
+# All Tracks by Smilies2 
+######################################
+gamerule
+engageplayerpos 2,0,0,-2,0,0
+dismemberment 0
+matchframes 1200
+turnframes 30
+
+######Formula Car by Smilies2
+
+#Engine
+
+body l_hand
+shape sphere
+    pos 2 26.6875 0.3125
+    rot 0 0 0
+    sides 0.265 1 1
+    density 0.05
+thrust 1 0 0 -1.5
+
+joint l_wrist
+radius 0.2
+pos 2 26.6875 0.3125
+axis 1 0 0
+range 4 -4
+strength 0.75
+velocity 800.0
+density 0.001
+  
+body r_hand
+ shape sphere
+    pos 0 26.6875 0.3125
+    rot 0 0 0
+    sides 0.265 1 1
+    material steel
+    density 0.05
+thrust 1 0 0 -1.5
+
+joint r_wrist
+radius 0.2
+pos 0 26.6875 0.3125
+axis -1 0 0
+rot 0 0 0
+range 4 -4
+strength 0.75
+velocity 800.0
+density 0.001
+
+body l_foot
+    shape sphere
+    pos 1.5625 25 0.25
+    rot 0 0 0
+    sides 0.195 1 1
+    density 0.2
+thrust 1 0 0 -2.5
+
+joint l_ankle
+radius 0.14
+pos 1.5625 25 0.25
+axis -1 0 0
+range 4 -4
+strength 0.7
+velocity 800.0
+density 0.001
+
+body r_foot
+    shape sphere
+    pos 0.375 25 0.25
+    rot 0 0 0
+    sides 0.195 1 1
+    density 0.2
+    flag 0
+thrust 1 0 0 -2.5
+
+joint r_ankle
+radius 0.14
+pos 0.375 25 0.25
+axis -1 0 0
+range 4 -4
+strength 0.7
+velocity 800.0
+density 0.001
+
+#Back Chassis
+
+body l_pecs
+ shape box
+    pos 1.3125 26.6875 0.4375
+    rot 0 0 0
+    sides 0.5 0.5625 0.125
+    density 0.001
+    thrust 1 0 0 0.05
+
+joint l_pecs
+radius 0.05
+pos 1.3125 26.6875 0.4375
+axis 0 0 0
+range 0 -0
+velocity 0
+density 0.001
+
+body r_pecs
+   shape box
+    pos 0.6875 26.6875 0.4375
+    rot 0 0 0
+    sides 0.5 0.5625 0.125l
+    density 0.001
+    thrust 1 0 0 0.05
+
+joint r_pecs
+radius 0.05
+pos 0.6875 26.6875 0.4375
+axis 0 0 0
+range 0 -0
+velocity 0
+density 0.001
+
+#Steering 
+
+body breast
+   shape box
+    pos 1 26.125 0.3125
+    rot 0 0 0
+    sides 0.8125 0.655 0.25375
+    density 0.001
+thrust 1 0 0 0.5
+
+joint chest
+radius 0.11
+pos 1.0 25.8125 0.4
+axis 0 0 0
+range 0 -0
+velocity 0
+density 0.001
+
+body chest
+   shape box
+    pos 1 25.625 0.3125
+    rot 0 0 0
+    sides 0.4375 0.4675 0.25375
+    density 0.001
+thrust 1 0 0 0.5
+
+joint lumbar
+radius 0.12
+pos 1 25.375 0.39
+axis 1 0 0
+range 0 -0.25
+strength 3
+velocity 10
+density 0.001
+
+joint abs
+radius 0.1
+pos 1.0 25 0.4
+axis 0 0 1
+range 0.03 -0.03
+strength 4.0
+velocity 10.0
+density 0.001
+
+#Front Chassis
+
+body stomach
+    pos 1 25.1875 0.3125
+    rot 0 0 0
+    sides 0.25 0.4675 0.25375
+    material steel
+    density 0.001
+thrust 1 0 0 0.5
+
+body groin
+  pos 1 25 0.3125
+    rot 0 0 0
+    sides 0.05 0.02375 0.02375
+    material steel
+    density 0.001
+thrust 1 0 0 0.5
+
+body l_butt
+ shape box
+    pos 1.25 25.125 0.4375
+    rot 0 0 0
+    sides 0.3125 0.5625 0.125
+    density 0.001
+    thrust 1 0 0 0.075
+
+joint l_glute
+radius 0.1
+pos 1.25 25.125 0.4375
+axis 0 0 0
+range 0 -0
+velocity 0
+density 0.001
+
+body r_butt
+    shape box
+    pos 0.75 25.125 0.4375
+    rot 0 0 0
+    sides 0.3125 0.5625 0.125
+    density 0.001
+    thrust 1 0 0 0.075
+
+joint r_glute
+radius 0.1
+pos 0.75 25.125 0.4375
+axis 0 0 0
+range 0 -0
+velocity 0
+density 0.001
+
+body head
+    shape sphere
+    pos 1 26.375 0.5625
+    rot 0 0 0
+    sides 0.125 1 1
+    density 0.001
+    thrust 1 0 0 0.01
+
+joint neck
+radius 0.1
+pos 1 26.475 0.5225
+axis 0 0 0
+rot 0 0 0
+range 0 -0
+velocity 0
+density 0.001
+
+#Suspensions
+
+body l_triceps
+ shape box
+    pos 1.625 26.6875 0.3125
+    rot 0 0 0
+    sides 0.25 0.1875 0.125
+    density 0.001
+
+joint l_elbow
+radius 0.05
+pos 1.47 26.6875 0.3125
+axis 0 0 0
+range 0 -0
+velocity 0
+density 0.001
+
+body r_triceps
+    shape box
+    pos 0.375 26.6875 0.3125
+    rot 0 0 0
+    sides 0.25 0.1875 0.125
+    density 0.001
+thrust 1 0 0 0.001
+
+joint r_elbow
+radius 0.05
+pos 0.53 26.6875 0.3125
+axis 0 0 0
+range 0 -0
+velocity 0
+density 0.001
+
+body l_biceps
+    shape box
+    pos 1.3125 26.6875 0.3125
+    rot 0 0 0
+    sides 0.25 0.1875 0.125
+    density 0.001
+
+joint l_shoulder
+radius 0.12
+pos 1.3125 26.5625 0.3125
+axis 0 0 0
+range 0 -0
+velocity 0
+density 0.001
+
+body r_biceps
+    shape box
+    pos 0.6875 26.6875 0.3125
+    rot 0 0 0
+    sides 0.25 0.1875 0.125
+    density 0.001
+
+joint r_shoulder
+radius 0.12
+pos 0.6875 26.5625 0.3125
+axis 0 0 0
+range 0 -0
+velocity 0
+density 0.001
+
+body l_leg
+    shape box
+    pos 1.3125 25 0.25
+    rot 0 0 0
+    sides 0.25 0.1875 0.125
+    density 0.001
+
+joint l_knee
+radius 0.05
+pos 1.25 25.0 0.25
+axis 0 0 0
+range 0 -0
+velocity 0
+density 0.001
+
+body r_leg
+    shape box
+    pos 0.625 25 0.25
+    rot 0 0 0
+    sides 0.25 0.1875 0.125
+    density 0.001
+
+joint r_knee
+radius 0.05
+pos 0.75 25.0 0.25
+axis 0 0 0
+range 0 -0
+velocity 0
+density 0.001
+  
+body l_thigh
+    shape box
+    pos 1.125 25 0.25
+    rot 0 0 0
+    sides 0.25 0.1875 0.125
+    density 0.001
+thrust 1 0 0 0.2
+
+joint l_hip
+radius 0.05
+pos 1.125 25.125 0.25
+axis 0 0 0
+range 0 -0
+velocity 0
+density 0.001
+
+body r_thigh
+    shape box
+    pos 0.875 25 0.25
+    rot 0 0 0
+    sides 0.25 0.1875 0.125
+    density 0.001
+thrust 1 0 0 0.2
+
+joint r_hip
+radius 0.05
+pos 0.875 25.125 0.25
+axis 0 0 0
+range 0 -0
+velocity 0
+density 0.001
+
+##Track##
+
+env_obj 1
+    shape box
+    pos 6 4.9375 0.5
+    color 0.4 0.4 0.4 1
+    rot 0 0 0
+    sides 0.5 65 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 2
+    shape box
+    pos -4 4.6875 0.5
+    color 0.4 0.4 0.4 1
+    rot 0 0 0
+    sides 0.5 64.5 1
+    material steel
+    mass 0.1
+    flag 24
+#END 2
+
+env_obj 3
+    shape box
+    pos -7.625 -31.75 0.5
+    color 0.4 0.4 0.4 1
+    rot 0 0 40
+    sides 0.5 11.5 1
+    material steel
+    mass 0.1
+    flag 24
+#END 3
+
+env_obj 4
+    shape box
+    pos -3.625 -45 0.5
+    color 0.4 0.4 0.4 1
+    rot 0 0 -40
+    sides 0.5 24 1
+    material steel
+    mass 0.1
+    flag 24
+#END 4
+
+env_obj 5
+    shape box
+    pos 2.375 -31.75 0.5
+    color 0.4 0.4 0.4 1
+    rot 0 0 40
+    sides 0.5 11.5 1
+    material steel
+    mass 0.1
+    flag 24
+#END 5
+
+env_obj 6
+    shape box
+    pos 2.375 -40.25 0.5
+    color 0.4 0.4 0.4 1
+    rot 0 0 -40
+    sides 0.5 11.5 1
+    material steel
+    mass 0.1
+    flag 24
+#END 6
+
+env_obj 7
+    shape box
+    pos 9.875 -40.625 0.5
+    color 0.4 0.4 0.4 1
+    rot 0 0 -134
+    sides 0.5 11.5 1
+    material steel
+    mass 0.1
+    flag 24
+#END 7
+
+env_obj 8
+    shape box
+    pos 12.6875 -45.5 0.5
+    color 0.4 0.4 0.4 1
+    rot 0 0 -134
+    sides 0.5 25 1
+    material steel
+    mass 0.1
+    flag 24
+#END 8
+
+env_obj 9
+    shape box
+    pos 13.9375 0.1875 0.5
+    color 0.4 0.4 0.4 1
+    rot 0 0 0
+    sides 0.5 74 1
+    material steel
+    mass 0.1
+    flag 24
+#END 9
+
+env_obj 10
+    shape box
+    pos 21.625 0 0.5
+    color 0.4 0.4 0.4 1
+    rot 0 0 0
+    sides 0.5 74 1
+    material steel
+    mass 0.1
+    flag 24
+#END 10
+
+env_obj 11
+    shape box
+    pos 9.9675 36.625 0.5
+    color 0.4 0.4 0.4 1
+    rot 0 0 0
+    sides 8.4375 1.625 1
+    material steel
+    mass 0.1
+    flag 24
+#END 11
+
+env_obj 12
+    shape box
+    pos 18.625 39.5 0.5
+    color 0.4 0.4 0.4 1
+    rot 0 0 40
+    sides 8.1875 0.375 1
+    material steel
+    mass 0.1
+    flag 24
+#END 12
+
+env_obj 13
+    shape box
+    pos -1 39.4375 0.5
+    color 0.4 0.4 0.4 1
+    rot 0 0 -40
+    sides 8.1875 0.375 1
+    material steel
+    mass 0.1
+    flag 24
+#END 13
+
+env_obj 14
+    shape box
+    pos 8.8125 42.0625 0.5
+    color 0.4 0.4 0.4 1
+    rot 0 0 0
+    sides 13.5625 0.375 1
+    material steel
+    mass 0.1
+    flag 24
+#END 14
+
+env_obj 15
+    shape box
+    pos 9.0625 39.5625 0
+    color 0 0 1 0
+    rot 0 0 0
+    sides 29.1875 8 0.015
+    material steel
+    mass 0.1
+    flag 24
+    friction 0
+#END 15
+
+env_obj 16
+    shape box
+    pos 1 0 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 10.5 1 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 16

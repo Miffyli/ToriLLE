@@ -1,0 +1,174 @@
+# New UI Localization file	
+NAVBUTTONHOME	Menu	
+NAVBUTTONPLAY	Jouer	
+NAVBUTTONPRACTICE	S’entraîner	
+NAVBUTTONMODS	Modes	
+NAVBUTTONTOOLS	Option	
+NAVBUTTONTOMAIN	Vers le menu	
+NAVBUTTONBACK	Retour	
+MAINMENUTORISHOPNAME	Torishop	
+MAINMENUTORISHOPDESC	Essayez et achetez des articles pour votre Tori	
+MAINMENUCLANSNAME	Clans	
+MAINMENUCLANSDESC	Découvrez les clans de Toribash	
+MAINMENUREPLAYSNAME	Replays	
+MAINMENUREPLAYSDESC	Regardez vos replays enregistrés	
+MAINMENUFREEPLAYNAME	Mode Libre	
+MAINMENUFREEPLAYDESC	Testez vos compétences en mode libre	
+MAINMENUMATCHMAKINGNAME	Partie rapide	
+MAINMENUMATCHMAKINGDESC	Affrontez rapidement un autre joueur	
+MAINMENUROOMLISTNAME	Liste des serveurs	
+MAINMENUROOMLISTDESC	Créez votre propre serveur en ligne ou rejoignez-en un existant	
+MAINMENUBEGINNERTUTNAME	Tutoriel pour débutant	
+MAINMENUBEGINNERTUTDESC	Apprenez les bases de Toribash : contrôles, jouabilité et plus encore	
+MAINMENUADVMOVESNAME	Mouvements avancés	
+MAINMENUADVMOVESDESC	Découvrez les mouvements avancés à utiliser en mode multijoueur	
+MAINMENUFIGHTUKENAME	Affrontez Uke	
+MAINMENUFIGHTUKEDESC	Utilisez vos compétences contre l'ultime rival de Tori	
+MAINMENUCOMEBACKNAME	Retourner à l’entraînement	
+MAINMENUCOMEBACKDESC	Affrontez de nouveau Uke sans disqualification	
+MAINMENUGAMERULESNAME	Réglages	
+MAINMENUGAMERULESDESC	Modifier la gravité ou d'autres paramètres	
+MAINMENUMODLISTNAME	Liste de mode	
+MAINMENUMODLISTDESC	Testez les nombreux modes présents ou téléchargez en de nouveaux	
+MAINMENUMODMAKERNAME	Créateur de mode	
+MAINMENUMODMAKERDESC	Créez votre propre mode	
+MAINMENUMODSDISCOVERNAME	Découvrir	
+MAINMENUMODSDISCOVERDESC	Recherchez de nouveaux modes créés par d'autres joueurs	
+MAINMENUSHADERSNAME	Shader et Atmosphère	
+MAINMENUSHADERSDESC	Ajustez les ombrages ou mettez une atmosphère	
+MAINMENUSCRIPTSNAME	Script	
+MAINMENUSCRIPTSDESC	Télécharger des scripts pré-installés ou tiers pour Toribash	
+MAINMENUSOUNDSNAME	Sons	
+MAINMENUSOUNDSDESC	Activer / désactiver vos sons	
+DOWNLOADINGFILESWAIT	Chargement des fichiers, veuillez patienter…	
+STORESETEMPTY	Vide	
+STOREITEM	Objet	
+STOREITEMS	Objets	
+STOREFLAMEBODYPART	Particules de flammes	
+STOREFLAMEID	ID de flammes	
+STOREFLAMEFORGEDBY	Crée par	
+STOREITEMINSIDESET	Intégrez les items dans un set	
+STOREOBJITEMBODYPART	Modèle 3D pour	
+STOREITEMNODESCRIPTION	Cet article n'a pas de description	
+STOREITEMGOTOSET	Allez dans le set	
+STORESETITEMNAME	Set	
+STOREITEMADDTOSET	Ajoutez un objet au set	
+STOREITEMREMOVEFROMSET	Retirez un item du set	
+STOREVIEWSETITEMS	Voir les éléments du set	
+STOREITEMSINSET	Objets dans l'ensemble	
+STORESELLMARKET	Vendre dans le marché	
+STOREDIALOGMARKETSELL1	Êtes-vous sûr de vouloir mettre 	
+STOREDIALOGMARKETSELL2	sur le marché?	
+STOREITEMDEACTIVATE	Désactiver	
+STOREDIALOGDEACTIVATE	Êtes-vous sûr de vouloir désactiver	
+STOREITEMACTIVATE	Activer	
+STOREDIALOGACTIVATE1	Êtes-vous sûr de vouloir activer 	
+STOREDIALOGCONFLICTSDEACTIVATE	Tous les objets incompatibles seront désactivés	
+STOREITEMUNPACK	Ouvrir	
+STOREDIALOGUNPACK1	Êtes-vous sûr de vouloir ouvrir 	
+STOREDIALOGUNPACKINFO	Les articles individuels seront placés dans un set ou dans votre inventaire désactivé.	
+STOREACTIVATEDINVENTORY	Inventaire activé	
+STOREDEACTIVATEDINVENTORY	Inventaire désactivé	
+STOREMARKETINVENTORY	Inventaire du marché	
+STOREINVENTORYALLITEMS	Inventaire	
+PAGINATIONPAGE	Page	
+PAGINATIONPAGEOF	de	
+STOREINVENTORYLOADING	Télécharger les données du Torivers	
+STOREGOTOSHOP	Ouvrir le Torishop	
+STOREGOTOINVENTORY	Ouvrir l’inventaire	
+STORESTEAMPURCHASELOADING	Workshop	
+STORESTEAMPURCHASEERROR	Une erreur est survenue	
+CLANSMYCLAN	Mon Clan	
+CLANSCLANLEADER	Chef de Clan	
+CLANSCLANMEMBER	Membre du Clan	
+CLANSTOGETHERWITH	Ensemble avec	
+CLANSVIEWCLAN	Voir le clan	
+GENERALSTRINGAND	et	
+CLANFILTERSRANK	Rang	
+CLANFILTERSCLANNAME	Nom	
+CLANFILTERSCLANTAG	Initiale	
+CLANFILTERSCLANID	ID	
+CLANFILTERSOFFICIALSTATUS	Statut	
+CLANFILTERSJOINMODE	Recrutement	
+CLANFILTERSDEAD	Mort	
+CLANFILTERSINACTIVE	Inactif	
+CLANFILTERSACTIVE	Actif	
+SORTORDERASCENDING	Croissant	
+SORTORDERDESCENDING	Décroissant	
+CLANFILTERSACTIVITYSTATE	Statut des activités	
+CLANFILTERSACTIVITYSTATEDESC	Les clans sont appelés actifs s'ils ont au moins 5 membres. Les clans sans membres sont marqués comme morts	
+CLANFILTERSFFAONLY	Ouvert à tous	
+CLANFILTERSFFAONLYDESC	Vous pouvez rejoindre gratuitement tous les clans à tout moment en un seul clic. Les clans d'invitation nécessitent un processus d'application spécifique.	
+CLANFILTERSOFFICIALONLY	Officiel	
+CLANFILTERSOFFICIALONLYDESC	Les clans officiels ont leur propre page sur le forum de Toribash et les initiales du clan s'accroche au jeu.	
+SORTBYNAME	Commande	
+SORTORDERNAME	Ordre de commande	
+CLANSSEARCHFILTERS	Filtre de recherche	
+CLANSSEARCH	Rechercher des clans	
+CLANSCLANLIST	Liste de clan	
+CLANSLEGENDRANK	Rang	
+CLANSLEGENDLEVEL	Niveau	
+CLANSLEGENDXP	Expérience	
+CLANSLEGENDTAGNAME	Initiale et nom	
+CLANSLEGENDSTATUS	Statues	
+CLANSLEGENDJOINMODE	Adhésion	
+CLANSTATEOFFICIAL	Officiel	
+CLANSTATEUNOFFICIAL	Non-Officiel	
+CLANSTATEFREEFORALL	Ouvert  	
+CLANSTATEINVITEONLY	Invitation seulement	
+CLANSLISTEMPTYMSG	Aucun clan	
+CLANSJOINCLAN	Rejoignez le clan	
+CLANSRELOADLOGO	Charger le nouveau logo	
+CLANSUPDATINGLOGO	Mettre à jour	
+CLANSTATEUNRANKED	Non classé	
+CLANSVIEWWARSFORUM	Voir les guerres dans le forum	
+CLANSTOPACHMISSING	Ce clan n’a pas choisi de statut	
+CLANSLEGENDROSTER	Liste	
+CLANLEADERS	Chefs	
+CLANLEADER	Chef  	
+CLANMEMBERS	Membres	
+CLANMEMBER	Membre  	
+REWARDSDAILYTITLE	Récompense de connexion journalière	
+REWARDSCLAIM	Recevoir la récompense	
+REWARDSCLAIMNETWORKERROR	Erreur de communication avec les serveurs Toribash, veuillez réessayer plus tard	
+REWARDSCLAIMINPROGRESS	Récupération de la récompense ...	
+REWARDSCLAIMSUCCESS	Récompense obtenue avec succès !	
+REWARDSCLAIMNOREWARD	Aucune récompense disponible, réessayez plus tard…	
+REWARDSCLAIMTIMEOUT	Erreur de délai d'attente, redémarrez votre jeu ou allez en ligne	
+REWARDSCLAIMERROROTHER	Erreur lors de la récupération	
+REWARDSNOAVAILABLE	Aucune récompense disponible  	
+REWARDSAVAILABLERESTART	La récompense sera disponible après le redémarrage du jeu	
+REWARDSEXPIRED	Votre récompense a expiré	
+REWARDSTIMEHOURS	Heures	
+REWARDSTIMEHOUR	Heure	
+REWARDSTIMEMINUTES	Minutes	
+REWARDSTIMEMINUTE	Minute	
+REWARDSTIMESECONDS	Secondes	
+REWARDSNEXTREWARD	Prochaine récompense dans	
+REWARDSTIMELEFT	rester pour recevoir la récompense	
+MATCHMAKEMODGRAPPLING	Grappling	
+MATCHMAKEMODKICKING	Kicking	
+MATCHMAKEMODSTRIKING	Striking	
+MATCHMAKEMODFUN	Fun	
+MATCHMAKERANKEDBELT	Les parties classées sont disponibles après la ceinture marron	
+MATCHMAKERANKEDMODE	Mode classé	
+MATCHMAKERANK	Rang	
+MATCHMAKEFIGHTSTOTAL	Tout les combats	
+MATCHMAKEWINRATE	Ratio	
+MATCHMAKENOPLAYERS	Aucun joueur	
+MATCHMAKEPLAYERSEARCHING	À la recherche de joueurs	
+MATCHMAKEPLAYERSSEARCHING	À la recherche de joueurs	
+MATCHMAKESEARCHING	À la recherche de partie classé	
+MATCHMAKESEARCH	Rechercher  	
+MATCHMAKESTOPSEARCH	Arrêter la recherche	
+MATCHMAKEUNRANKEDMODE	Mode non classé	
+MATCHMAKEFINDBESTMATCH1	Trouvé	
+MATCHMAKEFINDBESTMATCH2	meilleures parties	
+MATCHMAKESEARCHSETTINGS1	Rechercher  	
+MATCHMAKESEARCHSETTINGS2	avec les paramètres	
+MATCHMAKESEARCHCUSTOM	customisé	
+MATCHMAKEUPDATINGRANK	Mise à jour des statistiques du classement …	
+NAVBUTTONEXIT	Quitter	
+MAINMENUUSERCLAN	Clan	
+STORESHOPDESC	Acheter de nouveaux objets pour votre Tori	
+STOREINVENTORYDESC	Customisez votre personnages avec les objets achetés	

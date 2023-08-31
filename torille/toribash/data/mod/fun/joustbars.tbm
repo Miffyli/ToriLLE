@@ -1,0 +1,211 @@
+#Inspired by the wonderful acrojoust mod
+#This one works with grabbable objects and a red instagib-block in the centre
+#Mod created by Fluxit. Enjoy.
+#March 29th 2009
+
+gamerule
+engageplayerpos 0
+	engagedistance 2000
+	engageheight 25
+	dismember 1
+	dismemberthreshold 225
+	fracture 1
+	fracturethreshold 130
+	dojotype 0
+	dojosize 1200
+	gravity 0 0 -8
+	dq 0
+	matchframes 500
+	turnframes 15,15,20,30,20,30,20,50,50,50,50,50,50,50
+
+body stomach 
+	force 0 10 1
+body breast
+	force 0 20 1
+body chest
+	force 0 10 1
+body groin
+	force 0 10 1
+body r_pecs
+	force 0 15 1
+body l_pecs
+	force 0 15 1
+body r_thigh
+	force 0 20 1
+body l_thigh
+	force 0 20 1
+body l_leg
+	force 0 30 00
+body r_leg
+	force 0 30 00
+body head
+	force 0 30 1
+body r_hand
+	force 0 10 0
+body l_hand
+	force 0 10 0
+body r_triceps
+	force 0 5 0
+body l_triceps
+	force 0 5 0
+
+
+#Uke postbar
+env_obj 1
+    shape box
+    pos 1 -2 3
+    color 0 1 0.25
+    rot 0 0 0
+    sides 3 0.1 0.1
+    material steel
+    mass 0.01
+    flag 0
+#END 1
+
+#Tori postbar
+env_obj 2
+    shape box
+    pos 1 2 3
+    color 0 1 0.25
+    rot 0 0 0
+    sides 3 0.1 0.1
+    material steel
+    mass 0.01
+    flag 0
+#END 2
+
+#Uke step_l_pole
+env_obj 3
+    shape box
+    pos 2.5 -2 1.5
+    color 0 1 0.25
+    rot 0 0 0
+    sides 0.1 0.1 2.95
+    material steel
+    mass 0.0001
+    flag 0
+#END 3
+
+#Uke step_r_pole
+env_obj 4
+    shape box
+    pos -0.5 -2 1.5
+    color 0 1 0.25
+    rot 0 0 0
+    sides 0.1 0.1 2.95
+    material steel
+    mass 0.0001
+    flag 0
+#END 4
+
+#Tori step_l_pole
+env_obj 5
+    shape box
+    pos 2.5 2 1.5
+    color 0 1 0.25
+    rot 0 0 0
+    sides 0.1 0.1 2.95
+    material steel
+    mass 0.0001
+    flag 0
+#END 5
+
+#Tori step_r_pole
+env_obj 6
+    shape box
+    pos -0.5 2 1.5
+    color 0 1 0.25
+    rot 0 0 0
+    sides 0.1 0.1 2.95
+    material steel
+    mass 0.0001
+    flag 0
+#END 6
+
+#Connector
+env_obj 7
+    shape box
+    pos 1 0 3.1
+    color 0.5 0 1
+    rot 0 0 0
+    sides 0.2 4 0.1
+    material steel
+    mass 0.001
+    flag 0
+#END 7
+
+#startblock
+env_obj 8
+	shape box
+	pos 1 -5.15 0.25
+	color 1.1 1.1 1
+	rot 0 0 0
+	sides 2.5 1 0.5
+	material steel
+	mass 0.1
+	flag 24
+#END 14
+
+#startblock
+env_obj 9
+	shape box
+	pos 1 5 0.25
+	color 1.1 1.1 1
+	rot 0 0 0
+	sides 2.5 1 0.5
+	material steel
+	mass 0.1
+	flag 24
+#END 15
+
+#Guillotine
+env_obj 10
+    shape box
+    pos 1 0 3.2
+    color 1 0 0
+    rot 0 0 0
+    sides 0.2 0.2 0.2
+    material steel
+    mass 2
+    flag 6
+#END 10
+
+#Middleblock
+env_obj 11
+    shape box
+    pos 1 0 0.05
+    color 0 1 1
+    rot 0 0 0
+    sides 1 1 0.1
+    material steel
+    mass 50
+    flag 16
+#END 11
+
+#Leftstopper
+env_obj 12
+    shape box
+    pos 4.25 0 0.5
+    color 1 0 0
+    rot 0 90 0
+    sides 1 0.2 0.2
+    material steel
+    mass 100
+    flag 16
+#END 12
+
+#Rightstopper
+env_obj 13
+    shape box
+    pos -2.25 0 0.5
+    color 1 0 0
+    rot 0 90 0
+    sides 1 0.2 0.2
+    material steel
+    mass 100
+    flag 16
+#END 13
+
+
+
+

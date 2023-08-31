@@ -1,0 +1,30 @@
+gamerule
+engageplayerpos 0
+matchframes 180
+turnframes 10,10,10,10,20,20,20,20,30,30
+flags 2
+dismemberment 1
+dismemberthreshold 75
+fracture 0
+engagedistance 170
+sumo 1
+dq 1
+joint l_knee
+	flag 32
+	velocity 70 
+joint r_knee
+	flag 32
+	velocity 70 
+joint l_hip
+	flag 16
+	velocity 70 
+joint r_hip
+	flag 16
+	velocity 70 
+joint chest
+	velocity 70
+body r_foot
+	force 0 10 00
+body l_foot
+	force 0 10 00
+gravity 0.00 0.00 -13

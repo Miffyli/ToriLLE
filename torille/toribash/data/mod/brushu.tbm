@@ -1,0 +1,12 @@
+#!/usr/bin/toribash
+gamerule
+engageplayerpos 0
+engagedistance 300
+dismember 1
+dismemberthreshold 300
+fracture 1
+fracturethreshold 180
+turnframes 50
+matchframes 1000
+sumo 1
+dq 1

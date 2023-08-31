@@ -1,0 +1,25 @@
+#!/usr/bin/toribash
+gamerule
+engageplayerpos 0
+gravity 0.00 0.00 -30.00
+engagedistance 110
+dismemberthreshold 325
+dismember 1
+fracture 1
+fracturethreshold 300
+matchframes 350
+turnframes 10,20,20,30,30,35,35,40,40,40,50
+dojosize 500
+dojotype 0
+dq 1
+sumo 1
+flags 11
+
+body head
+sides 0.4 0.0 0.0
+pos 1.0 0.85 2.85
+density 0.06
+
+joint neck
+strength 1
+

@@ -1,0 +1,1277 @@
+#!/usr/bin/toribash
+#####Fastbreak Mod by Smilies2#####
+gamerule
+matchframes 220
+turnframes 20,20,10,20,20,10,10,10,100
+dismemberment 0
+sumo 1
+fracture 0
+drawwinner 2
+disqualification 0
+engageplayerpos 0,0,0,1.23,-6.25,0
+engageplayerrot 0,0,0,0,0,180
+damage 2
+reactiontime 15
+gravity 0 0 -30
+########################
+body head
+sides 0.215 0.0 0.0
+density 0.05
+force 0 8 9
+flag 16
+
+body l_hand
+sides 0.45 0.21 0.095
+alt_sides 0.4 0.22 0.1
+density 0.05
+flag 16
+body r_hand
+sides 0.4 0.095 0.21
+alt_sides 0.4 0.1 0.21
+density 0.05
+flag 16
+
+joint l_elbow
+axis 0 1 0
+velocity 15
+strength 1
+range 1.6 0.05
+flag 16
+
+joint r_elbow
+axis 0 1 1
+velocity 20
+strength 1
+range 1.6 0.05
+flag 16
+
+joint l_wrist
+axis 0 1 0
+velocity 20
+range 1.8 -1.2
+strength 1
+flag 16
+
+joint r_wrist
+axis 1 0 0
+velocity 25
+range 1.5 -1.5
+strength 1
+flag 16
+
+joint neck
+radius 0.15
+flag 16
+
+body r_biceps
+density 0.05
+flag 16
+
+body l_biceps
+density 0.05
+flag 16
+
+body r_triceps
+density 0.05 
+flag 16
+
+body l_triceps 
+density 0.05
+flag 16
+
+body l_pecs
+density 0.05
+flag 16
+
+body r_pecs
+density 0.05
+flag 16
+
+body l_butt
+force 0 8 6
+density 0.05
+flag 16
+
+body r_butt
+force 0 8 6
+density 0.05
+flag 16
+
+body l_thigh
+density 0.05
+flag 16
+
+body r_thigh
+density 0.05
+flag 16
+
+body l_leg
+density 0.05
+flag 16
+
+body r_leg
+density 0.05
+flag 16
+
+body r_foot
+density 0.05 
+flag 16
+
+body l_foot
+density 0.05
+flag 16
+
+joint l_ankle
+range 0.6 -0.3
+strength 1.0
+velocity 100.0
+flag 16
+
+joint r_ankle
+range 0.6 -0.3
+strength 1.0
+velocity 100.0
+flag 16
+
+body breast
+flag 16
+
+body chest
+thrust 1 0 0 0.8
+flag 16
+
+body stomach
+density 0.05
+flag 16
+
+body groin
+thrust 1 0 0 -0.8
+flag 16
+
+joint chest
+strength 1
+flag 16
+
+joint l_shoulder
+velocity 10
+strength 1
+flag 16
+
+joint r_shoulder
+velocity 15
+strength 1
+flag 16
+
+joint l_pecs
+strength 1
+flag 16
+
+joint r_pecs
+strength 1
+flag 16
+
+joint lumbar
+strength 1
+flag 16
+
+joint abs
+strength 1
+flag 16
+
+joint l_glute
+range 0.75 -0.1
+strength 1
+flag 16
+
+joint r_glute
+range 0.75 -0.1
+strength 1
+flag 16
+
+joint r_hip
+range 0.3 -0.7
+strength 2
+flag 16
+
+joint l_hip
+range 0.3 -0.7
+strength 2
+flag 16
+
+joint l_knee
+strength 1
+velocity 20
+flag 16
+
+joint r_knee
+strength 1
+velocity 20
+flag 16
+
+
+env_obj 1
+    shape box
+    pos 1 -6.4375 4.8375
+    color 0.8 0.8 0.8 0.99
+    rot 0 0 0
+    sides 2.5 0.125 1.6
+    material steel
+    mass 0.1
+    flag 24
+    friction 0
+#END 1
+
+env_obj 2
+    shape cylinder
+    pos 1.3125 -6.1875 4.375
+    color 1 0.7 -0.1 1
+    rot 90 0 0
+    sides 0.015 0.375 1
+    material steel
+    mass 0.1
+    friction 0
+    flag 24
+#END 2
+
+env_obj 3
+    shape cylinder
+    pos 1.25 -5.875 4.375
+    color 1 0.7 -0.1 1
+    rot 90 50 0
+    sides 0.015 0.125 1
+    material steel
+    mass 0.1
+    friction 0
+    flag 24
+#END 3
+
+env_obj 4
+    shape cylinder
+    pos 1 -5.8125 4.375
+    color 1 0.7 -0.1 1
+    rot 90 90 0
+    sides 0.015 0.3125 1
+    material steel
+    mass 0.1
+    flag 24
+    friction 0
+#END 4
+
+env_obj 5
+    shape cylinder
+    pos 0.75 -5.875 4.375
+    color 1 0.7 -0.1 1
+    rot 90 -50 0
+    sides 0.015 0.125 1
+    material steel
+    mass 0.1
+    flag 24
+    friction 0
+#END 5
+
+env_obj 6
+    shape cylinder
+    pos 0.6875 -6.1875 4.375
+    color 1 0.7 -0.1 1
+    rot 90 0 0
+    sides 0.015 0.375 1
+    material steel
+    mass 0.1
+    flag 24
+    friction 0
+#END 6
+
+env_obj 7
+    shape sphere
+    pos 2.5 -0.1 2.0
+    color 1 0.5 -0.1 1
+    rot 0 0 0
+    sides 0.22 1 1
+    material steel
+    mass 0.00001
+    flag 64
+    bounce 5
+    trig_id 1
+    trig_mask 6
+    thrust 1 0 0 -0.001
+#END 7
+
+env_obj 8
+    shape box
+    pos 1 -22.375 5
+    color 0.1 0.1 0.1 0
+    rot 0 0 0
+    sides 30 25.8125 10
+    material steel
+    mass 0.1
+    flag 24
+    trig_id 2
+    trig_action 2
+    trig_mask 1
+    visible 0
+#END 8
+
+env_obj 9
+    shape box
+    pos 1 -6.115 4.15
+    color 1 1 1 0
+    rot 0 0 0
+    sides 0.1 0.1 0.00001
+    material steel
+    mass 0.00003
+    thrust 1 0 0 0.0009
+    flag 16
+    trig_id 4
+    trig_action 1
+    trig_mask 1
+    visible 0
+#END 9
+
+env_obj 10
+    shape box
+    pos 1 1.25 -0.5625
+    color 0 0 1 0
+    rot 0 0 0
+    sides 30 32.75 1.3
+    material steel
+    mass 0.1
+    flag 24
+    visible 0
+#END 10
+
+env_obj 11
+    shape box
+    pos 1 -6.4375 4.75
+    color 0.7 0.7 0.7 0.99
+    rot 0 0 0
+    sides 0.75 0.128 0.5
+    material steel
+    mass 0.1
+    flag 24
+#END 11
+
+env_obj 12
+    shape box
+    pos 15.75 18 5
+    color 1 0.8 0 0
+    rot 0 0 0
+    sides 0.25 55 10
+    material steel
+    mass 0.1
+    flag 24
+    trig_id 2
+    trig_action 2
+    trig_mask 1
+    visible 0
+#END 62
+
+env_obj 13
+    shape box
+    pos -13.75 18 5
+    color 1 0.8 0 0
+    sides 0.25 55 10
+    material steel
+    mass 0.1
+    flag 24
+    trig_id 2
+    trig_action 2
+    trig_mask 1
+    visible 0
+#END 63
+
+env_obj 14
+    shape box
+    pos 1 17.75 5
+    color 1 0.8 0 0
+    rot 0 0 0
+    sides 30 0.25 10
+    material steel
+    mass 0.1
+    flag 24
+    trig_id 2
+    trig_action 2
+    trig_mask 1
+    visible 0
+#END 64
+
+env_obj 15
+    shape box
+    pos 1 18 0
+    color 1 0.9 0 1
+    rot 0 0 0
+    sides 40 65 0.015
+    material steel
+    mass 0.1
+    flag 24
+#END 15
+
+env_obj 16
+    shape sphere
+    pos 1 -22.375 36
+    color 1 0.5 -0.1 0
+    rot 0 0 0
+    sides 0.22 1 1
+    material steel
+    mass 0.00001
+    trig_id 1
+    trig_mask 6
+    visible 0 
+#END 16
+
+env_obj 17
+    shape box
+    pos 1 18 0
+    color 1 0.9 0.7 1
+    rot 0 0 0
+    sides 30 57 0.02
+    material steel
+    mass 0.1
+    flag 24
+#END 17
+
+env_obj 18
+    shape box
+    pos 1 -7.5 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 27 0.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 18
+
+env_obj 19
+    shape box
+    pos 1 43.5 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 27 0.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 19
+
+env_obj 20
+    shape box
+    pos 14.375 18 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 0.25 51.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 20
+
+env_obj 21
+    shape box
+    pos -12.375 18 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 0.25 51.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 21
+
+env_obj 22
+    shape box
+    pos -10.5 -2.25 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 0.25 10.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 22
+
+env_obj 23
+    shape box
+    pos 12.5 -2.25 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 0.25 10.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 23
+
+env_obj 24
+    shape box
+    pos -9.0625 4.8125 0
+    color 0 0 0.5 1
+    rot 0 0 36
+    sides 0.25 5 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 24
+
+env_obj 25
+    shape box
+    pos 11.0625 4.8125 0
+    color 0 0 0.5 1
+    rot 0 0 -36
+    sides 0.25 5 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 25
+
+env_obj 26
+    shape box
+    pos 7.3125 7.5625 0
+    color 0 0 0.5 1
+    rot 0 0 -72
+    sides 0.25 4.9375 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 26
+
+env_obj 27
+    shape box
+    pos -5.3125 7.5625 0
+    color 0 0 0.5 1
+    rot 0 0 72
+    sides 0.25 4.9375 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 27
+
+env_obj 28
+    shape box
+    pos 1 8.3125 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 8 0.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 28
+
+env_obj 29
+    shape box
+    pos 1 -3.375 0
+    color 1 0.9 0 1
+    rot 0 0 0
+    sides 7 8 0.0225
+    material steel
+    mass 0.1
+    flag 24
+#END 29
+
+env_obj 30
+    shape box
+    pos 1 2 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 5 2.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 30
+
+env_obj 31
+    shape box
+    pos 3.375 -3.25 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 0.25 8.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 31
+
+env_obj 32
+    shape box
+    pos -1.375 -3.25 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 0.25 8.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 32
+
+env_obj 33
+    shape box
+    pos 1 0.75 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 5 0.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 33
+
+env_obj 34
+    shape box
+    pos 1 -9 0.5
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 3.25 1.25 1
+    material steel
+    mass 0.1
+    flag 24
+#END 34
+
+env_obj 35
+    shape box
+    pos 1 -8.75 2.25
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 1.25 0.75 2.5
+    material steel
+    mass 0.1
+    flag 24
+#END 35
+
+env_obj 36
+    shape box
+    pos 1 -8.5 4.0625
+    color 0.9 0.9 0.9 1
+    rot 20 0 0
+    sides 1.1 0.75 1.5
+    material steel
+    mass 0.1
+    flag 24
+#END 36
+
+env_obj 37
+    shape box
+    pos 1 -7.5375 4.625
+    color 0.9 0.9 0.9 1
+    rot 0 0 0
+    sides 1.25 2.175 0.8125
+    material steel
+    mass 0.1
+    flag 24
+#END 37
+
+env_obj 38
+    shape box
+    pos -10.5 38.25 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 0.25 10.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 38
+
+env_obj 39
+    shape box
+    pos 12.5 38.25 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 0.25 10.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 39
+
+env_obj 40
+    shape box
+    pos -9.0625 31.1875 0
+    color 0 0 0.5 1
+    rot 0 0 -36
+    sides 0.25 5 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 40
+
+env_obj 41
+    shape box
+    pos 11.0625 31.1875 0
+    color 0 0 0.5 1
+    rot 0 0 36
+    sides 0.25 5 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 41
+
+env_obj 42
+    shape box
+    pos 7.3125 28.4375 0
+    color 0 0 0.5 1
+    rot 0 0 72
+    sides 0.25 4.9375 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 42
+
+env_obj 43
+    shape box
+    pos -5.3125 28.4375 0
+    color 0 0 0.5 1
+    rot 0 0 -72
+    sides 0.25 4.9375 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 43
+
+env_obj 44
+    shape box
+    pos 1 27.6875 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 8 0.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 44
+
+env_obj 45
+    shape box
+    pos 1 39.375 0
+    color 1 0.9 0 1
+    rot 0 0 0
+    sides 7 8 0.0225
+    material steel
+    mass 0.1
+    flag 24
+#END 45
+
+env_obj 46
+    shape box
+    pos 1 34 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 5 2.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 46
+
+env_obj 47
+    shape box
+    pos 3.375 39.25 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 0.25 8.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 47
+
+env_obj 48
+    shape box
+    pos -1.375 39.25 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 0.25 8.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 48
+
+env_obj 49
+    shape box
+    pos 1 35.25 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 5 0.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 49
+
+env_obj 50
+    shape box
+    pos 1 45 0.5
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 3.25 1.25 1
+    material steel
+    mass 0.1
+    flag 24
+#END 50
+
+env_obj 51
+    shape box
+    pos 1 44.75 2.25
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 1.25 0.75 2.5
+    material steel
+    mass 0.1
+    flag 24
+#END 51
+
+env_obj 52
+    shape box
+    pos 1 44.5 4.0625
+    color 0.9 0.9 0.9 1
+    rot -20 0 0
+    sides 1.1 0.75 1.5
+    material steel
+    mass 0.1
+    flag 24
+#END 52
+
+env_obj 53
+    shape box
+    pos 1 43.5975 4.625
+    color 0.9 0.9 0.9 1
+    rot 0 0 0
+    sides 1.25 2.175 0.8125
+    material steel
+    mass 0.1
+    flag 24
+#END 53
+
+env_obj 54
+    shape box
+    pos 1 42.5625 4.8375
+    color 0.8 0.8 0.8 0.99
+    rot 0 0 0
+    sides 2.5 0.125 1.6
+    material steel
+    mass 0.1
+    flag 24
+#END 54
+
+env_obj 55
+    shape cylinder
+    pos 1.3125 42.3125 4.375
+    color 1 0.7 -0.1 1
+    rot 90 0 0
+    sides 0.015 0.375 1
+    material steel
+    mass 0.1
+    flag 24
+#END 55
+
+env_obj 56
+    shape cylinder
+    pos 1.25 42 4.375
+    color 1 0.7 -0.1 1
+    rot -90 50 0
+    sides 0.015 0.125 1
+    material steel
+    mass 0.1
+    flag 24
+#END 56
+
+env_obj 57
+    shape cylinder
+    pos 1 41.9375 4.375
+    color 1 0.7 -0.1 1
+    rot 90 90 0
+    sides 0.015 0.3125 1
+    material steel
+    mass 0.1
+    flag 24
+#END 57
+
+env_obj 58
+    shape cylinder
+    pos 0.75 42 4.375
+    color 1 0.7 -0.1 1
+    rot 90 50 0
+    sides 0.015 0.125 1
+    material steel
+    mass 0.1
+    flag 24
+#END 58
+
+env_obj 59
+    shape cylinder
+    pos 0.6875 42.3125 4.375
+    color 1 0.7 -0.1 1
+    rot 90 0 0
+    sides 0.015 0.375 1
+    material steel
+    mass 0.1
+    flag 24
+#END 59
+
+env_obj 60
+    shape box
+    pos 1 42.5625 4.75
+    color 0.7 0.7 0.7 0.99
+    rot 0 0 0
+    sides 0.75 0.128 0.5
+    material steel
+    mass 0.1
+    flag 24
+#END 60
+
+env_obj 61
+    shape box
+    pos 1 18 0
+    color 0 0 0.5 1
+    rot 0 0 0
+    sides 27 0.25 0.025
+    material steel
+    mass 0.1
+    flag 24
+#END 61
+
+env_obj 62
+    shape box
+    pos 1 1.9 0
+    color 1 0.9 0.7 1
+    rot 0 0 0
+    sides 4.5 2 0.0275
+    material steel
+    mass 0.1
+    flag 24
+#END 62
+
+env_obj 63
+    shape box
+    pos 1 34.1 0
+    color 1 0.9 0.7 1
+    rot 0 0 0
+    sides 4.5 2 0.0275
+    material steel
+    mass 0.1
+    flag 24
+#END 63
+
+env_obj 67
+    shape box
+    pos 5.25 18 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 1.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 67
+
+env_obj 68
+    shape box
+    pos 5.25 17.5 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 1.25 0.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 68
+
+env_obj 69
+    shape box
+    pos 3.75 17.5 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 1.25 0.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 69
+
+env_obj 70
+    shape box
+    pos 3.75 18.5 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 1.25 0.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 70
+
+env_obj 71
+    shape box
+    pos 4.25 18 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 1.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 71
+
+env_obj 72
+    shape box
+    pos 3.25 18 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 1.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 72
+
+env_obj 73
+    shape box
+    pos 2.75 18 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 1.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 73
+
+env_obj 74
+    shape box
+    pos 2 17.75 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 0.75 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 74
+
+env_obj 75
+    shape box
+    pos 2.375 17.5 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 1 0.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 75
+
+env_obj 76
+    shape box
+    pos 2.375 18 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 1 0.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 76
+
+env_obj 77
+    shape box
+    pos 2.25 18.25 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 0.75 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 77
+
+env_obj 78
+    shape box
+    pos 1.5 18 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 1.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 78
+
+env_obj 79
+    shape box
+    pos 1 18 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 1.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 79
+
+env_obj 80
+    shape box
+    pos 0.6875 17.5 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.875 0.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 80
+
+env_obj 81
+    shape box
+    pos 0.8125 18 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.625 0.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 81
+
+env_obj 82
+    shape box
+    pos 0.6875 18.5 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.875 0.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 82
+
+env_obj 83
+    shape box
+    pos 0.375 18.3125 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 0.5 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 83
+
+env_obj 84
+    shape box
+    pos 0.375 17.6875 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 0.5 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 84
+
+env_obj 85
+    shape box
+    pos -0.125 18 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 1.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 85
+
+env_obj 86
+    shape box
+    pos -0.875 18 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 1.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 86
+
+env_obj 87
+    shape box
+    pos -0.5 17.5 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 1 0.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 87
+
+env_obj 88
+    shape box
+    pos -0.5 18 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 1 0.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 88
+
+env_obj 89
+    shape box
+    pos -1.6875 18 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 1 0.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 89
+
+env_obj 90
+    shape box
+    pos -1.6875 17.5 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 1 0.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 90
+
+env_obj 91
+    shape box
+    pos -1.6875 18.5 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 1 0.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 91
+
+env_obj 92
+    shape box
+    pos -1.3125 17.75 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 0.75 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 92
+
+env_obj 93
+    shape box
+    pos -2.0625 18.25 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 0.75 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 93
+
+env_obj 94
+    shape box
+    pos -2.5625 18 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 1.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 94
+
+env_obj 95
+    shape box
+    pos -3.5625 18 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.25 1.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 95
+
+env_obj 96
+    shape box
+    pos -3.0625 18 0
+    color 1 1 1 1
+    rot 0 0 0
+    sides 1.25 0.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 96
+
+env_obj 97
+    shape box
+    pos 3.75 18 0
+    color 1 0.9 0.7 1
+    rot 0 0 0
+    sides 0.75 0.25 0.03
+    material steel
+    mass 0.1
+    flag 24
+#END 97

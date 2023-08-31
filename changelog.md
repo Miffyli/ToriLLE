@@ -1,3 +1,8 @@
+### 31.8.2023 v1.0.3
+
+* Update code to work with new Gym and numpy.
+* Include Toribash binaries in the repo to make installation easier.
+
 ### 19.9.2019 v1.0.2
 
 * Added state-machine to make sure actions/states are handled in right order.

@@ -1,0 +1,210 @@
+# Environment exported by WorldBuilder
+######################################
+
+
+gamerule
+engageplayerpos 0
+engagedistance 110
+gravity 0 0 -30
+matchframes 360
+turnframes 10,20,30,30,30,30,30,30,30,30,30
+dismemberment 0
+fracture 1
+fracturethreshold 280
+sumo 1
+disqualification 1
+dqtimeout 30
+
+
+env_obj 1
+    shape box
+    pos 0.875 -4.5625 0.875
+    color 0 0 -0.1 1
+    rot 0 0 -45
+    sides 0.25 0.25 2.25
+    material flesh
+    mass 
+    flag 24
+    bounce 6
+#END 1
+
+env_obj 2
+    shape box
+    pos -3.5625 -0.1875 0.875
+    color 0 0 -0.1 1
+    rot 0 0 -45
+    sides 0.25 0.25 2.25
+    material flesh
+    mass 0.0000000000000001
+    flag 24
+    bounce 6
+#END 2
+
+env_obj 3
+    shape box
+    pos 1.125 4.5 0.875
+    color 0 0 -0.1 1
+    rot 0 0 -45
+    sides 0.25 0.25 2.25
+    material flesh
+    mass 0.0000000000000001
+    flag 24
+    bounce 6
+#END 3
+
+env_obj 4
+    shape box
+    pos 5.5 0.0625 0.875
+    color 0 0 -0.1 1
+    rot 0 0 -45
+    sides 0.25 0.25 2.25
+    material flesh
+    mass 0.0000000000000001
+    flag 24
+    bounce 6
+#END 4
+
+env_obj 5
+    shape cylinder
+    pos -1.375 -2.375 0.625
+    color 1.1 0 -0.1 1
+    rot 90 45 0
+    sides 0.0625 6.25 0.125
+    material flesh
+    mass 0.0000000000000001
+    flag 24
+    bounce 17
+#END 5
+
+env_obj 6
+    shape cylinder
+    pos -1.375 -2.375 1.125
+    color 1.1 0 -0.1 1
+    rot 90 45 0
+    sides 0.0625 6.25 0.125
+    material flesh
+    mass 0.0000000000000001
+    flag 24
+    bounce 17
+#END 6
+
+env_obj 7
+    shape cylinder
+    pos -1.375 -2.375 1.625
+    color 1.1 0 -0.1 1
+    rot 90 45 0
+    sides 0.0625 6.25 0.125
+    material flesh
+    mass 0.0000000000000001
+    flag 24
+    bounce 17
+#END 7
+
+env_obj 8
+    shape cylinder
+    pos 3.3125 2.3125 0.625
+    color 1.1 0 -0.1 1
+    rot 90 45 0
+    sides 0.0625 6.25 0.125
+    material flesh
+    mass 0.0000000000000001
+    flag 24
+    bounce 17
+#END 8
+
+env_obj 9
+    shape cylinder
+    pos 3.3125 2.3125 1.125
+    color 1.1 0 -0.1 1
+    rot 90 45 0
+    sides 0.0625 6.25 0.125
+    material flesh
+    mass 0.0000000000000001
+    flag 24
+    bounce 17
+#END 9
+
+env_obj 10
+    shape cylinder
+    pos 3.3125 2.3125 1.625
+    color 1.1 0 -0.1 1
+    rot 90 45 0
+    sides 0.0625 6.25 0.125
+    material flesh
+    mass 0.0000000000000001
+    flag 24
+    bounce 17
+#END 10
+
+env_obj 11
+    shape cylinder
+    pos -1.25 2.1875 0.625
+    color 1.1 0 -0.1 1
+    rot 90 -45 0
+    sides 0.0625 6.625 0.125
+    material flesh
+    mass 0.0000000000000001
+    flag 24
+    bounce 17
+#END 11
+
+env_obj 12
+    shape cylinder
+    pos 3.1875 -2.25 0.625
+    color 1.1 0 -0.1 1
+    rot 90 -45 0
+    sides 0.0625 6.625 0.125
+    material flesh
+    mass 0.0000000000000001
+    flag 24
+    bounce 17
+#END 12
+
+env_obj 13
+    shape cylinder
+    pos -1.25 2.1875 1.125
+    color 1.1 0 -0.1 1
+    rot 90 -45 0
+    sides 0.0625 6.625 0.125
+    material flesh
+    mass 0.0000000000000001
+    flag 24
+    bounce 17
+#END 13
+
+env_obj 14
+    shape cylinder
+    pos -1.25 2.1875 1.6125
+    color 1.1 0 -0.1 1
+    rot 90 -45 0
+    sides 0.0625 6.625 0.125
+    material flesh
+    mass 0.0000000000000001
+    flag 24
+    bounce 17
+#END 14
+
+env_obj 15
+    shape cylinder
+    pos 3.1875 -2.25 1.125
+    color 1.1 0 -0.1 1
+    rot 90 -45 0
+    sides 0.0625 6.625 0.125
+    material flesh
+    mass 0.0000000000000001
+    flag 24
+    bounce 17
+#END 15
+
+env_obj 16
+    shape cylinder
+    pos 3.1875 -2.25 1.6125
+    color 1.1 0 -0.1 1
+    rot 90 -45 0
+    sides 0.0625 6.625 0.125
+    material flesh
+    mass 0.0000000000000001
+    flag 24
+    bounce 17
+#END 16
+

@@ -1,0 +1,190 @@
+#!/usr/bin/toribash
+# Environment exported by WorldBui... Scorpio000
+######################################
+
+gamerule
+engageplayerpos 0
+        gravity 0 0 -30
+        
+        
+
+#TRAWA#
+env_obj 1
+    shape box
+    pos 11.5 0 0
+    color 0 1 0.1 1
+    rot 0 0 0
+    sides 18 39.875 0.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 2
+    shape box
+    pos -9 0 0
+    color 0 1 0.1 1
+    rot 0 0 0
+    sides 18 39.875 0.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 2
+
+#DRZEWKA#
+env_obj 3
+    shape cylinder
+    pos 4 -3.5 1.6875
+    color 0.6 0.4 -0.1 1
+    rot -180 0 0
+    sides 0.4375 3.0625 0.8125
+    material steel
+    mass 0.1
+    flag 24
+#END 3
+
+env_obj 4
+    shape cylinder
+    pos -1.75 0 1.6875
+    color 0.6 0.4 -0.1 1
+    rot -180 0 0
+    sides 0.4375 3.0625 0.8125
+    material steel
+    mass 0.1
+    flag 24
+#END 4
+
+env_obj 5
+    shape cylinder
+    pos 4 3.75 1.6875
+    color 0.6 0.4 -0.1 1
+    rot -180 0 0
+    sides 0.4375 3.0625 0.8125
+    material steel
+    mass 0.1
+    flag 24
+#END 5
+
+env_obj 6
+    shape sphere
+    pos 4 3.75 4.6875
+    color 0.6 1.1 -0.1 1
+    rot -180 0 0
+    sides 1.75 3.125 0.875
+    material steel
+    mass 0.1
+    flag 24
+#END 6
+
+env_obj 7
+    shape sphere
+    pos 4 -3.5 4.6875
+    color 0.6 1.1 -0.1 1
+    rot -180 0 0
+    sides 1.75 3.125 0.875
+    material steel
+    mass 0.1
+    flag 24
+#END 7
+
+env_obj 8
+    shape sphere
+    pos -1.75 0 4.6875
+    color 0.6 1.1 -0.1 1
+    rot -180 0 0
+    sides 1.75 3.125 0.875
+    material steel
+    mass 0.1
+    flag 24
+#END 8
+
+#£AWKA#
+env_obj 9
+    shape box
+    pos 3.75 0 0.8125
+    color 0.7 0.5 -0.1 1
+    rot -180 0 0
+    sides 0.5 3 0.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 9
+
+env_obj 10
+    shape box
+    pos 4.125 0 1.0625
+    color 0.7 0.5 -0.1 1
+    rot -180 -76 0
+    sides 0.5 3 0.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 10
+
+env_obj 11
+    shape box
+    pos 3.75 -1.3125 0.4375
+    color 0.7 0.5 -0.1 1
+    rot -180 0 -90
+    sides 0.125 0.5 0.75
+    material steel
+    mass 0.1
+    flag 24
+#END 11
+
+env_obj 12
+    shape box
+    pos 3.75 1.3125 0.4375
+    color 0.7 0.5 -0.1 1
+    rot -180 0 -90
+    sides 0.125 0.5 0.75
+    material steel
+    mass 0.1
+    flag 24
+#END 12
+
+#KOLEJNE DRZEWKA#
+env_obj 13
+    shape cylinder
+    pos -1.8125 5.375 1.6875
+    color 0.7 0.5 -0.1 1
+    rot -180 0 -90
+    sides 0.4375 3.0625 0.8125
+    material steel
+    mass 0.1
+    flag 24
+#END 13
+
+env_obj 14
+    shape sphere
+    pos -1.8125 5.375 4.6875
+    color 0.8 1.1 -0.1 1
+    rot -180 0 -90
+    sides 1.75 3.125 0.875
+    material steel
+    mass 0.1
+    flag 24
+#END 14
+
+env_obj 15
+    shape sphere
+    pos -1.8125 -5.8125 4.75
+    color 0.8 1.1 -0.1 1
+    rot -180 0 -90
+    sides 1.75 3.125 0.875
+    material steel
+    mass 0.1
+    flag 24
+#END 15
+
+env_obj 16
+    shape cylinder
+    pos -1.8125 -5.8125 1.625
+    color 0.6 0.5 -0.1 1
+    rot -180 0 -90
+    sides 0.5625 2.875 1.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 16
+

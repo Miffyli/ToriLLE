@@ -1,0 +1,127 @@
+#!/usr/bin/toribash
+# knife_fight_fast.tbm by 2solid4snakes
+# inspired by philiphine escrima
+# what changed? speed extremely improved
+##################################
+
+gamerule
+engageplayerpos 0
+gravity 0.00 0.00 -25.00
+engagedistance 120
+dismemberment 1
+dismemberthreshold 900
+matchframes 70
+turnframes 5,5,10,10,20,20
+dq 1
+sumo 1
+flags 3
+
+###################
+#left arm strenght#
+###################
+joint l_elbow
+	strength 10
+
+joint l_wrist
+  	strength 10
+
+joint r_shoulder
+	strength 10	
+
+##################
+#right arm joints#
+#   + left wrist #
+##################
+joint r_elbow
+	axis 0 1 0
+
+joint r_wrist
+  	axis 0 1 0
+	range 1.4 -1
+
+joint l_wrist
+	axis 0 1 0
+	range 1.5 -1.5
+
+joint r_shoulder
+	axis 1 0 0
+
+##################
+#  mainstay fix  #
+##################
+body l_foot 
+	density 50
+joint l_ankle
+	range 0 -1
+
+##################
+#    arms grab   #
+##################
+body r_hand
+alt_sides 0.22 0.19 0.22
+
+body l_hand
+alt_sides 0.22 0.1 0.15
+
+##################
+# knife for tori #
+##################
+env_obj 1
+    shape box
+    pos -0.35 0.5 2.23
+    color 0 -0.1 -0.1 1
+    rot 0 0 0
+    sides 0.04 0.01 0.30
+    material steel
+    mass 0.0001
+    flag 0
+#END 1
+
+env_obj 2
+    shape box
+    pos -0.35 0.5 1.94
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 0.03 0.002 0.3
+    material steel
+    mass 0.0001
+    flag 6
+#END 2
+
+env_obj_joint 1 1 2
+pos -0.35 0.5 2
+visible 0
+
+
+##################
+#  knife for uke #
+##################
+env_obj 3
+    shape box
+    pos 2.35 -0.7 2.23
+    color 0 -0.1 -0.1 1
+    rot 0 0 0
+    sides 0.04 0.01 0.30
+    material steel
+    mass 0.0001
+    flag 0
+#END 3
+
+env_obj 4
+    shape box
+    pos 2.35 -0.7 1.94
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 0.03 0.002 0.3
+    material steel
+    mass 0.0001
+    flag 6
+#END 4
+
+env_obj_joint 3 3 4
+pos 2.35 -0.7 2
+visible 0
+
+###################################
+#end ;p
+

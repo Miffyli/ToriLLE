@@ -1,0 +1,43 @@
+#!/usr/bin/toribash
+#Its jousting.tbm but its updated to ungrap & dq,dojo,high and fracture is on
+#Mod created by noki1119,enjoy
+#August 24,2011
+
+gamerule
+engageplayerpos 0
+	engagedistance 1200
+	engageheight 100
+	dismember 1
+	dismemberthreshold 225
+	fracture 1
+	fracturethreshold 130
+	dojotype 0
+	dojosize 1200
+	gravity 0 0 -9.82
+	dq 1
+	matchframes 500
+	turnframes 45
+#
+blood
+	color 0 0 1
+body stomach 
+	force 0 10 1
+body breast
+	force 0 10 1
+body chest
+	force 0 10 1
+body groin
+	force 0 10 1
+body r_pecs
+	force 0 20 1
+body l_pecs
+	force 0 20 1
+body r_thigh
+	force 0 20 1
+body l_thigh
+	force 0 20 1
+body l_leg
+	force 0 30 00
+body r_leg
+	force 0 30 00
+

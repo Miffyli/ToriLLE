@@ -1,0 +1,37 @@
+!<cff000001>Toribash World Creator
+!<cff000001>----------------------
+
+!<l0000FF20>Controls
+!<l0000FF20>---------
+!<c00660010>Commands in [ ] are the alternate keyboard layout keys. 
+!<l00000010>
+Numpad * [KB ~]................ Create a new object.
+Numpad 2,4,6,8 [KB X,A,D,W].... Move object on the x/y plane.
+Numpad 1,7 [KB Z,Q]............ Move object on the Z axis.
+Numpad 0 [KB E]................ Hold to change movement input to scaling input.
+Numpad . [KB R] ............... Hold to toggle movement input to rotation input.
+Caps-Lock ..................... Toggle between coarse and fine adjustment, Caps off being coarse.
+Numpad - [KB 1]................ Removes the current object from the group. 
+Numpad + [KB 3]................ Adds the current object to the group.
+Numpad Enter [KB 2]............ Move current selection to the next object.
+Numpad 5 [KB S]................ Switches currently selected object between box, sphere, and cylinder.
+Keyboard P .................... Duplicate currently selected object.
+Keyboard Delete ............... Deletes currently selected object.
+
+Mouse Left Button ............. Moves an object on the x/y plane.
+Keyboard Shift ................ Toggles mouse y to mouse z.
+!<laa000010>Note:  To scale and rotate with mouse, hold the appropriate key (0 and . or e and r)
+    To scale and rotate with z, first hold shift, then hold 0/. or e/r.
+
+!<l00000010>Keyboard Enter ................ Writes a tbm file.
+Keyboard L .................... Loads a tbm file.
+Keyboard C .................... Brings up the color modifying panel.
+Keyboard M .................... Brings up mass modifying panel.
+Keyboard F .................... Toggles visibiliy of flag modifying window.
+Keyboard I .................... Toggles visibility of information window.
+Keyboard H .................... Toggles visibility of help documentation
+Keyboard K .................... Switches to alternate keyboard layout (Laptops need to use this)
+
+
+
+!<c00000010>- end of file -

@@ -1,0 +1,96 @@
+##IDEA AND BUILD BY BLKK
+##DO NOT SPLICE INTO ANOTHER MOD WITH MY ASSENT
+
+
+gamerule
+engageplayerpos 0
+engagedistance 500
+
+
+body r_triceps
+shape box
+sides 0.4 0.1 0.1
+pos 0.05 0.9 2.3
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body r_hand
+shape box
+sides 0.22 0.22 0.22
+alt_sides 0.3 0.11 0.16
+pos -0.35 0.85 2.3
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 36
+
+body l_triceps
+shape box
+sides 0.6 0.1 0.1
+pos 2.2 0.9 2.3
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 4
+
+body l_hand
+shape sphere
+sides 0.17 0.22 0.22
+alt_sides 2 2 2
+pos -0.5 0.85 2.3
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.01
+material metal
+flag 44
+
+joint r_wrist
+radius 0.11
+pos -0.2 0.9 2.3
+axis 0 0 1
+rot 0 0 0
+range 2.0 -0.3
+strength 2.0
+velocity 60.0
+density 0.25
+
+joint l_wrist
+radius 0.11
+pos -0.5 0.85 2.4
+axis 0 0 1
+rot 0 0 0
+range 2.0 -0.3
+strength 2.0
+velocity 60.0
+density 0.25
+
+
+env_obj 1
+    shape box
+    pos -0.55 2.4 2.43
+    sides 0.1 0.1 0.1
+    material steel
+    mass 0.0001
+    flag 6
+#END 1
+
+env_obj 2
+    shape box
+    pos 2.55 -2.6 2.43
+    sides 0.1 0.1 0.1
+    material steel
+    mass 0.0001
+    flag 6

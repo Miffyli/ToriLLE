@@ -1,0 +1,71 @@
+#!/usr/bin/toribash
+
+#
+#Fan mod
+#by SL7549
+#
+
+gamerule
+engageplayerpos 0
+    engagedistance 80
+    engageheight 550
+    matchframes 1000
+    turnframes 50
+    gravity 0 0 -30
+    dq 1
+env_obj 1
+    shape box
+    pos 1 -0.125 6.25
+    color 0 0 1 1
+    rot 0 0 0
+    sides 0 0 0
+    material steel
+    mass 0.1
+    flag 8
+
+
+env_obj 2
+    shape box
+    pos 1 -0.125 5.4375
+    color 0 0 1 1
+    rot 0 0 0
+    sides 2 2 0.2
+    material steel
+    mass 2.0
+    flag 0
+
+env_obj 5
+    shape box
+    pos 1 -0.125 0.5
+    color 0 0 1 1
+    rot 0 0 0
+    sides 1 2 1
+    material steel
+    mass 0.1
+    flag 8
+
+env_obj 6
+    shape box
+    pos 1 -0.125 4
+    color 0 0 1 1
+    rot 0 0 0
+    sides 20 20 0.05
+    material steel
+    mass 0.001
+    flag 0
+
+env_obj_joint 1 1 2
+	pos 1 -0.125 5.4375
+	axis 0 0 1
+	range 5 -5
+	strength 10
+	velocity 1
+	visible 1
+
+
+env_obj_joint 2 5 6
+	pos 1 -0.125 5.4375
+	axis 0 0 1
+	range 10 -10
+	strength 10
+	velocity 500

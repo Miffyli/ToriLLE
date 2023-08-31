@@ -1,0 +1,388 @@
+# mpbarrelroll - dont fall out. >:D
+
+gamerule
+engageplayerpos 0
+engagedistance 1800
+gravity 0 0 -50
+engageheight 450
+dismemberthreshold 200
+disqualification 1
+dqtimeout 10
+
+#Tori's Plane
+
+env_obj 1
+    shape box
+    pos 1.0 8.9 4.8
+    color 0.5 0.5 0.5 1.1
+    rot 0 0 0
+    sides 0.6 0.6 0.6
+    material steel
+    mass 0.01
+
+env_obj 3
+    shape box
+    pos 0.5 8.8125 5
+    color 0.6 0.6 0.6 1
+    rot 0 0 0
+    sides 0.25 1 1.0625
+    material steel
+    mass 0.01
+    flag 0
+
+env_obj 4
+    shape box
+    pos 1.5 8.8125 5
+    color 0.6 0.6 0.6 1
+    rot 0 0 0
+    sides 0.25 1 1.0625
+    material steel
+    mass 0.01
+    flag 0
+
+env_obj 5
+    shape box
+    pos 1 8.4375 4.5
+    color 0.6 0.6 0.6 1
+    rot 90 0 0
+    sides 0.75 0.0625 2.5125
+    material steel
+    mass 0.01
+    flag 0
+
+env_obj 2
+    shape box
+    pos 1 9.4375 5.05
+    color 0.6 0.6 0.6 1
+    rot 0 0 0
+    sides 0.75 0.25 1.20
+    material steel
+    mass 0.01
+    flag 0
+             
+env_obj 8
+    shape box
+    pos 1 7.9375 4.9375
+    color 0.6 0.6 0.6 1
+    rot 41 0 0
+    sides 0.77 0.0625 1.0
+    material steel
+    mass 0.01
+    flag 0
+
+env_obj 6
+    shape sphere
+    pos 1 7 4.5
+    color 0 0 0 0
+    sides 0.15 .15 .15
+    material steel
+    mass 10
+    flag 24
+
+env_obj 7
+    shape sphere
+    pos 1 10 4.5
+    color 0 0 0 0
+    sides 0.15 .15 .15
+    material steel
+    mass 10
+    flag 8
+
+
+env_obj_joint 1 1 2
+	pos 1.0 8.9 4.5
+	axis 0 0 0
+	range 0 0
+	strength 0
+
+env_obj_joint 2 1 3
+	pos 1.0 8.9 4.5
+	axis 0 0 0
+	range 0 0
+	strength 0
+
+env_obj_joint 3 1 4
+	pos 1.0 8.9 4.5
+	axis 0 0 0
+	range 0 0
+	strength 0
+
+env_obj_joint 4 1 5
+	pos 1.0 8.9 4.5
+	axis 0 0 0
+
+env_obj_joint 7 1 8
+	pos 1.0 8.9 4.5
+	axis 0 0 0
+
+env_obj_joint 8 5 8
+	pos 1.0 5 4.5
+	axis 0 0 0
+
+env_obj_joint 5 6 5
+	pos 1.0 10 4.5
+	axis 0 0 -1
+	velocity 25
+	strength 750
+	range 100 -100
+
+env_obj_joint 6 7 5
+	pos 1.0 7 4.5
+	axis 0 0 -1
+	velocity 25
+	strength 750
+	range 100 -100
+
+
+
+
+#Uke's Plane
+
+ env_obj 9
+    shape box
+    pos 1.0 -9.1 4.8
+    color 0.5 0.5 0.5 1.1
+    rot 0 0 0
+    sides 0.6 0.6 0.6
+    material steel
+    mass 0.01
+
+
+env_obj 10
+    shape box
+    pos 1 -9.6375 5.05
+    color 0.6 0.6 0.6 1
+    rot 0 0 0
+    sides 0.75 0.25 1.20
+    material steel
+    mass 0.01
+    flag 0
+
+env_obj 11
+    shape box
+    pos 0.5 -9.0125 5
+    color 0.6 0.6 0.6 1
+    rot 0 0 0
+    sides 0.25 1 1.0625
+    material steel
+    thrust 5 0 5 0
+    mass 0.01
+    flag 0
+
+env_obj 12
+    shape box
+    pos 1.5 -9.0125 5
+    color 0.6 0.6 0.6 1
+    rot 0 0 0
+    sides 0.25 1 1.0625
+    material steel
+    mass 0.01
+    flag 0
+
+
+env_obj 13
+    shape box
+    pos 1 -8.6375 4.5
+    color 0.6 0.6 0.6 1
+    rot 90 0 0
+    sides 0.75 0.0625 2.5125
+    material steel
+    mass 0.01
+    flag 0
+
+env_obj 16
+    shape box
+    pos 1 -8.1375 4.9375
+    color 0.6 0.6 0.6 1
+    rot -41 0 0
+    sides 0.77 0.0625 1.0
+    material steel
+    mass 0.01
+    flag 0
+
+env_obj 14
+    shape sphere
+    pos 1 -7 4.5
+    color 0 0 0 0                                                                                                   
+    sides 0.15 .15 .15
+    material steel
+    mass 10
+    flag 24
+
+env_obj 15
+    shape sphere
+    pos 1 -10 4.5
+    color 0 0 0 0
+    sides 0.15 .15 .15
+    material steel
+    mass 10
+    flag 8
+
+
+env_obj_joint 9 9 10
+	pos 1.0 -8.9 4.5
+	axis 0 0 0
+	range 0 0
+	strength 0
+
+env_obj_joint 10 9 11
+	pos 1.0 -8.9 4.5
+	axis 0 0 0
+	range 0 0
+	strength 0
+
+env_obj_joint 11 9 12
+	pos 1.0 -8.9 4.5
+	axis 0 0 0
+	range 0 0
+	strength 0
+
+env_obj_joint 12 9 13
+	pos 1.0 -8.9 4.5
+	axis 0 0 0
+
+env_obj_joint 15 9 16
+	pos 0.5 -8.8125 5
+	axis 0 0 0
+
+env_obj_joint 16 13 16
+	pos 0.5 -8.9 4.5
+	axis 0 0 0
+
+env_obj_joint 13 14 13
+	pos 1.0 -10 4.5
+	axis 0 0 -1
+	velocity -25
+	strength 750
+	range 100 -100
+
+env_obj_joint 14 15 13
+	pos 1.0 -7 4.5
+	axis 0 0 -1
+	velocity -25
+	strength 750
+	range 100 -100
+
+
+
+body r_thigh
+shape box
+sides 0.21 0.6 0.21
+pos 0.8 1.3 0.8
+
+body l_thigh
+shape box
+sides 0.21 0.6 0.21
+pos 1.2 1.3 0.8
+
+body head
+pos 1.0 1.45 2.05
+
+body breast
+pos 1.0 1.5 1.6
+
+body chest
+pos 1.0 1.5 1.35
+
+body stomach
+pos 1. 1.55 1.15
+
+body groin
+pos 1.0 1.6 0.95
+
+body r_pecs
+pos 0.75 1.5 1.55
+
+body r_biceps
+pos 0.45 1.5 1.7
+
+body r_triceps
+pos 0.05 1.5 1.7
+
+body r_hand
+pos -0.35 1.45 1.7
+
+body l_pecs
+pos 1.25 1.5 1.55
+
+body l_biceps
+pos 1.55 1.5 1.7
+
+body l_triceps
+pos 1.95 1.5 1.7
+
+body l_hand
+pos 2.35 1.45 1.7
+
+body r_butt
+pos 0.8 1.6 0.85
+
+body l_butt
+pos 1.2 1.6 0.85
+
+joint r_hip
+pos 0.79 1.6 0.8
+range 2.4 -.4
+strength 10
+
+joint l_hip
+pos 1.21 1.6 0.8
+range 2.4 -.4
+strength 100
+
+joint r_glute
+pos 0.9 1.7 0.91
+radius 0.165
+
+joint l_glute
+pos 1.1 1.7 0.91
+radius 0.165
+
+joint abs
+pos 1.0 1.6 1.05
+range 1.5 -1.5
+
+joint lumbar
+pos 1.0 1.55 1.25
+strength 100
+
+joint chest
+pos 1.0 1.5 1.45
+strength 100
+
+joint r_pecs
+pos 0.85 1.45 1.6
+range 1.4 -.8
+strength 100
+
+joint r_shoulder
+pos 0.65 1.5 1.7
+
+joint r_elbow
+pos 0.25 1.5 1.7
+
+joint r_wrist
+pos -0.2 1.5 1.7
+
+joint l_pecs
+pos 1.15 1.45 1.6
+range 1.4 -.8
+
+joint l_shoulder
+pos 1.35 1.5 1.7
+
+joint l_elbow
+pos 1.75 1.5 1.7
+
+joint l_wrist
+pos 2.2 1.5 1.7
+
+joint neck
+pos 1.0 1.5 1.9
+
+joint r_knee
+range 0.8 -1.5
+strength 100
+
+joint l_knee
+range 0.8 -1.5

@@ -1,0 +1,142 @@
+#!/usr/bin/toribash
+#aikido7.tbm by snake. Unlike the original aikido, here you can grab only several bodyparts and joints.
+#You can grab only arms from hand to elbow
+#There is only self damage
+#And there is no dismemberment
+
+gamerule
+gravity 0.00 0.00 -30.00
+engagedistance 90
+dismemberthreshold 0
+dismember 0
+fracture 1
+fracturethreshold 150
+matchframes 350
+turnframes 10,20,20,30,30,35,35,40,40,40,50
+dojosize 450
+dojotype 0
+dq 1
+sumo 1
+flags 9
+damage 2
+engageplayerpos 0
+
+##########################
+
+body r_hand
+flag 1
+
+body l_hand
+flag 1
+
+##########################
+
+body r_foot
+flag 48
+
+body l_foot
+flag 48
+
+###########################
+
+joint r_ankle
+flag 16
+
+joint l_ankle
+flag 16
+
+body head
+flag 16
+
+#######################
+
+joint l_shoulder
+flag 16
+
+joint r_shoulder
+flag 16
+
+#######################
+
+body l_biceps
+flag 16
+
+body r_biceps
+flag 16
+
+#######################
+
+body l_leg
+flag 16
+
+body r_leg
+flag 16
+
+body breast
+flag 16
+
+body chest
+flag 16
+
+body stomach
+flag 16
+
+body groin 
+flag 16
+
+body r_axilla
+flag 16
+
+body l_axilla 
+flag 16
+
+body r_pecs
+flag 16
+
+body l_pecs
+flag 16
+
+body l_butt
+flag 16
+
+body r_butt
+flag 16
+
+body r_thigh 
+flag 16
+
+body l_thigh 
+flag 16
+
+joint chest
+flag 16
+
+joint lumbar
+flag 16
+
+joint r_pecs
+flag 16
+
+joint l_pecs
+flag 16
+
+joint r_knee
+flag 16
+
+joint l_knee
+flag 16
+
+joint abs
+flag 16
+
+joint r_glute
+flag 16
+
+joint l_glute
+flag 16
+
+joint r_hip      
+flag 16
+
+joint l_hip
+flag 16

@@ -1,0 +1,57 @@
+#!/usr/bin/toribash
+gamerule
+engageplayerpos 0
+
+ed 1000
+eh 1000
+
+env_obj 1
+    shape box
+    pos 1 0 9.25
+    color 0 0 1 1
+    rot 0 0 0
+    sides 1 0.25 1
+    material steel
+    mass 0.1
+    flag 8
+#END 1
+
+env_obj 2
+    shape box
+    pos 1 5.75 9.75
+    color 0 0 1 1
+    rot 0 0 0
+    sides 1 10.75 0.25
+    material steel
+    mass 0.01
+    flag 0
+#END 2
+
+env_obj 3
+    shape box
+    pos 1 -5.75 9.75
+    color 0 0 1 1
+    rot 0 0 0
+    sides 1 10.75 0.25
+    material steel
+    mass 0.01
+    flag 0
+#END 3
+
+
+env_obj_joint 1 1 2
+pos 1 0.25 9.75
+axis 1 0 0
+range 5 -5
+strength 100
+velocity 80
+visible 1
+
+env_obj_joint 2 1 3
+pos 1 -0.25 9.75
+axis -1 0 0
+range 5 -5
+strength 100
+velocity 80
+visible 1
+

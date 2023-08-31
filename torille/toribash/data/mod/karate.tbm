@@ -1,0 +1,8 @@
+gamerule
+engageplayerpos 0
+engagedistance 200
+turnframes 10,20,10,20,10,25,15,40
+matchframes 150
+dojosize 500
+dismemberment 1
+dismember threshold 100

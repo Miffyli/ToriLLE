@@ -1,0 +1,138 @@
+#!/usr/bin/toribash
+#Mod By May0naise
+#Rules/Colors/Starting points and first box are Based on Freerunmp3.tbm
+
+gamerule
+gravity 0 0 -30
+engagedistance 100
+engageplayerpos 1.00,18.00,15,-3.00,18.00,15.0
+matchframes 2000
+turnframes 10
+dismemberthreshold 200
+dojosize 1
+flags 2
+
+env_obj 1
+shape box
+pos 0 15 7.5
+color 1 1 0
+rot 0 0 0
+sides 8 10 15
+material steel
+mass 0.1
+flag 24
+#Starting Object
+
+env_obj 2
+shape cylinder
+pos 2.25 8 13
+color 1 0 0 0.7
+rot 0 0 0
+sides 0.2 10 0.2
+material steel
+mass 0.1
+flag 8
+#Tori Red Pole
+
+env_obj 3
+shape cylinder
+pos -2.25 8 13
+color 1 0 0 0.7
+rot 0 0 0
+sides 0.2 10 0.2
+material steel
+mass 0.1
+flag 8
+#Uke Red Pole
+
+env_obj 4
+shape box
+pos 0 0 5
+color 1 1 0
+rot 90 0 0
+sides 8 1 20
+material steel
+mass 0.1
+flag 24
+#2nd Platform after Red Poles
+
+
+env_obj 5
+shape box
+pos 0 -2 10.5
+color 1 1 0
+rot 0 0 0
+sides 8 1 6
+material steel
+mass 0.1
+flag 24
+#Wall - go under
+
+
+env_obj 6
+shape box
+pos 0 -15 7
+color 1 1 0
+rot -70 0 0
+sides 8 1 12
+material steel
+mass 0.1
+flag 24
+#Ramp Up
+
+env_obj 7
+shape box
+pos 0 -22.5 9
+color 1 1 0
+rot 90 0 0
+sides 8 1 4.25
+material steel
+mass 0.1
+flag 24
+#Flat peice after ramp up
+
+
+env_obj 8
+shape box
+pos 0 -27 9
+color 1 1 0
+rot 90 0 0
+sides 8 1 8
+material steel
+mass 0.1
+flag 24
+#Flat peice after ramp up part 2
+
+env_obj 9
+shape box
+pos 0 -27 10
+color 1 1 0
+rot 0 0 0
+sides 8 0.15 2
+material steel
+mass 0.1
+flag 24
+#Hurdle 1
+
+env_obj 10
+shape box
+pos 0 -30 10.5
+color 1 1 0
+rot 0 0 0
+sides 8 0.2 2
+material steel
+mass 0.1
+flag 24
+#Hurdle 2
+
+env_obj 11
+shape box
+pos 0 -40 7
+color 0 1 0
+rot 0 0 0
+sides 8 8 1
+material steel
+mass 0.1
+flag 24
+#end
+

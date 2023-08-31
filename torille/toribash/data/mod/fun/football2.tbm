@@ -1,0 +1,214 @@
+#!/usr/bin/toribash
+# Environment exported by WorldBuilder
+######################################
+
+gamerule
+engageplayerpos 0
+ed 1500
+gravity 0 0 -20
+mf 300
+tf 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,30,30,30
+di 0
+
+env_obj 1
+    shape sphere
+    pos 0.85 4.5625 0.75
+    color 1.1 1.1 1 1
+    rot 0 0 0
+    sides 0.25 0.875 1
+    material steel
+    mass 0.001
+    flag 16
+	bounce 4
+#END 1
+
+env_obj 2
+    shape cylinder
+    pos -2.75 -7.625 2.0625
+    color 1.1 1.1 1 1
+    rot 0 0 0
+    sides 0.125 4.0625 1.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 2
+
+env_obj 3
+    shape cylinder
+    pos 4.75 -7.625 2.0625
+    color 1.1 1.1 1 1
+    rot 0 0 0
+    sides 0.125 4.0625 1.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 3
+
+env_obj 4
+    shape cylinder
+    pos 1 -7.625 4.125
+    color 1.1 1.1 1 1
+    rot 0 -90 0
+    sides 0.125 7.5 1.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 4
+
+env_obj 5
+    shape cylinder
+    pos 4.75 -8.1875 4.125
+    color 1.1 1.1 1 1
+    rot -90 0 0
+    sides 0.125 1.0625 1.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 5
+
+env_obj 6
+    shape cylinder
+    pos -2.75 -8.1875 4.125
+    color 1.1 1.1 1 1
+    rot -90 0 0
+    sides 0.125 1.0625 1.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 6
+
+env_obj 7
+    shape cylinder
+    pos -2.75 -10 2.0625
+    color 1.1 1.1 1 1
+    rot -148 0 0
+    sides 0.125 4.8125 1.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 7
+
+env_obj 8
+    shape cylinder
+    pos 4.75 -10 2.0625
+    color 1.1 1.1 1 1
+    rot -148 0 0
+    sides 0.125 4.8125 1.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 8
+
+env_obj 9
+    shape box
+    pos 1 -8.25 4.125
+    color 1.1 1.1 1 0.5
+    rot -180 -90 0
+    sides 0.125 1.125 7.5
+    material steel
+    mass 0.1
+    flag 24
+#END 9
+
+env_obj 10
+    shape box
+    pos 100 -10 2.0625
+    color 1.1 1.1 1 0.5
+    rot -239 -90 0
+    sides 0.125 4.9375 7.625
+    material steel
+    mass 0.1
+    flag 24
+#END 10
+
+env_obj 11
+    shape box
+    pos -2.75 -8.1875 2.0625
+    color 1.1 1.1 1 0.5
+    rot 0 0 0
+    sides 0.125 1.125 4.1875
+    material steel
+    mass 0.1
+    flag 24
+#END 11
+
+env_obj 12
+    shape box
+    pos -2.8125 -9.5625 1.6875
+    color 1.1 1.1 1 0.5
+    rot 32 0 0
+    sides 0.125 1.125 4.8125
+    material steel
+    mass 0.1
+    flag 24
+#END 12
+
+env_obj 13
+    shape box
+    pos 4.75 -9.5625 1.6875
+    color 1.1 1.1 1 0.5
+    rot 32 0 0
+    sides 0.125 1.125 4.8125
+    material steel
+    mass 0.1
+    flag 24
+#END 13
+
+env_obj 14
+    shape box
+    pos -2.75 -9.3125 1.0625
+    color 1.1 1.1 1 0.5
+    rot 0 0 0
+    sides 0.125 1.25 2.125
+    material steel
+    mass 0.1
+    flag 24
+#END 14
+
+env_obj 15
+    shape box
+    pos 4.75 -9.3125 1.0625
+    color 1.1 1.1 1 0.5
+    rot 0 0 0
+    sides 0.125 1.25 2.125
+    material steel
+    mass 0.1
+    flag 24
+#END 15
+
+env_obj 16
+    shape box
+    pos 4.8125 -8.25 2
+    color 1.1 1.1 1 0.5
+    rot 0 0 0
+    sides 0.125 1.25 4.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 16
+
+player 0
+body breast
+	force 0 15 1
+body chest
+	force 0 15 1	
+body r_thigh
+	force 0 15 1
+body l_thigh
+	force 0 15 1
+
+player 1
+joint r_ankle
+strength 10
+velocity 30
+
+joint l_ankle
+strength 10
+velocity 30
+
+joint r_glute
+strength 10
+velocity 30
+
+joint l_glute
+strength 10

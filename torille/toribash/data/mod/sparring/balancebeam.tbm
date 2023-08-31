@@ -1,0 +1,54 @@
+gamerule
+engageplayerpos 0
+engagedistance 920
+engageheight 187
+
+env_obj 1
+shape box
+pos 1 -0.125 1.75
+color 0.9 0.6 0.3 1
+sides 0.25 10 0.25
+material steel
+mass 0.1
+flag 8
+
+env_obj 2
+shape box
+pos 1.3125 4.625 0.8125
+color 0 0 0 1
+rot 0 17 0
+sides 0.125 0.125 1.75
+material steel
+mass 0.1
+flag 8
+
+env_obj 3
+shape box
+pos 1.3125 -4.875 0.8125
+color 0 0 0 1
+rot 0 17 0
+sides 0.125 0.125 1.75
+material steel
+mass 0.1
+flag 8
+
+env_obj 4
+shape box
+pos 0.6875 -4.875 0.8125
+color 0 0 0 1
+rot 0 -17 0
+sides 0.125 0.125 1.75
+material steel
+mass 0.1
+flag 8
+
+env_obj 5
+shape box
+pos 0.6875 4.625 0.8125
+color 0 0 0 1
+rot 0 -17 0
+sides 0.125 0.125 1.75
+mass 0.1
+flag 8
+
+

@@ -1,0 +1,420 @@
+#!/usr/bin/toribash
+#### Created with ModEditor by DeFransen ####
+
+
+gamerule
+engageplayerpos 0
+   damage 0
+   dismemberment 0
+   disqualification 0
+   dojosize 0
+   dojotype 0
+   dqflag 0
+   dqtimeout 0
+   engagedistance 500
+   engageheight 0
+   engagerotation 0
+   engagespace 0
+   flags 0
+   fracture 0
+   gravity 0 0 -9.82
+   matchframes 500
+   rpg 0
+   sumo 0
+   turnframes 10
+
+player 0
+
+   body breast
+      pos 1 0.5 1.8
+      shape sphere
+      sides 0.2 0 0
+
+   body chest
+      pos 1 1.1 1.75
+      shape sphere
+      sides 0.2 0 0
+
+   body groin
+      pos 1 2 1.55
+      shape sphere
+      sides 0.15 0 0
+
+   body head
+      pos 1 0 2.2
+      sides 0.3 0 0
+
+   body l_biceps
+      pos 1.5 0.4 1.4
+      shape cylinder
+      sides 0.14 0.23 0
+
+   body l_butt
+      pos 1.3 1.85 1.5
+      shape sphere
+      sides 0.15 0 0
+
+   body l_foot
+      density 0.44
+      force 0 -2 0
+      pos 1.4 1.5 0.3
+      sides 0.22 0.3 0.1
+
+   body l_hand
+      density 0.44
+      flag 36
+      force 0 2 0
+      pos 1.5 -0.1 0.45
+      sides 0.22 0.3 0.1
+
+   body l_leg
+      pos 1.4 1.6 0.7
+      sides 0.13 0.2 0
+
+   body l_pecs
+      pos 1.4 0.4 1.7
+      shape sphere
+      sides 0.15 0 0
+
+   body l_thigh
+      pos 1.4 1.8 1.15
+      rot 25 0 0
+      shape box
+      sides 0.2 0.2 0.4
+
+   body l_triceps
+      pos 1.5 0.4 0.8
+      rot 41 0 0
+      sides 0.13 0.13 0.4
+
+   body r_biceps
+      pos 0.5 0.4 1.4
+      shape cylinder
+      sides 0.14 0.23 0
+
+   body r_butt
+      pos 0.7 1.85 1.5
+      shape sphere
+      sides 0.15 0 0
+
+   body r_foot
+      density 0.44
+      force 0 -2 0
+      pos 0.6 1.5 0.3
+      sides 0.22 0.3 0.1
+
+   body r_hand
+      density 0.44
+      flag 36
+      force 0 2 0
+      pos 0.5 -0.1 0.45
+      sides 0.22 0.3 0.1
+
+   body r_leg
+      pos 0.6 1.6 0.7
+      sides 0.13 0.2 0
+
+   body r_pecs
+      pos 0.6 0.4 1.7
+      shape sphere
+      sides 0.15 0 0
+
+   body r_thigh
+      pos 0.6 1.8 1.15
+      rot 25 0 0
+      shape box
+      sides 0.2 0.2 0.4
+
+   body r_triceps
+      pos 0.5 0.4 0.8
+      rot 41 0 0
+      sides 0.13 0.13 0.4
+
+   body stomach
+      pos 1 1.5 1.7
+      shape sphere
+      sides 0.18 0 0
+
+   joint abs
+      radius 0.2
+      pos 1 1.7 1.65
+
+   joint chest
+      radius 0.34
+      pos 1 0.8 1.6
+
+   joint l_ankle
+      pos 1.4 1.6 0.45
+
+   joint l_elbow
+      pos 1.5 0.4 1.1
+      range 1 0
+      strength 3
+      axis 1 0 0
+
+   joint l_glute
+      radius 0.18
+      pos 1.2 1.9 1.51
+
+   joint l_hip
+      pos 1.4 1.8 1.4
+
+   joint l_knee
+      radius 0.16
+      pos 1.4 1.6 0.95
+
+   joint l_pecs
+      radius 0.25
+      pos 1.15 0.4 1.7
+
+   joint l_shoulder
+      radius 0.2
+      pos 1.5 0.4 1.6
+      axis 1 0 0
+
+   joint l_wrist
+      radius 0.14
+      pos 1.5 0 0.65
+      range 0.3 -2
+      axis 1 0 0
+
+   joint lumbar
+      radius 0.22
+      pos 1 1.3 1.6
+
+   joint neck
+      radius 0.17
+      pos 1 0.2 2
+
+   joint r_ankle
+      pos 0.6 1.6 0.45
+
+   joint r_elbow
+      pos 0.5 0.4 1.1
+      range 0 -1
+      strength 3
+      axis 1 0 0
+
+   joint r_glute
+      radius 0.18
+      pos 0.8 1.9 1.51
+
+   joint r_hip
+      pos 0.6 1.8 1.4
+
+   joint r_knee
+      radius 0.16
+      pos 0.6 1.6 0.95
+
+   joint r_pecs
+      radius 0.25
+      pos 0.85 0.4 1.7
+      axis 0 1 0
+
+   joint r_shoulder
+      radius 0.2
+      pos 0.5 0.4 1.6
+      axis 1 0 0
+
+   joint r_wrist
+      radius 0.14
+      pos 0.5 0 0.65
+      axis 1 0 0
+
+
+player 1
+
+   body breast
+      pos 1 0.5 1.8
+      shape sphere
+      sides 0.2 0 0
+
+   body chest
+      pos 1 1.1 1.75
+      shape sphere
+      sides 0.2 0 0
+
+   body groin
+      pos 1 2 1.55
+      shape sphere
+      sides 0.15 0 0
+
+   body head
+      pos 1 0 2.2
+      sides 0.3 0 0
+
+   body l_biceps
+      pos 1.5 0.4 1.4
+      shape cylinder
+      sides 0.14 0.23 0
+
+   body l_butt
+      pos 1.3 1.85 1.5
+      shape sphere
+      sides 0.15 0 0
+
+   body l_foot
+      density 0.44
+      force 0 -2 0
+      pos 1.4 1.5 0.3
+      sides 0.22 0.3 0.1
+
+   body l_hand
+      density 0.44
+      flag 36
+      force 0 2 0
+      pos 1.5 -0.1 0.45
+      sides 0.22 0.3 0.1
+
+   body l_leg
+      pos 1.4 1.6 0.7
+      sides 0.13 0.2 0
+
+   body l_pecs
+      pos 1.4 0.4 1.7
+      shape sphere
+      sides 0.15 0 0
+
+   body l_thigh
+      pos 1.4 1.8 1.15
+      rot 25 0 0
+      shape box
+      sides 0.2 0.2 0.4
+
+   body l_triceps
+      pos 1.5 0.4 0.8
+      rot 41 0 0
+      sides 0.13 0.13 0.4
+
+   body r_biceps
+      pos 0.5 0.4 1.4
+      shape cylinder
+      sides 0.14 0.23 0
+
+   body r_butt
+      pos 0.7 1.85 1.5
+      shape sphere
+      sides 0.15 0 0
+
+   body r_foot
+      density 0.44
+      force 0 -2 0
+      pos 0.6 1.5 0.3
+      sides 0.22 0.3 0.1
+
+   body r_hand
+      density 0.44
+      flag 36
+      force 0 2 0
+      pos 0.5 -0.1 0.45
+      sides 0.22 0.3 0.1
+
+   body r_leg
+      pos 0.6 1.6 0.7
+      sides 0.13 0.2 0
+
+   body r_pecs
+      pos 0.6 0.4 1.7
+      shape sphere
+      sides 0.15 0 0
+
+   body r_thigh
+      pos 0.6 1.8 1.15
+      rot 25 0 0
+      shape box
+      sides 0.2 0.2 0.4
+
+   body r_triceps
+      pos 0.5 0.4 0.8
+      rot 41 0 0
+      sides 0.13 0.13 0.4
+
+   body stomach
+      pos 1 1.5 1.7
+      shape sphere
+      sides 0.18 0 0
+
+   joint abs
+      radius 0.2
+      pos 1 1.7 1.65
+
+   joint chest
+      radius 0.34
+      pos 1 0.8 1.6
+
+   joint l_ankle
+      pos 1.4 1.6 0.45
+
+   joint l_elbow
+      pos 1.5 0.4 1.1
+      range 1 0
+      strength 3
+      axis 1 0 0
+
+   joint l_glute
+      radius 0.18
+      pos 1.2 1.9 1.51
+
+   joint l_hip
+      pos 1.4 1.8 1.4
+
+   joint l_knee
+      radius 0.16
+      pos 1.4 1.6 0.95
+
+   joint l_pecs
+      radius 0.25
+      pos 1.15 0.4 1.7
+
+   joint l_shoulder
+      radius 0.2
+      pos 1.5 0.4 1.6
+      axis 1 0 0
+
+   joint l_wrist
+      radius 0.14
+      pos 1.5 0 0.65
+      range 0.3 -2
+      axis 1 0 0
+
+   joint lumbar
+      radius 0.22
+      pos 1 1.3 1.6
+
+   joint neck
+      radius 0.17
+      pos 1 0.2 2
+
+   joint r_ankle
+      pos 0.6 1.6 0.45
+
+   joint r_elbow
+      pos 0.5 0.4 1.1
+      range 0 -1
+      strength 3
+      axis 1 0 0
+
+   joint r_glute
+      radius 0.18
+      pos 0.8 1.9 1.51
+
+   joint r_hip
+      pos 0.6 1.8 1.4
+
+   joint r_knee
+      radius 0.16
+      pos 0.6 1.6 0.95
+
+   joint r_pecs
+      radius 0.25
+      pos 0.85 0.4 1.7
+      axis 0 1 0
+
+   joint r_shoulder
+      radius 0.2
+      pos 0.5 0.4 1.6
+      axis 1 0 0
+
+   joint r_wrist
+      radius 0.14
+      pos 0.5 0 0.65

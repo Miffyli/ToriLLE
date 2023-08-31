@@ -1,0 +1,9 @@
+gamerule
+engageplayerpos 0
+engagedistance 80
+dismemberthreshold 100
+dismember 1
+fracture 0
+turnframes 70
+matchframes 1000
+sumo 1

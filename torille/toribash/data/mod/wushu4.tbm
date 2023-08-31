@@ -1,0 +1,13 @@
+#!/usr/bin/toribash
+#short version of wushu3 for beginner servers.
+gamerule
+engageplayerpos 0
+engagedistance 280
+dismember 1
+dismemberthreshold 280
+fracture 1
+fracturethreshold 150
+turnframes 50
+matchframes 500
+sumo 1
+dq 1

@@ -1,0 +1,178 @@
+# New UI Localization file		
+NAVBUTTONHOME	Главная	
+NAVBUTTONPLAY	Игра	
+NAVBUTTONPRACTICE	Тренировка	
+NAVBUTTONMODS	Моды	
+NAVBUTTONTOOLS	Инструменты	
+NAVBUTTONTOMAIN	На главную	
+NAVBUTTONBACK	Назад	
+NAVBUTTONEXIT	Выход	
+MAINMENUUSERCLAN	Клан	
+MAINMENUTORISHOPNAME	Торишоп	
+MAINMENUTORISHOPDESC	Примерьте и купите предметы для вашего Тори	
+MAINMENUCLANSNAME	Кланы	
+MAINMENUCLANSDESC	Узнайте больше о кланах Toribash	
+MAINMENUREPLAYSNAME	Реплеи	
+MAINMENUREPLAYSDESC	Просматривайте сохранённые реплеи	
+MAINMENUFREEPLAYNAME	Свободная игра	
+MAINMENUFREEPLAYDESC	Тренируйтесь или создавайте реплеи в режиме одиночной игры	
+MAINMENUMATCHMAKINGNAME	Матчмейкинг	
+MAINMENUMATCHMAKINGDESC	Быстрый способ найти соперника для боёв один-на-один	
+MAINMENUROOMLISTNAME	Список комнат	
+MAINMENUROOMLISTDESC	Создайте собственную комнату, либо присоединитесь к уже существующей	
+MAINMENUBEGINNERTUTNAME	Руководство новичка	
+MAINMENUBEGINNERTUTDESC	Узнайте об основах Toribash: управление, геймплей и многое другое	
+MAINMENUADVMOVESNAME	Продвинутые приемы	
+MAINMENUADVMOVESDESC	Изучите продвинутые приемы для игры по сети	
+MAINMENUFIGHTUKENAME	Бой против Юке	
+MAINMENUFIGHTUKEDESC	Испытайте свои навыки в бою с давним соперником Тори!	
+MAINMENUCOMEBACKNAME	Тренировка возвращения	
+MAINMENUCOMEBACKDESC	Старайтесь догнать Юке, избегая дисквалификации	
+MAINMENUGAMERULESNAME	Правила игры	
+MAINMENUGAMERULESDESC	Изменяйте гравитацию и другие параметры игры	
+MAINMENUMODLISTNAME	Список модов	
+MAINMENUMODLISTDESC	Загрузите один из скачанных модов	
+MAINMENUMODMAKERNAME	Модмейкер	
+MAINMENUMODMAKERDESC	Создайте свой собственный мод для Toribash	
+MAINMENUMODSDISCOVERNAME	Поиск модов	
+MAINMENUMODSDISCOVERDESC	Найдите моды, созданные другими игроками	
+MAINMENUSHADERSNAME	Шейдеры	
+MAINMENUSHADERSDESC	Изменяйте освещение и окружение мира Toribash	
+MAINMENUSCRIPTSNAME	Скрипты	
+MAINMENUSCRIPTSDESC	Загрузите установленные скрипты для Toribash	
+MAINMENUSOUNDSNAME	Звуки	
+MAINMENUSOUNDSDESC	Настройте пользовательские звуки	
+DOWNLOADINGFILESWAIT	Загрузка файлов, пожалуйста, подождите...	
+STORESETEMPTY	Пусто	
+STOREITEM	предмет	
+STOREITEMS	предметов	
+STOREFLAMEBODYPART	Пламя для	
+STOREFLAMEID	ID пламени	
+STOREFLAMEFORGEDBY	Создан	
+STOREITEMINSIDESET	Внутри сета	
+STOREOBJITEMBODYPART	3D модель для	
+STOREITEMNODESCRIPTION	У этого предмета пока нет описания	
+STOREITEMGOTOSET	Перейти к сету	
+STORESETITEMNAME	Сет	
+STOREITEMADDTOSET	Добавить в сет	
+STOREITEMREMOVEFROMSET	Удалить из сета	
+STOREVIEWSETITEMS	Просмотр сета	
+STOREITEMSINSET	Предметы внутри сета	
+STORESELLMARKET	Продать в маркете	
+STOREDIALOGMARKETSELL1	Вы действительно хотите разместить	
+STOREDIALOGMARKETSELL2	в маркете?	
+STOREITEMDEACTIVATE	Деактивировать	
+STOREDIALOGDEACTIVATE1	Вы действительно хотите деактивировать	
+STOREDIALOGDEACTIVATE2		
+STOREITEMACTIVATE	Активировать	
+STOREDIALOGACTIVATE1	Вы действительно хотите активировать	
+STOREDIALOGACTIVATE2		
+STOREDIALOGCONFLICTSDEACTIVATE	Любые конфликтующие предметы будут деактивированы	
+STOREITEMUNPACK	Распаковать	
+STOREDIALOGUNPACK1	Вы уверены, что хотите распаковать	
+STOREDIALOGUNPACK2		
+STOREDIALOGUNPACKINFO	Распакованные предметы будут помещены в набор,\nдобавленный в ваш деактивированный инвентарь.	
+STOREACTIVATEDINVENTORY	Активированный инвентарь	
+STOREDEACTIVATEDINVENTORY	Деактивированный инвентарь	
+STOREMARKETINVENTORY	Предметы в маркете	
+STOREINVENTORYALLITEMS	Все предметы в инвентаре	
+PAGINATIONPAGE	Страница	
+PAGINATIONPAGEOF	из	
+STOREINVENTORYLOADING	Загрузка данных из Тори-вселенной	
+STOREGOTOSHOP	Открыть магазин	
+STORESHOPDESC	Купите новые предметы для вашего Tori	
+STOREGOTOINVENTORY	Открыть инвентарь	
+STOREINVENTORYDESC	Кастомизируйте своего персонажа с помощью купленных предметов	
+STORESTEAMPURCHASELOADING	Работаем	
+STORESTEAMPURCHASEERROR	Что-то пошло не так	
+CLANSMYCLAN	Мой клан	
+CLANSCLANLEADER	Лидер клана	
+CLANSCLANMEMBER	Участник клана	
+CLANSTOGETHERWITH	Вместе с	
+CLANSVIEWCLAN	Показать клан	
+GENERALSTRINGAND	и	
+CLANFILTERSRANK	Ранг	
+CLANFILTERSCLANNAME	Имя	
+CLANFILTERSCLANTAG	Тэг	
+CLANFILTERSCLANID	ID	
+CLANFILTERSOFFICIALSTATUS	Статус	
+CLANFILTERSJOINMODE	Режим вступления	
+CLANFILTERSDEAD	Мертв	
+CLANFILTERSINACTIVE	Неактивен	
+CLANFILTERSACTIVE	Активен	
+SORTORDERASCENDING	По возрастанию	
+SORTORDERDESCENDING	По убыванию	
+CLANFILTERSACTIVITYSTATE	Статус активности	
+CLANFILTERSACTIVITYSTATEDESC	Клан считается активным, если в нём находится хотя бы 5 игроков. Кланы, не имеющие участников, считаются мертвыми.	
+CLANFILTERSFFAONLY	Только открытые кланы	
+CLANFILTERSFFAONLYDESC	Вы можете вступить в открытые кланы в любой момент одним нажатием мыши. Приватные кланы имеют специальный процесс вступления по заявкам.	
+CLANFILTERSOFFICIALONLY	Только официальные кланы	
+CLANFILTERSOFFICIALONLYDESC	Официальные кланы имеют свою собственную ветку на форуме Toribash и квадратные скобки в игре.	
+SORTBYNAME	Сортировать по	
+SORTORDERNAME	Порядок сортировки	
+CLANSSEARCHFILTERS	Поисковые фильтры	
+CLANSSEARCH	Искать кланы	
+CLANSCLANLIST	Список кланов	
+CLANSLEGENDRANK	Ранг	
+CLANSLEGENDLEVEL	Уровень	
+CLANSLEGENDXP	Опыт	
+CLANSLEGENDTAGNAME	Тэг и название	
+CLANSLEGENDSTATUS	Статус	
+CLANSLEGENDJOINMODE	Режим вступления	
+CLANSTATEOFFICIAL	Официальный	
+CLANSTATEUNOFFICIAL	Неофициальный	
+CLANSTATEFREEFORALL	Открытый	
+CLANSTATEINVITEONLY	Приватный	
+CLANSLISTEMPTYMSG	Нет кланов для отображения	
+CLANSJOINCLAN	Вступить в клан	
+CLANSRELOADLOGO	Перезагрузить	
+CLANSUPDATINGLOGO	Обновление	
+CLANSTATEUNRANKED	Без ранга	
+CLANSVIEWWARSFORUM	Показать клановые войны на форуме	
+CLANSTOPACHMISSING	Этот клан еще не выбрал достижение для отображения	
+CLANSLEGENDROSTER	Состав	
+CLANLEADERS	Лидеры	
+CLANLEADER	Лидер	
+CLANMEMBERS	Участники	
+CLANMEMBER	Участник	
+CLANDATALOADERROR	Ошибка загрузки данных, проверьте настройки доступа папки Toribash	
+REWARDSDAILYTITLE	Ежедневная награда	
+REWARDSCLAIM	Получить награду	
+REWARDSCLAIMNETWORKERROR	Ошибка соединения с серверами Toribash, пожалуйста, попробуйте позже	
+REWARDSCLAIMINPROGRESS	Получение награды	
+REWARDSCLAIMSUCCESS	Награда получена	
+REWARDSCLAIMNOREWARD	Нет доступных наград, попробуйте позже	
+REWARDSCLAIMTIMEOUT	Коммуникационная ошибка, перезапустите игру или подключитесь к серверу	
+REWARDSCLAIMERROROTHER	Ошибка получения награды	
+REWARDSNOAVAILABLE	Нет доступных наград	
+REWARDSAVAILABLERESTART	Награда будет доступна при следующем запуске игры	
+REWARDSEXPIRED	Срок действия награды истек :(	
+REWARDSTIMEHOURS	ч	
+REWARDSTIMEHOUR	ч	
+REWARDSTIMEMINUTES	м	
+REWARDSTIMEMINUTE	м	
+REWARDSTIMESECONDS	с	
+REWARDSNEXTREWARD	Следующая награда будет доступна через	
+REWARDSTIMELEFT	осталось до истечения награды	
+MATCHMAKEMODGRAPPLING	Grappling	
+MATCHMAKEMODKICKING	Kicking	
+MATCHMAKEMODSTRIKING	Striking	
+MATCHMAKEMODFUN	Fun	
+MATCHMAKERANKEDBELT	Ранговые матчи доступны по достижению Коричневого пояса	
+MATCHMAKERANKEDMODE	Ранговый режим	
+MATCHMAKERANK	Ранг	
+MATCHMAKEFIGHTSTOTAL	всего боев	
+MATCHMAKEWINRATE	процент побед	
+MATCHMAKENOPLAYERS	Нет доступных игроков	
+MATCHMAKEPLAYERSEARCHING	игрок в очереди	
+MATCHMAKEPLAYERSSEARCHING	игроков в очереди	
+MATCHMAKESEARCHING	Поиск соперника	
+MATCHMAKESEARCH	Поиск	
+MATCHMAKESTOPSEARCH	Закончить поиск	
+MATCHMAKEUNRANKEDMODE	Обычная игра	
+MATCHMAKEFINDBESTMATCH1	Искать	
+MATCHMAKEFINDBESTMATCH2	во всех модах	
+MATCHMAKESEARCHSETTINGS1	Поиск	
+MATCHMAKESEARCHSETTINGS2	с настройками	
+MATCHMAKESEARCHCUSTOM	пользовательский	
+MATCHMAKEUPDATINGRANK	Обновление ранговой статистики...	

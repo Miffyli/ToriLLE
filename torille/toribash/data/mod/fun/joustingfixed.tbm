@@ -1,0 +1,32 @@
+#joustingfixed.tbm
+#gamerules made by Dodekus
+
+gamerule
+engageplayerpos 0
+	engagedistance 1000
+	matchframes 1000
+	turnframes 50
+	dq 1
+blood
+	color 0 0 1
+body stomach 
+	force 0 10 1
+body breast
+	force 0 10 1
+body chest
+	force 0 10 1
+body groin
+	force 0 10 1
+body r_pecs
+	force 0 20 1
+body l_pecs
+	force 0 20 1
+body r_thigh
+	force 0 20 1
+body l_thigh
+	force 0 20 1
+body l_leg
+	force 0 30 00
+body r_leg
+	force 0 30 00
+

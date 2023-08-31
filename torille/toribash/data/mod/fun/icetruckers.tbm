@@ -1,0 +1,224 @@
+#!/usr/bin/toribash 
+#Environment exported by WorldBuilder
+######################################
+
+gamerule
+engageplayerpos 0
+eh 1500
+gravity 0 10 -30
+ed 110
+flags 11
+dt 300
+ft 200
+dq 1
+mf 1000
+
+
+
+env_obj 1
+    shape sphere
+    pos 2.5625 -1.75 14.375
+    color 0 0 -0.1 1
+    rot 0 0 0
+    sides 0.5 1 1.0625
+    material steel
+    mass 0.1
+    flag 0
+#END 1
+
+env_obj 2
+    shape sphere
+    pos 2.5625 1.75 14.375
+    color 0 0 -0.1 1
+    rot 0 0 0
+    sides 0.5 1 1.0625
+    material steel
+    mass 0.1
+    flag 0
+#END 2
+
+env_obj 3
+    shape sphere
+    pos -0.4375 1.75 14.375
+    color 0 0 -0.1 1
+    rot 0 0 0
+    sides 0.5 1 1.0625
+    material steel
+    mass 0.1
+    flag 0
+#END 3
+
+env_obj 4
+    shape sphere
+    pos -0.4375 -1.75 14.375
+    color 0 0 -0.1 1
+    rot 0 0 0
+    sides 0.5 1 1.0625
+    material steel
+    mass 0.1
+    flag 0
+#END 4
+
+env_obj 5
+    shape box
+    pos 1 0.125 14.9375
+    color 0.3 0.4 0.6 1
+    rot 0 0 0
+    sides 3.875 5.75 0.125
+    material steel
+    mass 0.1
+    flag 0
+#END 5
+
+env_obj 6
+    shape box
+    pos 1 2.125 16.0625
+    color 0.3 0.4 0.6 1
+    rot 0 0 0
+    sides 3.875 1.6875 2.125
+    material steel
+    mass 0.001
+    flag 0
+    friction 0
+#END 6
+
+env_obj 7
+    shape box
+    pos 1 29.875 2.3125
+    color 0.3 0.7 1 0.5
+    rot 10 0 0
+    sides 18.125 68.8125 10.875
+    material steel
+    mass 0.1
+    flag 24
+    friction 0
+#END 7
+
+env_obj 8
+    shape box
+    pos 1 7.3125 11.0625
+    color 0.3 0.7 1 0.5
+    rot 4 0 0
+    sides 18.0625 11 1.125
+    material steel
+    mass 0.1
+    flag 24
+    friction 0
+#END 8
+
+env_obj 9
+    shape sphere
+    pos 2.0625 19.4375 8.625
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 1.8125 2.1875 0.75
+    material steel
+    mass 0.1
+    flag 24
+#END 9
+
+env_obj 10
+    shape sphere
+    pos -1.7375 27.875 7.0625
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 1.8125 2.1875 0.75
+    material steel
+    mass 0.1
+    flag 24
+#END 10
+
+env_obj 11
+    shape sphere
+    pos 6.125 32.25 6.3125
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 1.8125 2.1875 0.75
+    material steel
+    mass 0.1
+    flag 24
+#END 11
+
+env_obj 12
+    shape cylinder
+    pos 4.4375 39.6875 5.125
+    color 1.1 1.1 1 1
+    rot -22 -81 35
+    sides 1.8125 7.6875 0.75
+    material steel
+    mass 0.1
+    flag 24
+friction 0
+#END 12
+
+env_obj 13
+    shape cylinder
+    pos -6.8125 38.75 5.0625
+    color 1.1 1.1 1 1
+    rot 22 -20 36
+    sides 1.4375 7.6875 0.75
+    material steel
+    mass 0.1
+    flag 24
+friction 0
+#END 13
+
+env_obj 14
+    shape box
+    pos 0 46.9375 4.25
+    color 1.1 1.1 1 1
+    rot 173 0 0
+    sides 5.625 7.6875 1.3125
+    material steel
+    mass 0.1
+    flag 24
+friction 0
+#END 14
+
+env_obj 15
+    shape box
+    pos 0 48.8125 3.875
+    color 1.1 1.1 1 1
+    rot 159 0 0
+    sides 5.625 7.6875 1.9375
+    material steel
+    mass 0.1
+    flag 24
+friction 0
+#END 15
+
+env_obj 16
+    shape box
+    pos 1 79.125 1
+    color 1.1 1.1 1 1
+    rot 90 -90 1
+    sides 41.875 2.5625 7.875
+    material steel
+    mass 0.1
+    flag 24
+friction 0
+#END 16
+
+env_obj_joint 1 1 5
+pos 2.5625 -1.75 14.375
+range 5 -5
+axis 1 0 1
+
+env_obj_joint 2 2 5
+pos 2.5625 1.75 14.375
+range 5 -5
+axis 1 0 1
+
+env_obj_joint 3 3 5
+pos -0.4375 1.75 14.375
+axis 1 0 1
+range 5 -5
+
+env_obj_joint 4 4 5
+pos -0.4375 -1.75 14.375
+axis 1 0 1
+range 5 -5
+
+env_obj_joint 5 6 5
+pos 1 2.125 15
+axis 0 0 0

@@ -1,0 +1,20 @@
+# default.tbm
+# Load this mod to reset customized game settings
+
+gamerule
+	matchframes 500
+	turnframes 10
+	mod classic
+	flags 2
+	dismemberment 1
+	fracture 1
+	disqualification 0
+	dismemberthreshold 100
+	fracturethreshold 0
+	dojosize 0
+	engagedistance 100
+	engageheight 0
+	engagerotation 0
+	engagespace 0
+	damage 0
+	engageplayerpos 0

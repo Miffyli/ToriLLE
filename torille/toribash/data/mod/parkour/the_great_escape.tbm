@@ -1,0 +1,257 @@
+#!/usr/bin/toribash
+#mod by TRichard21 
+
+gamerule
+
+gravity 0 0 -30
+
+engagedistance 1000
+engageheight 10
+engageplayerpos 0.00,0.00.00,10.00,0.00,4.00,10.00
+engageplayerrot 0,0,0,0,0,0
+matchframes 1200
+dismemberthreshold 250
+fracturethreshold 500
+turnframes 10
+sumo 1
+dojosize 0
+flags 7
+dismemberment 0
+fracture 0
+disqualification 0
+flags 8
+
+
+
+
+
+
+
+body r_hand
+shape box
+sides 0.22 0.22 0.22
+alt_sides 0.2 0.2 0.2
+rot 0 0 0
+force 0 0 0
+color 1 1 1
+material flesh
+flag 32
+
+
+body l_hand
+shape box
+sides 0.22 0.22 0.22
+alt_sides 0.2 0.2 0.2
+rot 0 0 0
+force 0 0 0
+color 1 1 1
+material flesh
+flag 32
+
+
+
+
+
+
+env_obj 1
+    shape box
+    pos 1 0 4.9375 
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 12.5 13.75 10.125
+    material steel
+    mass 0.5
+    flag 24
+
+env_obj 2
+    shape box
+    pos 1 -17 8.1875 
+    color 0.6 0.6 0.6 1
+    rot 0 0 0
+    sides 12.5 11.75 16.375
+    material steel
+    friction 10
+    mass 0.5
+    flag 24
+    
+env_obj 3
+    shape box
+    pos 1 -11 10.25 
+    color 0.3 0.3 0.3 1
+    rot 0 0 0
+    sides 0.0625 0.0625 1.25
+    material steel
+    mass 0.0001
+
+env_obj 4
+    shape box
+    pos 1 -11 11.5
+    color 0.3 0.3 0.3 1
+    rot 0 0 0
+    sides 0.0625 0.0625 1.25
+    material steel
+    mass 0.0001
+    
+env_obj 5
+    shape box
+    pos 1 -11 12.75
+    color 0.3 0.3 0.3 1
+    rot 0 0 0
+    sides 0.0625 0.0625 1.25
+    material steel
+    mass 0.0001
+
+env_obj 6
+    shape box
+    pos 1 -11 14
+    color 0.3 0.3 0.3 1
+    rot 0 0 0
+    sides 0.0625 0.0625 1.25
+    material steel
+    mass 0.0001
+
+env_obj 7
+    shape box
+    pos 1 -11 15.25
+    color 0.3 0.3 0.3 1
+    rot 0 0 0
+    sides 0.0625 0.0625 1.25
+    material steel
+    mass 0.0001
+
+env_obj 8 
+    shape box
+    pos 1 -11 16.1875
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 0.0625 0.0625 0.625
+    material steel
+    mass 0.0001
+
+env_obj 9 
+    shape box
+    pos 1 -11.3125 16.4375
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 0.125 0.5625 0.125
+    material steel
+    mass 0.0001
+    flag 8
+   
+
+env_obj 10 
+    shape box
+    pos 1 0 16 
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 12.5 13.75 4.5
+    material steel
+    mass 0.0001
+    flag 24
+
+env_obj 11
+    shape box
+    pos 1 6.5 12
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 12.5 0.75 4.5 
+    material steel
+    mass 0.0001
+    flag 24
+
+env_obj 12
+    shape box
+    pos -2.75 -6.75 11.75 
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 5 0.25 4 
+    material steel
+    friction 20
+    mass 0.0001
+    flag 24
+
+env_obj 13
+    shape box
+    pos 4.75 -6.75 11.75 
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 5 0.25 4 
+    material steel
+    friction 20
+    mass 0.0001
+    flag 24
+
+env_obj 14
+    shape box
+    pos 3.5 -9.3125 12 
+    color 0.9 0.9 0.9 1
+    rot 0 0 0
+    sides 0.75 5.25 0.75  
+    material steel
+    friction 5
+    mass 0.0001
+    flag 24
+
+env_obj 15
+    shape box
+    pos 3.75 -10.75 8.25 
+    color 0.9 0.9 0.9 1
+    rot 0 0 0
+    sides 7 0.75 0.75   
+    material steel
+    friction 5
+    mass 0.0001
+    flag 24
+
+env_obj 16
+    shape box
+    pos 1.25 -7.25 14.125
+    color 0.9 0.9 0.9 1
+    rot 0 0 0
+    sides 4 1 0.75   
+    material steel
+    friction 5
+    mass 0.0001
+    flag 8
+
+env_obj_joint 1 3 4 
+pos 1 -11 10.875
+axis 1 0 0
+range 5 -5
+strength 10
+velocity 0
+
+env_obj_joint 2 4 5  
+pos 1 -11 12.125
+axis 1 0 0
+range 5 -5
+strength 20
+velocity 0
+
+env_obj_joint 3 5 6   
+pos 1 -11 13.375
+axis 1 0 0
+range 5 -5
+strength 10
+velocity 0
+
+env_obj_joint 4 6 7   
+pos 1 -11 14.625
+axis 1 0 0
+range 5 -5
+strength 20
+velocity 0
+
+env_obj_joint 5 7 8   
+pos 1 -11 15.875
+axis 1 0 0
+range 5 -5
+strength 10
+velocity 0
+
+env_obj_joint 6 8 9   
+pos 1 -11.0625 16.4375
+axis 1 0 0
+range 1 -1 
+strength 2000
+velocity 0

@@ -1,0 +1,119 @@
+# A mod by DoubleDagR
+# Special thanks to Tapion's "Meatspin" idea
+############################################
+#***     Made oringally by Inst1nkt     ***#
+############################################
+
+env_obj 1
+    shape box
+    pos 1 0 8.5
+    color 1.1 0 -0.1 1
+    rot 0 0 0
+    sides 5.5625 5.875 0.5
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 2
+    shape box
+    pos 1 1.5 4.4375
+    color 0 1.1 -0.1 1
+    rot 0 0 0
+    sides 4.125 0.0625 0.0625
+    material steel
+    mass 0.1
+    flag 0
+#END 2
+
+env_obj 3
+    shape box
+    pos 1 -1.75 4.4375
+    color 0 1.1 -0.1 1
+    rot 0 0 0
+    sides 4.125 0.0625 0.0625
+    material steel
+    mass 0.1
+    flag 0
+#END 3
+
+env_obj 4
+    shape box
+    pos 0.9375 0 0.4375
+    color 1.1 0 -0.1 1
+    rot 0 0 0
+    sides 3.8125 2.1875 0.875
+    material steel
+    mass 0.1
+    flag 24
+#END 4
+
+env_obj 5
+    shape box
+    pos -1.1875 1.5 4.25
+    color 1.1 0 -0.1 1
+    rot 0 0 0
+    sides 0.0625 0.125 8.5
+    material steel
+    mass 0.1
+    flag 24
+#END 5
+
+env_obj 6
+    shape box
+    pos -1.1875 -1.75 4.25
+    color 1.1 0 -0.1 1
+    rot 0 0 0
+    sides 0.0625 0.125 8.5
+    material steel
+    mass 0.1
+    flag 24
+#END 6
+
+env_obj 7
+    shape box
+    pos 3.1875 -1.75 4.25
+    color 1.1 0 -0.1 1
+    rot 0 0 0
+    sides 0.0625 0.125 8.5
+    material steel
+    mass 0.1
+    flag 24
+#END 7
+
+env_obj 8
+    shape box
+    pos 3.1875 1.5 4.25
+    color 1.1 0 -0.1 1
+    rot 0 0 0
+    sides 0.0625 0.125 8.5
+    material steel
+    mass 0.1
+    flag 24
+#END 8
+
+env_obj_joint 1 2 1
+	pos 1 1.5 4.4375
+	axis 1 0 0
+	range 5 -5
+	strength 50
+	velocity -15
+	visible 1
+
+env_obj_joint 2 3 1
+	pos 1 -1.75 4.4375
+	axis 1 0 0
+	range 5 -5
+	strength 50
+	velocity 15
+	visible 1
+
+gamerule
+engageplayerpos 0
+    matchframes 450
+    turnframes 50,20,20,40,40,40,40,40,40,40,40,40
+    engagedistance 450
+    engageheight 230
+    dojotype 1
+    dojosize 1
+

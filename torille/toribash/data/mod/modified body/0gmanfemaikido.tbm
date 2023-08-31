@@ -1,0 +1,215 @@
+########
+gamerule
+engageplayerpos 0
+gravity 0.00 0.00 -20.00
+engagedistance 90
+dismemberthreshold 325
+dismember 1
+fracture 1
+fracturethreshold 200
+matchframes 350
+turnframes 10,20,20,30,30,35,35,40,40,40,50
+dojosize 210
+dojotype 1
+dq 1
+sumo 1
+flags 11
+
+#girl
+
+body head
+
+
+radius 0.185
+pos 1.0 0.850 2.5400
+
+
+
+body breast
+sides 0.200 0.100 0.300
+pos 1.0 0.900 2.200
+
+body chest
+sides 0.290 0.150 0.200
+pos 1.0 0.900 1.950
+
+body stomach
+sides 0.220 0.150 0.200
+pos 1.0 0.950 1.750
+
+body groin
+sides 0.100 0.150 0.200
+pos 1.0 1.0 1.550
+
+body r_pecs
+sides 0.200 0.150 0.200
+pos 0.900 0.850 2.200
+
+body l_pecs
+sides 0.200 0.150 0.200
+pos 1.100 0.850 2.200
+
+body r_biceps
+sides 0.400 0.150 0.130
+pos 0.450 0.900 2.200
+
+body l_biceps
+sides 0.400 0.150 0.130
+pos 1.550 0.900 2.200
+
+body r_triceps
+sides 0.40 0.100 0.09
+pos 0.050 0.900 2.200
+
+body l_triceps
+sides 0.40 0.100 0.09
+pos 1.950 0.900 2.200
+
+body r_hand
+sides 0.155 0.155 0.155
+alt_sides 0.13 0.13 0.13
+pos -0.320 0.850 2.200
+
+body l_hand
+sides 0.155 0.155 0.155
+alt_sides 0.13 0.13 0.13
+pos 2.320 0.850 2.200
+
+body r_butt
+sides 0.100 0.100 0.100
+pos 0.850 1.0 1.450
+density 0.15
+
+body l_butt
+sides 0.100 0.100 0.100
+pos 1.150 1.0 1.450
+density 0.15
+
+body r_thigh
+sides 0.140 0.310 0.200
+pos 0.820 1.0 1.080
+density 0.15
+
+body l_thigh
+sides 0.140 0.310 0.200
+pos 1.180 1.0 1.080
+density 0.15
+
+body l_leg
+sides 0.120 0.350 0.0
+pos 1.180 1.0 0.4950
+
+body r_leg
+sides 0.120 0.350 0.0
+pos 0.820 1.0 0.4950
+
+body r_foot
+sides 0.150 0.400 0.080
+pos 0.820 0.900 0.100
+density 0.1
+
+body l_foot
+sides 0.150 0.400 0.080
+pos 1.180 0.900 0.100
+density 0.1
+
+joint neck
+radius 0.090
+pos 1. 0.900 2.400
+velocity 25
+
+joint chest
+radius 0.150
+pos 1. 0.900 2.050
+velocity 25
+
+joint lumbar
+radius 0.140
+pos 1. 0.950 1.850
+velocity 25
+
+joint abs
+radius 0.130
+pos 1. 1. 1.650
+velocity 25
+
+joint r_pecs
+radius 0.175
+pos 0.860 0.800 2.100
+velocity 20
+
+joint l_axilla
+radius 0.175
+pos 1.140 0.800 2.100
+
+
+velocity 20
+
+joint r_shoulder
+radius 0.140
+pos 0.650 0.900 2.200
+velocity 25
+
+joint r_elbow
+radius 0.120
+pos 0.250 0.900 2.200
+velocity 25
+
+joint l_shoulder
+radius 0.140
+pos 1.350 0.900 2.200
+velocity 25
+
+joint l_elbow
+radius 0.120
+pos 1.750 0.900 2.200
+velocity 25
+
+joint r_wrist
+radius 0.090
+pos -0.200 0.900 2.200
+velocity 25
+
+joint l_wrist
+radius 0.090
+pos 2.200 0.900 2.200
+velocity 25
+
+joint r_glute
+radius 0.170
+pos 0.880 1.100 1.510
+velocity 20
+
+joint l_glute
+radius 0.170
+pos 1.120 1.100 1.510
+velocity 20
+
+
+
+joint r_hip
+radius 0.16
+pos 0.82 1. 1.400
+velocity 30
+
+joint l_hip
+radius 0.16
+pos 1.180 1. 1.400
+velocity 30
+
+joint r_knee
+radius 0.115
+pos 0.820 1. 0.800
+velocity 15
+
+joint l_knee
+radius 0.115
+pos 1.180 1. 0.800
+velocity 15
+
+joint r_ankle
+radius 0.08
+pos 0.820 1.050 0.230
+
+joint l_ankle
+radius 0.08

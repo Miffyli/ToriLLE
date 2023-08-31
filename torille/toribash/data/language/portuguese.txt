@@ -1,0 +1,188 @@
+﻿#Localization file.
+
+FreePlay Jogo Livre
+Multiplayer Multiplayer
+FightSchool Escola de Luta
+ToriShop Torishop
+Setup Configurações
+BuyToriCredits Compre Toricredits
+Quit Sair
+Options Opções
+Mods Modos
+Utils Utilidades
+Replays Replays
+GameRules Configurações
+Login Login
+Back Voltar
+ToribashTutorial Tutorial de Toribash
+BasicTraining Treinamento Básico
+AdvancedMoves Avançado
+ChallengeUke Desafie o Uke
+FlameForge Crie Sua Chama
+FlameBrowser Ver Chamas
+ModMaker Criador de Modo
+Scripts Scripts
+Sounds Sons
+Credits Créditos
+Cancel Cancelar
+OK OK
+Advanced Avançado
+Graphics Gráficos
+MouseButtons Botões do Mouse
+BackgroundClick Clique de Fundo
+EffectsVolume Volume do Efeito
+MusicVolume Volume da Música
+ChatToggle Aumentar Chat
+Fullscreen Tela Cheia
+Autosavereplays Auto-salvar Replays
+RememberGameRules Lembrar Configurações
+LowerFrameRateCap Diminuir FPS
+Shaders Sombras
+FluidBlood Sangue Fluído
+Reflections Reflexos
+SoftShadows Sombras Suaves
+AmbientOcclusion Oclusão de Ambiente
+Bumpmapping Relevo
+RayTracing Ray Tracing
+Particles Partículas de Chama
+Trails Trails
+Hair Cabelo
+ShaderHair Sombras do Cabelo
+BodyTextures Texturas do Corpo
+DisableGraphicsReloading Desativar Recarregamento do Gráfico
+WindowWidth Largura da Janela
+WindowHeight Altura da Janela
+FixedFramerate Taxa de Frames Fixa
+Basic Básico
+Minimum Mínimo
+Low Baixo
+Medium Médio
+High Alto
+Maximum Máximo
+Register Registrar
+Create Criar
+Username Usuário
+Password Senha
+Email E-mail
+Email(optional) E-mail (Opcional)
+RemindMe Lembrar
+RememberMe Lembrar Senha
+Show Mostrar
+ForgotYourPassword? Esqueceu a senha?
+Don'tHaveAnAccount? Não tem uma conta?
+Close Fechar
+UPGRADED! GRADUOU!
+NumGamesToBelt jogos para
+DRAW! EMPATE!
+MatchWonBelowMin Partidas ganhas abaixo do mínimo de turnos.
+WINS! VENCE!
+STREAK SEQUÊNCIA DE
+DRAW2! EMPATE!
+DISQUALIFIED! DESQUALIFICADO!
+KeyframesCleared! Keyframes limpos!
+KeyframeSaved! Keyframes salvos!
+DefaultCameraEnabled Câmera Padrão Ativada
+FreeOrbitalCameraEnabled Câmera Orbital Livre Ativada, use W/S/A/D/Q/E + SHIFT para controlar
+FreeCameraEnabled Câmera Livre Ativada, use W/S/A/D/Q/E + SHIFT para controlar
+ToriCameraEnabled Câmera do Tori Ativada
+UkeCameraEnabled Câmera do Uke Ativada
+RecordingNextRewind Gravação começará no próximo replay
+RecordingCameraMovements Gravando movimentos de câmera
+PlayingCameraMovements Reproduzindo movimentos de câmera
+FreeCamDisabled	Câmera livre desativada
+Desc Descrição
+Room Sala
+Mod Modo
+Players Usuários
+MinBelt Faixa Min.
+MaxBelt Faixa Máx.
+Connect Conectar
+LoadingServerList Carregando lista de servidores
+BeltRestriction Filtrar por Faixa
+HidePasswordServers Só Salas Públicas
+OfficialServers Salas Oficiais
+LiveTournaments Torneios Iniciados
+TournamentInProgress Torneio em Andamento
+PasswordNeeded Precisa de Senha
+EntryFee Taxa de Entrada
+TotalTcBetted Total de TC Apostado
+MinimumBet Aposta Mínima
+BuddiesInside Amigos Dentro
+RoomName: Nome da Sala:
+Password: Senha:
+MaxPlayer: Máximo de Jogadores:
+MinBelt: Faixa Mínima:
+MaxBelt: Faixa Máxima:
+Desc: Descrição:
+Option Opção
+CreateRoom Criar Sala
+Language Linguagem
+SPECTATOR ESPECTADOR
+WaitingForOtherPlayer Esperando Por Outro Jogador
+SPACEBARNewGameFSaveReplay ESPAÇO - Novo Jogo  ;  F - Salvar Replay
+PressTheSPACEBARToPlay Pressione ESPAÇO Para Jogar!
+PressTheSPACEBARForREPLAY Pressione ESPAÇO Para o REPLAY
+WaitingForYourTurn Esperando pela sua vez: #
+InQueue na fila
+WaitingForOpponent Esperando o Oponente
+ClickToSelectPlayer Clique Para Selecionar Jogador
+HitSPACEWhenReadyWithMove Pressione ESPAÇO quando estiver pronto com o movimento
+PleaseEnterAValidEmailAddress Por favor insira um endereço de e-mail válido
+PleaseEnterYourUsername Por favor insira seu nome de usuário!
+PleaseEnterYourPassword Por favor insira sua senha
+PleaseRetypeYourPassword Por favor reescreva sua senha
+UsernameLesserThan4Characters Seu nome de usuário tem menos de 4 caracteres!
+UsernameMoreThan10Characters Seu nome de usuário tem mais de 10 caracteres!
+MismatchingPasswords As senhas estão diferentes
+UsernameMustBeAlphaNumeric Nome de usuário tem que conter números
+Error! Erro!
+CreateAccountFromToribash Por favor crie sua conta de
+#ToribashFromCreateAccount Não usado aqui
+NetworkError Falha de conexão!
+UsernameUsedOrSubstandard Nome em uso ou fora das normas
+ModsCtrlM Modos (Ctrl + M)
+Load Carregar
+Open Abrir
+NewGame Novo jogo
+TypeHere Escreva aqui
+QuickLoad Carregamento Rápido
+ShadersCtrlH Sombras (Ctrl + H)
+AutoLoad Auto-carregamento
+SoundsCtrlY Sons (Ctrl + Y)
+UsernameIsEmpty usuário está vazio
+Neck PESCOÇO
+Chest TÓRAX
+Lumbar LOMBAR
+Abs ABDÔMEN
+RightPecs PEITO DIREITO
+RightShoulder OMBRO DIREITO
+RightElbow COTOVELO DIREITO
+LeftPecs PEITO ESQUERDO
+LeftShoulder OMBRO ESQUERDO
+LeftElbow COTOVELO ESQUERDO
+RightWrist PULSO DIREITO
+LeftWrist PULSO ESQUERDO
+RightGlute GLÚTEO DIREITO
+LeftGlute GLÚTEO ESQUERDO
+RightHip QUADRIL DIREITO
+LeftHip QUADRIL ESQUERDO
+RightKnee JOELHO DIREITO
+LeftKnee JOELHO ESQUERDO
+RightAnkle TORNOZELO DIREITO
+LeftAnkle TORNOZELO ESQUERDO
+RightRotating GIRAR PARA A DIREITA
+RightBending DOBRAR PARA A DIREITA
+LeftRotating GIRAR PARA A ESQUERDA
+LeftBending DOBRAR PARA A ESQUERDA
+Lowering BAIXAR
+Extending EXTENDER
+Raising LEVANTAR
+Contracting CONTRAIR
+Holding FORÇAR
+Relaxing RELAXAR
+ObjModel Modelo Obj
+LanguageSteam Usar linguagem do Steam
+Effects Efeitos
+AlwaysOff Sempre Desligado
+OnlyOnReplays Somente Nos Replays
+AlwaysOn Sempre Ligado

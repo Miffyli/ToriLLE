@@ -1,0 +1,198 @@
+#!/usr/bin/toribash
+engageplayerpos 0
+
+
+#Hanging Stand
+env_obj 1
+    shape box
+    pos -1.125 0.5625 3.5625
+    color 0.5 0.3 0.3 1
+    rot 0 0 0
+    sides 0.1875 0.1875 7.125
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 2
+    shape box
+    pos 0.75 0.5625 7.125
+    color 0.5 0.3 0.3 1
+    rot 0 -90 0
+    sides 0.1875 0.1875 4
+    material steel
+    mass 0.1
+    flag 24
+#END 2
+
+env_obj 3
+    shape box
+    pos 1 0.625 6.3125
+    color 1.1 0.6 0.3 1
+    rot 0 0 0
+    sides 0.0625 0.0625 1.5625
+    material steel
+    mass 0.1
+    flag 24
+#END 3
+
+env_obj 4
+    shape box
+    pos 1.125 0.5 5.4375
+    color 1.1 0.6 0.3 1
+    rot -31 0 -25
+    sides 0.0625 0.4375 0.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 4
+
+env_obj 5
+    shape box
+    pos 0.875 0.5 5.4375
+    color 1.1 0.6 0.3 1
+    rot -31 0 23
+    sides 0.0625 0.4375 0.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 5
+
+env_obj 6
+    shape box
+    pos 1 0.3125 5.3125
+    color 1.1 0.6 0.3 1
+    rot 0 0 -90
+    sides 0.0625 0.4375 0.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 6
+
+#Tori
+player 0
+
+body head
+  pos 1.000000 0.850000 5.650000
+
+body breast
+  pos 1.000000 0.900000 5.200000
+
+body chest
+  pos 1.000000 0.900000 4.950000
+
+body stomach
+  pos 1.000000 0.950000 4.750000
+
+body groin
+  pos 1.000000 1.000000 4.550000
+
+body r_pecs
+  pos 0.750000 0.900000 5.150000
+
+body r_biceps
+  pos 0.450000 0.900000 5.300000
+
+body r_triceps
+  pos 0.050000 0.900000 5.300000
+
+body l_pecs
+  pos 1.250000 0.900000 5.150000
+
+body l_biceps
+  pos 1.550000 0.900000 5.300000
+
+body l_triceps
+  pos 1.950000 0.900000 5.300000
+
+body r_hand
+  pos -0.350000 0.850000 5.300000
+
+body l_hand
+  pos 2.350000 0.850000 5.300000
+
+body r_butt
+  pos 0.800000 1.000000 4.450000
+
+body l_butt
+  pos 1.200000 1.000000 4.450000
+
+body r_thigh
+  pos 0.800000 1.000000 4.100000
+
+body l_thigh
+  pos 1.200000 1.000000 4.100000
+
+body l_leg
+  pos 1.200000 1.000000 3.500000
+
+body r_leg
+  pos 0.800000 1.000000 3.500000
+
+body r_foot
+  pos 0.800000 0.900000 3.100000
+
+body l_foot
+  pos 1.200000 0.900000 3.100000
+
+joint neck
+  pos 1.000000 0.900000 5.500000
+
+joint chest
+  pos 1.000000 0.900000 5.050000
+
+joint lumbar
+  pos 1.000000 0.950000 4.850000
+
+joint abs
+  pos 1.000000 1.000000 4.650000
+
+joint r_pecs
+  pos 0.850000 0.850000 5.200000
+
+joint r_shoulder
+  pos 0.650000 0.900000 5.300000
+
+joint r_elbow
+  pos 0.250000 0.900000 5.300000
+
+joint l_axilla
+  pos 1.150000 0.850000 5.200000
+
+joint l_shoulder
+  pos 1.350000 0.900000 5.300000
+
+joint l_elbow
+  pos 1.750000 0.900000 5.300000
+
+joint r_wrist
+  pos -0.200000 0.900000 5.300000
+
+joint l_wrist
+  pos 2.200000 0.900000 5.300000
+
+joint r_glute
+  pos 0.900000 1.100000 4.510000
+
+joint l_glute
+  pos 1.100000 1.100000 4.510000
+
+joint r_hip
+  pos 0.790000 1.000000 4.400000
+
+joint l_hip
+  pos 1.210000 1.000000 4.400000
+
+joint r_knee
+  pos 0.800000 1.000000 3.800000
+
+joint l_knee
+  pos 1.200000 1.000000 3.800000
+
+joint r_ankle
+  pos 0.800000 1.050000 3.250000
+
+joint l_ankle
+  pos 1.200000 1.050000 3.250000
+
+

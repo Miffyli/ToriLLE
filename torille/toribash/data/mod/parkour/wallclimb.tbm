@@ -1,0 +1,241 @@
+#mod by blkk
+#Requested by Hamster
+#8D
+
+gamerule
+engageplayerpos 0
+engagedistance 400
+dojosize 480
+
+player 0
+
+body l_hand
+thrust 1 0 -.10 0
+body r_hand
+thrust 1 0 -.10 0
+
+body r_foot
+thrust 1 0 -.10 0
+body l_foot
+thrust 1 0 -.10 0
+
+body chest
+thrust 1 0 -.10 0
+body breast
+thrust 1 0 -.10 0
+body stomach
+thrust 1 0 -.10 0
+
+player 1
+thrust 1 0 .10 0
+body r_hand
+thrust 1 0 .10 0
+
+body r_foot
+thrust 1 0 .10 0
+body l_foot
+thrust 1 0 .10 0
+
+body chest
+thrust 1 0 .10 0
+body breast
+thrust 1 0 .10 0
+body stomach
+thrust 1 0 .10 0
+
+# Environment exported by WorldBuilder
+######################################
+
+env_obj 1
+    shape box
+    pos 1 -0.125 5.25
+    color 0.72 0.77 0.7 1
+    rot 0 0 0
+    sides 8 2.5 10.5
+    material steel
+    mass 0.1
+    flag 24
+    friction 1
+#END 1
+
+env_obj 2
+    shape cylinder
+    pos 1 -0.125 11.5
+    color 0.72 0.77 0.7 1
+    rot 0 90 0
+    sides 1 6 8
+    material steel
+    mass 0.02
+    flag 16
+    friction 0
+    thrust 1 0 0 -2
+#END 2
+
+env_obj 3
+    shape box
+    pos 1 -0.125 5.4
+    color 0.72 0.77 0.7 1
+    rot 0 0 0
+    sides 8 0.5 10.5
+    material steel
+    mass 0.1
+    flag 24
+    friction 0
+#END 3
+
+env_obj 4
+    shape cylinder
+    pos 0 -0.125 2.5
+    color 0.78 0.77 0.43 1
+    rot -90 0 0
+    sides 0.25 3.0625 8
+    material steel
+    mass 0.1
+    flag 8
+    friction 1000
+#END 4
+
+env_obj 5
+    shape cylinder
+    pos 2.75 -0.125 3
+    color 0.78 0.77 0.43 1
+    rot -90 0 0
+    sides 0.25 3.0625 8
+    material steel
+    mass 0.1
+    flag 8
+    friction 1000
+#END 5
+
+env_obj 6
+    shape cylinder
+    pos 1.5 -0.125 4.5
+    color 0.78 0.77 0.43 1
+    rot -90 0 0
+    sides 0.25 3.0625 8
+    material steel
+    mass 0.1
+    flag 8
+    friction 1000
+#END 6
+
+env_obj 7
+    shape cylinder
+    pos -0.75 -0.125 4.25
+    color 0.78 0.77 0.43 1
+    rot -90 0 0
+    sides 0.25 3.0625 8
+    material steel
+    mass 0.1
+    flag 8
+    friction 1000
+#END 7
+
+env_obj 8
+    shape cylinder
+    pos 3.25 -0.125 6
+    color 0.78 0.77 0.43 1
+    rot -90 0 0
+    sides 0.25 3.0625 8
+    material steel
+    mass 0.1
+    flag 8
+    friction 1000
+#END 8
+
+env_obj 9
+    shape cylinder
+    pos -0.5 -0.125 6
+    color 0.78 0.77 0.43 1
+    rot -90 0 0
+    sides 0.25 3.0625 8
+    material steel
+    mass 0.1
+    flag 8
+    friction 1000
+#END 9
+
+env_obj 10
+    shape cylinder
+    pos 2 -0.125 7.25
+    color 0.78 0.77 0.43 1
+    rot -90 0 0
+    sides 0.25 3.0625 8
+    material steel
+    mass 0.1
+    flag 8
+    friction 1000
+#END 10
+
+env_obj 11
+    shape cylinder
+    pos -1.5 -0.125 8
+    color 0.78 0.77 0.43 1
+    rot -90 0 0
+    sides 0.25 3.0625 8
+    material steel
+    mass 0.1
+    flag 8
+    friction 1000
+#END 11
+
+env_obj 12
+    shape cylinder
+    pos 0.5 -0.125 8.5
+    color 0.78 0.77 0.43 1
+    rot -90 0 0
+    sides 0.25 3.0625 8
+    material steel
+    mass 0.1
+    flag 8
+    friction 1000
+#END 12
+
+env_obj 13
+    shape cylinder
+    pos 3 -0.125 9
+    color 0.78 0.77 0.43 1
+    rot -90 0 0
+    sides 0.25 3.0625 8
+    material steel
+    mass 0.1
+    flag 8
+    friction 1000
+#END 13
+
+env_obj 14
+    shape cylinder
+    pos -0.5 -0.125 9.75
+    color 0.78 0.77 0.43 1
+    rot -90 0 0
+    sides 0.25 3.0625 8
+    material steel
+    mass 0.1
+    flag 8
+    friction 1000
+#END 14
+
+env_obj 15
+    shape cylinder
+    pos 1 1.0625 10.3125
+    color 0.78 0.77 0.43 1
+    rot 0 90 0
+    sides 0.1875 7.5 8
+    material steel
+    mass 0.1
+    flag 8
+    friction 1000
+#END 15
+
+env_obj 16
+    shape cylinder
+    pos 1 -1.375 10.3125
+    color 0.78 0.77 0.43 1
+    rot 0 90 0
+    sides 0.1875 7.5 8
+    material steel
+    mass 0.1
+    flag 8
+    friction 1000
+#END 16
+

@@ -1,0 +1,34 @@
+#! MUAY THAI PRO .........  BY SWAMMY.
+######################################
+
+gamerule
+engageplayerpos 0
+matchframes 500
+turnframes 50
+gravity 0 0 -15
+engagedistance 200
+engagehieght 100
+dismemberment 0
+dojotype 1
+dqtimeout 15
+dqflag 0
+dojosize 500
+
+joint r_elbow
+    axis 0.000000 1.000000 0.000000
+flag 16
+joint l_elbow
+    axis 0.000000 1.000000 0.000000
+flag 16
+joint l_knee
+flag 16
+joint r_knee
+flag 16
+
+body chest
+thrust 1 0 0 1
+body r_foot
+thrust 1 0 0 -0.5
+body l_foot
+thrust 1 0 0 -0.5
+

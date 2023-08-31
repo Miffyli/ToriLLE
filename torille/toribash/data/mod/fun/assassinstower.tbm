@@ -1,0 +1,240 @@
+# Mod By RicH :P
+
+gamerule
+engageplayerpos 0
+engagedistance 710
+
+env_obj 1
+shape box
+pos 1 4.2 25.8
+color 0 0 0
+rot 0 0 0
+sides 0.7 2.5 0.3
+material steel
+flag 24
+
+env_obj 2
+shape box
+pos 1 8.4 13
+color 0.5 0.5 0.5
+rot 0 0 0
+sides 6 6 25.95
+material steel
+flag 8
+
+env_obj 3
+shape box
+pos 1 8.4 13
+color 0.5 0.5 0.5
+rot 0 0 45
+sides 6 6 25.95
+material steel
+flag 8
+
+env_obj 4
+shape box
+pos 3.5 6 27.85
+color 0 0 0
+rot 0 0 0
+sides 0.4 0.4 5
+material steel
+flag 8
+
+env_obj 5
+shape box
+pos -1.5 6 27.85
+color 0 0 0
+rot 0 0 0
+sides 0.4 0.4 5
+material steel
+flag 8
+
+env_obj 6
+shape box
+pos -1.5 10.8 27.85
+color 0 0 0
+rot 0 0 0
+sides 0.4 0.4 5
+material steel
+flag 8
+
+env_obj 7
+shape box
+pos 3.5 10.8 27.85
+color 0 0 0
+rot 0 0 0
+sides 0.4 0.4 5
+material steel
+flag 8
+
+env_obj 8
+shape box
+pos 1 8.4 30.5
+color 0.5 0.5 0.5
+rot 0 0 0
+sides 6 6 0.6
+material steel
+flag 8
+
+env_obj 9
+shape box
+pos 1 8.4 30.5
+color 0.5 0.5 0.5
+rot 0 0 45
+sides 6 6 0.6
+material steel
+flag 8
+
+env_obj 10
+shape box
+pos 5.25 8.4 25.8
+color 0.5 0 0
+rot 0 0 90
+sides 0.7 2.5 0.3
+material steel
+flag 24
+
+env_obj 11
+shape box
+pos -3.2 8.4 25.8
+color 0 0.4 0
+rot 0 0 90
+sides 0.7 2.5 0.3
+material steel
+flag 24
+
+env_obj 12
+shape box
+pos 1 12.7 25.8
+color 1 1 1
+rot 0 0 0
+sides 0.7 2.5 0.3
+material steel
+flag 24
+
+player 0
+
+body head
+pos 1.0 0.85 28.65
+
+body breast
+pos 1.0 0.9 28.2
+
+body chest
+pos 1.0 0.9 27.95
+
+body stomach
+pos 1. 0.95 27.75
+
+body groin
+pos 1.0 1.0 27.550
+
+body r_pecs
+pos 0.75 0.9 28.15
+
+body r_biceps
+pos 0.45 0.9 28.3
+
+body r_triceps
+pos 0.05 0.9 28.3
+
+body l_pecs
+pos 1.25 0.9 28.15
+
+body l_biceps
+pos 1.55 0.9 28.3
+
+body l_triceps
+pos 1.95 0.9 28.3
+
+body r_hand
+pos -0.35 0.85 28.3
+
+body l_hand
+pos 2.35 0.85 28.3
+
+body r_butt
+pos 0.8 1.0 27.45
+
+body l_butt
+pos 1.2 1.0 27.45
+
+body r_thigh
+pos 0.8 1.0 27.1
+
+body l_thigh
+pos 1.2 1.0 27.1
+
+body r_leg
+pos 0.8 1.0 26.5
+
+body l_leg
+pos 1.2 1.0 26.5
+
+body r_foot
+pos 0.8 0.9 26.1
+
+body l_foot
+pos 1.2 0.9 26.1
+
+joint neck
+pos 1.0 0.9 28.5
+
+joint chest
+pos 1.0 0.9 28.05
+
+joint lumbar
+pos 1.0 0.95 27.85
+
+joint abs
+pos 1.0 1.0 27.65
+
+joint r_pecs
+pos 0.85 0.85 28.2
+
+joint r_shoulder
+pos 0.65 0.9 28.3
+
+joint r_elbow
+pos 0.25 0.90 28.3
+
+joint l_pecs
+pos 1.15 0.85 28.2
+
+joint l_shoulder
+pos 1.35 0.9 28.3
+
+joint l_elbow
+pos 1.75 0.9 28.3
+
+joint r_wrist
+pos -0.2 0.9 28.3
+
+joint l_wrist
+pos 2.2 0.9 28.3
+
+joint r_glute
+pos 0.9 1.1 27.51
+
+joint l_glute
+pos 1.1 1.1 27.51
+
+joint r_hip      
+pos 0.79 1.0 27.4
+
+joint l_hip
+pos 1.21 1.0 27.4
+
+joint r_knee
+pos 0.8 1.0 26.8
+
+joint l_knee
+pos 1.2 1.0 26.8
+
+joint r_ankle
+pos 0.8 1.05 26.25
+
+joint l_ankle
+pos 1.2 1.05 26.25
+
+

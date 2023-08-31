@@ -1,0 +1,209 @@
+﻿#Localization file.
+
+FreePlay Serbest Oyun
+Multiplayer Cok Oyunculu Oyun
+FightSchool Dovüs Okulu
+ToriShop ToriMarket
+Setup Düzenle
+BuyToriCredits ToriCredit Al
+ChatNetwork Sohbet Agi
+Quit Cikis
+Options Ayarlar
+Mods Modlar
+Utils Araclar
+Replays Tekrarlar
+GameRules Oyun Kurallari
+Login Giris
+Back Geri
+ToribashTutorial Toribash Egitim
+BasicTraining Basit Antrenman
+AdvancedMoves Gelismis Hareketler
+ChallengeUke Uke'ye Karsi koy
+FlameForge Flame Olustur
+FlameBrowser Flame Ara
+ModMaker Mod Olusturucu
+Scripts Kodlar
+Sounds Sesler
+Credits Hazirlayan
+Cancel Iptal
+OK Tamam
+Advanced Gelismis
+Graphics Grafikler
+LanguageSteam Steam Dilini Kullan
+Language Dil
+MouseButtons Mouse Tuslari
+BackgroundClick Arkaplan Tiklama
+EffectsVolume Effects Düzeyi
+MusicVolume Music Düzeyi
+VoiceChatVolume Sesli Sohbet Düzeyi
+ChatToggle Sohbet Gecis
+VoiceChatToggle Sesli Sohbet Gecis
+Fullscreen Tam Ekran
+Autosavereplays Tekrar Otokayit
+RememberGameRules Oyun Kurallarini Goster
+LowerFrameRateCap Alt FPS Siniri
+Shaders Tonlamalar
+FluidBlood Akiskan Kan
+Reflections Yansimalar
+SoftShadows Yumusak Golgeleme
+AmbientOcclusion Cevresel Isiklandirma
+Bumpmapping Derinlik
+RayTracing Geometrik Isiklandirma
+Particles Parcaciklar
+Trails Izler
+Hair Sac
+ShaderHair Sac Tonlamalari
+ObjModel Obje Modeli
+BodyTextures Vücut Kaplamalari
+DisableGraphicsReloading Grafik Yenileme Devre Disi
+WindowWidth Ekran Genisligi
+WindowHeight Ekran Yüksekligi
+FixedFramerate Sabit FPS
+Basic Basit
+Minimum En Düsük
+Low Düsük
+Medium Orta
+High Yüksek
+Maximum En yüksek
+Register Kayit Ol
+Create Olustur
+Username Kullanici Adi
+Password Sifre
+Email E-mail
+Email(optional) Email (Istege Bagli)
+RemindMe Hatirlat
+RememberMe Hatirla
+Show Goster
+ForgotYourPassword? Sifrenizi mi unuttunuz?
+Don'tHaveAnAccount? Henüz bir hesabiniz yok mu?
+Close Kapat
+UPGRADED! YÜKSELDI!
+NumGamesToBelt oyun sonra 
+DRAW! BERABERE !
+MatchWonBelowMin Minimumun Altinda Bir Sürede Kazanildi.
+WINS! KAZANDI !
+STREAK KOMBO
+DRAW2! BERABERE!
+DISQUALIFIED! DISKALIFYE!
+KeyframesCleared! Anahtar kare temizlendi!
+KeyframeSaved! Anahtar kare kaydedildi!
+DefaultCameraEnabled Standart Kamera
+FreeOrbitalCameraEnabled Serbest Yorüngesel Kamera, Kontrol icin W/S/A/D/Q/E + SHIFT kullanin
+FreeCameraEnabled Serbest Kamera, Kontrol icin W/S/A/D/Q/E + SHIFT kullanin
+ToriCameraEnabled Tori Kamera
+UkeCameraEnabled Uke Kamera
+RecordingNextRewind Kayit Bir Sonraki Oynatmada Baslayacak
+RecordingCameraMovements Kamera Hareketleri Kaydediliyor
+PlayingCameraMovements Kamera Hareketleri Oynatiliyor
+FreeCamDisabled Serbest Kamera Devre Disi
+Desc Aciklama
+Room Oda
+Mod Mod
+MinBelt Min. Kemer
+MaxBelt Max. Kemer
+Players Oyuncular
+Connect Baglan
+LoadingServerList Server Listesi Yükleniyor
+BeltRestriction Kemer Siniri
+RankRestriction Rank Siniri
+OfficialServers Resmi Serverlar
+AutoTournaments Otomatik Turnuvalar
+Elo Elo
+Rank Rank
+RoomName: Oda Adi:
+Password: Sifre:
+MaxPlayer: Max. Oyuncu:
+MinBelt: Min. Kemer:
+MaxBelt: Max. Kemer:
+Desc: Aciklama:
+Option Ayarlar
+CreateRoom Yeni Oda
+SPECTATOR IZLEYICI
+WaitingForOtherPlayer Oyuncular bekleniyor
+SPACEBARNewGameFSaveReplay SPACEBAR - Yeni Oyun   ;   F - Tekrari Kaydet
+PressTheSPACEBARToPlay Oynamak icin SPACE'e bas!
+PressTheSPACEBARForREPLAY Tekrar icin SPACE'e bas
+WaitingForYourTurn Siraniz Bekleniyor: #
+InQueue sirada
+WaitingForOpponent Rakip Bekleniyor
+ClickToSelectPlayer Oyunuc Secmek Icin Tiklayin
+HitSPACEWhenReadyWithMove Hazir oldugunda SPACE'e bas
+PleaseEnterAValidEmailAddress Lütfen gecerli bir e-mail giriniz
+PleaseEnterYourUsername Lütfen isim giriniz!
+PleaseEnterYourPassword Lütfen sifre giriniz
+PleaseRetypeYourPassword Lütfen sifrenizi tekrar giriniz
+UsernameLesserThan4Characters Kullanici adiniz 4 karakterden kisa!
+UsernameMoreThan10Characters Kullanici adiniz 10 karatkerden uzun!
+MismatchingPasswords Sifreler eslesmiyor
+UsernameMustBeAlphaNumeric Kullanici adi alfa nümerik olmalidir
+Error! Hata!
+CreateAccountFromToribash Lütfen hesabiniz bu adresten olusturunuz
+#ToribashFromCreateAccount 
+NetworkError! Ag Hatasi!
+UsernameUsedOrSubstandard Kullanici adi zaten kullanimda ya da yonetici standartlarina uymuyor.
+ModsCtrlM Modlar (Ctrl + M)
+Load Yükle
+Open Ac
+NewGame Yeni Oyun
+TypeHere Buraya Yaz
+QuickLoad Hizli Yükle
+ShadersCtrlH Tonlamalar (Ctrl + H)
+AutoLoad Otomatik Yükleme
+SoundsCtrlY Sesler (Ctrl + Y)
+UsernameIsEmpty Kullanici adi bos
+Neck Boyun
+
+Chest GOVDE
+Lumbar BEL
+Abs Karin
+RightPecs SAG GOGÜS
+RightShoulder SAG OMUZ
+RightElbow SAG DIRSEK
+LeftPecs SOL GOGUS
+LeftShoulder SOL OMUZ
+LeftElbow SOL DIRSEK
+RightWrist SAG El BILEGI
+LeftWrist SOL El BILEGI
+RightGlute SAG KALCA
+LeftGlute SOL KALCA
+RightHip SAG BACAK
+LeftHip SOL BACAK
+RightKnee SAG DIZ
+LeftKnee SOL DIZ
+RightAnkle SAG AYAK BILEGI
+LeftAnkle SOL AYAK BILEGI
+RightRotating SAGA CEVIR
+RightBending SAGA YATIR
+LeftRotating SOLA CEVIR
+LeftBending SOLA YATIR
+Lowering ALCALT
+Extending GENISLET
+Raising YÜKSELT
+Contracting DARALT
+Holding KAS
+Relaxing GEVSET
+Effects Efektler
+AlwaysOff Sürekli Kapali
+OnlyOnReplays Sadece Tekrarlarda
+AlwaysOn Sürekli Acik
+Default Standart
+PleaseEnableSteamOverlay Lütfen Steam Arayüzü Acip Oyunu Yeniden Baslatiniz
+PleaseWaitForSteamPurchaseOverlay Lütfen Steam Satin Alma Arayüzünü Bekleyiniz
+PleaseLogonSteam Lütfen Toricredit Almak Icin Steam'e Giris Yapiniz
+Refresh Yenile
+Delete Sil
+Rename Ad Degistir
+New Yeni
+EnterNewReplayName Yeni Tekrar Adi Giriniz
+Grappling Grapplin
+Kicking Kicking
+Striking Striking
+Matchmaking Rastgele Mac
+(Paused) (Durduruldu)
+(Searching) (Araniyor)
+ModGroups Mod Gruplari
+Search Arama
+Unranked Ranksiz
+RankedPreferred Rankli Oncelikli
+RankedOnly Sadece Rankli
+MatchmakeAgain Yeniden Mac

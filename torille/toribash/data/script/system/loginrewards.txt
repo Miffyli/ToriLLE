@@ -1,0 +1,8 @@
+#tag	days_requirement	reward_type	tc_amount	itemname	
+REWARD	1	0	50	0	
+REWARD	2	0	100	0	
+REWARD	3	0	200	0	
+REWARD	4	0	350	0	
+REWARD	5	0	550	0	
+REWARD	6	0	800	0	
+REWARD	7	1	0	2528	

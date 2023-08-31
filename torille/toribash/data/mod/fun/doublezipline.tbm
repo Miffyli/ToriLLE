@@ -1,0 +1,43 @@
+# This is a mod by Tapion
+
+gamerule
+engageplayerpos 0
+engagedistance 3000
+engageheight 950
+gravity 0 0 -20
+dojo 1
+dojosize 800
+turnframes 50
+matchframes 600
+dismemberthreshold 300
+
+env_obj 1
+shape cylinder
+sides 0.1 15 0.1
+pos 1 8 10
+friction 0
+flag 8
+rot 70 0 90
+
+env_obj 2
+shape cylinder
+sides 0.1 15 0.1
+pos 1 -8 10
+friction 0
+flag 8
+rot -70 0 90
+
+env_obj 3
+shape box
+sides 1 0.05 0.05
+pos 1 14.5 12.5
+friction 0
+rot 90 0 0
+mass 0.1
+
+env_obj 4
+shape box
+sides 1 0.05 0.05
+pos 1 -14.7 12.5
+friction 0
+rot 90 0 0

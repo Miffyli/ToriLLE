@@ -1,0 +1,413 @@
+# Environment exported by WorldBuilder
+######################################
+
+env_obj 1
+    shape cylinder
+    pos 8.25 0.75 0
+    color -0.1 -0.1 -0.1 1.1
+    rot -90 0 0
+    sides 0.125 19.125 0.875
+    material steel
+    mass 0.1
+    flag 30
+#END 1
+
+env_obj 2
+    shape cylinder
+    pos -2.25 4.1875 0
+    color -0.1 -0.1 -0.1 1.1
+    rot -90 0 0
+    sides 0.125 33.375 0.875
+    material steel
+    mass 0.1
+    flag 30
+#END 2
+
+env_obj 3
+    shape cylinder
+    pos 1.875 -19.25 0
+    color -0.1 -0.1 -0.1 1.1
+    rot -90 -32 0
+    sides 0.125 15.5 0.875
+    material steel
+    mass 0.1
+    flag 30
+#END 3
+
+env_obj 4
+    shape cylinder
+    pos 17.375 -21.625 0
+    color -0.1 -0.1 -0.1 1.1
+    rot -90 -123 0
+    sides 0.125 15.5625 0.875
+    material steel
+    mass 0.1
+    flag 30
+#END 4
+
+env_obj 5
+    shape cylinder
+    pos 8.375 -25.875 0
+    color -0.1 -0.1 -0.1 1.1
+    rot -86 -90 0
+    sides 0.125 4.6875 0.875
+    material steel
+    mass 0.1
+    flag 30
+#END 5
+
+env_obj 6
+    shape cylinder
+    pos 3.125 0.5 1.4375
+    color -0.1 -0.1 -0.1 1.1
+    rot -90 90 0
+    sides 0.0625 17.6875 0.875
+    material steel
+    mass 0.1
+    flag 30
+#END 6
+
+env_obj 7
+    shape cylinder
+    pos 10.625 -8.875 0
+    color -0.1 -0.1 -0.1 1.1
+    rot -86 -90 0
+    sides 0.125 4.6875 0.875
+    material steel
+    mass 0.1
+    flag 30
+#END 7
+
+env_obj 8
+    shape cylinder
+    pos 23.9375 1.8125 0
+    color -0.1 -0.1 -0.1 1.1
+    rot -90 -180 0
+    sides 0.125 38.0625 0.875
+    material steel
+    mass 0.1
+    flag 30
+#END 8
+
+env_obj 9
+    shape cylinder
+    pos 20.1875 -1.8125 0
+    color -0.1 -0.1 -0.1 1.1
+    rot -90 -270 -1
+    sides 0.125 7.5 0.875
+    material steel
+    mass 0.1
+    flag 30
+#END 9
+
+env_obj 10
+    shape cylinder
+    pos 12 10.3125 0
+    color -0.1 -0.1 -0.1 1.1
+    rot -90 -270 -1
+    sides 0.125 7.5 0.875
+    material steel
+    mass 0.1
+    flag 30
+#END 10
+
+env_obj 11
+    shape cylinder
+    pos 10.875 20.9375 0
+    color -0.1 -0.1 -0.1 1.1
+    rot -142 -90 0
+    sides 0.125 26.125 0.875
+    material steel
+    mass 0.1
+    flag 30
+#END 11
+
+
+
+
+
+body r_thigh
+shape box
+pos 1 1.7 0.45
+sides 0.4 0.5 0.3
+density 0.001
+material steel
+
+body l_thigh
+shape box
+pos 1 2.2 0.475
+sides 0.45 0.5 0.35
+density 0.001
+material steel
+
+body r_pecs
+density 0.001
+pos 0.7 3.2 0.6
+material steel
+
+body l_pecs
+density 0.001
+pos 1.3 3.2 0.6
+material steel
+
+body r_biceps
+density 0.001
+pos 0.7 3.2 0.8
+material steel
+
+body l_biceps
+density 0.001
+pos 1.3 3.2 0.8
+material steel
+
+body r_butt
+shape sphere
+density 0.001
+pos 0.7 2.9 1.1
+material steel
+
+body l_butt
+shape sphere
+density 0.001
+pos 1.3 2.9 1.1
+material steel
+
+body r_leg
+pos 1
+shape box
+sides 0.3 0.5 0.2
+pos 1 1.35 0.425
+density 0.001
+material steel
+
+body l_leg
+pos 1 1 0.425
+shape box
+sides 0.2 0.7 0.2
+density 0.001
+material steel
+
+body head
+pos 1 2.5 0.9
+density 0.001
+material steel
+
+body breast
+pos 1 0.2 0.4
+sides 0.5 0.2 0.2
+density 0.001
+material steel
+
+body chest
+pos 1 1.7 0.4
+sides 0.15 3.0 0.15
+density 0.001
+material steel
+
+body stomach
+pos 1 3.2 0.4
+sides 0.75 0.2 0.2
+density 0.001
+material steel
+
+body l_foot
+shape sphere
+radius 0.2
+pos 1.5 2.9 0.25
+density 0.2
+thrust 1 0 0 -2.5
+material steel
+
+body r_foot
+shape sphere
+radius 0.2
+pos 0.5 2.9 0.25
+density 0.2
+thrust 1 0 0 -2.5
+material steel
+
+body r_hand
+shape sphere
+radius 0.15
+pos 1.4 0.4 0.2
+density 0.2
+thrust 1 0 0 -5
+material steel
+
+body l_hand
+shape sphere
+radius 0.15
+pos 0.6 0.4 0.2
+density 0.2
+thrust 1 0 0 -5
+material steel
+
+body r_triceps
+sides 0.2 0.1 0.1
+pos 1.15 0.4 0.2
+density 0.001
+material steel
+
+body l_triceps
+sides 0.2 0.1 0.1
+pos 0.85 0.4 0.2
+density 0.001
+material steel
+
+body groin
+sides 0.6 0.4 0.4
+pos 1 2.6 0.5
+density 0.001
+material steel
+
+joint r_elbow
+radius 0.11
+pos 1.1 0.4 0.2
+range 0.2 -0.2
+velocity 1
+strenght 50
+density 0.001
+
+joint l_elbow
+radius 0.11
+pos 0.9 0.4 0.2
+range 0.2 -0.2
+velocity 1
+strenght 50
+density 0.001
+
+joint r_wrist
+pos 1.4 0.4 0.2
+range 4 -4
+velocity 600
+axis 1 0 0
+density 0.001
+strength 1
+
+joint l_wrist
+pos 0.6 0.4 0.2
+range 4 -4
+velocity 600
+axis -1 0 0
+density 0.001
+strength 1
+
+joint l_ankle
+pos 1.5 2.9 0.25
+velocity 600
+range 4 -4
+density 0.001
+strength 1
+
+joint r_ankle
+pos 0.5 2.9 0.25
+velocity 600
+range 4 -4
+density 0.001
+strength 1
+
+joint r_knee
+range 0 -0
+pos 1 0.4 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint l_knee
+range 0 -0
+pos 1 0.5 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint r_hip
+range 0 -0
+pos 1 0.6 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint l_hip
+range 0 -0
+pos 1 0.7 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint r_glute
+range 0 -0
+pos 1 0.8 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint l_glute
+range 0 -0
+pos 1 0.9 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint abs
+range 0 -0
+pos 1 1 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint lumbar
+range 0 -0
+pos 1 1.1 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint chest
+range 0 -0
+pos 1 1.2 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint r_pecs
+range 0 -0
+pos 1 1.3 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint l_pecs
+range 0 -0
+pos 1 1.4 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint l_shoulder
+range 0 -0
+pos 1 1.5 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint r_shoulder
+range 0 -0
+pos 1 1.6 0.4
+radius 0.1
+density 0.001
+velocity 0
+
+joint neck
+pos 1 2.55 0.75
+density 0.001
+velocity 0.5
+	
+world
+friction 1
+
+gamerule
+engageplayerpos 0,0,0,4,0,0
+dqflag 0
+disqalification 0
+matchframes 600
+turnframes 30

@@ -1,0 +1,129 @@
+# Environment exported by WorldBuilder
+######################################
+
+body chest
+thrust 1 0 0 1
+body r_foot
+thrust 1 0 0 -0.5
+body l_foot
+thrust 1 0 0 -0.5
+
+gamerule
+engageplayerpos 0
+engagedistance 1500
+engageheight 325
+dismemberthreshold 1000
+dismember 1
+turnframes 10
+matchframes 1000
+gravity 0.00 0.00 -35.00
+
+env_obj 1
+    shape box
+    pos 1 6.75 1.5
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 4 3 3
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 2
+    shape box
+    pos 1 -6.75 1.5
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 4 3 3
+    material steel
+    mass 0.1
+    flag 24
+#END 2
+
+env_obj 3
+    shape box
+    pos -0.25 2.5 0.75
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 0.25 0.25 1.26
+    material steel
+    mass 0.1
+    flag 24
+#END 3
+
+env_obj 4
+    shape box
+    pos 2.25 2.5 0.75
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 0.25 0.25 1.26
+    material steel
+    mass 0.1
+    flag 24
+#END 4
+
+env_obj 5
+    shape box
+    pos 1 2.5 1.25
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 3.5 1 0.25
+    material steel
+    mass 0.1
+    flag 24
+#END 5
+
+env_obj 6
+    shape box
+    pos -0.25 -2.75 0.75
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 0.25 0.25 1.26
+    material steel
+    mass 0.1
+    flag 24
+#END 6
+
+env_obj 7
+    shape box
+    pos 2.25 -2.75 0.75
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 0.25 0.25 1.26
+    material steel
+    mass 0.1
+    flag 24
+#END 7
+
+env_obj 8
+    shape box
+    pos 1 -2.75 1.25
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 3.5 1 0.25
+    material steel
+    mass 0.1
+    flag 24
+#END 8
+
+env_obj 9
+    shape box
+    pos 1 6.75 3
+    color 0.6 0.1 0.1 1.1
+    rot 0 0 0
+    sides 4 3 0.5
+    material steel
+    mass 0.1
+    flag 24
+#END 9
+
+env_obj 10
+    shape box
+    pos 1 -6.75 3
+    color 0.6 0.1 0.1 1.1
+    rot 0 0 0
+    sides 4 3 0.5
+    material steel
+    mass 0.1
+    flag 24
+#END 10

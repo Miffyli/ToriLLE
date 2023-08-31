@@ -1,0 +1,156 @@
+#! S.P.A.R ~ by Swammy
+######################################
+
+body chest
+thrust 1 0 0 1
+body r_foot
+thrust 1 0 0 -0.5
+body l_foot
+thrust 1 0 0 -0.5
+
+gamerule
+matchframes 2000
+turnframes 10
+gravity 0 0 -35.00
+engagedistance 200
+engagehieght 0
+dismemberment 0
+fracture 0
+disqualification 0
+dismemberthreshold 0
+fracturetreshold 0
+engageplayerpos 0.00,1.00,5.00,0.00,-5.00,2.00
+	engageplayerrot 0,0,0,0,0,180
+
+env_obj 1
+    shape box
+    pos 0.75 -4 1
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 5 5.25 1.75
+    material steel
+    mass 0.1
+    flag 8
+#END 1
+
+env_obj 2
+    shape box
+    pos 1 0 2.5
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 1.5 4.25 5
+    material steel
+    mass 0.1
+    flag 8
+#END 2
+
+env_obj 3
+    shape box
+    pos -2.5 1.25 1.5
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 5.75 8.5 2.5
+    material steel
+    mass 0.1
+    flag 8
+#END 3
+
+env_obj 4
+    shape box
+    pos 3.75 -1 0.75
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 9.25 9 1.25
+    material steel
+    mass 0.1
+    flag 8
+#END 4
+
+env_obj 5
+    shape box
+    pos 1.5 1.75 1.75
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 4.5 2.75 2
+    material steel
+    mass 0.1
+    flag 8
+#END 5
+
+env_obj 6
+    shape box
+    pos 1 -7.5 1
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 10.25 3.25 2
+    material steel
+    mass 0.1
+    flag 8
+#END 6
+
+env_obj 7
+    shape cylinder
+    pos -3.5 -0.75 3.25
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 0.25 7 1.25
+    material steel
+    mass 0.1
+    flag 8
+#END 7
+
+env_obj 8
+    shape box
+    pos 6.75 -5.5 2
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 2 4 4
+    material steel
+    mass 0.1
+    flag 8
+#END 8
+
+env_obj 9
+    shape cylinder
+    pos 0.75 -0.25 1
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 2.5 1 2.25
+    material steel
+    mass 0.1
+    flag 8
+#END 9
+
+env_obj 10
+    shape box
+    pos 4.5 1.75 1.25
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 6.5 0.75 1.75
+    material steel
+    mass 0.1
+    flag 8
+#END 10
+
+env_obj 11
+    shape cylinder
+    pos 2.75 -1.75 5
+    color 0.7 0.7 0.7 1
+    rot -60 -60 0
+    sides 0.25 4.75 1
+    material steel
+    mass 0.1
+    flag 8
+#END 11
+
+env_obj 12
+    shape sphere
+    pos -3.5 -3.5 0.75
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 3 2.5 1.25
+    material steel
+    mass 0.1
+    flag 8
+#END 12
+

@@ -1,0 +1,770 @@
+shaderopt FLOOR_COLOR 1 1 1 1
+opt reflection 0
+
+env_obj 1
+   shape box
+   pos -4.05 -9 1.32
+   color 0.86 0.86 0.78 1.00
+   rot 0.00 0.00 0.00
+   sides 3.68 0.10 2.86
+env_obj 2
+   shape box
+   pos -7.95 -9 1.32
+   color 0.86 0.86 0.78 1.00
+   rot 0.00 0.00 0.00
+   sides 3.68 0.10 2.86
+env_obj 3
+   shape box
+   pos -9.45 1.1 1.71
+   color 0.47 0.47 0.59 1.00
+   rot 0.00 25.00 0.00
+   sides 0.03 1.10 0.10
+env_obj 4
+   shape box
+   pos -9.45 0.55 1.71
+   color 0.80 0.73 0.20 1.00
+   rot 0.00 25.00 0.00
+   sides 0.15 0.04 0.20
+env_obj 5
+   shape box
+   pos -9.45 0.3 1.71
+   color 0.08 0.08 0.10 1.00
+   rot 0.00 25.00 0.00
+   sides 0.07 0.50 0.08
+env_obj 6
+   shape box
+   pos -9 -3.95 8.46
+   color 0.06 0.06 0.10 1.00
+   rot 0.00 0.00 0.00
+   sides 0.05 0.07 0.40
+env_obj 7
+   shape box
+   pos -9 -3.95 8.06
+   color 0.47 0.47 0.51 1.00
+   rot 0.00 0.00 0.00
+   sides 0.02 0.05 0.50
+env_obj 8
+   shape cylinder
+   pos 11.6 10.8 0.26
+   color 0.41 0.24 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 0.05 1.50 1.50
+env_obj 9
+   shape box
+   pos -6 7.95 0.09
+   color 0.57 0.45 0.20 1.00
+   rot 0.00 0.00 0.00
+   sides 2.25 1.25 0.40
+env_obj 10
+   shape box
+   pos 12 9.4 1.76
+   color 0.12 0.12 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 0.50 3.50 0.20
+env_obj 11
+   shape box
+   pos 12 9.4 0.76
+   color 0.94 0.78 0.16 1.00
+   rot 0.00 0.00 0.00
+   sides 0.05 1.50 1.50
+env_obj 12
+   shape box
+   pos -6 7.95 0.26
+   color 0.59 0.47 0.20 1.00
+   rot 0.00 0.00 0.00
+   sides 3.00 2.00 0.20
+env_obj 13
+   shape box
+   pos -1.7 -9 0.34
+   color 0.35 0.20 0.08 1.00
+   rot 0.00 0.00 0.00
+   sides 0.08 0.08 2.00
+env_obj 14
+   shape sphere
+   pos 11.6 10.8 -0.59
+   color 0.78 0.78 0.63 1.00
+   rot 0.00 0.00 0.00
+   sides 0.15 1.50 1.50
+env_obj 15
+   shape box
+   pos -9 -1.1 8.46
+   color 0.27 0.27 0.35 1.00
+   rot 0.00 0.00 45.00
+   sides 0.15 0.15 0.01
+env_obj 16
+   shape box
+   pos -1.62 -9 -0.64
+   color 0.39 0.39 0.43 1.00
+   rot 0.00 0.00 0.00
+   sides 0.20 0.80 0.03
+env_obj 17
+   shape box
+   pos 5.8 2.9 4.36
+   color 0.14 0.14 0.22 1.00
+   rot 0.00 44.85 0.00
+   sides 6.00 6.00 0.50
+env_obj 18
+   shape box
+   pos 3.3 6.23 -5
+   color 0.24 0.25 0.29 1.00
+   rot 0.00 0.00 0.00
+   sides 26.45 28.45 10.00
+env_obj 19
+   shape box
+   pos 9.7 2.9 4.36
+   color 0.14 0.14 0.22 1.00
+   rot 0.00 -44.85 0.00
+   sides 6.00 6.00 0.50
+env_obj 20
+   shape box
+   pos 7.74 0.95 4.36
+   color 0.14 0.14 0.22 1.00
+   rot -44.85 0.00 0.00
+   sides 6.00 6.00 0.50
+env_obj 21
+   shape box
+   pos 14 -3.1 -5.74
+   color 0.27 0.12 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 1.00 35.00 20.00
+env_obj 22
+   shape box
+   pos -12 -3.1 -5.74
+   color 0.27 0.12 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 1.00 35.00 20.00
+env_obj 23
+   shape box
+   pos 12 13.9 -5.74
+   color 0.27 0.12 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 3.00 1.00 20.00
+env_obj 24
+   shape box
+   pos 1 -20.1 -5.74
+   color 0.27 0.12 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 27.00 1.00 20.00
+env_obj 25
+   shape box
+   pos 3.5 -4.1 -8.54
+   color 0.16 0.35 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 4000.00 4000.00 15.50
+env_obj 26
+   shape box
+   pos 14 -3.1 3.76
+   color 0.12 0.12 0.12 1.00
+   rot 0.00 45.00 0.00
+   sides 1.50 36.12 1.50
+env_obj 27
+   shape box
+   pos -12 -3.1 3.76
+   color 0.12 0.12 0.12 1.00
+   rot 0.00 45.00 0.00
+   sides 1.50 36.12 1.50
+env_obj 28
+   shape box
+   pos 1 -20.1 3.76
+   color 0.12 0.12 0.12 1.00
+   rot 45.00 0.00 0.00
+   sides 28.12 1.50 1.50
+env_obj 29
+   shape box
+   pos -4 13.9 3.76
+   color 0.12 0.12 0.12 1.00
+   rot 45.00 0.00 0.00
+   sides 18.12 1.50 1.50
+env_obj 30
+   shape box
+   pos -6 0.9 -0.24
+   color 0.43 0.25 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 8.00 20.00 0.25
+env_obj 31
+   shape cylinder
+   pos 4.75 15.9 3.26
+   color 0.31 0.10 0.10 1.00
+   rot 0.00 -2.00 0.00
+   sides 0.52 12.00 35.00
+env_obj 32
+   shape box
+   pos 7.75 15.9 9.26
+   color 0.31 0.10 0.10 1.00
+   rot 0.00 0.00 0.00
+   sides 10.50 1.00 0.50
+env_obj 33
+   shape box
+   pos -9.9 0.9 1.26
+   color 0.43 0.25 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 0.20 20.00 4.00
+env_obj 34
+   shape box
+   pos 1 -16.85 -5.69
+   color 0.00 0.22 0.27 0.78
+   rot 0.00 0.00 0.00
+   sides 25.00 5.50 10.00
+env_obj 35
+   shape box
+   pos 1 -14.1 -0.89
+   color 0.55 0.57 0.59 1.00
+   rot 0.00 0.00 0.00
+   sides 25.00 0.50 0.50
+env_obj 36
+   shape box
+   pos 7.75 15.9 9.76
+   color 0.12 0.12 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 11.50 1.25 0.50
+env_obj 37
+   shape cylinder
+   pos 10.75 15.9 3.26
+   color 0.31 0.10 0.10 1.00
+   rot 0.00 2.00 0.00
+   sides 0.52 12.00 30.00
+env_obj 38
+   shape sphere
+   pos -2.5 -17.1 -0.69
+   color 0.71 0.47 0.55 1.00
+   rot 0.00 0.00 0.00
+env_obj 39
+   shape box
+   pos -6 0.9 -0.23
+   color 0.86 0.86 0.78 1.00
+   rot 0.00 0.00 0.00
+   sides 6.00 18.00 0.25
+env_obj 40
+   shape box
+   pos -6 -9 0.76
+   color 0.43 0.25 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 0.20 0.20 4.00
+env_obj 41
+   shape box
+   pos -6 10.8 0.76
+   color 0.43 0.25 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 0.20 0.20 4.00
+env_obj 42
+   shape box
+   pos -2.1 -9 0.76
+   color 0.43 0.25 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 0.20 0.20 4.00
+env_obj 43
+   shape box
+   pos -2.1 10.8 0.76
+   color 0.43 0.25 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 0.20 0.20 4.00
+env_obj 44
+   shape box
+   pos -2.1 -4.4 0.76
+   color 0.43 0.25 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 0.20 0.20 4.00
+env_obj 45
+   shape box
+   pos -2.1 6.2 0.76
+   color 0.43 0.25 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 0.20 0.20 4.00
+env_obj 46
+   shape box
+   pos -6 -9 3.01
+   color 0.43 0.25 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 8.00 0.20 0.50
+env_obj 47
+   shape box
+   pos -6 10.8 3.01
+   color 0.43 0.25 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 8.00 0.20 0.50
+env_obj 48
+   shape box
+   pos -2.1 0.9 3.01
+   color 0.43 0.25 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 0.20 20.00 0.50
+env_obj 49
+   shape box
+   pos -2.45 0.9 3.76
+   color 0.14 0.14 0.22 1.00
+   rot 0.00 60.00 0.00
+   sides 0.50 20.50 3.00
+env_obj 50
+   shape box
+   pos -6 -7.35 4.51
+   color 0.16 0.16 0.24 1.00
+   rot 60.00 0.00 0.00
+   sides 8.50 0.50 6.01
+env_obj 51
+   shape box
+   pos -9.55 0.9 3.76
+   color 0.14 0.14 0.22 1.00
+   rot 0.00 -60.00 0.00
+   sides 0.50 20.50 3.00
+env_obj 52
+   shape box
+   pos -6 9.15 4.51
+   color 0.16 0.16 0.24 1.00
+   rot -60.00 0.00 0.00
+   sides 8.50 0.50 6.01
+env_obj 53
+   shape box
+   pos -6 6.9 4.47
+   color 0.14 0.14 0.22 1.00
+   rot 0.00 0.00 0.00
+   sides 4.75 8.50 0.50
+env_obj 54
+   shape box
+   pos -6 -5.1 4.47
+   color 0.14 0.14 0.22 1.00
+   rot 0.00 0.00 0.00
+   sides 4.75 8.50 0.50
+env_obj 55
+   shape box
+   pos -6 -4.17 5.01
+   color 0.12 0.12 0.16 1.00
+   rot 0.00 0.00 0.00
+   sides 4.75 5.10 0.60
+env_obj 56
+   shape box
+   pos -6 5.97 5.01
+   color 0.12 0.12 0.16 1.00
+   rot 0.00 0.00 0.00
+   sides 4.75 5.10 0.60
+env_obj 57
+   shape box
+   pos -6 5.54 5.5
+   color 0.12 0.12 0.16 1.00
+   rot 0.00 0.00 0.00
+   sides 4.75 4.24 0.60
+env_obj 58
+   shape box
+   pos -6 -3.74 5.5
+   color 0.12 0.12 0.16 1.00
+   rot 0.00 0.00 0.00
+   sides 4.75 4.24 0.60
+env_obj 59
+   shape box
+   pos -3.5 0.9 6.01
+   color 0.16 0.16 0.24 1.00
+   rot 0.00 0.00 0.00
+   sides 3.50 11.56 0.43
+env_obj 60
+   shape box
+   pos -8.93 0.9 6.01
+   color 0.16 0.16 0.24 1.00
+   rot 0.00 0.00 0.00
+   sides 2.64 11.55 0.43
+env_obj 61
+   shape box
+   pos -4 0.9 5.22
+   color 0.12 0.12 0.16 1.00
+   rot 0.00 0.00 0.00
+   sides 0.75 8.00 1.99
+env_obj 62
+   shape box
+   pos -8 0.9 5.22
+   color 0.12 0.12 0.16 1.00
+   rot 0.00 0.00 0.00
+   sides 0.75 8.00 1.99
+env_obj 63
+   shape box
+   pos -6 -2.87 6.01
+   color 0.16 0.16 0.24 1.00
+   rot 0.00 0.00 0.00
+   sides 4.00 4.00 0.43
+env_obj 64
+   shape box
+   pos -6 4.67 6.01
+   color 0.16 0.16 0.24 1.00
+   rot 0.00 0.00 0.00
+   sides 4.00 4.00 0.43
+env_obj 65
+   shape box
+   pos -2.75 0.9 6.66
+   color 0.12 0.12 0.16 1.00
+   rot 0.00 0.00 0.00
+   sides 0.75 6.50 1.00
+env_obj 66
+   shape box
+   pos -2.75 -2.35 6.91
+   color 0.12 0.12 0.16 1.00
+   rot 45.00 0.00 0.00
+   sides 0.75 1.00 1.00
+env_obj 67
+   shape box
+   pos -2.75 4.15 6.76
+   color 0.12 0.12 0.16 1.00
+   rot 45.00 0.00 0.00
+   sides 0.75 1.00 1.00
+env_obj 68
+   shape box
+   pos -2.75 0.9 8.26
+   color 0.12 0.12 0.16 1.00
+   rot 0.00 0.00 0.00
+   sides 0.75 1.00 4.00
+env_obj 69
+   shape box
+   pos -2.75 0.9 10.26
+   color 0.12 0.12 0.16 1.00
+   rot 45.00 0.00 0.00
+   sides 0.75 2.00 2.00
+env_obj 70
+   shape box
+   pos -2.75 0.9 8.26
+   color 0.12 0.12 0.16 1.00
+   rot 0.00 0.00 0.00
+   sides 0.75 4.00 0.92
+env_obj 71
+   shape box
+   pos -2.75 -1.1 8.51
+   color 0.12 0.12 0.16 1.00
+   rot 45.00 0.00 0.00
+   sides 0.75 1.00 1.00
+env_obj 72
+   shape box
+   pos -2.75 2.9 8.51
+   color 0.12 0.12 0.16 1.00
+   rot 45.00 0.00 0.00
+   sides 0.75 1.00 1.00
+env_obj 73
+   shape box
+   pos -6 10.8 1.26
+   color 0.86 0.86 0.78 1.00
+   rot 0.00 0.00 0.00
+   sides 7.75 0.10 3.00
+env_obj 74
+   shape box
+   pos 7.9 -8.1 -0.74
+   color 0.33 0.22 0.10 1.00
+   rot 2.00 14.00 -10.00
+   sides 6.00 7.00 3.10
+env_obj 75
+   shape box
+   pos 8 -8.6 1.26
+   color 0.33 0.21 0.09 1.00
+   rot -2.00 4.00 4.00
+   sides 3.50 4.50 2.00
+env_obj 76
+   shape box
+   pos -6 -11.2 -0.94
+   color 0.47 0.49 0.51 1.00
+   rot 0.00 0.00 0.00
+   sides 6.75 2.80 0.50
+env_obj 77
+   shape box
+   pos 10.65 5.8 0.76
+   color 0.43 0.25 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 0.20 0.20 5.80
+env_obj 78
+   shape box
+   pos 8 -8.6 3.26
+   color 0.33 0.21 0.09 1.00
+   rot 0.00 -5.00 -10.00
+   sides 2.50 3.00 3.00
+env_obj 79
+   shape box
+   pos 1.25 9.4 -0.94
+   color 0.55 0.57 0.59 1.00
+   rot 0.00 0.00 0.00
+   sides 5.00 5.00 0.50
+env_obj 80
+   shape box
+   pos 4.85 0 0.76
+   color 0.43 0.25 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 0.20 0.20 5.00
+env_obj 81
+   shape box
+   pos -9.5 0.9 0.51
+   color 0.39 0.20 0.06 1.00
+   rot 0.00 0.00 0.00
+   sides 0.75 10.00 1.50
+env_obj 82
+   shape box
+   pos 10.65 0 0.76
+   color 0.43 0.25 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 0.20 0.20 5.80
+env_obj 83
+   shape box
+   pos 8 -7.95 6.76
+   color 0.33 0.22 0.10 1.00
+   rot 15.00 5.00 30.00
+   sides 1.70 1.50 5.00
+env_obj 84
+   shape box
+   pos 7 -7.5 0.86
+   color 0.31 0.20 0.08 1.00
+   rot 10.00 7.00 -5.00
+   sides 3.50 4.00 1.50
+env_obj 85
+   shape box
+   pos 7.9 -8.1 -1.74
+   color 0.32 0.20 0.09 1.00
+   rot 2.00 5.00 -23.00
+   sides 5.00 9.00 4.00
+env_obj 86
+   shape box
+   pos 10.26 -6.1 4.46
+   color 0.00 0.21 0.00 1.00
+   rot 0.00 1.00 10.00
+   sides 4.50 5.50 1.00
+env_obj 87
+   shape box
+   pos 7.75 4.85 4.36
+   color 0.14 0.14 0.22 1.00
+   rot 44.85 0.00 0.00
+   sides 6.00 6.00 0.50
+env_obj 88
+   shape box
+   pos -9.41 0.65 1.45
+   color 0.12 0.12 0.20 1.00
+   rot 0.00 -66.00 0.00
+   sides 0.60 0.10 0.10
+env_obj 89
+   shape box
+   pos -9.41 1.15 1.45
+   color 0.12 0.12 0.20 1.00
+   rot 0.00 -66.00 0.00
+   sides 0.60 0.10 0.10
+env_obj 90
+   shape box
+   pos -9.62 0.65 1.6
+   color 0.12 0.12 0.20 1.00
+   rot 0.00 0.00 0.00
+   sides 0.40 0.10 0.10
+env_obj 91
+   shape box
+   pos -9.62 1.15 1.6
+   color 0.12 0.12 0.20 1.00
+   rot 0.00 0.00 0.00
+   sides 0.40 0.10 0.10
+env_obj 92
+   shape sphere
+   pos -3 -16.9 -8.74
+   color 0.08 0.39 0.08 1.00
+   rot 0.00 0.00 0.00
+   sides 8.30 0.50 0.50
+env_obj 93
+   shape box
+   pos 8.75 2.9 -0.74
+   color 0.20 0.18 0.24 1.00
+   rot 0.00 0.00 0.00
+   sides 1.50 2.90 0.50
+env_obj 94
+   shape cylinder
+   pos 9.15 2.78 -0.74
+   color 0.30 0.04 0.04 1.00
+   rot 10.00 0.00 0.00
+   sides 0.50 2.00 6.00
+env_obj 95
+   shape cylinder
+   pos 9.15 3.02 -0.74
+   color 0.30 0.04 0.04 1.00
+   rot -10.00 0.00 0.00
+   sides 0.50 2.00 6.00
+env_obj 96
+   shape cylinder
+   pos 9.15 2.9 -0.74
+   color 0.30 0.27 0.31 1.00
+   rot 0.00 0.00 0.00
+   sides 0.50 2.00 6.00
+env_obj 97
+   shape sphere
+   pos 9 2.9 0.96
+   color 0.25 0.24 0.29 1.00
+   rot 0.00 0.00 0.00
+   sides 0.30 2.00 6.00
+env_obj 98
+   shape box
+   pos 8.1 -9.3 7.26
+   color 0.33 0.22 0.10 1.00
+   rot -4.00 0.00 450.00
+   sides 1.50 1.75 5.20
+env_obj 99
+   shape cylinder
+   pos 8.25 2.82 -0.54
+   color 0.65 0.65 0.59 1.00
+   rot 0.00 0.00 0.00
+   sides 0.07 0.50 0.50
+env_obj 100
+   shape cylinder
+   pos 8.36 3.05 -0.54
+   color 0.67 0.67 0.59 1.00
+   rot 0.00 0.00 0.00
+   sides 0.07 0.70 0.50
+env_obj 101
+   shape cylinder
+   pos 8.15 2.97 -0.64
+   color 0.63 0.63 0.53 1.00
+   rot 0.00 0.00 0.00
+   sides 0.07 0.50 0.50
+env_obj 102
+   shape sphere
+   pos 8.36 3.05 -0.069999999999997
+   color 0.67 0.67 0.00 0.39
+   rot 0.00 0.00 0.00
+   sides 0.05 0.70 0.50
+env_obj 103
+   shape sphere
+   pos 8.36 3.05 -0.069999999999997
+   color 0.75 0.47 0.00 0.20
+   rot 0.00 0.00 0.00
+   sides 0.09 0.70 0.50
+env_obj 104
+   shape sphere
+   pos 9.75 4.15 -0.24
+   color 0.04 0.27 0.04 1.00
+   rot 0.00 0.00 0.00
+   sides 1.00 2.00 6.00
+env_obj 105
+   shape sphere
+   pos 9.85 1.65 -0.24
+   color 0.00 0.27 0.00 1.00
+   rot 0.00 0.00 0.00
+   sides 1.20 2.00 6.00
+env_obj 106
+   shape sphere
+   pos 10.75 3.15 0.26
+   color 0.07 0.29 0.04 1.00
+   rot 0.00 5.50 0.00
+   sides 1.50 2.00 6.00
+env_obj 107
+   shape box
+   pos 7.5 -6.6 9.06
+   color 0.00 0.21 0.00 1.00
+   rot 5.00 -5.00 -18.75
+   sides 9.75 8.00 1.00
+env_obj 108
+   shape box
+   pos 7.5 -10.1 9.76
+   color 0.00 0.21 0.00 1.00
+   rot -2.00 -2.00 10.00
+   sides 8.25 8.00 1.50
+env_obj 109
+   shape box
+   pos 3.5 -7.7 5.25
+   color 0.00 0.20 0.00 1.00
+   rot 3.00 0.00 8.00
+   sides 5.00 4.50 0.75
+env_obj 110
+   shape box
+   pos 7.3 -8.6 4.46
+   color 0.32 0.20 0.08 1.00
+   rot 10.00 50.00 10.00
+   sides 2.50 1.75 2.00
+env_obj 111
+   shape box
+   pos 6.1 -8.6 4.86
+   color 0.32 0.20 0.08 1.00
+   rot 10.00 75.00 15.00
+   sides 1.25 1.00 1.10
+env_obj 112
+   shape box
+   pos 5.25 -8.5 4.86
+   color 0.32 0.20 0.08 1.00
+   rot 4.00 -9.50 9.00
+   sides 4.00 0.75 0.50
+env_obj 113
+   shape box
+   pos 9 -7.1 3.66
+   color 0.33 0.21 0.09 1.00
+   rot 60.00 60.00 6.20
+   sides 3.00 0.75 1.50
+env_obj 114
+   shape box
+   pos 1.25 2.9 -0.94
+   color 0.55 0.57 0.59 1.00
+   rot 0.00 0.00 0.00
+   sides 5.00 5.00 0.50
+env_obj 115
+   shape box
+   pos 7.75 9.4 -0.94
+   color 0.55 0.57 0.59 1.00
+   rot 0.00 0.00 0.00
+   sides 5.00 5.00 0.50
+env_obj 116
+   shape box
+   pos 1.25 -3.6 -0.94
+   color 0.55 0.57 0.59 1.00
+   rot 0.00 0.00 0.00
+   sides 5.00 5.00 0.50
+env_obj 117
+   shape box
+   pos 1.25 -10.1 -0.94
+   color 0.55 0.57 0.59 1.00
+   rot 0.00 0.00 0.00
+   sides 5.00 5.00 0.50
+env_obj 118
+   shape box
+   pos 7.75 495.9 -5.74
+   color 0.24 0.25 0.29 1.00
+   rot 0.00 0.00 0.00
+   sides 5.25 1000.00 10.00
+env_obj 119
+   shape box
+   pos -3.25 13.9 -5.74
+   color 0.27 0.12 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 16.50 1.00 20.00
+env_obj 120
+   shape box
+   pos 12.75 13.9 3.76
+   color 0.12 0.12 0.12 1.00
+   rot 45.00 0.00 0.00
+   sides 4.62 1.50 1.50
+env_obj 121
+   shape box
+   pos 7.75 15.9 7.26
+   color 0.31 0.10 0.10 1.00
+   rot 0.00 0.00 0.00
+   sides 10.00 0.50 0.75
+env_obj 122
+   shape box
+   pos 4.85 5.8 0.76
+   color 0.43 0.25 0.12 1.00
+   rot 0.00 0.00 0.00
+   sides 0.20 0.20 4.80
+env_obj 123
+   shape box
+   pos 12 7.9 -0.24
+   color 0.12 0.12 0.12 1.00
+   rot 4.00 0.00 0.00
+   sides 0.25 0.25 4.00
+env_obj 124
+   shape box
+   pos -751.51 -17.1 -1.79
+   color 0.16 0.35 0.12 0.02
+   rot 0.00 0.00 0.00
+   sides 1480.00 30.00 10.00
+env_obj 125
+   shape box
+   pos 12 10.9 -0.24
+   color 0.12 0.12 0.12 1.00
+   rot -4.00 0.00 0.00
+   sides 0.25 0.25 4.00
+env_obj 126
+   shape sphere
+   pos -0.5 -17.8 -7.74
+   color 0.08 0.39 0.08 1.00
+   rot 0.00 0.00 0.00
+   sides 7.26 0.50 0.50
+env_obj 127
+   shape sphere
+   pos 5 -16.4 -0.64
+   color 0.71 0.47 0.55 1.00
+   rot 0.00 0.00 0.00
+   sides 0.40 0.50 0.50
+env_obj 128
+   shape sphere
+   pos 5.5 -16.6 -8.74
+   color 0.08 0.39 0.08 1.00
+   rot 0.00 0.00 0.00
+   sides 8.30 0.50 0.50

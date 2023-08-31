@@ -1,0 +1,109 @@
+#!/usr/bin/toribash
+version 12
+gamerule
+   matchframes 2000
+   turnframes 30
+   flags 7
+   dismemberment 0
+   fracture 0
+   disqualification 1
+   dqtimeout 50
+   dqflag 1
+   dismemberthreshold 275
+   fracturethreshold 160
+   pointthreshold 0
+   dojotype 1
+   dojosize 1000
+   engagedistance 300
+   engageheight 0
+   engagerotation 0
+   engagespace 0
+   engageplayerpos 
+   engageplayerrot 0,0,0,0,0,0
+   damage 0
+   gravity 0.00 0.00 -30.00
+   sumo 1
+   drawwinner 0
+   maxcontacts 8
+
+player 1
+body breast
+   point_hit 100
+body chest
+   point_hit 100
+body stomach
+   point_hit 100
+body groin
+   point_hit 100
+body r_pecs
+   point_hit 100
+body r_biceps
+   point_hit 100
+body r_triceps
+   point_hit 100
+body l_pecs
+   point_hit 100
+body l_biceps
+   point_hit 100
+body l_triceps
+   point_hit 100
+body r_hand
+   point_hit 100
+body l_hand
+   point_hit 100
+body r_butt
+   point_hit 100
+body l_butt
+   point_hit 100
+body r_thigh
+   point_hit 100
+body l_thigh
+   point_hit 100
+body l_leg
+   point_hit 100
+body r_leg
+   point_hit 100
+body r_foot
+   point_hit 100
+body l_foot
+   point_hit 100
+joint neck
+   point_hit 100
+joint chest
+   point_hit 100
+joint lumbar
+   point_hit 100
+joint abs
+   point_hit 100
+joint r_pecs
+   point_hit 100
+joint r_shoulder
+   point_hit 100
+joint r_elbow
+   point_hit 100
+joint l_pecs
+   point_hit 100
+joint l_shoulder
+   point_hit 100
+joint l_elbow
+   point_hit 100
+joint r_wrist
+   point_hit 100
+joint l_wrist
+   point_hit 100
+joint r_glute
+   point_hit 100
+joint l_glute
+   point_hit 100
+joint r_hip
+   point_hit 100
+joint l_hip
+   point_hit 100
+joint r_knee
+   point_hit 100
+joint l_knee
+   point_hit 100
+joint r_ankle
+   point_hit 100
+joint l_ankle
+   point_hit 100

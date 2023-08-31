@@ -1,0 +1,214 @@
+﻿#Localization file.
+
+FreePlay Mode libre
+Multiplayer Mode multijoueur
+FightSchool École de combat
+ToriShop ToriShop 
+Setup Réglages
+BuyToriCredits Acheter des ToriCredits
+Quit Quitter
+Options Options
+Mods Modes
+Utils Outils
+Replays Ralentis
+GameRules Règles
+Login S'identifier
+Back Retour
+ToribashTutorial Tutoriel
+BasicTraining Entraînement de base
+AdvancedMoves Entraînement avancé
+ChallengeUke Défier Uke
+FlameForge Créateur de flammes
+FlameBrowser Trouver une flamme
+ModMaker Créateur de modes
+Scripts Scripts
+Sounds Sons
+Credits Crédits
+Cancel Annuler
+OK OK
+Advanced Avancé
+Graphics Graphiques
+MouseButtons Bouttons de la souris
+BackgroundClick Clic à l'arrière plan
+EffectsVolume Volume des effets
+MusicVolume Volume de la musique
+ChatToggle Touche pour agrandir le chat
+Fullscreen Plein écran
+Autosavereplays Sauvegarde automatique des replays
+RememberGameRules Mémoriser les règles du combat
+LowerFrameRateCap Baisser la limite des FPS
+Shaders Shaders
+FluidBlood Sang fluide
+Reflections Refléctions
+SoftShadows Légères ombres
+AmbientOcclusion Occlusion ambiante
+Bumpmapping Placages de relief
+RayTracing Lancer de rayon
+Particles Particules
+Trails Trainées
+Hair Cheveux
+ShaderHair Shaders sur les cheveux
+BodyTextures Textures du corps
+DisableGraphicsReloading Enlever le rechargement des graphismes
+WindowWidth  Largeur de la fenêtre
+WindowHeight Longueur de la fenêtre
+FixedFramerate FPS fixe
+Basic Basique
+Minimum Minimum
+Low Basse qualité
+Medium Medium
+High Haute qualité
+Maximum Maximum
+Register S'enregistrer
+Create Créer
+Username Identifiant
+Password Mot de passe
+Email Email
+Email(optional) Email (optionnel)
+RemindMe Me le rappeler
+RememberMe Garder la session active
+Show Montrer!
+ForgotYourPassword? Mot de passe oublié ?
+Don'tHaveAnAccount? Pas de compte ?
+Close Fermer
+UPGRADED! PROMU!
+NumGamesToBelt combats jusqu'à
+DRAW! Match nul !
+MatchWonBelowMin Match gagné en dessous de la limite de tours
+WINS! VICTOIRES !
+STREAK SERIE
+DRAW2! Math nul !
+DISQUALIFIED! DISQUALIFIÉ !
+KeyframesCleared! Keyframes enlevées!
+KeyframeSaved! Keyframe sauvegardées!
+DefaultCameraEnabled Caméra par défaut activée
+FreeOrbitalCameraEnabled Caméra orbitale libre activée, utiliser W/S/A/D/Q/E + MAJ pour contrôler
+FreeCameraEnabled Caméra libre activée, utiliser W/S/A/D/Q/E + MAJ pour contrôler
+ToriCameraEnabled Caméra de Tori activée
+UkeCameraEnabled Caméra de Uke activée
+RecordingNextRewind L'enregistrement vidéo commencera au prochain ralenti
+RecordingCameraMovements Enregistrement vidéo des mouvements de caméra
+PlayingCameraMovements Lecture de l'enregistrement des mouvements de caméra
+FreeCamDisabled Caméra libre désactivée
+Desc Description
+Room Salle
+Mod Mode
+Players Joueurs
+---- MinBelt Ceinture minimum
+---- MaxBelt Ceinture maximum
+Connect Connection
+LoadingServerList Chargement de la liste des serveurs
+---- BeltRestriction Restriction de ceinture
+---- HidePasswordServers Cacher le mot de passe du serveur
+OfficialServers Serveur officiels
+LiveTournaments Tournois en direct
+TournamentInProgress Tournois en cours
+PasswordNeeded Nécéssite un mot de passe
+EntryFee Coût d'entrée
+TotalTcBetted Total des TC pariés
+MinimumBet Pari minimum
+BuddiesInside Amis dans la salle
+RoomName: Nom de la salle:
+Password: Mot de passe:
+MaxPlayer: Nombre maximum de joueurs:
+MinBelt: Ceinture minimum:
+MaxBelt: Ceinture maximum:
+Desc: Description:
+Option Options
+CreateRoom Créer une salle
+Language Langage
+SPECTATOR SPECTATEUR
+WaitingForOtherPlayer En attente d'autres joueurs
+SPACEBARNewGameFSaveReplay BARRE D'ESPACE - Nouveau Combat   ;   F - Sauvegarder un ralenti
+PressTheSPACEBARToPlay Appuyer sur la BARRE D'ESPACE pour jouer !
+PressTheSPACEBARForREPLAY Appuyer sur la BARRE D'ESPACE pour enclencher le RALENTI
+WaitingForYourTurn En attente de votre tour: #
+InQueue dans la queue
+WaitingForOpponent En attente d'adversaire
+ClickToSelectPlayer Cliquer pour sélectionner un joueur
+HitSPACEWhenReadyWithMove Appuyer sur BARRE D'ESPACE quand vous êtes prêts à bouger
+PleaseEnterAValidEmailAddress Merci d'entrer une adresse email valide
+PleaseEnterYourUsername Merci d'entrer votre identifiant
+PleaseEnterYourPassword Merci d'entrer votre mot de passe
+PleaseRetypeYourPassword Merci de retaper votre mot de passe
+UsernameLesserThan4Characters Votre identifiant contient moins de 4 caractères
+UsernameMoreThan10Characters Votre identifiant contient plus de 10 caractères
+MismatchingPasswords Les mots de passe ne correspondent pas
+UsernameMustBeAlphaNumeric Votre identifiant doit être en alpha numérique
+Error! Erreur!
+CreateAccountFromToribash Merci de créer votre compte depuis
+#ToribashFromCreateAccount Pas utilisé ici
+NetworkError Problème de connexion !
+UsernameUsedOrSubstandard Cet identifiant est déjà utilisé ou ne remplis pas les standards des administrateurs
+ModsCtrlM Modes (Ctrl + M)
+Load Charger
+Open Ouvrir
+NewGame Nouveau Combat
+TypeHere Taper ici
+QuickLoad Chargement rapide
+ShadersCtrlH Shaders (Ctrl + H)
+AutoLoad Chargement automatique
+SoundsCtrlY Sons (Ctrl + Y)
+UsernameIsEmpty Identifiant est vide
+Neck NUQUE
+Chest BUSTE
+Lumbar LOMBAIRES
+Abs Abdominaux
+RightPecs PEC DROIT
+RightShoulder EPAULE DROITE
+RightElbow COUDE DROIT
+LeftPecs PEC GAUCHE
+LeftShoulder EPAULE GAUCHE
+LeftElbow COUDE GAUCHE
+RightWrist POIGNET DROIT
+LeftWrist POIGNET GAUCHE
+RightGlute FESSIER DROIT
+LeftGlute FESSIER GAUCHE
+RightHip HANCHE DROITE
+LeftHip HANCHE GAUCHE
+RightKnee GENOU DROIT
+LeftKnee GENOU GAUCHE
+RightAnkle CHEVILLE DROITE
+LeftAnkle CHEVILLE GAUCHE
+RightRotating ROTATION VERS LA DROITE DU
+RightBending PENCHER A DROITE LES
+LeftRotating ROTATION VERS LA GAUCHE DU
+LeftBending PENCHER A GAUCHE LES
+Lowering BAISSER
+Extending TENDRE
+Raising LEVER
+Contracting CONTRACTER
+Holding MAINTENIR
+Relaxing RELAXER
+ObjModel Modèles Obj
+LanguageSteam Utilisez la Langue de Steam
+Effects Effets
+AlwaysOff Toujours Off
+OnlyOnReplays Seulement pendant les replays
+AlwaysOn Toujours On
+LANGUAGESTEAM Utiliser la langue de Steam
+VOICECHATVOLUME Volume du chat vocal
+VOICECHATTOGGLE Basculer sur le chat vocal
+OBJMODEL Modèle d’objet
+AUTOTOURNAMENTS Tournoi automatique
+DEFAULT Par défaut
+PLEASEENABLESTEAMOVERLAY Veuillez activer l’overlay de steam et redémarrer le jeu 
+PLEASEWAITFORSTEAMPURCHASEOVERLAY Veuillez attendre l’overlay de la boutique de steam
+PLEASELOGONSTEAM Veuillez vous connecter à votre compte steam pour acheter des ToriCredits
+REFRESH Actualiser
+DELETE Supprimer
+RENAME Renommer
+NEW Nouveau
+ENTERNEWREPLAYNAME Entrez le nouveau nom du replay
+GRAPPLING Grappling
+KICKING Kicking
+STRICKING Striking
+MATCHMAKING Matchmaking
+(PAUSED) (Pause)
+(SEARCHING) (Recherche en cours)
+MODGROUPS Mod Groups
+SEARCH Recherche
+UNRANKED Non classé
+RANKEDPREFERRED Classé en particularité
+RANKEDONLY Classé Uniquement
+MATCHMAKEAGAIN Continuer le Matchmaking

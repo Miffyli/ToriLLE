@@ -1,0 +1,22 @@
+gamerule
+engageplayerpos 0
+gravity 0.00 0.00 -30.00
+engagedistance 90
+dismemberthreshold 350
+dismember 1
+fracture 1
+fracturethreshold 200
+matchframes 600
+disqualification 1
+dqtimeout 15
+dqflag 1
+flags 3
+dojotype 1
+dojosize 1000
+engagedistance 90
+engageheight 0
+engagerotation 0
+engagespace 0
+engageplayerrot 0,0,0,0,0,0
+damage 0
+sumo 1

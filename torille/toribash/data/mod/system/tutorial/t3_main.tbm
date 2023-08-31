@@ -1,0 +1,691 @@
+#!/usr/bin/toribash
+version 12
+world_shader data/shader/default.inc
+gamerule
+   matchframes 2000
+   turnframes 20
+   flags 0
+   dismemberment 0
+   fracture 0
+   disqualification 0
+   dqtimeout 0
+   dqflag 0
+   dismemberthreshold 275
+   fracturethreshold 160
+   pointthreshold 0
+   dojotype 0
+   dojosize 0
+   engagedistance 200
+   engageheight 0
+   engagerotation 0
+   engagespace 0
+   engageplayerpos 0.70,-3.00,0.00,0.20,1.15,0.00
+   engageplayerrot 0,0,-90,0,0,0
+   damage 0
+   gravity 0.00 0.00 -30.00
+   sumo 0
+   reactiontime 15
+   drawwinner 2
+   maxcontacts 8
+use_model 0
+model_name tutorial
+env_obj 1
+   shape box
+   pos 1.00 1.90 0.70
+   color 0.51 0.32 0.05 1.00
+   rot 0.00 0.00 0.00
+   sides 3.00 0.70 0.10
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj1
+env_obj 2
+   shape box
+   pos 2.00 1.90 0.35
+   color 0.51 0.32 0.06 1.00
+   rot 0.00 0.00 0.00
+   sides 0.15 0.60 0.70
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj2
+env_obj 3
+   shape box
+   pos 0.00 1.90 0.35
+   color 0.51 0.32 0.06 1.00
+   rot 0.00 0.00 0.00
+   sides 0.15 0.60 0.70
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj3
+env_obj 4
+   shape box
+   pos -0.15 1.05 1.30
+   mass 0.0020
+   color 0.71 0.61 0.30 1.00
+   rot 0.00 0.00 0.00
+   sides 0.10 0.10 1.80
+   force 0.00 0.00 0.00
+   flag 0
+   bounce 0.100000
+   friction 10.00
+   use_model 0
+   model_name env_obj4
+env_obj 5
+   shape box
+   pos 0.60 -3.30 0.04
+   mass 0.0100
+   rot 0.00 0.00 0.00
+   color 1 1 1 1
+   sides 0.50 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 0
+   bounce 0.100000
+   friction 1.00
+   use_model 0
+   model_name env_obj5
+env_obj 6
+   shape box
+   pos 0.60 -2.90 0.04
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.50 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj6
+env_obj 7
+   shape sphere
+   pos 0.44 -3.30 0.19
+   mass 0.0100
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.11 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 0
+   bounce 0.100000
+   friction 1.00
+   use_model 0
+   model_name env_obj7
+env_obj 8
+   shape sphere
+   pos 0.44 -2.90 0.19
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.11 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj8
+env_obj 9
+   shape cylinder
+   pos 0.48 -2.90 0.43
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.12 0.30 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj9
+env_obj 10
+   shape cylinder
+   pos 0.48 -3.30 0.43
+   mass 0.0100
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.12 0.30 0.08
+   force 0.00 0.00 0.00
+   flag 0
+   bounce 0.100000
+   friction 1.00
+   use_model 0
+   model_name env_obj10
+env_obj 11
+   shape sphere
+   pos 0.48 -2.90 0.75
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.14 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj11
+env_obj 12
+   shape sphere
+   pos 0.48 -3.30 0.75
+   mass 0.0100
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.14 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 0
+   bounce 0.100000
+   friction 1.00
+   use_model 0
+   model_name env_obj12
+env_obj 13
+   shape cylinder
+   pos 0.48 -3.30 0.99
+   mass 0.0100
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.12 0.18 0.08
+   force 0.00 0.00 0.00
+   flag 0
+   visible 1
+   bounce 0.100000
+   friction 10000.00
+   use_model 1
+   model_name ../../../tutorial/thigh
+env_obj 14
+   shape cylinder
+   pos 0.48 -2.90 1.05
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.12 0.30 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj14
+env_obj 15
+   shape sphere
+   pos 0.48 -3.30 1.35
+   mass 10.0000
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.16 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj15
+env_obj 16
+   shape sphere
+   pos 0.48 -2.90 1.35
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.16 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj16
+env_obj 17
+   shape sphere
+   pos 0.40 -3.00 1.45
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.16 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj17
+env_obj 18
+   shape sphere
+   pos 0.40 -3.20 1.45
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.16 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj18
+env_obj 19
+   shape sphere
+   pos 0.48 -3.10 1.57
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.14 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj19
+env_obj 20
+   shape box
+   pos 0.50 -3.10 1.50
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.15 0.20 0.20
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj20
+env_obj 21
+   shape box
+   pos 0.54 -3.10 1.70
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.15 0.35 0.20
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj21
+env_obj 22
+   shape sphere
+   pos 0.52 -3.10 1.77
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.15 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj22
+env_obj 23
+   shape sphere
+   pos 0.57 -3.10 1.96
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.17 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj23
+env_obj 24
+   shape box
+   pos 0.59 -3.10 1.90
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.15 0.50 0.20
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj24
+env_obj 25
+   shape sphere
+   pos 0.60 -3.23 2.15
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.16 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj25
+env_obj 26
+   shape sphere
+   pos 0.60 -2.97 2.15
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.16 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj26
+env_obj 27
+   shape box
+   pos 0.59 -3.10 2.14
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.15 0.62 0.28
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj27
+env_obj 28
+   shape sphere
+   pos 0.57 -3.41 2.26
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.15 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj28
+env_obj 29
+   shape sphere
+   pos 0.57 -2.79 2.26
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.15 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj29
+env_obj 30
+   shape sphere
+   pos 0.53 -3.10 2.42
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.09 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj30
+env_obj 31
+   shape sphere
+   pos 0.60 -3.10 2.60
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.20 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj31
+env_obj 32
+   shape sphere
+   pos 0.57 -3.80 2.26
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.14 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj32
+env_obj 33
+   shape box
+   pos 0.57 -3.60 2.26
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.20 0.40 0.20
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj33
+env_obj 34
+   shape box
+   pos 0.57 -4.02 2.26
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.10 0.40 0.10
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj34
+env_obj 35
+   shape sphere
+   pos 0.57 -4.28 2.26
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.10 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj35
+env_obj 36
+   shape box
+   pos 0.61 -4.42 2.26
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.22 0.22 0.22
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj36
+env_obj 37
+   shape box
+   pos 0.57 -2.60 2.26
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.20 0.40 0.20
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj37
+env_obj 38
+   shape sphere
+   pos 0.57 -2.40 2.26
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.14 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj38
+env_obj 39
+   shape box
+   pos 0.57 -2.18 2.26
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.10 0.40 0.10
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj39
+env_obj 40
+   shape sphere
+   pos 0.57 -1.92 2.26
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.10 0.20 0.08
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj40
+env_obj 41
+   shape box
+   pos 0.61 -1.78 2.26
+   color 1 1 1 1
+   rot 0.00 0.00 0.00
+   sides 0.22 0.22 0.22
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj41
+env_obj_joint 1 5 7
+   pos 0.45 -3.30 0.17
+   axis 0.00 1.00 0.00
+   range 1.10 -0.30
+env_obj_joint 2 7 10
+   pos 0.45 -3.30 0.17
+   axis 0.00 1.00 0.00
+   range 1.10 -0.30
+env_obj_joint 3 10 12
+   pos 0.48 -3.30 0.75
+   axis 0.00 1.00 0.00
+   range 0.00 -2.00
+env_obj_joint 4 12 13
+   pos 0.48 -3.30 0.75
+   axis 0.00 1.00 0.00
+   range 0.00 -2.00
+env_obj_joint 5 13 15
+   pos 0.48 -3.30 1.35
+   axis 0.00 1.00 0.00
+   range 1.00 -2.30
+player 0
+   body r_hand
+      pos -0.35 0.85 2.30
+   body l_hand
+      pos 2.35 0.85 2.30
+player 1
+   body head
+      pos 1.00 0.75 2.57
+   body breast
+      pos 1.00 0.90 2.20
+      point_hit 100
+   body chest
+      pos 1.00 0.88 1.95
+      point_hit 100
+   body stomach
+      sides 0.40 0.20 0.20
+      pos 1.00 0.95 1.75
+      point_hit 100
+   body groin
+      pos 1.00 1.00 1.55
+      point_hit 100
+   body r_pecs
+      pos 0.75 0.84 2.15
+      point_hit 100
+   body r_biceps
+      pos 0.46 0.90 2.30
+      point_hit 100
+   body r_triceps
+      pos 0.05 0.90 2.30
+      point_hit 100
+   body l_pecs
+      pos 1.25 0.84 2.15
+      point_hit 100
+   body l_biceps
+      pos 1.54 0.90 2.30
+      point_hit 100
+   body l_triceps
+      pos 1.95 0.90 2.30
+      point_hit 100
+   body r_hand
+      pos -0.35 0.85 2.30
+      point_hit 100
+   body l_hand
+      pos 2.35 0.85 2.30
+      point_hit 100
+   body r_butt
+      pos 0.80 1.00 1.45
+      point_hit 100
+   body l_butt
+      pos 1.20 1.00 1.45
+      point_hit 100
+   body r_thigh
+      sides 0.14 0.30 0.00
+      pos 0.80 1.00 1.10
+      point_hit 100
+   body l_thigh
+      sides 0.14 0.30 0.20
+      pos 1.20 1.00 1.10
+      point_hit 100
+   body l_leg
+      pos 1.20 1.00 0.51
+      point_hit 100
+   body r_leg
+      pos 0.80 1.00 0.50
+      point_hit 100
+   body r_foot
+      pos 0.80 0.90 0.10
+      point_hit 100
+   body l_foot
+      pos 1.20 0.90 0.10
+      point_hit 100
+   joint neck
+      pos 1.00 0.80 2.42
+      point_hit 100
+   joint chest
+      pos 1.00 0.90 2.05
+      point_hit 100
+   joint lumbar
+      pos 1.00 0.93 1.85
+      point_hit 100
+   joint abs
+      radius 0.20
+      pos 1.00 1.00 1.65
+      point_hit 100
+   joint r_pecs
+      radius 0.17
+      pos 0.85 0.86 2.20
+      point_hit 100
+   joint r_shoulder
+      radius 0.16
+      pos 0.67 0.90 2.30
+      point_hit 100
+   joint r_elbow
+      pos 0.25 0.90 2.30
+      point_hit 100
+   joint l_pecs
+      radius 0.17
+      pos 1.15 0.86 2.20
+      point_hit 100
+   joint l_shoulder
+      radius 0.16
+      pos 1.33 0.90 2.30
+      point_hit 100
+   joint l_elbow
+      pos 1.75 0.90 2.30
+      point_hit 100
+   joint r_wrist
+      pos -0.20 0.90 2.30
+      point_hit 100
+   joint l_wrist
+      pos 2.20 0.90 2.30
+      point_hit 100
+   joint r_glute
+      radius 0.20
+      pos 0.90 1.10 1.51
+      point_hit 100
+   joint l_glute
+      radius 0.20
+      pos 1.10 1.10 1.51
+      point_hit 100
+   joint r_hip
+      radius 0.19
+      pos 0.79 1.00 1.40
+      point_hit 100
+   joint l_hip
+      radius 0.19
+      pos 1.21 1.00 1.40
+      point_hit 100
+   joint r_knee
+      pos 0.80 1.00 0.80
+      point_hit 100
+   joint l_knee
+      pos 1.20 1.00 0.80
+      point_hit 100
+   joint r_ankle
+      pos 0.80 1.05 0.25
+      point_hit 100
+   joint l_ankle
+      pos 1.20 1.05 0.25
+      point_hit 100

@@ -1,0 +1,92 @@
+#!/usr/bin/toribash
+#### Created with ModEditor by DeFransen ####
+
+   version 2.2
+
+gamerule
+engageplayerpos 0
+   damage 0
+   dismemberment 1
+   dismemberthreshold 190
+   disqualification 1
+   dojosize 700
+   dojotype 0
+   dqflag 1
+   dqtimeout 50
+   engagedistance 120
+   engageheight 1
+   engagerotation 1
+   engagespace 1
+   flags 3
+   fracture 0
+   gravity 0 0 -9.82
+   matchframes 500
+   rpg 0
+   sumo 1
+   turnframes 10,20,20,30,30,40,50,50,50
+
+
+# for all players
+
+   body l_leg
+      sides 0.14 0.3 0
+
+   body r_leg
+      sides 0.14 0.3 0
+
+   joint r_wrist
+      range 0.5 -1.4
+      axis 0 1 0
+
+
+env_obj 1
+   color 0.41 0.26 0 1
+   mass 0.0001
+   material flesh
+   pos -0.4 0.5 2.2
+   shape cylinder
+   sides 0.05 0.5 0
+
+env_obj 2
+   color 0.71 0.71 0.71 1
+   flag 4
+   mass 0.0001
+   material flesh
+   pos -0.4 0.5 2.95
+   shape box
+   sides 0.27 0.01 1.1
+
+env_obj 3
+   color 0.41 0.26 0 1
+   mass 0.0001
+   material flesh
+   pos 2.38 -0.69 2.2
+   shape cylinder
+   sides 0.05 0.5 0
+
+env_obj 4
+   color 0.71 0.71 0.71 1
+   flag 4
+   mass 0.0001
+   material flesh
+   pos 2.37 -0.69 2.95
+   shape box
+   sides 0.27 0.01 1.1
+
+
+env_obj_joint 1 1 2
+   axis 0 0 0
+   pos -0.4 0.5 2.4
+   range 0 0
+   strength 0
+   velocity 0
+   visible 1
+
+env_obj_joint 2 3 4
+   axis 0 0 0
+   pos 2.37 -0.7 2.45
+   range 0 0
+   strength 0
+   velocity 0
+   visible 1
+

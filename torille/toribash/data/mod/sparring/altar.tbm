@@ -1,0 +1,129 @@
+gamerule
+engageplayerpos 0
+dojosize 1
+engageheight 120
+
+
+env_obj 1
+shape cylinder
+color 1 0 0
+rot 90
+sides 0.5 6 0.5
+pos 3.8 0 3.6
+flag 24
+
+env_obj 2
+shape cylinder
+color 1 0 0
+rot 90
+sides 0.5 6 0.5
+pos 3.8 3.5 3.6
+flag 24
+
+env_obj 3
+shape cylinder
+color 1 0 0
+rot 90
+sides 0.5 6 0.5
+pos 3.8 -3.5 3.6
+flag 24
+
+env_obj 4
+shape cylinder
+color 1 0 0
+rot 90
+sides 0.5 6 0.5
+pos -1.8 0 3.6
+flag 24
+
+env_obj 5
+shape cylinder
+color 1 0 0
+rot 90
+sides 0.5 6 0.5
+pos -1.8 3.5 3.6
+flag 24
+
+env_obj 6
+shape cylinder
+color 1 0 0
+rot 90
+sides 0.5 6 0.5
+pos -1.8 -3.5 3.6
+flag 24
+
+env_obj 7
+shape box
+color 0.5 0.5 0.5
+sides 7.2 8.2 1.2
+pos 1 0 0.6
+flag 24
+
+env_obj 8
+shape box
+color 0.5 0.5 0.5
+sides 7.2 8.2 0.05
+pos -1.4 0 8.7
+rot 0 45 0
+flag 24
+
+env_obj 9
+shape box
+color 0.5 0.5 0.5
+sides 7.2 8.2 0.05
+pos 3.4 0 8.7
+rot 0 315 0
+flag 24
+
+env_obj 10
+shape cylinder
+rot 90 0 90
+color 1 0 0
+sides 0.1 8.2 0.1
+pos 1 0 11.25
+flag 24
+
+env_obj 11
+shape box
+color 0.1 0.1 0.1
+sides 1.2 1.2 1
+pos 3.8 0 7
+flag 24
+
+env_obj 12
+shape box
+color 0.1 0.1 0.1
+sides 1.2 1.2 1
+pos 3.8 3.5 7
+flag 24
+
+env_obj 13
+shape box
+color 0.1 0.1 0.1
+sides 1.2 1.2 1
+pos 3.8 -3.5 7
+flag 24
+
+env_obj 14
+shape box
+color 0.1 0.1 0.1
+sides 1.2 1.2 1
+pos -1.8 0 7
+flag 24
+
+env_obj 15
+shape box
+color 0.1 0.1 0.1
+sides 1.2 1.2 1
+pos -1.8 3.5 7
+flag 24
+
+env_obj 16
+shape box
+color 0.1 0.1 0.1
+sides 1.2 1.2 1
+pos -1.8 -3.5 7
+flag 24
+
+
+

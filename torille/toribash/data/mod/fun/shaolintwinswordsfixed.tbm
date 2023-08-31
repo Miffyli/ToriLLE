@@ -1,0 +1,231 @@
+#!/usr/bin/toribash
+
+# Environment exported by WorldBuilder
+######################################
+
+#########Props to Grath for his twinswords############
+body r_hand
+	sides 1.8 0.008 0.008
+	pos -0.6 0.9 2.3
+	color 100 100 100
+	flag 6
+body l_hand
+	sides 1.8 0.008 0.008
+	pos 2.6 0.9 2.3
+	color 100 100 100
+	flag 6
+
+body r_foot
+        flag 6
+
+body l_foot
+        flag 6
+
+body r_triceps
+   sides 0.400000 0.130000 0.130000
+   flag 2
+
+body l_triceps
+   sides 0.400000 0.130000 0.130000
+   flag 2
+
+body r_leg
+   sides 0.160000 0.300000 0.000000
+        flag 2
+
+body l_leg
+   sides 0.160000 0.300000 0.000000
+        flag 2
+
+
+
+gamerule
+engageplayerpos 0
+    engagedistance 1500
+    engageheight 500
+    engagerotation 0
+    dojosize 1
+    dojotype 1
+    disqualification 1
+    matchframes 480
+    turnframes 60,60,60,30,30,30,30,30,30,30,30,30,30
+    dismemberment 1
+    dismemberthreshold 200
+    fracture 0
+    fracturethreshold 0
+    gravity 0 0 -9.82
+
+
+
+###########Environment##############
+
+env_obj 1
+    shape box
+    pos 1 0 3.5
+    color 0.3 0.3 0.3 1
+    rot 0 0 0
+    sides 6.25 6.25 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 2
+    shape box
+    pos 1 0 1.5
+    color 0.3 0.3 0.3 1
+    rot 0 0 0
+    sides 2.75 2.75 2.75
+    material steel
+    mass 0.1
+    flag 24
+#END 2
+
+env_obj 3
+    shape cylinder
+    pos 3.5 -2.5 6
+    color 0.6 0.2 -0.1 1
+    rot 0 0 0
+    sides 0.25 4.75 1
+    material steel
+    mass 0.1
+    flag 24
+#END 3
+
+env_obj 4
+    shape cylinder
+    pos 3.5 2.5 6
+    color 0.6 0.2 -0.1 1
+    rot 0 0 0
+    sides 0.25 4.75 1
+    material steel
+    mass 0.1
+    flag 24
+#END 4
+
+env_obj 5
+    shape cylinder
+    pos -1.5 2.5 6
+    color 0.6 0.2 -0.1 1
+    rot 0 0 0
+    sides 0.25 4.75 1
+    material steel
+    mass 0.1
+    flag 24
+#END 5
+
+env_obj 6
+    shape cylinder
+    pos -1.5 -2.5 6
+    color 0.6 0.2 -0.1 1
+    rot 0 0 0
+    sides 0.25 4.75 1
+    material steel
+    mass 0.1
+    flag 24
+#END 6
+
+
+env_obj 7
+    shape box
+    pos 1 0 10.25
+    color 0.1 -0.1 -0.1 1
+    rot 0 0 0
+    sides 2 2.75 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 8
+    shape box
+    pos 1 0 9.5
+    color 0.1 -0.1 -0.1 1
+    rot 0 0 0
+    sides 3.75 4.75 1
+    material steel
+    mass 0.1
+    flag 24
+#END 2
+
+env_obj 9
+    shape box
+    pos 1 0 8.75
+    color 0.1 -0.1 -0.1 1
+    rot 0 0 0
+    sides 6 6.75 1
+    material steel
+    mass 0.1
+    flag 24
+#END 3
+
+
+env_obj 10
+    shape cylinder
+    pos 1 7.5 2
+    color 0.6 0.2 -0.1 1
+    rot 0 0 0
+    sides 0.5 5 1
+    material steel
+    mass 0.1
+    flag 24
+#END 10
+
+env_obj 11
+    shape cylinder
+    pos 1 -7.75 2
+    color 0.6 0.2 -0.1 1
+    rot 0 0 0
+    sides 0.5 5 1
+    material steel
+    mass 0.1
+    flag 24
+#END 11
+
+env_obj 12
+    shape sphere
+    pos 1 0 11
+    color 0.6 0.3 -0.1 1
+    rot 0 0 0
+    sides 0.75 0.75 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+
+
+#######FORCE/JOUST EFFECT#############
+
+body stomach 
+	force 0 5 1
+
+body breast
+	force 0 20 1
+
+body chest
+	force 0 15 1
+
+body groin
+	force 0 15 1
+
+body r_pecs
+	force 0 5 1
+
+body l_pecs
+	force 0 5 1
+
+body r_thigh
+	force 0 8 1
+
+body l_thigh
+	force 0 8 1
+
+body l_leg
+	force 0 15 1
+
+body r_leg
+	force 0 15 1
+
+
+

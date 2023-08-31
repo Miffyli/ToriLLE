@@ -1,0 +1,167 @@
+#!/usr/bin/toribash
+# rb_mma.tbm by sir
+# Mod created specially for Autumn Russian Clans League 2011
+
+gamerule
+engageplayerpos 0
+engagedistance 190
+dismemberthreshold 350
+dismember 1
+fracture 1
+fracturethreshold 225
+matchframes 500
+turnframes 20,20,20,30,30,35,35,40,40,40,40,50,50,50
+dqtimeout 20
+dojosize 475
+dojotype 1
+dq 0
+dqflag 0
+sumo 1
+flags 11
+damage 0
+gravity 0.00 0.00 -37.50
+
+######################
+# Standart bodyparts #
+######################
+
+body r_hand
+flag 1
+
+body l_hand
+flag 1
+
+################################
+# Undqable grabbable bodyparts #
+################################
+
+body r_foot
+flag 32
+
+body l_foot
+flag 32
+
+joint r_elbow
+flag 32
+
+joint l_elbow
+flag 32
+
+joint r_wrist
+flag 32
+
+joint l_wrist
+flag 32
+
+joint r_ankle
+flag 32
+
+joint l_ankle
+flag 32
+
+##################################
+# Undqable ungrabbable bodyparts #
+##################################
+
+joint r_knee
+flag 48
+
+joint l_knee
+flag 48
+
+body l_leg
+flag 48
+
+body r_leg
+flag 48
+
+################################
+# Dqable ungrabbable bodyparts #
+################################
+
+body head
+flag 16
+
+joint neck 
+flag 16
+
+body breast
+flag 16
+
+body chest
+flag 16
+
+body stomach
+flag 16
+
+body groin 
+flag 16
+
+joint r_pecs 
+flag 16
+
+body r_biceps 
+flag 16
+
+body l_biceps
+flag 16
+
+joint l_pecs
+flag 16
+
+body r_axilla
+flag 16
+
+body l_axilla 
+flag 16
+
+body r_pecs
+flag 16
+
+body l_pecs
+flag 16
+
+body l_butt
+flag 16
+
+body r_butt
+flag 16
+
+body r_thigh 
+flag 16
+
+body l_thigh 
+flag 16
+
+joint chest
+flag 16
+
+joint lumbar
+flag 16
+
+joint r_pecs
+flag 16
+
+joint l_pecs
+flag 16
+
+joint abs
+flag 16
+
+joint r_glute
+flag 16
+
+joint l_glute
+flag 16
+
+joint r_hip      
+flag 16
+
+joint l_hip
+flag 16
+
+body r_triceps 
+flag 16
+
+body l_triceps
+flag 16

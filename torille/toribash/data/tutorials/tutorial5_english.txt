@@ -1,0 +1,12 @@
+#PLAYER MESSAGES
+SENSEIMSG1	This time, you are going to practice your comeback skills.
+SENSEIMSG2	Every time you hit Uke, he will teleport further away from you.
+SENSEIMSG3	That way you can both learn some useful skills to help you in online fights and have fun!
+SENSEIMSGFAIL	Oh, I think I fell asleep. Come on, you can do much better!
+SENSEIMSGEND1	One hit is better than nothing, but you sure can improve that! Try again!
+SENSEIMSGEND2	Nice work, that was... %d times you hit Uke. But you can still do better, keep training!
+SENSEIMSGEND3	Great job, you hit Uke %d times! Keep working on your skills and you'll be a comeback master!
+SENSEIMSGEND4	%d hits, marvelous! Outstanding workout, there's no way anyone would be able to run away from you!
+#
+#HINT MESSAGES
+HINT1	You will start in slightly modified LENSHU mod. Unlike AIKIDO, here you can touch the floor with any bodypart - but only for a short period. However, stay inside the dojo - stepping outside will instantly get you disqualified!

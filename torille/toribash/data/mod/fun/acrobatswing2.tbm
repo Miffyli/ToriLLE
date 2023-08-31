@@ -1,0 +1,172 @@
+gamerule
+engageplayerpos 0
+engagedistance 4425
+engageheight 1000
+disqualification 1
+
+env_obj 1
+shape box
+pos 1 -0.1 12.975
+color 0.5 0 1.3877787807814e-016 1
+sides 1 28 1
+material steel
+mass 0.01
+flag 8
+
+env_obj 2
+shape box
+pos 1 13.6 12.4
+color 0.5 0 1.3877787807814e-016 1
+sides 0.1 1.7 0.1
+material steel
+mass 0.01
+
+env_obj 3
+shape box
+pos 1 15.3 12.4
+color 0.5 0 1.3877787807814e-016 1
+
+sides 0.1 1.7 0.1
+material steel
+mass 0.01
+
+env_obj 4
+shape box
+pos 1 17 12.4
+color 0.5 0 1.3877787807814e-016 1
+sides 0.1 1.7 0.1
+material steel
+mass 0.01
+
+env_obj 5
+shape box
+pos 1 18.7 12.4
+color 0.5 0 1.3877787807814e-016 1
+sides 0.1 1.7 0.1
+material steel
+mass 0.01
+
+env_obj 6
+shape box
+pos 1 20.3 12.4
+color 0.5 0 1.3877787807814e-016 1
+sides 0.1 1.5 0.1
+material steel
+mass 0.01
+
+env_obj 7
+shape box
+pos 1 21.1 12.4
+color 0.5 0 1.3877787807814e-016 1
+sides 0.6 0.1 0.1
+material steel
+mass 0.01
+
+env_obj 8
+shape box
+pos 1 -13.7 12.4
+color 0.5 0 1.3877787807814e-016 1
+sides 0.1 1.7 0.1
+material steel
+mass 0.01
+
+
+env_obj 9
+shape box
+pos 1 -15.4 12.4
+color 0.5 0 1.3877787807814e-016 1
+sides 0.1 1.7 0.1
+material steel
+mass 0.01
+
+env_obj 10
+shape box
+pos 1 -17.1 12.4
+color 0.5 0 1.3877787807814e-016 1
+sides 0.1 1.7 0.1
+material steel
+mass 0.01
+
+env_obj 11
+shape box
+pos 1 -18.8 12.4
+color 0.5 0 1.3877787807814e-016 1
+sides 0.1 1.7 0.1
+material steel
+mass 0.01
+
+env_obj 12
+shape box
+pos 1 -20.4 12.4
+color 0.5 0 1.3877787807814e-016 1
+sides 0.1 1.5 0.1
+material steel
+mass 0.01
+
+env_obj 13
+shape box
+pos 1 -21.2 12.4
+color 0.5 0 1.3877787807814e-016 1
+sides 0.6 0.1 0.1
+material steel
+mass 0.01
+
+env_obj_joint 1 1 2
+pos 1 12.75 12.4
+axis 1 0 0
+range 5 -5
+
+env_obj_joint 2 2 3
+pos 1 14.45 12.4
+axis 1 0 0
+range 5 -5
+
+env_obj_joint 3 3 4
+pos 1 16.15 12.4
+axis 1 0 0
+range 5 -5
+
+env_obj_joint 4 4 5
+pos 1 17.85 12.4
+axis 1 0 0
+range 5 -5
+
+env_obj_joint 5 5 6
+pos 1 19.55 12.4
+axis 1 0 0
+range 5 -5
+
+env_obj_joint 6 6 7
+pos 1 21.05 12.4
+
+env_obj_joint 7 1 8
+pos 1 -12.85 12.4
+axis 1 0 0
+range 5 -5
+
+env_obj_joint 8 8 9
+pos 1 -14.55 12.4
+axis 1 0 0
+range 5 -5
+
+env_obj_joint 9 9 10
+pos 1 -16.25 12.4
+axis 1 0 0
+range 5 -5
+
+env_obj_joint 10 10 11
+pos 1 -17.95 12.4
+axis 1 0 0
+range 5 -5
+
+env_obj_joint 11 11 12
+pos 1 -19.65 12.4
+axis 1 0 0
+range 5 -5
+
+env_obj_joint 12 12 13
+pos 1 -21.15 12.4
+axis 1 0 0
+range 5 -5
+
+env_obj_joint 13 13 14

@@ -1,0 +1,313 @@
+#!/usr/bin/toribash
+#mod by TRichard21
+
+gamerule
+
+gravity 0 0 -30
+
+engagedistance 1000
+engageheight 10
+engageplayerpos -1.00,-28.00,15.00,-1.00,-30.00,14.95
+engageplayerrot 0,0,180,0,0,180
+matchframes 1200
+dismemberthreshold 250
+fracturethreshold 500
+turnframes 10
+sumo 1
+dojosize 1
+flags 7
+dismemberment 0
+fracture 1
+disqualification 0
+flags 8
+
+player 0
+
+
+ 
+body r_foot
+trig_id 3
+trig_mask 3
+trig_action 1
+
+body l_foot
+trig_id 3
+trig_mask 3
+trig_action 1
+
+
+body r_hand
+shape box
+sides 0.22 0.22 0.22
+alt_sides 0.2 0.2 0.2
+rot 0 0 0
+force 0 0 0
+color 1 1 1
+material flesh
+flag 32
+
+
+body l_hand
+shape box
+sides 0.22 0.22 0.22
+alt_sides 0.2 0.2 0.2
+rot 0 0 0
+force 0 0 0
+color 1 1 1
+material flesh
+flag 32
+
+body stomach
+force 0 -20 5
+body breast
+force 0 -20 5
+body chest
+force 0 -20 5
+body groin
+force 0 -20 5
+body r_pecs
+force 0 -10 5
+body l_pecs
+force 0 -10 5
+body r_thigh
+force 0 -10 5
+body l_thigh
+force 0 -10 5
+body l_leg
+force 0 -10 00
+body r_leg
+force 0 -10 00
+
+
+
+
+
+player 1 
+
+body r_hand
+shape box
+sides 0.22 0.22 0.22
+alt_sides 0.2 0.2 0.2
+rot 0 0 0
+force 0 0 0
+color 1 1 1
+material flesh
+flag 32
+
+
+body l_hand
+shape box
+sides 0.22 0.22 0.22
+alt_sides 0.2 0.2 0.2
+rot 0 0 0
+force 0 0 0
+color 1 1 1
+material flesh
+flag 32
+
+
+body stomach
+force 0 16 5
+body breast
+force 0 16 5
+body chest
+force 0 16 5
+body groin
+force 0 16 5
+body r_pecs
+force 0 16 5
+body l_pecs
+force 0 16 5
+body r_thigh
+force 0 16 5
+body l_thigh
+force 0 16 5
+body l_leg
+force 0 16 00
+body r_leg
+force 0 16 00
+
+
+
+
+env_obj 1
+    shape box
+    pos 0.5 3.4375 4.5375 
+    color 0.9 0.9 0.9 1
+    rot 0 0 0
+    sides 23 4.25 10 
+    material steel
+    mass 0.5
+    flag 24
+    trig_id 4
+trig_mask 3
+trig_action 1
+
+env_obj 2
+    shape box
+    pos 1 -9.25 29.625 
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 24 31.25 21 
+    material steel
+    mass 0.5
+    flag 24
+
+env_obj 3
+    shape box
+    pos 1 -24.5 7.5
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 24 0.75 15
+    material steel
+    friction 10
+    mass 0.5
+    flag 24
+
+env_obj 4
+    shape box
+    pos 8.6875 -9.25 27.375
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 8.625 31.25 25.5
+    material steel
+    friction 10
+    mass 0.5
+    flag 24
+
+
+   env_obj 5
+    shape box
+    pos 1 6 10 
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 24 0.75 20
+    material steel
+    friction 10
+    mass 0.5
+    flag 24
+
+env_obj 6
+    shape box
+    pos -6.8125 -24.5 10 
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 8.375 0.75 20
+    material steel
+    friction 10
+    mass 0.5
+    flag 24
+
+env_obj 7
+    shape box
+    pos 12.5 -9.25 7.6875 
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 1 31.25 15 
+    material steel
+    friction 10
+    mass 0.5
+    flag 24
+
+env_obj 8
+    shape box
+    pos -2.6875 -22 7.5
+    color 0.9 0.9 0.9 1
+    rot 0 0 0
+    sides 14.75 4.75 14.25 
+    material steel
+    friction 10
+    mass 0.5
+    flag 24
+
+env_obj 9
+    shape box
+    pos 0.5 -19.75 16.75 
+    color 0.9 0.9 0.9 0.9
+    rot 0 0 0
+    sides 21.5 0.5 0.5  
+    material steel
+    mass 0.5
+    flag 24
+
+env_obj 10
+    shape box
+    pos 0.25 -9.25 9.0625 
+    color 0.9 0.9 0.9 0.9
+    rot 90 0 0
+    sides 6.25 0.9375 21.1875   
+    material steel
+    mass 0.5
+    flag 24
+
+env_obj 11
+    shape box
+    pos 3.1875 -9.25 10 
+    color 0.9 0.9 0.9 1
+    rot 90 0 0
+    sides 0.375 1.5 21  
+    material steel
+    mass 0.5
+    flag 24
+
+
+#wintriggeR
+
+env_obj 12
+    shape box
+    pos -2.6875 -9.25 10 
+    color 0.9 0.9 0.9 1
+    rot 90 0 0
+    sides 0.375 1.5 21  
+    material steel
+    mass 0.5
+    flag 24
+
+env_obj 13
+    shape box
+    pos 0.25 -18 11.25 
+    color 0.7 0.7 0.7 0.9
+    rot 16 0 0
+    sides 4 4.75 4   
+    material steel
+    friction 0.8
+    mass 0.5
+    flag 24
+
+env_obj 14
+    shape box
+    pos 0.5 -12.5 14.25 
+    color 0.5 0.5 0.5 0.9
+    rot 0 0 0
+    sides 22.5 0.5 0.5    
+    material steel
+    mass 0.5
+    flag 8
+
+env_obj 15
+    shape cylinder
+    pos 3.1875 -8.75 10.75 
+    color 0 0 1 
+    rot 90 0 0
+    sides 0.0625 19.5 1  
+    material steel
+    friction 0.8
+    mass 0.5
+    flag 24
+
+env_obj 16
+    shape cylinder
+    pos -2.6875 -8.75 10.75 
+    color 0 0 1 
+    rot 90 0 0
+    sides 0.0625 19.5 1  
+    material steel
+    friction 0.8
+    mass 0.5
+    flag 24
+
+
+
+
+
+

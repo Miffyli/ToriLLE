@@ -1,0 +1,119 @@
+#!/usr/bin/toribash
+#### Created with ModEditor by DeFransen ####
+
+
+gamerule
+engageplayerpos 0
+   damage 0
+   dismemberment 1
+   dismemberthreshold 360
+   disqualification 1
+   dojosize 1200
+   dojotype 1
+   dqflag 0
+   dqtimeout 20
+   engagedistance 2000
+   engageheight 0
+   engagerotation 0
+   engagespace 0
+   flags 11
+   fracture 1
+   fracturethreshold 327
+   gravity 0 0 -30
+   matchframes 200
+   rpg 0
+   sumo 1
+   turnframes 25
+
+
+# for all players
+
+   body breast
+      force 0 25 0
+
+   body chest
+      force 0 25 0
+
+   body groin
+      force 0 25 0
+
+   body head
+      force 0 35 0
+
+   body l_biceps
+      force 0 10 0
+
+   body l_hand
+      force 0 10 0
+
+   body l_triceps
+      force 0 10 0
+
+   body r_biceps
+      force 0 10 0
+
+   body r_hand
+      force 0 10 0
+
+   body r_triceps
+      force 0 10 0
+
+   body stomach
+      force 0 10 0
+
+   joint l_elbow
+      axis 0 1 1
+
+   joint r_elbow
+      axis 0 1 1
+
+   joint r_wrist
+      range 0.1 -3
+      axis 0 1 0
+
+
+env_obj 1
+   color 0.53 0.47 0.5 1
+   flag 20
+   mass 0.001
+   pos -1 5.2 0.25
+   shape box
+   sides 1.5 0.05 0.002
+
+env_obj 2
+   color 0.15 0.15 0.15 1
+   mass 0.001
+   pos -0 5.2 0.25
+   shape box
+   sides 0.5 0.07 0.07
+
+env_obj 3
+   color 0.53 0.47 0.5 1
+   flag 20
+   mass 0.001
+   pos 3 -5.2 0.25
+   shape box
+   sides 1.5 0.05 0.002
+
+env_obj 4
+   color 0.15 0.15 0.15 1
+   mass 0.001
+   pos 2 -5.2 0.25
+   shape box
+   sides 0.5 0.07 0.07
+
+
+env_obj_joint 1 1 2
+   axis 0 0 0
+   pos -0.2 5.2 0.25
+   range 0 0
+   strength 5000
+   velocity 0
+
+env_obj_joint 2 3 4
+   axis 0 0 0
+   pos 2.2 -5.2 0.25
+   range 0 0
+   strength 5000
+   velocity 0
+

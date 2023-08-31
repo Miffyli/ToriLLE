@@ -1,0 +1,210 @@
+# A mod by: DoubleDagR
+######################################
+gravity 0 0 -30
+gamerule
+engageplayerpos 0
+engagedistance 275
+dojotype 0
+dojosize 1000
+matchframes 750
+turnframes 50
+
+joint r_wrist
+	axis 0 1 0
+	range 0.1 -1.45
+joint l_wrist
+	axis 0 1 0
+	range 0.1 -1.45
+
+env_obj 1
+    shape box
+    pos -0.4375 1.25 2.25
+    color 0.7 0 0 1
+    rot 0 0 0
+    sides 0.0625 0.0625 0.25
+    material steel
+    mass 0.00001
+    flag 0
+#END 1
+
+env_obj 2
+    shape sphere
+    pos -0.4375 1.25 2.09375
+    color 0.4 0.4 0.4 1
+    rot 0 0 0
+    sides 0.0625 0 0
+    material steel
+    mass 0.00001
+    flag 0
+#END 2
+
+env_obj 3
+    shape box
+    pos -0.4375 1.25 2.375
+    color 0.4 0.4 0.4 1
+    rot 0 0 0
+    sides 0.25 0.0625 0
+    material steel
+    mass 0.00001
+    flag 0
+#END 3
+
+env_obj 4
+    shape box
+    pos -0.4375 1.21875 2.525
+    color 0.6 0.6 0.6 1
+    rot 0 0 0
+    sides 0.0625 0 0.3
+    material steel
+    mass 0.00001
+    flag 0
+#END 4
+
+env_obj 5
+    shape box
+    pos -0.4375 1.28125  2.525
+    color 0.6 0.6 0.6 1
+    rot 0 0 0
+    sides 0.0625 0 0.3
+    material steel
+    mass 0.00001
+    flag 0
+#END 5
+
+env_obj 6
+    shape cylinder
+    pos -0.4375 1.25  2.525
+    color 0.6 0.6 0.6 1
+    rot 0 0 0
+    sides 0.0025 0.275 0
+    material steel
+    mass 0.00001
+    flag 6
+#END 6
+
+env_obj 7
+    shape cylinder
+    pos 2.4375 -1.45  2.525
+    color 0.6 0.6 0.6 1
+    rot 0 0 0
+    sides 0.0025 0.275 0
+    material steel
+    mass 0.00001
+    flag 6
+#END 7
+
+env_obj 8
+    shape box
+    pos 2.4375 -1.45 2.25
+    color 0 0.7 1 1
+    rot 0 0 0
+    sides 0.0625 0.0625 0.25
+    material steel
+    mass 0.00001
+    flag 0
+#END 8
+
+env_obj 9
+    shape sphere
+    pos 2.4375 -1.45 2.09375
+    color 0.4 0.4 0.4 1
+    rot 0 0 0
+    sides 0.0625 0 0
+    material steel
+    mass 0.00001
+    flag 0
+#END 9
+
+env_obj 10
+    shape box
+    pos 2.4375 -1.45 2.375
+    color 0.4 0.4 0.4 1
+    rot 0 0 0
+    sides 0.25 0.0625 0
+    material steel
+    mass 0.00001
+    flag 0
+#END 10
+
+env_obj 11
+    shape box
+    pos 2.4375 -1.41875  2.525
+    color 0.6 0.6 0.6 1
+    rot 0 0 0
+    sides 0.0625 0 0.3
+    material steel
+    mass 0.00001
+    flag 0
+#END 11
+
+env_obj 12
+    shape box
+    pos 2.4375 -1.48125  2.525
+    color 0.6 0.6 0.6 1
+    rot 0 0 0
+    sides 0.0625 0 0.3
+    material steel
+    mass 0.00001
+    flag 0
+#END 12
+
+
+env_obj_joint 1 1 2
+    pos -0.4375 1.25 2.125
+    axis 0 1 0
+    range 0 0
+    mass 0.00001
+
+env_obj_joint 2 1 3
+    pos -0.4375 1.25 2.375
+    axis 0 1 0
+    range 0 0
+    mass 0.00001
+
+env_obj_joint 3 3 4
+    pos -0.4375 1.21875 2.375
+    axis 0 1 0
+    range 0 0
+    mass 0.00001
+
+env_obj_joint 4 3 5
+    pos -0.4375 1.28125 2.375
+    axis 0 1 0
+    range 0 0
+    mass 0.00001
+
+env_obj_joint 5 3 6
+    pos -0.4375 1.25 2.375
+    axis 0 1 0
+    range 0 0
+    mass 0.00001
+
+env_obj_joint 6 8 9
+    pos -0.4375 -1.45 2.125
+    axis 0 1 0
+    range 0 0
+    mass 0.00001
+
+env_obj_joint 7 8 10
+    pos -0.4375 -1.45 2.375
+    axis 0 1 0
+    range 0 0
+    mass 0.00001
+
+env_obj_joint 8 7 10
+    pos -0.4375 -1.45 2.375
+    axis 0 1 0
+    range 0 0
+    mass 0.00001
+
+env_obj_joint 9 10 11
+    pos -0.4375 -1.41875 2.375
+    axis 0 1 0
+    range 0 0
+    mass 0.00001
+
+env_obj_joint 10 10 12
+    pos -0.4375 -1.48125 2.375
+    axis 0 1 0
+    range 0 0
+    mass 0.00001

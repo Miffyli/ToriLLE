@@ -1,0 +1,786 @@
+#!/usr/bin/toribash
+version 12
+gamerule
+   matchframes 500
+   turnframes 10
+   flags 2
+   dismemberment 1
+   fracture 0
+   disqualification 0
+   dqtimeout 0
+   dqflag 0
+   dismemberthreshold 100
+   fracturethreshold 0
+   pointthreshold 0
+   dojotype 0
+   dojosize 0
+   engagedistance 100
+   engageheight 0
+   engagerotation 0
+   engagespace 0
+   engageplayerpos 
+   engageplayerrot 0,0,0,0,0,0
+   damage 0
+   gravity 0.00 0.00 -30.00
+   sumo 0
+   reactiontime 15
+   drawwinner 0
+   maxcontacts 8
+player 0
+   body head
+      sides 0.19 0.00 0.00
+      pos 1.00 0.85 2.10
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 100
+   body breast
+      sides 0.20 0.10 0.30
+      pos 1.00 0.90 1.68
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 70
+   body chest
+      sides 0.40 0.09 0.20
+      pos 1.00 0.93 1.48
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 50
+   body stomach
+      sides 0.30 0.09 0.17
+      pos 1.00 0.98 1.29
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 50
+   body groin
+      sides 0.15 0.14 0.18
+      pos 1.00 1.00 1.12
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 90
+   body r_pecs
+      sides 0.15 0.10 0.15
+      pos 0.75 0.90 1.70
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 15
+   body r_biceps
+      sides 0.30 0.15 0.15
+      pos 0.60 0.90 1.80
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body r_triceps
+      sides 0.30 0.07 0.07
+      pos 0.20 0.90 1.80
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body l_pecs
+      sides 0.15 0.09 0.15
+      pos 1.25 0.90 1.70
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 15
+   body l_biceps
+      sides 0.30 0.15 0.15
+      pos 1.45 0.90 1.80
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body l_triceps
+      sides 0.30 0.07 0.07
+      pos 1.80 0.90 1.80
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body r_hand
+      sides 0.17 0.17 0.17
+      alt_sides 0.30 0.10 0.15
+      pos -0.13 0.85 1.80
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 6
+      point_hit 0
+   body l_hand
+      sides 0.17 0.17 0.17
+      alt_sides 0.30 0.10 0.15
+      pos 2.13 0.85 1.80
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 6
+      point_hit 0
+   body r_butt
+      sides 0.10 0.10 0.10
+      pos 0.85 1.00 1.05
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 15
+   body l_butt
+      sides 0.10 0.10 0.10
+      pos 1.15 1.00 1.05
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 15
+   body r_thigh
+      sides 0.10 0.15 0.00
+      pos 0.85 1.00 0.79
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body l_thigh
+      sides 0.10 0.15 0.20
+      pos 1.15 1.00 0.79
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body l_leg
+      sides 0.10 0.15 0.00
+      pos 1.15 1.00 0.39
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body r_leg
+      sides 0.10 0.15 0.00
+      pos 0.85 1.00 0.39
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body r_foot
+      sides 0.18 0.40 0.08
+      pos 0.85 0.90 0.10
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      trig_id 2
+      trig_mask 1
+      trig_action 0
+      trig_sound 0
+      point_hit 0
+   body l_foot
+      sides 0.18 0.40 0.08
+      pos 1.15 0.90 0.10
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      trig_id 1
+      trig_mask 2
+      trig_action 0
+      trig_sound 0
+      point_hit 0
+   joint neck
+      radius 0.11
+      pos 1.00 0.90 1.96
+      axis 1.00 0.00 0.00
+      range 0.50 -0.50
+      strength 1.00
+      velocity 50.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 15000
+   joint chest
+      radius 0.16
+      pos 1.00 0.90 1.58
+      axis 0.00 0.00 1.00
+      range 1.00 -1.00
+      strength 4.00
+      velocity 20.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint lumbar
+      radius 0.14
+      pos 1.00 0.95 1.39
+      axis 0.00 1.00 0.00
+      range 0.50 -0.50
+      strength 3.00
+      velocity 5.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint abs
+      radius 0.12
+      pos 1.00 1.00 1.18
+      axis 1.00 0.00 0.00
+      range 0.40 -0.60
+      strength 3.00
+      velocity 5.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint r_pecs
+      radius 0.15
+      pos 0.87 0.85 1.71
+      axis 0.00 0.00 1.00
+      range 1.50 -0.70
+      strength 3.00
+      velocity 15.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint r_shoulder
+      radius 0.14
+      pos 0.75 0.90 1.80
+      axis 0.00 1.00 0.00
+      range 1.20 -1.20
+      strength 4.00
+      velocity 20.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint r_elbow
+      radius 0.12
+      pos 0.40 0.90 1.80
+      axis 0.00 0.00 1.00
+      range 2.30 0.05
+      strength 2.00
+      velocity 40.00
+      dm_threshold -1
+      point_hit 0
+      point_dm 5000
+   joint l_pecs
+      radius 0.15
+      pos 1.13 0.85 1.71
+      axis 0.00 0.00 1.00
+      range 1.50 -0.70
+      strength 3.00
+      velocity 15.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint l_shoulder
+      radius 0.14
+      pos 1.25 0.90 1.80
+      axis 0.00 1.00 0.00
+      range 1.20 -1.20
+      strength 4.00
+      velocity 20.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint l_elbow
+      radius 0.12
+      pos 1.60 0.90 1.80
+      axis 0.00 0.00 1.00
+      range 2.30 0.05
+      strength 2.00
+      velocity 40.00
+      dm_threshold -1
+      point_hit 0
+      point_dm 5000
+   joint r_wrist
+      radius 0.09
+      pos 0.00 0.90 1.80
+      axis 0.00 0.00 1.00
+      range 2.00 -0.30
+      strength 2.00
+      velocity 60.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 2000
+   joint l_wrist
+      radius 0.09
+      pos 2.00 0.90 1.80
+      axis 0.00 0.00 1.00
+      range 2.00 -0.30
+      strength 2.00
+      velocity 60.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 2000
+   joint r_glute
+      radius 0.14
+      pos 0.90 1.10 1.10
+      axis 0.00 1.00 0.00
+      range 1.20 -0.20
+      strength 4.00
+      velocity 10.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint l_glute
+      radius 0.14
+      pos 1.10 1.10 1.10
+      axis 0.00 1.00 0.00
+      range 1.20 -0.20
+      strength 4.00
+      velocity 10.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint r_hip
+      radius 0.13
+      pos 0.84 1.00 1.00
+      axis 1.00 0.00 0.00
+      range 1.00 -1.80
+      strength 2.00
+      velocity 12.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint l_hip
+      radius 0.13
+      pos 1.16 1.00 1.00
+      axis 1.00 0.00 0.00
+      range 1.00 -1.80
+      strength 2.00
+      velocity 12.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint r_knee
+      radius 0.12
+      pos 0.85 1.00 0.58
+      axis 1.00 0.00 0.00
+      range 2.30 0.00
+      strength 4.00
+      velocity 40.00
+      dm_threshold -1
+      point_hit 0
+      point_dm 5000
+   joint l_knee
+      radius 0.12
+      pos 1.15 1.00 0.58
+      axis 1.00 0.00 0.00
+      range 2.30 0.00
+      strength 4.00
+      velocity 40.00
+      dm_threshold -1
+      point_hit 0
+      point_dm 5000
+   joint r_ankle
+      radius 0.09
+      pos 0.85 1.05 0.23
+      axis 1.00 0.00 0.00
+      range 1.10 -0.30
+      strength 1.00
+      velocity 8.00
+      dm_threshold -1
+      point_hit 10
+      point_dm 5000
+   joint l_ankle
+      radius 0.09
+      pos 1.15 1.05 0.23
+      axis 1.00 0.00 0.00
+      range 1.10 -0.30
+      strength 1.00
+      velocity 8.00
+      dm_threshold -1
+      point_hit 10
+      point_dm 5000
+player 1
+   body head
+      sides 0.19 0.00 0.00
+      pos 1.00 0.85 2.10
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 100
+   body breast
+      sides 0.20 0.10 0.30
+      pos 1.00 0.90 1.68
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 70
+   body chest
+      sides 0.40 0.09 0.20
+      pos 1.00 0.93 1.48
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 50
+   body stomach
+      sides 0.30 0.09 0.17
+      pos 1.00 0.98 1.29
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 50
+   body groin
+      sides 0.15 0.14 0.18
+      pos 1.00 1.00 1.12
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 90
+   body r_pecs
+      sides 0.15 0.10 0.15
+      pos 0.75 0.90 1.70
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 15
+   body r_biceps
+      sides 0.30 0.15 0.15
+      pos 0.60 0.90 1.80
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body r_triceps
+      sides 0.30 0.07 0.07
+      pos 0.20 0.90 1.80
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body l_pecs
+      sides 0.15 0.09 0.15
+      pos 1.25 0.90 1.70
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 15
+   body l_biceps
+      sides 0.30 0.15 0.15
+      pos 1.45 0.90 1.80
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body l_triceps
+      sides 0.30 0.07 0.07
+      pos 1.80 0.90 1.80
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body r_hand
+      sides 0.17 0.17 0.17
+      alt_sides 0.30 0.10 0.15
+      pos -0.13 0.85 1.80
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 6
+      point_hit 0
+   body l_hand
+      sides 0.17 0.17 0.17
+      alt_sides 0.30 0.10 0.15
+      pos 2.13 0.85 1.80
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 6
+      point_hit 0
+   body r_butt
+      sides 0.10 0.10 0.10
+      pos 0.85 1.00 1.05
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 15
+   body l_butt
+      sides 0.10 0.10 0.10
+      pos 1.15 1.00 1.05
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 15
+   body r_thigh
+      sides 0.10 0.15 0.00
+      pos 0.85 1.00 0.79
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body l_thigh
+      sides 0.10 0.15 0.20
+      pos 1.15 1.00 0.79
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body l_leg
+      sides 0.10 0.15 0.00
+      pos 1.15 1.00 0.39
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body r_leg
+      sides 0.10 0.15 0.00
+      pos 0.85 1.00 0.39
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      point_hit 20
+   body r_foot
+      sides 0.18 0.40 0.08
+      pos 0.85 0.90 0.10
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      trig_id 2
+      trig_mask 1
+      trig_action 0
+      trig_sound 0
+      point_hit 0
+   body l_foot
+      sides 0.18 0.40 0.08
+      pos 1.15 0.90 0.10
+      rot 0.00 0.00 0.00
+      density 0.2500
+      force 0.00 0.00 0.00
+      flag 0
+      trig_id 1
+      trig_mask 2
+      trig_action 0
+      trig_sound 0
+      point_hit 0
+   joint neck
+      radius 0.11
+      pos 1.00 0.90 1.96
+      axis 1.00 0.00 0.00
+      range 0.50 -0.50
+      strength 1.00
+      velocity 50.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 15000
+   joint chest
+      radius 0.16
+      pos 1.00 0.90 1.58
+      axis 0.00 0.00 1.00
+      range 1.00 -1.00
+      strength 4.00
+      velocity 20.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint lumbar
+      radius 0.14
+      pos 1.00 0.95 1.39
+      axis 0.00 1.00 0.00
+      range 0.50 -0.50
+      strength 3.00
+      velocity 5.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint abs
+      radius 0.12
+      pos 1.00 1.00 1.18
+      axis 1.00 0.00 0.00
+      range 0.40 -0.60
+      strength 3.00
+      velocity 5.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint r_pecs
+      radius 0.15
+      pos 0.87 0.85 1.71
+      axis 0.00 0.00 1.00
+      range 1.50 -0.70
+      strength 3.00
+      velocity 15.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint r_shoulder
+      radius 0.14
+      pos 0.75 0.90 1.80
+      axis 0.00 1.00 0.00
+      range 1.20 -1.20
+      strength 4.00
+      velocity 20.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint r_elbow
+      radius 0.12
+      pos 0.40 0.90 1.80
+      axis 0.00 0.00 1.00
+      range 2.30 0.05
+      strength 2.00
+      velocity 40.00
+      dm_threshold -1
+      point_hit 0
+      point_dm 5000
+   joint l_pecs
+      radius 0.15
+      pos 1.13 0.85 1.71
+      axis 0.00 0.00 1.00
+      range 1.50 -0.70
+      strength 3.00
+      velocity 15.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint l_shoulder
+      radius 0.14
+      pos 1.25 0.90 1.80
+      axis 0.00 1.00 0.00
+      range 1.20 -1.20
+      strength 4.00
+      velocity 20.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint l_elbow
+      radius 0.12
+      pos 1.60 0.90 1.80
+      axis 0.00 0.00 1.00
+      range 2.30 0.05
+      strength 2.00
+      velocity 40.00
+      dm_threshold -1
+      point_hit 0
+      point_dm 5000
+   joint r_wrist
+      radius 0.09
+      pos 0.00 0.90 1.80
+      axis 0.00 0.00 1.00
+      range 2.00 -0.30
+      strength 2.00
+      velocity 60.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 2000
+   joint l_wrist
+      radius 0.09
+      pos 2.00 0.90 1.80
+      axis 0.00 0.00 1.00
+      range 2.00 -0.30
+      strength 2.00
+      velocity 60.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 2000
+   joint r_glute
+      radius 0.14
+      pos 0.90 1.10 1.10
+      axis 0.00 1.00 0.00
+      range 1.20 -0.20
+      strength 4.00
+      velocity 10.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint l_glute
+      radius 0.14
+      pos 1.10 1.10 1.10
+      axis 0.00 1.00 0.00
+      range 1.20 -0.20
+      strength 4.00
+      velocity 10.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint r_hip
+      radius 0.13
+      pos 0.84 1.00 1.00
+      axis 1.00 0.00 0.00
+      range 1.00 -1.80
+      strength 2.00
+      velocity 12.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint l_hip
+      radius 0.13
+      pos 1.16 1.00 1.00
+      axis 1.00 0.00 0.00
+      range 1.00 -1.80
+      strength 2.00
+      velocity 12.00
+      dm_threshold -1
+      point_hit 40
+      point_dm 5000
+   joint r_knee
+      radius 0.12
+      pos 0.85 1.00 0.58
+      axis 1.00 0.00 0.00
+      range 2.30 0.00
+      strength 4.00
+      velocity 40.00
+      dm_threshold -1
+      point_hit 0
+      point_dm 5000
+   joint l_knee
+      radius 0.12
+      pos 1.15 1.00 0.58
+      axis 1.00 0.00 0.00
+      range 2.30 0.00
+      strength 4.00
+      velocity 40.00
+      dm_threshold -1
+      point_hit 0
+      point_dm 5000
+   joint r_ankle
+      radius 0.09
+      pos 0.85 1.05 0.23
+      axis 1.00 0.00 0.00
+      range 1.10 -0.30
+      strength 1.00
+      velocity 8.00
+      dm_threshold -1
+      point_hit 10
+      point_dm 5000
+   joint l_ankle
+      radius 0.09
+      pos 1.15 1.05 0.23
+      axis 1.00 0.00 0.00
+      range 1.10 -0.30
+      strength 1.00
+      velocity 8.00
+      dm_threshold -1
+      point_hit 10
+      point_dm 5000

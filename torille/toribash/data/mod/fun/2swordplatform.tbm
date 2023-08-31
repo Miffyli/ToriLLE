@@ -1,0 +1,102 @@
+#!/usr/bin/toribash
+
+# Environment exported by WorldBuilder
+######################################
+#2swords
+
+gamerule
+engageplayerpos 0
+gravity 0.00 0.00 -15.00
+engagedistance 1100
+engageheight 750
+dismemberthreshold 325
+dismember 0
+fracture 0
+fracturethreshold 250
+matchframes 750
+turnframes 50
+dojosize 1000
+dojotype 0
+dq 1
+sumo 1
+flags 2
+
+body r_hand
+	sides 1.8 0.008 0.008
+	pos -0.6 0.9 2.3
+	color 100 100 100
+	flag 6
+body l_hand
+	sides 1.8 0.008 0.008
+	pos 2.6 0.9 2.3
+	color 100 100 100
+	flag 6
+
+body r_foot
+        flag 6
+
+body l_foot
+        flag 6
+
+body r_triceps
+   sides 0.400000 0.130000 0.130000
+   flag 2
+
+body l_triceps
+   sides 0.400000 0.130000 0.130000
+   flag 2
+
+body r_leg
+   sides 0.160000 0.300000 0.000000
+        flag 2
+
+body l_leg
+   sides 0.160000 0.300000 0.000000
+        flag 2
+engagedistance
+
+env_obj 1
+    shape box
+    pos 1 -5.75 3.75
+    color 0 0 0 1.1
+    rot 0 0 0
+    sides 0.5 0.5 7.5
+    material steel
+    mass 0.1
+    flag 8
+#END 1
+
+env_obj 2
+    shape box
+    pos 1 5.5 3.75
+    color 0 0 0 1.1
+    rot 0 0 0
+    sides 0.5 0.5 7.5
+    material steel
+    mass 0.1
+    flag 8
+#END 2
+
+env_obj 3
+    shape box
+    pos 1 -0.25 0.25
+    color 0.7 0 0 1.1
+    rot 0 0 0
+    sides 10.5 12.25 0.25
+    material steel
+    mass 0.1
+    flag 30
+#END 3
+
+env_obj 4
+    shape box
+    pos 1 -0.25 3.25
+    color 1.1 1.1 1.1 1.1
+    rot 0 0 0
+    sides 5.25 5.25 0.25
+    material steel
+    mass 0.1
+    flag 8
+#END 4
+
+

@@ -1,0 +1,112 @@
+#FreerunMP3.tbm
+#Mod By Sny
+
+gamerule
+gravity 0 0 -30
+engagedistance 100
+engageplayerpos 1.00,18.00,15,-3.00,18.00,15.0
+matchframes 2000
+turnframes 10
+dismemberthreshold 300
+dojotype 0
+dojosize 1
+flags 2
+
+env_obj 1
+    shape box
+    pos 0 15 7.5
+    color 1 1 0
+    rot 0 0 0
+    sides 8 10 15
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 2
+    shape box
+    pos 0 6 12.1
+    color 1 1 0
+    rot -30 0 0
+    sides 8 10 1
+    material steel
+    mass 0.1
+    flag 24
+#END 2
+
+env_obj 3
+    shape box
+    pos 0 -13 11
+    color 1 1 0
+    rot 20 0 0
+    sides 8 10 1
+    material steel
+    mass 0.1
+    flag 24
+#END 3
+
+env_obj 4
+    shape cylinder
+    pos 0 -4 13
+    color 1 0 0 0.7
+    rot 90 0 0
+    sides 0.2 8 0.2
+    material steel
+    mass 0.1
+    flag 8
+#END 4
+
+env_obj 5
+    shape box
+    pos 0 -17.75 6.75
+    color 1 1 0
+    rot 0 0 0
+    sides 8 1 13.5
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 6
+    shape box
+    pos 0 -23 13
+    color 1 1 0
+    rot 0 0 0
+    sides 8 1 13.5
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 7
+    shape box
+    pos 0 -23 0.5
+    color 1 1 0
+    rot 0 0 0
+    sides 8 10 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 8
+    shape box
+    pos 0 -28 4
+    color 1 0 0 0.7
+    rot 0 0 0
+    sides 8 1 8
+    material steel
+    mass 0.1
+    flag 8
+#END 1
+
+env_obj 9
+    shape box
+    pos 0 -32.5 7.5 
+    color 1 1 0
+    rot 0 0 0
+    sides 8 10 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1

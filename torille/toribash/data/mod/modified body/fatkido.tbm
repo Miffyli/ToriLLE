@@ -1,0 +1,168 @@
+#!/usr/bin/toribash
+#### Created with ModEditor by DeFransen ####
+
+
+gamerule
+engageplayerpos 0
+   damage 0
+   dismemberment 1
+   dismemberthreshold 325
+   disqualification 1
+   dojosize 450
+   dojotype 0
+   dqflag 0
+   dqtimeout 0
+   engagedistance 90
+   engageheight 0
+   engagerotation 0
+   engagespace 0
+   flags 11
+   fracture 1
+   fracturethreshold 200
+   gravity 0 0 -30
+   matchframes 350
+   rpg 0
+   sumo 1
+   turnframes 10,20,20,30,30,35,35,40,40,40,50
+
+
+# for all players
+
+   body breast
+      pos 1 0.9 2.5
+
+   body chest
+      pos 1 0.9 2.2
+      sides 0.6 0.15 0.26
+
+   body groin
+      pos 1 1 1.6
+
+   body head
+      pos 1 0.85 2.9
+      sides 0.16 0 0
+
+   body l_biceps
+      pos 1.55 0.9 2.6
+      sides 0.4 0.25 0.25
+
+   body l_foot
+      pos 1.4 0.9 0.1
+
+   body l_hand
+      pos 2.35 0.85 2.6
+
+   body l_leg
+      pos 1.4 1 0.5
+
+   body l_pecs
+      pos 1.25 0.9 2.5
+
+   body l_thigh
+      pos 1.4 1 1.1
+      sides 0.19 0.3 0.2
+
+   body l_triceps
+      pos 1.95 0.9 2.6
+
+   body r_biceps
+      pos 0.45 0.9 2.6
+      sides 0.4 0.25 0.25
+
+   body r_foot
+      pos 0.6 0.9 0.1
+
+   body r_hand
+      pos -0.35 0.85 2.6
+
+   body r_leg
+      pos 0.6 1 0.5
+
+   body r_pecs
+      pos 0.75 0.9 2.5
+
+   body r_thigh
+      pos 0.6 1 1.1
+      sides 0.19 0.3 0
+
+   body r_triceps
+      pos 0.05 0.9 2.6
+
+   body stomach
+      pos 1 0.95 1.9
+      sides 0.5 0.1 0.2
+
+   joint abs
+      radius 0.4
+      pos 1 0.9 1.8
+
+   joint chest
+      radius 0.24
+      pos 1 0.9 2.3
+
+   joint l_ankle
+      pos 1.4 1.05 0.25
+
+   joint l_elbow
+      pos 1.75 0.9 2.6
+
+   joint l_glute
+      radius 0.3
+      pos 1.2 1.1 1.51
+
+   joint l_hip
+      radius 0.2
+      pos 1.4 1 1.4
+
+   joint l_knee
+      radius 0.16
+      pos 1.4 1 0.8
+
+   joint l_pecs
+      pos 1.15 0.85 2.5
+
+   joint l_shoulder
+      radius 0.19
+      pos 1.35 0.9 2.6
+
+   joint l_wrist
+      pos 2.2 0.9 2.6
+
+   joint lumbar
+      radius 0.28
+      pos 1 0.9 2.15
+
+   joint neck
+      pos 1 0.9 2.74
+
+   joint r_ankle
+      pos 0.6 1.05 0.25
+
+   joint r_elbow
+      radius 0.185
+      pos 0.25 0.9 2.6
+
+   joint r_glute
+      radius 0.3
+      pos 0.8 1.1 1.51
+
+   joint r_hip
+      radius 0.2
+      pos 0.6 1 1.4
+
+   joint r_knee
+      radius 0.16
+      pos 0.6 1 0.8
+
+   joint r_pecs
+      pos 0.85 0.85 2.5
+
+   joint r_shoulder
+      radius 0.19
+      pos 0.65 0.9 2.6
+
+   joint r_wrist
+      pos -0.2 0.9 2.6
+
+
+

@@ -1,0 +1,144 @@
+# Environment exported by WorldBuilder
+######################################
+
+env_obj 1
+    shape box
+    pos 2 -4 0.25
+    color 1.1 1.1 1.1 1.1
+    rot 0 0 0
+    sides 3.5 13.75 0.5
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 2
+    shape box
+    pos 2 -11.25 0.75
+    color 1.1 -0.1 -0.1 1.1
+    rot 16 0 0
+    sides 3 3.25 0.25
+    material steel
+    mass 0.1
+    flag 24
+#END 2
+
+env_obj 3
+    shape box
+    pos 2 -18 0.75
+    color 1.1 -0.1 -0.1 1.1
+    rot 168 0 0
+    sides 3 3.25 0.25
+    material steel
+    mass 0.1
+    flag 24
+#END 3
+
+env_obj 4
+    shape box
+    pos 2 -22.75 0.25
+    color 1.1 1.1 1.1 1.1
+    rot 0 0 0
+    sides 3 8 0.5
+    material steel
+    mass 0.1
+    flag 24
+#END 4
+
+env_obj 5
+    shape box
+    pos 2 -28.25 1
+    color 1.1 1.1 1.1 1.1
+    rot 16 0 0
+    sides 3 4.25 0.25
+    material steel
+    mass 0.1
+    flag 24
+#END 5
+
+env_obj 6
+    shape box
+    pos 2 -32.5 0.75
+    color 1.1 1.1 1.1 1.1
+    rot 0 0 0
+    sides 3 4.5 1.5
+    material steel
+    mass 0.1
+    flag 24
+#END 6
+
+env_obj 7
+    shape box
+    pos 2 -43.25 0.75
+    color 1.1 1.1 1.1 1.1
+    rot 0 0 0
+    sides 3 7.25 1.5
+    material steel
+    mass 0.1
+    flag 24
+#END 7
+
+env_obj 8
+    shape cylinder
+    pos 2 -36.25 2.5
+    color 1.1 -0.1 -0.1 1.1
+    rot 72 88 0
+    sides 0.25 2.5 0.75
+    material steel
+    mass 0.1
+    flag 8
+#END 8
+
+env_obj 9
+    shape cylinder
+    pos 2 -38.25 2.5
+    color 1.1 -0.1 -0.1 1.1
+    rot 72 88 0
+    sides 0.25 2.5 0.75
+    material steel
+    mass 0.1
+    flag 8
+#END 9
+
+env_obj 10
+    shape box
+    pos 2 -54 0.75
+    color 1.1 1.1 1.1 1.1
+    rot 0 0 0
+    sides 3 6 1.5
+    material steel
+    mass 0.1
+    flag 24
+#END 10
+
+env_obj 11
+    shape box
+    pos 0.25 -49 2
+    color 1.1 -0.1 -0.1 1.1
+    rot 0 120 0
+    sides 1.5 4.5 0.5
+    material steel
+    mass 0.1
+    flag 24
+#END 11
+
+env_obj 12
+    shape box
+    pos 3.75 -49 2
+    color 1.1 -0.1 -0.1 1.1
+    rot 0 236 0
+    sides 1.5 4.5 0.5
+    material steel
+    mass 0.1
+    flag 24
+#END 12
+TeamworkParkour mod by: CharredLightning
+gamerule
+gravity 0 0 -30
+engagedistance 200
+engageplayerpos 1.00,2.00,0.50,1.00,0.00,0.50
+matchframes 2000
+turnframes 10
+dojotype 0
+dojosize 1
+flags 2

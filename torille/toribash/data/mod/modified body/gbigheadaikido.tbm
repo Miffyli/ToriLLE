@@ -1,0 +1,23 @@
+Tourney Mod, combining Aikido and Bighead mod - Adapted by Gman80
+
+########
+gamerule
+engageplayerpos 0
+gravity 0.00 0.00 -9.00
+engagedistance 100
+dismemberthreshold 325
+dismember 1
+fracture 1
+fracturethreshold 200
+matchframes 350
+turnframes 10,20,20,30,30,35,35,40,40,40,50
+dojosize 210
+dojotype 1
+dq 1
+sumo 1
+flags 11
+
+#########
+body head
+pos 1.0 0.85 2.80
+sides 0.35 0.22 0.22

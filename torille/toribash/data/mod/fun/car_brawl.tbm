@@ -1,0 +1,354 @@
+# Mod by blkk
+# template from jousting 
+
+gamerule
+engageplayerpos 2,0,1,-2,0,1
+dismemberthreshold 100
+gravity 0 -10 -10
+dojosise 1
+
+player 0
+body stomach 
+	force -10 0 -5
+body breast
+	force -10 0 -5
+body chest
+	force -10 0 
+-5
+body groin
+	force -10 0 -5
+body r_pecs
+	force -10 0 -5
+body l_pecs
+	force -10 0 -5
+body r_biceps   force -10 0 -15
+body l_biceps	force -10 0 -15
+body r_triceps	force -10 0 -15
+body l_triceps	force -10 0 -15
+body l_hand	force -10 0 -15
+body r_hand	force -10 0 -15
+body r_thigh
+	force -10 0 -5
+body l_thigh
+	force -10 0 -5
+body l_leg
+	force -10 0 -5
+body r_leg
+	force -10 0 -5
+
+player 1
+
+body stomach 
+	force 10 0 -5
+body breast
+	force 10 0 -5
+body chest
+	force 10 0 
+-5
+body groin
+	force 10 0 -5
+body r_pecs
+	force 10 0 -5
+body l_pecs
+	force 10 0 -5
+body r_biceps   force 10 0 -15
+body l_biceps	force 10 0 -15
+body r_triceps	force 10 0 -15
+body l_triceps	force 10 0 -15
+body l_hand	force 10 0 -15
+body r_hand	force 10 0 -15
+body r_thigh
+	force 10 0 -5
+body l_thigh
+	force 10 0 -5
+body l_leg
+	force 10 0 -5
+body r_leg
+	force 10 0 -5 
+
+# Environment exported by WorldBuilder
+######################################
+
+#FLOOR
+env_obj 1
+    shape box
+    pos 1 0.25 0.5
+    color 0 0 1 1
+    rot 0 0 0
+    sides 3.75 7.75 0.25
+    material steel
+    mass 0.001
+    flag 16
+#END 1
+
+#FRONT
+env_obj 2
+    shape box
+    pos 1 -2.5 1.125
+    color 0 0 1 1
+    rot 0 0 0
+    sides 3.75 2.25 1
+    material steel
+    mass 0.001
+    flag 16
+    friction 2
+#END 2
+
+#BACK
+env_obj 3
+    shape box
+    pos 1 2.75 1.25
+    color 0 0 1 1
+    rot 0 0 0
+    sides 3.75 2.25 1.25
+    material steel
+    mass 0.001
+    flag 16
+    bounce 10
+#END 3
+
+#WINDSHEILD
+env_obj 4
+    shape box
+    pos 1 -1.125 2.125
+    color 0 0 1 0.2
+    rot 35 0 0
+    sides 3.75 0.0625 1.25
+    material steel
+    mass 0.001
+    flag 6
+    bounce 60
+#END 4
+
+#SEAT
+env_obj 5
+    shape box
+    pos 1 1 1
+    color 0 0 1 1
+    rot 0 0 0
+    sides 3.5 1.25 0.8125
+    material steel
+    mass 0.001
+    flag 16
+    friction 1
+#END 5
+
+#RIGHT HAND DOOR
+env_obj 6
+    shape box
+    pos -2 -0.5 1.125
+    color 1 0 0 1
+    rot 0 0 -52
+    sides 0.125 2.75 1
+    material steel
+    mass 0.001
+    flag 16
+    friction 4
+#END 6
+
+LEFT HAND DOOR
+env_obj 7
+    shape box
+    pos 4 -0.5 1.125
+    color 1 0 0 1
+    rot 0 0 52
+    sides 0.125 2.75 1
+    material steel
+    mass 0.001
+    flag 16
+    friction 4
+#END 7
+
+#FRONT RIGHT
+env_obj 8
+    shape sphere
+    pos -1.5 -3 0.75
+    color 0 0 0 1
+    rot 0 0 0
+    sides 0.75 1 1
+    material steel
+    mass 0.1
+    flag 16
+    thrust 1 0 0 -10
+#END 8
+
+#SEAT REST
+env_obj 9
+    shape box
+    pos 1 1.5 2.0625
+    color 0 0 1 1
+    rot 15 -1 0
+    sides 3.75 0.125 1.125
+    material steel
+    mass 0.001
+    flag 16
+    friction 0
+#END 9
+
+#RIGHT BACK
+env_obj 10
+    shape sphere
+    pos -1.5 3.25 0.75
+    color 0 0 0 1
+    rot 0 0 0
+    sides 0.75 1 1
+    material steel
+    mass 0.01
+    flag 16
+    thrust 1 0 0 -10
+#END 10
+
+#LEFT BACK
+env_obj 11
+    shape sphere
+    pos 3.5 3.25 0.75
+    color 0 0 0 1
+    rot 0 0 0
+    sides 0.75 1 1
+    material steel
+    mass 0.01
+    flag 16
+    thrust 1 0 0 -10
+#END 11
+
+#FRONT LEFT
+env_obj 12
+    shape sphere
+    pos 3.5 -3 0.75
+    color 0 0 0 1
+    rot 0 0 0
+    sides 0.75 1 1
+    material steel
+    mass 0.1
+    flag 16
+    thrust 1 0 0 -10
+#END 12
+
+#env_obj 13
+#    shape box
+#    pos 1 -100 3
+#    color 1 0 1 1
+#    rot 10 0 0
+#    sides 10 50 1
+#    material steel
+#    mass 0.1
+#    flag 30
+#END 12
+
+#env_obj 14
+#    shape box
+#    pos 1 -200 50
+#    color 1 0 1 1
+#    rot 0 0 0
+#    sides 25 1 100
+#    material steel
+#    mass 0.1
+#    flag 30
+#END 12
+
+
+
+##############################JOINTS#####################
+
+#DOOR HINGE
+env_obj_joint 1 2 7
+pos 2.875 -1.375 1.127
+visible 0
+axis 0 0 1
+range 1 -1
+strength 3
+velocity -10
+
+
+env_obj_joint 2 2 6
+pos -0.875 -1.375 1.127
+visible 0
+axis 0 0 1
+range 1 -1
+strength 3
+velocity 10
+
+#WHEELS
+env_obj_joint 3 1 8
+pos -1.5 -3 0.75
+visible 0
+axis 1 0 0
+range 10 -10
+strength 3
+velocity -1000
+
+env_obj_joint 4 1 10
+pos -1.5 3.25 0.75
+visible 0
+axis 1 0 0
+range 10 -10
+strength 3
+velocity -1000
+
+env_obj_joint 5 1 11
+pos 3.5 3.25 0.75
+visible 0
+axis 1 0 0
+range 10 -10
+strength 3
+velocity -1000
+
+env_obj_joint 6 1 12
+pos 3.5 -3 0.75
+visible 0
+axis 1 0 0
+range 10 -10
+strength 3
+velocity -1000
+
+# CAR BODY
+
+env_obj_joint 7 1 2
+pos 1 -2.5 1.125
+visible 0
+axis 1 0 0
+range 0 0
+strength 0
+velocity 0
+
+env_obj_joint 8 1 3
+pos 1 2.75 1.25
+visible 0
+axis 1 0 0
+range 0 0
+strength 0
+velocity 0
+
+env_obj_joint 9 2 4
+pos 1 -1.125 2.125
+visible 0
+axis 1 0 0
+range 0 0
+strength 0
+velocity 0
+
+env_obj_joint 10 5 1
+pos 1 1 1
+visible 0
+axis 1 0 0
+range 0 0
+strength 0
+velocity 0
+
+env_obj_joint 11 5 9
+pos 1 1.5 2.0625
+visible 0
+axis 1 0 0
+range 0 0
+strength 0
+velocity 0
+
+
+
+
+
+
+
+
+
+

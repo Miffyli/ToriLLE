@@ -1,0 +1,21 @@
+#Spirit Wrestling Mode Settings.
+###############################
+#Game Rules
+###############################
+gamerule
+engageplayerpos 0
+gravity 0.00 0.00 -32.00
+matchframes 432
+turnframes 6,6,10,10,15,15,21,21,28,28,36,36,45,45,55,55
+dqtimeout 30
+engagedistance 80
+damage 2
+fracture 1
+fracturethreshold 150
+dismemberment 0
+dqflag 1
+dojotype 1
+dojosize 500
+#############################
+#Mode by [Spirit]
+#############################

@@ -1,0 +1,207 @@
+#Localization file.
+
+FreePlay Juego Libre
+Multiplayer Multijugador
+FightSchool Dojo
+ToriShop Tienda
+Setup Configuracion
+BuyToriCredits Comprar ToriCredits
+ChatNetwork Chat Network
+Quit Salir
+Options Opciones
+Mods Mods
+Utils Utiles
+Replays Replays
+GameRules Reglas Del Juego
+Login Ingresar
+Back Atras
+ToribashTutorial Tutorial
+BasicTraining Basico
+AdvancedMoves Avanzado
+ChallengeUke Retar a uke
+FlameForge Forjar Flamas
+FlameBrowser Buscar Flamas
+ModMaker Creacion De Mods
+Scripts Scripts
+Sounds Sonidos
+Credits Creditos
+Cancel Cancelar
+OK Listo
+Advanced Avanzado
+Graphics Graficos
+LanguageSteam Usar Idioma de Steam
+Language Idioma
+MouseButtons Botones Del Mouse
+BackgroundClick Clickeo De Fondo
+EffectsVolume Volumen De Efectos
+MusicVolume Volumen De Musica
+VoiceChatVolume Volumen De Chat De Voz
+ChatToggle Expandir Chat
+VoiceChatToggle Boton De Chat De Voz
+Fullscreen Pantalla Completa
+Autosavereplays Autoguardar Replays
+RememberGameRules Recordar Reglas Del Juego
+LowerFrameRateCap Baja Captura De Fotogramas
+Shaders Ambiente
+FluidBlood Sangre Fluida
+Reflections Reflejos
+SoftShadows Sombreado Suave
+AmbientOcclusion Oclusion Ambiental
+Bumpmapping Mapeo De Relieve
+RayTracing Trazado De Rayos
+Particles Particulas
+Trails Caminos (Item)
+Hair Cabello
+ShaderHair Sombreo De Cabello
+ObjModel Modelo De Objetos
+BodyTextures Texturas Del Cuerpo
+DisableGraphicsReloading Desactivar Recarga De Graficos
+WindowWidth Anchura De Pantalla
+WindowHeight Altura De Pantalla
+FixedFramerate Fixed Framerate
+Basic Basicos
+Minimum Minimos
+Low Bajos
+Medium Medios
+High Altos
+Maximum Maximos
+Register Registrarse
+Create Crear
+Username Nombre De Usuario
+Password Contrasena
+Email Email
+Email(optional) Email (opcional)
+RemindMe Recordar
+RememberMe Recordarme
+Show Mostrar
+ForgotYourPassword? Olvido Su Contrasena?
+Don'tHaveAnAccount? No Tiene Cuenta?
+Close Cerrar
+UPGRADED! ACTUALIZADO!
+NumGamesToBelt juegos para
+DRAW! EMPATE !
+MatchWonBelowMin Match won below minimum turns.
+WINS! GANA!
+STREAK INVICTO
+DRAW2! EMPATE!
+DISQUALIFIED! DESCALIFICADO!
+KeyframesCleared! Keyframes Eliminados!
+KeyframeSaved! Keyframe Guardado!
+DefaultCameraEnabled Camara Por Defecto Activada
+FreeOrbitalCameraEnabled Camara Libre Activada, Usa W/S/A/D/Q/E + SHIFT Para Moverse
+FreeCameraEnabled Camara Libre Activada, Use W/S/A/D/Q/E + SHIFT Para Moverse
+ToriCameraEnabled Camara De Tori Activada
+UkeCameraEnabled Camara De Uke Activada
+RecordingNextRewind La Grabacion Comenzara En La Siguiente Rebobinacion
+RecordingCameraMovements Grabando Movimientos De Camara
+PlayingCameraMovements Reproduciendo Movimientos De Camara
+FreeCamDisabled Camara Libre Desactivada
+Desc Descripcion
+Room Sala
+Mod Mod
+MinBelt Min Cinto
+MaxBelt Max Cinto
+Players Jugadores
+Connect Conectar
+LoadingServerList Cargando Lista De Servidores
+BeltRestriction Restriccion De Cinturon
+RankRestriction Restriccion De Rango
+OfficialServers Servidores Oficiales
+AutoTournaments Torneos Automaticos
+Elo Elo
+Rank Rango
+RoomName: Nombre:
+Password: Contrasena:
+MaxPlayer: Max Jugadores:
+MinBelt: Min Cinturon:
+MaxBelt: Max Cinturon:
+Desc: Descripcion:
+Option Opcion
+CreateRoom Nueva Sala
+SPECTATOR ESPECTADOR
+WaitingForOtherPlayer Esperando Otro Jugador
+SPACEBARNewGameFSaveReplay Espacio - Nuevo Juego   ;   F - Guardar Replay
+PressTheSPACEBARToPlay Presiona Espacio Para Jugar !
+PressTheSPACEBARForREPLAY Press the SPACEBAR for REPLAY
+WaitingForYourTurn Esperando tu turno: #
+InQueue En Espera
+WaitingForOpponent Esperando Oponente
+ClickToSelectPlayer Click Para Seleccionar Jugador
+HitSPACEWhenReadyWithMove Presiona espacio cuando estes listo para mover
+PleaseEnterAValidEmailAddress Por Favor, Ingresa Un Email Valido!
+PleaseEnterYourUsername Por Favor, Escriba Su Nombre De Usuario
+PleaseEnterYourPassword Por Favor, Ingrese Su Contrasena
+PleaseRetypeYourPassword Por Favor, Reescriba Su Contrasena
+UsernameLesserThan4Characters Tu Nombre De Usuario Tiene Menos De 4 Caracteres
+UsernameMoreThan10Characters Tu Nombre De Usuario Tiene Mas De 10 Caracteres
+MismatchingPasswords Las Contrasenas No Coinciden
+UsernameMustBeAlphaNumeric El Nombre De Usuario Debe Ser Alfa Numerico Error! Error!
+CreateAccountFromToribash Please create your account from
+#ToribashFromCreateAccount Not used for english
+NetworkError! Network Error!
+UsernameUsedOrSubstandard Ese Nombre Esta En Uso O No Cumple Con Las Normas
+ModsCtrlM Mods (Ctrl + M)
+Load Cargar
+Open Abrir
+NewGame Nuevo Juego
+TypeHere Escriba Aqui
+QuickLoad Carga Rapida
+ShadersCtrlH Ambientes (Ctrl + H)
+AutoLoad Auto Cargar
+SoundsCtrlY Sonidos (Ctrl + Y)
+UsernameIsEmpty El Nombre Esta Vacio
+Neck NECK
+Chest CHEST
+Lumbar LUMBAR
+Abs Abs
+RightPecs RIGHT PECS
+RightShoulder RIGHT SHOULDER
+RightElbow RIGHT ELBOW
+LeftPecs LEFT PECS
+LeftShoulder LEFT SHOULDER
+LeftElbow LEFT ELBOW
+RightWrist RIGHT WRIST
+LeftWrist LEFT WRIST
+RightGlute RIGHT GLUTE
+LeftGlute LEFT GLUTE
+RightHip RIGHT HIP
+LeftHip LEFT HIP
+RightKnee RIGHT KNEE
+LeftKnee LEFT KNEE
+RightAnkle RIGHT ANKLE
+LeftAnkle LEFT ANKLE
+RightRotating RIGHT ROTATING
+RightBending RIGHT BENDING
+LeftRotating LEFT ROTATING
+LeftBending LEFT BENDING
+Lowering LOWERING
+Extending EXTENDING
+Raising RAISING
+Contracting CONTRACTING
+Holding HOLDING
+Relaxing RELAXING
+Effects Efectos
+AlwaysOff Siempre Apagados
+OnlyOnReplays Solo En Replays
+AlwaysOn Siempre Encendidos
+Default Por Defecto
+PleaseEnableSteamOverlay Please enable the steam overlay and restart the game
+PleaseWaitForSteamPurchaseOverlay Please wait for the steam purchase overlay
+PleaseLogonSteam Please log on to steam to buy ToriCredits
+Refresh Recargar
+Delete Eliminar
+Rename Renombrar
+New Nuevo
+EnterNewReplayName Ingresa Nuevo Nombre
+Grappling Grappling
+Kicking Kicking
+Striking Striking
+Matchmaking Buscar partida
+(Paused) (Pausado)
+(Searching) (Buscando)
+ModGroups Modos
+Search Buscar
+Unranked Sin Rango
+RankedPreferred Ranked Preferred
+RankedOnly Solo Rango
+MatchmakeAgain Matchmake Again

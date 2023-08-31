@@ -1,0 +1,190 @@
+#!/usr/bin/toribash
+#Made by Iceage
+
+gamerule
+engageplayerpos 0
+
+mf 2000
+gravity 0 0 -30
+ed 750
+dm 0
+
+env_obj 1
+    shape box
+    pos -2.1875 0.4375 0.75
+    color 0.3 0.2 0 1
+    rot 0 0 0
+    sides 0.6875 5.3125 1.5
+    material steel
+    mass 0.1
+    flag 8
+#END 1
+
+env_obj 2
+    shape box
+    pos -3.0625 -1.875 0.75
+    color 0.3 0.2 0 1
+    rot 0 0 0
+    sides 1.0625 0.6875 1.5
+    material steel
+    mass 0.1
+    flag 8
+#END 2
+
+env_obj 3
+    shape box
+    pos -1.125 -1.375 0.5
+    color 0.3 0.2 0 1
+    rot 0 0 0
+    sides 0.125 0.125 1
+    material steel
+    mass 0.1
+    flag 8
+#END 3
+
+env_obj 4
+    shape box
+    pos -1.125 -1.375 1
+    color 0.3 0.2 0 1
+    rot 0 0 0
+    sides 0.875 0.875 0.125
+    material steel
+    mass 0.1
+    flag 8
+#END 4
+
+env_obj 5
+    shape box
+    pos -1.125 0.375 1
+    color 0.3 0.2 0 1
+    rot 0 0 0
+    sides 0.875 0.875 0.125
+    material steel
+    mass 0.1
+    flag 8
+#END 5
+
+env_obj 6
+    shape box
+    pos -1.125 2.125 1
+    color 0.3 0.2 0 1
+    rot 0 0 0
+    sides 0.875 0.875 0.125
+    material steel
+    mass 0.1
+    flag 8
+#END 6
+
+env_obj 7
+    shape cylinder
+    pos -2.0625 2.125 1.75
+    color -0.1 0.1 0.6 0.7
+    rot 0 0 0
+    sides 0.125 0.25 0.375
+    material steel
+    mass 0.0001
+    flag 0
+#END 7
+
+env_obj 8
+    shape box
+    pos -1.125 0.375 0.5
+    color 0.3 0.2 0 1
+    rot 0 0 0
+    sides 0.125 0.125 1
+    material steel
+    mass 0.1
+    flag 8
+#END 8
+
+env_obj 9
+    shape box
+    pos -1.125 2.125 0.5
+    color 0.3 0.2 0 1
+    rot 0 0 0
+    sides 0.125 0.125 1
+    material steel
+    mass 0.1
+    flag 8
+#END 9
+
+env_obj 10
+    shape box
+    pos 4.5 3.5 0.875
+    color 0.3 0.2 0 1
+    rot 0 0 0
+    sides 2.75 0.3125 1.75
+    material steel
+    mass 0.1
+    flag 8
+#END 10
+
+env_obj 11
+    shape box
+    pos 4.5 2.875 0.4375
+    color 0.3 0.2 0 1
+    rot 0 0 0
+    sides 2.75 0.9375 0.875
+    material steel
+    mass 0.1
+    flag 8
+#END 11
+
+env_obj 12
+    shape box
+    pos 4.5 -0.125 0.4375
+    color 0.3 0.2 0 1
+    rot 0 0 0
+    sides 2.75 0.9375 0.875
+    material steel
+    mass 0.1
+    flag 8
+#END 12
+
+env_obj 13
+    shape box
+    pos 4.5 -0.75 0.875
+    color 0.3 0.2 0 1
+    rot 0 0 0
+    sides 2.75 0.3125 1.75
+    material steel
+    mass 0.1
+    flag 8
+#END 13
+
+env_obj 14
+    shape cylinder
+    pos -2.0625 2.125 2
+    color -0.1 0.1 0.6 0.7
+    rot 0 0 0
+    sides 0.0625 0.0625 0.125
+    material steel
+    mass 0.0001
+    flag 0
+#END 14
+
+env_obj 15
+    shape box
+    pos 4.5 1.4375 0.5
+    color 0.3 0.2 0 1
+    rot 0 0 0
+    sides 0.1875 0.1875 1
+    material steel
+    mass 0.1
+    flag 8
+#END 15
+
+env_obj 16
+    shape box
+    pos 4.5 1.4375 1
+    color 0.3 0.2 0 1
+    rot 0 0 0
+    sides 2.1875 1.125 0.125
+    material steel
+    mass 0.1
+    flag 8
+#END 16
+
+env_obj_joint 1 7 14
+    pos -2.0625 2.125 1.75
+    axis 0 1 0

@@ -1,0 +1,53 @@
+# Floppeh Arms|||Culapou
+######################################
+
+gamerule
+engageplayerpos 0
+mf 400
+tf 30
+dq 0
+dt 200
+dojosize 300
+dojotype 1
+reactiontime 10
+ed 110
+
+joint r_elbow
+velocity 0
+strength 0
+range 3 -1
+
+joint l_elbow
+velocity 0
+strength 0
+range 3 -1
+
+joint r_wrist
+velocity 0
+strength 0
+range 3 -1
+
+joint l_wrist
+velocity 0
+strength 0
+range 2 -1
+
+joint r_pecs
+velocity 35
+strength 5
+
+joint l_pecs
+velocity 35
+strength 5
+
+joint chest
+velocity 50
+strength 5
+
+body r_foot
+density 100
+sides .3 .7 .1
+
+body l_foot
+density 100
+sides .3 .7 .1

@@ -1,0 +1,413 @@
+#!/usr/bin/toribash
+message THIS MOD IS MADE BY TEAM WUSHU AND THE GODTEAM, PLEASE DONATE ALL YOUR TC TO THEGOD
+
+gamerule
+   matchframes 500
+   turnframes 50
+   flags 7
+   dismemberment 0
+   fracture 0
+   disqualification 1
+   dqtimeout 0
+   dqflag 0
+   dismemberthreshold 3111100
+   fracturethreshold 0
+pointthreshold .1
+   pointthreshold 0
+   dojotype 0
+   dojosize 0
+   engagedistance 400
+   engageheight 0
+   engagerotation 0
+   engagespace 0
+   engageplayerpos 
+   engageplayerrot 0,0,0,0,0,0
+   damage 0
+   gravity 0.00 0.00 -9.82
+   sumo 1
+   reactiontime 15
+   drawwinner 0
+   maxcontacts 8
+
+player 0 
+   body head
+      sides 0.34 0.00 0.00
+      pos 1.00 0.85 3.50
+point_hit .69
+thrust 1 0 -1 0
+
+     body breast
+      pos 1.00 0.90 2.80
+density .01
+shape cylinder
+sides 0.34 0.1 0.2
+   body chest
+      pos 1.00 0.90 2.20
+density .01
+sides 0.34 0.1 0.2
+shape cylinder
+   body stomach
+      pos 1.00 0.95 1.50
+density .01
+shape cylinder
+sides 0.34 0.1 0.2
+   body groin
+      pos 1.00 1.00 1.10
+density .01
+flag 36
+shape cylinder
+sides 0.34 0.1 0.2 #.34#
+   body r_pecs
+      sides 0.01 0.01 0.01
+      pos 1.09 0.90 2.19
+density .01
+   body r_biceps
+      sides 0.01 0.01 0.01
+      pos 1.08 0.90 2.18
+   body r_triceps
+      sides 0.01 0.01 0.01
+      pos 1.07 0.90 2.17
+   body l_pecs
+      sides 0.01 0.01 0.01
+      pos 1.06 0.90 2.16
+density .01
+   body l_biceps
+      sides 0.01 0.01 0.01
+      pos 1.05 0.90 2.12
+   body l_triceps
+      sides 0.01 0.01 0.01
+      pos 1.04 0.90 2.13
+   body r_hand
+      sides 0.01 0.01 0.01
+      pos 1.03 0.85 2.14
+   body l_hand
+      sides 0.01 0.01 0.01
+      pos 1.02 0.85 2.2
+   body r_butt
+      pos 0.80 1.00 1.10
+   body l_butt
+      pos 1.20 1.00 1.10
+   body r_thigh
+      sides 0.01 0.01 0.01
+      pos 0.40 1.00 0.50
+   body l_thigh
+      sides 0.01 0.01 0.01
+      pos 1.60 1.00 0.50
+   body l_leg
+      sides 0.01 0.01 0.00
+      pos 1.60 1.00 0.50
+   body r_leg
+      sides 0.01 0.01 0.00
+      pos 0.40 1.00 0.50
+   body r_foot
+shape sphere
+      sides 0.55 0.01 0.01
+      pos 0.30 1.05 0.50
+point_hit 69
+   body l_foot
+shape sphere
+      sides 0.55 0.01 0.01
+      pos 1.70 1.05 0.50
+point_hit 69
+   joint neck
+      radius 0.30
+      pos 1.00 0.90 3.10
+      dm_threshold 0
+   joint chest
+      radius 0.30
+      pos 1.00 0.90 2.50
+axis -1 0 0
+strength 8
+velocity 30
+      dm_threshold 0
+   joint lumbar
+      radius 0.30
+      pos 1.00 0.95 1.85
+ range 1 -1
+strength 20
+velocity 50
+      dm_threshold 0
+   joint abs
+      radius 0.30
+      pos 1.0 0.95 1.20
+      dm_threshold 0
+      range .5 -2
+strength 6
+velocity 40
+flag 36
+   joint r_pecs
+range 0 0
+      radius 0.01
+      pos 1.08 0.85 2.20
+      dm_threshold 0
+   joint r_shoulder
+      radius 0.01
+      pos 1.07 0.90 2.19
+      dm_threshold 0
+range 0 0
+   joint r_elbow
+range 0 0
+      radius 0.01
+      pos 1.06 0.90 2.18
+     
+   joint l_pecs
+range 0 0
+      radius 0.01
+      pos 1.05 0.85 2.17
+     
+   joint l_shoulder
+range 0 0
+      radius 0.01
+      pos 1.04 0.90 2.16
+      
+   joint l_elbow
+range 0 0
+      radius 0.01
+      pos 1.03 0.90 2.15
+      
+   joint r_wrist
+range 0 0
+      radius 0.01
+      pos 1.02 0.90 2.14
+    
+   joint l_wrist
+range 0 0
+      radius 0.01
+      pos 1.01 0.90 2.13
+      velocity 0.01
+ 
+   joint r_glute
+      pos 0.90 1.10 1.10
+ flag 36
+range 0 0
+   joint l_glute
+      pos 1.10 1.10 1.10
+     flag 36
+range 0 0
+   joint r_hip
+      pos 1 1.00 1.00
+      range 0.00 0.00
+      flag 36
+
+   joint l_hip
+      pos 1 1.00 1.00
+      range 0.00 0.00
+      flag 36
+
+   joint r_knee
+      radius 0.01
+range 0 0
+      pos 1 1.00 1
+      
+   joint l_knee
+      radius 0.01
+      pos 1 1.00 1
+      velocity 10.00
+range 0 0
+      
+   joint r_ankle
+
+      radius 0.3
+      pos 0.8 1.05 0.50
+      range 5.00 -5.00
+      
+
+   joint l_ankle
+
+      radius 0.3
+      pos 1.2 1.05 0.50
+      range 5.00 -5.00
+
+
+
+
+
+player 1
+body head
+ sides 0.34 0.00 0.00
+      pos 1.00 0.85 3.50
+point_hit .69
+thrust 1 0 1 0
+
+    body breast
+      pos 1.00 0.90 2.80
+density .01
+shape cylinder
+sides 0.34 0.1 0.2
+   body chest
+      pos 1.00 0.90 2.20
+density .01
+sides 0.34 0.1 0.2
+shape cylinder
+   body stomach
+      pos 1.00 0.95 1.50
+density .01
+shape cylinder
+sides 0.34 0.1 0.2
+   body groin
+      pos 1.00 1.00 1.10
+density .01
+flag 36
+shape cylinder
+sides 0.34 0.1 0.2 #.34#
+   body r_pecs
+      sides 0.01 0.01 0.01
+      pos 1.09 0.90 2.19
+density .01
+   body r_biceps
+      sides 0.01 0.01 0.01
+      pos 1.08 0.90 2.18
+   body r_triceps
+      sides 0.01 0.01 0.01
+      pos 1.07 0.90 2.17
+   body l_pecs
+      sides 0.01 0.01 0.01
+      pos 1.06 0.90 2.16
+density .01
+   body l_biceps
+      sides 0.01 0.01 0.01
+      pos 1.05 0.90 2.12
+   body l_triceps
+      sides 0.01 0.01 0.01
+      pos 1.04 0.90 2.13
+   body r_hand
+      sides 0.01 0.01 0.01
+      pos 1.03 0.85 2.14
+   body l_hand
+      sides 0.01 0.01 0.01
+      pos 1.02 0.85 2.2
+   body r_butt
+      pos 0.80 1.00 1.10
+   body l_butt
+      pos 1.20 1.00 1.10
+   body r_thigh
+      sides 0.01 0.01 0.01
+      pos 0.40 1.00 0.50
+   body l_thigh
+      sides 0.01 0.01 0.01
+      pos 1.60 1.00 0.50
+   body l_leg
+      sides 0.01 0.01 0.00
+      pos 1.60 1.00 0.50
+   body r_leg
+      sides 0.01 0.01 0.00
+      pos 0.40 1.00 0.50
+   body r_foot
+shape sphere
+      sides 0.55 0.01 0.01
+      pos 0.30 1.05 0.50
+point_hit 69
+   body l_foot
+shape sphere
+      sides 0.55 0.01 0.01
+      pos 1.70 1.05 0.50
+point_hit 69
+   joint neck
+      radius 0.30
+      pos 1.00 0.90 3.10
+      dm_threshold 0
+   joint chest
+      radius 0.30
+      pos 1.00 0.90 2.50
+axis -1 0 0
+strength 8
+velocity 30
+      dm_threshold 0
+   joint lumbar
+      radius 0.30
+      pos 1.00 0.95 1.85
+ range 1 -1
+strength 20
+velocity 50
+      dm_threshold 0
+   joint abs
+      radius 0.30
+      pos 1.0 0.95 1.20
+      dm_threshold 0
+      range .5 -2
+strength 6
+velocity 40
+flag 36
+   joint r_pecs
+range 0 0
+      radius 0.01
+      pos 1.08 0.85 2.20
+      dm_threshold 0
+   joint r_shoulder
+      radius 0.01
+      pos 1.07 0.90 2.19
+      dm_threshold 0
+range 0 0
+   joint r_elbow
+range 0 0
+      radius 0.01
+      pos 1.06 0.90 2.18
+     
+   joint l_pecs
+range 0 0
+      radius 0.01
+      pos 1.05 0.85 2.17
+     
+   joint l_shoulder
+range 0 0
+      radius 0.01
+      pos 1.04 0.90 2.16
+      
+   joint l_elbow
+range 0 0
+      radius 0.01
+      pos 1.03 0.90 2.15
+      
+   joint r_wrist
+range 0 0
+      radius 0.01
+      pos 1.02 0.90 2.14
+    
+   joint l_wrist
+range 0 0
+      radius 0.01
+      pos 1.01 0.90 2.13
+      velocity 0.01
+ 
+   joint r_glute
+      pos 0.90 1.10 1.10
+ flag 36
+range 0 0
+   joint l_glute
+      pos 1.10 1.10 1.10
+     flag 36
+range 0 0
+   joint r_hip
+      pos 1 1.00 1.00
+      range 0.00 0.00
+      flag 36
+
+   joint l_hip
+      pos 1 1.00 1.00
+      range 0.00 0.00
+      flag 36
+
+   joint r_knee
+      radius 0.01
+range 0 0
+      pos 1 1.00 1
+      
+   joint l_knee
+      radius 0.01
+      pos 1 1.00 1
+      velocity 10.00
+range 0 0
+      
+   joint r_ankle
+
+      radius 0.3
+      pos 0.8 1.05 0.50
+      range 5.00 -5.00
+      
+
+   joint l_ankle
+
+      radius 0.3
+      pos 1.2 1.05 0.50
+      range 5.00 -5.00
+

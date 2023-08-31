@@ -1,0 +1,174 @@
+# Tilting.
+# Made by FNugget EDITED BY NACHOURU
+gamerule
+dt 250
+engageplayerpos -1,15.5,1.5,1,-15.5,1.5
+engageplayerrot 0,0,0,0,0,180
+mf 600
+tf 50,50,40,20,10,10,10,10,15,15,30,60,120,160
+dq 1
+dojotype 0
+dojosize 1
+
+#P1
+env_obj 1
+    shape box
+    pos 0 15.5625 2.5625
+    color 0.1 0.1 0.1 1
+    rot 0 0 0
+    sides 0.1875 1.5625 0.5
+    material steel
+    mass 0.01
+    thrust 1 0 0 1
+    flag 0
+#Back 1
+env_obj 2
+    shape box
+    pos 0 15.9375 3.1875
+    color 0.1 0.1 0.1 1
+    rot 7 0 0
+    sides 0.5 0.0625 0.875
+    material steel
+    mass 0.05
+    flag 0
+#FWheel 1
+env_obj 3
+    shape box
+    pos 0 13.625 1
+    color 0.1 0.1 0.1 1
+    rot 0 0 0
+    sides 0.75 1.7 1.7
+    material steel
+    mass .05
+    thrust 1 0 0 -25
+    flag 0
+#BWheel 1
+env_obj 4
+    shape box
+    pos 0 17.3125 1
+    color 0.1 0.1 0.1 1
+    rot 0 0 0
+    sides 0.75 1.8 1.8
+    material steel
+    mass 0.05
+    thrust 1 0 0 -10
+    flag 0
+#P2
+env_obj 5
+    shape box
+    pos 2 -15.7625 2.5625
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.1875 1.5625 0.5
+    material steel
+    mass 0.01
+    thrust 1 0 0 1
+    flag 0
+#Back 2
+env_obj 6
+    shape box
+    pos 2 -16.1375 3.1875
+    color 1 1 1 1
+    rot -7 0 0
+    sides 0.5 0.0625 0.875
+    material steel
+    mass 0.05
+    flag 0
+#FWheel 2
+env_obj 7
+    shape box
+    pos 2 -13.825 1
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.75 1.7 1.7
+    material steel
+    mass .05
+    thrust 1 0 0 -25
+    flag 0
+#BWheel 2
+env_obj 8
+    shape box
+    pos 2 -17.5125 1
+    color 1 1 1 1
+    rot 0 0 0
+    sides 0.75 1.8 1.8
+    material steel
+    mass 0.05
+    thrust 1 0 0 -10
+    flag 0
+#Lance 1
+env_obj 9
+    shape cylinder
+    pos -1.5 14.5625 3.75
+    color 0.8 0.8 0.8
+    rot 90 0 0
+    sides 0.05 5 0.05
+    material steel
+    mass 0.0005
+    flag 0
+#Shield 1
+env_obj 11
+    shape box
+    pos 1.5 15.5 3.75
+    color 1 1 1 1
+    rot 0 0 90
+    sides 0.75 0.1 0.75
+    material steel
+    mass 0.002
+    flag 0
+#Lance 2
+env_obj 12
+    shape cylinder
+    pos 3.5 -14.7625 3.75
+    color 0.8 0.8 0.8 1
+    rot 90 0 0
+    sides 0.05 5 0.05	
+    material steel
+    mass 0.0005
+    flag 0
+#Shield 2
+env_obj 14
+    shape box
+    pos 0.5 -15.5 3.75
+    color 1 1 1 1
+    rot 0 0 90
+    sides 0.75 0.1 0.75
+    material steel
+    mass 0.002
+    flag 0
+
+#1
+env_obj_joint 1 1 2
+pos 0 15.5625 1.0625
+
+env_obj_joint 2 1 3
+pos 0 13.8625 1
+axis 1 0 0
+range 5 -5
+velocity -30
+strength 50
+
+env_obj_joint 3 1 4
+pos 0 17.3125 1
+axis 1 0 0
+range 5 -5
+velocity -20
+strength 50
+
+#2
+env_obj_joint 4 5 6
+pos 2 -15.7625 1.0625
+
+env_obj_joint 5 5 7
+pos 2 -14.0625 1
+axis 1 0 0
+range 5 -5
+velocity 30
+strength 50
+
+env_obj_joint 6 5 8
+pos 2 -17.5125 1
+axis 1 0 0
+range 5 -5
+velocity 20
+strength 50

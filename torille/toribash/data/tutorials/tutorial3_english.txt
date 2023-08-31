@@ -1,0 +1,42 @@
+#PLAYER MESSAGES
+SENSEIKICK1	Now that you know how to use your arms, it's time to learn how to kick your opponents using legs.
+SENSEIKICK2	I'll guide you through this simple kick.
+SENSEIKICK3	Hold all joints to prevent yourself from falling down.
+SENSEIKICK4	This will be a left leg kick. Contract both your hip and knee to get in position.
+SENSEIKICK5	All right, now finish your turn by pressing space.
+SENSEIKICK6	Good, now you're ready to kick the opponent. Extend your knee and look at your ghost!
+SENSEIKICK7	Pay attention that despite being able to kick dummy's leg, your body bends forwards, making you vulnerable to opponent's attacks.
+SENSEIKICK8	There's a way to fix that by extending your right hip. That would also make the kick stronger, so it's a win-win situation!
+SENSEIKICK9	Finish your turn and see what you did!
+PLAYERKICK1	Hiiya!
+SENSEIKICK10	That's nice! Always remember to check your ghost to preview your move before finishing the turn!
+SENSEIADVKICK1	Simplest kick is mastered, but to face real opponents you need to learn how to use your whole body.
+SENSEIADVKICK2	This may seem too complicated at first, but eventually you'll feel what you need to do without memorizing moves.
+SENSEIADVKICK3	Almost there!
+SENSEIADVKICK4	Marvelous! Now come here, I've got something special for you.
+SENSEIMOVEMEMORY1	At first, memorizing your moves to execute them against real opponents may be complicated.
+SENSEIMOVEMEMORY2	Here, take MoveMemory. It would help you to store and run your recorded moves.
+SENSEIMOVEMEMORY3	For convenience, I already added moves you learned earlier to it.
+SENSEIMOVEMEMORY4	Give it a try.
+SENSEIMOVEMEMORY5	That's right, now you're prepared for your first real fight!
+#
+#HINT MESSAGES
+HINTADVKICK1	To land the high kick, you'll need to use your GLUTES, TORSO and even ARMS to increase the momentum.\nBut first, hold your whole body by pressing ~C~
+HINTADVKICK2	Replicate the kick sensei taught you: contract left hip and knee to raise the leg and get in position and extend right hip to give your move a boost.
+HINTADVKICK3	Now RIGHT ROTATE your body and move the right arm forwards.\nRotating top parts of your body in the opposite direction of the kick would give you additional momentum.
+HINTADVKICK4	To raise your leg even higher, you need to use glutes.\nExtend both by pressing ~Z~ and see what it does.
+HINTADVKICK5	Here comes the trial and error part - applying final changes to your kick's direction.\nIn our case, LUMBAR joint will be especially helpful.
+HINTADVKICK6	Try bending lumbar to the right.
+HINTADVKICK7	You can see that while your kick now seems to be more powerful, it shifted slightly lower.\nThis can be useful when you intend to make a body kick, but now we're aiming for the head.
+HINTADVKICK8	This time, try bending lumbar to the left to see what changes.
+HINTADVKICK9	This made the kick go even higher than before so you'll be able to hit the dummy freely.\nPress ~SPACE~ to end your turn.
+HINTADVKICK10	Time to finish the kick! Extend your KNEE to hit the dummy and finish the turn!
+HINTMOVEMEMORY1	To open MOVEMEMORY, press ~M~
+HINTMOVEMEMORY2	Select any move you'd like to execute and press ~SPACE~ to see the magic happen!
+HINTMOVEMEMORY3	MoveMemory allows doing moves without touching any joints manually.\nWith its help, you can save yourself time if you want to do a move you've already done before.
+HINTMOVEMEMORY4	To close MoveMemory, press ~M~ again.
+#
+#TASK MESSAGES
+KICKTASK	Perform a simple leg kick
+ADVKICKTASK	Kick dummy's head with your leg
+MMEMORYTASK	Use MoveMemory against Uke

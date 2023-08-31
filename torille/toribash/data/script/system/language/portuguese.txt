@@ -1,0 +1,177 @@
+# New UI Localization file		
+NAVBUTTONHOME	Início	
+NAVBUTTONPLAY	Jogar	
+NAVBUTTONPRACTICE	Treinar	
+NAVBUTTONMODS	Modos	
+NAVBUTTONTOOLS	Ferramentas	
+NAVBUTTONTOMAIN	Ao Menu Principal	
+NAVBUTTONBACK	Voltar	
+NAVBUTTONEXIT	Sair	
+MAINMENUUSERCLAN	Clã	
+MAINMENUTORISHOPNAME	Torishop	
+MAINMENUTORISHOPDESC	Experimente e compre itens para seu Tori	
+MAINMENUCLANSNAME	Clãs	
+MAINMENUCLANSDESC	Explore clãs do Toribash	
+MAINMENUREPLAYSNAME	Replays	
+MAINMENUREPLAYSDESC	Assista seus replays baixados	
+MAINMENUFREEPLAYNAME	Jogo Livre	
+MAINMENUFREEPLAYDESC	Pratique suas habilidades ou faça replays no modo um jogador	
+MAINMENUMATCHMAKINGNAME	Pareamento	
+MAINMENUMATCHMAKINGDESC	Forma rápida de encontrar uma partida um-contra-um	
+MAINMENUROOMLISTNAME	Lista de Salas	
+MAINMENUROOMLISTDESC	Crie sua sala online ou entre em uma já existente	
+MAINMENUBEGINNERTUTNAME	Tutorial para Iniciantes	
+MAINMENUBEGINNERTUTDESC	Aprenda noções básicas de Toribash: controles, jogabilidade e muito mais	
+MAINMENUADVMOVESNAME	Movimentos avançados	
+MAINMENUADVMOVESDESC	Descubra movimentos avançados para usar no modo multijogador	
+MAINMENUFIGHTUKENAME	Enfrente Uke	
+MAINMENUFIGHTUKEDESC	Use suas habilidades contra o maior inimigo de Tori	
+MAINMENUCOMEBACKNAME	Treino de Retorno	
+MAINMENUCOMEBACKDESC	Alcance Uke sem ser desqualificado	
+MAINMENUGAMERULESNAME	Regras do Jogo	
+MAINMENUGAMERULESDESC	Personalize a gravidade e outras configurações de modo	
+MAINMENUMODLISTNAME	Lista de Modos	
+MAINMENUMODLISTDESC	Carregue um dos modos baixados	
+MAINMENUMODMAKERNAME	Criador de Modos	
+MAINMENUMODMAKERDESC	Crie seu próprio modo para o Toribash	
+MAINMENUMODSDISCOVERNAME	Descubra	
+MAINMENUMODSDISCOVERDESC	Navegue por modos criados por outros jogadores	
+MAINMENUSHADERSNAME	Shaders & Atmosferas	
+MAINMENUSHADERSDESC	Personalize a iluminação e o ambiente do seu Toribash	
+MAINMENUSCRIPTSNAME	Scripts	
+MAINMENUSCRIPTSDESC	Carregue scripts pré-instalados ou de terceiros para o Toribash	
+MAINMENUSOUNDSNAME	Sons	
+MAINMENUSOUNDSDESC	Ative ou desative sons customizáveis	
+DOWNLOADINGFILESWAIT	Baixando arquivos, aguarde por favor...	
+STORESETEMPTY	VAZIO	
+STOREITEM	item	
+STOREITEMS	itens	
+STOREFLAMEBODYPART	Chama de partícula para sua	
+STOREFLAMEID	ID da Chama	
+STOREFLAMEFORGEDBY	Forjada por	
+STOREITEMINSIDESET	No set	
+STOREOBJITEMBODYPART	Modelo 3D personalizado para	
+STOREITEMNODESCRIPTION	Este item não tem descrição	
+STOREITEMGOTOSET	Ir para o set	
+STORESETITEMNAME	Set	
+STOREITEMADDTOSET	Adicionar ao set	
+STOREITEMREMOVEFROMSET	Remover do set	
+STOREVIEWSETITEMS	Ver itens do set	
+STOREITEMSINSET	Itens no set	
+STORESELLMARKET	Vender no mercado	
+STOREDIALOGMARKETSELL1	Deseja mesmo colocar	
+STOREDIALOGMARKETSELL2	no mercado?	
+STOREITEMDEACTIVATE	Desativar	
+STOREDIALOGDEACTIVATE1	Deseja mesmo desativar	
+STOREDIALOGDEACTIVATE2		
+STOREITEMACTIVATE	Ativar	
+STOREDIALOGACTIVATE1	deseja mesmo ativar	
+STOREDIALOGACTIVATE2	 	
+STOREDIALOGCONFLICTSDEACTIVATE	Qualquer item em conflito com este será desativado	
+STOREITEMUNPACK	Desempacotar	
+STOREDIALOGUNPACK1	Deseja mesmo desempacotar	
+STOREDIALOGUNPACK2	 	
+STOREDIALOGUNPACKINFO	Itens desempacotados serão colocados em um conjunto \ne colocados em seu inventário desativado.	
+STOREACTIVATEDINVENTORY	Inventário Ativado	
+STOREDEACTIVATEDINVENTORY	Inventário Desativado	
+STOREMARKETINVENTORY	Inventário do Mercado	
+STOREINVENTORYALLITEMS	Todos os itens do inventário	
+PAGINATIONPAGE	Página	
+PAGINATIONPAGEOF	de	
+STOREINVENTORYLOADING	Carregando dados do Toriverso	
+STOREGOTOSHOP	Abrir Torishop	
+STORESHOPDESC	Compre novos itens para seu Tori	
+STOREGOTOINVENTORY	Abrir Inventário	
+STOREINVENTORYDESC	Personalize seu personagem com itens comprados	
+STORESTEAMPURCHASELOADING	Trabalhando	
+STORESTEAMPURCHASEERROR	Algo deu errado	
+CLANSMYCLAN	Meu Clã	
+CLANSCLANLEADER	Líder do clã	
+CLANSCLANMEMBER	Membro do clã	
+CLANSTOGETHERWITH	Junto de	
+CLANSVIEWCLAN	Ver Clã	
+GENERALSTRINGAND	e	
+CLANFILTERSRANK	Rank	
+CLANFILTERSCLANNAME	Nome	
+CLANFILTERSCLANTAG	Tag	
+CLANFILTERSCLANID	ID	
+CLANFILTERSOFFICIALSTATUS	Estado	
+CLANFILTERSJOINMODE	Modo de Entrada	
+CLANFILTERSDEAD	Morto	
+CLANFILTERSINACTIVE	Inativo	
+CLANFILTERSACTIVE	Ativo	
+SORTORDERASCENDING	Crescente	
+SORTORDERDESCENDING	Decrescente	
+CLANFILTERSACTIVITYSTATE	Estado de Atividade	
+CLANFILTERSACTIVITYSTATEDESC	Clãs são considerados ativos quando têm pelo menos 5 membros. Clãs sem membros são marcados como mortos.	
+CLANFILTERSFFAONLY	Somente clãs com entrada livre	
+CLANFILTERSFFAONLYDESC	Você pode entrar em clãs com entrada livre a qualquer momento, com apenas um click. Para clãs que requerem convite, um processo de aplicação customizado é necessário.	
+CLANFILTERSOFFICIALONLY	Somente clãs oficiais	
+CLANFILTERSOFFICIALONLYDESC	Clãs oficiais têm seu próprio sub-fórum no Fórum do Toribash e, no jogo, possuem colchetes em suas tags.	
+SORTBYNAME	Classificar por	
+SORTORDERNAME	Ordem de classificação	
+CLANSSEARCHFILTERS	Filtros de Pesquisa	
+CLANSSEARCH	Pesquisar clãs	
+CLANSCLANLIST	Lista de Clãs	
+CLANSLEGENDRANK	Rank	
+CLANSLEGENDLEVEL	Nível	
+CLANSLEGENDXP	XP	
+CLANSLEGENDTAGNAME	Tag e nome	
+CLANSLEGENDSTATUS	Estado	
+CLANSLEGENDJOINMODE	Modo de Entrada	
+CLANSTATEOFFICIAL	Oficial	
+CLANSTATEUNOFFICIAL	Não-oficial	
+CLANSTATEFREEFORALL	Entrada Livre	
+CLANSTATEINVITEONLY	Apenas por Convite	
+CLANSLISTEMPTYMSG	Não há clãs para exibir	
+CLANSJOINCLAN	Entrar no clã	
+CLANSRELOADLOGO	Recarregar logotipo	
+CLANSUPDATINGLOGO	Atualizando	
+CLANSTATEUNRANKED	Sem Rank	
+CLANSVIEWWARSFORUM	Ver guerras no fórum	
+CLANSTOPACHMISSING	Este clã não escolheu uma conquista para exibir	
+CLANSLEGENDROSTER	Elenco	
+CLANLEADERS	Líderes	
+CLANLEADER	Líder	
+CLANMEMBERS	Membros	
+CLANMEMBER	Membro	
+REWARDSDAILYTITLE	Recompensa por Login Diário	
+REWARDSCLAIM	Resgatar Recompensa	
+REWARDSCLAIMNETWORKERROR	Erro ao se comunicar com os servidores do Toribash, por favor tente novamente mais tarde	
+REWARDSCLAIMINPROGRESS	Resgatando Recompensa	
+REWARDSCLAIMSUCCESS	Recompensa Resgatada	
+REWARDSCLAIMNOREWARD	Nenhuma recompensa disponível, tente novamente mais tarde	
+REWARDSCLAIMTIMEOUT	Erro de limite de tempo, por favor fique online ou reinicie o jogo	
+REWARDSCLAIMERROROTHER	Erro ao resgatar a recompensa	
+REWARDSNOAVAILABLE	Nenhuma recompensa disponível	
+REWARDSAVAILABLERESTART	Recompensa estará disponível na próxima execução do jogo	
+REWARDSEXPIRED	Sua recompensa expirou! :(	
+REWARDSTIMEHOURS	horas	
+REWARDSTIMEHOUR	hora	
+REWARDSTIMEMINUTES	minutos	
+REWARDSTIMEMINUTE	minuto	
+REWARDSTIMESECONDS	segundos	
+REWARDSNEXTREWARD	Próxima recompensa em	
+REWARDSTIMELEFT	restantes para resgatar recompensa	
+MATCHMAKEMODGRAPPLING	Corpo a Corpo	
+MATCHMAKEMODKICKING	Chute	
+MATCHMAKEMODSTRIKING	Combate em Pé	
+MATCHMAKEMODFUN	Diversão	
+MATCHMAKERANKEDBELT	Pareamento rankeado está disponível a partir da Faixa Marrom	
+MATCHMAKERANKEDMODE	Modo Rankeado	
+MATCHMAKERANK	Rank	
+MATCHMAKEFIGHTSTOTAL	total de lutas	
+MATCHMAKEWINRATE	taxa de vitórias	
+MATCHMAKENOPLAYERS	Sem jogadores pesquisando no momento	
+MATCHMAKEPLAYERSEARCHING	jogador pesquisando	
+MATCHMAKEPLAYERSSEARCHING	jogadores pesquisando	
+MATCHMAKESEARCHING	Buscando uma partida	
+MATCHMAKESEARCH	Pesquisar	
+MATCHMAKESTOPSEARCH	Parar pesquisa	
+MATCHMAKEUNRANKEDMODE	Jogo Casual	
+MATCHMAKEFINDBESTMATCH1	Encontrar	
+MATCHMAKEFINDBESTMATCH2	melhor partida	
+MATCHMAKESEARCHSETTINGS1	Pesquisar	
+MATCHMAKESEARCHSETTINGS2	com configurações	
+MATCHMAKESEARCHCUSTOM	personalizadas	
+MATCHMAKEUPDATINGRANK	Atualizando Estatísticas de Ranking...	

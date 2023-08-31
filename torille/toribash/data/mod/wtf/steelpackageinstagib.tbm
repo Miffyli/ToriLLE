@@ -1,0 +1,16 @@
+body groin
+engageplayerpos 0
+shape box
+sides 0.1 0.4 0.1
+pos 1.0 .7 1.55
+flag 10
+material steel
+color 123  
+body r_butt
+shape sphere
+pos .9 .8 1.45
+material steel
+body l_butt
+shape sphere
+pos 1.1 .8 1.45
+material steel

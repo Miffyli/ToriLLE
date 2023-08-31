@@ -29,7 +29,7 @@ Remember to install [Wine](https://wiki.winehq.org/Download) if you are on Linux
 
 Following will download ToriLLE with stripped down version of Toribash:
 ```
-pip install torille
+pip install git+https://github.com/miffyli/torille
 ```
 
 Random agent:
@@ -68,6 +68,8 @@ env.close()
 
 ## Manual installation 
 
+:warning: Following instructions are old and may not work with current versions of Toribash. :warning:
+
 You can install ToriLLE without PyPI/pip with the following:
 
 * Install [Toribash](http://toribash.com/) (note: Only Steam version may be up to date)
@@ -81,7 +83,7 @@ You can install ToriLLE without PyPI/pip with the following:
 
 ## Playing in multiplayer
 
-**Note: Multiplayer does not work on Linux Wine!**
+:warning: Multiplayer does not work on Linux Wine, and may not work with the new version :warning:
 
 Want to try your agents against human players in multiplayer? Check how [manual remote control](docs/manual_torille.md) works.
 
@@ -102,7 +104,7 @@ If you wish to modify ToriLLE or use other language to control Toribash instance
 
 ## Repository structure
 - `./torille/`: Python codes for the learning environment (inc. Gym environment)
-  - `./torille/toribash`: This will include stripped version of the Toribash game when installed from PyPi
+  - `./torille/toribash`: This includes stripped version of the Toribash game when installed from PyPi
 - `./toribash-codes/`: Files required for Toribash to make this learning environment work 
 - `./examples/`: Python examples on how to use this library
 - `./docs/`: Detailed documentation of the inner workings
@@ -139,4 +141,4 @@ We wouldn't mind a citation if you find ToriLLE useful in your work. It also hel
 - box (Toribash user) for comments during inception of this project
 
 ## License 
-Code original to ToriLLE is licensed under GNU GPL 3.0. Toribash is property of Nabistudios. Toribash binary in PyPI package is shared with the permission of main developer "hampa".
+Code original to ToriLLE is licensed under GNU GPL 3.0. Toribash is property of Nabistudios. Toribash binary in this package is shared with the permission of main developer "hampa".

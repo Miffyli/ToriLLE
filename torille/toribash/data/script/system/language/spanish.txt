@@ -1,0 +1,177 @@
+# New UI Localization file		
+NAVBUTTONHOME	Iniciar	
+NAVBUTTONPLAY	Jugar	
+NAVBUTTONPRACTICE	Práctica	
+NAVBUTTONMODS	Modos	
+NAVBUTTONTOOLS	Herramientas	
+NAVBUTTONTOMAIN	Menú	
+NAVBUTTONBACK	Atrás	
+NAVBUTTONEXIT	Salir	
+MAINMENUUSERCLAN	Clan	
+MAINMENUTORISHOPNAME	ToriTienda	
+MAINMENUTORISHOPDESC	Prueba y compra artículos para tu Tori	
+MAINMENUCLANSNAME	Clanes	
+MAINMENUCLANSDESC	Explora los clanes de Toribash	
+MAINMENUREPLAYSNAME	Repeticiones	
+MAINMENUREPLAYSDESC	Mira tus repeticiones descargadas	
+MAINMENUFREEPLAYNAME	Juego libre	
+MAINMENUFREEPLAYDESC	Practica tus habilidades, o haz repeticiones en modo solitario	
+MAINMENUMATCHMAKINGNAME	Matchmaking	
+MAINMENUMATCHMAKINGDESC	Manera rápida de ser colocado en peleas uno a uno	
+MAINMENUROOMLISTNAME	Lista de servidores	
+MAINMENUROOMLISTDESC	Crea tu propio servidor online, o participa en uno de los existentes	
+MAINMENUBEGINNERTUTNAME	Tutorial para principiantes	
+MAINMENUBEGINNERTUTDESC	Aprende lo básico de Toribash: Controles, jugabilidad y más	
+MAINMENUADVMOVESNAME	Movimientos avanzados	
+MAINMENUADVMOVESDESC	Descubre movimientos avanzados para usar en el modo multijugador	
+MAINMENUFIGHTUKENAME	Pelea contra Uke	
+MAINMENUFIGHTUKEDESC	Usa tus habilidades contra el último enemigo de Tori	
+MAINMENUCOMEBACKNAME	Practicar comebacks	
+MAINMENUCOMEBACKDESC	Sigue alcanzando a Uke sin ser descalificado	
+MAINMENUGAMERULESNAME	Reglas del juego	
+MAINMENUGAMERULESDESC	Personalizar la gravedad y otras configuraciones del modo	
+MAINMENUMODLISTNAME	Lista de modos	
+MAINMENUMODLISTDESC	Carga uno de los modos descargados	
+MAINMENUMODMAKERNAME	Creador de modos	
+MAINMENUMODMAKERDESC	Crea tu propio mod para Toribash	
+MAINMENUMODSDISCOVERNAME	Descubre	
+MAINMENUMODSDISCOVERDESC	Busca nuevos modos creados por otros jugadores	
+MAINMENUSHADERSNAME	Sombreados y atmósferas	
+MAINMENUSHADERSDESC	Personalizar iluminación y el medio ambiente de Toribash	
+MAINMENUSCRIPTSNAME	Scripts	
+MAINMENUSCRIPTSDESC	Cargar scripts preinstalados o de terceros para Toribash	
+MAINMENUSOUNDSNAME	Sonidos	
+MAINMENUSOUNDSDESC	Activar/desactivar sonidos personalizados	
+DOWNLOADINGFILESWAIT	Descargando archivos, por favor espere...	
+STORESETEMPTY	Vacío	marks an empty set
+STOREITEM	ítem	used to display that there's only 1 item in a set
+STOREITEMS	ítems	used to display number of items in a set
+STOREFLAMEBODYPART	Partícula de flama para tu	
+STOREFLAMEID	ID de flama	
+STOREFLAMEFORGEDBY	Hecho por	
+STOREITEMINSIDESET	Dentro del set	
+STOREOBJITEMBODYPART	Modelo 3D customizado para	
+STOREITEMNODESCRIPTION	Este ítem no tiene descripción	
+STOREITEMGOTOSET	Ir al set	
+STORESETITEMNAME	Set	
+STOREITEMADDTOSET	Agregar al set	
+STOREITEMREMOVEFROMSET	Sacar del set	
+STOREVIEWSETITEMS	Ver ítems del set	
+STOREITEMSINSET	Ítems dentro del set	
+STORESELLMARKET	Vender en el mercado	
+STOREDIALOGMARKETSELL1	¿Estás seguro que quieres poner	
+STOREDIALOGMARKETSELL2	en el mercado?	
+STOREITEMDEACTIVATE	Desactivar	
+STOREDIALOGDEACTIVATE1	¿Estás seguro que quieres desactivarlo	
+STOREDIALOGDEACTIVATE2		
+STOREITEMACTIVATE	Activar	
+STOREDIALOGACTIVATE1	¿Estás seguro que quieres activar	
+STOREDIALOGACTIVATE2		
+STOREDIALOGCONFLICTSDEACTIVATE	Cualquier ítem que entre en conflicto será desactivado	
+STOREITEMUNPACK	Abrir paquete	
+STOREDIALOGUNPACK1	¿Estás seguro que quieres abrir el paquete de	
+STOREDIALOGUNPACK2		
+STOREDIALOGUNPACKINFO	Los items sacados de paquetes serán puestos en un set y colocado en tu inventario desactivado	
+STOREACTIVATEDINVENTORY	Inventario activado	
+STOREDEACTIVATEDINVENTORY	Inventario desactivado	
+STOREMARKETINVENTORY	Inventario del mercado	
+STOREINVENTORYALLITEMS	Todos los ítems del inventario	
+PAGINATIONPAGE	Página	
+PAGINATIONPAGEOF	de	
+STOREINVENTORYLOADING	Cargando datos del Toriverso	
+STOREGOTOSHOP	Abrir ToriTienda	
+STORESHOPDESC	Comprar ítems para tu Tori	
+STOREGOTOINVENTORY	Abrir inventario	
+STOREINVENTORYDESC	Personaliza tu personaje con ítems comprados	
+STORESTEAMPURCHASELOADING	Trabajando	
+STORESTEAMPURCHASEERROR	Algo salió mal	
+CLANSMYCLAN	Mi clan	
+CLANSCLANLEADER	Líder del clan	
+CLANSCLANMEMBER	Miembro del clan	
+CLANSTOGETHERWITH	Junto con	
+CLANSVIEWCLAN	Ver clan	
+GENERALSTRINGAND	y	
+CLANFILTERSRANK	Rango	
+CLANFILTERSCLANNAME	Nombre	
+CLANFILTERSCLANTAG	Etiqueta	
+CLANFILTERSCLANID	ID	
+CLANFILTERSOFFICIALSTATUS	Estado	
+CLANFILTERSJOINMODE	Modo de unirse	
+CLANFILTERSDEAD	Muerto	
+CLANFILTERSINACTIVE	Inactivo	
+CLANFILTERSACTIVE	Activo	
+SORTORDERASCENDING	Ascendente	
+SORTORDERDESCENDING	Descendente	
+CLANFILTERSACTIVITYSTATE	Estado de actividad	
+CLANFILTERSACTIVITYSTATEDESC	Se considera un clan activo cuando tienen al menos 5 miembros. Los clanes sin miembros son indicados como muertos.	
+CLANFILTERSFFAONLY	Sólo clanes abiertos	
+CLANFILTERSFFAONLYDESC	Puedes unirte a los clanes abiertos en cualquier momento sólo con un click. Para clanes de invitación, un proceso de aprobación es requerido.	
+CLANFILTERSOFFICIALONLY	Sólo clanes oficiales	
+CLANFILTERSOFFICIALONLYDESC	Los clanes oficiales tienen su propio subforo en los foros de Toribash, y tienen corchetes en el juego.	
+SORTBYNAME	Ordenar por	
+SORTORDERNAME	Orden de clasificación	
+CLANSSEARCHFILTERS	Filtros de búsqueda	
+CLANSSEARCH	Buscar clanes	
+CLANSCLANLIST	Lista de clanes	
+CLANSLEGENDRANK	Rango	
+CLANSLEGENDLEVEL	Nivel	
+CLANSLEGENDXP	Experiencia	
+CLANSLEGENDTAGNAME	Etiqueta y nombre	
+CLANSLEGENDSTATUS	Estado	
+CLANSLEGENDJOINMODE	Modo de unirse	
+CLANSTATEOFFICIAL	Oficial	
+CLANSTATEUNOFFICIAL	No oficial	
+CLANSTATEFREEFORALL	Clan abierto	
+CLANSTATEINVITEONLY	Sólo por invitación	
+CLANSLISTEMPTYMSG	No hay clanes para mostrar	
+CLANSJOINCLAN	Unirse al clan	
+CLANSRELOADLOGO	Recargar logo	
+CLANSUPDATINGLOGO	Actualizando	
+CLANSTATEUNRANKED	Sin rango	
+CLANSVIEWWARSFORUM	Ver guerras en el foro	
+CLANSTOPACHMISSING	Este clan no eligió ningún logro para mostrar	
+CLANSLEGENDROSTER	Lista de miembros	
+CLANLEADERS	Líderes	
+CLANLEADER	Líder	
+CLANMEMBERS	Miembros	
+CLANMEMBER	Miembro	
+REWARDSDAILYTITLE	Recompensa diaria	
+REWARDSCLAIM	Reclamar recompensa	
+REWARDSCLAIMNETWORKERROR	Error al comunicarse con los servidores de Toribash, por favor inténtelo mas tarde	
+REWARDSCLAIMINPROGRESS	Reclamando recompensa	
+REWARDSCLAIMSUCCESS	Recompensa reclamada	
+REWARDSCLAIMNOREWARD	No hay recompensas disponibles, intente mas tarde	
+REWARDSCLAIMTIMEOUT	Se ha agotado el tiempo de espera. Reinicie el juego o conéctese.	
+REWARDSCLAIMERROROTHER	Error al reclamar la recompensa	
+REWARDSNOAVAILABLE	No hay recompensas disponible	
+REWARDSAVAILABLERESTART	La recompensa estará disponble la próxima vez que inicie el juego	
+REWARDSEXPIRED	Tu recompensa ha expirado! :(	
+REWARDSTIMEHOURS	horas	
+REWARDSTIMEHOUR	hora	
+REWARDSTIMEMINUTES	minutos	
+REWARDSTIMEMINUTE	minuto	
+REWARDSTIMESECONDS	segundos	
+REWARDSNEXTREWARD	Próxima recompensa en	
+REWARDSTIMELEFT	remanentes para reclamar recompensa	
+MATCHMAKEMODGRAPPLING	Aferramiento	
+MATCHMAKEMODKICKING	Patadas	
+MATCHMAKEMODSTRIKING	Golpes	
+MATCHMAKEMODFUN	Divertidos	
+MATCHMAKERANKEDBELT	Las peleas clasificatorias están disponibles a partir de cinto marrón	
+MATCHMAKERANKEDMODE	Modo clasificatoria	
+MATCHMAKERANK	Rank	
+MATCHMAKEFIGHTSTOTAL	Peleas totales	
+MATCHMAKEWINRATE	Ratio de victorias	
+MATCHMAKENOPLAYERS	No hay jugadores buscando actualmente	
+MATCHMAKEPLAYERSEARCHING	jugador buscando	
+MATCHMAKEPLAYERSSEARCHING	jugadores buscando	
+MATCHMAKESEARCHING	Buscando una partida	
+MATCHMAKESEARCH	Buscando	
+MATCHMAKESTOPSEARCH	Parar de buscar	
+MATCHMAKEUNRANKEDMODE	Juego casual	
+MATCHMAKEFINDBESTMATCH1	Encontrar	
+MATCHMAKEFINDBESTMATCH2	mejor partida	
+MATCHMAKESEARCHSETTINGS1	Buscar	
+MATCHMAKESEARCHSETTINGS2	con configuraciones	
+MATCHMAKESEARCHCUSTOM	personalizada	
+MATCHMAKEUPDATINGRANK	Actualizando estadísticas de ranking...	

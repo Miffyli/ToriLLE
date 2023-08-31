@@ -1,0 +1,146 @@
+#!/usr/bin/toribash
+#### Created with ModEditor by DeFransen ####
+
+
+gamerule
+   damage 0
+   dismemberment 0
+   disqualification 1
+   dojosize 0
+   dojotype 0
+   dqflag 0
+   dqtimeout 0
+   engagedistance 100
+   engageheight 0
+   engageplayerpos 0,9,7.5,-4,9,7.5
+   engageplayerrot 0,0,0,0,0,0
+   engagerotation 0
+   engagespace 0
+   flags 1
+   fracture 0
+   gravity 0 0 -30
+   matchframes 500
+   rpg 0
+   sumo 0
+   turnframes 10
+
+
+# for all players
+
+
+env_obj 1
+   color 0.35 0.35 0.35 1
+   flag 8
+   pos 1 2.5 5
+   shape box
+   sides 4 4 10
+
+env_obj 2
+   color 0.3 0.3 0.3 1
+   flag 8
+   pos -4 -1 2.5
+   shape box
+   sides 4 8 5
+
+env_obj 3
+   color 0.3 0.3 0.3 1
+   flag 8
+   pos 1 -7 3.25
+   shape box
+   sides 3 7 6.5
+
+env_obj 4
+   color 0.3 0.3 0.3 1
+   flag 8
+   pos 5.5 -9 3.25
+   shape box
+   sides 12 3 6.5
+
+env_obj 5
+   color 0.35 0.35 0.35
+   flag 8
+   pos 11 -3.5 4
+   shape box
+   sides 7 4.5 8
+
+env_obj 6
+   color 0.3 0.3 0.3 1
+   flag 8
+   pos 5.5 -14.25 1.75
+   shape box
+   sides 6.5 4.5 3.5
+
+env_obj 7
+   color 0.35 0.35 0.35 1
+   flag 8
+   pos 7.5 3 6
+   shape box
+   sides 4 4 12
+
+env_obj 8
+   color 0.45 0.45 0.45 1
+   flag 8
+   pos 9 -10.45 6.75
+   shape box
+   sides 5 0.1 0.5
+
+env_obj 9
+   color 0.45 0.45 0.45 1
+   flag 8
+   pos 11.45 -9 6.75
+   shape box
+   sides 0.1 3 0.5
+
+env_obj 10
+   color 0.5 0.5 0.5 1
+   flag 8
+   pos 9.25 -7 7
+   rot 65 0 0
+   shape cylinder
+   sides 0.15 3 0
+
+env_obj 11
+   color 0.5 0.5 0.5 1
+   flag 8
+   pos 10.25 -7 7
+   rot 65 0 0
+   shape cylinder
+   sides 0.15 3 0
+
+env_obj 12
+   color 0.45 0.45 0.45 1
+   flag 8
+   pos 1 -10.45 6.75
+   shape box
+   sides 3 0.1 0.5
+
+env_obj 13
+   color 0.35 0.35 0.35 1
+   flag 8
+   pos 1 1.5 8
+   shape box
+   sides 3 7.5 0.1
+
+env_obj 14
+   color 0.35 0.35 0.35 1
+   flag 8
+   pos -0.75 5.5 3.75
+   shape box
+   sides 7.5 10 7.5
+
+env_obj 15
+   color 0.45 0.45 0.45 1
+   flag 8
+   pos -0.45 -8.5 6.75
+   shape box
+   sides 0.1 4 0.5
+
+env_obj 16
+   color 0.45 0.45 0.45 1
+   flag 8
+   pos -2 -4.2 5.3
+   rot 0 30 0
+   shape box
+   sides 4 1.25 0.1
+
+

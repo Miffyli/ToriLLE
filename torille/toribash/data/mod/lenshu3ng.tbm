@@ -1,0 +1,24 @@
+#!/usr/bin/toribash
+gamerule
+   matchframes 450
+   turnframes 30
+   flags 15
+   dismemberment 1
+   fracture 0
+   disqualification 1
+   dqtimeout 20
+   dqflag 1
+   dismemberthreshold 275
+   fracturethreshold 160
+   dojotype 1
+   dojosize 600
+   engagedistance 200
+   engageheight 0
+   engagerotation 0
+   engagespace 0
+   engageplayerpos 
+   engageplayerrot 0,0,0,0,0,0
+   damage 0
+   gravity 0.00 0.00 -30.00
+   sumo 1
+   rpg 0

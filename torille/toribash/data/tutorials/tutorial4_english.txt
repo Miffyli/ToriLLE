@@ -1,0 +1,22 @@
+#PLAYER MESSAGES
+SENSEIMSG1	Welcome to your first real test!
+SENSEIMSG2	Your opponent will be Uke, and you'll be playing aikido - one of the most popular mods.
+SENSEIMSG3	This challenge is very similar to how your Multiplayer Fights would look like.
+SENSEIMSG4	Good luck and remember everything you've learned!
+SENSEIMSG5	Welcome back and have fun with your training!
+UKEWIN1	Ha-ha, take that!
+UKEWIN2	And I come victorious!
+UKEWIN3	Wow, that was close. Pffft, kidding!
+UKEWIN4	Whoops, did you just lose? So sorry ...not!
+UKELOSS	Ugh. Not fair!
+SENSEIMSGEND	Great job! Now you are ready to join other fighters across the world!
+GMANKICK	That was a simple aikido kick by Gman80. Nice job, I'll add it to your MoveMemory.
+FNUGGETKICK	With this move, I tried to lift you with my arm and trip with my right leg. You can use it now.
+EVILTHROW	With this move, you can throw your opponents to the floor! Try it with Movememory some time.
+KYATKICKLIFT	This move type is called kicklift. Using it, you can push your opponents out from dojo!
+EVILPUSH	Evilperson taught me this floor push - and it's in your Movememory now, too.
+EVILPUSH2	That dojo push was one of evilperson's moves. Guess I still have to practice it.
+#
+#HINT MESSAGES
+HINT1	In AIKIDO, you need to either finish the fight with most points or disqualify the opponent.\nStay within fighting dojo and only touch the floor with your feet or hands!
+MOVEMEMORYHINT	Don't forget that you can use MOVEMEMORY! Press ~M~ to open it during the fight.

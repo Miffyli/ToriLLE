@@ -1,0 +1,382 @@
+# Environment exported by WorldBuilder
+######################################
+
+gamerule
+engageplayerpos 0
+eh 100
+ed 220
+
+env_obj 1
+    shape box
+    pos 1 -0.125 0.9375
+    color 1.1 0.2 0.5 1
+    rot 0 0 0
+    sides 3.1675 4.35 0.125
+    material steel
+    mass 0.1
+    flag 16
+    thrust 1 0 0 3.3
+    friction 1
+#END 1
+
+env_obj 2
+    shape box
+    pos -0.4375 -0.125 1.0625
+    color 0.9 0.6 -0.1 1
+    rot 0 0 0
+    sides 0.3125 4.75 0.125
+    material steel
+    mass 0.1
+    flag 24
+    friction 0
+#END 2
+
+env_obj 3
+    shape box
+    pos 2.4375 -0.125 1.0625
+    color 0.9 0.6 -0.1 1
+    rot 0 0 0
+    sides 0.3125 4.75 0.125
+    material steel
+    mass 0.1
+    flag 24
+    friction 0
+#END 3
+
+env_obj 4
+    shape box
+    pos 2.6875 -0.125 0.5
+    color 0.9 0.6 -0.1 1
+    rot 0 0 0
+    sides 0.1875 4.75 1.25
+    material steel
+    mass 0.1
+    flag 24
+    friction 0
+#END 4
+
+env_obj 5
+    shape box
+    pos -0.6875 -0.125 0.5
+    color 0.9 0.6 -0.1 1
+    rot 0 0 0
+    sides 0.1875 4.75 1.25
+    material steel
+    mass 0.1
+    flag 24
+    friction 0
+#END 5
+
+env_obj 6
+    shape box
+    pos 0.9375 2.125 1.0625
+    color 0.9 0.6 -0.1 1
+    rot 0 0 90
+    sides 0.25 2.875 0.125
+    material steel
+    mass 0.1
+    flag 24
+    friction 0
+#END 6
+
+env_obj 7
+    shape box
+    pos 0.9375 -2.375 1.0625
+    color 0.9 0.6 -0.1 1
+    rot 0 0 90
+    sides 0.25 2.875 0.125
+    material steel
+    mass 0.1
+    flag 24
+    friction 0
+#END 7
+
+env_obj 8
+    shape box
+    pos 1 -2.625 0.4375
+    color 0.9 0.6 -0.1 1
+    rot 0 0 90
+    sides 0.25 3.5625 1.375
+    material steel
+    mass 0.1
+    flag 24
+    friction 0
+#END 8
+
+env_obj 9
+    shape box
+    pos 1 2.375 0.4375
+    color 0.9 0.6 -0.1 1
+    rot 0 0 90
+    sides 0.25 3.5625 1.375
+    material steel
+    mass 0.1
+    flag 24
+    visible 0
+    friction 0
+#END 9
+
+env_obj 10
+    shape box
+    pos 1 .6 4.4375
+    color 1.1 1.1 1 1
+    rot 0 0 90
+    sides 0.125 0.6875 0.5
+    material steel
+    mass 0.00001
+    flag 0
+#END 10
+
+env_obj 11
+    shape box
+    pos 1 .6 4.9375
+    color 1.1 1.1 1 1
+    rot 0 0 90
+    sides 0.125 0.6875 0.5
+    material steel
+    mass 0.00001
+    flag 0
+#END 11
+
+env_obj 12
+    shape box
+    pos 1 -.7 4.9375
+    color 1.1 1.1 1 1
+    rot 0 0 90
+    sides 0.125 0.6875 0.5
+    material steel
+    mass 0.000001
+    flag 0
+#END 12
+
+env_obj 13
+    shape box
+    pos 1 -.7 4.4375
+    color 1.1 1.1 1 1
+    rot 0 0 90
+    sides 0.125 0.6875 0.5
+    material steel
+    mass 0.000001
+    flag 0
+#END 13
+
+env_obj_joint 1 12 13
+pos 1 -1.1875 4.65
+axis 0 1 0
+range .5 -.5
+
+env_obj_joint 2 10 11
+pos 1 0.8125 4.65
+axis 0 1 0
+range .5 -.5
+
+body head
+
+radius 0.20000
+pos 1.000000 0.850000 2.600000
+
+body breast
+
+sides 0.200000 0.100000 0.300000
+pos 1.000000 0.900000 2.200000
+
+body chest
+
+sides 0.290000 0.150000 0.200000
+pos 1.000000 0.900000 1.950000
+
+body stomach
+
+sides 0.220000 0.150000 0.200000
+pos 1.000000 0.950000 1.750000
+
+body groin
+
+sides 0.100000 0.150000 0.200000
+pos 1.000000 1.000000 1.550000
+
+body r_pecs
+
+sides 0.200000 0.150000 0.200000
+pos 0.900000 0.850000 2.200000
+
+body r_biceps
+
+sides 0.400000 0.150000 0.150000
+pos 0.450000 0.900000 2.200000
+
+body r_triceps
+
+sides 0.400000 0.100000 0.100000
+pos 0.050000 0.900000 2.200000
+
+body l_pecs
+
+sides 0.200000 0.150000 0.200000
+pos 1.100000 0.850000 2.200000
+
+body l_biceps
+
+sides 0.400000 0.150000 0.150000
+pos 1.550000 0.900000 2.200000
+
+body l_triceps
+
+sides 0.400000 0.100000 0.100000
+pos 1.950000 0.900000 2.200000
+
+body r_hand
+
+sides 0.150000 0.150000 0.150000
+pos -0.350000 0.850000 2.200000
+
+body l_hand
+
+sides 0.150000 0.150000 0.150000
+pos 2.350000 0.850000 2.200000
+
+body r_butt
+
+sides 0.100000 0.100000 0.100000
+pos 0.850000 1.000000 1.450000
+
+body l_butt
+
+sides 0.100000 0.100000 0.100000
+pos 1.150000 1.000000 1.450000
+
+body r_thigh
+
+sides 0.135000 0.300000 0.000000
+pos 0.830000 1.000000 1.100000
+
+body l_thigh
+
+sides 0.135000 0.300000 0.200000
+pos 1.170000 1.000000 1.100000
+
+body l_leg
+
+sides 0.120000 0.300000 0.000000
+pos 1.150000 1.000000 0.500000
+
+body r_leg
+
+sides 0.120000 0.300000 0.000000
+pos 0.850000 1.000000 0.500000
+
+body r_foot
+
+sides 0.150000 0.350000 0.080000
+pos 0.850000 0.900000 0.100000
+density 5
+
+body l_foot
+
+sides 0.150000 0.350000 0.080000
+pos 1.150000 0.900000 0.100000
+density 5
+
+joint neck
+
+radius 0.090000
+pos 1.000000 0.900000 2.400000
+
+joint chest
+
+radius 0.180000
+pos 1.000000 0.900000 2.050000
+
+joint lumbar
+
+radius 0.160000
+pos 1.000000 0.950000 1.850000
+
+joint abs
+
+radius 0.140000
+pos 1.000000 1.000000 1.650000
+
+joint r_pecs
+
+radius 0.170000
+pos 0.860000 0.800000 2.100000
+
+joint r_shoulder
+
+radius 0.140000
+pos 0.650000 0.900000 2.200000
+
+joint r_elbow
+
+radius 0.130000
+pos 0.250000 0.900000 2.200000
+
+joint l_axilla
+
+radius 0.170000
+pos 1.140000 0.800000 2.100000
+
+joint l_shoulder
+
+radius 0.140000
+pos 1.350000 0.900000 2.200000
+
+joint l_elbow
+
+radius 0.130000
+pos 1.750000 0.900000 2.200000
+
+joint r_wrist
+
+radius 0.100000
+pos -0.200000 0.900000 2.200000
+
+joint l_wrist
+
+radius 0.100000
+pos 2.200000 0.900000 2.200000
+
+joint r_glute
+
+radius 0.175000
+pos 0.900000 1.100000 1.510000
+
+joint l_glute
+
+radius 0.175000
+pos 1.100000 1.100000 1.510000
+
+joint r_hip
+
+radius 0.170000
+pos 0.850000 1.000000 1.400000
+
+joint l_hip
+
+radius 0.170000
+pos 1.150000 1.000000 1.400000
+
+joint r_knee
+
+radius 0.140000
+pos 0.840000 1.000000 0.800000
+
+joint l_knee
+
+radius 0.140000
+pos 1.160000 1.000000 0.800000
+
+joint r_ankle
+
+radius 0.100000
+pos 0.850000 1.050000 0.250000
+
+joint l_ankle
+
+radius 0.100000
+pos 1.150000 1.050000 0.250000
+
+
+
+

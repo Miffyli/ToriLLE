@@ -1,0 +1,156 @@
+#mod by sny
+
+gamerule
+gravity 0 0 -30
+engagedistance 100
+engageplayerpos -3.50,4.00,10.00,0.00,4.00,10.00
+engageplayerrot 0,0,0,0,0,0
+matchframes 2000
+turnframes 10
+dismemberthreshold 300
+dojotype 0
+dojosize 100
+flags 2
+
+env_obj 1
+    shape box
+    pos -0.50 0 9.5
+    color 0 0 0.5 
+    rot 0 0 0
+    sides 8 10 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 2
+    shape box
+    pos -0.50 -6 9.5
+    color 0 0 0.5 
+    rot 0 0 0
+    sides 5 2 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 3
+    shape box
+    pos -0.50 -9 9.5
+    color 0 0 0.5 
+    rot 0 0 0
+    sides 2 6 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 4
+    shape box
+    pos 1 -13 9.5
+    color 0 0 0.5 
+    rot 0 0 0
+    sides 2 2 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 5
+    shape box
+    pos -1 -15 9.5
+    color 0 0 0.5 
+    rot 0 0 0
+    sides 2 2 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 6
+    shape box
+    pos -3 -17 9.5
+    color 0 0 0.5 
+    rot 0 0 0
+    sides 2 2 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 7
+    shape box
+    pos 7.50 -22 14.5
+    color 0 0 0.5
+    rot 0 0 0
+    sides 25 1 10 
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 8
+    shape sphere
+    pos -5 -22 10
+    color 1 0 0 
+    rot 0 0 0
+    sides 0.4 0.4 0.4
+    material steel
+    mass 0.1
+    flag 8
+#END 1
+
+env_obj 9
+    shape box
+    pos 7.5 -25 10
+    color 0 0 0.5
+    rot 0 0 0
+    sides 25 6 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 10
+    shape box
+    pos 7.5 -27 15
+    color 0 0 0.5
+    rot 0 0 0
+    sides 6 10 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 11
+    shape box
+    pos 14 -25 14.5
+    color 0 0 0.5
+    rot 0 0 0
+    sides 1 6 10 
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 12
+    shape cylinder
+    pos 10.5 -27 15
+    color 1 0 0 0.7
+    rot 90 0 0
+    sides 0.5 6 0 
+    material steel
+    mass 0.1
+    flag 8
+#END 1
+
+env_obj 13
+    shape box
+    pos 7.5 -42 10
+    color 0 1 0
+    rot 0 0 0
+    sides 10 10 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1

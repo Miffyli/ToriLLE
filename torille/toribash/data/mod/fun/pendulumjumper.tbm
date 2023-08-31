@@ -1,0 +1,136 @@
+#!/usr/bin/toribash
+gamerule
+   matchframes 960
+   turnframes 80
+   flags 3
+   dismemberment 1
+   fracture 0
+   disqualification 1
+   dqtimeout 0
+   dqflag 1
+   dismemberthreshold 100
+   fracturethreshold 0
+   dojotype 0
+   dojosize 10
+   engagedistance 400
+   engageheight 400
+   engagerotation 0
+   engagespace 0
+   engageplayerpos 
+   engageplayerrot 0,0,0,0,0,0
+   damage 0
+   gravity 0.00 0.00 -10.00
+   sumo 0
+   reactiontime 15
+   drawwinner 0
+env_obj 1
+   shape box
+   pos 1.00 -0.10 2.01
+   mass 0.1000
+   color 1.00000000 1.00000000 1.00000000 1.00000000
+   visible 1
+   rot 0.00 0.00 0.00
+   sides 4.00 10.00 4.00
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 3
+   shape box
+   pos 1.00 -0.10 24.99
+   mass 0.1000
+   color 0.39215690 0.31372550 0.23529413 1.00000000
+   visible 1
+   rot 0.00 0.00 0.00
+   sides 1.00 10.00 1.00
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+env_obj 6
+   shape box
+   pos 10.70 -0.10 24.01
+   mass 0.0500
+   color 0.39215690 0.31372550 0.23529413 1.00000000
+   visible 1
+   rot 0.00 90.00 0.00
+   sides 0.30 0.30 19.00
+   force 0.00 0.00 0.00
+   flag 0
+   bounce 0.100000
+   friction 0.00
+env_obj 7
+   shape box
+   pos 20.20 -0.10 24.00
+   mass 0.0500
+   color 0.70588237 0.70588237 0.70588237 1.00000000
+   visible 1
+   rot 0.00 0.00 0.00
+   sides 0.30 9.00 0.30
+   force 0.00 0.00 0.00
+   flag 0
+   bounce 0.100000
+   friction 10000.00
+env_obj 8
+   shape box
+   pos 1.00 2.90 22.00
+   mass 0.1000
+   color 0.00000000 1.00000000 0.00000000 0.00000000
+   visible 0
+   rot 0.00 0.00 0.00
+   sides 20.00 5.80 6.00
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 0.00
+env_obj 9
+   shape box
+   pos 1.01 -3.10 22.00
+   mass 0.1000
+   color 0.00000000 1.00000000 0.00000000 0.00000000
+   visible 0
+   rot 0.00 0.00 0.00
+   sides 20.00 5.80 6.00
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 0.00
+env_obj 10
+   shape box
+   pos 1.01 5.40 15.00
+   mass 0.1000
+   color 0.19607845 0.19607845 0.19607845 1.00000000
+   visible 1
+   rot 0.00 0.00 0.00
+   sides 2.00 1.00 30.00
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj 11
+   shape box
+   pos 1.00 -5.60 15.00
+   mass 0.1000
+   color 0.19607845 0.19607845 0.19607845 1.00000000
+   visible 1
+   rot 0.00 0.00 0.00
+   sides 2.00 1.00 30.00
+   force 0.00 0.00 0.00
+   flag 24
+   bounce 0.100000
+   friction 10000.00
+env_obj_joint 1 3 6
+   pos 1.00 -0.10 24.00
+   axis 1.00 0.00 0.00
+   range 0.00 0.00
+   strength 0.00
+   velocity 0.00
+   visible 0
+env_obj_joint 2 6 7
+   pos 20.20 -0.10 24.00
+   axis 0.00 0.00 0.00
+   range 0.00 0.00
+   strength 0.00
+   velocity 0.00
+   visible 0
+

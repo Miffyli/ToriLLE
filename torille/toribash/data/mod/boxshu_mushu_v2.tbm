@@ -1,0 +1,236 @@
+#!/usr/bin/toribash
+# boxshu.tbm, based on dojoroom1000.tbm and brushu.tbm
+
+gamerule
+engageplayerpos 0
+dojotype 0
+ds 1000
+engagedistance 300
+dismember 1
+dismemberthreshold 300
+fracture 1
+fracturethreshold 180
+turnframes 50
+matchframes 1000
+sumo 1
+dq 1
+flags 3
+
+env_obj 1
+shape box
+pos 6.75 -.1 10.01
+color 0.5 0.5 0.5 0.75
+rot 0 0 0
+sides 1.5 10 20
+material steel
+mass 0.0001
+flag 24
+visible 0
+
+env_obj 2
+shape box
+pos -4.75 -.1 10.01
+color 0.5 0.5 0.5 0.75
+rot 0 0 0
+sides 1.5 10 20
+material steel
+mass 0.0001
+flag 24
+visible 0
+
+env_obj 3
+shape box
+pos 1 5.65 10.01
+color 0.5 0.5 0.5 0.75
+rot 0 0 0
+sides 13 1.5 20
+material steel
+mass 0.0001
+flag 24
+visible 0
+
+env_obj 4
+shape box
+pos 1 -5.85 10.01
+color 0.5 0.5 0.5 0.75
+rot 0 0 0
+sides 13 1.5 20
+material steel
+mass 0.0001
+flag 24
+visible 0
+
+env_obj 5
+hape box
+pos 6 -5.1 2.02
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 0.01 0.01 4
+material steel
+mass 0.0001
+flag 24
+
+env_obj 6
+shape box
+pos -4 -5.1 2.02
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 0.01 0.01 4
+material steel
+mass 0.0001
+flag 24
+
+env_obj 7
+shape box
+pos 6 4.9 2.02
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 0.01 0.01 4
+material steel
+mass 0.0001
+flag 24
+
+env_obj 8
+shape box
+pos -4 4.9 2.02
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 0.01 0.01 4
+material steel
+mass 0.0001
+flag 24
+
+env_obj 9
+shape box
+pos 1 4.9 4.02
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 10 0.01 0.01
+material steel
+mass 0.0001
+flag 24
+
+env_obj 10
+shape box
+pos 1 -5.1 4.02
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 10 0.01 0.01
+material steel
+mass 0.0001
+flag 24
+
+env_obj 11
+shape box
+pos -4 -0.1 4.02
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 0.01 10 0.01
+material steel
+mass 0.0001
+flag 24
+
+env_obj 12
+shape box
+pos 6 -0.1 4.02
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 0.01 10 0.01
+material steel
+mass 0.0001
+flag 24
+
+env_obj 13
+shape box
+pos 1 -0.1 4.02
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 10 10 0.01
+material steel
+mass 0.0001
+flag 24
+visible 0
+
+env_obj 14
+shape box
+pos -4 -4.1 1.77
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 0.01 0.01 3.5
+material steel
+mass 0.0001
+flag 24
+
+env_obj 15
+shape box
+pos -4 -2.1 1.77
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 0.01 0.01 3.5
+material steel
+mass 0.0001
+flag 24
+
+env_obj 16
+shape box
+pos -4 -3.1 3.515
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 0.01 2 0.01
+material steel
+mass 0.0001
+flag 24
+
+# for all players
+
+   body head
+      flag 36
+      material steel
+
+   body l_biceps
+      flag 2
+      material steel
+
+   body l_foot
+      flag 38
+      material steel
+
+   body l_hand
+      flag 38
+      material steel
+
+   body l_leg
+      flag 2
+      material steel
+
+   body l_thigh
+      flag 2
+      material steel
+
+   body l_triceps
+      flag 2
+      material steel
+
+   body r_biceps
+      flag 2
+      material steel
+
+   body r_foot
+      flag 38
+      material steel
+
+   body r_hand
+      flag 38
+      material steel
+
+   body r_leg
+      flag 2
+      material steel
+
+   body r_thigh
+      flag 2
+      material steel
+
+   body r_triceps
+      flag 2
+      material steel

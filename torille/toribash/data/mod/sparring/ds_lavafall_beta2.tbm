@@ -1,0 +1,182 @@
+#!/usr/bin/toribash
+
+gamerule
+engageplayerpos 0
+gravity 0 0 -30
+engagedistance 600
+engageheight 5050
+dismemberthreshold 9999999
+mf 2000
+flags 6
+
+env_obj 1
+    shape box
+    pos 0 0 50.26
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 13 13 0.5
+    material steel
+    mass 1.9
+    thrust 1 -27 0 0
+#END 1
+
+env_obj 2
+    shape box
+    pos 997 0 25
+    color 0.8 0 0 1
+    rot 0 0 0
+    sides 2010 41 50
+    material steel
+    mass 10
+    flag 12
+#END 2
+
+env_obj 3
+    shape box
+    pos 997 1046 25.5
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 2011 2051 51
+    material steel
+    flag 8
+#END 3
+
+env_obj 4
+    shape box
+    pos 997 -1046 25.5
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 2011 2051 51
+    material steel
+    flag 8
+#END 4
+
+env_obj 5
+    shape box
+    pos -1997 -1046 0.1
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 4010 2051 0.2
+    material steel
+    flag 8
+#END 5
+
+env_obj 6
+    shape box
+    pos -1997 1046 0.1
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 4010 2051 0.2
+    material steel
+    friction 0
+    flag 8
+#END 6
+
+env_obj 7
+    shape box
+    pos -1997 0 0.05
+    color 0.8 0 0 1
+    rot 0 0 0
+    sides 4010 41 0.1
+    material steel
+    friction 0
+    flag 12
+#END 7
+
+env_obj 8
+    shape box
+    pos 0 10.5 50.26
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 5 5 0.5
+    material steel
+    mass 2
+    flag 8
+#END 8
+
+env_obj 9
+    shape box
+    pos 1 14.5 49.5
+    color 0.5 0.5 0.5 1
+    rot 0 30 0
+    sides 2 2 2
+    material steel
+    mass 2
+    flag 8
+#END 9
+
+env_obj 10
+    shape box
+    pos -2 16.5 49.5
+    color 0.5 0.5 0.5 1
+    rot 0 65 0
+    sides 2 2 2
+    material steel
+    mass 2
+    flag 8
+#END 10
+
+env_obj 11
+    shape box
+    pos 6 10 50
+    color 0.5 0.5 0.5 1
+    rot 20 0 0
+    sides 2 2 2
+    material steel
+    mass 2
+    flag 8
+#END 11
+
+env_obj 12
+    shape box
+    pos 0 19 50.125
+    color 0.5 0.5 0.5 1
+    rot 0 0 5
+    sides 2 2 0.25
+    material steel
+    mass 2
+    flag 8
+#END 12
+
+env_obj 13
+    shape box
+    pos 7 -10 50.26
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 5 4 0.5
+    material steel
+    mass 2
+    thrust 1 -30 0 0
+#END 13
+
+env_obj 14
+    shape box
+    pos 6 -16 50.26
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 6 6 0.5
+    material steel
+    mass 2
+    thrust 1 -21 0 0
+#END 14
+
+env_obj 15
+    shape box
+    pos 6 16 50
+    color 0.5 0.5 0.5 1
+    rot 30 0 0
+    sides 2 4 2
+    material steel
+    mass 2
+    flag 8
+#END 15
+
+env_obj 16
+    shape box
+    pos 18 -14 50.26
+    color 0.5 0.5 0.5 1
+    rot 0 0 0
+    sides 12 12 0.5
+    material steel
+    mass 2
+    thrust 1 -27 0 0

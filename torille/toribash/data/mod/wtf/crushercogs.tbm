@@ -1,0 +1,185 @@
+#################################
+# Crusher Cogs mod, made by Shook
+
+gamerule
+engageplayerpos 0
+	engagedistance 100
+
+env_obj 1
+	shape box
+	pos 1 -2.5 1.15
+	color 0.7 0.7 0.8
+	rot 0 0 0
+	sides 3 1.4 1.4
+	material steel
+	mass 0.1
+	flag 0
+
+env_obj 2
+	shape box
+	pos 1 -2.5 3.15
+	color 0.7 0.7 0.8
+	rot 0 0 0
+	sides 3 1.4 1.4
+	material steel
+	mass 0.1
+	flag 0
+
+env_obj 3
+	shape box
+	pos 1 -2.5 1.15
+	color 0.7 0.7 0.8
+	rot 45 0 0
+	sides 3 1.4 1.4
+	material steel
+	mass 0.1
+	flag 0
+
+env_obj 4
+	shape box
+	pos 1 -2.5 3.15
+	color 0.7 0.7 0.8
+	rot 45 0 0
+	sides 3 1.4 1.4
+	material steel
+	mass 0.1
+	flag 0
+
+env_obj 5
+	shape box
+	pos 3 -2.5 2.15
+	color 0.7 0.7 0.8
+	rot 0 0 0
+	sides 0.5 1.5 4.3
+	material steel
+	mass 0.1
+	flag 8
+
+env_obj 6
+	shape box
+	pos -1 -2.5 2.15
+	color 0.7 0.7 0.8
+	rot 0 0 0
+	sides 0.5 1.5 4.3
+	material steel
+	mass 0.1
+	flag 8
+
+env_obj 7
+	shape box
+	pos 2.625 -2.5 1.15
+	color 0.7 0.7 0.8
+	rot 0 0 0
+	sides 0.25 0.2 0.2
+	material steel
+	mass 0.1
+	flag 8
+
+env_obj 8
+	shape box
+	pos -0.625 -2.5 3.15
+	color 0.7 0.7 0.8
+	rot 0 0 0
+	sides 0.25 0.2 0.2
+	material steel
+	mass 0.1
+	flag 8
+
+env_obj 9
+	shape box
+	pos 2.625 -2.5 3.15
+	color 0.7 0.7 0.8
+	rot 0 0 0
+	sides 0.25 0.2 0.2
+	material steel
+	mass 0.1
+	flag 8
+
+env_obj 10
+	shape box
+	pos -0.625 -2.5 1.15
+	color 0.7 0.7 0.8
+	rot 0 0 0
+	sides 0.25 0.2 0.2
+	material steel
+	mass 0.1
+	flag 8
+
+env_obj_joint 1 1 5
+	pos 2.75 -2.5 1.15
+	axis 1 0 0
+	range 10000 -10000
+	strength 1000000
+	velocity 20
+	visible 0
+
+env_obj_joint 2 1 5
+	pos -0.75 -2.5 1.15
+	axis 1 0 0
+	range 10000 -10000
+	strength 1000000
+	velocity 20
+	visible 0
+
+env_obj_joint 3 2 6
+	pos 2.75 -2.5 3.15
+	axis 1 0 0
+	range 10000 -10000
+	strength 1000000
+	velocity -20
+	visible 0
+
+env_obj_joint 4 2 6
+	pos -0.75 -2.5 3.15
+	axis 1 0 0
+	range 10000 -10000
+	strength 1000000
+	velocity -20
+ 	visible 0
+
+env_obj_joint 5 1 3
+	pos 1 -2.5 1.15
+	axis 1 0 0
+	range 0 0
+	strength 1000000
+	velocity 0
+ 	visible 0
+
+env_obj_joint 6 2 4
+	pos 1 -2.5 3.15
+	axis 1 0 0
+	range 0 0
+	strength 1000000
+	velocity 0
+ 	visible 0
+
+env_obj_joint 7 3 5
+	pos 2.75 -2.5 1.15
+	axis 1 0 0
+	range 10000 -10000
+	strength 1000000
+	velocity 20
+	visible 0
+
+env_obj_joint 8 3 5
+	pos -0.75 -2.5 1.15
+	axis 1 0 0
+	range 10000 -10000
+	strength 1000000
+	velocity 20
+	visible 0
+
+env_obj_joint 9 4 6
+	pos 2.75 -2.5 3.15
+	axis 1 0 0
+	range 10000 -10000
+	strength 1000000
+	velocity -20
+	visible 0
+
+env_obj_joint 10 4 6
+	pos -0.75 -2.5 3.15
+	axis 1 0 0
+	range 10000 -10000
+	strength 1000000
+	velocity -20

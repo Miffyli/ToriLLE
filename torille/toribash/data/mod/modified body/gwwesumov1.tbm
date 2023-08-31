@@ -1,0 +1,762 @@
+#Body by gman80, dojo adapted from chuji
+
+gamerule
+engageplayerpos 0
+dojosize 740
+engagedistance 100
+matchframes 380
+turnframes 10,10,20,20,20,30,30,30,30,40,40,50,50
+dqflag 1
+dq 1
+dqtimeout 30
+sumo 1
+dismemberment 0
+fracture 1
+fracturethreshold 380
+gravity 0 0 -20
+
+
+#Boxring
+
+env_obj 1
+shape cube
+pos 4.75 3.65 1.11
+color 0.63 0.23 0.23 1
+rot 0 0 0
+sides 0.5 0.5 2.2
+material steel
+mass 0.0001
+flag 24
+
+env_obj 2
+shape cube
+pos -2.75 3.65 1.11
+color 0.8 0.8 0.8 1
+rot 0 0 0
+sides 0.5 0.5 2.2
+material steel
+mass 0.0001
+flag 24
+
+env_obj 3
+shape cube
+pos -2.75 -3.85 1.11
+color 0.27 0.7 0.87 1
+rot 0 0 0
+sides 0.5 0.5 2.2
+material steel
+mass 0.0001
+flag 24
+
+env_obj 4
+shape cube
+pos 4.75 -3.85 1.11
+color 0.8 0.8 0.8 1
+rot 0 0 0
+sides 0.5 0.5 2.2
+material steel
+mass 0.0001
+flag 24
+
+env_obj 5
+shape cylinder
+pos 1.0 -3.85 1.95
+color 0.27 0.7 0.87 1
+rot 0 90 0
+sides 0.08 8.0 0.08
+material steel
+mass 0.0001
+flag 8
+bounce 15
+
+env_obj 6
+shape cylinder
+pos 1.0 3.65 1.95
+color 0.63 0.23 0.23 1
+rot 0 90 0
+sides 0.08 8.0 0.08
+material steel
+mass 0.0001
+flag 8
+bounce 15
+
+env_obj 7
+shape cylinder
+pos 4.75 -0.1 1.95
+color 0.63 0.23 0.23 1
+rot 90 0 0
+sides 0.08 8.0 0.08
+material steel
+mass 0.0001
+flag 8
+
+env_obj 8
+shape cylinder
+pos -2.75 -0.1 1.95
+color 0.27 0.7 0.87 1
+rot 90 0 0
+sides 0.08 8.0 0.08
+material steel
+mass 0.0001
+flag 8
+bounce 15
+
+env_obj 9
+shape cylinder
+pos 1.0 -3.85 1.2
+color 0.9 0.9 0.9 1
+rot 0 90 0
+sides 0.08 8.0 0.08
+material steel
+mass 0.0001
+flag 8
+
+env_obj 10
+shape cylinder
+pos 1.0 3.65 1.2
+color 0.9 0.9 0.9 1
+rot 0 90 0
+sides 0.08 8.0 0.08
+material steel
+mass 0.0001
+flag 8
+
+env_obj 11
+shape cylinder
+pos 4.75 -0.1 1.2
+color 0.9 0.9 0.9 1
+rot 90 0 0
+sides 0.08 8.0 0.08
+material steel
+mass 0.0001
+flag 8
+bounce 15
+
+env_obj 12
+shape cylinder
+pos -2.75 -0.1 1.2
+color 0.9 0.9 0.9 1
+rot 90 0 0
+sides 0.08 8.0 0.08
+material steel
+mass 0.0001
+flag 8
+bounce 15
+
+env_obj 13
+shape cylinder
+pos 1.0 -3.85 0.45
+color 0.27 0.7 0.87 1
+rot 0 90 0
+sides 0.08 8.0 0.08
+material steel
+mass 0.0001
+flag 8
+bounce 15
+
+env_obj 14
+shape cylinder
+pos 1.0 3.65 0.45
+color 0.63 0.23 0.23 1
+rot 0 90 0
+sides 0.08 8.0 0.08
+material steel
+mass 0.0001
+flag 8
+bounce 15
+
+env_obj 15
+shape cylinder
+pos 4.75 -0.1 0.45
+color 0.63 0.23 0.23 1
+rot 90 0 0
+sides 0.08 8.0 0.08
+material steel
+mass 0.0001
+flag 8
+bounce 15
+
+env_obj 16
+shape cylinder
+pos -2.75 -0.1 0.45
+color 0.27 0.7 0.87 1
+rot 90 0 0
+sides 0.08 8.0 0.08
+material steel
+mass 0.0001
+flag 8
+bounce 15  
+
+#Sumo
+
+body head
+
+      sides 0.220000 0.000000 0.000000
+
+      pos 1.000000 0.750000 2.750000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.250000
+
+      force 0.000000 0.000000 0.000000
+
+   body breast
+
+      sides 0.200000 0.100000 0.300000
+
+      pos 1.000000 0.750000 2.350000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.350000
+
+      force 0.000000 0.000000 0.000000
+
+   body chest
+
+      sides 0.550000 0.150000 0.200000
+
+      pos 1.000000 0.85000 2.100000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.350000
+
+      force 0.000000 0.000000 0.000000
+
+   body stomach
+
+      sides 0.400000 0.150000 0.200000
+
+      pos 1.000000 0.900000 1.900000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.350000
+
+      force 0.000000 0.00000 0.000000
+
+   body groin
+
+      sides 0.250000 0.150000 0.200000
+
+      pos 1.000000 1.000000 1.700000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.350000
+
+      force 0.000000 0.000000 0.000000
+
+   body r_pecs
+
+      sides 0.30000 0.150000 0.200000
+
+      pos 0.750000 0.750000 2.300000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.250000
+
+      force 0.000000 0.000000 0.000000
+
+   body r_biceps
+
+      sides 0.400000 0.200000 0.200000
+
+      pos 0.350000 0.750000 2.420000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.250000
+
+      force 0.000000 0.000000 0.000000
+
+   body r_triceps
+
+      sides 0.400000 0.120000 0.120000
+
+      pos -0.050000 0.750000 2.420000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.250000
+
+      force 0.000000 0.000000 0.000000
+
+   body l_pecs
+
+      sides 0.300000 0.150000 0.200000
+
+      pos 1.250000 0.750000 2.300000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.250000
+
+      force 0.000000 0.000000 0.000000
+
+   body l_biceps
+
+      sides 0.400000 0.200000 0.200000
+
+      pos 1.65000 0.750000 2.420000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.250000
+
+      force 0.000000 0.000000 0.000000
+
+   body l_triceps
+
+      sides 0.400000 0.120000 0.120000
+
+      pos 2.05000 0.750000 2.420000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.250000
+
+      force 0.000000 0.000000 0.000000
+
+   body r_hand
+
+      sides 0.240000 0.240000 0.240000
+
+      pos -0.45000 0.700000 2.420000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.250000
+
+      force 0.000000 0.000000 0.000000
+
+   body l_hand
+
+      sides 0.240000 0.240000 0.240000
+
+      pos 2.450000 0.700000 2.420000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.250000
+
+      force 0.000000 0.000000 0.000000
+
+   body r_butt
+
+      sides 0.100000 0.100000 0.100000
+
+      pos 0.700000 1.000000 1.550000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.250000
+
+      force 0.000000 0.000000 0.000000
+
+   body l_butt
+
+      sides 0.100000 0.100000 0.100000
+
+      pos 1.300000 1.000000 1.550000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.250000
+
+      force 0.000000 0.000000 0.000000
+
+   body r_thigh
+
+      sides 0.190000 0.340000 0.000000
+
+      pos 0.660000 1.000000 1.210000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.350000
+
+      force 0.000000 0.000000 0.000000
+
+   body l_thigh
+
+      sides 0.190000 0.340000 0.00000
+
+      pos 1.340000 1.000000 1.210000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.350000
+
+      force 0.000000 0.000000 0.000000
+
+   body l_leg
+
+      sides 0.170000 0.400000 0.000000
+
+      pos 1.340000 1.000000 0.550000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.250000
+
+      force 0.000000 0.000000 0.000000
+
+   body r_leg
+
+      sides 0.170000 0.400000 0.000000
+
+      pos 0.660000 1.000000 0.550000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.250000
+
+      force 0.000000 0.000000 0.000000
+
+   body r_foot
+
+      sides 0.200000 0.550000 0.080000
+
+      pos 0.660000 0.900000 0.100000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.250000
+
+      force 0.000000 0.000000 0.000000
+
+   body l_foot
+
+      sides 0.200000 0.550000 0.080000
+
+      pos 1.340000 0.900000 0.100000
+
+      rot 0.000000 0.000000 0.000000
+
+      density 0.250000
+
+      force 0.000000 0.000000 0.000000
+
+   joint neck
+
+      radius 0.160000
+
+      pos 1.000000 0.750000 2.600000
+
+      axis 1.000000 0.000000 0.000000
+
+      range 0.500000 -0.500000
+
+      strength 5.000000
+
+      velocity 20.000000
+
+      dm_threshold -1
+
+   joint chest
+
+      radius 0.350000
+
+      pos 1.000000 0.80000 2.200000
+
+      axis 0.000000 0.000000 1.000000
+
+      range 1.000000 -1.000000
+
+      strength 10.000000
+
+      velocity 10.000000
+
+      dm_threshold -1
+
+   joint lumbar
+
+      radius 0.310000
+
+      pos 1.000000 0.850000 2.000000
+
+      axis 0.000000 0.000000 0.000000
+
+      range 0.500000 -0.500000
+
+      strength 7.000000
+
+      velocity 5.000000
+
+      dm_threshold -1
+
+   joint abs
+
+      radius 0.320000
+
+      pos 1.000000 0.950000 1.800000
+
+      axis 1.000000 0.000000 0.000000
+
+      range 0.400000 -0.600000
+
+      strength 10.000000
+
+      velocity 5.00000
+
+      dm_threshold -1
+
+   joint r_pecs
+
+      radius 0.26
+
+      pos 0.750000 0.750000 2.350000
+
+      axis 0.000000 0.000000 1.000000
+
+      range 1.500000 -0.700000
+
+      strength 10.00000
+
+      velocity 10.00000
+
+      dm_threshold -1
+
+   joint r_shoulder
+
+      radius 0.220000
+
+      pos 0.550000 0.750000 2.420000
+
+      axis 0.000000 1.000000 0.000000
+
+      range 1.200000 -1.200000
+
+      strength 8.000000
+
+      velocity 10.000000
+
+      dm_threshold -1
+
+   joint r_elbow
+
+      radius 0.165000
+
+      pos 0.150000 0.750000 2.420000
+
+      axis 0.000000 0.000000 1.000000
+
+      range 2.300000 0.050000
+
+      strength 8.000000
+
+      velocity 20.000000
+
+      dm_threshold -1
+
+   joint l_pecs
+
+      radius 0.26
+
+      pos 1.200000 0.75000 2.350000
+
+      axis 0.000000 0.000000 1.000000
+
+      range 1.500000 -0.700000
+
+      strength 10.000000
+
+      velocity 10.000000
+
+      dm_threshold -1
+
+   joint l_shoulder
+
+      radius 0.220000
+
+      pos 1.45000 0.750000 2.420000
+
+      axis 0.000000 1.000000 0.000000
+
+      range 1.200000 -1.200000
+
+      strength 8.000000
+
+      velocity 10.000000
+
+      dm_threshold -1
+
+   joint l_elbow
+
+      radius 0.165000
+
+      pos 1.850000 0.750000 2.420000
+
+      axis 0.000000 0.000000 1.000000
+
+      range 2.300000 0.050000
+
+      strength 8.000000
+
+      velocity 20.000000
+
+      dm_threshold -1
+
+   joint r_wrist
+
+      radius 0.1150000
+
+      pos -0.300000 0.750000 2.420000
+
+      axis 0.000000 0.000000 1.000000
+
+      range 2.000000 -0.300000
+
+      strength 7.000000
+
+      velocity 40.000000
+
+      dm_threshold -1
+
+   joint l_wrist
+
+      radius 0.1150000
+
+      pos 2.300000 0.750000 2.420000
+
+      axis 0.000000 0.000000 1.000000
+
+      range 2.000000 -0.300000
+
+      strength 7.000000
+
+      velocity 40.000000
+
+      dm_threshold -1
+
+   joint r_glute
+
+      radius 0.250000
+
+      pos 0.850000 1.100000 1.660000
+
+      axis 0.000000 1.000000 0.000000
+
+      range 1.200000 -0.200000
+
+      strength 10.000000
+
+      velocity 12.000000
+
+      dm_threshold -1
+
+   joint l_glute
+
+      radius 0.250000
+
+      pos 1.150000 1.100000 1.660000
+
+      axis 0.000000 1.000000 0.000000
+
+      range 1.200000 -0.200000
+
+      strength 10.000000
+
+      velocity 12.000000
+
+      dm_threshold -1
+
+   joint r_hip
+
+      radius 0.2200000
+
+      pos 0.660000 1.000000 1.550000
+
+      axis 1.000000 0.000000 0.000000
+
+      range 1.000000 -1.800000
+
+      strength 10.00000
+
+      velocity 12.000000
+
+      dm_threshold -1
+
+   joint l_hip
+
+      radius 0.2200000
+
+      pos 1.340000 1.000000 1.550000
+
+      axis 1.000000 0.000000 0.000000
+
+      range 1.000000 -1.800000
+
+      strength 10.00000
+
+      velocity 12.00000
+
+      dm_threshold -1
+
+   joint r_knee
+
+      radius 0.170000
+
+      pos 0.660000 1.000000 0.900000
+
+      axis 1.000000 0.000000 0.000000
+
+      range 2.300000 0.000000
+
+      strength 10.00000
+
+      velocity 20.00000
+
+      dm_threshold -1
+
+   joint l_knee
+
+      radius 0.170000
+
+      pos 1.340000 1.000000 0.900000
+
+      axis 1.000000 0.000000 0.000000
+
+      range 2.300000 0.000000
+
+      strength 10.00000
+
+      velocity 25.000000
+
+      dm_threshold -1
+
+   joint r_ankle
+
+      radius 0.120000
+
+      pos 0.660000 1.050000 0.250000
+
+      axis 1.000000 0.000000 0.000000
+
+      range 1.100000 -0.300000
+
+      strength 5.000000
+
+      velocity 10.0000
+
+      dm_threshold -1
+
+   joint l_ankle
+
+      radius 0.130000
+
+      pos 1.340000 1.050000 0.250000
+
+      axis 1.000000 0.000000 0.000000
+
+      range 1.100000 -0.300000
+
+      strength 5.000000
+
+      velocity 10.000000
+
+      dm_threshold -1

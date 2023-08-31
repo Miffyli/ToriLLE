@@ -1,0 +1,185 @@
+# Environment exported by WorldBuilder
+######################################
+
+env_obj 1
+    shape box
+    pos 1 5.875 0.5
+    color 0.5 0.5 0.4 1
+    rot 0 0 0
+    sides 3.3125 3 1
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 2
+    shape box
+    pos 2.1875 3.9375 2.9375
+    color 0 0 1 0.3
+    rot 0 0 0
+    sides 0.125 3.1875 3.1875
+    material steel
+    mass 0.1
+    flag 24
+#END 2
+
+env_obj 3
+    shape box
+    pos -0.1875 3.9375 2.9375
+    color 0 0 1 0.3
+    rot 0 0 0
+    sides 0.125 3.1875 3.1875
+    material steel
+    mass 0.1
+    flag 24
+#END 3
+
+env_obj 4
+    shape box
+    pos -0.1875 3.9375 6.125
+    color 0 0 1 0.3
+    rot 0 0 0
+    sides 0.125 3.1875 3.1875
+    material steel
+    mass 0.1
+    flag 24
+#END 4
+
+env_obj 5
+    shape box
+    pos 2.1875 3.9375 6.125
+    color 0 0 1 0.3
+    rot 0 0 0
+    sides 0.125 3.1875 3.1875
+    material steel
+    mass 0.1
+    flag 24
+#END 5
+
+env_obj 6
+    shape box
+    pos 2.1875 3.9375 9.3125
+    color 0 0 1 0.3
+    rot 0 0 0
+    sides 0.125 3.1875 3.1875
+    material steel
+    mass 0.1
+    flag 24
+#END 6
+
+env_obj 7
+    shape box
+    pos -0.1875 3.9375 9.3125
+    color 0 0 1 0.3
+    rot 0 0 0
+    sides 0.125 3.1875 3.1875
+    material steel
+    mass 0.1
+    flag 24
+#END 7
+
+env_obj 8
+    shape box
+    pos -0.1875 0.75 9.3125
+    color 0 0 1 0.3
+    rot 0 0 0
+    sides 0.125 3.1875 3.1875
+    material steel
+    mass 0.1
+    flag 24
+#END 8
+
+env_obj 9
+    shape box
+    pos -0.1875 -2.4375 9.3125
+    color 0 0 1 0.3
+    rot 0 0 0
+    sides 0.125 3.1875 3.1875
+    material steel
+    mass 0.1
+    flag 24
+#END 9
+
+env_obj 10
+    shape box
+    pos 2.1875 0.75 9.3125
+    color 0 0 1 0.3
+    rot 0 0 0
+    sides 0.125 3.1875 3.1875
+    material steel
+    mass 0.1
+    flag 24
+#END 10
+
+env_obj 11
+    shape box
+    pos 2.1875 -2.4375 9.3125
+    color 0 0 1 0.3
+    rot 0 0 0
+    sides 0.125 3.1875 3.1875
+    material steel
+    mass 0.1
+    flag 24
+#END 11
+
+env_obj 12
+    shape box
+    pos 2.1875 -2.4375 6.125
+    color 0 0 1 0.3
+    rot 0 0 0
+    sides 0.125 3.1875 3.1875
+    material steel
+    mass 0.1
+    flag 24
+#END 12
+
+env_obj 13
+    shape box
+    pos -0.1875 -2.4375 6.125
+    color 0 0 1 0.3
+    rot 0 0 0
+    sides 0.125 3.1875 3.1875
+    material steel
+    mass 0.1
+    flag 24
+#END 13
+
+env_obj 14
+    shape box
+    pos 1 -4.0625 6.125
+    color 0 0 1 0.3
+    rot 0 0 90
+    sides 0.125 2.25 3.1875
+    material steel
+    mass 0.1
+    flag 24
+#END 14
+
+env_obj 15
+    shape box
+    pos 1 -4.0625 9.3125
+    color 0 0 1 0.3
+    rot 0 0 90
+    sides 0.125 2.25 3.1875
+    material steel
+    mass 0.1
+    flag 24
+#END 15
+
+env_obj 16
+    shape box
+    pos 1 -7.9375 0.5
+    color 0.5 0.5 0.4 1
+    rot 0 0 0
+    sides 3.3125 8.5625 1
+    material steel
+    mass 0.1
+    flag 24
+#END 16
+
+gamerule
+engageplayerpos 0
+	engagedistance 1200
+	engageheight 100
+	dojosize 1
+

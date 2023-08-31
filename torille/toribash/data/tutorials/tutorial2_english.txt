@@ -1,0 +1,46 @@
+#PLAYER MESSAGES
+INTROSENSEI1	Here I'll teach you how to defeat your opponent using your arms only.
+INTROSENSEI2	Let's try the simplest attack possible - a noobclap.
+INTROSENSEI3	Here's how it looks.
+SENSEINOOBCLAP1	I only put my both arms forwards: Either to deal point damage, get in position to grab the opponent...
+SENSEINOOBCLAP2	...or prepare to block my opponents strikes!
+SENSEINOOBCLAP3	Don't let this move's name fool you - it's a useful move even the best sometimes use!
+SENSEINOOBCLAP4	Very nice! Let's move on to next task!
+SENSEIPUNCH1	To land truly powerful punches, only using your pecs isn't enough.
+SENSEIPUNCH2	Check out this punch.
+SENSEIPUNCH3	I used my elbow and torso to increase attack power.
+SENSEIPUNCH4	The harder you hit your opponents, the more points you will get and get closer to winning!
+SENSEIPUNCHOPTINCOMPLETE	That was good. You could have improved it a bit, but a punch is a punch - nice work!
+SENSEIPUNCHOPTCOMPLETE	Outstanding! Just the way I've shown you!
+SENSEIPUNCH5	Now let's move on to today's final test!
+SENSEIFINAL1	Time for freestyle punching, my student!
+SENSEIFINAL2	Keep punching the bag until you get 100000 points!
+SENSEIFINAL3	Keep your eyes on timer too, make sure you can finish the task within 500 frames!
+SENSEIFINALTIMEUP	Oh, looks like time is up. No problem, let's try again!
+SENSEIFINALRESTART	Alright, keep the moves I've shown you previously in mind and try to get 100K points this time!
+SENSEIFINALOPTINCOMPLETE	Great! That's some good workout!
+SENSEIFINALOPTCOMPLETE	Wow, that was something! Excellent work!
+SENSEIFINALOPTCOMPLETE2	Check your inventory after this, I've given you a bonus item as a reward for your efforts!
+SENSEIFINAL4	Now that you know how to use your hands, you are ready train your kicks!
+#
+#HINT MESSAGES
+NOOBCLAPHINT1	Press ~C~ to HOLD ALL JOINTS and prevent yourself from falling down.
+NOOBCLAPHINT2	To BEND ARMS forwards or backwards, you need to modify your PECS states.
+NOOBCLAPHINT3	CONTRACT your pecs to move arms FORWARDS.\nRemember, you can either click on joints or press ~Z~ while hovering over them to toggle states.
+NOOBCLAPHINT4	Good job, but you're not done yet.\nTo FINISH YOUR TURN and see your character move, press ~SPACE~
+PUNCHHINT1	Hold all joints by pressing ~C~
+PUNCHHINT2	To get into starting position for the punch, CONTRACT elbows and RELAX shoulders.
+PUNCHHINT3	SHOULDERS help you raise or lower your arms.\nELBOWS allow bending them in the middle.
+PUNCHHINT4	To complete your move, press ~SPACE~
+PUNCHHINT5	ROTATE CHEST to left to add more force to your punch.
+PUNCHHINT6	Now contract your RIGHT PEC and extend RIGHT ELBOW to punch the bag.
+PUNCHHINT7	Feel free to improvise and always pay attention to your GHOST!\nIncreasing the momentum is key to successful attacks.
+PUNCHHINT8	Press ~SPACE~ when you're ready to finish the move.
+#
+#TASK MESSAGES
+NOOBCLAPTASK	Hit the punching bag with a noobclap
+PUNCHTASK	Repeat Sensei's Punch
+PUNCHTASKOPT	Raise right shoulder and extend your wrist to improve the punch
+FINALTASK	Complete Sensei's punching lesson
+FINALTASKMAIN	Reach 100,000 damage points to hit the objective
+FINALTASKOPT	Get over 500,000 points for bonus reward

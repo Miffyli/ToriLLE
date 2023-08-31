@@ -1,0 +1,107 @@
+#!/usr/bin/toribash
+# Original greykido.tbm by culapou #
+#    Adapted for RCL'12 by sir     #
+####################################
+
+gamerule
+engageplayerpos 0
+gravity 0.00 0.00 -30.00
+engagedistance 90
+dismemberthreshold 375
+dismember 1
+fracture 1
+fracturethreshold 250
+matchframes 400
+turnframes 10,15,20,25,30,30,30,30,30,30,30,30,30,30,30
+dojosize 350
+dojotype 1
+dq 1
+sumo 1
+flags 11
+
+env_obj 1
+    shape box
+    pos 1 4.325 0.0625
+    color .1 .1 .1 1
+    rot 0 0 0
+    sides 2 1.45 0.125
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 2
+    shape box
+    pos 1 -4.525 0.0625
+    color .1 .1 .1 1
+    rot 0 0 0
+    sides 2 1.45 0.125
+    material steel
+    mass 0.1
+    flag 24
+#END 2
+
+env_obj 3
+    shape box
+    pos -3.425 -0.125 0.0625
+    color .1 .1 .1 1
+    sides 1.45 2 0.125
+    rot 0 0 0
+    material steel
+    mass 0.1
+    flag 24
+#END 3
+
+env_obj 4
+    shape box
+    pos 5.43 -0.125 0.0625
+    color .1 .1 .1 1
+    rot 0 0 0
+    sides 1.45 2 0.125
+    material steel
+    mass 0.1
+    flag 24
+#END 4
+
+env_obj 5
+    shape box
+    pos 4.13 3.025 0.0625
+    color 0.3 0.3 0.3 1
+    rot 0 0 135
+    sides 1.45 2 0.125
+    material steel
+    mass 0.1
+    flag 24
+#END 5
+
+env_obj 6
+    shape box
+    pos 4.13 -3.225 0.0625
+    color 0.3 0.3 0.3 1
+    rot 0 0 45
+    sides 1.45 2 0.125
+    material steel
+    mass 0.1
+    flag 24
+#END 6
+
+env_obj 7
+    shape box
+    pos -2.125 -3.225 0.0625
+    color 0.3 0.3 0.3 1
+    rot 0 0 135
+    sides 1.45 2 0.125
+    material steel
+    mass 0.1
+    flag 24
+#END 7
+
+env_obj 8
+    shape box
+    pos -2.125 3.025 0.0625
+    color 0.3 0.3 0.3 1
+    rot 0 0 45
+    sides 1.45 2 0.125
+    material steel
+    mass 0.1
+    flag 24

@@ -1,0 +1,44 @@
+env_obj bubbles_1
+    pos 25 0 2
+    shape sphere
+    size 1 0 0
+    count 40
+    color 1 1 1 0.7
+    randompos 22 50 2
+    randomsize 0.8 0 0
+    randomcolor 0.5 0.5 0.5 0
+    move 0 0 X=type(X)~="table"_and_{val=X,dir=math.random(200),up=1}_or_X;X.dir=X.dir+1;if(X.dir%200==0_and_X.dir>0)then_X.up=-X.up_end;if(X.dir%400==0)_then_return_0_end;if(entity.pos.z-entity.size.x<=0_and_X.dir>1)then_X.dir=0;X.up=-X.up;return_-entity.pos.z+entity.size.x_end;local_pos=X.up*math.abs(math.sin(-math.pi/2+math.pi/400*X.dir));return_pos*X.val/10
+    
+env_obj bubbles_2
+    pos -25 0 2
+    shape sphere
+    size 1 0 0
+    count 40
+    color 1 1 1 0.7
+    randompos 22 50 2
+    randomsize 0.8 0 0
+    randomcolor 0.5 0.5 0.5 0
+    move 0 0 X=type(X)~="table"_and_{val=X,dir=math.random(200),up=1}_or_X;X.dir=X.dir+1;if(X.dir%200==0_and_X.dir>0)then_X.up=-X.up_end;if(X.dir%400==0)_then_return_0_end;if(entity.pos.z-entity.size.x<=0_and_X.dir>1)then_X.dir=0;X.up=-X.up;return_-entity.pos.z+entity.size.x_end;local_pos=X.up*math.abs(math.sin(-math.pi/2+math.pi/400*X.dir));return_pos*X.val/10
+    
+env_obj bubbles_3
+    pos 0 25 2
+    shape sphere
+    size 1 0 0
+    count 10
+    color 1 1 1 0.7
+    randompos 6 22 2
+    randomsize 0.8 0 0
+    randomcolor 0.5 0.5 0.5 0
+    move 0 0 X=type(X)~="table"_and_{val=X,dir=math.random(200),up=1}_or_X;X.dir=X.dir+1;if(X.dir%200==0_and_X.dir>0)then_X.up=-X.up_end;if(X.dir%400==0)_then_return_0_end;if(entity.pos.z-entity.size.x<=0_and_X.dir>1)then_X.dir=0;X.up=-X.up;return_-entity.pos.z+entity.size.x_end;local_pos=X.up*math.abs(math.sin(-math.pi/2+math.pi/400*X.dir));return_pos*X.val/10
+    
+env_obj bubbles_4
+    pos 0 -25 2
+    shape sphere
+    size 1 0 0
+    count 10
+    color 1 1 1 0.7
+    randompos 6 22 2
+    randomsize 0.8 0 0
+    randomcolor 0.5 0.5 0.5 0
+    move 0 0 X=type(X)~="table"_and_{val=X,dir=math.random(200),up=1}_or_X;X.dir=X.dir+1;if(X.dir%200==0_and_X.dir>0)then_X.up=-X.up_end;if(X.dir%400==0)_then_return_0_end;if(entity.pos.z-entity.size.x<=0_and_X.dir>1)then_X.dir=0;X.up=-X.up;return_-entity.pos.z+entity.size.x_end;local_pos=X.up*math.abs(math.sin(-math.pi/2+math.pi/400*X.dir));return_pos*X.val/10
+    

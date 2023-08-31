@@ -1,0 +1,87 @@
+#
+#Fan mod
+#by SL7549
+#
+
+gamerule
+engageplayerpos 0
+    engagedistance 700
+    engageheight 300
+    matchframes 1000
+    turnframes 50
+
+env_obj 1
+    shape box
+    pos 1 -0.125 6.25
+    color 0 0 1 1
+    rot 0 0 0
+    sides 1 2 1
+    material steel
+    mass 0.1
+    flag 8
+
+env_obj 2
+    shape box
+    pos 1 -0.125 5.4375
+    color 0 0 1 1
+    rot 0 0 0
+    sides 6 0.2 0.2
+    material steel
+    mass 0.1
+    flag 0
+
+env_obj 3
+    shape box
+    pos 1 3.375 2.5
+    color 0 0 1 1
+    rot 0 0 0
+    sides 1 1 1
+    material steel
+    mass 0.1
+    flag 8
+
+env_obj 4
+    shape box
+    pos 1 -3.5 2.5
+    color 0 0 1 1
+    rot 0 0 0
+    sides 1 1 1
+    material steel
+    mass 0.1
+    flag 8
+
+env_obj 5
+    shape box
+    pos 1 -0.125 0.5
+    color 0 0 1 1
+    rot 0 0 0
+    sides 1 2 1
+    material steel
+    mass 0.1
+    flag 8
+
+env_obj 6
+    shape box
+    pos 1 -0.125 1.2
+    color 0 0 1 1
+    rot 0 0 0
+    sides 10 0.05 0.05
+    material steel
+    mass 0.1
+    flag 0
+
+env_obj_joint 1 1 2
+	pos 1 -0.125 5.4375
+	axis 0 0 1
+	range 5 -5
+	strength 10
+	velocity 10
+	visible 1
+
+env_obj_joint 2 5 6
+	pos 1 -0.125 1.2
+	axis 0 0 1
+	range 5 -5
+	strength 10
+	velocity -100
+	visible 1

@@ -1,0 +1,128 @@
+# Mod By RicH :P
+
+gamerule
+engageplayerpos 0
+matchframes 100
+turnframes 30,30,20,10,10
+flags 10
+dismemberment 1
+fracture 1
+dismemberthreshold 200
+fracturethreshold 150
+engagedistance 800
+
+gravity 0 0 -30
+
+body head
+force 0 10 15
+
+joint neck
+force 0 10 15
+
+joint r_pecs
+range 0 0
+force 0 15 20
+
+joint l_axilla
+range 0 0
+force 0 15 20
+
+body r_pecs
+pos 1.2 1.05 2.2
+sides 0.15 0.05 0.8
+force 0 15 20
+
+body l_pecs
+pos 0.8 1.05 2.2
+sides 0.15 0.05 0.8
+force 0 15 20
+
+joint r_shoulder
+radius 0.1
+pos 1.15 1.1 2.3
+force 0 15 20
+
+joint l_shoulder
+radius 0.1
+pos 0.85 1.1 2.3
+force 0 15 20
+
+body l_biceps
+pos 2.1 1.1 2.3
+sides 2 0.05 0.3
+force 0 15 20
+
+body r_biceps
+pos -0.1 1.1 2.3
+sides 2 0.05 0.3
+force 0 15 20
+
+body l_triceps
+pos 2.85 1.1 1.9
+sides 0.5 0.05 0.5
+force 0 15 20
+
+body r_triceps
+pos -0.85 1.1 1.9
+sides 0.5 0.05 0.5
+force 0 15 20
+
+joint r_elbow
+range 0 0
+radius 0.00000000000000000001
+pos -0.85 1.1 1.9
+force 0 15 20
+
+joint l_elbow
+pos 2.85 1.1 1.9
+range 0 0
+radius 0.00000000000000000001
+force 0 15 20
+
+joint r_shoulder
+range 0 0
+force 0 15 20
+
+joint l_shoulder
+range 0 0
+force 0 15 20
+
+body r_thigh
+force 0 15 20
+
+body l_thigh
+force 0 15 20
+
+joint r_wrist
+range 10 -10
+axis 0 0 1
+strength 100
+velocity 100
+pos -0.3 1.1 2.5
+
+body r_hand
+flag 6
+alt_sides 1.1 0.1 0.05
+sides 1 0.1 0.05
+pos -0.3 1.1 2.55
+
+body l_hand
+flag 6
+alt_sides 1.1 0.1 0.05
+sides 1 0.1 0.05
+pos 2.3 1.1 2.55
+
+joint l_wrist
+range 10 -10
+axis 0 0 1
+strength 100
+velocity 100
+pos 2.3 1.1 2.5
+
+body r_leg
+sides 0.17 0.2 0
+color 0 0 0 
+
+body l_leg
+sides 0.17 0.2 0
+color 0 0 0 

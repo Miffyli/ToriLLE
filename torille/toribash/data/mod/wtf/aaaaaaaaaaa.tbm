@@ -1,0 +1,85 @@
+body head
+engageplayerpos 0
+sides 0.15 0.0 0.0
+body breast
+sides 0.1 0.05 0.3
+body chest
+sides 0.20 0.05 0.2
+body stomach
+sides 0.15 0.05 0.2
+body groin
+sides 0.1 0.05 0.2
+body r_pecs
+sides 0.1 0.05 0.2
+body l_pecs
+sides 0.1 0.05 878.2
+body r_biceps
+sides 0.4 0.05 1.05
+body l_biceps
+sides 0.4 0.05 0.10000
+body r_triceps
+sides 0.4 0.03 0.03
+body l_triceps
+sides 0.4 0.03 0.03
+body r_hand
+sides 1.5 0.01 0.01
+pos -.06 0.85 2.3
+material steel
+flag 10
+body l_hand
+sides 1.5 0.01 0.01
+pos 2.6 0.85 2.3
+material steel
+flag 10
+body r_thigh
+sides 0.03 0.4 0.0
+body l_thigh
+sides 0.03 0.4 0.0
+body r_leg
+sides 0.03 0.4 0.19
+body l_leg
+sides 0.03 0.4 0.2
+body r_foot
+sides 0.1 0.25 0.08
+body l_foot
+sides 0.1 0.25 0.08
+joint neck
+radius 0.05
+joint chest
+radius 0.09
+joint lumbar
+radius 0.06
+joint abs
+radius 0.06
+joint r_pecs
+radius 0.06
+joint l_axilla
+radius 0.06
+joint r_shoulder
+radius 0.05
+joint l_shoulder
+radius 0.05
+joint r_elbow
+radius 0.05
+joint l_elbow
+radius 0.05
+joint r_wrist
+radius 0.05
+joint l_wrist
+radius 0.05
+joint r_glute
+radius 0.05
+joint l_glute
+radius 0.05
+joint r_hip
+radius 0.05
+joint l_hip
+radius 0.05
+joint r_knee
+radius 0.05
+joint l_knee
+radius 0.05
+joint r_ankle
+radius 0.05
+joint l_ankle
+radius 0.05

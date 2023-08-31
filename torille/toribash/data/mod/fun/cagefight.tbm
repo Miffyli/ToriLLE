@@ -1,0 +1,97 @@
+gamerule
+engageplayerpos 0
+	dojosize 200
+	dojotype 1
+
+env_obj 1
+    shape cylinder
+    pos 1 2 2.5
+    color 0 0 1 1
+    rot 0 0 0
+    sides 0.0625 5.25 1
+    material steel
+    mass 0.1
+    flag 8
+#END 1
+
+env_obj 2
+    shape cylinder
+    pos 2.5 1.5 2.5
+    color 0 0 1 1
+    rot 0 0 0
+    sides 0.0625 5.25 1
+    material steel
+    mass 0.1
+    flag 8
+#END 2
+
+env_obj 3
+    shape cylinder
+    pos 3 0 2.5
+    color 0 0 1 1
+    rot 0 0 0
+    sides 0.0625 5.25 1
+    material steel
+    mass 0.1
+    flag 8
+#END 3
+
+env_obj 4
+    shape cylinder
+    pos 2.5 -1.5 2.5
+    color 0 0 1 1
+    rot 0 0 0
+    sides 0.0625 5.25 1
+    material steel
+    mass 0.1
+    flag 8
+#END 4
+
+env_obj 5
+    shape cylinder
+    pos 1 -2 2.5
+    color 0 0 1 1
+    rot 0 0 0
+    sides 0.0625 5.25 1
+    material steel
+    mass 0.1
+    flag 8
+#END 5
+
+env_obj 6
+    shape cylinder
+    pos 0 -1.5 2.5
+    color 0 0 1 1
+    rot 0 0 0
+    sides 0.0625 5.25 1
+    material steel
+    mass 0.1
+    flag 8
+#END 6
+
+env_obj 7
+    shape cylinder
+    pos -1 0 2.5
+    color 0 0 1 1
+    rot 0 0 0
+    sides 0.0625 5.25 1
+    material steel
+    mass 0.1
+    flag 8
+#END 7
+
+env_obj 8
+    shape cylinder
+    pos -0.25 1.25 2.5
+    color 0 0 1 1
+    rot 0 0 0
+    sides 0.0625 5.25 1
+    material steel
+    mass 0.1
+    flag 8
+#END 8
+
+body r_foot
+flag 38
+
+body l_foot

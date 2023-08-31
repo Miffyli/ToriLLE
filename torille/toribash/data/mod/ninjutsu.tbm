@@ -1,0 +1,22 @@
+#Original Ninjutsu .tbm by skulloman, updated for 3.4 by 3vi1. Ninjutsu credated by 3vi1.
+gamerule
+engageplayerpos 0
+
+gravity 0 0 -30
+
+engagedistance 300
+matchframes 410
+dismemberthreshold 250
+fracturethreshold 140
+turnframes 55,55,30,30,30,30,30,30,30,30,30,30
+engageheight 150
+sumo 1
+damage 1
+dojosize 500
+flags 14
+dismemberment 1
+fracture 1
+disqualification 0
+dqtimeout 15
+dqflag 0
+dojotype 1

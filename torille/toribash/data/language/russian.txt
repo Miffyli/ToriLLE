@@ -1,0 +1,188 @@
+﻿#Russian Localization
+
+FreePlay Свободная игра
+Multiplayer Мультиплеер
+FightSchool Бойцовская школа
+ToriShop Торишоп
+Setup Настройки
+BuyToriCredits Купить TC
+Quit Выйти
+Options Опции
+Mods Моды
+Utils Утилиты
+Replays Повторы
+GameRules Правила боя
+Login Войти
+Back Назад
+ToribashTutorial Основы Toribash
+BasicTraining Базовое обучение
+AdvancedMoves Простые движения
+ChallengeUke Сразиться с Uke
+FlameForge Создание флеймов
+FlameBrowser Каталог флеймов
+ModMaker Создание модов
+Scripts Скрипты
+Sounds Звуки
+Credits Разработчики
+Cancel Отмена
+OK ОК
+Advanced Больше
+Graphics Графика
+MouseButtons Схема управления мышью
+BackgroundClick Нажатие по фону
+EffectsVolume Громкость эффектов
+MusicVolume Громкость музыки
+ChatToggle Изменение размера чата
+Fullscreen Полный экран
+Autosavereplays Автосохранение повторов
+RememberGameRules Запоминать правила боя
+LowerFrameRateCap Снизить частоту кадров
+Shaders Шейдеры
+FluidBlood Реалистичная кровь
+Reflections Отражения
+SoftShadows Продвинутые тени
+AmbientOcclusion Ambient Occlusion
+Bumpmapping Рельефность текстур
+RayTracing Рейтрейсинг
+Particles Огни
+Trails Следы конечностей
+Hair Волосы
+ShaderHair Качество волос
+BodyTextures Текстуры тела
+DisableGraphicsReloading Без перезагрузки изображения
+WindowWidth Ширина окна
+WindowHeight Высота окна
+FixedFramerate Фиксированная частота кадров
+Basic Меньше
+Minimum Минимум
+Low Низко
+Medium Средне
+High Высоко
+Maximum Максимум
+Register Регистрация
+Create Создать
+Username Имя пользователя
+Password Пароль
+Email Электронная почта
+Email(optional) Электронная почта
+RemindMe Напомнить
+RememberMe Запомнить меня
+Show Показать
+ForgotYourPassword? Забыли пароль?
+Don'tHaveAnAccount? Нет аккаунта в Toribash?
+Close Закрыть
+UPGRADED! Новый пояс получен!
+NumGamesToBelt Игр до 
+DRAW! Ничья !
+MatchWonBelowMin Бой выигран раньше допустимого количества ходов.
+WINS! Победил!
+STREAK Побед подряд: 
+DRAW2! Ничья!
+DISQUALIFIED! Дисквалифицирован!
+KeyframesCleared! Ключевые кадры удалены!
+KeyframeSaved! Ключевые кадры сохранены!
+DefaultCameraEnabled Камера по умолчанию
+FreeOrbitalCameraEnabled Свободная камера включена, используйте W/S/A/D/Q/E + SHIFT для управления
+FreeCameraEnabled Свободная камера включена, используйте W/S/A/D/Q/E + SHIFT для управления
+ToriCameraEnabled Вид от лица Tori включен
+UkeCameraEnabled Вид от лица Uke включен
+RecordingNextRewind Запись начнётся со следующим проигрыванием повтора
+RecordingCameraMovements Идёт запись перемещения камеры...
+PlayingCameraMovements Идёт воспроизведение перемещений камеры
+FreeCamDisabled Свободная камера отключена
+Desc Описание
+Room Комната
+Mod Мод
+Players Игроки
+MinBelt Мин. qi
+MaxBelt Макс. qi
+Connect Войти
+LoadingServerList Загрузка списка комнат
+BeltRestriction Показать все
+HidePasswordServers Комнаты без пароля
+OfficialServers Официальные
+LiveTournaments Активные турниры
+TournamentInProgress Турнир начался
+PasswordNeeded Необходим пароль
+EntryFee Плата за вход
+TotalTcBetted Активная ставка
+MinimumBet Минимальная ставка
+BuddiesInside Друзей в комнате
+RoomName: Название комнаты:
+Password: Пароль:
+MaxPlayer: Макс. количество игроков:
+MinBelt: Минимальный пояс:
+MaxBelt: Максимальный пояс:
+Desc: Описание:
+Option Опции
+CreateRoom Создание комнаты
+Language Язык
+SPECTATOR Зритель
+WaitingForOtherPlayer Ожидание второго игрока
+SPACEBARNewGameFSaveReplay Пробел - новая игра  ;  F - Сохранить повтор
+PressTheSPACEBARToPlay Нажмите пробел для игры!
+PressTheSPACEBARForReplay Нажмите пробел для повтора
+WaitingForYourTurn Ожидание боя: #
+InQueue в очереди
+WaitingForOpponent Ожидание соперника
+ClickToSelectPlayer Нажми на игрока для его выбора
+HitSPACEWhenReadyWithMove Нажми пробел, когда будешь готов завершить ход
+PleaseEnterAValidEmailAddress Пожалуйста, введите адрес электронной почты
+PleaseEnterYourUsername Пожалуйста, введите ваш никнейм
+PleaseEnterYourPassword Пожалуйста, введите ваш пароль
+PleaseRetypeYourPassword Пожалуйста, введите ваш пароль ещё раз
+UsernameLesserThan4Characters Ваш никнейм короче 4 символов
+UsernameMoreThan10Characters Ваш никнейм длиннее 10 символов
+MismatchingPasswords Пароли не совпадают
+UsernameMustBeAlphaNumeric Никнейм может содержать только латиницу или цифры
+Error! Ошибка!
+CreateAccountFromToribash Please create your account from
+#ToribashFromCreateAccount Not used here
+NetworkError Ошибка подключения!
+UsernameUsedOrSubstandard Это имя уже используется другим пользователем или не соответствует стандартам
+ModsCtrlM Моды (Ctrl + M)
+Load Загрузить
+Open Открыть
+NewGame Новая игра
+TypeHere Начните писать для поиска
+QuickLoad Быстрая загрузка
+ShadersCtrlH Шейдеры (Ctrl + H)
+AutoLoad Автозагрузка
+SoundsCtrlY Звуки (Ctrl + Y)
+UsernameIsEmpty Имя пользователя  отсутствует
+Neck ШЕЯ
+Chest ГРУДНАЯ КЛЕТКА
+Lumbar ПОЯСНИЦА
+Abs ПРЕСС
+RightPecs ПРАВАЯ ГРУДНАЯ МЫШЦА
+RightShoulder ПРАВОЕ ПЛЕЧО
+RightElbow ПРАВЫЙ ЛОКОТЬ
+LeftPecs ЛЕВАЯ ГРУДНАЯ МЫШЦА
+LeftShoulder ЛЕВОЕ ПЛЕЧО
+LeftElbow ЛЕВЫЙ ЛОКОТЬ
+RightWrist ПРАВАЯ КИСТЬ
+LeftWrist ЛЕВАЯ КИСТЬ
+RightGlute ПРАВАЯ ЯГОДИЦА
+LeftGlute ЛЕВАЯ ЯГОДИЦА
+RightHip ПРАВОЕ БЕДРО
+LeftHip ЛЕВОЕ БЕДРО
+RightKnee ПРАВОЕ КОЛЕНО
+LeftKnee ЛЕВОЕ КОЛЕНО
+RightAnkle ПРАВАЯ ЛОДЫЖКА
+LeftAnkle ЛЕВАЯ ЛОДЫЖКА
+RightRotating РАЗВОРОТ ВПРАВО:
+RightBending НАКЛОН ВПРАВО:
+LeftRotating РАЗВОРОТ ВЛЕВО:
+LeftBending НАКЛОН ВЛЕВО:
+Lowering ОПУСКАЕТСЯ:
+Extending РАЗГИБАЕТСЯ:
+Raising ПОДНИМАЕТСЯ:
+Contracting СГИБАЕТСЯ:
+Holding НАПРЯЖЕНИЕ:
+Relaxing РАССЛАБЛЕНИЕ:
+ObjModel 3D-модели
+LanguageSteam Использовать язык Steam
+Effects Эффекты
+AlwaysOff Всегда выключены
+OnlyOnReplays Только во время повторов
+AlwaysOn Всегда включены

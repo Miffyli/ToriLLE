@@ -1,0 +1,47 @@
+# Twin Swordsi  by  Me
+
+gamerule 
+engageplayerpos 0
+engagedistance 180
+dojosize 490
+turnframes 30
+gravity 0.00 0.00 -9.60
+
+body r_hand
+	sides 0.8 0.001 0.208
+	pos -0.3 0.9 2.3
+	color 1 100 1
+	flag 6
+body l_hand
+	sides 0.8 0.001 0.208
+	pos 2.3 0.9 2.3
+	color 1 100 1
+	flag 6
+
+body r_foot
+        flag 6
+
+body l_foot
+        flag 6
+
+body r_triceps
+   sides 0.400000 0.130000 0.130000
+   flag 2
+
+body l_triceps
+   sides 0.400000 0.130000 0.130000
+   flag 2
+
+body r_leg
+   sides 0.160000 0.300000 0.000000
+        flag 2
+
+body l_leg
+   sides 0.160000 0.300000 0.000000
+        flag 2
+
+joint chest
+
+  radius 0.180000
+  pos 1.000000 0.900000 2.050000
+  range 5-5

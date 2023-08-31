@@ -1,0 +1,301 @@
+#!/usr/bin/toribash
+version 12
+world_shader data/shader/default.inc
+gamerule
+   matchframes 2000
+   turnframes 20
+   flags 4
+   dismemberment 0
+   fracture 0
+   disqualification 0
+   dqtimeout 0
+   dqflag 0
+   dismemberthreshold 275
+   fracturethreshold 160
+   pointthreshold 0
+   dojotype 0
+   dojosize 0
+   engagedistance 200
+   engageheight 0
+   engagerotation 0
+   engagespace 0
+   engageplayerpos 1.00,-3.00,0.00,0.20,1.15,0.00
+   engageplayerrot 0,0,-90,0,0,0
+   damage 0
+   gravity 0.00 0.00 -30.00
+   sumo 0
+   reactiontime 15
+   drawwinner 2
+   maxcontacts 8
+use_model 0
+model_name lenshu3
+env_obj 1
+   shape box
+   pos 1.00 1.90 0.70
+   color 0.51 0.32 0.05 1.00
+   rot 0.00 0.00 0.00
+   sides 3.00 0.70 0.10
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj1
+env_obj 2
+   shape box
+   pos 2.00 1.90 0.35
+   color 0.51 0.32 0.06 1.00
+   rot 0.00 0.00 0.00
+   sides 0.15 0.60 0.70
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj2
+env_obj 3
+   shape box
+   pos 0.00 1.90 0.35
+   color 0.51 0.32 0.06 1.00
+   rot 0.00 0.00 0.00
+   sides 0.15 0.60 0.70
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj3
+env_obj 4
+   shape box
+   pos -0.15 1.05 1.30
+   mass 0.0020
+   color 0.71 0.61 0.30 1.00
+   rot 0.00 0.00 0.00
+   sides 0.10 0.10 1.80
+   force 0.00 0.00 0.00
+   flag 0
+   bounce 0.100000
+   friction 10.00
+   use_model 0
+   model_name env_obj4
+env_obj 5
+   shape box
+   pos 0.80 -3.10 1.00
+   color 0.71 0.56 0.23 1.00
+   rot 0.00 0.00 0.00
+   sides 0.30 0.30 2.00
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj5
+env_obj 6
+   shape cylinder
+   pos 0.80 -3.10 2.20
+   color 1.00 1.00 1.00 1.00
+   rot 0.00 0.00 0.00
+   sides 0.40 1.00 0.50
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 100.00
+   use_model 0
+   model_name env_obj6
+env_obj 7
+   shape cylinder
+   pos 0.80 -3.10 0.00
+   color 0.20 0.08 0.00 1.00
+   rot 0.00 0.00 0.00
+   sides 0.40 0.01 2.00
+   force 0.00 0.00 0.00
+   flag 8
+   bounce 0.100000
+   friction 10000.00
+   use_model 0
+   model_name env_obj7
+player 0
+   body r_hand
+      pos -0.35 0.85 2.30
+   body l_hand
+      pos 2.35 0.85 2.30
+   body l_leg
+      shape box
+      sides 0.30 0.30 0.60
+      pos 1.20 1.00 0.45
+      density 1.0000
+   body r_leg
+      shape box
+      sides 0.30 0.30 0.60
+      pos 0.80 1.00 0.45
+      density 1.0000
+   body r_foot
+      sides 0.30 0.50 0.12
+      pos 0.80 0.90 0.12
+      density 50.0000
+   body l_foot
+      sides 0.30 0.50 0.12
+      pos 1.19 0.91 0.12
+      density 50.0000
+   joint abs
+      pos 1.00 1.00 1.65
+      range 0.00 0.00
+   joint r_glute
+      pos 0.90 1.10 1.51
+      range 0.00 0.00
+   joint r_knee
+      range 0.00 0.00
+   joint l_knee
+      range 0.00 0.00
+   joint l_glute
+      pos 1.10 1.10 1.51
+      range 0.00 0.00
+   joint r_hip
+      pos 0.79 1.00 1.40
+      range 0.00 0.00
+   joint l_hip
+      pos 1.21 1.00 1.40
+      range 0.00 0.00
+   joint r_ankle
+      pos 0.80 1.05 0.25
+      range 0.00 0.00
+      strength 0.00
+   joint l_ankle
+      pos 1.20 1.05 0.25
+      range 0.00 0.00
+      strength 0.00
+player 1
+   body head
+      pos 1.00 0.75 2.57
+   body breast
+      pos 1.00 0.90 2.20
+      point_hit 100
+   body chest
+      pos 1.00 0.88 1.95
+      point_hit 100
+   body stomach
+      sides 0.40 0.20 0.20
+      pos 1.00 0.95 1.75
+      point_hit 100
+   body groin
+      pos 1.00 1.00 1.55
+      point_hit 100
+   body r_pecs
+      pos 0.75 0.84 2.15
+      point_hit 100
+   body r_biceps
+      pos 0.46 0.90 2.30
+      point_hit 100
+   body r_triceps
+      pos 0.05 0.90 2.30
+      point_hit 100
+   body l_pecs
+      pos 1.25 0.84 2.15
+      point_hit 100
+   body l_biceps
+      pos 1.54 0.90 2.30
+      point_hit 100
+   body l_triceps
+      pos 1.95 0.90 2.30
+      point_hit 100
+   body r_hand
+      pos -0.35 0.85 2.30
+      point_hit 100
+   body l_hand
+      pos 2.35 0.85 2.30
+      point_hit 100
+   body r_butt
+      pos 0.80 1.00 1.45
+      point_hit 100
+   body l_butt
+      pos 1.20 1.00 1.45
+      point_hit 100
+   body r_thigh
+      sides 0.14 0.30 0.00
+      pos 0.80 1.00 1.10
+      point_hit 100
+   body l_thigh
+      sides 0.14 0.30 0.20
+      pos 1.20 1.00 1.10
+      point_hit 100
+   body l_leg
+      pos 1.20 1.00 0.50
+      point_hit 100
+   body r_leg
+      pos 0.80 1.00 0.50
+      point_hit 100
+   body r_foot
+      pos 0.80 0.90 0.10
+      point_hit 100
+   body l_foot
+      pos 1.20 0.90 0.10
+      point_hit 100
+   joint neck
+      pos 1.00 0.80 2.42
+      point_hit 100
+   joint chest
+      pos 1.00 0.90 2.05
+      point_hit 100
+   joint lumbar
+      pos 1.00 0.93 1.85
+      point_hit 100
+   joint abs
+      radius 0.20
+      pos 1.00 1.00 1.65
+      point_hit 100
+   joint r_pecs
+      radius 0.17
+      pos 0.85 0.86 2.20
+      point_hit 100
+   joint r_shoulder
+      radius 0.16
+      pos 0.67 0.90 2.30
+      point_hit 100
+   joint r_elbow
+      pos 0.25 0.90 2.30
+      point_hit 100
+   joint l_pecs
+      radius 0.17
+      pos 1.15 0.86 2.20
+      point_hit 100
+   joint l_shoulder
+      radius 0.16
+      pos 1.33 0.90 2.30
+      point_hit 100
+   joint l_elbow
+      pos 1.75 0.90 2.30
+      point_hit 100
+   joint r_wrist
+      pos -0.20 0.90 2.30
+      point_hit 100
+   joint l_wrist
+      pos 2.20 0.90 2.30
+      point_hit 100
+   joint r_glute
+      radius 0.20
+      pos 0.90 1.10 1.51
+      point_hit 100
+   joint l_glute
+      radius 0.20
+      pos 1.10 1.10 1.51
+      point_hit 100
+   joint r_hip
+      radius 0.19
+      pos 0.79 1.00 1.40
+      point_hit 100
+   joint l_hip
+      radius 0.19
+      pos 1.21 1.00 1.40
+      point_hit 100
+   joint r_knee
+      pos 0.80 1.00 0.80
+      point_hit 100
+   joint l_knee
+      pos 1.20 1.00 0.80
+      point_hit 100
+   joint r_ankle
+      pos 0.80 1.05 0.25
+      point_hit 100
+   joint l_ankle
+      pos 1.20 1.05 0.25
+      point_hit 100

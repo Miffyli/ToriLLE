@@ -1,0 +1,185 @@
+#!/usr/bin/toribash
+# Mod by TRichard
+#  
+
+gamerule
+engageplayerpos 0
+matchframes 800
+turnframes 20,30
+engagedistance 2000
+engageheight 500
+dismemberthreshold 0
+gravity -85
+friction -100
+
+env_obj 1
+    shape box
+    pos 1 10 2.5
+    color 0 0 1
+    rot 0 0 0
+    sides 1 1 5
+    material steel
+    mass 0.1
+    flag 24
+
+env_obj 2
+    shape cylinder
+    pos 1 3.25 5
+    color 0.3 0.2 -0.1 1
+    rot -96 0 0
+    sides 0.5 8 1 
+    material steel
+    friction -100
+    mass 0.1
+    flag 24
+env_obj 3
+    shape cylinder
+    pos 0.5 -1.5 2.25
+    color 0.3 0.2 -0.1 1
+    rot 0 0 0
+    sides 1.25 3.25 0.75 
+    material steel   
+    mass 0.1
+    flag 8
+env_obj 4
+    shape cylinder
+    pos 0.75 -3.25 5.5
+    color 0.3 0.2 -0.1 1
+    rot 132 8 0
+    sides 0.5 5.75 1 
+    material steel
+    mass 0.1
+    flag 8
+env_obj 5
+    shape cylinder
+    pos -1 -1.5 5.75
+    color 0.3 0.2 -0.1 1
+    rot 0 20 0
+    sides 0.75 7.25 1 
+    material steel
+    mass 0.1
+    flag 8
+env_obj 6
+    shape cylinder
+    pos 0.25 -1.125 7.5
+    color 0.3 0.2 -0.1 1
+    rot 4 -36 0
+    sides 0.125 5 1  
+    material steel
+    mass 0.1
+    flag 8
+env_obj 7
+    shape box
+    pos -0.75 -4.5 10.25
+    color 0.3 0.2 -0.1 1
+    rot 0 0 0
+    sides 3 2.75 0.25  
+    material steel
+    mass 0.1
+    flag 8
+env_obj 8
+    shape cylinder
+    pos 3 -1.5 7
+    color 0.3 0.2 -0.1 1
+    rot 0 -28 0
+    sides 0.75 7.75 0.75  
+    material steel
+    mass 0.1
+    flag 8
+env_obj 9
+    shape box
+    pos 0.125 1.25 0.0625
+    color 0 1 0
+    rot 0 0 0
+    sides 14.5 21.25 0.0625
+    material steel
+    mass 0.1
+    flag 8
+env_obj 10
+    shape cylinder
+    pos 2.75 -0.25 8.25
+    color 0.3 0.2 -0.1 1
+    rot 1 72 36
+    sides 0.25 3.5 1 
+    material steel
+    mass 0.1
+    flag 8
+env_obj 11
+    shape cylinder
+    pos 2 -2.25 9.25
+    color 0.3 0.2 -0.1 1
+    rot -56 32 0
+    sides 0.25 4.25 1 
+    material steel
+    mass 0.1
+    flag 8
+env_obj 12
+    shape cylinder
+    pos 0 -5 8.75 
+    color 0.3 0.2 -0.1 1
+    rot 12 28 0 
+    sides 0.125 3.75 1
+    material steel
+    mass 0.1
+    flag 8
+env_obj 13
+    shape sphere
+    pos -2.75 -1.5 10.5
+    color 0 .5 0
+    rot 0 0 0
+    sides 1.75 1 1  
+    material steel
+    mass 0.1
+    flag 8
+env_obj 14
+    shape sphere
+    pos 4.75 -1.5 12.25 
+    color 0 .5 0
+    rot 0 0 0
+    sides 3 1 1   
+    material steel
+    mass 0.1
+    flag 8
+env_obj 15
+    shape box
+    pos -2.5 -4.25 6.75
+    color 0.9 0.9 1 1
+    rot 0 0 0
+    sides 0.1875 0.1875 8
+    material steel
+    mass 0.1
+    flag 8
+env_obj 16
+    shape sphere
+    pos -0.75 -4.75 11
+    color 1 0 0
+    rot 0 0 0
+    sides 0.5 1 1 
+    material steel
+    mass 1
+   
+body stomach 
+	force 0 5  5
+body breast
+	force 0 6  5
+body chest
+	force 0 6  5
+
+body groin
+	force 0 4  5
+body r_pecs
+	force 0 6  5
+body l_pecs
+	force 0 6  5
+body r_thigh
+	force 0 5  5
+body l_thigh
+	force 0 5  5
+body l_leg
+	force 0 5  5
+body r_leg
+	force 0 5  5
+body head       force 0 -99 -99
+
+# Environment exported by WorldBuilder
+######################################

@@ -1,0 +1,155 @@
+# Spring loaded planks! You CANT go wrong with that!
+
+gamerule
+engageplayerpos 0
+ed 1180
+eh 250
+di 0
+mf 1000
+tf 50
+dojosize 450
+dojotype 1
+dq 1
+
+env_obj 1
+    shape box
+    pos 1 5.45 0.0625
+    color 1.1 -0.1 -0.1 1
+    rot 0 0 0
+    sides 1 2.25 0.125
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 2
+    shape box
+    pos 1 5.35 1.1
+    color 1.1 -0.1 -0.1 1
+    rot -35 0 0
+    sides 1 2.25 0.225
+    material steel
+    mass 0.15
+    flag 0
+    force 0 0 -15
+    friction 0
+#END 2
+
+env_obj 4
+    shape box
+    pos 1 6.45 0.1875
+    color 1.1 -0.1 -0.1 1
+    rot 0 0 0
+    sides 0.5 0.4375 0.125
+    material steel
+    mass 0.1
+    flag 24
+    bounce 60
+#END 4
+
+env_obj 5
+    shape box
+    pos 1 -5.5 0.0625
+    color 1.1 -0.1 -0.1 1
+    rot 0 0 0
+    sides 1 2.25 0.125
+    material steel
+    mass 0.1
+    flag 24
+#END 5
+
+env_obj 6
+    shape box
+    pos 1 -5.5 1.1
+    color 1.1 -0.1 -0.1 1
+    rot 35 0 0
+    sides 1 2.25 0.225
+    material steel
+    mass 0.15
+    flag 0
+    force 0 0 -15
+    friction 0
+#END 6
+
+env_obj 7
+    shape sphere
+    pos 1.75 4.125 0.475
+    color 0.4 0.4 0.4 0
+    rot 90 -90 0
+    sides 0.125 0 0
+    material steel
+    mass 0.1
+    flag 24
+#END 7
+
+env_obj 8
+    shape sphere
+    pos 0.25 4.125 0.475
+    color 0.4 0.4 0.4 0
+    rot 90 -90 0
+    sides 0.125 0 0
+    material steel
+    mass 0.1
+    flag 24
+#END 8
+
+env_obj 9
+    shape sphere
+    pos 0.25 -4.125 0.475
+    color 0.4 0.4 0.4 0
+    rot 90 -90 0
+    sides 0.125 0 0
+    material steel
+    mass 0.1
+    flag 24
+#END 9
+
+env_obj 10
+    shape sphere
+    pos 1.75 -4.125 0.475
+    color 0.4 0.4 0.4 0
+    rot 90 -90 0
+    sides 0.125 0 0
+    material steel
+    mass 0.1
+    flag 24
+#END 10
+
+
+env_obj 12
+    shape box
+    pos 1 -6.4025 0.1875
+    color 1.1 -0.1 -0.1 1
+    rot 0 0 0
+    sides 0.5 0.4375 0.125
+    material steel
+    mass 0.1
+    bounce 60
+    flag 24
+#END 12
+
+
+
+
+env_obj_joint 1 2 8
+pos 0.25 4.125 0.475
+axis -1 0 0
+range 5 -5
+strength 1
+
+env_obj_joint 2 2 7
+pos 1.75 4.125 0.475
+axis -1 0 0
+range 5 -5
+strength 1
+
+env_obj_joint 3 6 10
+pos 1.75 -4.125 0.475
+axis 1 0 0
+range 5 -5
+strength 1
+
+env_obj_joint 4 6 9
+pos 0.25 -4.125 0.475
+axis 1 0 0
+range 5 -5

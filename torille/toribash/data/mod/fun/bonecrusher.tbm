@@ -1,0 +1,81 @@
+#!/usr/bin/toribash
+#Mod by dmitrypro
+
+gamerule
+engageplayerpos 0
+engageheight 52
+engagedistance 70
+matchframes 400
+turnframes 40
+dq 1
+
+
+env_obj 1
+shape box
+sides 1 1 .005
+pos 1 -.1 0.5
+rot 0 0 0
+color 0 1 0
+material steel
+flag 24
+
+env_obj 2
+shape box
+sides 1 9 5
+pos 5 0 2.5
+rot 0 0 0
+color 0 0 1
+material steel
+flag 8
+
+env_obj 3
+shape box
+sides 1 9 5
+pos -3 0 2.5
+rot 0 0 0
+color 0 0 1
+material steel
+flag 8
+
+env_obj 4
+shape box
+pos 1 -.1 0.01
+sides .22 .22 .01
+color .7 .7 .7
+material steel
+flag 8
+
+env_obj 5
+shape box
+pos 1 -.1 0.11
+sides 6 .1 .001
+color 1 0 0
+material steel
+flag 16
+
+env_obj 6
+shape box
+sides 8 1 5
+pos 1 4 2.5
+rot 0 0 0
+color 0 0 1
+material steel
+flag 8
+
+env_obj 7
+shape box
+sides 8 1 5
+pos 1 -4 2.5
+rot 0 0 0
+color 0 0 1
+material steel
+flag 8
+
+
+env_obj_joint 1 5 4
+pos 1 -.1 0.4
+axis 0 0 1
+range 400 -400
+velocity 700
+strength 100000000
+visible 0

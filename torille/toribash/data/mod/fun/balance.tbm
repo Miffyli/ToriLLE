@@ -1,0 +1,19 @@
+gamerule
+engageplayerpos 0
+dojosize 1
+engagedistance 150
+engageheight 130
+
+env_obj 1
+shape box
+color 1 0 0 
+sides 0.07 0.07 1.2
+pos 1 -0.1 0.6
+flag 24
+
+env_obj 2
+shape box
+color 0 0 0
+sides 3 3 0.1
+pos 1 -0.1 1.25
+flag 16

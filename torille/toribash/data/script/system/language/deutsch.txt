@@ -1,0 +1,174 @@
+# New UI Localization file	
+NAVBUTTONHOME	Menü	
+NAVBUTTONPLAY	Spielen	
+NAVBUTTONPRACTICE	Training	
+NAVBUTTONMODS	Mods	
+NAVBUTTONTOOLS	Werkzeuge	
+NAVBUTTONTOMAIN	Zum Menü	
+NAVBUTTONBACK	Zurück	
+MAINMENUTORISHOPNAME	Torishop	
+MAINMENUTORISHOPDESC	Probiere und kaufe Gegenstände für deinen Tori	
+MAINMENUCLANSNAME	Clans	
+MAINMENUCLANSDESC	Entdecke Toribash clans	
+MAINMENUREPLAYSNAME	Replays	
+MAINMENUREPLAYSDESC	Schaue deine heruntergeladenen Replays an	
+MAINMENUFREEPLAYNAME	Freies Spiel	
+MAINMENUFREEPLAYDESC	Verbessere dein Können oder erstelle Replays im Einzelspielermodus	
+MAINMENUMATCHMAKINGNAME	Matchmaking	
+MAINMENUMATCHMAKINGDESC	Um schnell eins-gegen-eins Kämpfe zu bestreiten	
+MAINMENUROOMLISTNAME	Server Liste	
+MAINMENUROOMLISTDESC	Erstelle deinen eigenen Raum oder trete einem vorhandenen bei	
+MAINMENUBEGINNERTUTNAME	Anfänger Tutorial	
+MAINMENUBEGINNERTUTDESC	Lerne Toribash Grundlagen: Steuerung, Gameplay und mehr	
+MAINMENUADVMOVESNAME	Fortgeschrittene Moves	
+MAINMENUADVMOVESDESC	Entdecke fortgeschrittene Moves um sie im Mehrspieler zu verwenden	
+MAINMENUFIGHTUKENAME	Kämpfe gegen Uke	
+MAINMENUFIGHTUKEDESC	Beweise dein Können gegen Tori's ultimativen Gegner	
+MAINMENUCOMEBACKNAME	Comeback Übung	
+MAINMENUCOMEBACKDESC	Fange Uke ohne disqualifiziert zu werden	
+MAINMENUGAMERULESNAME	Spielregeln	
+MAINMENUGAMERULESDESC	Verändere Schwerkraft und andere Mod Einstellungen	
+MAINMENUMODLISTNAME	Mod Liste	
+MAINMENUMODLISTDESC	Lade eine der heruntergeladenen Mods	
+MAINMENUMODMAKERNAME	Mod-Ersteller	
+MAINMENUMODMAKERDESC	Erstelle deine eigenen Mods für Toribash	
+MAINMENUMODSDISCOVERNAME	Entdecke	
+MAINMENUMODSDISCOVERDESC	Suche nach neuen, von anderen Spielern erstellte Mods	
+MAINMENUSHADERSNAME	Shader & Atmosphären	
+MAINMENUSHADERSDESC	Passe Belichtung und Umgebung an	
+MAINMENUSCRIPTSNAME	Scripts	
+MAINMENUSCRIPTSDESC	Lade vorinstallierte oder von anderen erstellte Scripts	
+MAINMENUSOUNDSNAME	Töne	
+MAINMENUSOUNDSDESC	Schalte benutzerdefinierte Töne an/aus	
+DOWNLOADINGFILESWAIT	Lade Daten herunter, bitte warte...	
+STORESETEMPTY	LEER	
+STOREITEM	item	
+STOREITEMS	items	
+STOREFLAMEBODYPART	Partikel Flamme für dein	
+STOREFLAMEID	Flammen ID	
+STOREFLAMEFORGEDBY	Erstellt von	
+STOREITEMINSIDESET	Im Set	
+STOREOBJITEMBODYPART	Benutzerdefiniertes 3D-Modell für	
+STOREITEMNODESCRIPTION	Dieses Item hat keine Beschreibung	
+STOREITEMGOTOSET	Gehe zum Set	
+STORESETITEMNAME	Set	
+STOREITEMADDTOSET	Füge zum Set hinzu	
+STOREITEMREMOVEFROMSET	Entferne vom Set	
+STOREVIEWSETITEMS	Zeige Items im Set an	
+STOREITEMSINSET	Items im Set	
+STORESELLMARKET	Verkaufe im Markt	
+STOREDIALOGMARKETSELL1	Bist du dir sicher, dass du	
+STOREDIALOGMARKETSELL2	auf dem Mark verkaufen willst?	
+STOREITEMDEACTIVATE	Deaktiviere	
+STOREDIALOGDEACTIVATE1	Bist du dir sicher du möchtest	
+STOREDIALOGDEACTIVATE2	deaktivieren?	
+STOREITEMACTIVATE	Aktiviere	
+STOREDIALOGACTIVATE1	Bist du dir sicher du möchtest	
+STOREDIALOGACTIVATE2	aktivieren?	
+STOREDIALOGCONFLICTSDEACTIVATE	Alle inkompatiblen Items werden deaktiviert	
+STOREITEMUNPACK	Entpacken	
+STOREDIALOGUNPACK1	Bist du sicher, das du	
+STOREDIALOGUNPACK2	entpacken willst?	
+STOREDIALOGUNPACKINFO	Ausgepackte Items werden in ein set\nin deinem deaktivierten Inventar platziert.	
+STOREACTIVATEDINVENTORY	Aktives Inventar	
+STOREDEACTIVATEDINVENTORY	Inaktives Inventar	
+STOREMARKETINVENTORY	Marktinventar	
+STOREINVENTORYALLITEMS	Alle Items im Inventar	
+PAGINATIONPAGE	Seite	
+PAGINATIONPAGEOF	von	
+STOREINVENTORYLOADING	Empfängt Daten vom Toriverse	
+STOREGOTOSHOP	Öffne den Torishop	
+STOREGOTOINVENTORY	Öffne dein Inventar	
+STORESTEAMPURCHASELOADING	Kauf wird bestätigt	
+STORESTEAMPURCHASEERROR	Etwas ist schiefgelaufen	
+CLANSMYCLAN	Mein Clan	
+CLANSCLANLEADER	Clan Anführer	
+CLANSCLANMEMBER	Clan Mitglieder	
+CLANSTOGETHERWITH	Zusammen mit	
+CLANSVIEWCLAN	Siehe Clan	
+GENERALSTRINGAND	und	
+CLANFILTERSRANK	Rang	
+CLANFILTERSCLANNAME	Name	
+CLANFILTERSCLANTAG	Tag	
+CLANFILTERSCLANID	ID	
+CLANFILTERSOFFICIALSTATUS	Status	
+CLANFILTERSJOINMODE	Beitrittsart	
+CLANFILTERSDEAD	Tot	
+CLANFILTERSINACTIVE	Inaktiv	
+CLANFILTERSACTIVE	Aktiv	
+SORTORDERASCENDING	Aufsteigend	
+SORTORDERDESCENDING	Absteigend	
+CLANFILTERSACTIVITYSTATE	Aktivitätsstatus	
+CLANFILTERSACTIVITYSTATEDESC	Clans werden aktiv bezeichnet wenn sie mindestens 5 Mitglieder haben. Clans ohne Mitglieder werden als tot markiert	
+CLANFILTERSFFAONLY	Nur Frei-Für-Alle-Clans	
+CLANFILTERSFFAONLYDESC	Du kannst Frei-für-alle-Clans mit einem Klick beitreten. Für andere Clans musst du dich bewerben	
+CLANFILTERSOFFICIALONLY	Nur Offizielle Clans	
+CLANFILTERSOFFICIALONLYDESC	Offizielle Clans haben ihr eigenes Board im Toribash-Forum und werden in eckigen Klammern im Spiel angezeigt	
+SORTBYNAME	Ordne nach	
+SORTORDERNAME	Ordnungs Reihenfolge	
+CLANSSEARCHFILTERS	Suchfilter	
+CLANSSEARCH	Suche nach Clans	
+CLANSCLANLIST	Clan Liste	
+CLANSLEGENDRANK	Rang	
+CLANSLEGENDLEVEL	Level	
+CLANSLEGENDXP	XP	
+CLANSLEGENDTAGNAME	Tag und name	
+CLANSLEGENDSTATUS	Status	
+CLANSLEGENDJOINMODE	Beitrittsart	
+CLANSTATEOFFICIAL	Offiziell	
+CLANSTATEUNOFFICIAL	In-Offiziell	
+CLANSTATEFREEFORALL	Frei für alle	
+CLANSTATEINVITEONLY	Nur Einladung	
+CLANSLISTEMPTYMSG	Keine Clans zum anzeigen	
+CLANSJOINCLAN	Clan beitreten	
+CLANSRELOADLOGO	Logo neu laden	
+CLANSUPDATINGLOGO	Aktualisiere	
+CLANSTATEUNRANKED	Unranked	
+CLANSVIEWWARSFORUM	Zeige Clan Kriege im Forum	
+CLANSTOPACHMISSING	Dieser Clan hat keine Errungenschaft ausgestellt	
+CLANSLEGENDROSTER	Roster	
+CLANLEADERS	Anführer	
+CLANLEADER	Anführer	
+CLANMEMBERS	Mitglieder	
+CLANMEMBER	Mitglied	
+CLANDATALOADERROR	Fehler beim Laden von Clandaten, überprüfe Lese- und Schreibrechte deines Toribash Ordners	
+REWARDSDAILYTITLE	Tägliche Login Belohnung	
+REWARDSCLAIM	Belohnung abholen	
+REWARDSCLAIMNETWORKERROR	Fehler bei der Kommunikation mit den Toribash Servern, bitte versuche es später erneut	
+REWARDSCLAIMINPROGRESS	Fordere Belohnung ein...	
+REWARDSCLAIMSUCCESS	Belohnung erhalten	
+REWARDSCLAIMNOREWARD	Keine Belohnung verfügbar, versuche es später nochmal	
+REWARDSCLAIMTIMEOUT	Timeout error, starte das Spiel neu oder verbinde dich mit dem Internet	
+REWARDSCLAIMERROROTHER	Fehler beim Erhalten der Belohnung	
+REWARDSNOAVAILABLE	Keine Belohnung verfügbar	
+REWARDSAVAILABLERESTART	Belohnung wird beim nächsten Spielstart verfügbar sein	
+REWARDSEXPIRED	Deine Belohnung ist abgelaufen! :(	
+REWARDSTIMEHOURS	Stunden	
+REWARDSTIMEHOUR	Stunde	
+REWARDSTIMEMINUTES	Minuten	
+REWARDSTIMEMINUTE	Minute	
+REWARDSTIMESECONDS	Sekunden	
+REWARDSNEXTREWARD	Nächste Belohnung in	
+REWARDSTIMELEFT	verbleiben um die Belohnung anzufordern	
+MATCHMAKEMODGRAPPLING	Grappling	
+MATCHMAKEMODKICKING	Kicking	
+MATCHMAKEMODSTRIKING	Striking	
+MATCHMAKEMODFUN	Fun	
+MATCHMAKERANKEDBELT	Ranked Matchmaking ab dem Braunen Gürtel verfügbar	
+MATCHMAKERANKEDMODE	Ranked Modus	
+MATCHMAKERANK	Rang	
+MATCHMAKEFIGHTSTOTAL	Kämpfe insgesamt	
+MATCHMAKEWINRATE	Siegrate	
+MATCHMAKENOPLAYERS	Zurzeit suchen keine Spieler	
+MATCHMAKEPLAYERSEARCHING	Spieler sucht	
+MATCHMAKEPLAYERSSEARCHING	Spieler suchen	
+MATCHMAKESEARCHING	Suche nach einem Spiel	
+MATCHMAKESEARCH	Suchen	
+MATCHMAKESTOPSEARCH	Suche anhalten	
+MATCHMAKEUNRANKEDMODE	Ungewertetes Spiel	
+MATCHMAKEFINDBESTMATCH1	Finde	
+MATCHMAKEFINDBESTMATCH2	Schnellstes Spiel	
+MATCHMAKESEARCHSETTINGS1	Suche	
+MATCHMAKESEARCHSETTINGS2	Mit Einstellungen	
+MATCHMAKESEARCHCUSTOM	Benutzerdefiniert	
+MATCHMAKEUPDATINGRANK	Aktualisiere Ranking Statistiken...	

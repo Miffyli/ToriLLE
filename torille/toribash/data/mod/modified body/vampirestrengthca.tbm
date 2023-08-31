@@ -1,0 +1,461 @@
+gamerule
+engageplayerpos 0
+dojotype 1
+dojosize 500
+dismemberthreshold 200
+engagedistance 300
+matchframes 200
+turnframes 20
+
+body head
+shape sphere
+sides 0.2 0.0 0.0
+pos 1.0 0.85 2.65
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body breast
+shape box
+sides 0.2 0.26 0.3
+pos 1.0 0.9 2.2
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body chest
+shape box
+sides 0.5 0.27 0.2
+pos 1.0 0.9 1.95
+rot 0 0 0 
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body stomach
+shape box
+sides 0.35 0.22 0.2
+pos 1. 0.95 1.75
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body groin
+shape box
+sides 0.2 0.25 0.2
+pos 1.0 1.0 1.550
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body r_pecs
+shape box
+sides 0.2 0.27 0.25
+pos 0.80 0.9 2.185
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body r_biceps
+shape cylinder
+sides 0.14 0.22 0.00
+pos 0.65 0.9 2.5
+rot -45 90 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body l_biceps
+shape cylinder
+sides 0.14 0.22 0.00
+pos 1.35 0.9 2.1
+rot -45 90 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body r_triceps
+shape cylinder
+sides 0.10 0.22 0.00
+pos 0.25 0.9 2.54
+rot -45 90 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body l_triceps
+shape cylinder
+sides 0.10 0.22 0.00
+pos 1.75 0.9 2.06
+rot -45 90 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body r_hand
+shape box
+sides 0.22 0.22 0.22
+alt_sides 0.3 0.11 0.22
+pos -0.35 0.85 2.3
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 32
+
+body l_pecs
+shape box
+sides 0.2 0.27 0.25
+pos 1.20 0.9 2.185
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body l_hand
+shape box
+sides 0.22 0.22 0.22
+alt_sides 0.3 0.11 0.22
+pos 2.35 0.85 2.3
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 32
+
+body r_butt
+shape box
+sides 0.13 0.13 0.13
+pos 0.8 1.0 1.45
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body l_butt
+shape box
+sides 0.13 0.13 0.13
+pos 1.2 1.0 1.45
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body r_thigh
+shape cylinder
+sides 0.16 0.3 0.0
+pos 0.8 1.0 1.1
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body l_thigh
+shape cylinder
+sides 0.16 0.3 0.2
+pos 1.2 1.0 1.1
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body r_leg
+shape cylinder
+sides 0.13 0.3 0.0
+pos 0.8 1.0 0.5
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body l_leg
+shape cylinder
+sides 0.13 0.3 0.0
+pos 1.2 1.0 0.5
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 0
+
+body r_foot
+shape box
+sides 0.22 0.5 0.08
+pos 0.8 0.9 0.1
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 32
+
+body l_foot
+shape box
+sides 0.22 0.5 0.08
+pos 1.2 0.89 0.1
+rot 0 0 0
+force 0 0 0
+thrust 0 0 0 0
+color 1 1 1
+density 0.25
+material flesh
+flag 32
+
+joint neck
+radius 0.11
+pos 1.0 0.89 2.5
+axis 1 0 0
+rot 0 0 0
+range 0.5 -0.5
+strength 2.0
+velocity 100.0
+density 0.25
+
+joint chest
+radius 0.18
+pos 1.0 0.9 2.05
+axis 0 0 1
+rot 0 0 0
+range 1.0 -1.0
+strength 8.0
+velocity 40.0
+density 0.25
+
+joint lumbar
+radius 0.16
+pos 1.0 0.95 1.85
+axis 0 1 0
+rot 0 0 0
+range 0.5 -0.5
+strength 6.0
+velocity 10.0
+density 0.25
+
+joint abs
+radius 0.14
+pos 1.0 1.0 1.65
+axis 1 0 0
+rot 0 0 0
+range 0.4 -0.6
+strength 6.0
+velocity 10.0
+density 0.25
+
+joint r_pecs
+radius 0.18
+pos 0.85 0.85 2.2
+axis 0 0 1
+rot 0 0 0
+range 1.5 -0.7
+strength 6.0
+velocity 30.0
+density 0.25
+
+joint r_shoulder
+radius 0.18
+pos 0.65 0.9 2.3
+axis 0 1 0
+rot 0 0 0
+range 1.2 -1.2
+strength 8.0
+velocity 40.0
+density 0.25
+
+joint r_elbow
+radius 0.16
+pos 0.25 0.90 2.3
+axis 0 0 1
+rot 0 0 0
+range 2.3 0.05
+strength 4.0
+velocity 80.0
+density 0.25
+
+joint r_wrist
+radius 0.11
+pos -0.2 0.9 2.3
+axis 0 0 1
+rot 0 0 0
+range 2.0 -0.3
+strength 4.0
+velocity 120.0
+density 0.25
+
+joint l_pecs
+radius 0.18
+pos 1.15 0.85 2.2
+axis 0 0 1
+rot 0 0 0
+range 1.5 -0.7
+strength 6.0
+velocity 30.0
+density 0.25
+
+joint l_shoulder
+radius 0.18
+pos 1.35 0.9 2.3
+axis 0 1 0
+rot 0 0 0
+range 1.2 -1.2
+strength 8.0
+velocity 40.0
+density 0.25
+
+joint l_elbow
+radius 0.16
+pos 1.75 0.9 2.3
+axis 0 0 1
+rot 0 0 0
+range 2.3 0.05
+strength 4.0
+velocity 120.0
+density 0.25
+
+joint l_wrist
+radius 0.11
+pos 2.2 0.9 2.3
+axis 0 0 1
+rot 0 0 0
+range 2.0 -0.3
+strength 4.0
+velocity 120.0
+density 0.25
+
+joint r_glute
+radius 0.16
+pos 0.9 1.1 1.51
+axis 0 1 0
+rot 0 0 0
+range 1.2 -0.2
+strength 8.0
+velocity 20.0
+density 0.25
+
+joint l_glute
+radius 0.16
+pos 1.1 1.1 1.51
+axis 0 1 0
+rot 0 0 0
+range 1.2 -0.2
+strength 8.0
+velocity 20.0
+density 0.25
+
+joint r_hip
+radius 0.16
+pos 0.79 1.0 1.4
+axis 1 0 0
+rot 0 0 0
+range 1.0 -1.8
+strength 4.0
+velocity 24.0
+density 0.25
+
+joint l_hip
+radius 0.16
+pos 1.21 1.0 1.4
+axis 1 0 0
+rot 0 0 0
+range 1.0 -1.8
+strength 2.0
+velocity 24.0
+density 0.25
+
+joint r_knee
+radius 0.14
+pos 0.8 1.0 0.8
+axis 1 0 0
+rot 0 0 0
+range 2.3 0.0
+strength 8.0
+velocity 80.0
+density 0.25
+
+joint l_knee
+radius 0.14
+pos 1.2 1.0 0.8
+axis 1 0 0
+rot 0 0 0
+range 2.3 0.0
+strength 8.0
+velocity 80.0
+density 0.25
+
+joint r_ankle
+radius 0.11
+pos 0.8 1.05 0.25
+axis 1 0 0
+rot 0 0 0
+range 1.1 -0.3
+strength 2.0
+velocity 16.0
+density 0.25
+
+joint l_ankle
+radius 0.11
+pos 1.2 1.05 0.25
+axis 1 0 0
+rot 0 0 0
+range 1.1 -0.3
+strength 2.0
+velocity 16.0

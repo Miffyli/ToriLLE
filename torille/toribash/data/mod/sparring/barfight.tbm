@@ -1,0 +1,455 @@
+# barfight.tbm tori is getting slightly angry at the barkeeper.
+
+gamerule
+engageplayerpos 0
+engagedistance 220
+eh 0
+
+env_obj 1
+shape box
+pos 1.0 -0.1 0.91
+color 0.75 0.58 0.45
+rot 2.5 0 0
+sides 11 0.7 1.8
+material steel
+mass 0.05
+flag 8
+
+env_obj 2
+shape box
+pos 1.0 1.0 1.055
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 0.6 0.6 0.075
+material steel
+mass 0.0001
+
+env_obj 3
+shape box
+pos 1.0 1.0 0.50875
+color 0.55 0.55 0.55
+rot 0 0 0
+sides 0.3 0.3 1.0175
+material steel
+mass 0.05
+flag 8
+friction 0
+
+env_obj 4
+shape box
+pos 3.0 1.0 1.055
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 0.6 0.6 0.075
+material steel
+mass 0.05
+
+env_obj 5
+shape box
+pos 3.0 1.0 0.50875
+color 0.55 0.55 0.55
+rot 0 0 0
+sides 0.3 0.3 1.0175
+material steel
+mass 0.05
+flag 8
+
+env_obj 6
+shape box
+pos -1.0 1.0 1.055
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 0.6 0.6 0.075
+material steel
+mass 0.05
+
+env_obj 7
+shape box
+pos -1.0 1.0 0.50875
+color 0.55 0.55 0.55
+rot 0 0 0
+sides 0.3 0.3 1.0175
+material steel
+mass 0.05
+flag 8
+
+env_obj 8
+shape box
+pos -3.0 1.0 1.055
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 0.6 0.6 0.075
+material steel
+mass 0.05
+
+env_obj 9
+shape box
+pos -3.0 1.0 0.50875
+color 0.55 0.55 0.55
+rot 0 0 0
+sides 0.3 0.3 1.0175
+material steel
+mass 0.05
+flag 8
+
+env_obj 10
+shape box
+pos 5.0 1.0 1.055
+color 0.0 0.0 0.0
+rot 0 0 0
+sides 0.6 0.6 0.075
+material steel
+mass 0.05
+
+env_obj 11
+shape box
+pos 5.0 1.0 0.50875
+color 0.55 0.55 0.55
+rot 0 0 0
+sides 0.3 0.3 1.0175
+material steel
+mass 0.05
+flag 8
+
+env_obj 12
+shape cylinder
+pos 3.0 -0.1 2.0095
+color 0.3 0.8 0.3 0.8
+rot 0 0 0
+sides 0.1 .2 0.125
+material steel
+mass 0.00001
+
+env_obj 13
+shape box
+pos 3.0 -0.1 2.06
+color 0.3 0.8 0.3 0.8
+rot 0 0 45
+sides 0.07 0.07 0.5
+material steel
+mass 0.00019
+
+env_obj 14
+shape cylinder
+pos -1 -0.1 2.0095
+color 0.55 0.38 0.25 0.8
+rot 0 0 0
+sides 0.1 .2 0.125
+material steel
+mass 0.00001
+
+env_obj 15
+shape box
+pos -1 -0.1 2.06
+color 0.55 0.38 0.25 0.8
+rot 0 0 45
+sides 0.07 0.07 0.5
+material steel
+mass 0.00019
+
+env_obj_joint 1 2 3
+pos 1.0 1.0 1.055
+axis 0 0 1
+range 5 -5
+strength 0
+velocity 0
+
+env_obj_joint 2 4 5
+pos 3.0 1.0 1.055
+axis 0 0 1
+range 5 -5
+strength 0
+velocity 0
+
+env_obj_joint 3 6 7
+pos -1.0 1.0 1.055
+axis 0 0 1
+range 5 -5
+strength 0
+velocity 0
+
+env_obj_joint 4 8 9
+pos -3.0 1.0 1.055
+axis 0 0 1
+range 5 -5
+strength 0
+velocity 0
+
+env_obj_joint 5 10 11
+pos 5.0 1.0 1.055
+axis 0 0 1
+range 5 -5
+strength 0
+velocity 0
+
+env_obj_joint 6 12 13
+pos 3.0 -0.1 1.99
+axis 0 0 1
+range 0 0
+strength 0
+velocity 0
+
+env_obj_joint 7 14 15
+pos -1.0 -0.1 1.99
+axis 0 0 1
+range 0 0
+strength 0
+velocity 0
+
+player 0
+body r_thigh
+shape box
+sides 0.21 0.6 0.21
+pos 0.8 1.3 1.3
+
+body l_thigh
+shape box
+sides 0.21 0.6 0.21
+pos 1.2 1.3 1.3
+
+body head
+pos 1.0 1.45 2.55
+
+body breast
+pos 1.0 1.5 2.1
+
+body chest
+pos 1.0 1.5 1.85
+
+body stomach
+pos 1. 1.55 1.65
+
+body groin
+pos 1.0 1.6 1.45
+
+body r_pecs
+pos 0.75 1.5 2.05
+
+body r_biceps
+pos 0.45 1.5 2.2
+
+body r_triceps
+pos 0.05 1.5 2.2
+
+body r_hand
+pos -0.35 1.45 2.2
+
+body l_pecs
+pos 1.25 1.5 2.05
+
+body l_biceps
+pos 1.55 1.5 2.2
+
+body l_triceps
+pos 1.95 1.5 2.2
+
+body l_hand
+pos 2.35 1.45 2.2
+
+body r_butt
+pos 0.8 1.6 1.35
+
+body l_butt
+pos 1.2 1.6 1.35
+
+joint r_hip
+pos 0.79 1.6 1.3
+range 2.4 -.4
+
+joint l_hip
+pos 1.21 1.6 1.3
+range 2.4 -.4
+
+joint r_glute
+pos 0.9 1.7 1.41
+
+joint l_glute
+pos 1.1 1.7 1.41
+
+joint abs
+pos 1.0 1.6 1.55
+
+joint lumbar
+pos 1.0 1.55 1.75
+
+joint chest
+pos 1.0 1.5 1.95
+
+joint r_pecs
+pos 0.85 1.45 2.1
+
+joint r_shoulder
+pos 0.65 1.5 2.2
+
+joint r_elbow
+pos 0.25 1.5 2.2
+
+joint r_wrist
+pos -0.2 1.5 2.2
+
+joint l_pecs
+pos 1.15 1.45 2.1
+
+joint l_shoulder
+pos 1.35 1.5 2.2
+
+joint l_elbow
+pos 1.75 1.5 2.2
+
+joint l_wrist
+pos 2.2 1.5 2.2
+
+joint neck
+pos 1.0 1.5 2.4
+
+joint r_knee
+range 0.8 -1.5
+pos 0.8 1.0 1.3
+
+joint l_knee
+range 0.8 -1.5
+pos 1.2 1.0 1.3
+
+joint r_ankle
+pos 0.8 1.05 0.75
+
+joint l_ankle
+pos 1.2 1.05 0.75
+
+body r_foot
+pos 0.8 0.9 0.6
+
+body l_foot
+pos 1.2 0.9 0.6
+
+body r_leg
+pos 0.8 1.0 1.0
+
+body l_leg
+pos 1.2 1.0 1.0
+
+player 1
+
+body head
+pos 1.0 0.85 2.6
+
+body breast
+pos 1.0 0.9 2.15
+
+body chest
+pos 1.0 0.9 1.9
+
+body stomach
+pos 1.0 0.95 1.7
+
+body groin
+pos 1.0 1.0 1.5
+
+body r_pecs
+pos 0.75 0.9 2.1
+
+body r_biceps
+pos 0.45 0.9 2.25
+
+body r_triceps
+pos 0.05 0.9 2.25
+
+body l_pecs
+pos 1.25 0.9 2.1
+
+body l_biceps
+pos 1.55 0.9 2.25
+
+body l_triceps
+pos 1.95 0.9 2.25
+
+body r_hand
+pos -0.35 0.85 2.25
+
+body l_hand
+pos 2.35 0.85 2.25
+
+body r_butt
+pos 0.8 1.0 1.4
+
+body l_butt
+pos 1.2 1.0 1.4
+
+body r_thigh
+pos 0.8 1.0 1.05
+
+body l_thigh
+pos 1.2 1.0 1.05
+
+body l_leg
+pos 1.2 1.0 0.45
+
+body r_leg
+pos 0.8 1.0 0.45
+
+body r_foot
+pos 0.8 0.9 0.05
+
+body l_foot
+pos 1.2 0.9 0.05
+
+joint neck
+pos 1.0 0.9 2.45
+
+joint chest
+pos 1.0 0.9 2.0
+
+joint lumbar
+pos 1.0 0.95 1.8
+
+joint abs
+pos 1.0 1.0 1.6
+
+joint r_pecs
+pos 0.85 0.85 2.15
+
+joint r_shoulder
+pos 0.65 0.9 2.25
+
+joint r_elbow
+pos 0.25 0.90 2.25
+
+joint l_axilla
+pos 1.15 0.85 2.15
+
+joint l_shoulder
+pos 1.35 0.9 2.25
+
+joint l_elbow
+pos 1.75 0.9 2.25
+
+joint r_wrist
+pos -0.2 0.9 2.25
+
+joint l_wrist
+pos 2.2 0.9 2.25
+
+joint r_glute
+pos 0.9 1.1 1.46
+
+joint l_glute
+pos 1.1 1.1 1.46
+
+joint r_hip
+pos 0.79 1.0 1.25
+
+joint l_hip
+pos 1.21 1.0 1.35
+
+joint r_knee
+pos 0.8 1.0 0.75
+
+joint l_knee
+pos 1.2 1.0 0.75
+
+joint r_ankle
+pos 0.8 1.05 0.2
+
+joint l_ankle
+pos 1.2 1.05 0.2
+

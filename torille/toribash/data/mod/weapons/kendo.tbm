@@ -1,0 +1,247 @@
+#Kendo by RAYClovis, with help of PNut
+gamerule
+engageplayerpos 0
+gravity 0.00 0.00 -30.00
+engagedistance 170
+di 0
+fracture 1
+fracturethreshold 500
+matchframes 250
+turnframes 10,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20
+dojosize 400
+dojotype 1
+dq 1
+dqflag 1
+dqtimeout 10
+sumo 1
+flag 11
+
+
+body r_hand
+shape box
+sides 0.22 0.22 0.22
+alt_sides 0.2 0.2 0.2
+pos -0.35 0.85 2.3
+rot 0 0 0
+force 0 0 0
+color 1 1 1
+material flesh
+flag 32
+
+joint r_wrist
+radius 0.11
+pos -0.2 0.9 2.3
+axis 0 1 0
+rot 0 0 0
+range .7 -1.0
+strength 15.0
+velocity 45.0
+flag 6
+
+joint l_wrist
+radius 0.11
+axis 1 0 0
+rot 0 0 0
+range .7 -1.0
+strength 15.0
+velocity 45.0
+flag 6
+
+joint r_shoulder
+strength 7
+velocity 20
+
+joint l_shoulder
+strength 7
+velocity 20
+
+body l_hand
+shape box
+sides 0.22 0.22 0.22
+alt_sides 0.2 0.2 0.2
+rot 0 0 0
+force 0 0 0
+color 1 1 1
+material flesh
+flag 32
+
+joint r_elbow
+axis 1 0 0
+range 1 -1
+strength 8.0
+velocity 45
+
+joint l_elbow
+strength 8.0
+velocity 45
+
+############
+joint neck
+strength 2.0
+velocity 50.0
+
+joint chest
+strength 7.0
+velocity 20.0
+
+joint lumbar
+strength 10.0
+velocity 5.0
+
+joint abs
+strength 8.0
+velocity 5.0
+
+joint r_pecs
+strength 3.0
+velocity 15.0
+
+joint r_shoulder
+strength 8.0
+velocity 25.0
+
+joint l_pecs
+strength 3.0
+velocity 15.0
+
+joint l_shoulder
+strength 10.0
+velocity 25.0
+
+joint r_glute
+strength 8.0
+
+joint l_glute
+strength 8.0
+
+joint r_hip
+strength 5.0
+velocity 12.0
+density 0.5
+
+joint l_hip
+strength 5.0
+velocity 12.0
+
+joint r_knee
+strength 10.0
+velocity 30.0
+
+joint l_knee
+strength 10.0
+velocity 30.0
+
+joint r_ankle
+strength 3.0
+velocity 8.0
+
+joint l_ankle
+strength 3.0
+velocity 8.0
+
+############
+body r_butt
+thrust 1 0 0 -0.55
+
+body l_butt
+thrust 1 0 0 -0.55
+
+body r_thigh
+thrust 1 0 0 -0.55
+flag 2
+
+body l_thigh
+thrust 1 0 0 -0.55
+flag 2
+
+body r_leg
+thrust 1 0 0 -0.475
+flag 2
+
+body l_leg
+thrust 1 0 0 -0.475
+flag 2
+
+body head
+thrust 1 0 0 1.5
+
+body r_biceps
+thrust 1 0 0 0.01
+
+body r_triceps
+thrust 1 0 0 0.00025
+flag 2
+
+body l_biceps
+thrust 1 0 0 0.01
+
+body l_triceps
+thrust 1 0 0 0.00025
+flag 2
+
+body r_foot
+density 4.0
+thrust 1 0 0 -1.0
+friction 75
+
+body l_foot
+density 15.0
+thrust 1 0 0 -1.0
+friction 75
+sides 0.22 0.7 0.08
+
+body r_foot
+density 15.0
+thrust 1 0 0 -1.0
+friction 75
+sides 0.22 0.7 0.08
+
+joint abs
+strength 8.0
+density 0.2
+##############
+
+env_obj 2
+shape box
+pos -0.375 0.75 2.38
+color 0.7 0.4 0.1 1
+rot 0 0 0
+sides 0.25 0.25 0.051
+material steel
+mass 0.003
+
+env_obj 3
+shape cylinder
+pos -0.375 0.75 3.15
+color 0.7 0.4 0.1 1
+rot 0 0 0
+sides 0.05 2.0
+material steel
+mass 0.003
+
+env_obj 4
+shape box
+pos 2.375 -0.95 2.38
+color 0.7 0.4 0.1 1
+rot 0 0 0
+sides 0.25 0.25 0.051
+material steel
+mass 0.003
+
+env_obj 1
+shape cylinder
+pos 2.375 -0.95 3.15
+color 0.7 0.4 0.1 1
+rot 0 0 0
+sides 0.05 2.0
+material steel
+mass 0.003
+
+env_obj_joint 1 2 3
+pos -0.375 0.75 2.38
+axis 0 1 0
+range 0 0
+
+env_obj_joint 2 1 4
+pos 2.375 -0.95 2.38
+axis 0 1 0

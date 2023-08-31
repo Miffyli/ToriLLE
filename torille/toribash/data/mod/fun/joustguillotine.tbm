@@ -1,0 +1,203 @@
+#Inspired by the wonderful acrojoust mod
+#Near the end of the match, a guillotine cuts the centre. You are safe on the low ground, though.
+#Mod created by Fluxit. Enjoy.
+#March 29th 2009
+
+gamerule
+engageplayerpos 0
+	engagedistance 1800
+	engageheight 30
+	dismember 1
+	dismemberthreshold 120
+	fracture 1
+	fracturethreshold 80
+	dojotype 0
+	dojosize 900
+	dq 0
+	matchframes 400
+	turnframes 10,15,15,20,20,30,30,50,50,50,50,60
+
+body stomach 
+	force 0 15 0
+body breast
+	force 0 15 0
+body chest
+	force 0 18 5
+body groin
+	force 0 5 0
+body r_pecs
+	force 0 5 0
+body l_pecs
+	force 0 5 0
+body r_thigh
+	force 0 15 0
+body l_thigh
+	force 0 15 0
+body l_leg
+	force 0 14 -1
+body r_leg
+	force 0 14 -1
+joint l_knee
+	force 0 12 -1
+joint r_knee
+	force 0 12 -1
+body r_foot
+	force 0 10 -1
+body l_foot
+	force 0 10 -1
+body head
+	force 0 10 0
+body r_hand
+	force 0 10 0
+body l_hand
+	force 0 10 0
+body r_triceps
+	force 0 5 0
+body l_triceps
+	force 0 5 0
+
+
+#Uke step
+env_obj 1
+    shape box
+    pos 1 -5 0.38
+    color 0 1 0.25
+    rot -15 0 0
+    sides 3.5 1.2 0.05
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+#Tori step
+env_obj 2
+    shape box
+    pos 1 5 0.38
+    color 0 1 0.25
+    rot 15 0 0
+    sides 3.5 1.2 0.05
+    material steel
+    mass 0.1
+    flag 24
+#END 2
+
+#Bar_right_up
+env_obj 3
+    shape box
+    pos -0.5 0 6
+    color 0.5 0 1
+    rot 0 -90 0
+    sides 4 0.2 0.2
+    material steel
+    mass 0.1
+    flag 16
+#END 3
+
+#Bar_right
+env_obj 4
+    shape box
+    pos -0.5 0 2
+    color 0.5 0 1
+    rot 0 -90 0
+    sides 4 0.2 0.2
+    material steel
+    mass 100
+    flag 16
+#END 4
+
+#Bar_left
+env_obj 5
+    shape box
+    pos 2.5 0 2
+    color 0.5 0 1
+    rot 0 -90 0
+    sides 4 0.2 0.2
+    material steel
+    mass 100
+    flag 16
+#END 5
+
+#Tori_startblock
+env_obj 8
+    shape box
+    pos 1 7.5 0.08
+    color 0 1 1
+    rot 0 0 0
+    sides 1 1 0.6
+    material steel
+    mass 3
+    flag 24
+#END 8
+
+#Uke_startblock
+env_obj 9
+    shape box
+    pos 1 -7.5 0.08
+    color 0 1 1
+    rot 0 0 0
+    sides 1 1 0.6
+    material steel
+    mass 3
+    flag 24
+#END 9
+
+#Guillotine
+env_obj 10
+    shape box
+    pos 1 0 30
+    color 1 0 1
+    rot 0 90 0
+    sides 7 0.2 2.75
+    material steel
+    mass 50
+    flag 6
+#END 10
+
+#Middleblock
+env_obj 11
+    shape box
+    pos 1 0 0.15
+    color 0 1 1
+    rot 0 0 0
+    sides 1 1 0.3
+    material steel
+    mass 50
+    flag 16
+#END 11
+
+#Leftstopper
+env_obj 12
+    shape box
+    pos 2.25 0 0.5
+    color 1 0 1
+    rot 0 90 0
+    sides 1 0.2 0.2
+    material steel
+    mass 100
+    flag 16
+#END 12
+
+#Rightstopper
+env_obj 13
+    shape box
+    pos -0.25 0 0.5
+    color 1 0 1
+    rot 0 90 0
+    sides 1 0.2 0.2
+    material steel
+    mass 100
+    flag 16
+#END 13
+
+#Bar_left_up
+env_obj 14
+    shape box
+    pos 2.5 0 6
+    color 0.5 0 1
+    rot 0 -90 0
+    sides 4 0.2 0.2
+    material steel
+    mass 0.1
+    flag 16
+#END 14
+

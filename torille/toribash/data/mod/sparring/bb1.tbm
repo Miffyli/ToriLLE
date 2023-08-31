@@ -1,0 +1,70 @@
+#!/usr/bin/toribash
+# Environment exported by WorldBuilder
+######################################
+
+gamerule
+engageplayerpos 0
+mf 400
+tf 20
+flags 3
+eh 250
+ed 1000
+ds 1500
+gravity 0 0 -35
+
+
+env_obj 1
+    shape box
+    pos 1 -0.1875 2.25
+    color 0.6 0.4 0.4 1
+    rot 0 0 0
+    sides 0.5 13.25 0.25
+    material steel
+    mass 0.1
+    flag 24
+#END 1
+
+env_obj 2
+    shape box
+    pos 1 -0.1875 2.125
+    color 0.4 0.4 0.4 1
+    rot 0 0 0
+    sides 0.375 13.125 0.25
+    material steel
+    mass 0.1
+    flag 24
+#END 2
+
+env_obj 3
+    shape box
+    pos 1 4.875 1
+    color 0.4 0.4 0.4 1
+    rot -10 0 0
+    sides 0.1875 0.1875 2.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 3
+
+env_obj 4
+    shape box
+    pos 1 -5.1875 1
+    color 0.4 0.4 0.4 1
+    rot 10 0 0
+    sides 0.1875 0.1875 2.0625
+    material steel
+    mass 0.1
+    flag 24
+#END 4
+
+env_obj 5
+    shape box
+    pos 1 -0.0625 0.125
+    color 0.4 0.5 0.9 1
+    rot 0 0 0
+    sides 5.8125 14.875 0.3125
+    material steel
+    mass 0.1
+    flag 24
+#END 5
+

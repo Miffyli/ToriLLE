@@ -1,0 +1,254 @@
+#!/usr/bin/toribash
+
+gamerule
+engageplayerpos 0
+
+gravity 0 0 -30
+
+engagedistance 1000
+engageheight 12
+matchframes 1200
+dismemberthreshold 250
+fracturethreshold 200
+turnframes 10
+sumo 1
+dojosize 0
+flags 7
+dismemberment 0
+fracture 0
+disqualification 0
+flags 8
+
+
+#player 1
+
+body head
+trig_id 1
+trig_action 2
+trig_mask 2
+
+body r_hand
+shape box
+sides 0.22 0.22 0.22
+alt_sides 0.2 0.2 0.2
+rot 0 0 0
+force 0 0 0
+color 1 1 1
+material flesh
+flag 32
+trig_id 1
+trig_mask 2
+
+body l_hand
+shape box
+sides 0.22 0.22 0.22
+alt_sides 0.2 0.2 0.2
+rot 0 0 0
+force 0 0 0
+color 1 1 1
+material flesh
+flag 32
+trig_id 1
+trig_mask 2
+
+#player 2
+
+body head
+trig_id 2
+trig_action 1
+trig_mask 1
+
+body r_hand
+shape box
+sides 0.22 0.22 0.22
+alt_sides 0.2 0.2 0.2
+rot 0 0 0
+force 0 0 0
+color 1 1 1
+material flesh
+flag 32
+trig_id 2
+trig_mask 2
+
+body l_hand
+shape box
+sides 0.22 0.22 0.22
+alt_sides 0.2 0.2 0.2
+rot 0 0 0
+force 0 0 0
+color 1 1 1
+material flesh
+flag 32
+trig_id 2
+trig_mask 2
+
+env_obj 1
+    shape box
+    pos 1 0.25 0.0625 
+    color 0.2 0.4 -0.1 1
+    rot 0 0 0
+    sides 64.5 64.5 0.125 
+    material steel
+    mass 1
+    flag 24
+
+env_obj 2
+    shape sphere
+    pos 5.5 1 -3 
+    color 0.2 0.4 -0.1 1
+    rot 0 0 0
+    sides 4.25 1 1  
+    material steel
+    mass 1
+    flag 24
+
+env_obj 3
+    shape cylinder
+    pos 5.5 1 4 
+    color 0.5 0.3 -0.1 1
+    rot 0 0 0
+    sides 0.75 6 0.75 
+    material steel
+    friction 20
+    mass 1
+    flag 8
+
+env_obj 4
+    shape sphere
+    pos 5.5 1 8.25
+    color 0.2 0.3 -0.1 1
+    rot 0 0 0
+    sides 3 6 0.75 
+    material steel
+    mass 1
+    flag 8
+
+env_obj 5
+    shape cylinder
+    pos -2.75 -0.75 2.75 
+    color 0.5 0.3 -0.1 1
+    rot 0 -8 0
+    sides 0.5 5.5 1.25 
+    material steel
+    friction 20
+    mass 1
+    flag 8
+
+env_obj 6
+    shape sphere
+    pos -2 -0.75 8
+    color 0.2 0.3 -0.1 1
+    rot 0 0 0
+    sides 2.5 5.5 1 
+    material steel
+    mass 1
+    flag 8
+
+env_obj 7
+    shape sphere
+    pos -4.25 1.75 -5.75
+    color 0.2 0.4 -0.1 1
+    rot 0 0 0
+    sides 7.25 1 1 
+    material flesh
+    mass 1
+    flag 24
+
+env_obj 8
+    shape cylinder
+    pos 4.75 -6.25 3
+    color 0.5 0.3 -0.1 1
+    rot 4 4 0
+    sides 0.5 6.5 1.25  
+    material steel
+    friction 20
+    mass 1
+    flag 8
+
+env_obj 9
+    shape sphere
+    pos 4.5 -6 7.75 
+    color 0.2 0.4 -0.1 1
+    rot 0 0 0
+    sides 2.75 6.5 1.25 
+    material flesh
+    mass 1
+    flag 24
+
+
+
+env_obj 10
+    shape sphere
+    pos 0.4375 7.75 8
+    color 0.2 0.4 -0.1 1
+    rot 0 0 0
+    sides 3.125 6.875 0.125 
+    material flesh
+    friction 20
+    mass 1
+    flag 24
+
+env_obj 11
+    shape box 
+    pos 3.75 1.25 1  
+    color 0.7 0.7 0.7 1
+    rot 0 8 0
+    sides 0.375 0.375 1.5 
+    material steel
+    friction 20
+    mass 1
+    flag 9
+
+env_obj 12
+    shape box 
+    pos -4.25 1.5 1.3125
+    color 0.5 0.5 0.5 1
+    rot 20 0 0
+    sides 1 1.25 0.5 
+    material steel
+    friction 20
+    mass 1
+    flag 9
+
+env_obj 13
+    shape box 
+    pos 3.68275 1.25 1.5   
+    color 0.7 0.7 0.7 1
+    rot 0 8 0
+    sides 0.625 0.625 0.125 
+    material steel
+    friction 20
+    mass 1
+    flag 9
+
+env_obj 14
+    shape cylinder
+    pos 0.4375 7.75 3.5 
+    color 0.5 0.3 -0.1 1
+    rot 0 0 0
+    sides 0.625 6.875 0.125  
+    material steel
+    friction 20
+    mass 1
+    flag 8
+
+env_obj 15
+    shape box
+    pos -2.5 -4.25 0.25 
+    color 0.6 0.6 0.6 1 
+    rot 12 0 64 
+    sides 1 0.25 1.75  
+    material steel
+    friction 20
+    mass 1
+    flag 9
+
+env_obj 16
+    shape box
+    pos 4 6 -0.125 
+    color 0.4 0.4 0.4 1
+    rot -8 16 -40
+    sides 1.5 1.5 0.75  
+    material steel
+    friction 20
+    mass 1

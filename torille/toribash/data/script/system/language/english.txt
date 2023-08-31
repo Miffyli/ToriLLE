@@ -1,0 +1,532 @@
+# New UI Localization file
+NAVBUTTONHOME	Home	
+NAVBUTTONPLAY	Play	
+NAVBUTTONPRACTICE	Practice	
+NAVBUTTONMODS	Mods	
+NAVBUTTONTOOLS	Tools	
+NAVBUTTONTOMAIN	To Main	
+NAVBUTTONBACK	Back	
+NAVBUTTONEXIT	Exit	
+NAVBUTTONLOGINREWARDS	Login Rewards	
+NAVBUTTONQUESTS	Quests	
+MAINMENUUSERCLAN	Clan	
+MAINMENUTORISHOPNAME	Torishop	
+MAINMENUTORISHOPDESC	Try out and purchase items for your Tori	
+MAINMENUCLANSNAME	Clans	
+MAINMENUCLANSDESC	Explore Toribash clans	
+MAINMENUREPLAYSNAME	Replays	
+MAINMENUREPLAYSDESC	Watch your downloaded replays	
+MAINMENUFREEPLAYNAME	Free Play	
+MAINMENUFREEPLAYDESC	Practice your skills or make replays in Single Player mode	
+MAINMENURANKEDNAME	Ranked	
+MAINMENURANKEDDESC	Find a quick ranked duel in matchmaking mode	
+MAINMENUMATCHMAKINGNAME	Matchmaking	
+MAINMENUMATCHMAKINGDESC	Quick way to get placed in one-on-one fights	
+MAINMENUROOMLISTNAME	Room List	
+MAINMENUROOMLISTDESC	Create your own online room or join any of the existing ones	
+MAINMENUBEGINNERTUTNAME	Beginner Tutorial	
+MAINMENUBEGINNERTUTDESC	Learn Toribash basics: controls, gameplay and more	
+MAINMENUADVMOVESNAME	Advanced Moves	
+MAINMENUADVMOVESDESC	Discover advanced moves to use in multiplayer	
+MAINMENUFIGHTUKENAME	Fight Uke	
+MAINMENUFIGHTUKEDESC	Put your skills against Tori's ultimate foe	
+MAINMENUCOMEBACKNAME	Comeback Practice	
+MAINMENUCOMEBACKDESC	Keep catching Uke without getting disqualified	
+MAINMENUGAMERULESNAME	Game Rules	
+MAINMENUGAMERULESDESC	Customize gravity and other mod settings	
+MAINMENUMODLISTNAME	Mod List	
+MAINMENUMODLISTDESC	Load one of the downloaded mods	
+MAINMENUMODMAKERNAME	Modmaker	
+MAINMENUMODMAKERDESC	Create your own mod for Toribash	
+MAINMENUMODSDISCOVERNAME	Discover	
+MAINMENUMODSDISCOVERDESC	Search for new mods created by other players	
+MAINMENUSHADERSNAME	Shaders & Atmospheres	
+MAINMENUSHADERSDESC	Customize lighting and Toribash environment	
+MAINMENUSCRIPTSNAME	Scripts	
+MAINMENUSCRIPTSDESC	Load pre-installed or third-party scripts for Toribash	
+MAINMENUSOUNDSNAME	Sounds	
+MAINMENUSOUNDSDESC	Toggle custom sounds on/off	
+MAINMENUHOTKEYSNAME	Hotkeys	
+MAINMENUHOTKEYSDESC	See the list of Toribash hotkeys	
+MAINMENUSIGNINERROR	You need to log in to be able to	
+DOWNLOADINGFILESWAIT	Downloading files, please wait...	
+STORESETEMPTY	EMPTY	marks an empty set	
+STOREITEM	item	used to display that there's only 1 item in a set	
+STOREITEMS	items	used to display number of items in a set	
+STOREFLAMEBODYPART	Particle flame for your	
+STOREFLAMEID	Flame ID	
+STOREFLAMEFORGEDBY	Forged by	
+STOREITEMINSIDESET	Inside set	
+STOREOBJITEMBODYPART	Custom 3D model for	
+STOREITEMNODESCRIPTION	This item has no description	
+STOREITEMGOTOSET	Go to set	
+STORESETITEMNAME	Set	
+STOREITEMADDTOSET	Add to set	
+STOREITEMREMOVEFROMSET	Remove from set	
+STORESETSELECTIONCONTROLS	Selection controls	
+STORESETSELECT	Pick the set	
+STOREVIEWSETITEMS	View set items	
+STOREITEMSINSET	Items inside set	
+STORESELLMARKET	Sell in market	
+STOREDIALOGMARKETSELL1	Are you sure you want to put	
+STOREDIALOGMARKETSELL2	in market?	
+STOREITEMDEACTIVATE	Deactivate	
+STOREDIALOGDEACTIVATE1	Are you sure you want to deactivate	
+STOREDIALOGDEACTIVATE2	 	
+STOREITEMACTIVATE	Activate	
+STOREDIALOGACTIVATE1	Are you sure you want to activate	
+STOREDIALOGACTIVATE2	 	
+STOREDIALOGCONFLICTSDEACTIVATE	Any conflicting item will be deactivated.	
+STOREITEMUNPACK	Unpack	
+STOREDIALOGUNPACK1	Are you sure you want to unpack	
+STOREDIALOGUNPACK2	 	
+STOREDIALOGUNPACKINFO	Unpacked items will be put in a set\nand placed in your deactivated inventory.	
+STOREBUTTONCANCEL	Cancel	
+STOREDIALOGADDTOSET1	Are you sure you want to add	
+STOREDIALOGADDTOSET2	to a set	
+STOREDIALOGREMOVEFROMSET1	Are you sure you want to remove	
+STOREDIALOGREMOVEFROMSET2	from a set	
+STOREACTIVATEDINVENTORY	Activated Inventory	
+STOREDEACTIVATEDINVENTORY	Deactivated Inventory	
+STOREMARKETINVENTORY	Market Inventory	
+STOREINVENTORYALLITEMS	All inventory items	
+PAGINATIONPAGE	Page	
+PAGINATIONPAGEOF	of	
+STOREINVENTORYLOADING	Loading data from Toriverse	
+STOREDATALOADERROR	Error opening Torishop data, please wait until it's updated or check Toribash folder permissions.	
+STOREGOTOSHOP	Open Torishop	
+STORESHOPDESC	Purchase new items for your Tori	
+STOREGOTOINVENTORY	Open Inventory	
+STOREPURCHASETORICREDITS	Purchase Toricredits	
+STOREINVENTORYDESC	Customize your character with purchased items	
+STORESTEAMPURCHASELOADING	Working	
+STORESTEAMPURCHASEERROR	Something went wrong	
+CLANSMYCLAN	My Clan	
+CLANSCLANLEADER	Clan leader	
+CLANSCLANMEMBER	Clan member	
+CLANSTOGETHERWITH	Together with	
+CLANSVIEWCLAN	View Clan	
+GENERALSTRINGAND	and	
+CLANFILTERSRANK	Rank	
+CLANFILTERSCLANNAME	Name	
+CLANFILTERSCLANTAG	Tag	
+CLANFILTERSCLANID	ID	
+CLANFILTERSOFFICIALSTATUS	Status	
+CLANFILTERSJOINMODE	Join Mode	
+CLANFILTERSDEAD	Dead	
+CLANFILTERSINACTIVE	Inactive	
+CLANFILTERSACTIVE	Active	
+SORTORDERASCENDING	Ascending	
+SORTORDERDESCENDING	Descending	
+CLANFILTERSACTIVITYSTATE	Activity Status	
+CLANFILTERSACTIVITYSTATEDESC	Clans are considered to be active when they have at least 5 members. Clans with no members are marked as dead.	
+CLANFILTERSFFAONLY	Only free for all clans	
+CLANFILTERSFFAONLYDESC	You can join free for all clans any time with one button click. For invite only clans, a custom application process is required.	
+CLANFILTERSOFFICIALONLY	Only official clans	
+CLANFILTERSOFFICIALONLYDESC	Official clans have their own board on Toribash forums and have square tag brackets in game.	
+SORTBYNAME	Sort by	
+SORTORDERNAME	Sort order	
+CLANSSEARCHFILTERS	Search Filters	
+CLANSSEARCH	Search clans	
+CLANSCLANLIST	Clan List	
+CLANSLEGENDRANK	Rank	
+CLANSLEGENDLEVEL	Level	
+CLANSLEGENDXP	XP	
+CLANSLEGENDTAGNAME	Tag and name	
+CLANSLEGENDSTATUS	Status	
+CLANSLEGENDJOINMODE	Join Mode	
+CLANSTATEOFFICIAL	Official	
+CLANSTATEUNOFFICIAL	Unofficial	
+CLANSTATEFREEFORALL	Free for all	
+CLANSTATEINVITEONLY	Invite Only	
+CLANSLISTEMPTYMSG	No clans to display	
+CLANSJOINCLAN	Join clan	
+CLANSRELOADLOGO	Reload logo	
+CLANSUPDATINGLOGO	Updating	
+CLANSTATEUNRANKED	Unranked	
+CLANSVIEWWARSFORUM	View wars on forum	
+CLANSTOPACHMISSING	This clan hasn't chosen an achievement to display	
+CLANSLEGENDROSTER	Roster	
+CLANSMEMBERSEMPTY	This clan has no members	
+CLANSPLAYERCLANLESS	You are currently clanless	
+CLANSPLAYERCLANLESSINFOMSG	You can join an existing clan from the list or create a new one	
+CLANSCREATENEWCLAN	Create new clan	
+CLANLEADERS	Leaders	
+CLANLEADER	Leader	
+CLANMEMBERS	Members	
+CLANMEMBER	Member	
+CLANDATALOADERROR	Error loading clan data, check Toribash folder permissions	
+REWARDSDAILYTITLE	Daily Login Reward	
+REWARDSCLAIM	Claim Reward	
+REWARDSCLAIMNETWORKERROR	Error communicating with Toribash servers, please try again later	
+REWARDSCLAIMINPROGRESS	Claiming Reward	
+REWARDSCLAIMSUCCESS	Reward Claimed	
+REWARDSCLAIMNOREWARD	No reward available, try again later	
+REWARDSCLAIMTIMEOUT	Timeout error, restart the game or go online	
+REWARDSCLAIMERROROTHER	Error claiming reward	
+REWARDSNOAVAILABLE	No reward available	
+REWARDSAVAILABLERESTART	Reward will be available on next game launch	
+REWARDSEXPIRED	Your reward expired! :(	
+REWARDSTIMEWEEKS	weeks	
+REWARDSTIMEWEEK	week	
+REWARDSTIMEDAYS	days	
+REWARDSTIMEDAY	day	
+REWARDSTIMEHOURS	hours	
+REWARDSTIMEHOUR	hour	
+REWARDSTIMEMINUTES	minutes	
+REWARDSTIMEMINUTE	minute	
+REWARDSTIMESECONDS	seconds	
+REWARDSNEXTREWARD	Next reward in	
+REWARDSTIMELEFT	left to claim reward	
+MATCHMAKEMODGRAPPLING	Grappling	
+MATCHMAKEMODKICKING	Kicking	
+MATCHMAKEMODSTRIKING	Striking	
+MATCHMAKEMODFUN	Fun	
+MATCHMAKERANKEDBELT	Ranked Matchmaking is available with Brown Belt	
+MATCHMAKERANKEDMODE	Ranked Mode	
+MATCHMAKERANK	Rank	
+MATCHMAKEELO	elo	
+MATCHMAKEFIGHTSTOTAL	fights total	
+MATCHMAKEWINRATE	win rate	
+MATCHMAKENOPLAYERS	No players currently searching	
+MATCHMAKEPLAYERSEARCHING	player searching	
+MATCHMAKEPLAYERSSEARCHING	players searching	
+MATCHMAKESEARCHING	Searching for a match	
+MATCHMAKESEARCH	Search	
+MATCHMAKESTOPSEARCH	Stop searching	
+MATCHMAKEUNRANKEDMODE	Casual Play	
+MATCHMAKEFINDBESTMATCH1	Find	
+MATCHMAKEFINDBESTMATCH2	best match	
+MATCHMAKESEARCHSETTINGS1	Search	
+MATCHMAKESEARCHSETTINGS2	with settings	
+MATCHMAKESEARCHCUSTOM	custom	
+MATCHMAKEUPDATINGRANK	Updating Ranking Stats...	
+MATCHMAKEQUALIFYING	Qualifying	
+MATCHMAKERANKUNAVAILABLE	Rank Unavailable	
+MATCHMAKEUPDATINGTRENDS	Updating your ranking trends...	
+MATCHMAKEGLOBALRANK	Global Rank	
+MATCHMAKEGLOBALRANKING	Global Ranking	
+MATCHMAKEQUALIFICATIONINFO	You need to play 10 ranked fights within a season to qualify for a rank	
+MATCHMAKEGOLDTIERREQUIREDFORRANKDISPLAY	Only Gold Tier+ ranked players can view their rank	
+MATCHMAKEBESTRANKEDMODS	Best mods	
+MATCHMAKERANKEDMODSEMPTY	No mods to display	
+MATCHMAKERANKEDTOPEMPTY	No players to display... yet	
+MATCHMAKEWINLOSE	W/L	
+MATCHMAKERANKINGTRENDS	Your global ranking trends	
+MATCHMAKEMOREGAMESREQUIREDFORTRENDS	Play more ranked games to view your elo trends	
+MATCHMAKETOPRANKEDPLAYERS	Top ranked players	
+MATCHMAKESEASONABOUT	About	
+MATCHMAKEWINSTONEXTTIER	wins to next tier	
+MATCHMAKEELOGAININFO	You receive different amount of elo for winning games depending on your opponent's rank	
+FRIENDSLISTTITLE	Friends List	
+FRIENDSLISTJOINROOM	Join room	
+FRIENDSLISTLEGENDPLAYER	PLAYER	
+FRIENDSLISTLEGENDROOM	ROOM	
+FRIENDSLISTREFRESH	Refresh	
+FRIENDSLISTADDFRIEND	Add new friend	
+FRIENDSLISTEMPTY	Friends List Empty	
+FRIENDSLISTEMPTYINFO	Add other players or whole clans to your friends list to know when they're online!	
+FRIENDSLISTSEARCHDEFAULT	Type a name or clan tag in brackets	
+BUTTONSAVE	Save	
+BUTTONDISCARD	Discard	
+BUTTONCANCEL	Cancel	
+BUTTONCONTINUE	Continue	
+BUTTONADD	Add	
+BUTTONCREATE	Create	
+BUTTONUPLOAD	Upload	
+BUTTONVIEW	View	
+BUTTONSEARCH	Search	
+BUTTONSUBMIT	Submit	
+WORDTOTAL	total	
+WORDTURN	turn	
+WORDGAMES	games	
+WORDFIGHTS	fights	
+WORDTIMES	times	
+WORDIN	in	
+WORDTC	toricredits	
+WORDDONE	done	
+WORDVS	vs	
+WORDNONE	none	
+WORDOPTIONAL	optional	
+CHATCENSOREDMESSAGE	Your message contains a banned word and will be censored for other players.	
+MOVEMEMORYLOADERROR	Error loading MoveMemory data.	
+MOVEMEMORYSAVING	Saving move	
+MOVEMEMORYENTERMOVENAME	Enter move name	
+MOVEMEMORYENTERMOVEDESCOPT	Enter move description (optional)	
+MOVEMEMORYENTERMODNAMEOPT	Enter mod name (optional)	
+MOVEMEMORYMODNAMEEMPTYERROR	Move name cannot be empty!	
+MOVEMEMORYMOVESAVEERRORPERMS	Error saving a move, make sure you have write permissions on Toribash folder.	
+MOVEMEMORYERRORNOTINGAME	You have to be playing to record a move.	
+MOVEMEMORYERRORSTOPMOVE	Please stop the currently playing move before recording a new one.	
+MOVEMEMORYRECORDINGMOVE	Recording move	
+MOVEMEMORYERRORUPDATINGDATA	Error updating MoveMemory data file, no changes made.	
+MOVEMEMORYNOMOVESFOUND	No moves found	
+MOVEMEMORYDELETEMOVECONFIRM	Are you sure want to delete this opener? This action cannot be reversed.	
+MOVEMEMORYALLMOVES	ALL MOVES	
+MOVEMEMORYSUGGESTEDMOVES	SUGGESTED MOVES	
+QUESTSNAMETYPE1	Daily Training	
+QUESTSNAMETYPE2	Killer Machine	
+QUESTSNAMETYPE3	Damage Dealer	
+QUESTSNAMETYPE4	Bone Crusher	
+QUESTSNAMETYPEDECAP	Head Hunter	
+QUESTSPLAYREQ	Play	
+QUESTSWINREQ	Win	
+QUESTSGETREQ	Get	
+QUESTSGETREQ2	points accross your fights	
+QUESTSDECAPREQ	Decap players	
+QUESTSDISMEMBERREQ	Dismember players	
+QUESTSMATCHMAKEREQ	while in matchmaking	
+QUESTSOFFICIALREQ	while in official rooms	
+QUESTSCLAIMREWARD	Claim Reward	
+QUESTSUPDATING	Updating your quests data...	
+QUESTSBYDECAP	by decapitation	
+LUASCRIPTSNAME	Lua scripts	
+LUASCRIPTSTHIRDPARTYWARNING1	Always pay double attention to third-party scripts you run.	
+LUASCRIPTSTHIRDPARTYWARNING2	Malicious scripts may modify, erase or steal your Toribash data.	
+LUASCRIPTSTHIRDPARTYWARNING3	Only run scripts that have been verified by Toribash staff.	
+LUASCRIPTSFORUMBOARD	Scripts board on forum	
+LUAMALICIOUSWARNING	POSSIBLY MALICIOUS SCRIPT	
+LUAFILEACCESSWARNING	SCRIPT CAN GAIN ACCESS TO OTHER FILES	
+LUAOTHERSCRIPTSWARNING	SCRIPT LOADS OTHER SCRIPTS	
+LUALOADSCRIPT	Load script	
+LUASHOWSOURCE	Show script source	
+LUAVIEWINGSORCE	Viewing script source	
+ERRORCREATINGFILE	Error creating file	
+REPLAYSSAVING	Saving replay	
+REPLAYSDEFAULTPATH	Replay file will be saved to 'my replays' folder	
+REPLAYSENTERNAME	Enter replay name	
+REPLAYSERROREMPTYNAME	Replay name cannot be empty	
+REPLAYSERRORCHARACTERS	Replay name must be alphanumeric and can only contain underscores, spaces or dashes as special characters	
+REPLAYSERRORRENAMING	Error renaming replay, please change replay name with replays menu	
+REPLAYSLOCAL	Local replays	
+REPLAYSSEARCH	Search	
+REPLAYSCOMMUNITY	Community replays	
+REPLAYSUPDATINGCACHE	Updating replay cache	
+REPLAYSERRORREADINGFILE	Error reading replay file	
+REPLAYSERRORUPDATINGFILE	Error updating replay file	
+REPLAYSERRORUPDATINGNAME	Error updating replay name	
+REPLAYSERRORREADINGCACHE	Error reading replay cache file	
+REPLAYSERRORUPDATINGTAGS	Error updating replay tags	
+REPLAYSUPDATINGCOMMUNITY	Downloading replays data,\nplease wait...	
+REPLAYSFILTERSDATE	by upload date	
+REPLAYSFILTERSRATING	by rating	
+REPLAYSFILTERSPOPULARITY	by popularity	
+REPLAYSFILTERSTAGGED	tagged	
+REPLAYSFILTERSBYTAG	by replay tags	
+REPLAYSFILTERSBY	uploaded by	
+REPLAYSFILTERSUPLOADER	by replay uploader	
+REPLAYSBACKTOALLREPLAYS	BACK TO ALL REPLAYS	
+REPLAYSMATCHBY	Match by	
+REPLAYSAUTHORAUTOSAVE	autosave	
+REPLAYSAUTHORBY	by	
+REPLAYSLOADINGREPLAY	Loading replay...	
+REPLAYSADDFOLDER	Add folder	
+REPLAYSTAGSMODIFYING	Modifying	
+REPLAYSTAGSNAME	replay tags	
+REPLAYSPOPULARTAGS	Popular Tags	
+REPLAYSASSIGNEDTAGS	Assigned Tags	
+REPLAYSINPUTTAGHERE	Input your own tag here	
+REPLAYSTAGERRORSHORT	Replay tag should contain at least one letter	
+REPLAYSTAGERRORDUPLICATE	This tag has already been added to the replay	
+REPLAYSMODIFYINGFOLDER	folder	
+REPLAYSFOLDERNAME	Folder name	
+REPLAYSERRORDELETING	Error deleting	
+REPLAYSERRORDELETINGFOLDER	folder	
+REPLAYSERRORMOVING	Error moving	
+REPLAYSERRORMOVINGTO	to	
+REPLAYSFOLDERNOTEMPTYDELETEWARNING	This folder is not empty. Deleting it will move all replays inside to the parent folder. Continue?	
+REPLAYSERRORRENAMINGFOLDER	Error renaming folder	
+REPLAYSERRORRENAMINGREPLAY	Error renaming replay	
+REPLAYSERRORMOVINGREPLAY	Error changing replay folder	
+REPLAYSFOLDERLEVELERROR1	You can't spawn more than	
+REPLAYSFOLDERLEVELERROR2	folder levels	
+REPLAYSADDINGFOLDER	Adding new folder inside	
+REPLAYSNEWFOLDERNAME	New folder name	
+REPLAYSFOLDERALPHANUMERIC	Folder name should be alphanumeric	
+REPLAYSERRORADDINGFOLDER	Error adding replay folder	
+REPLAYSUPLOAD	Upload	
+REPLAYSUPLOADTORIBASHSERVERS	to Toribash servers	
+REPLAYSNAME	Name	
+REPLAYSNAMEINFO	This will be the public replay name	
+REPLAYSDESC	Description	
+REPLAYSDESCINFO	A short description for your replay	
+REPLAYSDESCTIP	Input the description	
+REPLAYSTAGS	Tags	
+REPLAYSTAGSINFO	Space-separated tags for your replay	
+REPLAYSTAGSTIP	Input replay tags	
+REPLAYSUPLOADCONFIRM	This will upload your replay\nto Toribash servers and make it available for everyone.\nContinue?	
+REPLAYSMANAGE	Manage	
+REPLAYSREPLAY	replay	
+REPLAYSREPLAYS	Replays	
+REPLAYSREPLAYNAME	Replay name	
+REPLAYSREPLAYDIR	Replay folder	
+REPLAYSCONFIRMDELETION	Are you sure you want to delete	
+REPLAYSCONFIRMDELETION2	replay?	
+REPLAYSAUTOSAVEOPTION	Auto-save replays	
+REPLAYSEMPTYFOLDER	No replays in this folder	
+REPLAYSBY	by	
+REPLAYSDATACORRUPT	DATA CORRUPT	
+REPLAYSPLAYERS	Players	
+REPLAYSMOD	Mod	
+REPLAYSCOMMUNITYTITLEINFO	Search for replays on Toribash servers	
+REPLAYSDOWNLOADINGREPLAY	Downloading replay...	
+REPLAYSOPENINGREPLAY	Opening replay...	
+REPLAYSREPLAYSAVEDINFO	Replay downloaded and saved in downloads folder	
+REPLAYSCOMMUNITYDOUBLECLICKINFO	Double-click on any replay in the list for quick preview.	
+REPLAYSCOMMUNITYNOFOUND	No replays found	
+REPLAYSLOADPREVIOUS	LOAD PREVIOUS	
+REPLAYSLOADNEXT	LOAD NEXT	
+REPLAYSDOWNLOAD	download	
+REPLAYSDOWNLOADS	downloads	
+REPLAYSVOTINGON	Voting on	
+REPLAYSCOMMENT	Comment	
+REPLAYSVOTECONFIRM1	You're going to give this replay	
+REPLAYSVOTECONFIRM2	out of 5 stars.\nContinue?	
+REPLAYSCOMMENTSDOWNLOADING	Downloading comments...	
+REPLAYSADDCOMMENT	Add comment	
+REPLAYSUPLOADEDON	Uploaded on	
+REPLAYSSAVEREPLAY	Save replay	
+REPLAYSVIEWCOMMENTS	View comments	
+REPLAYSMOREBY	More by	
+REPLAYSREFRESHCACHEPROMPT	This will reset your replays cache.\nAre you sure you want to continue?	
+REPLAYSERRORREFRESHINGCACHE	Error refreshing cache, make sure you have write permissions inside Toribash folder	
+MODSDOWNLOADINGMOD	Downloading mod...	
+NOFILESFOUND	No files found	
+FILENAME	File name	
+MODSRESTARTGAME	Start new game after loading mod	
+SEARCHNOTE	Start typing to search...	
+SHADERSSAVESHADER	Save shader	
+SHADERSSAVING	Saving shader to file	
+SHADERSINPUTNAME	Input shader name	
+SHADERSERRORFILEEXISTS	Shader with this name already exists. This action will overwrite the old file.	
+SHADERSRESETTODEFAULT	Reset to default	
+SHADERSEDITOR	Shader Editor	
+SHADERSATMOSNAME	Atmospheres	
+SHADERSNAME	Shaders	
+SETTINGSOTHER	Other	
+SETTINGSAUDIO	Audio	
+SETTINGSEFFECTS	Effects	
+SETTINGSGRAPHICS	Graphics	
+SETTINGSGRAPHICSPRESETS	Graphics Presets	
+SETTINGSVISUALSQUALITY	Visuals Quality (may require restart)	
+SETTINGSCUSTOM	Custom	
+SETTINGSLOWEST	Potato	
+SETTINGSLOW	Low	
+SETTINGSMEDIUM	Medium	
+SETTINGSHIGH	High	
+SETTINGSHIGHEST	RTX 2080 Ti	
+SETTINGSRESOLUTION	Resolution	
+SETTINGSADVANCED	Advanced	
+SETTINGSSHADERS	Shaders	
+SETTINGSFLUIDBLOOD	Fluid Blood	
+SETTINGSFLOORREFLECTIONS	Floor Reflections	
+SETTINGSSOFTSHADOWS	Soft Shadows	
+SETTINGSAMBIENTOCCLUSION	Ambient Occlusion	
+SETTINGSRAYTRACING	Ray Tracing	
+SETTINGSFRAMERATE	Frame Rate	
+SETTINGSFPS	Frames Per Second	
+SETTINGSFPSUNCAPPED	Uncapped	
+SETTINGSGENERAL	General	
+SETTINGSEFFECTSINFO	Effects Display Settings	
+SETTINGSDISABLED	Disabled	
+SETTINGSENABLED	Enabled	
+SETTINGSREPLAYSONLY	Only on replays	
+SETTINGSPLAYERCUSTOMIZATION	Player Customizations	
+SETTINGSBODYTEXTURES	Body Textures	
+SETTINGSTRAILS	Trails	
+SETTINGSFLAMES	Flames	
+SETTINGSHAIRS	Hairs	
+SETTINGSOBJMODELS	3D Models	
+SETTINGSEFFECTSVOLUME	Effects Volume	
+SETTINGSMUSICVOLUME	Music Volume	
+SETTINGSVCVOLUME	Voice Chat Volume	
+SETTINGSVCTOGGLE	Voice Chat Toggle	
+SETTINGSSOUNDMASTER	Effect Sounds Master	
+SETTINGSHITEFFECTS	Hit Sounds	
+SETTINGSGAMEOVER	DQ and Win Sounds	
+SETTINGSREADY	Kiai Sound	
+SETTINGSGRIP	Grip Sound	
+SETTINGSALERT	Shout Sound	
+SETTINGSDISMEMBER	Dismember Sound	
+SETTINGSFIGHTALERT	Fight Alert Sound	
+SETTINGSFREEZE	Freeze Sound	
+SETTINGSGRADING	Grading Sound	
+SETTINGSIMPACT	Impact Sound	
+SETTINGSJOINT	Joint Sound	
+SETTINGSMENU	Menu Sound	
+SETTINGSNONE	None Sound	
+SETTINGSPAIN	Pain Sound	
+SETTINGSSELECTPLAYER	Select Player Sound	
+SETTINGSSPLASH	Splash Sound	
+SETTINGSSWOOSH	Swoosh Sound	
+SETTINGSLANGUAGE	Language	
+SETTINGSGAMELANGUAGE	Game Language	
+SETTINGSCHAT	Chat settings	
+SETTINGSCHATTOGGLE	Chat Length Toggle	
+SETTINGSPROFANITYFILTER	Profanity Filter	
+SETTINGSHIDEECHO	Hide system messages	
+SETTINGSGAMEPLAY	Gameplay tweaks	
+SETTINGSMOUSEBUTTONS	Mouse controls mode	
+SETTINGSMOUSEBUTTONS0	Contract / Extend only	
+SETTINGSMOUSEBUTTONS1	All four joint modes	
+SETTINGSMOUSEBUTTONS2	Hold / Relax only	
+SETTINGSBACKGROUNDCLICK	Background click	
+SETTINGSAUTOSAVE	Autosave Replays	
+SETTINGSGAMERULES	Remember Game Rules	
+SETTINGSMODERNHUD	Advanced HUD	
+SETTINGSTOOLTIP	Show Advanced Tooltip	
+SETTINGSMOVEMEMORY	Enable MoveMemory	
+SETTINGSBASEHUDONLY	base HUD only	
+SETTINGSWINDOWED	Windowed Mode	
+SETTINGSWIDTH	Width	
+SETTINGSHEIGHT	Height	
+SETTINGSONLYDEFAULTSOUNDS	Only Default Sounds	
+SETTINGSAPPLY	Apply changes	
+SETTINGSRESTARTREQUIRED	may require restart	
+SETTINGSNOCHANGES	No changes made	
+HOTKEYSBASICCONTROLS	Basic Controls	
+HOTKEYSCAMERACONTROLS	Camera Controls	
+HOTKEYSHOLDALL	Hold All / Relax All	
+HOTKEYSHOLDRELAX	Hold / Relax Joint	
+HOTKEYSCONTRACTEXTEND	Contract / Extend Joint	
+HOTKEYSGRABUNGRAB	Toggle Hand State (Grab / Ungrab)	
+HOTKEYSGRABALL	Toggle Both Hands' States	
+HOTKEYSSAVEREPLAY	Save Replay	
+HOTKEYSTORIGHOST	Toggle Player's Ghost	
+HOTKEYSPLAYERSGHOST	Toggle Both Players' Ghosts	
+HOTKEYSTURN	Finish Turn / Skip One Frame	
+HOTKEYSCHAT	Chat Controls	
+HOTKEYSOPENCHAT	Open Chat Box	
+HOTKEYSTOGGLECHAT	Show More Chat Lines	
+HOTKEYSSCROLLCHAT	Scroll Chat Up / Down	
+HOTKEYSSCROLLCHATMAX	Scroll Chat to Beginning / End	
+HOTKEYSREPLAYS	Replays Hotkeys	
+HOTKEYSREPLAYRESTART	Restart Replay	
+HOTKEYSREPLAYPAUSE	Pause Replay	
+HOTKEYSREPLAYEDIT	Edit Replay	
+HOTKEYSREPLAYKEYFRAME	Save Keyframe	
+HOTKEYSREPLAYKEYFRAMESCLEAR	Clear Keyframes	
+HOTKEYSREPLAYNEXT	Play Next Replay	
+HOTKEYSREPLAYPREV	Play Previous Replay	
+HOTKEYSOTHER	Other Hotkeys	
+HOTKEYSMODLIST	Open Mod List	
+HOTKEYSSHADERS	Open Shaders & Atmospheres	
+HOTKEYSGAMERULES	Open Game Rules	
+HOTKEYSFULLSCREEN	Enter Fullscreen Mode	
+HOTKEYSCAMERAMODES	Change Camera Modes	
+TUTORIALSLEAVINGPROMPT	Leaving tutorial mode.\nCurrent tutorial will have to be restarted from the beginning if you proceed.	
+TUTORIALSCONTINUETONEXT	Continue to next tutorial	
+TUTORIALSBACKTOMAIN	Return to main menu	
+TUTORIALSINTRONAME	Introduction to Toribash	
+TUTORIALSINTRODESC	Meet Sensei and start your Toribash journey	
+TUTORIALSPUNCHNAME	Punching Tutorial	
+TUTORIALSPUNCHDESC	Learn the basics of punching in Toribash	
+TUTORIALSKICKNAME	Kicking Tutorial	
+TUTORIALSKICKDESC	Learn how to attack your opponents with legs	
+TUTORIALSCHALLENGEUKENAME	Challenge Uke	
+TUTORIALSCHALLENGEUKEDESC	Test your skills in a fight against Uke	
+TUTORIALSCOMEBACKPRACTICENAME	Comeback Practice	
+TUTORIALSCOMEBACKPRACTICEDESC	Practice your comeback skills while catching Uke	
+TUTORIALSLOCKED	Complete other tutorials or gain more Qi to unlock this	
+TUTORIALSVIEWALLNAME	View all tutorials	
+TUTORIALSVIEWALLDESC	Access any tutorial you've already finished	

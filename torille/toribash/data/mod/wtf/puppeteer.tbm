@@ -1,0 +1,161 @@
+#!/usr/bin/toribash
+engageplayerpos 0
+# Twin Swords V4 by Grath
+
+gravity 0 0 -20
+
+friction 5
+
+body r_hand
+	sides 1.8 0.008 0.008
+	pos -0.6 0.9 2.3
+	color 100 100 100
+	flag 6
+body l_hand
+	sides 1.8 0.008 0.008
+	pos 2.6 0.9 2.3
+	color 100 100 100
+	flag 6
+
+body r_foot
+        flag 6
+
+body l_foot
+        flag 6
+
+body r_triceps
+   sides 0.400000 0.130000 0.130000
+   flag 2
+
+body l_triceps
+   sides 0.400000 0.130000 0.130000
+   flag 2
+
+body r_leg
+   sides 0.160000 0.300000 0.000000
+        flag 2
+
+body l_leg
+   sides 0.160000 0.300000 0.000000
+        flag 2
+
+joint l_ankle
+radius 0.055
+pos 0.6 0.525 0.125
+strength 2.0
+velocity 16.0
+
+joint r_ankle
+radius 0.055
+pos 0.4 0.525 0.125
+strength 2.0
+velocity 16.0
+
+joint l_knee
+radius 0.07
+pos 0.6 0.5 0.4
+strength 8.0
+velocity 80.0
+
+joint r_knee
+radius 0.07
+pos 0.4 0.5 0.4
+strength 8.0
+velocity 80.0
+
+joint l_hip
+radius 0.08
+pos 0.605 0.5 0.7
+strength 4.0
+velocity 24.0
+
+
+joint neck
+radius 0.0550
+pos 0.5 0.45 1.25
+strength 2.0
+velocity 100.0
+
+joint chest
+radius 0.09
+pos 0.5 0.45 1.025
+range 5 -5
+strength 8.0
+velocity 40.0
+
+joint lumbar
+radius 0.08
+pos 0.5 0.475 0.925
+strength 6.0
+velocity 10.0
+
+joint abs
+radius 0.07
+pos 0.5 0.5 0.825
+strength 12.0
+velocity 10.0
+
+joint r_pecs
+radius 0.09
+pos 0.425 0.425 1.1
+strength 6.0
+velocity 30.0
+
+joint r_shoulder
+radius 0.09
+pos 0.325 0.45 1.15
+strength 8.0
+velocity 40.0
+
+joint r_elbow
+radius 0.08
+pos 0.125 0.45 1.15
+strength 4.0
+velocity 80.0
+
+joint l_axilla
+radius 0.09
+pos 0.575 0.425 1.1
+strength 6.0
+velocity 30.0
+
+joint l_shoulder
+radius 0.09
+pos 0.675 0.45 1.15
+strength 8.0
+velocity 40.0
+
+joint l_elbow
+radius 0.08
+pos 0.875 0.45 1.15
+strength 4.0
+velocity 80.0
+
+joint r_wrist
+radius 0.055
+pos -0.1 0.45 1.15
+strength 4.0
+velocity 120.0
+
+joint l_wrist
+radius 0.055
+pos 1.1 0.45 1.15
+strength 4.0
+velocity 120.0
+
+joint r_glute
+radius 0.08
+pos 0.45 0.55 0.755
+strength 8.0
+velocity 20.0
+
+joint l_glute
+radius 0.08
+pos 0.55 0.55 0.755
+strength 8.0
+velocity 20.0
+
+joint r_hip
+radius 0.08
+pos 0.395 0.5 0.7
+strength 4.0

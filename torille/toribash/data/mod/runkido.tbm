@@ -1,0 +1,19 @@
+gamerule  
+engageplayerpos 0
+matchframes 240
+turnframes 20
+flags 3
+dismemberment 1
+fracture 1
+disqualification 1
+dqtimeout 0
+dqflag 1
+dismemberthreshold 100
+fracturethreshold 0
+dojotype 0
+dojosize 800
+engagedistance 500
+engageheight 0
+engagerotation 0
+engagespace 0
+engageplayerrot 0,0,0,0,0,0

@@ -1,0 +1,187 @@
+#!/usr/bin/toribash
+
+gamerule
+gravity 0 0 -30
+engagedistance 100
+engageplayerpos 2.00,10.00,6.00,-2.00,10.00,6.00
+flags 14
+dojosize 150
+matchframes 2500
+
+env_obj 1
+    shape box
+    pos 0.75 10 5
+    color 0.4 0.3 0.2 0.3
+    rot 0 0 0
+    sides 7.25 7 2
+    material steel
+    mass 0.1
+    flag 8
+#END 1
+
+env_obj 2
+    shape box
+    pos 0.75 1.25 2.25
+    color 0.4 0.3 0.2 0.3
+    rot 0 0 0
+    sides 7.25 7 2
+    material steel
+    mass 0.1
+    flag 8
+#END 2
+
+env_obj 3
+    shape cylinder
+    pos 0.5 -4.5 6.75
+    color 0.4 0.3 0.2 0.3
+    rot 0 -88 0
+    sides 0.25 9.5 5.5
+    material steel
+    mass 0.1
+    flag 8
+#END 3
+
+env_obj 4
+    shape box
+    pos 1 -16.25 2.25
+    color 0.4 0.3 0.2 0.3
+    rot 4 -93 0
+    sides 2.5 14 13.25
+    material steel
+    mass 0.1
+    flag 8
+#END 4
+
+env_obj 5
+    shape box
+    pos 1 -20.75 5
+    color 0.4 0.3 0.2 0.3
+    rot -84 -4 0
+    sides 13.75 3.25 1.5
+    material steel
+    mass 0.1
+    flag 8
+#END 5
+
+env_obj 6
+    shape box
+    pos -4.5 -28.5 5.5
+    color 0.4 0.3 0.2 0.3
+    rot -76 88 -4
+    sides 13.75 3.25 1.5
+    material steel
+    mass 0.1
+    flag 8
+#END 6
+
+env_obj 7
+    shape box
+    pos 2.5 -28.5 5.5
+    color 0.4 0.3 0.2 0.3
+    rot -76 88 -4
+    sides 13.75 3.25 1.5
+    material steel
+    mass 0.1
+    flag 8
+#END 7
+
+env_obj 8
+    shape box
+    pos 7.75 -28.5 5.5
+    color 0.4 0.3 0.2 0.3
+    rot -76 88 -4
+    sides 13.75 3.25 1.5
+    material steel
+    mass 0.1
+    flag 8
+#END 8
+
+env_obj 9
+    shape box
+    pos 3.75 -44.25 5.5
+    color 0.4 0.3 0.2 0.3
+    rot -92 -8 0
+    sides 14 3.25 10
+    material steel
+    mass 0.1
+    flag 8
+#END 9
+
+env_obj 10
+    shape box
+    pos 3.75 -60 1.5
+    color 0.4 0.3 0.2 0.3
+    rot -92 -8 0
+    sides 14 3 13.25
+    material steel
+    mass 0.1
+    flag 8
+#END 10
+
+env_obj 11
+    shape box
+    pos 6 -73.25 1.25
+    color 0.4 0.3 0.2 0.3
+    rot -4 0 0
+    sides 20 3 13.75
+    material steel
+    mass 0.1
+    flag 8
+#END 11
+
+env_obj 12
+    shape box
+    pos 2.5 -82.25 7
+    color 0.4 0.3 0.2 0.3
+    rot -12 0 92
+    sides 11 1.5 0.75
+    material steel
+    mass 0.1
+    flag 8
+#END 12
+
+env_obj 13
+    shape box
+    pos 6.5 -82.25 7
+    color 0.4 0.3 0.2 0.3
+    rot -12 0 92
+    sides 11 1.5 0.75
+    material steel
+    mass 0.1
+    flag 8
+#END 13
+
+env_obj 14
+    shape box
+    pos 4.5 -95.75 3.75
+    color 0.4 0.3 0.2 0.3
+    rot -8 0 -4
+    sides 11 11.5 0.25
+    material steel
+    mass 0.1
+    flag 8
+    friction 0
+#END 14
+
+env_obj 15
+    shape box
+    pos 4.5 -96.25 7.75
+    color 0.4 0.3 0.2 0.3
+    rot 8 0 -4
+    sides 11 11.5 0.25
+    material steel
+    mass 0.1
+    flag 8
+#END 15
+
+env_obj 16
+    shape box
+    pos 5.25 -112.75 2.25
+    color -0.1 1.1 -0.1 1
+    rot 0 0 -8
+    sides 12 4.5 2.5
+    material steel
+    mass 0.1
+    flag 8
+#END 16
+

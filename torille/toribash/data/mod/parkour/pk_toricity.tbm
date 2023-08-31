@@ -1,0 +1,185 @@
+#!/usr/bin/toribash
+# ParKour/Gymnastic 
+# Mod by Oracul
+#####################
+
+gamerule
+engageplayerpos 0
+engagedistance 3000
+engageheight 2000
+dismemberment 0
+fracture 1
+fracturethreshold 200
+matchframes 2000
+
+env_obj 16
+    shape box
+    pos 1 22 10
+    color 0.75 0.75 0.75 1
+    rot 0 0 0
+    sides 40 16 20
+    material steel
+    mass 0.1
+    flag 8
+#END 16
+
+env_obj 15
+    shape box
+    pos 1 8.5 5.5
+    color 0.75 0.75 0.75 1
+    rot 0 0 0
+    sides 5 5.25 11
+    material steel
+    mass 0.1
+    flag 8
+#END 15
+
+env_obj 14
+    shape box
+    pos 1 9.5 13.5
+    color 1 0 0 1
+    rot 56 0 0
+    sides 5.5 0.25 10.5
+    material steel
+    mass 0.1
+    flag 8
+#END 14
+
+env_obj 13
+    shape box
+    pos 1 7.5 15.25
+    color 0 0 0 0.9
+    rot 0 0 0
+    sides 7 0.25 0.2
+    material steel
+    mass 0.1
+    flag 8
+#END 13
+
+env_obj 12
+    shape box
+    pos 1 1.75 7.5
+    color 0.9 0 0 1
+    rot 0 0 0
+    sides 7 8 0.25
+    material steel
+    mass 0.1
+    flag 8
+#END 2
+
+env_obj 11
+    shape box
+    pos -1.7 -1.4 9.55
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 1.25 1.25 4.25
+    material steel
+    mass 0.1
+    flag 8
+#END 11
+env_obj 10
+    shape box
+    pos 3.7 -1.4 9.55
+    color 0.7 0.7 0.7 1
+    rot 0 0 0
+    sides 1.25 1.25 4.25
+    material steel
+    mass 0.1
+    flag 8
+#END 10
+
+env_obj 9
+    shape box
+    pos 1 -2.5 13.75
+    color 0.75 0.75 0.75 1
+    rot 0 0 0
+    sides 8 7 4.25
+    material steel
+    mass 0.1
+    flag 8
+#END 9
+
+env_obj 8
+    shape box
+    pos 1 1.75 3.75
+    color 0.75 0.75 0.75 1
+    rot 0 0 0
+    sides 6.5 7 7.25
+    material steel
+    mass 0.1
+    flag 8
+#END 8
+
+env_obj 7
+    shape box
+    pos 1.25 -7 7
+    color 0 0 0 0.95
+    rot 0 0 0
+    sides 7 0.25 0.25
+    material steel
+    mass 0.1
+    flag 8
+#END 1
+
+env_obj 6
+    shape box
+    pos 1.25 -7 1.5
+    color 0.75 0.75 0.75 1
+    rot 0 0 0
+    sides 10 3.5 2.75
+    material steel
+    mass 0.1
+    flag 8
+#END 6
+
+env_obj 5
+    shape box
+    pos -2 -10 18.75
+    color 0 0 0 1
+    rot 0 0 128
+    sides 12 0.25 0.25
+    material steel
+    mass 0.1
+    flag 8
+#END 5
+env_obj 4
+    shape box
+    pos -2.5 -10.5 17
+    color 0 0 0 1
+    rot 0 0 0
+    sides 0.25 9.25 0.25
+    material steel
+    mass 0.1
+    flag 8
+#END 4
+env_obj 3
+    shape box
+    pos 1 -9.25 10.25
+    color 0 0 0 1
+    rot 0 0 0
+    sides 7 0.25 0.25
+    material steel
+    mass 0.1
+    flag 8
+#END 3
+env_obj 2
+    shape box
+    pos -1.75 -16.25 3.25
+    color 0.75 0.75 0.75 1
+    rot 0 0 0
+    sides 13 10 6.5
+    material steel
+    mass 0.1
+    flag 8
+#END 2
+
+env_obj 1
+    shape cylinder
+    pos 1 -15.25 11.15
+    color 0.55 0.55 0.55 1
+    rot 0 0 0
+    sides 3 11.75 1
+    material steel
+    mass 0.1
+    flag 8
+#END 1

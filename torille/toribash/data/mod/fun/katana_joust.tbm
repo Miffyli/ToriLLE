@@ -1,0 +1,124 @@
+# Environment exported by WorldBuilder
+######################################
+
+gamerule
+engageplayerpos 0
+engagedistance 1000
+turnframes 50,50,900
+dismemberthreshold 1000
+
+env_obj 1
+    shape box
+    pos -0.5 4.875 2.25
+    color -0.1 -0.1 -0.1 1
+    rot -90 90 0
+    sides 0.0625 0.0625 0.4375
+    material steel
+    mass 0.0001
+    flag 0
+#END 1
+
+env_obj 2
+    shape box
+    pos -1.25 4.875 2.25
+    color 0.5 0.5 0.5 1
+    rot -90 90 0
+    sides 0.0625 0 1.0625
+    material steel
+    mass 0.0001
+    flag 6
+#END 2
+
+env_obj 3
+    shape box
+    pos -2.25 4.8125 2.25
+    color 0.5 0.5 0.5 1
+    rot -90 83 0
+    sides 0.0625 0 1.0625
+    material steel
+    mass 0.0001
+    flag 6
+#END 3
+
+env_obj 4
+    shape box
+    pos 2.5 -5.0625 2.25
+    color -0.1 -0.1 -0.1 1
+    rot -90 90 0
+    sides 0.0625 0.0625 0.4375
+    material steel
+    mass 0.0001
+    flag 0
+#END 4
+
+env_obj 5
+    shape box
+    pos 3.25 -5.0625 2.25
+    color 0.5 0.5 0.5 1
+    rot -90 90 0
+    sides 0.0625 0 1.0625
+    material steel
+    mass 0.0001
+    flag 6
+#END 5
+
+env_obj 6
+    shape box
+    pos 4.25 -5 2.25
+    color 0.5 0.5 0.5 1
+    rot -90 83 0
+    sides 0.0625 0 1.0625
+    material steel
+    mass 0.0001
+    flag 6
+#END 6
+
+env_obj_joint 1 1 2
+        pos -0.6875 4.875 2.25
+	axis 1 0 0
+	range 0 0
+	strength 0
+	velocity 0
+	visible 0
+
+env_obj_joint 2 2 3
+        pos -1.75 4.875 2.25
+	axis 1 0 0
+	range 0 0
+	strength 0
+	velocity 0
+	visible 0
+
+env_obj_joint 3 4 5
+        pos 2.6875 -5.0625 2.25
+	axis 1 0 0
+	range 0 0
+	strength 0
+	velocity 0
+	visible 0
+
+env_obj_joint 4 5 6
+        pos 3.75 -5.0625 2.25
+	axis 1 0 0
+	range 0 0
+	strength 0
+	velocity 0
+	visible 0
+
+body r_triceps
+force 0 0 1
+
+body l_triceps
+force 0 0 1
+
+body r_pecs
+force 0 30 1
+
+body l_pecs
+force 0 30 1
+
+body l_leg
+force 0 60 1
+
+body r_leg
+force 0 60 1
